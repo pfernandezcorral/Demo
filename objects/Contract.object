@@ -202,6 +202,11 @@
         </filters>
         <label>My In Approval Contracts</label>
     </listViews>
+    <recordTypes>
+        <fullName>testrecordtype</fullName>
+        <active>true</active>
+        <label>testrecordtype</label>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>CONTRACT.CONTRACT_NUMBER</customTabListAdditionalFields>
         <customTabListAdditionalFields>CONTRACT.NAME</customTabListAdditionalFields>
