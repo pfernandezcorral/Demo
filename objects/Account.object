@@ -397,6 +397,12 @@
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>test</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( Active__c, &quot;Yes&quot;)</errorConditionFormula>
+        <errorMessage>Active cannot be yes</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>Billing</fullName>
         <availability>online</availability>
