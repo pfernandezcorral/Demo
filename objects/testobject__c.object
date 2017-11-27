@@ -66,6 +66,11 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>testobjects</pluralLabel>
+    <recordTypes>
+        <fullName>testrecordtype</fullName>
+        <active>true</active>
+        <label>testrecordtype</label>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
