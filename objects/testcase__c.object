@@ -53,6 +53,16 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>testcasefield2__c</fullName>
+        <externalId>false</externalId>
+        <label>testcasefield2</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>testcsasefield__c</fullName>
         <externalId>false</externalId>
         <label>testcsasefield</label>
