@@ -79,7 +79,7 @@
     </nameField>
     <pluralLabel>testcases</pluralLabel>
     <searchLayouts>
-        <lookupDialogsAdditionalFields>ttestcasefield2__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>testcasefield2__c</lookupDialogsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
