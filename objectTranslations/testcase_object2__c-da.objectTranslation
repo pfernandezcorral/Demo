@@ -34,6 +34,6 @@
         <label>testobjectcase 2</label>
         <name>testcase_object2__c</name>
     </fields>
-    <gender><!-- Neuter --></gender>
+    <gender>< Neuter ></gender>
     <nameFieldLabel><!-- testcase object2 Name --></nameFieldLabel>
 </CustomObjectTranslation>
