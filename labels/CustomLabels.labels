@@ -7,4 +7,11 @@
         <shortDescription>detailed description</shortDescription>
         <value>detailed description</value>
     </labels>
+    <labels>
+        <fullName>test2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>test2</shortDescription>
+        <value>hola</value>
+    </labels>
 </CustomLabels>
