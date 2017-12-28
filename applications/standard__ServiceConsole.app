@@ -167,6 +167,12 @@
         <location>full</location>
     </listPlacement>
     <listRefreshMethod>none</listRefreshMethod>
+    <pushNotifications>
+        <pushNotification>
+            <fieldNames>Owner</fieldNames>
+            <objectName>Lead</objectName>
+        </pushNotification>
+    </pushNotifications>
     <saveUserSessions>true</saveUserSessions>
     <tab>standard-Account</tab>
     <tab>standard-Contact</tab>
