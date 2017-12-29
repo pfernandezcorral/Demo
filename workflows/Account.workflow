@@ -9,14 +9,6 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>test10</fullName>
-        <field>Website</field>
-        <name>test10</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Literal</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>test2</fullName>
         <field>AccountNumber</field>
         <name>test2</name>
