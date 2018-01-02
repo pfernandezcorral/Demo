@@ -9,6 +9,14 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Update102</fullName>
+        <field>PotentialLiability__c</field>
+        <name>Update10(2)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>PreviousValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Update2</fullName>
         <field>Reason</field>
         <name>Update2</name>
@@ -77,6 +85,10 @@
         <fullName>charlie</fullName>
         <actions>
             <name>Update1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update102</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>
