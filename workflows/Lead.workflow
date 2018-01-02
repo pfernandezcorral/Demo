@@ -10,14 +10,6 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Update10</fullName>
-        <field>Phone</field>
-        <name>Update10</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Null</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>Update2</fullName>
         <field>City</field>
         <name>Update2</name>
