@@ -17,14 +17,6 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Update2</fullName>
-        <field>AssistantPhone</field>
-        <name>Update2</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Null</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>Update3</fullName>
         <field>Birthdate</field>
         <name>Update3</name>
