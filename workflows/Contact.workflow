@@ -83,6 +83,14 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>test10</fullName>
+        <field>OtherStreet</field>
+        <name>test10</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>test2</fullName>
         <field>Birthdate</field>
         <name>test2</name>
@@ -152,6 +160,10 @@
         <fullName>brown</fullName>
         <actions>
             <name>test1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>test10</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>
