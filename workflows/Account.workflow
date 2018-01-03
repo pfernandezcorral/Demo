@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldUpdates>
+        <fullName>Update2</fullName>
+        <field>Site</field>
+        <name>Update2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update6</fullName>
+        <field>BillingCity</field>
+        <name>Update6</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update7</fullName>
+        <field>BillingCountry</field>
+        <name>Update7</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update8</fullName>
+        <field>BillingLatitude</field>
+        <name>Update8</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update9</fullName>
+        <field>ShippingCity</field>
+        <name>Update9</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>snoopy1</fullName>
         <field>AccountNumber</field>
         <name>snoopy1</name>
@@ -8,6 +48,84 @@
         <operation>Null</operation>
         <protected>false</protected>
     </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update1</fullName>
+        <field>AccountNumber</field>
+        <name>update1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update3</fullName>
+        <field>AccountSource</field>
+        <name>update3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>PreviousValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update4</fullName>
+        <field>AnnualRevenue</field>
+        <name>update4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update5</fullName>
+        <field>AnnualRevenue</field>
+        <name>update5</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>brown</fullName>
+        <actions>
+            <name>Update2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update6</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update7</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update8</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update9</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update5</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Name</field>
+            <operation>contains</operation>
+            <value>test</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
     <rules>
         <fullName>snoopy</fullName>
         <actions>
