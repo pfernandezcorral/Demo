@@ -156,10 +156,6 @@
             <type>FieldUpdate</type>
         </actions>
         <actions>
-            <name>test10</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
             <name>test2</name>
             <type>FieldUpdate</type>
         </actions>
