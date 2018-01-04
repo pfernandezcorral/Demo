@@ -10,7 +10,7 @@
     </shares>
     <shares>
         <accessLevel>View</accessLevel>
-        <sharedTo>trailhead12.eyuypnq7jwxv@example.com</sharedTo>
+        <sharedTo>{!Environment.username2}</sharedTo>
         <sharedToType>User</sharedToType>
     </shares>
     <templateOrigin>sfdc_internal__Sales_Analytics</templateOrigin>
