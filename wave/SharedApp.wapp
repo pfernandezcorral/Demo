@@ -7,9 +7,4 @@
         <sharedTo>AllInternalUsers</sharedTo>
         <sharedToType>Organization</sharedToType>
     </shares>
-    <shares>
-        <accessLevel>Manage</accessLevel>
-        <sharedTo>integration@00d58000000asbqeaq.com</sharedTo>
-        <sharedToType>User</sharedToType>
-    </shares>
 </WaveApplication>
