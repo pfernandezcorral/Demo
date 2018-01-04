@@ -6,7 +6,7 @@
     <masterLabel>My Exploration</masterLabel>
     <shares>
         <accessLevel>Manage</accessLevel>
-        <sharedTo>arturowave@gmail.com</sharedTo>
+        <sharedTo>{!Environment.VAR_USERNAME}</sharedTo>
         <sharedToType>User</sharedToType>
     </shares>
 </WaveApplication>
