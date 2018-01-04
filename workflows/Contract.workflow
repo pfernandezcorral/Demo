@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldUpdates>
+        <fullName>Update10</fullName>
+        <field>ShippingStreet</field>
+        <name>Update10</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Update5</fullName>
         <field>ShippingGeocodeAccuracy</field>
         <name>Update5</name>
@@ -74,6 +82,10 @@
     </fieldUpdates>
     <rules>
         <fullName>contract</fullName>
+        <actions>
+            <name>Update10</name>
+            <type>FieldUpdate</type>
+        </actions>
         <actions>
             <name>Update5</name>
             <type>FieldUpdate</type>
