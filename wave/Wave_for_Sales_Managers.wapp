@@ -5,6 +5,11 @@
     <masterLabel>Wave for Sales Managers</masterLabel>
     <shares>
         <accessLevel>Manage</accessLevel>
+        <sharedTo>AllInternalUsers</sharedTo>
+        <sharedToType>Organization</sharedToType>
+    </shares>
+    <shares>
+        <accessLevel>Manage</accessLevel>
         <sharedTo>{!Environment.VAR_USERNAME}</sharedTo>
         <sharedToType>User</sharedToType>
     </shares>
