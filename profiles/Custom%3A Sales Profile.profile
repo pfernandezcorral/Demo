@@ -1445,6 +1445,22 @@
     <layoutAssignments>
         <layout>UserProvisioningRequest-User Provisioning Request Layout</layout>
     </layoutAssignments>
+    <loginHours>
+        <fridayEnd>1440</fridayEnd>
+        <fridayStart>60</fridayStart>
+        <mondayEnd>1440</mondayEnd>
+        <mondayStart>60</mondayStart>
+        <saturdayEnd>1440</saturdayEnd>
+        <saturdayStart>60</saturdayStart>
+        <sundayEnd>1440</sundayEnd>
+        <sundayStart>60</sundayStart>
+        <thursdayEnd>1440</thursdayEnd>
+        <thursdayStart>60</thursdayStart>
+        <tuesdayEnd>1440</tuesdayEnd>
+        <tuesdayStart>60</tuesdayStart>
+        <wednesdayEnd>1440</wednesdayEnd>
+        <wednesdayStart>60</wednesdayStart>
+    </loginHours>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -1768,10 +1784,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>DeleteTopics</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>DistributeFromPersWksp</name>
     </userPermissions>
     <userPermissions>
@@ -1820,11 +1832,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ManageEncryptionKeys</name>
+        <name>ManageCssUsers</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>MergeTopics</name>
+        <name>ManageEncryptionKeys</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -1857,6 +1869,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewEventLogFiles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewGlobalHeader</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
