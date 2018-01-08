@@ -1453,6 +1453,7 @@
         <saturdayEnd>1440</saturdayEnd>
         <saturdayStart>60</saturdayStart>
         <sundayEnd>1440</sundayEnd>
+        <sundayStart>60</sundayStart>
         <thursdayEnd>1440</thursdayEnd>
         <thursdayStart>60</thursdayStart>
         <tuesdayEnd>1440</tuesdayEnd>
