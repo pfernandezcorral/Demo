@@ -177,7 +177,7 @@
     </fields>
     <label>Account Event</label>
     <nameField>
-        <label>Account Event Name</label>
+        <label>Account Event Name1</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>Account Events</pluralLabel>
