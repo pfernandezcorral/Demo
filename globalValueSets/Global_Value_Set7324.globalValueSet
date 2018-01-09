@@ -16,9 +16,9 @@
         <label>Test3</label>
     </customValue>
     <customValue>
-        <fullName>Test4</fullName>
+        <fullName>Test5</fullName>
         <default>false</default>
-        <label>Test4</label>
+        <label>Test5</label>
     </customValue>
     <masterLabel>Global Value Set7324</masterLabel>
     <sorted>false</sorted>
