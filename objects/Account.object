@@ -335,6 +335,11 @@
                     <default>false</default>
                     <label>Test4</label>
                 </value>
+                <value>
+                    <fullName>Test5</fullName>
+                    <default>false</default>
+                    <label>Test5</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -455,6 +460,10 @@
             </values>
             <values>
                 <fullName>Test4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test5</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
