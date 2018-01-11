@@ -306,6 +306,39 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Thomson__c</fullName>
+        <externalId>false</externalId>
+        <label>Thomson</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Test1</fullName>
+                    <default>false</default>
+                    <label>Test1</label>
+                </value>
+                <value>
+                    <fullName>Test2</fullName>
+                    <default>false</default>
+                    <label>Test2</label>
+                </value>
+                <value>
+                    <fullName>Test3</fullName>
+                    <default>false</default>
+                    <label>Test3</label>
+                </value>
+                <value>
+                    <fullName>Test4</fullName>
+                    <default>false</default>
+                    <label>Test4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>TickerSymbol</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -406,6 +439,25 @@
         <fullName>Recordtype7324</fullName>
         <active>true</active>
         <label>Recordtype7324</label>
+        <picklistValues>
+            <picklist>Thomson__c</picklist>
+            <values>
+                <fullName>Test1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Picklist7324__c</picklist>
             <values>
