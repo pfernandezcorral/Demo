@@ -373,6 +373,11 @@
         <label>Platinum and Gold SLA Customers</label>
     </listViews>
     <recordTypes>
+        <fullName>Recordtype7324</fullName>
+        <active>true</active>
+        <label>Recordtype7324</label>
+    </recordTypes>
+    <recordTypes>
         <fullName>Sales_Accounts</fullName>
         <active>true</active>
         <description>Record types used for sales</description>
