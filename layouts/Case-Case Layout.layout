@@ -100,10 +100,6 @@
                 <behavior>Required</behavior>
                 <field>Origin</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>IsEscalated</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

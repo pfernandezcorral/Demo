@@ -23,6 +23,10 @@
                 <behavior>Edit</behavior>
                 <field>CampaignId</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Operating_Unit__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -36,10 +40,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>IsPrivate</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>ForecastCategoryName</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

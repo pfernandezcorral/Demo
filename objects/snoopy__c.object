@@ -53,7 +53,7 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>snoopytest__c</fullName>
+        <fullName>snoopytester__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>snoopytest</label>

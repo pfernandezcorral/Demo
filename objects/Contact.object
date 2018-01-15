@@ -236,18 +236,6 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Status__c</fullName>
-        <externalId>false</externalId>
-        <label>Status</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetName>Status</valueSetName>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Title</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>

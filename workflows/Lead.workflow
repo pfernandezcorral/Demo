@@ -51,6 +51,15 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Update6</fullName>
+        <field>HasOptedOutOfEmail</field>
+        <literalValue>1</literalValue>
+        <name>Update6</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Update62</fullName>
         <field>GeocodeAccuracy</field>
         <name>Update6(2)</name>

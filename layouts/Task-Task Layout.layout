@@ -29,6 +29,14 @@
                 <behavior>Required</behavior>
                 <field>Priority</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>US_0001372__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>hola__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

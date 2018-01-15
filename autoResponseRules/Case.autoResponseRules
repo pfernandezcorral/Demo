@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
-    <autoResponseRule>
-        <fullName>test autoresponse</fullName>
-        <active>true</active>
-        <ruleEntry>
-            <senderEmail>pfernandezcorral{!Environment.VAR_USERNAME}</senderEmail>
-            <senderName>Noreply</senderName>
-            <template>unfiled$public/MarketingProductInquiryResponse</template>
-        </ruleEntry>
-    </autoResponseRule>
-</AutoResponseRules>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata"/>
+

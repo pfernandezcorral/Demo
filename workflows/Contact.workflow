@@ -8,6 +8,21 @@
         <operation>Null</operation>
         <protected>false</protected>
     </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update10</fullName>
+        <field>Title</field>
+        <name>Update10</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update2</fullName>
+        <field>AssistantPhone</field>
+        <name>Update2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Update3</fullName>
@@ -51,6 +66,15 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Update8</fullName>
+        <field>HasOptedOutOfEmail</field>
+        <literalValue>1</literalValue>
+        <name>Update8</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Update9</fullName>
         <field>LeadSource</field>
         <name>Update9</name>
@@ -72,6 +96,14 @@
         <name>test10</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>test101</fullName>
+        <field>Salutation</field>
+        <name>test10</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>PreviousValue</operation>
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
@@ -147,6 +179,10 @@
             <type>FieldUpdate</type>
         </actions>
         <actions>
+            <name>test101</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
             <name>test2</name>
             <type>FieldUpdate</type>
         </actions>
@@ -178,7 +214,7 @@
             <name>test9</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <criteriaItems>
             <field>Contact.AccountName</field>
             <operation>contains</operation>

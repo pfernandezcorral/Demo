@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Test</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+    </actionOverrides>
     <formFactors>Small</formFactors>
     <formFactors>Medium</formFactors>
     <formFactors>Large</formFactors>
@@ -21,5 +30,6 @@
     <tab>standard-OtherUserProfile</tab>
     <tab>standard-Case</tab>
     <tab>standard-Forecasting3</tab>
+    <tab>snoopy__c</tab>
     <uiType>Lightning</uiType>
 </CustomApplication>

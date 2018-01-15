@@ -9,9 +9,9 @@
         <feedItemType>EmailMessageEvent</feedItemType>
     </caseFeedItemSettings>
     <closeCaseThroughStatusChange>false</closeCaseThroughStatusChange>
-    <defaultCaseOwner>pfernandezcorral@testorg5.com</defaultCaseOwner>
+    <defaultCaseOwner>pfernandezcorral@testorg.2.com</defaultCaseOwner>
     <defaultCaseOwnerType>User</defaultCaseOwnerType>
-    <defaultCaseUser>pfernandezcorral@testorg5.com</defaultCaseUser>
+    <defaultCaseUser>pfernandezcorral@testorg.2.com</defaultCaseUser>
     <emailToCase>
         <enableEmailToCase>false</enableEmailToCase>
     </emailToCase>

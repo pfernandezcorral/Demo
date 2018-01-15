@@ -15,4 +15,5 @@
     <tab>standard-Product2</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
+    <tab>snoopy__c</tab>
 </CustomApplication>

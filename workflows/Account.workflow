@@ -145,49 +145,49 @@
         <protected>false</protected>
     </fieldUpdates>
     <rules>
-        <fullName>brown</fullName>
+        <fullName>Account test</fullName>
         <actions>
-            <name>Update2</name>
+            <name>Field_update1</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>
-            <name>Update6</name>
+            <name>test2</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>
-            <name>Update7</name>
+            <name>test3</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>
-            <name>Update8</name>
+            <name>test4</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>
-            <name>Update9</name>
+            <name>test5</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>
-            <name>update1</name>
+            <name>test6</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>
-            <name>update3</name>
+            <name>test7</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>
-            <name>update4</name>
+            <name>test8</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>
-            <name>update5</name>
+            <name>test9</name>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
         <criteriaItems>
             <field>Account.Name</field>
-            <operation>contains</operation>
+            <operation>equals</operation>
             <value>test</value>
         </criteriaItems>
-        <triggerType>onCreateOnly</triggerType>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
 </Workflow>
