@@ -141,6 +141,16 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Last_Follow_up_email__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Follow up email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Origin</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
