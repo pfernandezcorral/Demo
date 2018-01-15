@@ -75,10 +75,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>AccountOperationsTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>ChangePasswordController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
