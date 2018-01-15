@@ -33,6 +33,33 @@
         <type>Default</type>
     </actionOverrides>
     <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>hola__c</fullName>
+        <externalId>false</externalId>
+        <label>hola</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>hola1</fullName>
+                    <default>false</default>
+                    <label>hola1</label>
+                </value>
+                <value>
+                    <fullName>hola2</fullName>
+                    <default>false</default>
+                    <label>hola2</label>
+                </value>
+                <value>
+                    <fullName>hola3</fullName>
+                    <default>false</default>
+                    <label>hola3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
     <listViews>
         <fullName>AllActivities</fullName>
         <filterScope>Team</filterScope>
