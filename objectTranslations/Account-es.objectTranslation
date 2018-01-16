@@ -3,27 +3,27 @@
     <layouts>
         <layout>Account (Marketing) Layout</layout>
         <sections>
-            <label>Hierarquia da comnta</label>
+            <label><!-- Account hierarchy --></label>
             <section>Account hierarchy</section>
         </sections>
         <sections>
-            <label>Endereco</label>
+            <label>Informacion direccion</label>
             <section>Address information2</section>
         </sections>
         <sections>
-            <label>URLSs</label>
+            <label><!-- Credit Warning --></label>
             <section>Credit Warning</section>
         </sections>
         <sections>
-            <label>Telefones</label>
+            <label>Telefonos</label>
             <section>Phone numbers</section>
         </sections>
         <sections>
-            <label>Segmentacao</label>
+            <label>Segmetacion</label>
             <section>Segmentation</section>
         </sections>
         <sections>
-            <label></label>
+            <label><!-- test2 --></label>
             <section>test2</section>
         </sections>
     </layouts>
