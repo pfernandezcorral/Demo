@@ -3,7 +3,7 @@
     <layouts>
         <layout>Account (Marketing) Layout</layout>
         <sections>
-            <label><!-- Account hierarchy --></label>
+            <label></label>
             <section>Account hierarchy</section>
         </sections>
         <sections>
@@ -11,7 +11,7 @@
             <section>Address information2</section>
         </sections>
         <sections>
-            <label><!-- Credit Warning --></label>
+            <label></label>
             <section>Credit Warning</section>
         </sections>
         <sections>
@@ -23,7 +23,7 @@
             <section>Segmentation</section>
         </sections>
         <sections>
-            <label><!-- test2 --></label>
+            <label></label>
             <section>test2</section>
         </sections>
     </layouts>
