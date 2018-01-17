@@ -175,6 +175,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
+    <description>This is a test description</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.AccountNumber</field>
