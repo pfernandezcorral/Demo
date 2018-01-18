@@ -109,12 +109,7 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Phone numbers</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>External_Id__c</field>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
         <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
