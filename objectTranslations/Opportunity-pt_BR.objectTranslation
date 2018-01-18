@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Opportunity (Marketing) Layout</layout>
+        <sections>
+            <label>Hierarquia da comnta</label>
+            <section>Account hiearchy</section>
+        </sections>
+        <sections>
+            <label>Endereco</label>
+            <section>Address information2</section>
+        </sections>
+        <sections>
+            <label>URLSs</label>
+            <section>Credit Warning</section>
+        </sections>
+        <sections>
+            <label>Telefones</label>
+            <section>Phone numbers</section>
+        </sections>
+        <sections>
+            <label>Segmentacao</label>
+            <section>Segmentation</section>
+        </sections>
+        <sections>
+            <label><!-- test2 --></label>
+            <section>test2</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>
