@@ -410,6 +410,12 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>case7450__c</fullName>
+        <externalId>false</externalId>
+        <label>case7450</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>snoopy__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
