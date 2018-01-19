@@ -454,6 +454,11 @@
                     <default>false</default>
                     <label>test3</label>
                 </value>
+                <value>
+                    <fullName>test4</fullName>
+                    <default>false</default>
+                    <label>test4</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -510,7 +515,7 @@
         <active>true</active>
         <label>Recordtype7324</label>
         <picklistValues>
-            <picklist>enernoc2__c</picklist>
+            <picklist>enernoc__c</picklist>
             <values>
                 <fullName>test1</fullName>
                 <default>false</default>
@@ -523,9 +528,13 @@
                 <fullName>test3</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>test4</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
-            <picklist>enernoc__c</picklist>
+            <picklist>enernoc2__c</picklist>
             <values>
                 <fullName>test1</fullName>
                 <default>false</default>
