@@ -388,6 +388,76 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>enernoc2__c</fullName>
+        <externalId>false</externalId>
+        <label>enernoc2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>enernoc__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>test1</fullName>
+                    <default>false</default>
+                    <label>test1</label>
+                </value>
+                <value>
+                    <fullName>test2</fullName>
+                    <default>false</default>
+                    <label>test2</label>
+                </value>
+                <value>
+                    <fullName>test3</fullName>
+                    <default>false</default>
+                    <label>test3</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>test1</controllingFieldValue>
+                <valueName>test1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>test2</controllingFieldValue>
+                <valueName>test2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>test3</controllingFieldValue>
+                <valueName>test3</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>enernoc__c</fullName>
+        <externalId>false</externalId>
+        <label>enernoc</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>test1</fullName>
+                    <default>false</default>
+                    <label>test1</label>
+                </value>
+                <value>
+                    <fullName>test2</fullName>
+                    <default>false</default>
+                    <label>test2</label>
+                </value>
+                <value>
+                    <fullName>test3</fullName>
+                    <default>false</default>
+                    <label>test3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>snoopy__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -439,6 +509,36 @@
         <fullName>Recordtype7324</fullName>
         <active>true</active>
         <label>Recordtype7324</label>
+        <picklistValues>
+            <picklist>enernoc2__c</picklist>
+            <values>
+                <fullName>test1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>test2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>test3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>enernoc__c</picklist>
+            <values>
+                <fullName>test1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>test2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>test3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Thomson__c</picklist>
             <values>
