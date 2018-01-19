@@ -332,6 +332,39 @@
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <fields>
+        <fullName>enernoc__c</fullName>
+        <externalId>false</externalId>
+        <label>enernoc</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>test1</fullName>
+                    <default>false</default>
+                    <label>test1</label>
+                </value>
+                <value>
+                    <fullName>test2</fullName>
+                    <default>false</default>
+                    <label>test2</label>
+                </value>
+                <value>
+                    <fullName>test3</fullName>
+                    <default>false</default>
+                    <label>test3</label>
+                </value>
+                <value>
+                    <fullName>test4</fullName>
+                    <default>false</default>
+                    <label>test4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
         <filterScope>Everything</filterScope>
@@ -376,6 +409,25 @@
         <fullName>Recordtype7324</fullName>
         <active>true</active>
         <label>Recordtype7324</label>
+        <picklistValues>
+            <picklist>enernoc__c</picklist>
+            <values>
+                <fullName>test1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>test2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>test3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>test4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>Sales_Accounts</fullName>
