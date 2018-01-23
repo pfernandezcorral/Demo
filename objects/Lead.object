@@ -78,6 +78,7 @@
     <fields>
         <fullName>Address</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>AnnualRevenue</fullName>
