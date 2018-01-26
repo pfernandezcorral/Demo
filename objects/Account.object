@@ -589,10 +589,6 @@
                 <fullName>Test3</fullName>
                 <default>false</default>
             </values>
-            <values>
-                <fullName>Test4</fullName>
-                <default>false</default>
-            </values>
         </picklistValues>
     </recordTypes>
     <recordTypes>
