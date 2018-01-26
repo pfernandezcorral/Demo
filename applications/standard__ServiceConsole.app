@@ -173,10 +173,6 @@
             <objectName>Account</objectName>
         </pushNotification>
         <pushNotification>
-            <fieldNames>Reason</fieldNames>
-            <objectName>Case</objectName>
-        </pushNotification>
-        <pushNotification>
             <fieldNames>Owner</fieldNames>
             <objectName>Lead</objectName>
         </pushNotification>
@@ -187,11 +183,7 @@
     <tab>standard-Case</tab>
     <tab>standard-Opportunity</tab>
     <tab>standard-Lead</tab>
-    <tab>snoopy__c</tab>
     <workspaceMappings>
-        <mapping>
-            <tab>snoopy__c</tab>
-        </mapping>
         <mapping>
             <tab>standard-Account</tab>
         </mapping>
