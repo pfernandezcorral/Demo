@@ -88,6 +88,15 @@
         <filterScope>Mine</filterScope>
         <label>My Service Resources</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_ServiceResource</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>RelatedRecord</customTabListAdditionalFields>
         <customTabListAdditionalFields>ResourceType</customTabListAdditionalFields>

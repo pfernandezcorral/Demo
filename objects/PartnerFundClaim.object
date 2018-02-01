@@ -86,6 +86,15 @@
         <filterScope>Mine</filterScope>
         <label>My Partner Fund Claims</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_PartnerFundClaim</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>Request</customTabListAdditionalFields>
         <customTabListAdditionalFields>ChannelPartner</customTabListAdditionalFields>

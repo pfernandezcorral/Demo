@@ -1,154 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
-        <label></label>
+        <label><!-- Active --></label>
         <name>Active__c</name>
         <picklistValues>
             <masterLabel>No</masterLabel>
-            <translation></translation>
+            <translation><!-- No --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Yes</masterLabel>
-            <translation></translation>
+            <translation><!-- Yes --></translation>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Customer Priority --></label>
         <name>CustomerPriority__c</name>
         <picklistValues>
             <masterLabel>High</masterLabel>
-            <translation></translation>
+            <translation><!-- High --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Low</masterLabel>
-            <translation></translation>
+            <translation><!-- Low --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Medium</masterLabel>
-            <translation></translation>
+            <translation><!-- Medium --></translation>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- External Id --></label>
         <name>External_Id__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Number of Locations --></label>
         <name>NumberofLocations__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Picklist7324 --></label>
         <name>Picklist7324__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- SLA Expiration Date --></label>
         <name>SLAExpirationDate__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- SLA Serial Number --></label>
         <name>SLASerialNumber__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- SLA --></label>
         <name>SLA__c</name>
         <picklistValues>
             <masterLabel>Bronze</masterLabel>
-            <translation></translation>
+            <translation><!-- Bronze --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Gold</masterLabel>
-            <translation></translation>
+            <translation><!-- Gold --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Platinum</masterLabel>
-            <translation></translation>
+            <translation><!-- Platinum --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Silver</masterLabel>
-            <translation></translation>
+            <translation><!-- Silver --></translation>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Thomson --></label>
         <name>Thomson__c</name>
         <picklistValues>
             <masterLabel>Test1</masterLabel>
-            <translation></translation>
+            <translation><!-- Test1 --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Test2</masterLabel>
-            <translation></translation>
+            <translation><!-- Test2 --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Test3</masterLabel>
-            <translation></translation>
+            <translation><!-- Test3 --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Test4</masterLabel>
-            <translation></translation>
+            <translation><!-- Test4 --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Test5</masterLabel>
-            <translation></translation>
+            <translation><!-- Test5 --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Test6</masterLabel>
-            <translation></translation>
+            <translation><!-- Test6 --></translation>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Upsell Opportunity --></label>
         <name>UpsellOpportunity__c</name>
         <picklistValues>
             <masterLabel>Maybe</masterLabel>
-            <translation></translation>
+            <translation><!-- Maybe --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>No</masterLabel>
-            <translation></translation>
+            <translation><!-- No --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Yes</masterLabel>
-            <translation></translation>
+            <translation><!-- Yes --></translation>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- case7450 --></label>
+        <name>case7450__c</name>
+    </fields>
+    <fields>
+        <label><!-- enernoc2 --></label>
+        <name>enernoc2__c</name>
+        <picklistValues>
+            <masterLabel>test1</masterLabel>
+            <translation><!-- test1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test2</masterLabel>
+            <translation><!-- test2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test3</masterLabel>
+            <translation><!-- test3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- enernoc3 --></label>
+        <name>enernoc3__c</name>
+        <picklistValues>
+            <masterLabel>test1</masterLabel>
+            <translation><!-- test1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test2</masterLabel>
+            <translation><!-- test2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test3</masterLabel>
+            <translation><!-- test3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- enernoc --></label>
+        <name>enernoc__c</name>
+        <picklistValues>
+            <masterLabel>test1</masterLabel>
+            <translation><!-- test1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test2</masterLabel>
+            <translation><!-- test2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test3</masterLabel>
+            <translation><!-- test3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test4</masterLabel>
+            <translation><!-- test4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- snoopy --></label>
         <name>snoopy__c</name>
     </fields>
-    <layouts>
-        <layout>Account (Marketing) Layout</layout>
-        <sections>
-            <label></label>
-            <section>Account hierarchy</section>
-        </sections>
-        <sections>
-            <label>Informacion direccion</label>
-            <section>Address information2</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Credit Warning</section>
-        </sections>
-        <sections>
-            <label>Telefonos</label>
-            <section>Phone numbers</section>
-        </sections>
-        <sections>
-            <label>Segmetacion</label>
-            <section>Segmentation</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>test2</section>
-        </sections>
-    </layouts>
     <recordTypes>
-        <label></label>
+        <label><!-- Recordtype7324 --></label>
         <name>Recordtype7324</name>
     </recordTypes>
+    <recordTypes>
+        <label><!-- Sales Accounts --></label>
+        <name>Sales_Accounts</name>
+    </recordTypes>
     <webLinks>
-        <label></label>
+        <label><!-- Billing --></label>
         <name>Billing</name>
     </webLinks>
 </CustomObjectTranslation>

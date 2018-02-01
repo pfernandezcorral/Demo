@@ -237,6 +237,15 @@
         <filterScope>Mine</filterScope>
         <label>My Work Orders</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_WorkOrder</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>Subject</customTabListAdditionalFields>
         <customTabListAdditionalFields>Account</customTabListAdditionalFields>

@@ -155,6 +155,15 @@
         <filterScope>Mine</filterScope>
         <label>My Service Appointments</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_ServiceAppointment</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>ParentRecord</customTabListAdditionalFields>
         <customTabListAdditionalFields>ParentRecordType</customTabListAdditionalFields>

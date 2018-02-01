@@ -76,6 +76,15 @@
         <filterScope>Mine</filterScope>
         <label>My Product Items</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_ProductItem</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>Product2</customTabListAdditionalFields>
         <customTabListAdditionalFields>Location</customTabListAdditionalFields>

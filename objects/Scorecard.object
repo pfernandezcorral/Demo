@@ -44,5 +44,14 @@
     <fields>
         <fullName>Name</fullName>
     </fields>
+    <listViews>
+        <fullName>testqueue_Scorecard</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <sharingModel>Private</sharingModel>
 </CustomObject>

@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>hello1</fullName>
+        <description>hello1</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CommunityChangePasswordEmailTemplate</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Update1</fullName>
         <field>AssistantName</field>
@@ -219,6 +230,20 @@
             <field>Contact.AccountName</field>
             <operation>contains</operation>
             <value>test</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>test</fullName>
+        <actions>
+            <name>hello1</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.DoNotCall</field>
+            <operation>equals</operation>
+            <value>True</value>
         </criteriaItems>
         <triggerType>onCreateOnly</triggerType>
     </rules>

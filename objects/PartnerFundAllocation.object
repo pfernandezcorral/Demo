@@ -84,6 +84,15 @@
         <filterScope>Mine</filterScope>
         <label>My Partner Fund Allocations</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_PartnerFundAllocation</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>Budget</customTabListAdditionalFields>
         <customTabListAdditionalFields>ChannelPartner</customTabListAdditionalFields>

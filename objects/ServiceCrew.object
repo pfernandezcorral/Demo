@@ -61,6 +61,15 @@
         <filterScope>Mine</filterScope>
         <label>My Service Crews</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_ServiceCrew</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>CrewSize</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>CrewSize</lookupDialogsAdditionalFields>

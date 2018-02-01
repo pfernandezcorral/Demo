@@ -135,6 +135,15 @@
         <filterScope>Mine</filterScope>
         <label>My Product Transfers</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_ProductTransfer</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>LastModifiedDate</customTabListAdditionalFields>
         <customTabListAdditionalFields>LastModifiedBy</customTabListAdditionalFields>

@@ -108,6 +108,15 @@
         <filterScope>Mine</filterScope>
         <label>My Partner Fund Requests</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_PartnerFundRequest</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>Allocation</customTabListAdditionalFields>
         <customTabListAdditionalFields>Budget</customTabListAdditionalFields>

@@ -29,12 +29,12 @@
                 <field>Department</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Languages__c</field>
+                <behavior>Readonly</behavior>
+                <field>label1__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Level__c</field>
+                <field>language1__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

@@ -78,7 +78,6 @@
     <fields>
         <fullName>Address</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>AnnualRevenue</fullName>
@@ -327,6 +326,15 @@
         <columns>LEAD.LEAD_SOURCE</columns>
         <filterScope>Everything</filterScope>
         <label>View - Custom 2</label>
+    </listViews>
+    <listViews>
+        <fullName>testqueue_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>

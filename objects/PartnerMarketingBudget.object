@@ -89,6 +89,15 @@
         <filterScope>Mine</filterScope>
         <label>My Partner Marketing Budgets</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_PartnerMarketingBudget</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>Description</customTabListAdditionalFields>
         <customTabListAdditionalFields>Amount</customTabListAdditionalFields>

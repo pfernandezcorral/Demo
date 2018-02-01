@@ -105,6 +105,15 @@
         <filterScope>Mine</filterScope>
         <label>My Product Requests</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_ProductRequest</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>LastModifiedDate</customTabListAdditionalFields>
         <customTabListAdditionalFields>LastModifiedBy</customTabListAdditionalFields>

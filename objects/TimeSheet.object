@@ -75,6 +75,15 @@
         <filterScope>Mine</filterScope>
         <label>My Time Sheets</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_TimeSheet</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>LastModifiedDate</customTabListAdditionalFields>
         <customTabListAdditionalFields>LastModifiedBy</customTabListAdditionalFields>

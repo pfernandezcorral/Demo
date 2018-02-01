@@ -70,6 +70,15 @@
         <filterScope>Mine</filterScope>
         <label>My Channel Programs</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_ChannelProgram</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>Category</customTabListAdditionalFields>
         <customTabListAdditionalFields>IsActive</customTabListAdditionalFields>

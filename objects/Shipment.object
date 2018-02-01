@@ -110,6 +110,15 @@
         <filterScope>Mine</filterScope>
         <label>My Shipments</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_Shipment</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>LastModifiedDate</customTabListAdditionalFields>
         <customTabListAdditionalFields>LastModifiedBy</customTabListAdditionalFields>

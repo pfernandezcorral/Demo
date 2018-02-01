@@ -133,6 +133,15 @@
         <filterScope>Mine</filterScope>
         <label>My Locations</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_Location</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>LocationType</customTabListAdditionalFields>
         <customTabListAdditionalFields>VisitorAddress</customTabListAdditionalFields>

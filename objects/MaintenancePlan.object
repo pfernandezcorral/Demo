@@ -125,6 +125,15 @@
         <filterScope>Mine</filterScope>
         <label>My Maintenance Plans</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_MaintenancePlan</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>MaintenancePlanTitle</customTabListAdditionalFields>
         <customTabListAdditionalFields>WorkType</customTabListAdditionalFields>

@@ -65,6 +65,15 @@
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
+    <listViews>
+        <fullName>testqueue_QuickText</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>Message</customTabListAdditionalFields>
         <customTabListAdditionalFields>Category</customTabListAdditionalFields>

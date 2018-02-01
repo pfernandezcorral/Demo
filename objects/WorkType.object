@@ -86,6 +86,15 @@
         <filterScope>Mine</filterScope>
         <label>My Work Types</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_WorkType</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>EstimatedDuration</customTabListAdditionalFields>
         <customTabListAdditionalFields>DurationType</customTabListAdditionalFields>
