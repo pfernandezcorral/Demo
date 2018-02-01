@@ -180,6 +180,10 @@
         <label><!-- Sales Accounts --></label>
         <name>Sales_Accounts</name>
     </recordTypes>
+    <validationRules>
+        <errorMessage><!-- cannot be null --></errorMessage>
+        <name>testbackup</name>
+    </validationRules>
     <webLinks>
         <label><!-- Billing --></label>
         <name>Billing</name>
