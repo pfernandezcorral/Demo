@@ -181,7 +181,7 @@
         <name>Sales_Accounts</name>
     </recordTypes>
     <validationRules>
-        <errorMessage><!-- cannot be null --></errorMessage>
+        <errorMessage><!-- cannot be null1 --></errorMessage>
         <name>testbackup</name>
     </validationRules>
     <webLinks>
