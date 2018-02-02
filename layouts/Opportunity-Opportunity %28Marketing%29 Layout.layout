@@ -41,12 +41,7 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Account hiearchy</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Operating_Unit__c</field>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
         <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>

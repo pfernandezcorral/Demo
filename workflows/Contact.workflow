@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>hello1</fullName>
+        <description>hello1</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CommunityChangePasswordEmailTemplate</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Update1</fullName>
         <field>AssistantName</field>
         <name>Update1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update10</fullName>
+        <field>Title</field>
+        <name>Update10</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Null</operation>
         <protected>false</protected>
@@ -53,6 +72,15 @@
         <field>DoNotCall</field>
         <literalValue>1</literalValue>
         <name>Update7</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update8</fullName>
+        <field>HasOptedOutOfEmail</field>
+        <literalValue>1</literalValue>
+        <name>Update8</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
@@ -177,7 +205,7 @@
             <name>test9</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <criteriaItems>
             <field>Contact.AccountName</field>
             <operation>contains</operation>
@@ -189,6 +217,10 @@
         <fullName>contacttest</fullName>
         <actions>
             <name>Update1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update10</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>

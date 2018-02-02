@@ -83,10 +83,6 @@
     <rules>
         <fullName>contract</fullName>
         <actions>
-            <name>Update10</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
             <name>Update5</name>
             <type>FieldUpdate</type>
         </actions>

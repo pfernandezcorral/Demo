@@ -20,6 +20,12 @@
         <default>false</default>
         <label>Test5</label>
     </customValue>
+    <customValue>
+        <fullName>Test4</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Test4</label>
+    </customValue>
     <masterLabel>Global Value Set7324</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

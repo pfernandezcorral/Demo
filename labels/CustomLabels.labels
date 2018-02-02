@@ -11,7 +11,7 @@
         <fullName>test2</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>test2</shortDescription>
-        <value>hola</value>
+        <shortDescription>test22</shortDescription>
+        <value>hola!!</value>
     </labels>
 </CustomLabels>

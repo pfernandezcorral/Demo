@@ -9,9 +9,9 @@
         <feedItemType>EmailMessageEvent</feedItemType>
     </caseFeedItemSettings>
     <closeCaseThroughStatusChange>false</closeCaseThroughStatusChange>
-    <defaultCaseOwner>{!Environment.VAR_USERNAME}</defaultCaseOwner>
+    <defaultCaseOwner>pfernandezcorral@testorg4.com</defaultCaseOwner>
     <defaultCaseOwnerType>User</defaultCaseOwnerType>
-    <defaultCaseUser>{!Environment.VAR_USERNAME}</defaultCaseUser>
+    <defaultCaseUser>pfernandezcorral@testorg4.com</defaultCaseUser>
     <emailToCase>
         <enableEmailToCase>true</enableEmailToCase>
         <enableHtmlEmail>false</enableHtmlEmail>
@@ -27,8 +27,8 @@
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>pfernandez@copa.do</emailAddress>
-            <emailServicesAddress>pfernandezcorral@x594dqvculazjifd38tvaw7kayxhfqbqavalqtvv1nno7ud3u.1i-3jovhuag.na73.case.salesforce.com</emailServicesAddress>
-            <isVerified>true</isVerified>
+            <emailServicesAddress>pfernandez@gheivn6fw5if8hl1ksjyq7rjc1pnuejz1k450jgep70mcfbme.1i-2lb7wuag.na73.case.salesforce.com</emailServicesAddress>
+            <isVerified>false</isVerified>
             <routingName>this is a test address</routingName>
             <saveEmailHeaders>false</saveEmailHeaders>
         </routingAddresses>

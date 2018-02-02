@@ -173,6 +173,10 @@
             <objectName>Account</objectName>
         </pushNotification>
         <pushNotification>
+            <fieldNames>Reason</fieldNames>
+            <objectName>Case</objectName>
+        </pushNotification>
+        <pushNotification>
             <fieldNames>Owner</fieldNames>
             <objectName>Lead</objectName>
         </pushNotification>

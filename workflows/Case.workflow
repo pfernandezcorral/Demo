@@ -73,6 +73,14 @@
         <operation>PreviousValue</operation>
         <protected>false</protected>
     </fieldUpdates>
+    <fieldUpdates>
+        <fullName>test</fullName>
+        <field>PotentialLiability__c</field>
+        <name>test</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>PreviousValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
     <rules>
         <fullName>charlie</fullName>
         <actions>
