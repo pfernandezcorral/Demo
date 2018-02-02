@@ -26,7 +26,7 @@
             <caseOrigin>Email</caseOrigin>
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
-            <emailAddress>pfernandezcorral@gmail.com</emailAddress>
+            <emailAddress>pfernandez@copa.do</emailAddress>
             <emailServicesAddress>pfernandezcorral@x594dqvculazjifd38tvaw7kayxhfqbqavalqtvv1nno7ud3u.1i-3jovhuag.na73.case.salesforce.com</emailServicesAddress>
             <isVerified>true</isVerified>
             <routingName>this is a test address</routingName>
