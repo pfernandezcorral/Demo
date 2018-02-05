@@ -941,11 +941,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Contact.label1__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Contact.language1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3094,11 +3089,6 @@
         <default>false</default>
         <recordType>Account.Sales_Accounts</recordType>
         <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>Contact.This_is_a_test_recordtype</recordType>
-        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>

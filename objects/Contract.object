@@ -95,6 +95,19 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Days_to_EndDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>EndDate - TODAY()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days to EndDate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackHistory>true</trackHistory>
     </fields>
