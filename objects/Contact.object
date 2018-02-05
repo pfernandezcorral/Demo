@@ -242,12 +242,6 @@
         <type>AutoNumber</type>
     </fields>
     <fields>
-        <fullName>label1__c</fullName>
-        <externalId>false</externalId>
-        <label>label1</label>
-        <type>AutoNumber</type>
-    </fields>
-    <fields>
         <fullName>language1__c</fullName>
         <externalId>false</externalId>
         <label>language1</label>
