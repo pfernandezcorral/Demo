@@ -34,7 +34,7 @@
     </preferences>
     <preferences>
         <settingName>UpgradeInsecureRequestsPref</settingName>
-        <settingValue>true</settingValue>
+        <settingValue>false</settingValue>
     </preferences>
     <preferences>
         <settingName>ReferrerPolicy</settingName>
@@ -82,7 +82,7 @@
     </preferences>
     <preferences>
         <settingName>AnalyticsSharingEnable</settingName>
-        <settingValue>true</settingValue>
+        <settingValue>false</settingValue>
     </preferences>
     <preferences>
         <settingName>VoiceEnabled</settingName>
