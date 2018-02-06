@@ -94,27 +94,6 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
-        <fullName>Contact__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Contact</label>
-        <lookupFilter>
-            <active>true</active>
-            <filterItems>
-                <field>Contact.Account.Id</field>
-                <operation>equals</operation>
-                <valueField>$Source.AccountId</valueField>
-            </filterItems>
-            <isOptional>false</isOptional>
-        </lookupFilter>
-        <referenceTo>Contact</referenceTo>
-        <relationshipLabel>Orders</relationshipLabel>
-        <relationshipName>Orders</relationshipName>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>ContractEndDate</fullName>
     </fields>
     <fields>
