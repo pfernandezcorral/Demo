@@ -187,7 +187,6 @@
     <tab>standard-Case</tab>
     <tab>standard-Opportunity</tab>
     <tab>standard-Lead</tab>
-    <tab>standard-Knowledge</tab>
     <workspaceMappings>
         <mapping>
             <tab>standard-Account</tab>
@@ -199,9 +198,6 @@
         <mapping>
             <fieldName>AccountId</fieldName>
             <tab>standard-Contact</tab>
-        </mapping>
-        <mapping>
-            <tab>standard-Knowledge</tab>
         </mapping>
         <mapping>
             <tab>standard-Lead</tab>
