@@ -22,7 +22,7 @@
     <requireHttps>true</requireHttps>
     <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>pfernandezcorral@testorg4.com</siteAdmin>
+    <siteAdmin>{!Environment.VAR_USERNAME}</siteAdmin>
     <siteType>ChatterNetwork</siteType>
-    <subdomain>testcommunity2patri-developer-edition</subdomain>
+    <subdomain>testcommunitypatri2-developer-edition</subdomain>
 </CustomSite>
