@@ -141,6 +141,16 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Last_Follow_up_email__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Follow up email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Origin</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -182,6 +192,16 @@
                     <fullName>Yes</fullName>
                     <default>false</default>
                     <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>Perhaps</fullName>
+                    <default>false</default>
+                    <label>Perhaps</label>
+                </value>
+                <value>
+                    <fullName>Maybe</fullName>
+                    <default>false</default>
+                    <label>Maybe</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -294,7 +314,7 @@
     </fields>
     <fields>
         <fullName>Status</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -328,22 +348,6 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
-    <fields>
-        <fullName>agf__ADM_Work__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
-        <description>A connection to the Agile Accelerator Work object used to track Bugs, Investigations and User Stories</description>
-        <externalId>false</externalId>
-        <label>Work</label>
-        <referenceTo>agf__ADM_Work__c</referenceTo>
-        <relationshipLabel>Cases</relationshipLabel>
-        <relationshipName>AgileAcceleratorCases</relationshipName>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
     <listViews>
         <fullName>AllClosedCases</fullName>
         <columns>CASES.CASE_NUMBER</columns>
@@ -372,24 +376,6 @@
         <label>All Open Cases</label>
     </listViews>
     <listViews>
-        <fullName>InternationalEscalations</fullName>
-        <filterScope>Queue</filterScope>
-        <label>International - Escalations</label>
-        <queue>InternationalEscalations</queue>
-    </listViews>
-    <listViews>
-        <fullName>InternationalPlatinumGold</fullName>
-        <filterScope>Queue</filterScope>
-        <label>International - Platinum/Gold</label>
-        <queue>InternationalPlatinumGold</queue>
-    </listViews>
-    <listViews>
-        <fullName>InternationalSilverBronze</fullName>
-        <filterScope>Queue</filterScope>
-        <label>International - Silver/Bronze</label>
-        <queue>InternationalSilverBronze</queue>
-    </listViews>
-    <listViews>
         <fullName>MyCases</fullName>
         <filterScope>Mine</filterScope>
         <label>My Cases</label>
@@ -405,28 +391,13 @@
         <label>My Open Cases</label>
     </listViews>
     <listViews>
-        <fullName>PartnerRelations</fullName>
+        <fullName>testqueue_Case</fullName>
         <filterScope>Queue</filterScope>
-        <label>Partner Relations</label>
-        <queue>PartnerRelations</queue>
-    </listViews>
-    <listViews>
-        <fullName>USEscalations</fullName>
-        <filterScope>Queue</filterScope>
-        <label>US - Escalations</label>
-        <queue>USEscalations</queue>
-    </listViews>
-    <listViews>
-        <fullName>USPlatinumGold</fullName>
-        <filterScope>Queue</filterScope>
-        <label>US - Platinum/Gold</label>
-        <queue>USPlatinumGold</queue>
-    </listViews>
-    <listViews>
-        <fullName>USSilverBronze</fullName>
-        <filterScope>Queue</filterScope>
-        <label>US - Silver/Bronze</label>
-        <queue>USSilverBronze</queue>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>

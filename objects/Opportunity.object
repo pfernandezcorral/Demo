@@ -121,6 +121,10 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>IqScore</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
         <fullName>IsPrivate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
@@ -153,6 +157,35 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Operating_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Operating Unit</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>GS</fullName>
+                    <default>false</default>
+                    <label>GS</label>
+                </value>
+                <value>
+                    <fullName>LS</fullName>
+                    <default>false</default>
+                    <label>LS</label>
+                </value>
+                <value>
+                    <fullName>HCIT</fullName>
+                    <default>false</default>
+                    <label>HCIT</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>OrderNumber__c</fullName>
         <externalId>false</externalId>
         <label>Order Number</label>
@@ -166,6 +199,11 @@
     <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PartnerAccountId</fullName>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>

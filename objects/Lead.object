@@ -88,6 +88,10 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>CleanStatus</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>Company</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -177,6 +181,10 @@
     <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PartnerAccountId</fullName>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -273,12 +281,6 @@
         <label>All Open Leads</label>
     </listViews>
     <listViews>
-        <fullName>InternationalLeads</fullName>
-        <filterScope>Queue</filterScope>
-        <label>International Leads</label>
-        <queue>InternationalLeads</queue>
-    </listViews>
-    <listViews>
         <fullName>MyUnreadLeads</fullName>
         <filterScope>Mine</filterScope>
         <filters>
@@ -297,12 +299,6 @@
             <value>TODAY</value>
         </filters>
         <label>Today&apos;s Leads</label>
-    </listViews>
-    <listViews>
-        <fullName>USLeads</fullName>
-        <filterScope>Queue</filterScope>
-        <label>US Leads</label>
-        <queue>USLeads</queue>
     </listViews>
     <listViews>
         <fullName>ViewCustom1</fullName>
@@ -331,6 +327,15 @@
         <filterScope>Everything</filterScope>
         <label>View - Custom 2</label>
     </listViews>
+    <listViews>
+        <fullName>testqueue_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>LEAD.COMPANY</customTabListAdditionalFields>
@@ -351,4 +356,12 @@
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWriteTransfer</sharingModel>
+    <validationRules>
+        <fullName>testvalidationrule</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISNULL(Address),
+OR(NOT ISNULL(City),
+			NOT ISNULL(Country)))</errorConditionFormula>
+        <errorMessage>address cannot be null</errorMessage>
+    </validationRules>
 </CustomObject>

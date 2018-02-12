@@ -41,6 +41,15 @@
         <fullName>UserProvAccountId</fullName>
         <type>Lookup</type>
     </fields>
+    <listViews>
+        <fullName>testqueue_UserProvisioningRequest</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>ConnectedApp</customTabListAdditionalFields>
         <customTabListAdditionalFields>Operation</customTabListAdditionalFields>

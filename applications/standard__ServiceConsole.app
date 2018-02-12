@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <defaultLandingTab>standard-home</defaultLandingTab>
-    <detailPageRefreshMethod>none</detailPageRefreshMethod>
+    <detailPageRefreshMethod>flag</detailPageRefreshMethod>
     <enableCustomizeMyTabs>false</enableCustomizeMyTabs>
     <enableKeyboardShortcuts>true</enableKeyboardShortcuts>
     <enableListViewHover>true</enableListViewHover>
@@ -166,14 +166,27 @@
     <listPlacement>
         <location>full</location>
     </listPlacement>
-    <listRefreshMethod>none</listRefreshMethod>
+    <listRefreshMethod>refreshListRows</listRefreshMethod>
+    <pushNotifications>
+        <pushNotification>
+            <fieldNames>Fax</fieldNames>
+            <objectName>Account</objectName>
+        </pushNotification>
+        <pushNotification>
+            <fieldNames>Reason</fieldNames>
+            <objectName>Case</objectName>
+        </pushNotification>
+        <pushNotification>
+            <fieldNames>Owner</fieldNames>
+            <objectName>Lead</objectName>
+        </pushNotification>
+    </pushNotifications>
     <saveUserSessions>true</saveUserSessions>
     <tab>standard-Account</tab>
     <tab>standard-Contact</tab>
     <tab>standard-Case</tab>
     <tab>standard-Opportunity</tab>
     <tab>standard-Lead</tab>
-    <tab>standard-Knowledge</tab>
     <workspaceMappings>
         <mapping>
             <tab>standard-Account</tab>
@@ -185,9 +198,6 @@
         <mapping>
             <fieldName>AccountId</fieldName>
             <tab>standard-Contact</tab>
-        </mapping>
-        <mapping>
-            <tab>standard-Knowledge</tab>
         </mapping>
         <mapping>
             <tab>standard-Lead</tab>

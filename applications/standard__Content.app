@@ -6,4 +6,5 @@
     <tab>standard-Workspace</tab>
     <tab>standard-ContentSearch</tab>
     <tab>standard-ContentSubscriptions</tab>
+    <tab>snoopy__c</tab>
 </CustomApplication>

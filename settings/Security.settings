@@ -24,11 +24,12 @@
         <enableClickjackSetup>true</enableClickjackSetup>
         <enableContentSniffingProtection>true</enableContentSniffingProtection>
         <enablePostForSessions>false</enablePostForSessions>
-        <enableSMSIdentity>false</enableSMSIdentity>
+        <enableSMSIdentity>true</enableSMSIdentity>
+        <enableUpgradeInsecureRequests>true</enableUpgradeInsecureRequests>
         <enableXssProtection>true</enableXssProtection>
         <enforceIpRangesEveryRequest>false</enforceIpRangesEveryRequest>
-        <forceLogoutOnSessionTimeout>false</forceLogoutOnSessionTimeout>
-        <forceRelogin>false</forceRelogin>
+        <forceLogoutOnSessionTimeout>true</forceLogoutOnSessionTimeout>
+        <forceRelogin>true</forceRelogin>
         <hstsOnForcecomSites>false</hstsOnForcecomSites>
         <identityConfirmationOnTwoFactorRegistrationEnabled>true</identityConfirmationOnTwoFactorRegistrationEnabled>
         <lockSessionsToDomain>true</lockSessionsToDomain>

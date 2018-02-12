@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EventSubscription xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <eventType>Cloud_News__e</eventType>
+    <referenceData>Publish_Cloud_News_1</referenceData>
+</EventSubscription>

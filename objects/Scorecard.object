@@ -44,5 +44,18 @@
     <fields>
         <fullName>Name</fullName>
     </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <listViews>
+        <fullName>testqueue_Scorecard</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testqueue</label>
+        <queue>testqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <sharingModel>Private</sharingModel>
 </CustomObject>
