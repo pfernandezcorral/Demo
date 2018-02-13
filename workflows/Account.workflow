@@ -190,4 +190,15 @@
         </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
+    <rules>
+        <fullName>LP_ACCCreateMyGoAccountTask</fullName>
+        <actions>
+            <name>LP_ACCCreateMyGoAccountTask</name>
+            <type>FlowAction</type>
+        </actions>
+        <active>true</active>
+        <description>ACC.LP Create a task on Account when MyGo Account record is created.</description>
+        <formula>AND(  $Setup.LP_ProfileExtension__c.LP_EnableWFsTaskAutomation__c = 1,  $User.LP_MyGoAccountFollowUpTask__c = TRUE,  LP_CreatedByExternalSystem__c = TRUE, NOT(ISBLANK (TEXT(LP_Segment__c ) )),  (CONTAINS( $User.LP_SMESegment__c , TEXT(LP_Segment__c )))    )</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
 </Workflow>
