@@ -190,4 +190,22 @@
         </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
+    <rules>
+        <fullName>This is a test WF</fullName>
+        <actions>
+            <name>This_is_a_test_WF_action</name>
+            <type>FlowAction</type>
+        </actions>
+        <actions>
+            <name>This_is_a_test_WF_action2</name>
+            <type>FlowAction</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.LP_Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
 </Workflow>
