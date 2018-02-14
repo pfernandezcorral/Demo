@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>LP_ErrorMsgTaskCreate</name>
+        <label>Error Msg Task Create</label>
+        <locationX>413</locationX>
+        <locationY>747</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>LP_EmailBodyErrorMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>ACTION REQUIRED: Flow LP_TaskAutomationFlow failed to create a task!</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>defaultAdministratorEmail</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>LP_WarningMsgNoTemplateFound</name>
+        <label>Warning Msg No Template Found</label>
+        <locationX>420</locationX>
+        <locationY>294</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>LP_EmailBodyNoTemplate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>WARNING: Task automation template not found</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>defaultAdministratorEmail</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <assignments>
+        <name>LP_AssignTaskToDefaultUser</name>
+        <label>Assign Task to Default User</label>
+        <locationX>417</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.WhatId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LP_ParentWhatId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.WhoId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LP_ParentWhoId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LP_ParentRecordOwner</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LP_CreateFollowUpTask</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>LP_AssignTaskToSpecificUser</name>
+        <label>Assign Task to Specific User</label>
+        <locationX>89</locationX>
+        <locationY>554</locationY>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.WhatId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LP_ParentWhatId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.WhoId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LP_ParentWhoId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectedTaskAutomationTemplate.LP_AssignedTo__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LP_CreateFollowUpTask</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>LP_SetTaskValues</name>
+        <label>Set Task Values</label>
+        <locationX>245</locationX>
+        <locationY>317</locationY>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectedTaskAutomationTemplate.LP_TaskStatus__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectedTaskAutomationTemplate.LP_TaskPriority__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectedTaskAutomationTemplate.LP_TaskDetailSubject__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectedTaskAutomationTemplate.LP_TaskDescription__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.LP_TypeOfCummunication__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectedTaskAutomationTemplate.LP_TaskTypeOfCommunication__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.ActivityDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LP_TaskTargetDueDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectedTaskAutomationTemplate.LP_TaskRecordTypeId__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.LP_SubjectCategory__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectedTaskAutomationTemplate.LP_TaskSubjectCategory__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.LP_GroupTask__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectedTaskAutomationTemplate.LP_GroupTask__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.LP_GroupName__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectedTaskAutomationTemplate.LP_TaskGroupName__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.LP_CountryCode__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LP_CountryCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.IsReminderSet</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectedTaskAutomationTemplate.LP_SetReminder__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TaskToBeCreated.ReminderDateTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LP_TargetReminderDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LP_TaskAssignment</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>isTemplateAvailable</name>
+        <label>isTemplateAvailable</label>
+        <locationX>245</locationX>
+        <locationY>190</locationY>
+        <defaultConnector>
+            <targetReference>LP_SetTaskValues</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Template Available</defaultConnectorLabel>
+        <rules>
+            <name>NoTemplate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SelectedTaskAutomationTemplate.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>LP_WarningMsgNoTemplateFound</targetReference>
+            </connector>
+            <label>No Template</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>LP_TaskAssignment</name>
+        <label>Task Assignment</label>
+        <locationX>241</locationX>
+        <locationY>428</locationY>
+        <defaultConnector>
+            <targetReference>LP_AssignTaskToDefaultUser</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Specific User Specified</defaultConnectorLabel>
+        <rules>
+            <name>LP_SpecificUserSpecified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SelectedTaskAutomationTemplate.LP_AssignedToParentRecordOwner__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>SelectedTaskAutomationTemplate.LP_AssignedTo__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>LP_AssignTaskToSpecificUser</targetReference>
+            </connector>
+            <label>Specific User Specified</label>
+        </rules>
+    </decisions>
+    <description>Creates a task with parameters is controlled by Task Automation Template record for the specific country</description>
+    <formulas>
+        <description>Current user name</description>
+        <name>currentUser</name>
+        <dataType>String</dataType>
+        <expression>{!$User.FirstName} + &apos; &apos; + {!$User.LastName} + &apos; (&apos; + {!$User.Id} + &apos;)&apos;</expression>
+    </formulas>
+    <formulas>
+        <description>User setting &apos;Default Administrator Email&apos; to whom the error message should be send.</description>
+        <name>defaultAdministratorEmail</name>
+        <dataType>String</dataType>
+        <expression>{!$User.LP_DefaultAdministratorEmail__c}</expression>
+    </formulas>
+    <formulas>
+        <name>LP_TargetReminderDateTime</name>
+        <dataType>DateTime</dataType>
+        <expression>{!$Flow.CurrentDateTime}+{!SelectedTaskAutomationTemplate.LP_ReminderOffsetDays__c}</expression>
+    </formulas>
+    <formulas>
+        <description>Target due date of task based on current date and value from relative Due Date field</description>
+        <name>LP_TaskTargetDueDate</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate} + {!SelectedTaskAutomationTemplate.LP_TaskRelativeDueDate__c}</expression>
+    </formulas>
+    <formulas>
+        <description>Organisation ID</description>
+        <name>organisationId</name>
+        <dataType>String</dataType>
+        <expression>{!$Organization.Id}</expression>
+    </formulas>
+    <interviewLabel>Task Automation Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Task Automation Flow</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>LP_CreateFollowUpTask</name>
+        <label>Create Follow Up Task</label>
+        <locationX>243</locationX>
+        <locationY>638</locationY>
+        <faultConnector>
+            <targetReference>LP_ErrorMsgTaskCreate</targetReference>
+        </faultConnector>
+        <inputReference>TaskToBeCreated</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>LP_GetTaskAutomationTemplate</name>
+        <label>Get Task Automation Template</label>
+        <locationX>243</locationX>
+        <locationY>93</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>isTemplateAvailable</targetReference>
+        </connector>
+        <filters>
+            <field>LP_CountryCode__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>LP_CountryCode</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>LP_TaskAutomationName</elementReference>
+            </value>
+        </filters>
+        <object>LP_TaskAutomationTemplate__c</object>
+        <outputReference>SelectedTaskAutomationTemplate</outputReference>
+        <queriedFields>LP_TaskDescription__c</queriedFields>
+        <queriedFields>LP_TaskDetailSubject__c</queriedFields>
+        <queriedFields>LP_TaskPriority__c</queriedFields>
+        <queriedFields>LP_TaskRelativeDueDate__c</queriedFields>
+        <queriedFields>LP_TaskStatus__c</queriedFields>
+        <queriedFields>LP_TaskTypeOfCommunication__c</queriedFields>
+        <queriedFields>LP_TaskRecordTypeId__c</queriedFields>
+        <queriedFields>LP_TaskSubjectCategory__c</queriedFields>
+        <queriedFields>LP_GroupTask__c</queriedFields>
+        <queriedFields>LP_TaskGroupName__c</queriedFields>
+        <queriedFields>LP_AssignedTo__c</queriedFields>
+        <queriedFields>LP_AssignedToParentRecordOwner__c</queriedFields>
+        <queriedFields>LP_ReminderOffsetDays__c</queriedFields>
+        <queriedFields>LP_SetReminder__c</queriedFields>
+    </recordLookups>
+    <startElementReference>LP_GetTaskAutomationTemplate</startElementReference>
+    <textTemplates>
+        <description>Used to send an email in case a task couldn&apos;t be created.</description>
+        <name>LP_EmailBodyErrorMessage</name>
+        <text>A task couldn&apos;t be created.
+
+Error: {!$Flow.FaultMessage}
+
+RESOURCE VALUES 
+Organisation ID: {!organisationId}
+Flow: LP_TaskAutomationFlow
+Current User: {!currentUser}
+Task Automation Template Name: {!LP_TaskAutomationName}
+Country Code: {!LP_CountryCode}
+What ID = {!LP_ParentWhatId}
+Who ID = {!LP_ParentWhoId}
+Owner ID Parent Record: {!LP_ParentRecordOwner}</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Warning message; there is no template found</description>
+        <name>LP_EmailBodyNoTemplate</name>
+        <text>There is no template found with the following details:
+- Task Automation Template Name: {!LP_TaskAutomationName}
+- Country Code: {!LP_CountryCode}
+
+
+RESOURCE VALUES
+Organisation ID: {!organisationId}
+Flow: LP_TaskAutomationFlow
+Current User: {!currentUser}</text>
+    </textTemplates>
+    <variables>
+        <description>Dummyvariable to provide an output to master flow just to make this callable from there</description>
+        <name>Dummy</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Country Code of the related parent record where task will be assigned to</description>
+        <name>LP_CountryCode</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Salesforce Id of the owner of the parent record where the task will be assigned to</description>
+        <name>LP_ParentRecordOwner</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Salesforce What Id of the related parent record where task will be assigned to</description>
+        <name>LP_ParentWhatId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Salesforce Who Id of the related parent record where task will be assigned to</description>
+        <name>LP_ParentWhoId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Name of Task Automation Template to be used to query the Task parameters</description>
+        <name>LP_TaskAutomationName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Selected record from Task Automation Template to define values for the created task</description>
+        <name>SelectedTaskAutomationTemplate</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>LP_TaskAutomationTemplate__c</objectType>
+    </variables>
+    <variables>
+        <description>Details of task record to be created</description>
+        <name>TaskToBeCreated</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+</Flow>
