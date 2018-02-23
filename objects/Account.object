@@ -296,8 +296,6 @@
         <fullName>UpsellOpportunity__c</fullName>
         <externalId>false</externalId>
         <label>Upsell Opportunity</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
          <picklist>
             <picklistValues>
             <fullName>Maybe</fullName>
