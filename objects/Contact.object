@@ -245,6 +245,12 @@
         <fullName>Title</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <fields>
+        <fullName>label1__c</fullName>
+        <externalId>false</externalId>
+        <label>label1</label>
+        <type>AutoNumber</type>
+    </fields>
     <listViews>
         <fullName>AllContacts</fullName>
         <filterScope>Everything</filterScope>
