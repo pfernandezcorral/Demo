@@ -310,11 +310,11 @@
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Closed - Converted</controllingFieldValue>
-                <controllingFieldValue>test1</controllingFieldValue>
                 <valueName>Dependent3</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed - Not Converted</controllingFieldValue>
+                <controllingFieldValue>test1</controllingFieldValue>
                 <controllingFieldValue>test2</controllingFieldValue>
                 <valueName>Dependent4</valueName>
             </valueSettings>
@@ -325,6 +325,10 @@
             <valueSettings>
                 <controllingFieldValue>Working - Contacted</controllingFieldValue>
                 <valueName>Dependent2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>test1</controllingFieldValue>
+                <valueName>Dependent5</valueName>
             </valueSettings>
         </valueSet>
     </fields>
