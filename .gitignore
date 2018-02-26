@@ -33,7 +33,7 @@ installedPackages/*
 # Below is how to ignore them
 
 # profiles/*
-# permissionsets/*
+permissionsets/*
 
 #Translations are complex since get updated indirectly across
 #multiple files, they can make a deployment fail if a field is 
