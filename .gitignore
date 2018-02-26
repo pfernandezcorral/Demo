@@ -51,5 +51,5 @@ permissionsets/*
 #files environment agnostic.
 #Until the above is achieved, you can ignore them as follows
 
-# sites/*
+sites/*
 # siteDotComSites/*
