@@ -52,4 +52,4 @@ permissionsets/*
 #Until the above is achieved, you can ignore them as follows
 
 sites/*
-# siteDotComSites/*
+siteDotComSites/*
