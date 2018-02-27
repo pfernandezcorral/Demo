@@ -315,7 +315,6 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed - Not Converted</controllingFieldValue>
-                <controllingFieldValue>test1</controllingFieldValue>
                 <controllingFieldValue>test2</controllingFieldValue>
                 <valueName>Dependent4</valueName>
             </valueSettings>
