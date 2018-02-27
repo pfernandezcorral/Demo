@@ -266,7 +266,6 @@
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
-    </fields>
     <listViews>
         <fullName>AllOpenLeads</fullName>
         <filterScope>Everything</filterScope>
