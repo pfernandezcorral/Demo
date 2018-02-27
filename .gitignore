@@ -32,8 +32,8 @@ installedPackages/*
 #Copado Deployer steps: Full profiles and Full Permission sets.
 # Below is how to ignore them
 
-# profiles/*
-# permissionsets/*
+profiles/*
+permissionsets/*
 
 #Translations are complex since get updated indirectly across
 #multiple files, they can make a deployment fail if a field is 
@@ -51,5 +51,5 @@ installedPackages/*
 #files environment agnostic.
 #Until the above is achieved, you can ignore them as follows
 
-# sites/*
-# siteDotComSites/*
+sites/*
+siteDotComSites/*

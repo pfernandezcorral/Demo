@@ -296,29 +296,22 @@
         <fullName>UpsellOpportunity__c</fullName>
         <externalId>false</externalId>
         <label>Upsell Opportunity</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
+         <picklist>
+            <picklistValues>
+            <fullName>Maybe</fullName>
+            <default>false</default>
+          </picklistValues>
+            <picklistValues>
+             <fullName>No</fullName>
+             <default>false</default>
+           </picklistValues>
+           <picklistValues>
+              <fullName>Yes</fullName>
+              <default>false</default>
+           </picklistValues>
+           <sorted>false</sorted>
+        </picklist>
         <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Maybe</fullName>
-                    <default>false</default>
-                    <label>Maybe</label>
-                </value>
-                <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
-                    <label>No</label>
-                </value>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                    <label>Yes</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
     </fields>
     <fields>
         <fullName>Website</fullName>
