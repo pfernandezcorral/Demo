@@ -9,6 +9,7 @@
     <tab>standard-Account</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
+    <tab>standard-home</tab>
     <uiType>Lightning</uiType>
     <utilityBar>LightningService_UtilityBar</utilityBar>
     <workspaceMappings>
@@ -23,6 +24,9 @@
         </mapping>
         <mapping>
             <tab>standard-Dashboard</tab>
+        </mapping>
+        <mapping>
+            <tab>standard-home</tab>
         </mapping>
         <mapping>
             <tab>standard-report</tab>
