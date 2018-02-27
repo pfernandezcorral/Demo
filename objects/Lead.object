@@ -266,6 +266,68 @@
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <fields>
+        <fullName>dependent__c</fullName>
+        <externalId>false</externalId>
+        <label>dependent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Status</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dependent1</fullName>
+                    <default>false</default>
+                    <label>Dependent1</label>
+                </value>
+                <value>
+                    <fullName>Dependent2</fullName>
+                    <default>false</default>
+                    <label>Dependent2</label>
+                </value>
+                <value>
+                    <fullName>Dependent3</fullName>
+                    <default>false</default>
+                    <label>Dependent3</label>
+                </value>
+                <value>
+                    <fullName>Dependent4</fullName>
+                    <default>false</default>
+                    <label>Dependent4</label>
+                </value>
+                <value>
+                    <fullName>Dependent5</fullName>
+                    <default>false</default>
+                    <label>Dependent5</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Closed - Converted</controllingFieldValue>
+                <controllingFieldValue>test1</controllingFieldValue>
+                <valueName>Dependent3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed - Not Converted</controllingFieldValue>
+                <controllingFieldValue>test2</controllingFieldValue>
+                <valueName>Dependent4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Open - Not Contacted</controllingFieldValue>
+                <valueName>Dependent1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Working - Contacted</controllingFieldValue>
+                <valueName>Dependent2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>test1</controllingFieldValue>
+                <valueName>Dependent5</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
     <listViews>
         <fullName>AllOpenLeads</fullName>
         <filterScope>Everything</filterScope>
