@@ -89,20 +89,6 @@
         <protected>false</protected>
     </fieldUpdates>
     <rules>
-        <fullName>This is a test WF</fullName>
-        <actions>
-            <name>This_is_a_test_WF_action</name>
-            <type>FlowAction</type>
-        </actions>
-        <active>false</active>
-        <criteriaItems>
-            <field>Account.LP_Active__c</field>
-            <operation>equals</operation>
-            <value>True</value>
-        </criteriaItems>
-        <triggerType>onCreateOnly</triggerType>
-    </rules>
-    <rules>
         <fullName>snoopy</fullName>
         <actions>
             <name>snoopy1</name>

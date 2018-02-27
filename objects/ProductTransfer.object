@@ -93,6 +93,15 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ReturnOrderId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReturnOrderLineItemId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>ShipmentExpectedDeliveryDate</fullName>
     </fields>
     <fields>
@@ -144,6 +153,7 @@
         <customTabListAdditionalFields>SourceLocation</customTabListAdditionalFields>
         <customTabListAdditionalFields>DestinationLocation</customTabListAdditionalFields>
         <customTabListAdditionalFields>Shipment</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ReturnOrderLineItem</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>LastModifiedDate</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LastModifiedBy</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ProductRequestLineItem</lookupDialogsAdditionalFields>
@@ -152,6 +162,7 @@
         <lookupDialogsAdditionalFields>SourceLocation</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>DestinationLocation</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Shipment</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ReturnOrderLineItem</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>LastModifiedDate</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>LastModifiedBy</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ProductRequestLineItem</lookupPhoneDialogsAdditionalFields>
@@ -160,6 +171,7 @@
         <lookupPhoneDialogsAdditionalFields>SourceLocation</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>DestinationLocation</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Shipment</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ReturnOrderLineItem</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>LastModifiedDate</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LastModifiedBy</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ProductRequestLineItem</searchResultsAdditionalFields>
@@ -168,6 +180,7 @@
         <searchResultsAdditionalFields>SourceLocation</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>DestinationLocation</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Shipment</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ReturnOrderLineItem</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

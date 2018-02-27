@@ -192,7 +192,7 @@
         <relatedList>AssignedResources</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>ContentVersionDocument</fields>
+        <fields>Name</fields>
         <fields>CreatedBy</fields>
         <fields>CreatedDate</fields>
         <relatedList>ServiceReportRelatedList</relatedList>
