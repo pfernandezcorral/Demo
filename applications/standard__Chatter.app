@@ -7,5 +7,4 @@
     <tab>standard-OtherUserProfile</tab>
     <tab>standard-CollaborationGroup</tab>
     <tab>standard-File</tab>
-    <tab>snoopy__c</tab>
 </CustomApplication>

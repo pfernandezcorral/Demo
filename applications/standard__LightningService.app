@@ -19,13 +19,9 @@
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
     <tab>standard-home</tab>
-    <tab>snoopy__c</tab>
     <uiType>Lightning</uiType>
     <utilityBar>LightningService_UtilityBar</utilityBar>
     <workspaceMappings>
-        <mapping>
-            <tab>snoopy__c</tab>
-        </mapping>
         <mapping>
             <tab>standard-Account</tab>
         </mapping>

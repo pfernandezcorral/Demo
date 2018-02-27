@@ -77,29 +77,6 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>Active__c</fullName>
-        <externalId>false</externalId>
-        <label>Active</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
-                    <label>No</label>
-                </value>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                    <label>Yes</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>AnnualRevenue</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -260,7 +237,7 @@
     </fields>
     <fields>
         <fullName>SLASerialNumber__c</fullName>
-        <externalId>false</externalId>
+        <externalId>true</externalId>
         <label>SLA Serial Number</label>
         <length>10</length>
         <required>false</required>
@@ -414,6 +391,94 @@
         <externalId>false</externalId>
         <label>case7450</label>
         <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>controller__c</fullName>
+        <externalId>false</externalId>
+        <label>controller</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>control1</fullName>
+                    <default>false</default>
+                    <label>control1</label>
+                </value>
+                <value>
+                    <fullName>control2</fullName>
+                    <default>false</default>
+                    <label>control2</label>
+                </value>
+                <value>
+                    <fullName>control3</fullName>
+                    <default>false</default>
+                    <label>control3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>dependent__c</fullName>
+        <externalId>false</externalId>
+        <label>dependent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>controller__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>dependent1</fullName>
+                    <default>false</default>
+                    <label>dependent1</label>
+                </value>
+                <value>
+                    <fullName>dependent2</fullName>
+                    <default>false</default>
+                    <label>dependent2</label>
+                </value>
+                <value>
+                    <fullName>dependent3</fullName>
+                    <default>false</default>
+                    <label>dependent3</label>
+                </value>
+                <value>
+                    <fullName>dependent4</fullName>
+                    <default>false</default>
+                    <label>dependent4</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>control1</controllingFieldValue>
+                <valueName>dependent1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>control1</controllingFieldValue>
+                <valueName>dependent2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>control2</controllingFieldValue>
+                <valueName>dependent3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>control3</controllingFieldValue>
+                <valueName>dependent4</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>emailing__c</fullName>
+        <externalId>false</externalId>
+        <label>emailing</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>enernoc2__c</fullName>
@@ -599,17 +664,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Active__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>CustomerPriority__c</picklist>
             <values>
                 <fullName>High</fullName>
@@ -897,6 +951,40 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>controller__c</picklist>
+            <values>
+                <fullName>control1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>dependent__c</picklist>
+            <values>
+                <fullName>dependent1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>dependent2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>dependent3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>dependent4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -983,17 +1071,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Active__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>CustomerPriority__c</picklist>
             <values>
                 <fullName>High</fullName>
@@ -1289,6 +1366,40 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>controller__c</picklist>
+            <values>
+                <fullName>control1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>dependent__c</picklist>
+            <values>
+                <fullName>dependent1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>dependent2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>dependent3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>dependent4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>enernoc2__c</picklist>
             <values>
                 <fullName>test1</fullName>
@@ -1346,11 +1457,18 @@
         <lookupDialogsAdditionalFields>ACCOUNT.SITE</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CORE.USERS.ALIAS</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.TYPE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.ADDRESS1_COUNTRY</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.ADDRESS2_STREET</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ACCOUNT.SITE</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>CORE.USERS.ALIAS</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ACCOUNT.TYPE</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ACCOUNT.PHONE1</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.ADDRESS1_STREET</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.ADDRESS1_CITY</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.ADDRESS1_STATE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.ADDRESS1_ZIP</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.ADDRESS1_COUNTRY</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ACCOUNT.SITE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ACCOUNT.PHONE1</searchResultsAdditionalFields>

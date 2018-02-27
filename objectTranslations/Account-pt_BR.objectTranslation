@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
-        <label><!-- Active --></label>
-        <name>Active__c</name>
-        <picklistValues>
-            <masterLabel>No</masterLabel>
-            <translation><!-- No --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Yes</masterLabel>
-            <translation><!-- Yes --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- Customer Priority --></label>
         <name>CustomerPriority__c</name>
         <picklistValues>
@@ -115,6 +103,46 @@
     <fields>
         <label><!-- case7450 --></label>
         <name>case7450__c</name>
+    </fields>
+    <fields>
+        <label><!-- controller --></label>
+        <name>controller__c</name>
+        <picklistValues>
+            <masterLabel>control1</masterLabel>
+            <translation><!-- control1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>control2</masterLabel>
+            <translation><!-- control2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>control3</masterLabel>
+            <translation><!-- control3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- dependent --></label>
+        <name>dependent__c</name>
+        <picklistValues>
+            <masterLabel>dependent1</masterLabel>
+            <translation><!-- dependent1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>dependent2</masterLabel>
+            <translation><!-- dependent2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>dependent3</masterLabel>
+            <translation><!-- dependent3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>dependent4</masterLabel>
+            <translation><!-- dependent4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- emailing --></label>
+        <name>emailing__c</name>
     </fields>
     <fields>
         <label><!-- enernoc2 --></label>

@@ -186,11 +186,7 @@
     </pushNotifications>
     <saveUserSessions>true</saveUserSessions>
     <tab>standard-Case</tab>
-    <tab>snoopy__c</tab>
     <workspaceMappings>
-        <mapping>
-            <tab>snoopy__c</tab>
-        </mapping>
         <mapping>
             <tab>standard-Case</tab>
         </mapping>
