@@ -371,6 +371,7 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>test</controllingFieldValue>
                 <valueName>thomson4</valueName>
             </valueSettings>
             <valueSettings>
