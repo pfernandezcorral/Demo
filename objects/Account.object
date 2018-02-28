@@ -622,6 +622,11 @@
                     <default>false</default>
                     <label>thomson4</label>
                 </value>
+                <value>
+                    <fullName>thomson5</fullName>
+                    <default>false</default>
+                    <label>thomson5</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Other</controllingFieldValue>
@@ -632,6 +637,10 @@
                 <controllingFieldValue>Other</controllingFieldValue>
                 <controllingFieldValue>test</controllingFieldValue>
                 <valueName>thomson4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>test</controllingFieldValue>
+                <valueName>thomson5</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
