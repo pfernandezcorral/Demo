@@ -625,12 +625,11 @@
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Other</controllingFieldValue>
-                <controllingFieldValue>test</controllingFieldValue>
-                <valueName>thomson3</valueName>
+                <valueName>thomson4</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Other</controllingFieldValue>
-                <valueName>thomson4</valueName>
+                <controllingFieldValue>test</controllingFieldValue>
+                <valueName>thomson3</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
