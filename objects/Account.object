@@ -492,6 +492,59 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
     </fields>
+    <fields>
+        <fullName>thomsonreuters__c</fullName>
+        <externalId>false</externalId>
+        <label>thomsonreuters</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>AccountSource</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>thomson1</fullName>
+                    <default>false</default>
+                    <label>thomson1</label>
+                </value>
+                <value>
+                    <fullName>thomson2</fullName>
+                    <default>false</default>
+                    <label>thomson2</label>
+                </value>
+                <value>
+                    <fullName>thomson3</fullName>
+                    <default>false</default>
+                    <label>thomson3</label>
+                </value>
+                <value>
+                    <fullName>thomson4</fullName>
+                    <default>false</default>
+                    <label>thomson4</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>test</controllingFieldValue>
+                <valueName>thomson3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>thomson4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Purchased List</controllingFieldValue>
+                <valueName>thomson2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phone Inquiry</controllingFieldValue>
+                <controllingFieldValue>Web</controllingFieldValue>
+                <valueName>thomson1</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
         <filterScope>Everything</filterScope>
