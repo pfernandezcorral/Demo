@@ -485,16 +485,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>hola__c</fullName>
-        <externalId>false</externalId>
-        <label>hola</label>
-        <length>10</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>snoopy__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
