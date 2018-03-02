@@ -157,7 +157,7 @@
         <externalId>false</externalId>
         <label>Languages</label>
         <length>100</length>
-        <required>false</required>
+        <required>true</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
