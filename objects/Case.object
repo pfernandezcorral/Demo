@@ -121,7 +121,7 @@
         <externalId>false</externalId>
         <label>Engineering Req Number</label>
         <length>12</length>
-        <required>true</required>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -165,7 +165,7 @@
         <fullName>PotentialLiability__c</fullName>
         <externalId>false</externalId>
         <label>Potential Liability</label>
-        <required>true</required>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -415,4 +415,3 @@
         <url>https://na1.salesforce.com/opp/oppedit.jsp?accid={!Account_ID}&amp;opp3=Up-sell+/+Cross-sell&amp;opp5=Existing+Customer&amp;opp6=Customer+Support</url>
     </webLinks>
 </CustomObject>
-

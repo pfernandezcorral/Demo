@@ -229,7 +229,7 @@
         <externalId>false</externalId>
         <label>SLA Serial Number</label>
         <length>10</length>
-        <required>true</required>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
@@ -706,6 +706,25 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>thomsonreuters__c</picklist>
+            <values>
+                <fullName>thomson1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
