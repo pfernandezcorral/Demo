@@ -333,6 +333,34 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>controller__c</fullName>
+        <externalId>false</externalId>
+        <label>controller</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>control1</fullName>
+                    <default>false</default>
+                    <label>control1</label>
+                </value>
+                <value>
+                    <fullName>control2</fullName>
+                    <default>false</default>
+                    <label>control2</label>
+                </value>
+                <value>
+                    <fullName>control3</fullName>
+                    <default>false</default>
+                    <label>control3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>thomsonreuters__c</fullName>
         <externalId>false</externalId>
         <label>thomsonreuters</label>
