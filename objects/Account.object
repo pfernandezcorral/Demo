@@ -373,6 +373,34 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>enernoc3__c</fullName>
+        <externalId>false</externalId>
+        <label>enernoc3</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>test1</fullName>
+                    <default>false</default>
+                    <label>test1</label>
+                </value>
+                <value>
+                    <fullName>test2</fullName>
+                    <default>false</default>
+                    <label>test2</label>
+                </value>
+                <value>
+                    <fullName>test3</fullName>
+                    <default>false</default>
+                    <label>test3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>thomsonreuters__c</fullName>
         <externalId>false</externalId>
         <label>thomsonreuters</label>
