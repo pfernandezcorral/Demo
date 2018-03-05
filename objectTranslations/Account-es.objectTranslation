@@ -101,6 +101,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- campo2 --></label>
+        <name>campo2__c</name>
+    </fields>
+    <fields>
         <label><!-- case7450 --></label>
         <name>case7450__c</name>
     </fields>
@@ -197,8 +201,32 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- snoopy --></label>
-        <name>snoopy__c</name>
+        <label><!-- hola --></label>
+        <name>hola__c</name>
+    </fields>
+    <fields>
+        <label><!-- thomsonreuters --></label>
+        <name>thomsonreuters__c</name>
+        <picklistValues>
+            <masterLabel>thomson1</masterLabel>
+            <translation><!-- thomson1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson2</masterLabel>
+            <translation><!-- thomson2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson3</masterLabel>
+            <translation><!-- thomson3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson4</masterLabel>
+            <translation><!-- thomson4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson5</masterLabel>
+            <translation><!-- thomson5 --></translation>
+        </picklistValues>
     </fields>
     <recordTypes>
         <label><!-- Recordtype7324 --></label>

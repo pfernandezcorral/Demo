@@ -51,6 +51,18 @@
                 <behavior>Edit</behavior>
                 <field>dependent__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>thomsonreuters__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>hola__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>campo2__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -123,10 +135,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Site</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>snoopy__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>

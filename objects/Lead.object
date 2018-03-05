@@ -248,16 +248,6 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>SICCode__c</fullName>
-        <externalId>false</externalId>
-        <label>SIC Code</label>
-        <length>15</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Status</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <type>Picklist</type>

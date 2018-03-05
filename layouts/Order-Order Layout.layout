@@ -38,6 +38,10 @@
                 <behavior>Readonly</behavior>
                 <field>ActivatedById</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Contact__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

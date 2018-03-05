@@ -52,6 +52,13 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>charliecustom__c</fullName>
+        <externalId>false</externalId>
+        <label>charliecustom</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
     <label>charlie</label>
     <nameField>
         <label>charlie Name</label>

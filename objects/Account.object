@@ -224,7 +224,7 @@
     </fields>
     <fields>
         <fullName>Rating</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
+        <trackFeedHistory>true</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -240,7 +240,7 @@
         <externalId>true</externalId>
         <label>SLA Serial Number</label>
         <length>10</length>
-        <required>true</required>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
@@ -605,14 +605,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>snoopy__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>snoopy</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>thomsonreuters__c</fullName>
         <externalId>false</externalId>
         <label>thomsonreuters</label>
@@ -658,10 +650,6 @@
                 <controllingFieldValue>Other</controllingFieldValue>
                 <controllingFieldValue>test</controllingFieldValue>
                 <valueName>thomson4</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>test</controllingFieldValue>
-                <valueName>thomson5</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
@@ -1121,6 +1109,29 @@
                 <default>false</default>
             </values>
         </picklistValues>
+        <picklistValues>
+            <picklist>thomsonreuters__c</picklist>
+            <values>
+                <fullName>thomson1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>Sales_Accounts</fullName>
@@ -1529,6 +1540,29 @@
             </values>
             <values>
                 <fullName>test4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>thomsonreuters__c</picklist>
+            <values>
+                <fullName>thomson1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson5</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
