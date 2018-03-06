@@ -1250,6 +1250,25 @@
                 <default>false</default>
             </values>
         </picklistValues>
+        <picklistValues>
+            <picklist>thomsonreuters__c</picklist>
+            <values>
+                <fullName>thomson1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
