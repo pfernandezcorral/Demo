@@ -286,11 +286,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Picklist7324__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Rating</field>
         <readable>true</readable>
@@ -378,6 +373,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.snoopy__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.thomsonreuters__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
