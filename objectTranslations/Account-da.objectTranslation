@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Customer Priority --></label>
+        <name>CustomerPriority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Locations --></label>
+        <name>NumberofLocations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Picklist7324 --></label>
+        <name>Picklist7324__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Expiration Date --></label>
+        <name>SLAExpirationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Serial Number --></label>
+        <name>SLASerialNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA --></label>
+        <name>SLA__c</name>
+        <picklistValues>
+            <masterLabel>Bronze</masterLabel>
+            <translation><!-- Bronze --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gold</masterLabel>
+            <translation><!-- Gold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum</masterLabel>
+            <translation><!-- Platinum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silver</masterLabel>
+            <translation><!-- Silver --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Thomson --></label>
+        <name>Thomson__c</name>
+        <picklistValues>
+            <masterLabel>Test1</masterLabel>
+            <translation><!-- Test1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test2</masterLabel>
+            <translation><!-- Test2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test3</masterLabel>
+            <translation><!-- Test3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test4</masterLabel>
+            <translation><!-- Test4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test5</masterLabel>
+            <translation><!-- Test5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test6</masterLabel>
+            <translation><!-- Test6 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Upsell Opportunity --></label>
+        <name>UpsellOpportunity__c</name>
+        <picklistValues>
+            <masterLabel>Maybe</masterLabel>
+            <translation><!-- Maybe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>hola</label>
+        <name>campo2__c</name>
+    </fields>
+    <fields>
+        <label><!-- case7450 --></label>
+        <name>case7450__c</name>
+    </fields>
+    <fields>
+        <label><!-- controller --></label>
+        <name>controller__c</name>
+        <picklistValues>
+            <masterLabel>control1</masterLabel>
+            <translation><!-- control1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>control2</masterLabel>
+            <translation><!-- control2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>control3</masterLabel>
+            <translation><!-- control3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- dependent --></label>
+        <name>dependent__c</name>
+        <picklistValues>
+            <masterLabel>dependent1</masterLabel>
+            <translation><!-- dependent1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>dependent2</masterLabel>
+            <translation><!-- dependent2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>dependent3</masterLabel>
+            <translation><!-- dependent3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>dependent4</masterLabel>
+            <translation><!-- dependent4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- emailing --></label>
+        <name>emailing__c</name>
+    </fields>
+    <fields>
+        <label><!-- enernoc2 --></label>
+        <name>enernoc2__c</name>
+        <picklistValues>
+            <masterLabel>test1</masterLabel>
+            <translation><!-- test1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test2</masterLabel>
+            <translation><!-- test2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test3</masterLabel>
+            <translation><!-- test3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- enernoc3 --></label>
+        <name>enernoc3__c</name>
+        <picklistValues>
+            <masterLabel>test1</masterLabel>
+            <translation><!-- test1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test2</masterLabel>
+            <translation><!-- test2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test3</masterLabel>
+            <translation><!-- test3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- enernoc --></label>
+        <name>enernoc__c</name>
+        <picklistValues>
+            <masterLabel>test1</masterLabel>
+            <translation><!-- test1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test2</masterLabel>
+            <translation><!-- test2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test3</masterLabel>
+            <translation><!-- test3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test4</masterLabel>
+            <translation><!-- test4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- hola --></label>
+        <name>hola__c</name>
+    </fields>
+    <fields>
+        <label><!-- thomsonreuters --></label>
+        <name>thomsonreuters__c</name>
+        <picklistValues>
+            <masterLabel>thomson1</masterLabel>
+            <translation><!-- thomson1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson2</masterLabel>
+            <translation><!-- thomson2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson3</masterLabel>
+            <translation><!-- thomson3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson4</masterLabel>
+            <translation><!-- thomson4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson5</masterLabel>
+            <translation><!-- thomson5 --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Recordtype7324 --></label>
+        <name>Recordtype7324</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sales Accounts --></label>
+        <name>Sales_Accounts</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- cannot be null1 --></errorMessage>
+        <name>testbackup</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Billing --></label>
+        <name>Billing</name>
+    </webLinks>
+</CustomObjectTranslation>
