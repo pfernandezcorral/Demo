@@ -9,7 +9,7 @@
         <value><!-- charlie --></value>
     </caseValues>
     <fields>
-        <label>this is a translation testing</label>
+        <label>this is a translation</label>
         <name>charliecustom__c</name>
     </fields>
     <gender><!-- Masculine --></gender>
