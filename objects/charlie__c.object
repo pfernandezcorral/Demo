@@ -59,6 +59,13 @@
         <trackTrending>false</trackTrending>
         <type>AutoNumber</type>
     </fields>
+    <fields>
+        <fullName>hola1__c</fullName>
+        <externalId>false</externalId>
+        <label>hola1</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
     <label>charlie</label>
     <nameField>
         <label>charlie Name</label>
