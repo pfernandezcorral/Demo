@@ -34,6 +34,10 @@
                 <behavior>Edit</behavior>
                 <field>dependent__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>US_0002086__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
