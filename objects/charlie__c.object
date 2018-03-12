@@ -62,7 +62,7 @@
     <label>charlie</label>
     <nameField>
         <label>charlie Name</label>
-        <trackFeedHistory>true</trackFeedHistory>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>charlie</pluralLabel>
