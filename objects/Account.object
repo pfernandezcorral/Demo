@@ -719,6 +719,44 @@
         <active>true</active>
         <label>Recordtype7324</label>
         <picklistValues>
+            <picklist>controller__c</picklist>
+            <values>
+                <fullName>control1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>thomsonreuters__c</picklist>
+            <values>
+                <fullName>thomson1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>AccountSource</picklist>
             <values>
                 <fullName>Other</fullName>
@@ -1037,21 +1075,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>controller__c</picklist>
-            <values>
-                <fullName>control1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>control2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>control3</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>dependent__c</picklist>
             <values>
                 <fullName>dependent1</fullName>
@@ -1116,29 +1139,6 @@
             </values>
             <values>
                 <fullName>test4</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>thomsonreuters__c</picklist>
-            <values>
-                <fullName>thomson1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>thomson2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>thomson3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>thomson4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>thomson5</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1149,6 +1149,44 @@
         <description>Record types used for sales</description>
         <label>Sales Accounts</label>
         <picklistValues>
+            <picklist>controller__c</picklist>
+            <values>
+                <fullName>control1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>thomsonreuters__c</picklist>
+            <values>
+                <fullName>thomson1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>AccountSource</picklist>
             <values>
                 <fullName>Other</fullName>
@@ -1471,21 +1509,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>controller__c</picklist>
-            <values>
-                <fullName>control1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>control2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>control3</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>dependent__c</picklist>
             <values>
                 <fullName>dependent1</fullName>
@@ -1550,29 +1573,6 @@
             </values>
             <values>
                 <fullName>test4</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>thomsonreuters__c</picklist>
-            <values>
-                <fullName>thomson1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>thomson2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>thomson3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>thomson4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>thomson5</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
