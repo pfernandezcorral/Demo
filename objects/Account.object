@@ -344,6 +344,34 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>controller__c</fullName>
+        <externalId>false</externalId>
+        <label>controller</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>control1</fullName>
+                    <default>false</default>
+                    <label>control1</label>
+                </value>
+                <value>
+                    <fullName>control2</fullName>
+                    <default>false</default>
+                    <label>control2</label>
+                </value>
+                <value>
+                    <fullName>control3</fullName>
+                    <default>false</default>
+                    <label>control3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>dependent__c</fullName>
         <externalId>false</externalId>
         <label>dependent</label>
@@ -517,6 +545,44 @@
         <fullName>Recordtype7324</fullName>
         <active>true</active>
         <label>Recordtype7324</label>
+        <picklistValues>
+            <picklist>controller__c</picklist>
+            <values>
+                <fullName>control1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>thomsonreuters__c</picklist>
+            <values>
+                <fullName>thomson1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>AccountSource</picklist>
             <values>
@@ -796,6 +862,27 @@
                 <default>false</default>
             </values>
         </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sales_Accounts</fullName>
+        <active>true</active>
+        <description>Record types used for sales</description>
+        <label>Sales Accounts</label>
+        <picklistValues>
+            <picklist>controller__c</picklist>
+            <values>
+                <fullName>control1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>thomsonreuters__c</picklist>
             <values>
@@ -812,6 +899,10 @@
             </values>
             <values>
                 <fullName>thomson4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson5</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
