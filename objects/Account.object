@@ -226,7 +226,7 @@
     </fields>
     <fields>
         <fullName>SLASerialNumber__c</fullName>
-        <externalId>false</externalId>
+        <externalId>true</externalId>
         <label>SLA Serial Number</label>
         <length>10</length>
         <required>false</required>
@@ -333,6 +333,87 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>campo2__c</fullName>
+        <externalId>false</externalId>
+        <label>campo2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>dependent__c</fullName>
+        <externalId>false</externalId>
+        <label>dependent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>controller__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>dependent1</fullName>
+                    <default>false</default>
+                    <label>dependent1</label>
+                </value>
+                <value>
+                    <fullName>dependent2</fullName>
+                    <default>false</default>
+                    <label>dependent2</label>
+                </value>
+                <value>
+                    <fullName>dependent3</fullName>
+                    <default>false</default>
+                    <label>dependent3</label>
+                </value>
+                <value>
+                    <fullName>dependent4</fullName>
+                    <default>false</default>
+                    <label>dependent4</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>control1</controllingFieldValue>
+                <valueName>dependent1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>control1</controllingFieldValue>
+                <valueName>dependent2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>control2</controllingFieldValue>
+                <valueName>dependent3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>control3</controllingFieldValue>
+                <valueName>dependent4</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>emailing__c</fullName>
+        <externalId>false</externalId>
+        <label>emailing</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>hola__c</fullName>
+        <externalId>false</externalId>
+        <label>hola</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>thomsonreuters__c</fullName>
         <externalId>false</externalId>
         <label>thomsonreuters</label>
@@ -363,6 +444,11 @@
                     <default>false</default>
                     <label>thomson4</label>
                 </value>
+                <value>
+                    <fullName>thomson5</fullName>
+                    <default>false</default>
+                    <label>thomson5</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Other</controllingFieldValue>
@@ -371,6 +457,7 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>test</controllingFieldValue>
                 <valueName>thomson4</valueName>
             </valueSettings>
             <valueSettings>
