@@ -32,7 +32,7 @@ installedPackages/*
 #Copado Deployer steps: Full profiles and Full Permission sets.
 # Below is how to ignore them
 
-profiles/*
+# profiles/*
 # permissionsets/*
 
 #Translations are complex since get updated indirectly across
