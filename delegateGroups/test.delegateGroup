@@ -3,5 +3,6 @@
     <label>test</label>
     <loginAccess>true</loginAccess>
     <permissionSets>snoopy</permissionSets>
+    <profiles>Read Only</profiles>
     <profiles>Standard User</profiles>
 </DelegateGroup>
