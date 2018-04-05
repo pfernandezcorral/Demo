@@ -247,6 +247,10 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1I00000LlqDd</field>
+            <label>testoppfield</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N1I00000HYnlq</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
@@ -293,6 +297,7 @@
             <field>00N1I00000HYnlo</field>
             <field>00N1I00000L0tc4</field>
             <field>00N1I00000HYnlp</field>
+            <field>00N1I00000LlqDd</field>
             <field>00N1I00000HYnlq</field>
             <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
@@ -470,6 +475,10 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1I00000LlqDd</field>
+            <label>testoppfield</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N1I00000HYnlq</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
@@ -516,6 +525,7 @@
             <field>00N1I00000HYnlo</field>
             <field>00N1I00000L0tc4</field>
             <field>00N1I00000HYnlp</field>
+            <field>00N1I00000LlqDd</field>
             <field>00N1I00000HYnlq</field>
             <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
@@ -693,6 +703,10 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1I00000LlqDd</field>
+            <label>testoppfield</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N1I00000HYnlq</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
@@ -739,6 +753,7 @@
             <field>00N1I00000HYnlo</field>
             <field>00N1I00000L0tc4</field>
             <field>00N1I00000HYnlp</field>
+            <field>00N1I00000LlqDd</field>
             <field>00N1I00000HYnlq</field>
             <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
@@ -916,6 +931,10 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1I00000LlqDd</field>
+            <label>testoppfield</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N1I00000HYnlq</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
@@ -962,6 +981,7 @@
             <field>00N1I00000HYnlo</field>
             <field>00N1I00000L0tc4</field>
             <field>00N1I00000HYnlp</field>
+            <field>00N1I00000LlqDd</field>
             <field>00N1I00000HYnlq</field>
             <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>

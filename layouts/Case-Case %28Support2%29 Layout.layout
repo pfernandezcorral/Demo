@@ -162,7 +162,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>SLAViolation__c</field>
+                <field>SLAViolacion__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

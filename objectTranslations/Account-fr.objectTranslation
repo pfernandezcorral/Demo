@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Chiffre annuel</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>annual_revenue_account</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
         <label><!-- Customer Priority --></label>
         <name>CustomerPriority__c</name>
         <picklistValues>
@@ -83,6 +92,14 @@
             <masterLabel>Test6</masterLabel>
             <translation><!-- Test6 --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- US-00020862 --></label>
+        <name>US_00020862__c</name>
+    </fields>
+    <fields>
+        <label><!-- US-0002086 --></label>
+        <name>US_0002086__c</name>
     </fields>
     <fields>
         <label><!-- Upsell Opportunity --></label>

@@ -70,7 +70,7 @@
     </fields>
     <fields>
         <label><!-- SLA Violation --></label>
-        <name>SLAViolation__c</name>
+        <name>SLAViolacion__c</name>
         <picklistValues>
             <masterLabel>No</masterLabel>
             <translation><!-- No --></translation>

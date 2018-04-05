@@ -119,7 +119,4 @@
     <queueSobject>
         <sobjectType>WorkType</sobjectType>
     </queueSobject>
-    <queueSobject>
-        <sobjectType>snoopy__c</sobjectType>
-    </queueSobject>
 </Queue>

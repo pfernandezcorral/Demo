@@ -48,6 +48,10 @@
         <label><!-- Tracking Number --></label>
         <name>TrackingNumber__c</name>
     </fields>
+    <fields>
+        <label><!-- testoppfield --></label>
+        <name>testoppfield__c</name>
+    </fields>
     <webLinks>
         <label><!-- DeliveryStatus --></label>
         <name>DeliveryStatus</name>

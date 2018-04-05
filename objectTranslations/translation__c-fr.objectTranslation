@@ -2,17 +2,17 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- translation --></value>
+        <value>traduction</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- translation --></value>
+        <value>translations</value>
     </caseValues>
     <fields>
         <label>traduction</label>
         <name>translation__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    <gender>Masculine</gender>
     <nameFieldLabel><!-- translation Name --></nameFieldLabel>
-    <startsWith><!-- Consonant --></startsWith>
+    <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

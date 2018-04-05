@@ -10,7 +10,7 @@
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Update10</fullName>
-        <field>SLAViolation__c</field>
+        <field>SLAViolacion__c</field>
         <name>Update10</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>NextValue</operation>
@@ -83,7 +83,7 @@
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Update9</fullName>
-        <field>SLAViolation__c</field>
+        <field>SLAViolacion__c</field>
         <name>Update9</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>PreviousValue</operation>

@@ -186,7 +186,11 @@
     </pushNotifications>
     <saveUserSessions>true</saveUserSessions>
     <tab>standard-Case</tab>
+    <tab>standard-Account</tab>
     <workspaceMappings>
+        <mapping>
+            <tab>standard-Account</tab>
+        </mapping>
         <mapping>
             <tab>standard-Case</tab>
         </mapping>

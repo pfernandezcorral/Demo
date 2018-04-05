@@ -22,15 +22,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
-    <fields>
-        <fullName>Solution_id__c</fullName>
-        <externalId>false</externalId>
-        <label>Solution id</label>
-        <length>18</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
+    <gender>Feminine</gender>
     <label>Knowledge</label>
     <pluralLabel>Knowledge</pluralLabel>
 </CustomObject>

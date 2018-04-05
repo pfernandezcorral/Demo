@@ -85,6 +85,14 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- US-00020862 --></label>
+        <name>US_00020862__c</name>
+    </fields>
+    <fields>
+        <label><!-- US-0002086 --></label>
+        <name>US_0002086__c</name>
+    </fields>
+    <fields>
         <label><!-- Upsell Opportunity --></label>
         <name>UpsellOpportunity__c</name>
         <picklistValues>

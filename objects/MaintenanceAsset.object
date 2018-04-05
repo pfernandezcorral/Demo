@@ -44,6 +44,11 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ContractLineItemId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>MaintenanceAssetNumber</fullName>
         <trackHistory>false</trackHistory>
     </fields>
