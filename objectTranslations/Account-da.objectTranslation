@@ -241,6 +241,7 @@
         <name>Recordtype7324</name>
     </recordTypes>
     <recordTypes>
+        <description><!-- Record types used for sales --></description>
         <label><!-- Sales Accounts --></label>
         <name>Sales_Accounts</name>
     </recordTypes>

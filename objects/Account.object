@@ -979,10 +979,6 @@
         <picklistValues>
             <picklist>Thomson__c</picklist>
             <values>
-                <fullName>Test1</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Test2</fullName>
                 <default>false</default>
             </values>
@@ -1000,6 +996,10 @@
             </values>
             <values>
                 <fullName>Test6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>test1</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1413,10 +1413,6 @@
         <picklistValues>
             <picklist>Thomson__c</picklist>
             <values>
-                <fullName>Test1</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Test2</fullName>
                 <default>false</default>
             </values>
@@ -1434,6 +1430,10 @@
             </values>
             <values>
                 <fullName>Test6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>test1</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

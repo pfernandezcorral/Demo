@@ -13,6 +13,7 @@
     <defaultCaseOwnerType>User</defaultCaseOwnerType>
     <defaultCaseUser>pfernandezcorral@testorg.2.com</defaultCaseUser>
     <emailToCase>
+        <enableE2CSourceTracking>true</enableE2CSourceTracking>
         <enableEmailToCase>true</enableEmailToCase>
         <enableHtmlEmail>false</enableHtmlEmail>
         <enableOnDemandEmailToCase>true</enableOnDemandEmailToCase>
