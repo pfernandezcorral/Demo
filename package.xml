@@ -124,23 +124,6 @@
     <name>ConnectedApp</name>
   </types>
   <types>
-    <members>standard__AppLauncher</members>
-    <members>standard__Chatter</members>
-    <members>standard__Community</members>
-    <members>standard__Content</members>
-    <members>standard__LightningSales</members>
-    <members>standard__LightningSalesConsole</members>
-    <members>standard__LightningService</members>
-    <members>standard__Marketing</members>
-    <members>standard__Platform</members>
-    <members>standard__Sales</members>
-    <members>standard__Service</members>
-    <members>standard__ServiceConsole</members>
-    <members>standard__Sites</members>
-    <members>test1</members>
-    <name>CustomApplication</name>
-  </types>
-  <types>
     <members>Account.AccountNumber</members>
     <members>Account.AccountSource</members>
     <members>Account.AnnualRevenue</members>
