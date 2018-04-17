@@ -162,5 +162,25 @@
             </values>
         </picklistValues>
     </recordTypes>
+    <recordTypes>
+        <fullName>amigo</fullName>
+        <active>true</active>
+        <label>amigo</label>
+        <picklistValues>
+            <picklist>hola__c</picklist>
+            <values>
+                <fullName>hola1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>hola2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>hola4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <sharingModel>Private</sharingModel>
 </CustomObject>
