@@ -68,6 +68,11 @@
                     <default>false</default>
                     <label>hola3</label>
                 </value>
+                <value>
+                    <fullName>hola4</fullName>
+                    <default>false</default>
+                    <label>hola4</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
