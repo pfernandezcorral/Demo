@@ -5351,7 +5351,7 @@
         <name>CustomizeApplication</name>
     </userPermissions>
     <userPermissions>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
         <name>DataExport</name>
     </userPermissions>
     <userPermissions>
