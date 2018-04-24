@@ -5334,10 +5334,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
-        <name>CreateMultiforce</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
         <name>CreateReportFolders</name>
     </userPermissions>
     <userPermissions>
@@ -5519,10 +5515,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ImportPersonal</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>InstallMultiforce</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
