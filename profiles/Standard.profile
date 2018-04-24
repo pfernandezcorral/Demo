@@ -3774,10 +3774,6 @@
         <recordType>WorkOrderLineItem.testrecordtype1</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>WorkOrderLineItem-Work Order Line Item Layout</layout>
-        <recordType>WorkOrderLineItem.testrecordtype</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>WorkPerformanceCycle-Performance Cycle Layout - Winter %2716</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -5037,11 +5033,6 @@
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>ProductRequestLineItem.testrecordtype1</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>WorkOrderLineItem.testrecordtype</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
