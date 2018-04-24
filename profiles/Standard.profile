@@ -5653,10 +5653,7 @@
         <enabled>false</enabled>
         <name>EditActivatedOrders</name>
     </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>InstallMultiforce</name>
-    </userPermissions>
+
     <userPermissions>
         <enabled>false</enabled>
         <name>PublishMultiforce</name>
