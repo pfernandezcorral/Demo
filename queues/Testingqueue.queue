@@ -4,7 +4,7 @@
     <name>Testingqueue</name>
     <queueMembers>
         <users>
-            <user>{!Environment.Username}</user>
+            <user>pfernandezcorral@testorg.2.com</user>
         </users>
     </queueMembers>
     <queueSobject>
