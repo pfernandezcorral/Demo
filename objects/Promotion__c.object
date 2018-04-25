@@ -62,6 +62,11 @@
     <fieldSets>
         <fullName>Copado_Header_Fields</fullName>
         <availableFields>
+            <field>Auto_Resolve_Options__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>Back_Promotion__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -166,6 +171,16 @@
     </fieldSets>
     <fieldSets>
         <fullName>CustomFields</fullName>
+        <availableFields>
+            <field>Auto_Resolve_Options__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>Back_Promotion__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
         <availableFields>
             <field>Create_Full_Permission_Sets_Step__c</field>
             <isFieldManaged>false</isFieldManaged>

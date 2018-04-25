@@ -81,6 +81,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>Git_Operation__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>Id</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
