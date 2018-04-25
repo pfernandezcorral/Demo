@@ -60,9 +60,46 @@
     <enableFeeds>true</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>API_URL__c</fullName>
+        <externalId>false</externalId>
+        <formula>$Api.Partner_Server_URL_290</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>API_URL</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hide_Copado_feedback__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The visibility of the message asking users to rate &amp; feedback Copado on the AppExchange is controlled here.</inlineHelpText>
+        <label>Hide Copado feedback</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>ManagerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Show_Copado_Tips__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Copado Tips</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Work_Manager_Panels__c</fullName>
+        <description>JSON containing current user panels on the Backlog</description>
+        <externalId>false</externalId>
+        <label>Work Manager Panels</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
     </fields>
     <listViews>
         <fullName>ActiveUsers</fullName>

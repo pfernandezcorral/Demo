@@ -1,0 +1,103 @@
+<apex:component controller="CopadoSmartHelpController">
+	<style type="text/css">
+		.copadoTipsContainer .nContainer {
+			position: fixed;
+			display: block;
+			width: 20.5rem;
+			right: 1.50rem;
+			top: 0.75rem;
+			padding: 0.25rem 0.25rem 0.5rem;
+			z-index: 8500;
+		}
+		.copadoTipsContainer .nNotification {
+			border: 1px solid #a8b7c7;
+			width: 20rem;
+			position: relative;
+			border-radius: 0.25rem;
+			background: white;
+			padding: 4px 4px 6px 4px;
+			box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+		}
+		.copadoTipsContainer .nBody:hover{
+			background: #d8edff;
+		}
+	</style>
+	<script type="text/javascript">
+		var $copado = $copado || jQuery.noConflict();
+		$copado(function() {
+		    console.debug('setting copado help...');
+            setHelp();
+        });
+        var showTip = function(type){
+        	if(type){
+        	    console.debug('showing tip for :',type);
+        		setTypeTip(type);
+        	}
+        }
+        var addedTips = function(){
+            console.log('tipSection',$copado('#tipSection'));
+    		if($copado('#tipSection')){
+        		$copado('#tipSection').animate({
+        			scrollTop: $copado('#tipSection').height()
+        		}, 0);
+    		}
+        }
+        var removeFromList = function(elem) {
+        	$copado(elem).closest('div.bodyContainer').remove();
+        	removeTip($copado(elem).attr('data-apiRef'));
+        	var tips = $copado('.slds-notification__body').find('div.bodyContainer').length;
+        	if(!tips){
+        		$copado('div[id$=copado-tipsContainer]').hide();
+        	}
+        }
+	</script>
+
+	<apex:actionFunction action="{!setHelpList}" name="setHelp" reRender="copado-tipsContainer">
+		<apex:param assignTo="{!vfPageName}" value="{!$CurrentPage.name}" name="pageName"/>
+	</apex:actionFunction>
+	<apex:actionFunction action="{!setTypeList}" name="setTypeTip" reRender="copado-tipsContainer" oncomplete="addedTips();">
+		<apex:param assignTo="{!tipType}" value="" name="tipType"/>
+		<apex:param assignTo="{!vfPageName}" value="{!$CurrentPage.name}" name="pageName"/>
+	</apex:actionFunction>
+	<apex:actionFunction action="{!removeTip}" name="removeTip" reRender="xxx">
+		<apex:param assignTo="{!tipKey}" value="" name="tipKey"/>
+	</apex:actionFunction>
+	<apex:outputPanel layout="block" styleClass="copadoTipsContainer" id="copado-tipsContainer" style="max-height: 70%">
+		<apex:outputPanel layout="block" styleClass="slds-is-relative" style="opacity: 0.9; z-index: 9999;" rendered="{!showTips}">
+			<div class="slds-notification-container nContainer">
+				<section style="max-height: 250px; overflow-y: scroll;" id="tipSection" aria-describedby="dialog-body-id-15" aria-labelledby="noti52" class="slds-notification nNotification" role="dialog">
+					<div class="slds-notification__body" id="dialog-body-id-15">
+						<a style="text-decoration: none;cursor: pointer;" class="slds-notification__target slds-media" href="javascript:void(0);">
+							<apex:variable var="count" value="{!helpList.size -1}" />
+							<apex:repeat value="{!helpList}" var="hl">
+								<div class="bodyContainer">
+									<button data-apiRef="{!hl.apiName}" type="button" style="float: right;" class="slds-button slds-button_icon slds-button--icon-container slds-notification__close" title="Dismiss" onclick="removeFromList(this)">
+										<svg class="slds-button__icon" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/resource/1507598376000/SLDS/assets/icons/utility-sprite/svg/symbols.svg#close" />
+										</svg>
+										<span class="slds-assistive-text">Dismiss Tip2</span>
+									</button>
+									<div class="slds-media__figure" style="float: left;">
+										<span class="slds-icon_container slds-icon-custom-custom57" title="">
+											<svg aria-hidden="true" class="slds-icon">
+												<use xlink:href="/resource/1507598376000/SLDS/assets/icons/standard-sprite/svg/symbols.svg#solution" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+											</svg>
+										</span>
+									</div>
+									<div class="slds-media__body nBody" style="line-height=1.2;">
+
+										<h2 class="slds-text-heading--x-small slds-m-bottom--xx-small" id="noti52" style="font-size: 0.8rem;">
+											<b>{!hl.Label}</b>
+										</h2>
+										<p style="font-size: 0.73rem;">{!hl.helpText}</p>
+										<hr style="{!IF(count > 0,'margin-bottom: 7px;','')}" />
+									</div>
+								</div>
+							</apex:repeat>
+						</a>
+					</div>
+				</section>
+			</div>
+		</apex:outputPanel>
+	</apex:outputPanel>
+</apex:component>

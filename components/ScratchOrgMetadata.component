@@ -1,0 +1,887 @@
+<!--
+ - Created by Mert YALTI on 08/01/2018.
+ -->
+
+<apex:component id="ScratchOrgMetadata" controller="ScratchOrgMetadataController" extensions="Settings" allowDML="true">
+    <apex:attribute name="parentPageController" type="ScratchOrgWizardPageBase" assignTo="{!pageController}"
+                    required="true" description="The controller for the parent page."/>
+    <apex:attribute name="componentName" type="String" assignTo="{!controllerKey}" description="Component Name"/>
+    <apex:attribute name="showActionButtons" type="Boolean" assignTo="{!showButtons}" default="true"
+                    description="Hide or show action buttons"/>
+    <apex:attribute name="mode" type="String" assignTo="{!componentMode}"
+                    description="Component mode that will define the default behaviour." required="true"
+                    default="edit"/>
+    <apex:attribute name="showAllTemplateButtons" type="Boolean" assignTo="{!showTemplateButtons}" default="true"
+                    description="Hide or show template buttons"/>
+    <style type="text/css">
+
+        .copadoGrid {
+        	min-height: 55rem;
+        	//display: flex;
+        	height: 100%;
+        }
+
+        #copado_leftPanel {
+            float: left;
+            width: 17%;
+            height: 100%;
+            text-align: left;
+            padding: 10px;
+        }
+
+        #copado_mainPanel {
+            float: right;
+            width: 83%;
+        	//height: 100%;
+            text-align: left;
+            padding: 10px;
+            left: 175px;
+            position: absolute;
+            overflow-y: scroll;
+            overflow-x: scroll;
+        }
+
+        .side-menu {
+            /* Full screen nav menu */
+            width: 175px;
+            height: 85% !important;
+            left: 0;
+            z-index: 100;
+            position: absolute;
+            box-sizing: border-box;
+            display: block;
+            border-right: 2px solid lightgray;
+            overflow-y: scroll;
+            -ms-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 4.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            -ms-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0px, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0px, 0, 0);
+            padding: 10px 20px 20px 20px;
+            height: 100%;
+        }
+
+        .slds-scope h3 {
+            display: -webkit-inline-box;
+        }
+
+        .side-menu h3 {
+            display: inherit;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            color: #656565;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+            /*font-size: 12px;*/
+            -ms-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -ms-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .side-menu ul {
+            padding: 0;
+            margin: 0 0 25px;
+        }
+
+        .side-menu li {
+            text-align: left;
+            list-style: none;
+            -ms-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -ms-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .side-menu li a {
+            text-decoration: none;
+            color: #01a5e2;
+            font-size: 12px;
+        }
+
+        .side-menu li a:hover {
+            color: #01a5e2;
+            text-decoration: underline;
+
+        }
+
+        .side-menu li a:hover::before {
+            content: "";
+            position: absolute;
+            background: black;
+            width: 4px;
+            height: 10px;
+            display: block;
+            left: -20px;
+            margin-top: 5px;
+        }
+
+        .active {
+            color: black !important;
+        }
+
+        .active::before {
+            content: "";
+            position: absolute;
+            background: #01a5e2;
+            width: 4px;
+            height: 10px;
+            display: block;
+            left: -20px;
+            margin-top: 5px;
+        }
+
+        h1 {
+            display: none;
+        }
+    </style>
+    <apex:stylesheet value="{!URLFOR($Resource.jqx,'jqwidgets/styles/jqx.base.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.jqx,'jqwidgets/styles/jqx.energyblue.css')}"/>
+
+    <apex:includeScript value="{!URLFOR($Resource.jqx,'jqwidgets/jqx-all.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.copadoDXGrid) }"/>
+    <apex:includeScript value="{!URLFOR($Resource.JsRemoting)}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ScratchOrg)}"/>
+    <apex:includeScript value="{!URLFOR($Resource.utils) }"/>
+    <script>
+        var $copado = $copado || jQuery.noConflict();
+
+        function clearBranchState() {
+            var rl = getElementByIdCS('RL_INPUT_lkid');
+            if(rl) rl.value = '000000000000000';
+            var ot = getElementByIdCS('OT_INPUT_lkid');
+            if(ot) ot.value = '000000000000000';
+        }
+
+    </script>
+    <c:ScreenLocker msg="{!$Label.LOADING}"/>
+    <apex:actionFunction name="switchSelection" action="{!selectType}" reRender="legandContainer,copado_container,branchGridContainer"
+                         onComplete="renderParent();clearBranchState();unlockScreen();">
+        <apex:param value="" name="typeName" id="typeName"/>
+    </apex:actionFunction>
+    <apex:outputPanel id="copado_container" styleClass="copadoGrid" layout="block">
+        <div id="copado_leftPanel" class="copadoColumn">
+            <nav class="side-menu">
+                <h3>Select Metadata Source From</h3>
+                <ul class="Sections">
+                    <apex:outputPanel layout="none" rendered="{!AND(artifactSecurity.accessible,OR(ISBLANK(metadataSourceType),metadataSourceType == 'artifact'),OR(ISBLANK(dxDeploymentFlowMode),AND(OR(mode == 'add',mode == 'wizard'),dxDeploymentFlowMode == 'Git Artifacts')))}">
+                    <li>
+                        <a class="{!IF(showArtifacts,'active','')}" href="#"
+                           onclick="lockScreen();copadoDX.clearMetadataTabState();switchSelection('artifact');">Git Artifacts</a>
+                    </li>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!AND(artifactSecurity.accessible,OR(ISBLANK(metadataSourceType),metadataSourceType == 'artifactUMP'),OR(ISBLANK(dxDeploymentFlowMode),AND(OR(mode == 'add',mode == 'wizard'),dxDeploymentFlowMode == 'Package Artifacts')))}">
+                    <li>
+                        <a class="{!IF(showArtifactsUMP,'active','')}" href="#"
+                           onclick="lockScreen();copadoDX.clearMetadataTabState();switchSelection('artifactUMP')">Package Artifacts</a>
+                    </li>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!AND(gitSecurity.accessible, mode != 'template',OR(ISBLANK(metadataSourceType), metadataSourceType == 'patch'))}">
+                        <li>
+                            <a class="{!IF(showPatchOptions,'active','')}" href="#"
+                               onclick="lockScreen();clearBranchState();copadoDX.clearMetadataTabState();switchSelection('patch')">{!$Label.Patch_a_Release}</a>
+                        </li>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!AND(gitSecurity.accessible,mode != 'template',OR(ISBLANK(metadataSourceType),metadataSourceType == 'branch'),OR(ISBLANK(dxDeploymentFlowMode),AND(OR(mode == 'add',mode == 'wizard'),dxDeploymentFlowMode == 'Branches')))}">
+                    <li>
+                        <a class="{!IF(AND(showBranches,NOT(showPatchOptions)),'active','')}" href="#"
+                           onclick="lockScreen();clearBranchState();copadoDX.clearMetadataTabState();switchSelection('branch')">Branch</a>
+                    </li>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!AND(orgSecurity.accessible,mode != 'template',OR(ISBLANK(metadataSourceType),metadataSourceType == 'org'),OR(ISBLANK(dxDeploymentFlowMode),AND(OR(mode == 'add',mode == 'wizard'),dxDeploymentFlowMode == 'Org Metadata')))}">
+                    <li>
+                        <a class="{!IF(showOrgs,'active','')}" href="#" onclick="lockScreen();copadoDX.clearMetadataTabState();switchSelection('org')">Metadata</a>
+                    </li>
+                    </apex:outputPanel>
+                </ul>
+            </nav>
+        </div>
+        <div id="copado_mainPanel" class="copadoColumn">
+            <c:CopadoHelp sectionText="{!$Label.ScratchOrgMetadata_Help}" sectionTitle="{!$Label.HELP}" sectionOpen="false"/>
+            <apex:outputPanel layout="block" id="legandContainer"
+                              rendered="{!AND(!showArtifacts,!showBranches,!showOrgs,!showArtifactsUMP)}">
+                <apex:pageBlock title="{!$Label.About_Metadata_Source_Options}">
+                    <table class="list">
+                        <thead class="rich-table-thead">
+                        <tr class="headerRow">
+                            <th class="headerRow" scope="col" colspan="1">
+                                <div>Metadata Source</div>
+                            </th>
+                            <th class="headerRow" scope="col" colspan="1">
+                                <div>Description</div>
+                            </th>
+                        </tr>
+                        </thead>
+                        <apex:outputPanel layout="none" rendered="{!AND(artifactSecurity.accessible,OR(ISBLANK(metadataSourceType),metadataSourceType == 'artifact',metadataSourceType == 'artifactUMP'),OR(ISBLANK(dxDeploymentFlowMode),AND(OR(mode == 'add',mode == 'wizard'),OR(dxDeploymentFlowMode == 'Git Artifacts',dxDeploymentFlowMode == 'Package Artifacts'))))}">
+                            <tr class="dataRow odd">
+                                <td class="dataCell" colspan="1">
+                                    <span>{!$Label.Artifacts}</span>
+                                </td>
+                                <td class="dataCell" colspan="1">
+                                    <span>Artifact: use artifacts for a modular based approach on the development process. An Artifact contains a set of user defined metadata completely isolated from everything else. You can create scratch org from one or multiple artifacts. When working with artifacts, scratch org creation is faster, and metadata scope is easily managed. Copado works with 2 different artifact approach:</span>
+                                    <ul>
+                                        <li>Artifacts from version control system</li>
+                                        <li>Artifacts from unmanaged packages</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </apex:outputPanel>
+                        <apex:outputPanel layout="none" rendered="{!AND(gitSecurity.accessible,mode != 'template',OR(ISBLANK(metadataSourceType),metadataSourceType == 'branch'),OR(ISBLANK(dxDeploymentFlowMode),AND(OR(mode == 'add',mode == 'wizard'),dxDeploymentFlowMode == 'Branches')))}">
+                            <tr class="dataRow odd">
+                                <td class="dataCell" colspan="1">
+                                    <span>{!$Label.BRANCH}</span>
+                                </td>
+                                <td class="dataCell" colspan="1">
+                                    <span>{!$Label.BRANCH}: {!$Label.DX_Source_MD_Type_Branch_Definition}</span>
+                                    <ul>
+                                        <li>
+                                            {!$Label.DX_Git_Branch_Definition}
+                                        </li>
+                                        <li>
+                                            {!$Label.DX_Feature_Branch_Definition}
+                                        </li>
+                                        <li>
+                                            {!$Label.DX_Promotion_Branch_Definition}
+                                        </li>
+                                        <li>
+                                            {!$Label.DX_Project_Branch_Definition}
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </apex:outputPanel>
+                        <apex:outputPanel layout="none" rendered="{!AND(orgSecurity.accessible,mode != 'template',OR(ISBLANK(metadataSourceType),metadataSourceType == 'org'),OR(ISBLANK(dxDeploymentFlowMode),AND(OR(mode == 'add',mode == 'wizard'),dxDeploymentFlowMode == 'Org Metadata')))}">
+                            <tr class="dataRow odd">
+                                <td class="dataCell" colspan="1">
+                                    <span>Metadata</span>
+                                </td>
+                                <td class="dataCell" colspan="1">
+                                    <span>Metadata: {!$Label.DX_Source_MD_Type_Metadata_Definition}</span>
+                                </td>
+                            </tr>
+                        </apex:outputPanel>
+                    </table>
+                </apex:pageBlock>
+            </apex:outputPanel>
+            <!-- Metadata Source = Artifact Unmanaged Packages -->
+            <apex:outputPanel layout="block" id="artifactUMPContainer" rendered="{!showArtifactsUMP}">
+                <apex:pageMessages id="artifactUMPMessage"/>
+                <apex:pageBlock id="artifactUMPBlock">
+                    <apex:pageBlockButtons location="top" id="pb_umn_btns">
+                        <apex:commandButton action="{!newTemplate}" id="saveProjectTemplate"
+                                            value="Save As Template" title="Save Project Template"
+                                            reRender="artifactUMPBlock"
+                                            rendered="{!AND(showTemplateButtons,showTemplateSaveAsButton,templateSecurity.creatable)}"/>
+                        <apex:commandButton action="{!updateTemplate}" id="updateProjectTemplate"
+                                            value="Update Template" title="Update Project Template"
+                                            reRender="artifactUMPBlock"
+                                            rendered="{!AND(templateId != null,templateSecurity.updateable, showTemplateButtons, showTemplateUpdateButton)}"/>
+                        <apex:commandButton action="{!loadMetadata}" id="loadMetadata"
+                                            value="Load Metadata" title="Load Metadata"
+                                            reRender="artifactUMPBlock,artifactUMPMessage"
+                                            rendered="{!AND(showActionButtons,mode == 'add')}" onClick="lockScreen();" onComplete="unlockScreen();"/>
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="{!$Label.Sfdx_Project}" collapsible="true" columns="2" showHeader="true">
+                        <apex:pageBlockSectionItem helpText="{!$Label.Project_Template}">
+                            <apex:outputLabel value="{!$Label.Project_Template}"/>
+                            <apex:outputPanel layout="block">
+                                <input type="hidden" name="UMG_OT_INPUT_lkid" id="UMG_OT_INPUT_lkid" value="000000000000000"/>
+                                <input type="hidden" name="UMG_OT_INPUT_lkold" id="UMG_OT_INPUT_lkold" value=""/>
+                                <input type="hidden" name="UMG_OT_INPUT_lktp" id="UMG_OT_INPUT_lktp"
+                                       value="{!$ObjectType.Scratch_Org_Project_Template__c.keyPrefix}"/>
+                                <input type="hidden" name="UMG_OT_INPUT_lspf" id="UMG_OT_INPUT_lspf" value="0"/>
+                                <input type="hidden" name="UMG_OT_INPUT_lspfsub" id="UMG_OT_INPUT_lspfsub" value="0"/>
+                                <input type="hidden" name="UMG_OT_INPUT_mod" id="UMG_OT_INPUT_mod" value="0"/>
+                                <span class="lookupInput" style="margin-left: 0;">
+                                    <input id="UMG_OT_INPUT" maxlength="255" name="UMG_OT_INPUT"
+                                           onchange="lockScreen();readTemplateUMP(getElementByIdCS('UMG_OT_INPUT_lkid').value);getElementByIdCS('UMG_OT_INPUT_lkid').value='';getElementByIdCS('UMG_OT_INPUT_mod').value='1';"
+                                           size="20" tabindex="3" type="text" value="{!templateName}"/>
+                                    <a href="javascript:%20openLookup%28%27%2F_ui%2Fcommon%2Fdata%2FLookupPage%3Flkfm%3DeditPage%26lknm%3DUMG_OT_INPUT%26lktp%3D%27%20%2B%20getElementByIdCS%28%27UMG_OT_INPUT_lktp%27%29.value%2C670%2C%271%27%2C%27%26lksrch%3D%27%20%2B%20escapeUTF%28getElementByIdCS%28%27UMG_OT_INPUT%27%29.value.substring%280%2C%2080%29%29%29"
+                                       id="UMG_OT_INPUT_lkwgt" onclick="setLastMousePosition(event)" tabindex="3"
+                                       title="Template (New Window)">
+                                        <img src="/img/s.gif" alt="Org Credential Lookup (New Window)"
+                                             class="lookupIcon"
+                                             onblur="this.className = 'lookupIcon';"
+                                             onfocus="this.className = 'lookupIconOn';"
+                                             onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';"
+                                             onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';"
+                                             title="Template (New Window)"/>
+                                    </a>
+                                </span>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Template Name"/>
+                            <apex:inputText value="{!templateName}" title="template name" maxLength="80" id="templateNameUMG"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Org Credential"  for="orgCredential" />
+                            <apex:selectList value="{!selectedOrgId}" multiselect="false" size="1" id="orgCredential" required="false">
+                                <apex:actionSupport event="onchange" action="{!getArtifacts}" onSubmit="lockScreen();" rerender="artifactSelectionSectionUMP,unmanagePackageGridContainer"/>
+                                <apex:selectOptions value="{!OrgCredentialsWithArtifatcsList}"/>
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Api version"/>
+                            <apex:selectList value="{!artifactProject.sourceApiVersion}" size="1" multiSelect="false" id="apiversionUMP" title="api version">
+                                <apex:selectOptions value="{!Versions}" />
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Sfdx Login Url"/>
+                            <apex:inputText value="{!artifactProject.sfdcLoginUrl}" title="login url" maxLength="175" id="loginUrlUMP"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Namespace"/>
+                            <apex:inputText value="{!artifactProject.namespace}" title="namespace" maxLength="100" id="namespaceUMP"/>
+                        </apex:pageBlockSectionItem>
+
+                        <apex:actionFunction name="readTemplateUMP" action="{!readProjectTemplate}" onComplete="unlockScreen();" reRender="artifactUMPBlock">
+                            <apex:param value="" name="templateId" id="templateId"/>
+                        </apex:actionFunction>
+
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="{!$Label.Select_Artifacts}" collapsible="false" columns="2" showHeader="true" id="artifactSelectionSectionUMP">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Artifacts}" for="orgSelection"/>
+
+                            <apex:selectList value="{!metadataSources.selectedArtifactIDs}" size="7" multiSelect="true"
+                                             id="artifactSelection">
+                                <apex:selectOptions value="{!artifatsOptionList}"/>
+                                <apex:actionSupport event="onchange" action="{!processSelectedArtifact}"
+                                                    reRender="defaultArtifactUMP" onSubmit="lockScreen()"
+                                                    onComplete="copadoDX.setSelectedPackages('{!metadataSources.selectedArtifactIDs}','PackageInfo','{!selectedOrgId}', 'Packages', unlockScreen())"/>
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Default" for="defaultArtifact"/>
+                            <apex:outputText value="{!selectedArtifacts[0].Label}" id="defaultArtifactUMP" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlockSection columns="1">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel layout="block" id="unmanagePackageGridContainer">
+                                <apex:outputPanel id="umpGrid" layout="block">
+                                    <apex:outputPanel layout="none">
+                                        <div>
+                                            <div id="removeCacheContainerUMP">
+                                                <apex:commandLink value="{!SUBSTITUTE($Label.CACHE_REFRESHED_NOW, '__METATYPE__','')}"
+                                                                  action="{!refreshPackagesCache}"
+                                                                  rerender="opDummy" id="removeCacheUMP" onClick="lockScreen();"/>
+                                            </div>
+
+                                            <div id="unmanagedPackageSelectorGrid" class="mg2_jqxgrid">
+                                                <center><img src="/img/loading.gif"/><i><span
+                                                                id="retry-label">{!$Label.LOADING}</span></i></center>
+                                            </div>
+                                        </div>
+                                        <script type="application/javascript">
+                                            (function(){
+                                                copadoDX.initUnmanagedPackages('{!selectedOrgId}', 'Packages', unlockScreen());
+                                            })();
+                                        </script>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <!--<apex:actionFunction name="getUnmanagedPackages" onComplete="unlockScreen();"
+                                         reRender="unmanagePackageGridContainer">
+                        <apex:param value="" name="orgName" assignTo="{!orgName}"/>
+                        <apex:param value="" name="orgId" assignTo="{!orgId}"/>
+                    </apex:actionFunction>-->
+                </apex:pageBlock>
+            </apex:outputPanel>
+            <!-- END OF Metadata Source = Artifact Unmanaged Packages -->
+            <!-- Metadata Source = Artifact VCS -->
+            <apex:outputPanel layout="block" id="artifactContainer" rendered="{!showArtifacts}">
+                <apex:pageMessages id="artifactVCSMessage"/>
+                <apex:pageBlock id="artifactsBlock">
+                    <apex:pageBlockButtons location="top" id="pb_btns">
+                        <apex:commandButton action="{!newTemplate}" id="saveProjectTemplate"
+                                            value="{!$Label.Save_As_Template}" title="Save Project Template"
+                                            reRender="artifactVCSMessage,artifactsBlock"
+                        rendered="{!AND(showTemplateButtons,showTemplateSaveAsButton,templateSecurity.creatable)}"/>
+                        <apex:commandButton action="{!updateTemplate}" id="updateProjectTemplate"
+                                            value="{!$Label.Update_Template}" title="Update Project Template"
+                                            reRender="artifactVCSMessage,artifactsBlock"
+                                            rendered="{!AND(templateId != null,templateSecurity.updateable, showTemplateButtons, showTemplateUpdateButton)}"/>
+                        <apex:commandButton action="{!loadMetadata}" id="loadMetadata"
+                                            value="{!$Label.DXOperation_LoadMetadata}" title="Load Metadata"
+                                            reRender="artifactVCSMessage,artifactsBlock"
+                                            rendered="{!AND(showActionButtons,mode == 'add')}" onClick="lockScreen();" onComplete="unlockScreen();"/>
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="{!$Label.Sfdx_Project}" collapsible="true" columns="2"
+                                           showHeader="true">
+                        <apex:pageBlockSectionItem helpText="{!$Label.Project_Template}">
+                            <apex:outputLabel value="{!$Label.Project_Template}"/>
+                            <apex:outputPanel layout="block">
+                                <input type="hidden" name="OT_INPUT_lkid" id="OT_INPUT_lkid" value="000000000000000"/>
+                                <input type="hidden" name="OT_INPUT_lkold" id="OT_INPUT_lkold" value=""/>
+                                <input type="hidden" name="OT_INPUT_lktp" id="OT_INPUT_lktp"
+                                       value="{!$ObjectType.Scratch_Org_Project_Template__c.keyPrefix}"/>
+                                <input type="hidden" name="OT_INPUT_lspf" id="OT_INPUT_lspf" value="0"/>
+                                <input type="hidden" name="OT_INPUT_lspfsub" id="OT_INPUT_lspfsub" value="0"/>
+                                <input type="hidden" name="OT_INPUT_mod" id="OT_INPUT_mod" value="0"/>
+                                <span class="lookupInput" style="margin-left: 0;">
+                                    <input id="OT_INPUT" maxlength="255" name="OT_INPUT"
+                                           onchange="lockScreen();readTemplate(getElementByIdCS('OT_INPUT_lkid').value);getElementByIdCS('OT_INPUT_lkid').value='';getElementByIdCS('OT_INPUT_mod').value='1';"
+                                           size="20" tabindex="3" type="text" value="{!templateName}"/>
+                                    <a href="javascript:%20openLookup%28%27%2F_ui%2Fcommon%2Fdata%2FLookupPage%3Flkfm%3DeditPage%26lknm%3DOT_INPUT%26lktp%3D%27%20%2B%20getElementByIdCS%28%27OT_INPUT_lktp%27%29.value%2C670%2C%271%27%2C%27%26lksrch%3D%27%20%2B%20escapeUTF%28getElementByIdCS%28%27OT_INPUT%27%29.value.substring%280%2C%2080%29%29%29"
+                                       id="OT_INPUT_lkwgt" onclick="setLastMousePosition(event)" tabindex="3"
+                                       title="Org Credential Lookup (New Window)">
+                                        <img src="/img/s.gif" alt="Org Credential Lookup (New Window)"
+                                             class="lookupIcon"
+                                             onblur="this.className = 'lookupIcon';"
+                                             onfocus="this.className = 'lookupIconOn';"
+                                             onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';"
+                                             onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';"
+                                             title="Artifacts Lookup (New Window)"/>
+                                    </a>
+                                </span>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Template_Name}"/>
+                            <apex:inputText value="{!templateName}" title="{!$Label.Template_Name}" maxLength="80"
+                                            id="templateName"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Org_Credential}"  for="orgCredential" />
+                            <apex:selectList value="{!selectedOrgId}" multiselect="false" size="1" id="orgCredential" required="false">
+                                <apex:actionSupport event="onchange" action="{!getArtifacts}" onSubmit="lockScreen();" onComplete="unlockScreen();" rerender="artifactSelectionSection"/>
+                                <apex:selectOptions value="{!OrgCredentialsWithArtifatcsList}"/>
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Api_version}"/>
+                            <apex:selectList value="{!artifactProject.sourceApiVersion}" size="1" multiSelect="false" id="apiversion" title="{!$Label.Api_version}">
+                                <apex:selectOptions value="{!Versions}" />
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Sfdx_Login_Url}"/>
+                            <apex:inputText value="{!artifactProject.sfdcLoginUrl}" title="{!$Label.Sfdx_Login_Url}" maxLength="175"
+                                            id="loginUrl"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Namespace}"/>
+                            <apex:inputText value="{!artifactProject.namespace}" title="{!$Label.Namespace}" maxLength="100"
+                                            id="namespace"/>
+                        </apex:pageBlockSectionItem>
+
+                        <apex:actionFunction name="readTemplate" action="{!readProjectTemplate}" onComplete="unlockScreen();"
+                                             reRender="artifactsBlock,artifactrenderpanel">
+                            <apex:param value="" name="templateId" id="templateId"/>
+                        </apex:actionFunction>
+
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Select Artifact(s)" collapsible="false" columns="2" showHeader="true"
+                                           id="artifactSelectionSection">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Artifacts}" for="orgSelection"/>
+
+                            <apex:selectList value="{!metadataSources.selectedArtifactIDs}" size="7" multiSelect="true"
+                                             id="artifactSelection">
+                                <apex:selectOptions value="{!artifatsOptionList}"/>
+                                <apex:actionSupport event="onchange" action="{!processSelectedArtifact}"
+                                                    reRender="defaultArtifact" onSubmit="lockScreen()"
+                                                    onComplete="loadArtifactMetadata();"/>
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Default}" for="defaultArtifact"/>
+                            <apex:outputText value="{!selectedArtifacts[0].Label}" id="defaultArtifact" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Preview Artifact Metadata" collapsible="true" columns="1"
+                                           showHeader="true">
+                        <apex:outputPanel layout="block" id="artifactGridContainer">
+                            <apex:outputPanel id="artifactGrid" layout="block">
+
+                                    <div id="metadataGrid2">
+                                        <div id="removeCacheContainer">
+                                            <apex:commandLink style="display:none;"
+                                                              value="{!$Label.CACHE_REFRESHED_NOW}"
+                                                              onclick="return metadataGridDX.refreshCache();"
+                                                              rerender="opDummy" id="removeCache"/>
+                                        </div>
+                                        <div class="mg2_scaleFilterFrame" style="display: none;">
+                                            <label style="display: none;" class="mg2_mtFilter">Metadata Type
+                                                Filter</label>&nbsp;
+                                            <div class="mg2_scaleFilter" style="display: none;"/>
+                                        </div>
+
+                                        <div class="mg2_jqxgrid">
+                                            <center><img src="/img/loading.gif"/><i><span
+                                                            id="retry-label">{!$Label.LOADING}</span></i></center>
+                                        </div>
+                                    </div>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:actionFunction name="loadArtifactMetadata" reRender="artifactrenderpanel"/>
+
+
+                <apex:outputPanel layout="block" id="artifactrenderpanel">
+                    <script type="application/javascript">
+                        var _config = {
+                            data: {
+                                id: '',
+                                orgId: '',
+                                envId: ''
+                            },
+                            server: {
+                                metadataUrl: '{!JSENCODE(urlBase)}metadata/__ORGID__{!JSENCODE(urlParameters)}&parentId=__ORGID__&dates=format',
+                                typesUrl: '{!JSENCODE(urlBase)}gitTypes{!JSENCODE(urlParameters)}'
+                            },
+                            ns: '{!JSENCODE(namespace)}',
+                            attachmentName: 'ArtifactMetaData',
+                            viewType: 0,
+                            contextSize: 10,
+                            leftContent: '',
+                            rightContent: '',
+                            gridMode: 'orgMetadata',
+                            dxGridType: 'artifacts'
+                        };
+
+                        (function(){
+                            console.info('ScratchOrgMetadata:Artifacts:init grid');
+                            var selectList = document.querySelectorAll("[id$=artifactSelection]")[0];
+                            var selected = [];
+                            var selectOptions = selectList.options;
+                            for (var i = 0; i < selectList.options.length; i++) {
+                                var opt = selectOptions[i];
+                                if (opt.selected) {
+                                    selected.push(selectOptions[i].value);
+                                }
+                            }
+                            if(globalSelectedArtifacts) globalSelectedArtifacts = selected;
+                            copadoDX.init(_config, false, {!scalableGrid}, 'orgMetadata');
+                            if (selected.length !== 0) {
+                                console.log('++f++ selected : ' + selected,selected.length);
+                                copadoDX.loadArtifactMetadata(selected, _config.attachmentName, true, null,unlockScreen());
+                            } else {
+                                unlockScreen();
+                            }
+                        })();
+                    </script>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            <!-- END OF Metadata Source = Artifact VCS -->
+            <!-- Metadata Source = Branch -->
+            <apex:outputPanel layout="block" id="branchContainer" rendered="{!showBranches}">
+                <apex:pageMessages id="branchMessage"/>
+                <div id="branchHardSizeLimitMessage" style="display:none;">
+                    <apex:pageMessage severity="warning" title="{!$Label.DX_Branch_Hard_Limit_Message_Title}" detail="Selected set of metadata may exceed Salesforce mdAPI and SFDX metadata size limit (10.000)." summary="Please make sure selected branch does not contain more than 10.000 metadata. If selected set of metadata exceeds the limit please use artifacts instead." strength="3"/>
+                </div>
+                <apex:pageBlock id="branchBlock">
+                    <apex:pageBlockButtons location="top" id="pb_btns_branch">
+                        <apex:commandButton action="{!loadMetadata}" id="loadMetadataBranch"
+                                            value="Load Metadata" title="Load Metadata"
+                                            rendered="{!AND(showActionButtons,mode == 'add')}" onClick="lockScreen();" onComplete="unlockScreen();" reRender="branchMessage"/>
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection id="projectBranch" title="{!$Label.Sfdx_Project}">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Api_version}"/>
+                            <apex:inputText value="{!artifactProject.namespace}" title="{!$Label.Api_version}" maxLength="100"
+                                            id="namespace"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Api_version}" for="api_version"/>
+                            <apex:selectList value="{!artifactProject.sourceApiVersion}" size="1" multiSelect="false" id="api_version" title="api version">
+                                <apex:selectOptions value="{!Versions}" />
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Sfdx_Login_Url}"/>
+                            <apex:inputText value="{!artifactProject.sfdcLoginUrl}" title="{!$Label.Sfdx_Login_Url}" maxLength="175"
+                                            id="loginUrl"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="{!$Label.Select_Repository}" collapsible="false" columns="2" showHeader="true">
+                        <apex:pageBlockSectionItem rendered="{!!showPatchOptions}">
+
+                            <apex:outputLabel title="{!$Label.Repository}" value="{!$Label.Repository}" for="branchRepo" />
+                            <apex:outputPanel rendered="{!!showPatchOptions}">
+                                <input type="hidden" name="OT_INPUT_lkid" id="OT_INPUT_lkid" value="{!repoId}"/>
+                                <input type="hidden" name="OT_INPUT_lkold" id="OT_INPUT_lkold" value=""/>
+                                <input type="hidden" name="OT_INPUT_lktp" id="OT_INPUT_lktp"
+                                       value="{!$ObjectType.Git_Repository__c.keyPrefix}"/>
+                                <input type="hidden" name="OT_INPUT_lspf" id="OT_INPUT_lspf" value="0"/>
+                                <input type="hidden" name="OT_INPUT_lspfsub" id="OT_INPUT_lspfsub" value="0"/>
+                                <input type="hidden" name="OT_INPUT_mod" id="OT_INPUT_mod" value="0"/>
+                                <span class="lookupInput">
+                                    <input id="OT_INPUT" maxlength="255" name="OT_INPUT"
+                                           onchange="lockScreen();getRepoBranches($copado(this).val(),getElementByIdCS('OT_INPUT_lkid').value);getElementByIdCS('OT_INPUT_lkid').value='';getElementByIdCS('OT_INPUT_mod').value='1';"
+                                           size="20" tabindex="3" type="text" value="{!repoName}"/>
+                                    <a href="javascript:%20openLookup%28%27%2F_ui%2Fcommon%2Fdata%2FLookupPage%3Flkfm%3DeditPage%26lknm%3DOT_INPUT%26lktp%3D%27%20%2B%20getElementByIdCS%28%27OT_INPUT_lktp%27%29.value%2C670%2C%271%27%2C%27%26lksrch%3D%27%20%2B%20escapeUTF%28getElementByIdCS%28%27OT_INPUT%27%29.value.substring%280%2C%2080%29%29%29"
+                                       id="OT_INPUT_lkwgt" onclick="setLastMousePosition(event)" tabindex="3"
+                                       title="Org Credential Lookup (New Window)">
+                                        <img src="/img/s.gif" alt="Org Credential Lookup (New Window)"
+                                             class="lookupIcon"
+                                             onblur="this.className = 'lookupIcon';"
+                                             onfocus="this.className = 'lookupIconOn';"
+                                             onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';"
+                                             onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';"
+                                             title="Artifacts Lookup (New Window)"/>
+                                    </a>
+                                </span>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!showPatchOptions}">
+                            <apex:outputLabel title="{!$Label.Release}" value="{!$Label.Release}" for="branchRepo" />
+                            <apex:outputPanel rendered="{!showPatchOptions}">
+                                <input type="hidden" name="RL_INPUT_lkid" id="RL_INPUT_lkid" value="{!releaseId}"/>
+                                <input type="hidden" name="RL_INPUT_lkold" id="RL_INPUT_lkold" value=""/>
+                                <input type="hidden" name="RL_INPUT_lktp" id="RL_INPUT_lktp"
+                                       value="{!$ObjectType.Release__c.keyPrefix}"/>
+                                <input type="hidden" name="RL_INPUT_lspf" id="RL_INPUT_lspf" value="0"/>
+                                <input type="hidden" name="RL_INPUT_lspfsub" id="RL_INPUT_lspfsub" value="0"/>
+                                <input type="hidden" name="RL_INPUT_mod" id="RL_INPUT_mod" value="0"/>
+                                <span class="lookupInput">
+                                    <input id="RL_INPUT" maxlength="255" name="RL_INPUT"
+                                           onchange="lockScreen();getReleaseTags($copado('#OT_INPUT').val(),getElementByIdCS('RL_INPUT_lkid').value);getElementByIdCS('RL_INPUT_lkid').value='';getElementByIdCS('RL_INPUT_mod').value='1';"
+                                           size="20" tabindex="3" type="text" value="{!releaseName}"/>
+                                    <a href="javascript:%20openLookup%28%27%2F_ui%2Fcommon%2Fdata%2FLookupPage%3Flkfm%3DeditPage%26lknm%3DRL_INPUT%26lktp%3D%27%20%2B%20getElementByIdCS%28%27RL_INPUT_lktp%27%29.value%2C670%2C%271%27%2C%27%26lksrch%3D%27%20%2B%20escapeUTF%28getElementByIdCS%28%27RL_INPUT%27%29.value.substring%280%2C%2080%29%29%29"
+                                       id="RL_INPUT_lkwgt" onclick="setLastMousePosition(event)" tabindex="3"
+                                       title="Org Credential Lookup (New Window)">
+                                        <img src="/img/s.gif" alt="Org Credential Lookup (New Window)"
+                                             class="lookupIcon"
+                                             onblur="this.className = 'lookupIcon';"
+                                             onfocus="this.className = 'lookupIconOn';"
+                                             onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';"
+                                             onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';"
+                                             title="Release (New Window)"/>
+                                    </a>
+                                </span>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel title="{!IF(!showPatchOptions,'Branch Format','Tag Format')}" value="{!IF(!showPatchOptions,'Branch Format','Tag Format')}"/>
+                            <apex:selectList value="{!convertSource}" size="1" multiSelect="false">
+                                <apex:selectOptions value="{!SfdxFormat}"/>
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:actionFunction name="getRepoBranches" reRender="branchGridContainer" onComplete="unlockScreen();">
+                        <apex:param value="" name="repoName" assignTo="{!repoName}"/>
+                        <apex:param value="" name="repoId" assignTo="{!repoId}"/>
+                    </apex:actionFunction>
+                    <apex:actionFunction name="getReleaseTags" reRender="branchMessage" action="{!setRepo}" onComplete="rerenderbranchGridContainer();">
+                        <apex:param value="" name="releaseName" assignTo="{!releaseName}"/>
+                        <apex:param value="" name="releaseId" assignTo="{!releaseId}"/>
+                    </apex:actionFunction>
+                    <apex:actionFunction name="rerenderbranchGridContainer" reRender="branchGridContainer" onComplete="unlockScreen();"/>
+                    <apex:pageBlockSection title="{!IF(!showPatchOptions,'Select Branch','Select Tag')}" collapsible="false" columns="1" showHeader="true">
+                        <apex:outputPanel layout="block" id="branchGridContainer">
+                            <apex:outputPanel id="branchGrid" layout="block">
+                                <apex:outputPanel layout="none">
+                                    <script type="application/javascript">
+                                        var repoId;
+                                        if({!showPatchOptions} && getElementByIdCS('RL_INPUT_lkid').value){
+                                            repoId = '{!JSENCODE(repoId)}';
+                                        } else if({!!showPatchOptions} && getElementByIdCS('OT_INPUT_lkid')){
+                                            repoId = '{!JSENCODE(repoId)}';//getElementByIdCS('OT_INPUT_lkid').value
+                                        }
+                                        var _config = {
+                                            repoId: repoId,
+                                            url: '{!JSENCODE(urlBase)}dx/gitBranches/' + repoId + '{!JSENCODE(urlParameters)}',
+                                            attachmentName: 'GitBranches',
+                                            gridMode: '{!branchGridMode}',
+                                            isPatch: {!showPatchOptions}
+                                        };
+                                        console.log('branch _config',_config);
+                                        $copado(function () {
+                                            window.setTimeout(copadoDX.initBraches(_config), 0);
+                                            unlockScreen();
+                                        });
+                                    </script>
+                                    <div>
+                                        <div id="removeCacheContainer">
+                                            <apex:commandLink style="display:none;" action="{!refreshBranchCache}" onComplete="unlockScreen();"
+                                                              value="{!$Label.CACHE_REFRESHED_NOW}"
+                                                              onclick="lockScreen();"
+                                                              rerender="opDummy" id="removeCache"/>
+                                        </div>
+                                        <div class="branchesGrid" style="display: none;">
+                                            <label style="display: none;" class="mg2_mtFilter">Metadata Type
+                                                Filter</label>&nbsp;
+                                            <div class="mg2_scaleFilter" style="display: none;"/>
+                                        </div>
+
+                                        <div id="branchSelectorGrid">
+                                            <center><img src="/img/loading.gif"/><i><span
+                                                            id="retry-label">{!$Label.LOADING}</span></i></center>
+                                        </div>
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:outputPanel>
+            <!-- END OF Metadata Source = Branch -->
+            <!-- Metadata Source = Org Credential -->
+            <apex:outputPanel layout="block" id="orgContainer" style="height:100%;" rendered="{!showOrgs}">
+                <apex:pageMessages id="orgMetadataMessage"/>
+                <apex:pageBlock id="orgCredentialsBlock">
+                    <div id="orgHardSizeLimitMessage" style="display:none;">
+                        <apex:pageMessage severity="warning" title="Warning: Metadata size limit exceeded." detail="Please break down your metadata into artifacts and use those artifacts as metadata source of your scratch org." summary="Selected set of metadata exceeds Salesforce mdAPI and SFDX metadata size limit (10.000)." strength="3"/>
+                    </div>
+                    <apex:pageBlockButtons location="top" id="pb_btns_branch">
+                        <apex:commandButton action="{!loadMetadata}" id="loadMetadataBranch"
+                                            value="Load Metadata" title="Load Metadata"
+                                            rendered="{!AND(showActionButtons,mode == 'add')}" onClick="lockScreen();" onComplete="unlockScreen();" reRender="orgMetadataMessage"/>
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection collapsible="true" id="ignoreSection" title=".forceignore file" showHeader="true" columns="2">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Upload Convert .forceignore" for="file"/>
+                            <apex:outputPanel layout="none">
+                                <input type="file" id="attachmentConvertFile" data-textarea="convertForceIgnoreId"
+                                       onchange="setForceIgnoreBodies(this)"/>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Upload Push .forceignore" for="file"/>
+                            <apex:outputPanel layout="none">
+                                <input type="file" id="attachmentPushFile" data-textarea="psuhForceIgnoreId" onchange="setForceIgnoreBodies(this)"/>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Convert .forceignore body" for="ficb"/>
+                            <apex:inputTextarea id="convertForceIgnoreId" value="{!attachmentBodyConvert}" cols="50" rows="20"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Push .forceignore body" for="ficb"/>
+                            <apex:inputTextarea id="psuhForceIgnoreId" value="{!attachmentBodyPush}" cols="50" rows="20"/>
+                        </apex:pageBlockSectionItem>
+                        <script>
+                            twistSection(document.getElementById('{!$Component.orgCredentialsBlock.ignoreSection}').getElementsByTagName('img')[0]);
+
+                             var setForceIgnoreBodies = function(elem){
+                                coUploadAttachment.uploadFile($copado(elem).prop('id'),function(){
+                                    $copado('[Id$='+$copado(elem).data('textarea')+']').val(Base64.decode(coUploadAttachment.attachmentBody))
+                                });
+                            };
+                        </script>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection id="projectBranch" title="Sfdx Project">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Namespace}"/>
+                            <apex:inputText value="{!artifactProject.namespace}" title="{!$Label.Namespace}" maxLength="100"
+                                            id="namespace"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Api_version}"/>
+                            <apex:selectList value="{!artifactProject.sourceApiVersion}" size="1" multiSelect="false" id="apiversion" title="{!$Label.Api_version}">
+                                <apex:selectOptions value="{!Versions}" />
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Sfdx_Login_Url}"/>
+                            <apex:inputText value="{!artifactProject.sfdcLoginUrl}" title="{!$Label.Sfdx_Login_Url}" maxLength="175"
+                                            id="loginUrl"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="{!$Label.Select_Org_Credential}" collapsible="false" columns="2"
+                                           showHeader="true">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="{!$Label.Org_Credential}" for="orgSelection"/>
+                            <apex:selectList value="{!sourceSelections}" size="1" multiSelect="false" id="orgSelection">
+                                <apex:actionSupport reRender="mdGridContainer" event="onchange" onSubmit="lockScreen()" onComplete="unlockScreen()"/>
+                                <apex:selectOptions value="{!OrgCredentialsList}"/>
+                            </apex:selectList>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="{!$Label.Preview_Org_Metadata}" collapsible="false" columns="1"
+                                           showHeader="true">
+                        <apex:outputPanel layout="block" id="mdGridContainer">
+                            <apex:outputPanel id="mdGrid" layout="block">
+                                <apex:outputPanel layout="none">
+                                    <script type="application/javascript">
+                                        var _config = {
+                                            data: {
+                                                id: '{!sourceSelections}' !== '-- None --' ? '{!sourceSelections}' : '',
+                                                orgId: '{!sourceSelections}' !== '-- None --' ? '{!sourceSelections}' : '',
+                                                envId: '{!sourceSelections}' !== '-- None --' ? '{!sourceSelections}' : ''
+                                            },
+                                            style: {
+                                                height: '500px'
+                                            },
+                                            server: {
+                                                metadataUrl: '{!JSENCODE(urlBase)}metadata/__ORGID__{!JSENCODE(urlParameters)}&parentId=__ORGID__&dates=format',
+                                                typesUrl: '{!JSENCODE(urlBase)}gitTypes{!JSENCODE(urlParameters)}'
+                                            },
+                                            ns: '{!JSENCODE(namespace)}',
+                                            attachmentName: 'MetaData',
+                                            viewType: 0,
+                                            contextSize: 10,
+                                            leftContent: '',
+                                            rightContent: '',
+                                            gridMode: 'orgMetadata'
+                                        };
+                                        (function () {
+                                            console.log('selections', '{!sourceSelections}');
+                                            if (metadataGridDX && '{!sourceSelections}' !== '-- None --') {
+                                                metadataGridDX.conf.data.orgId = '{!sourceSelections}';
+                                                metadataGridDX.conf.data.id = '{!sourceSelections}';
+                                                metadataGridDX.conf.data.envId = '{!sourceSelections}';
+                                            } else if (metadataGridDX) {
+                                                metadataGridDX.conf.data.orgId = '';
+                                                metadataGridDX.conf.data.id = '';
+                                                metadataGridDX.conf.data.envId = '';
+                                            }
+                                            copadoDX.init(_config, false, {!scalableGrid}, 'orgMetadata');
+                                            unlockScreen();
+                                        })();
+                                    </script>
+                                    <div id="metadataGrid2">
+                                        <div id="removeCacheContainer">
+                                            <apex:commandLink style="display:none;"
+                                                              value="{!$Label.CACHE_REFRESHED_NOW}"
+                                                              onclick="return metadataGridDX.refreshCache();"
+                                                              rerender="opDummy" id="removeCache"/>
+                                        </div>
+                                        <div class="mg2_scaleFilterFrame" style="display: none;">
+                                            <label style="display: none;" class="mg2_mtFilter">Metadata Type
+                                                Filter</label>&nbsp;
+                                            <div class="mg2_scaleFilter" style="display: none;"/>
+                                        </div>
+
+                                        <div class="mg2_jqxgrid">
+                                            <center><img src="/img/loading.gif"/><i><span
+                                                            id="retry-label">{!$Label.LOADING}</span></i></center>
+                                        </div>
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:outputPanel>
+            <!-- END OF Metadata Source = Org Credential -->
+        </div>
+    </apex:outputPanel>
+</apex:component>

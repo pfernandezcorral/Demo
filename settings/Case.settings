@@ -4,18 +4,18 @@
     <caseCreateNotificationTemplate>unfiled$public/SupportCaseCreatedPhoneInquiries</caseCreateNotificationTemplate>
     <caseFeedItemSettings>
         <characterLimit>400</characterLimit>
-        <collapseThread>true</collapseThread>
+        <collapseThread>false</collapseThread>
         <displayFormat>Default</displayFormat>
         <feedItemType>EmailMessageEvent</feedItemType>
     </caseFeedItemSettings>
     <closeCaseThroughStatusChange>false</closeCaseThroughStatusChange>
-    <defaultCaseOwner>pfernandezcorral5@gmail.com</defaultCaseOwner>
+    <defaultCaseOwner>fl@copa.do.dev-05</defaultCaseOwner>
     <defaultCaseOwnerType>User</defaultCaseOwnerType>
-    <defaultCaseUser>pfernandezcorral5@gmail.com</defaultCaseUser>
+    <defaultCaseUser>fl@copa.do.dev-05</defaultCaseUser>
     <emailToCase>
         <enableEmailToCase>false</enableEmailToCase>
     </emailToCase>
-    <enableCaseFeed>true</enableCaseFeed>
+    <enableCaseFeed>false</enableCaseFeed>
     <enableEarlyEscalationRuleTriggers>false</enableEarlyEscalationRuleTriggers>
     <enableSuggestedSolutions>true</enableSuggestedSolutions>
     <notifyContactOnCaseComment>false</notifyContactOnCaseComment>

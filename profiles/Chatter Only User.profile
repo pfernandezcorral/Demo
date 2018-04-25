@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
-        <application>Copado_Integrations</application>
+        <application>Copado</application>
         <default>false</default>
-        <visible>true</visible>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>Copado_Branch_Management</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>Copado_Change_Management</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>Copado_Compliance</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>Copado_Compliance_Hub</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>Copado_Continuous_Integration</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>Copado_DX</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>Copado_Permissioner</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>Copado_Selenium_Testing</application>
+        <default>false</default>
+        <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>Force_com</application>
@@ -11,58 +51,8 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>agf__Agile_Accelerator</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>agf__Agile_Accelerator_LEX</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>copado__Copado</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>copado__Copado_Branch_Management</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>copado__Copado_Change_Management</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>copado__Copado_Compliance_Hub</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>copado__Copado_Continuous_Integration</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>copado__Copado_Permissioner</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>copado__Copado_Selenium_Testing</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
         <application>standard__AppLauncher</application>
         <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__Chatter</application>
-        <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
@@ -77,16 +67,6 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__LightningSales</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__LightningSalesConsole</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__LightningService</application>
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
@@ -121,3207 +101,1407 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
-        <apexClass>ChangeManagementIntegrationTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>JiraIssueFetcher_Batch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>JiraIssueFetcher_Batch_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>JiraIssueFetcher_Batch_Test_HttpMoc</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>JiraIssueFetcher_Schedule</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>JiraIssueFetcher_Schedule_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AcceptanceCriterionCloner</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AddWorkToPrioritizerExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AddWorkToPrioritizerExtensionTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AddWorkToSprintController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AddWorkToSprintControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AdditionalFieldsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AdditionalFieldsControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AfterInsertOrUpdate</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AgeOfWorkTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AllocationWrapper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Application</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ApplicationApprover</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ApplicationApproverTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ApplicationApprover_TriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ApplicationException</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Application_TriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ApproversCloudOrTeam</apexClass>
+        <apexClass>AddCCHRuleCriteriaExt</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_AssignmentRule</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AssignmentRuleController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AssignmentRuleCreateController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AssignmentRuleCreateControllerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AssignmentRulePickerController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AssignmentRulePickerControllerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AssignmentRuleTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AssignmentRuleTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AutoAssignWorkAction</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AutoAssignWorkActionTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AutoComplete2Controller</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AutoComplete2ControllerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AutoCompleteController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_AutoCompleteControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BackboneController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BackboneControllerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BacklogController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BacklogDataExtractor</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BacklogUtility</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BacklogUtilityTest</apexClass>
+        <apexClass>AddCCHRuleCriteriaExtTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_BeforeInsertOrUpdate</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BeforeInsertOrUpdateTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BookmarksExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BookmarksExtensionTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BugControllerGlobalAction</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BugControllerGlobalActionTest</apexClass>
+        <apexClass>ApexTestResultTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_BugExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BugExtensionTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BugUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Build</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_BuildTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CRUDChecker</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CapexUtility</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Case</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CaseRelatedListController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CaseRelatedListControllerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CaseTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CertificationTriggerTest</apexClass>
+        <apexClass>ApexTestResultTriggerHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ChangeListMessage</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ChangeListMessageTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ChangelistDetailAccumulator</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Chart</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Chatter</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ChatterFollowersComponentController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ChatterFollowersControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ChatterTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ChatterWorkController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ChatterWorkControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ChildWorkCloner</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Cloud</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Color</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ColorTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Column</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ColumnHistory</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ColumnHistoryTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ColumnQueryUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ColumnStatusAssignment</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ColumnTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ColumnUtility</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ColumnUtilityTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Comment</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CommentTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CommentWrapper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CommentsControllerExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CommentsControllerExtensionTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CommonControllerExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CommonControllerExtensionTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ConstantsSingleton</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Cookie</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CookieTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CopyLogTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CoreValues</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CoreValuesTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CreateChangelistTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CreateCommentAction</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CreateSubscriberAction</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_CreateSubscriberActionTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_DebugLogger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_DebugLoggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_DeepCloneInterface</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_DeepCloneTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_DeletedTask</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_DeletedTaskScheduledJob</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_DeletedTaskTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_DevelopmentCycleInterface</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_DevelopmentCycleUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_DmlResult</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_DuplicateValidator</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Email2Agile</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Email2AgileTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Email2GUS</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Email2GUSTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_EmailChatterController</apexClass>
+        <apexClass>ApexTestTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_EmailSLACounterController</apexClass>
+        <apexClass>ArtifactManageMetadataController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_EmailSLACounterControllerTest</apexClass>
+        <apexClass>ArtifactPackageController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_EmailSenderInformationController</apexClass>
+        <apexClass>AttachmentTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_EmailWorkQuickViewController</apexClass>
+        <apexClass>AttachmentTriggerHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_EmailWorkQuickViewControllerTest</apexClass>
+        <apexClass>BackupBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_EntitySubscriptionUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_EntitySubscriptionUtilsTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Epic</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ErrorBlockController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ErrorBlockControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ExceptionHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ExceptionHandlerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_FeatureFreezeChartsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_FeatureFreezeUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_FeatureFreezeUtilsTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_FeedItemUtil</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_FieldWrapper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Frequency</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_FrequencyTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_GoogleChartOptions</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_GoogleChartsHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_HeadCountController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_HeadcountDetailController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_HeadcountDetailControllerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_HeadcountPermissionManager</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ISObject</apexClass>
+        <apexClass>BackupNow</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ISObjectRuntimeImpl</apexClass>
+        <apexClass>BatchHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ISObjectTestImpl</apexClass>
+        <apexClass>BranchManagementExt</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Impact</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_InnovationsController</apexClass>
+        <apexClass>BranchManagementExtension</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_InstanceSort</apexClass>
+        <apexClass>BuildTaskEmailController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_InvestigationExceptionHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_InvestigationExceptionTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_InvestigationExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_InvestigationExtensionTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_InvestigationProcessTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Investigation_Ack_Controller</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Investigation_Ack_ControllerTest</apexClass>
+        <apexClass>BuildTaskTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Issue_Risk</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_KanbanBoardController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_KanbanBoardControllerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_KanbanPreferences</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_KanbanSplashController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_KanbanSplashControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_KanbanUtility</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_KanbanUtilityTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_LocatorTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_MakeCreatorTeamMemberTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ManageProductTagFieldsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ManageProductTagFieldsControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_MessageComponentController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_MessageComponentControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_NotificationUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_NotificationUtilsTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_NotifierComponentTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_NotifierController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ObjectNotComparableException</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_OrgCacheManager</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_OrgCacheManagerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Organization</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ParentWork</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ParentWorkCloner</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ParentWorkRelatedListController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ParentWorkRelatedListControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ParentWorkTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PerforceConnectorCleanupTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PlannerBacklogListController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PlannerBacklogListControllerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Planner_ReleaseVisualizerController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Planner_ReleaseVisualizerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PriorExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PriorExtTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PriorExtTestRemoting</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Priority</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PriorityMapping</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PriorityMatrixController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PriorityMatrixControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PriorityMatrixHelpController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PriorityMatrixHelpControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PriorityMatrixIndicator</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PriorityMatrixIndicatorTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_PriorityWrapper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Problem_Controller</apexClass>
+        <apexClass>BuildTaskTriggerHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ProductTag</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ProductTagController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ProductTagControllerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ProductTagFieldsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ProductTagFieldsControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ProductTagInputController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ProductTagInputControllerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ProductTagTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ProductTagUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ProfileTeamAllocationController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ProfileTeamAllocationControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Profile_TeamListController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Profile_TeamListControllerTest</apexClass>
+        <apexClass>CMTestMethodUtilities</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_PurgeKanbanBoardClosedColumnJob</apexClass>
+        <apexClass>CMUtilities</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_PushTopic</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_RecordType</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_RecordTypeTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_Release</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleaseBurndownUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleaseDetailAccumulator</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleaseEvent</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleaseEventController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleaseEventTemplate</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleaseEventTemplateTestUtils</apexClass>
+        <apexClass>CalculateOrgDifferences</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ReleaseFreezeChartsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleaseFreezeUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleaseFreezeUtilsTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleaseRelatedListController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleaseRelatedListControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleaseTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleasedIn</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleasedInDetailAccumulator</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ReleasedInTriggerTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_RichAutoCompleteController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_RichAutoCompleteControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_RosterStatusUpdater</apexClass>
+        <apexClass>CalculateSnapshotDifferences</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SLAViolationTriggerTest</apexClass>
+        <apexClass>CheckFeaturesController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SchemaManager</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_SchemaManagerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ScrumTeam</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ScrumTeamMemberUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ScrumTeamMemberUtilsTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ScrumTeamMembersOutOfOffice</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ScrumTeamMembersOutOfOfficeTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ScrumTeamTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ScrumTeamUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ScrumTeamUtilsTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ScrumTeamWorkExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ScrumTeamWorkExtensionTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_ScrumteamCacheUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_SearchWork</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_SearchWorkTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_SessionCacheManager</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_SessionCacheManagerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>agf__ADM_SetERRToReleasedExtension</apexClass>
+        <apexClass>CloneSeleniumTestCaseExtension</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SetERRToReleasedExtensionTest</apexClass>
+        <apexClass>ComplianceFindingTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SetStandardControllerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ComplianceFindingTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Severity</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ComplianceHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SeverityTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ComplianceRuleCriteriaTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Severity_Type</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ComplianceRuleCriteriaTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Severity_TypeTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ComplianceRuleTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Sprint</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ComplianceScanResultTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintBacklogControllerExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ComplianceScanResultTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintBacklogControllerExtensionTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ContinuousIntegrationExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintBurnDownUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ContinuousIntegrationExtensionTest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintBurnDownUtilsTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ContinuousIntegrationPermTrgHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintChartsController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ContinuousIntegrationPermTrgHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintChartsController2</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ContinuousIntegrationTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintChartsController2Test</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ContinuousIntegrationTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintChartsControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>CopadoAPI</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintDetailController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>CopadoNotificationHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintDetailExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>CopadoRollup</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintDetailExtensionTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>CopadoSetupController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintLocatorController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>CopadoSmartHelpController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintNavigationController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>CountryPicklistValues</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintTabsController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>CreateTestScriptStepsController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintTabsControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>CreateUserStoryScratchOrgController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DXOperationController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintVirtualWallController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DXTestOrgIntermediaryController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_SprintVirtualWallControllerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeployAPI</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_StampBatch</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeployCommits</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_StampBatchDelete</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeployJobHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_StampBatchTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeploymentEmailController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_StampsWrapper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeploymentExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_StoryControllerGlobalAction</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeploymentFlowStepTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_StoryCostExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeploymentFlowStepTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_StoryCostExtensionTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeploymentFlowTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_StringHolder</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeploymentFlowTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_StringHolderTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeploymentStatusExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Subscriber</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeploymentTaskExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TagAssignment</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeploymentTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TagAssignmentComponentController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeploymentTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TagAssignmentComponentTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DeploymentWizardExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Task</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DestinationOrgTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TaskCloner</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DestinationOrgTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TaskDeletingTriggerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>DynamicScratchOrgController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TaskTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>EditBackupExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TaskTriggerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>EditExternalCISetting</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TasksController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>EditGit</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TasksControllerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>EditOrg</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamCreatorController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>EditOrgDiffExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamCreatorControllerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>EnvironmentTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamDependencyUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>EnvironmentTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamDependencyUtilsTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>EnvironmentalVariableTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamLocatorController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>EnvironmentalVariableTriggerHelpler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamMemberAllocationController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ExecuteDeployment</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamMemberAllocationControllerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ExecuteTestRunExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamReleaseExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ExternalCIAPIFactory</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamReleaseExtensionTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ExternalCIJobsExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamRulesComponentTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>FeatureAccessHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamRulesController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>FeatureHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamSelectorController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GenerateStaticCodeAnalysisRuleSet</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TeamSelectorControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GitBackupTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TextUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GitBackupTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_TextUtilsTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GitCommitChangesController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ThemeAggregatorController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GitCommitLookupController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ThemeAggregatorControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GitHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ThemeAssignWorkListViewConTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GitOrgCommitTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ThemeAssignWorkListViewController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GitOrgCommitTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ThemeAssignmentTriggerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GitRepositoryTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ThemeInputController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GlobalAPI</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ThemeInputControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GlobalAPI_Test</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ThemeTriggerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>GlobalUtilities</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ThemeUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>IExternalCIAPI</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ThroughputChart</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ITrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ThroughputChartTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>IndexMetadataJob</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Type</apexClass>
-        <enabled>true</enabled>
+        <apexClass>InvokableMethods_Test</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_URLUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>JenkinsAPI</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_URLUtilsTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>JobsManager</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UnexpectedValueException</apexClass>
-        <enabled>true</enabled>
+        <apexClass>JsRemotingController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_User</apexClass>
-        <enabled>true</enabled>
+        <apexClass>KanbanBoard</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UserCache</apexClass>
-        <enabled>true</enabled>
+        <apexClass>LicenseHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UserPasswordNotifier</apexClass>
-        <enabled>true</enabled>
+        <apexClass>LicenseManagerController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UserPasswordNotifierTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>LightningReadyFieldsController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UserSettingsController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>LightningReadyRelatedListController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UserSettingsControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ManageEnvVarsExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UserStoryAndTaskWrapper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ManageGitBranchesController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UserStoryAndTaskWrapperTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ManageSeleniumTestingExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UserStoryExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ManualTaskComponentController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UserStoryExtensionTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>MassAddDestOrgs</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UserTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>MassAddRunsToGroup</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_UserTriggerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>MassAddSuitesToGroup</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_VFUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>MassAddToReleaseExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_VFUtilsTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>MergeVersionController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Validate</apexClass>
-        <enabled>true</enabled>
+        <apexClass>MetadataTypesHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_ValidateTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>MetadataselectorExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Validate_Team_Dependency</apexClass>
-        <enabled>true</enabled>
+        <apexClass>MockHttpResponseGenerator</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Validate_Team_Dependency_Test</apexClass>
-        <enabled>true</enabled>
+        <apexClass>MultiselectController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_VelocityChart</apexClass>
-        <enabled>true</enabled>
+        <apexClass>OrgApexTestResultsSummaryEmailController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_VelocityChartTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>OrgDiffExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WallController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>OrgDiffTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WallControllerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>OrgPreferencesHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Work</apexClass>
-        <enabled>true</enabled>
+        <apexClass>OrgStatusIconsController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkAssignment</apexClass>
-        <enabled>true</enabled>
+        <apexClass>OrgTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkAssignmentTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>OrgTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkBatchTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PermissionSchedulable</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkCommentsController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PermissionSetExplorerExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkCommentsControllerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PersonaAssignmentHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkCommonExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PersonaAssignmentTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkCommonExtensionTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PersonaPermissionTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkControllerExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PersonaPermissionTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkControllerExtensionTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PersonaTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkControllerExtensionTestBug</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PersonaTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkControllerExtensionTestClone</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PostInstallClass</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkControllerExtensionTestSaving</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ProjectTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkControllerExtensionTestUserStory</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ProjectTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkControllerGlobalAction</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PromoteChangesExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkControllerGlobalActionTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PromotionEditExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkCreatorRestService</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PromotionTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkCreatorRestServiceTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>PromotionTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkDeepCloneController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>QuickCreateUserStoriesController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkDeepCloneRedirectController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RecalculateBranchStatus</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkDeepCloneRedirectControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RecalculateDeploymentFlowBranchStatuses</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkDeepCloner</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RefreshOrgMetadataCache</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkDetails</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ReleaseExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkDetailsTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ResolveConflictsController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkDialogController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RunAllOrgApexTests</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkDialogControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RunContinuousIntegration</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkDirectorExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RunDeployPromotion</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkDirectorExtensionTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RunOrgComplianceScan</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkEditController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RunSeleniumTest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkEditControllerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RunSeleniumTestGroup</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkEmail</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RunSnapshotComplianceScan</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkEmailControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RunTestGroupsBatch</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>RunUserStoryComplianceScan</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkExtensionTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ScheduledJobExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkFixedAndClosedActions</apexClass>
-        <enabled>true</enabled>
+        <apexClass>Scheduler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkLocatorController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ScratchOrgCompletionController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkLocatorTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ScratchOrgController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkLookupController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ScratchOrgDefinitionController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkLookupControllerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ScratchOrgDisplayController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkObject</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ScratchOrgMetadataController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkPanelTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ScratchOrgOpen</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkPerforceStatus</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ScratchOrgProjectTemplateController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkPerforceStatusTriggerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ScratchOrgStatusCtrl</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkPrioritizerController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ScratchOrgWizardComponentBase</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkRecordBugTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ScratchOrgWizardPageBase</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkRelatedListController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestCasePerSuite</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkRelatedListControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestCasePromoteRollback</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkRemoteActionsExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestCaseTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkRemoteActionsExtensionTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestCaseViewEdit</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSLAFeedItemOrComment_Test</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestGroupExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSLAMonitoringHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestGroupOCTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSLAMonitoringHelperDMLTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestGroupTSTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSLAMonitoringHelperTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestGroupTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSLAResponseTimeDefinitions</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestGroupTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSLATestData</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestQuickRun</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSLAViolationHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestResult</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSLAViolationHelper_Test</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestResultTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSearchLayoutController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestRunResults</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSearchLayoutControllerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestRunTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSetController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestRunTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkSetControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SeleniumTestSuiteTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkStatus</apexClass>
-        <enabled>true</enabled>
+        <apexClass>Settings</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkStatusFix</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SfdxAPI</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkStatusTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SfdxAPIHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkTabPanelExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SfdxSchedulable</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkTabPanelExtensionTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SnapshotDiffTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>SprintVirtualWall</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkTreeController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>StepEditionController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkTreeControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>StepTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkTreeTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>StepTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkTreeUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TakeGitSnapshot</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkTriggerStaticDataStore</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestApexTestResultTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkTriggerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestApexTestSummaryEmail</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkUnsubscriber</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestAppHome</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkUnsubscriberTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestAttachmentTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkUser</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestBackupBatch</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkUserTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestBackupNow</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestBatch</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkUtilsTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestBuildTaskEmailController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkWrapper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestBuildTaskTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_WorkWrapperTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestCMTestMethodUtilities</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Work_Subscriber</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestCheckFeaturesController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_Work_SubscriberTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestCloneDeployment</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_eReleaseRequest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestCloneSeleniumTestCaseExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_eReleaseRequestEmailTemplateIds</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestComplianceFindingTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_eReleaseRequestTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestComplianceRuleTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_eReleaseRequestTrigger_Utils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestComplianceRuleTriggerHandler2</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_eReleaseRequest_SubscriberTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestComplianceScanResultTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_errorUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestContinuousIntegrationExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_errorUtilsTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestContinuousIntegrationPermTrg</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_selectWorkRecordTypeExtensions</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestContinuousIntegrationTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_selectWorkRecordTypeExtensionsTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestCopadoAPI</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_sortingWrapper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestCopadoSetupController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__ADM_sortingWrapperTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestCopadoSmartHelpController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__AgileManager_InstallDataException</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestCreateTestScriptStepsController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__AgileManager_InstallException</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestCreateUSScratchOrg</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__AgileManager_InstallSchedulerException</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestCreditComp</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__AgileManager_PostInstallScripts</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeployAPI</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__AgileManager_PostInstallScriptsTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeployCommits</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_EmailUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeployJobHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_EmailUtilsTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeploymentEmailController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_PageUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeploymentExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_PermissionSetAdapter</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeploymentFlowStepTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_PermissionSetAdapterFactory</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeploymentFlowStepTrigger2</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_PermissionSetAdapterFactoryTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeploymentFlowTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_PermissionSetAdapterTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeploymentFlowTrigger2</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_PermissionSetUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeploymentTaskExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_SoqlUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeploymentTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_SoqlUtilsTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeploymentWizard</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_UserFullNameListBuilder</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDeploymentWizardFailures</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__COM_UserFullNameListBuilderTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestDxOperationController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__LockingRecords</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestEditBackupExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__LockingRecordsTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestEditGit</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__OpenAutoCompleteController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestEditOrg</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__PPM_PortfolioBatch</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestEncodePasswordTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__PPM_PortfolioScheduledJob</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestEnvironmentTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__PPM_PortfolioScheduledJobTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestExecuteTestRunExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_AddTCtoUSController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestExternalCI</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_AddTEtoUSExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestFeatureAccessHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_AddTEtoUSExtensionTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestFeatureHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_AddTestCasesController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestFeatureHelperNegative</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_GenerateAnnotationsController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestGenerateStaticCodeAnalysisRuleSet</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_GenerateAnnotationsControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestGitBackupTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_MassEditTCController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestGitCommit</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_PendingExecutionsController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestGitCommitChangesController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_PendingExecutionsControllerTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestGitCommitLookupController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TCBugsDetailController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestGitOrgCommitTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TEBugDetailController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestGitRepoFromDev1</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TEDetailTCSectionController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestGitRepositoryTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TEDetailUSSectionController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestGlobalUtilities</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TEReportExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestIndexMetadataJob</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TPAddDefault</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestJobsManager</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TPDetails</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestJsRemotingController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TPQuestionDetails</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestLicenseHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TPUserStoryListExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestLicenseManagerController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TestCaseLibraryTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestLightningReadyFieldsController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TestExecutionTriggersTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestLightningReadyRelatedListController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TreeLibrary</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestMaddAddOrg</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TreeLibraryStatic</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestManageEnvVarsExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TreeLibraryTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestManageGitBranchesController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_TreeTestUtils</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestManageSeleniumTestingExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_addUStoTPExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestManualTaskComponentController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QA_addUStoTPExtensionTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestMassAddRunsToGroup</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QuarterPeriod</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestMassAddToReleaseExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__QuarterPeriodTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestMetadataTypesHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__RemoteTKController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestMetadataselectorExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__RemoteTKControllerTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestNotificationsParser</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__RetrospectiveControllerExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestOrgDiffTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__RetrospectiveMiniController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestOrgTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__RetrospectiveTests</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestPermissionSetExplorerExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>agf__Sample_Email2GUS</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestPersonaAssignmentTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__AddCCHRuleCriteriaExt</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestPostInstallClass</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__AddCCHRuleCriteriaExtTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestProjectTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ApexTestResultTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestPromoteChangesExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ApexTestResultTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestPromotionEditExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ApexTestTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestPromotionTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__AttachmentTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestQueryBuilderController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__AttachmentTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestQuickCreateUserStoriesController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__BackupBatch</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestReleaseExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__BackupNow</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestResolveConflictsController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__BatchHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestRunTestGroupBatch</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__BranchManagementExt</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestRunTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__BranchManagementExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestRunTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__BuildTaskEmailController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestScheduledJobs</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__BuildTaskTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestSeleniumGroupTriggers</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__BuildTaskTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestSeleniumTestCasePromoteRollback</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__CMTestMethodUtilities</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestSeleniumTestCaseViewEdit</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__CMUtilities</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestSeleniumTestQuickRun</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__CalculateOrgDifferences</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestSeleniumTestResults</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__CalculateSnapshotDifferences</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestSeleniumTestRunResults</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__CheckFeaturesController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestSeleniumTestRunTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__CloneSeleniumTestCaseExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestSettings</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ComplianceFindingTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestSnapshotDifferenceExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ComplianceFindingTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestSprintVirtualWall</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ComplianceHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestStepEditionController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ComplianceRuleCriteriaTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestTestBatch</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ComplianceRuleCriteriaTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestTestMethodsUtilities</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ComplianceRuleTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestTestRunTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ComplianceScanResultTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestUserStoryApexTestResultsExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ComplianceScanResultTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestUserStoryAssignmentSetController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ContinuousIntegrationExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestUserStoryCodeAnalysisRequest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ContinuousIntegrationExtensionTest</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestUserStoryCommitIntermediaryExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ContinuousIntegrationPermTrgHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestUserStoryCommitTrigger</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ContinuousIntegrationPermTrgHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestUserStoryComplianceScan</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ContinuousIntegrationTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestUserStoryExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ContinuousIntegrationTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestUserStoryImportSetController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__CopadoAPI</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestUserStoryMetadataExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__CopadoRollup</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestUserStoryTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__CopadoSetupController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestUtilities</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__CreateTestScriptStepsController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestValidateOrg</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeployAPI</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestViewDeploymentExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeployCommits</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestWebhookAPI</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeployJobHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TestWebhookLookupController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentEmailController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>Test_BranchManagementExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentExt</apexClass>
-        <enabled>true</enabled>
+        <apexClass>Test_CopadoRollup</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentFlowStepTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>TriggerFactory</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentFlowStepTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryApexTestResultsExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentFlowTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryAssignmentSetController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentFlowTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryCodeAnalysisRequestController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentStatusExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryCommitFiles</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentTaskExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryCommitIntermediaryExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryCommitTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryCommitTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentWizardExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryComplianceScanController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DestinationOrgTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DestinationOrgTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryImportSetController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__EditBackupExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryMetadataExt</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__EditExternalCISetting</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStorySelectCommits</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__EditGit</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryTriggerHandler</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__EditOrg</apexClass>
-        <enabled>true</enabled>
+        <apexClass>UserStoryTriggerHelper</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__EditOrgDiffExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>Utilities</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__EnvironmentTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ValidateOrgExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__EnvironmentTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>VersionPicklistValues</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__EnvironmentalVariableTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>ViewDeploymentExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__EnvironmentalVariableTriggerHelpler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>WebhookAPI</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ExecuteDeployment</apexClass>
-        <enabled>true</enabled>
+        <apexClass>WebhookSchedulable</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ExecuteTestRunExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>WizardUtilsController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ExternalCIAPIFactory</apexClass>
-        <enabled>true</enabled>
+        <apexClass>WorkManager</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ExternalCIJobsExtension</apexClass>
-        <enabled>true</enabled>
+        <apexClass>WorkManagerTest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__FeatureAccessHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>appHome</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__FeatureHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>cloneDeploymentExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__GenerateStaticCodeAnalysisRuleSet</apexClass>
-        <enabled>true</enabled>
+        <apexClass>creditsCompController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__GitBackupTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>nano</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__GitBackupTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>nanoTest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__GitCommitChangesController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>queryBuilderController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__GitCommitLookupController</apexClass>
-        <enabled>true</enabled>
+        <apexClass>rateCopadoController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__GitHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>snapshotDifferenceExtension</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__GitOrgCommitTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>testHttpCalloutMock</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__GitOrgCommitTriggerHelper</apexClass>
-        <enabled>true</enabled>
+        <apexClass>testMethodUtilities</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__GitRepositoryTriggerHandler</apexClass>
-        <enabled>true</enabled>
+        <apexClass>usersStepController</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__GlobalAPI</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__GlobalAPI_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__GlobalUtilities</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__IExternalCIAPI</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__ITrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__IndexMetadataJob</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__InvokableMethods_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__JenkinsAPI</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__JobsManager</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__JsRemotingController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__KanbanBoard</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__LicenseHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__LicenseManagerController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__LightningReadyFieldsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__LightningReadyRelatedListController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__ManageEnvVarsExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__ManageSeleniumTestingExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__MassAddDestOrgs</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__MassAddRunsToGroup</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__MassAddSuitesToGroup</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__MassAddToReleaseExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__MetadataTypesHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__MetadataselectorExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__MultiselectController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__OrgApexTestResultsSummaryEmailController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__OrgDiffExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__OrgDiffTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__OrgStatusIconsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__OrgTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__OrgTriggerHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PermissionSchedulable</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PermissionSetExplorerExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PersonaAssignmentHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PersonaAssignmentTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PersonaPermissionTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PersonaPermissionTriggerHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PersonaTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PersonaTriggerHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PostInstallClass</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__ProjectTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__ProjectTriggerHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PromoteChangesExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PromotionEditExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PromotionTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__PromotionTriggerHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__QuickCreateUserStoriesController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RecalculateDeploymentFlowBranchStatuses</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RefreshOrgMetadataCache</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RunAllOrgApexTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RunContinuousIntegration</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RunSeleniumTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RunSeleniumTestGroup</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RunTestGroupsBatch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__ScheduledJobExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__Scheduler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestCasePerSuite</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestCasePromoteRollback</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestCaseTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestCaseViewEdit</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestGroupExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestGroupOCTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestGroupTSTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestGroupTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestGroupTriggerHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestQuickRun</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestResult</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestResultTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestRunResults</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestRunTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestRunTriggerHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SeleniumTestSuiteTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__Settings</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SnapshotDiffTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SprintVirtualWall</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__StaticCodeAnalysisController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__StepEditionController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__StepTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__StepTriggerHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TakeGitSnapshot</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestApexTestResultTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestApexTestSummaryEmail</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestAppHome</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestAttachmentTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestBackupBatch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestBackupNow</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestBatch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestBuildTaskEmailController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestBuildTaskTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestCMTestMethodUtilities</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestCheckFeaturesController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestCloneDeployment</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestCloneSeleniumTestCaseExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestComplianceFindingTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestComplianceRuleTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestComplianceScanResultTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestContinuousIntegrationExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestContinuousIntegrationPermTrg</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestContinuousIntegrationTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestCopadoAPI</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestCopadoSetupController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestCreateTestScriptStepsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestCreditComp</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestDeployAPI</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestDeployCommits</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestDeployJobHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestDeploymentEmailController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestDeploymentExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestDeploymentFlowStepTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestDeploymentFlowTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestDeploymentTaskExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestDeploymentTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestDeploymentWizard</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestEditBackupExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestEditGit</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestEditOrg</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestEncodePasswordTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestEnvironmentTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestExecuteTestRunExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestExternalCI</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestFeatureAccessHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestFeatureHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestGenerateStaticCodeAnalysisRuleSet</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestGitBackupTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestGitCommitLookupController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestGitOrgCommitTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestGitRepositoryTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestGlobalUtilities</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestIndexMetadataJob</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestJsRemotingController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestLicenseHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestLicenseManagerController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestLightningReadyFieldsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestLightningReadyRelatedListController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestMaddAddOrg</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestManageEnvVarsExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestManageSeleniumTestingExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestMassAddRunsToGroup</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestMassAddToReleaseExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestMetadataTypesHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestMetadataselectorExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestNotificationsParser</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestOrgDiffTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestOrgTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestPermissionSetExplorerExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestPersonaAssignmentTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestPostInstallClass</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestProjectTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestPromoteChangesExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestPromotionEditExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestPromotionTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestQueryBuilderController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestQuickCreateUserStoriesController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestRunTestGroupBatch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestRunTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestRunTriggerHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestScheduledJobs</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestSeleniumGroupTriggers</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestSeleniumTestCasePromoteRollback</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestSeleniumTestCaseViewEdit</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestSeleniumTestQuickRun</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestSeleniumTestResults</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestSeleniumTestRunResults</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestSeleniumTestRunTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestSettings</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestSnapshotDifferenceExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestSprintVirtualWall</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestStaticCodeAnalysisController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestStepEditionController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestTestBatch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestTestMethodsUtilities</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestTestRunTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestUserStoryApexTestResultsExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestUserStoryAssignmentSetController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestUserStoryCodeAnalysisRequest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestUserStoryCommitIntermediaryExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestUserStoryCommitTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestUserStoryComplianceScan</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestUserStoryExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestUserStoryImportSetController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestUserStoryMetadataExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestUserStoryTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestUtilities</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestValidateOrg</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestViewDeploymentExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestWebhookLookupController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__Test_BranchManagementExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__Test_CopadoRollup</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TriggerFactory</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryApexTestResultsExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryAssignmentSetController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryCodeAnalysisRequestController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryCommitIntermediaryExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryCommitTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryCommitTriggerHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryComplianceScanController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryImportSetController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryMetadataExt</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStorySelectCommits</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__UserStoryTriggerHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__Utilities</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__ValidateOrgExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__ViewDeploymentExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__WebhookAPI</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__WebhookSchedulable</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__WizardUtilsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__WorkManager</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__WorkManagerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__appHome</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__cloneDeploymentExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__creditsCompController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__queryBuilderController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__rateCopadoController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__snapshotDifferenceExtension</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__testHttpCalloutMock</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__testMethodUtilities</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__usersStepController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__webhookLookupController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>test</apexClass>
+        <apexClass>webhookLookupController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <custom>false</custom>
@@ -3491,6 +1671,71 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Apex_Test_Result__c.Details__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Apex_Test_Result__c.Failures__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Apex_Test_Result__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Apex_Test_Result__c.Successes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Apex_Test_Result__c.Tests_run__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Apex_Test_Result__c.Total_time__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Artifact_Version__c.Release_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Artifact_Version__c.Release__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Artifact_Version__c.Version__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Artifact_Version__c.View_In_Git__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Artifact__c.Artifact_Repository__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Artifact__c.Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Artifact__c.Org_Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Asset.AccountId</field>
         <readable>true</readable>
@@ -3594,6 +1839,106 @@
         <editable>true</editable>
         <field>AssetRelationship.RelationshipType</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Continuous_Integration__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Deployment_Flow__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Deployment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Environment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Git_Backup__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Git_Repository__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Org_Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Org_Difference__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Promotion__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Release__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Selenium_Test_Group__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Selenium_Test_Run__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuxiliaryObject__c.Snapshot_Difference__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Branch_Management_Permission__c.Allow_Deployments__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Branch_Management_Permission__c.User__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Build_Task__c.Deployment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Build_Task__c.Duration__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Build_Task__c.Start_Time__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Build_Task__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Build_Task__c.Type__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -3876,19 +2221,174 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.agf__ADM_Work__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Compliance_Finding__c.Severity__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule_Criteria__c.Criteria__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule_Criteria__c.Field_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule_Criteria__c.Field__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule_Criteria__c.Node__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule_Criteria__c.Operator__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule_Criteria__c.Order__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule_Criteria__c.Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Action__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Active__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Error_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Filter_Criteria__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Is_Valid__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Last_Validation_Date_time__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Last_Validation_Status_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Matching_Criteria__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Metadata_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Record_Count_Criteria__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Record_Count__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Risk_Details__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Rule__c.Severity__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Scan_Result__c.Deployment__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Change_Management_Integration_Credential__c.Authentication_Method__c</field>
+        <field>Compliance_Scan_Result__c.Environment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Scan_Result__c.Findings__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
-        <field>Change_Management_Integration_Credential__c.External_System__c</field>
+        <field>Compliance_Scan_Result__c.Git_Snapshot__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Scan_Result__c.Highest_Rule_Action__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Scan_Result__c.Highest_Severity__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Compliance_Scan_Result__c.Org_Credential__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Scan_Result__c.Resolution_Details__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Scan_Result__c.Scan_Duration_in_Minutes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Scan_Result__c.Scan_End__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Scan_Result__c.Scan_Start__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Scan_Result__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Compliance_Scan_Result__c.User_Story__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -4007,6 +2507,91 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Continuous_Integration_Permission__c.Access__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration_Permission__c.Email_Notification__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration_Permission__c.Email_Template_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration_Permission__c.User__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Active__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Branch__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Check_Only__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Destination_Org_Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Files_to_be_deployed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Git_Repository__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Last_Build_Task_Duration__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Post_Failed_Deployment_Jobs__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Post_Success_Deployment_Jobs__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Pre_Deployment_Jobs__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Pre_Deployment_Options__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Run_All_Tests__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Continuous_Integration__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contract.ActivatedById</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4051,11 +2636,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Contract.Days_to_EndDate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Contract.Description</field>
         <readable>true</readable>
@@ -4096,6 +2676,581 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Notification__c.AttachmentId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Notification__c.Matching_Key__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Notification__c.Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Notification__c.Parent2Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Notification__c.ParentId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Notification__c.Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Notification__c.isFinished__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Notification__c.isSuccess__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Notification__c.status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Protected_Settiing__mdt.Text_Field__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Setting__mdt.Enabled__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Setting__mdt.Text_Field__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Smart_Help__mdt.Base_Page__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Smart_Help__mdt.Help_Text__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Smart_Help__mdt.Triggering_Action__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Copado_Smart_Help__mdt.Triggering_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Automatically_Merge_and_Deploy__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Branch__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Commits_Ahead__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Commits_Behind__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Destination_Branch__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Destination_Environment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Enable_as_Scratch_Org_Destination__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Last_Merge_Base__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Last_Merge_CBM_Sync__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Last_Pull_CBM_Sync__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Merge_Auto_Resolved_Files__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Pull_Auto_Resolved_Files__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Source_Environment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Sync_Merge_State__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Sync_Pull_State__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow_Step__c.Test_Level__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Active__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Auto_Resolve_Options__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Block_Commits__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Branch_Management_Coordinates__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Copado_DX_Mode__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Disable_Validations__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Enable_Copado_DX__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Equal_Branch_Environment_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Flow_Step_Coordinates__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Git_Repository__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Main_Branch__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Manage_Branches__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Flow__c.Static_Code_Analysis_Settings__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_History__c.Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_History__c.Deployment_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_History__c.Deployment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_History__c.Event__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_History__c.Field__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_History__c.New_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_History__c.Object__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_History__c.Old_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_History__c.User__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Job__c.Async_Job_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Job__c.Deployed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Job__c.Early_Completion_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Job__c.External_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Job__c.External_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Job__c.Status_Flag__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Job__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Job__c.To_Org_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Job__c.Validation_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Task__c.Notify_Task_Owner__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Task__c.Order__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Task__c.Perform_Manual_Task__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Task__c.Perform_in_Destination_Orgs__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Task__c.Perform_in_Source_Org__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Task__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Task__c.Task_Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Task__c.Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment_Task__c.dataJSON__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Build_Task__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Completed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Compliance_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Count_Completed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Deployed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Deployment_Completed_email_sent__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Deployment_Jobs_Count__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Deployment_command_sent__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Flag_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.From_Org__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Last_Compliance_Scan_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Promotion__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.SUM_Deployed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Schedule__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Send_Deployment_Complete_email__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Server_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Deployment__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Destination_Org__c.Completed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Destination_Org__c.Count_Completed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Destination_Org__c.Deployed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Destination_Org__c.SUM_Deployed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Destination_Org__c.Status_Flag__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Destination_Org__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Destination_Org__c.Step_Count__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Destination_Org__c.To_Org_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Compliance_Rule_Group__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Compliance_Scan_Events__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Compliance_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Current_Code_Coverage__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Current_SCA_Score__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Index_Back_Promotion_metadata__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Last_Compliance_Scan_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Maximum_SCA_Score__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Minimum_Apex_Test_Coverage__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Namespace__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Org_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Run_all_tests__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environment__c.Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Environmental_Variable__c.Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Epic__c.Epic_Details__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Epic__c.Epic_Title__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Epic__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Event.Description</field>
         <readable>true</readable>
@@ -4127,6 +3282,271 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>External_CI_Job_Result__c.Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job_Result__c.Duration__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job_Result__c.End_Time__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job_Result__c.Environment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job_Result__c.External_CI_Job_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job_Result__c.Job_URL_Link__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job_Result__c.Job_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job_Result__c.Start_Time__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job_Result__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job_Result__c.User_Story__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job__c.Continue_on_failure__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job__c.Environment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job__c.Invoke_on__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job__c.Job_Api_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job__c.Order__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job__c.Timeout_in_minutes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job__c.User_Story__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Job__c.dataJSON__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Setting__c.API_Token__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Setting__c.Credential_Validated__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Setting__c.Endpoint__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Setting__c.Password__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>External_CI_Setting__c.Username__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Backup__c.Branch__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Backup__c.Compliance_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Backup__c.Frequency__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Backup__c.Git_Snapshot_Permissions__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Backup__c.Last_Backup__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Backup__c.Last_Compliance_Scan_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Backup__c.Metadata_Types__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Backup__c.View_in_Git__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Commit__c.Branch__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Commit__c.Changes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Commit__c.Commit_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Commit__c.Commit_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Commit__c.Commit_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Commit__c.Git_Repository__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Org_Commit__c.Changes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Org_Commit__c.Commit_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Org_Commit__c.Commit_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Org_Commit__c.Commit_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Org_Commit__c.Git_Backup__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Org_Commit__c.Git_Operation__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Org_Commit__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Org_Commit__c.View_in_Git__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Repository__c.Branch_Base_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Repository__c.Commit_Base_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Repository__c.Git_Provider__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Repository__c.Password__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Repository__c.Pull_Request_Base_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Repository__c.Tag_Base_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Repository__c.URI__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Git_Repository__c.Username__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Idea.Attachment</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -4136,9 +3556,29 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Knowledge__kav.Solution_id__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Kanban_Board__c.Columns_SOQL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Kanban_Board__c.Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Kanban_Board__c.Field_to_read_update__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Kanban_Board__c.JSON_Settings__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Kanban_Board__c.SOQL_Query__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -4416,11 +3856,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Order.Contact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Order.ContractEndDate</field>
         <readable>true</readable>
@@ -4516,6 +3951,191 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>OrgDiff__c.From_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>OrgDiff__c.From_Org__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>OrgDiff__c.Last_Modified_By_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>OrgDiff__c.Metadata_Types__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>OrgDiff__c.To_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>OrgDiff__c.To_Org__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Compliance_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Custom_Domain__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Default_Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Default_Scratch_Org_Definition__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Developer_Hub_Org__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Disable_Validation__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Environment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Error__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Last_Apex_Tests_Datetime__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Last_Apex_Tests_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Last_Compliance_Scan_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Last_Git_Backup_Datetime__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Last_Git_Backup_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Metadata_Types__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Minimum_Apex_Test_Coverage__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Oauth_Signature__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Org_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Password__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Profile_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.SFDC_Org_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Scratch_Org_Expiration_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Scratch_Org_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Test_Frequency__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Token__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Type_Icon__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Username__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Validated_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.Validated_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org__c.is_Developer_Hub_Org__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Persona_Permission__c.Permission_Set_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Persona__c.Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Product2.Description</field>
         <readable>true</readable>
@@ -4554,6 +4174,256 @@
         <editable>true</editable>
         <field>Product2.StockKeepingUnit</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Project__c.Deployment_Flow__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Project__c.Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Project__c.End_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Project__c.Index_Metadata__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Project__c.Start_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Project__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Auto_Resolve_Options__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Back_Promotion__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Create_Full_Permission_Sets_Step__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Create_Full_Profiles_Step__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Destination_Environment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Destination_Org_Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Project__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Release__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Send_Deployment_Complete_email__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Source_Environment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Source_Org_Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Promotion__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request_Review__c.Body__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request_Review__c.Review_Action__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request_Review__c.Review_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request_Review__c.URL_Link__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request_Review__c.Url__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request_Review__c.User_Avatar_Url__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request_Review__c.User_Avatar__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request_Review__c.Username__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Assignees__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Changed_Files__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Closed_At__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Commits__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.External_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Mergeable__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Merged_At__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Merged_By__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Merged__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Request_Number__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Requested_Reviewers__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.State__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Target_Branch__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.URL_Link__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Url__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.User_Avatar_Url__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.User_Avatar__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Pull_Request__c.Username__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Release__c.Base_Branch__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Release__c.Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Release__c.Planned_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Release__c.Project__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Release__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Release__c.Version__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -4626,9 +4496,384 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>SocialPersona.SourceApp</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Scheduled_Job_Run__c.Called_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scheduled_Job_Run__c.Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scheduled_Job_Run__c.Run_as_User__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scheduled_Job_Run__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scheduled_Job__c.Apex_Job_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scheduled_Job__c.Cron_Expression__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scheduled_Job__c.Delete_Runs_after_days__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scheduled_Job__c.Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scheduled_Job__c.Run_as_User__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scheduled_Job__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scheduled_Job__c.Webhook_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scratch_Org_Definition__c.Duration_in_days__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scratch_Org_Definition__c.Scratch_Org_Definition_JSON__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scratch_Org_Project_Template__c.Api_Version__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scratch_Org_Project_Template__c.Developer_Hub_Org__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scratch_Org_Project_Template__c.Namespace__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scratch_Org_Project_Template__c.Project_JSON__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scratch_Org_Project_Template__c.SFDC_Login_Url__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Scratch_Org_Project_Template__c.Source_Org_Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Group_Org_Credential__c.External_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Group_Test_Suite__c.External_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Group_Variable__c.Display_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Group_Variable__c.Hide_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Group_Variable__c.Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Locator_Reference__c.External_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Locator_Reference__c.Selenium_Test_Case_Version__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Locator__c.External_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Locator__c.Locator_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Locator__c.Locator__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Locator__c.Page__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Settings__c.Default_Org_Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Settings__c.Desired_Capabilities__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Settings__c.Device_Screen_Size__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Settings__c.Provider__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Settings__c.Selected_Platforms__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Settings__c.Webdriver_Proxy__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Case_Per_Suite__c.Order__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Case_Per_Suite__c.Test_Dataset_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Case__c.Open_with_Copado_Recorder__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Case__c.Previous_Version__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Case__c.Version__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Group__c.Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Group__c.Environment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Group__c.External_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Group__c.Manage_Test_Runs_manually__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Group__c.Run_Sequentially__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Group__c.Status_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Group__c.Status_Icon__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Group__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Group__c.Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Result__c.Batch_No__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Result__c.Elapsed_Time_Seconds__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Result__c.Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Result__c.Result_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Result__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Run__c.Base_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Run__c.Batch_No__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Run__c.Environment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Run__c.External_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Run__c.Last_Status_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Run__c.Last_Status_Icon__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Run__c.Last_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Run__c.Org_Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Run__c.Selenium_Test_Group__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Suite__c.Apex_code_after_test__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Suite__c.Apex_code_before_test__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Suite__c.Notes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Selenium_Test_Suite__c.Test_Script__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Snapshot_Difference__c.Destination_Git_Commit__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Snapshot_Difference__c.Destination_Option__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Snapshot_Difference__c.Destination_Org_Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Snapshot_Difference__c.Last_Run__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Snapshot_Difference__c.Partial_Selection__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Snapshot_Difference__c.Source_Git_Commit__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Snapshot_Difference__c.Source_Option__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Snapshot_Difference__c.Source_Org_Credential__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -4644,6 +4889,226 @@
         <editable>true</editable>
         <field>Solution.SolutionNote</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sprint__c.Days_in_sprint__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sprint__c.End_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sprint__c.Full_time_resources_in_sprint__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sprint__c.Objective__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sprint__c.Project__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sprint__c.Release__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sprint__c.Start_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sprint__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sprint__c.Story_points__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sprint__c.Team__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sprint__c.Working_days_in_sprint__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Result__c.Details__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Result__c.Number_of_Violations__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Result__c.Org_Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Result__c.Score_v11__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Result__c.User_Story__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Rule__c.Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Violation__c.File__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Violation__c.Info_URL_Link__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Violation__c.Info_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Violation__c.Line__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Violation__c.Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Violation__c.Priority__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Violation__c.Rule__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Static_Code_Analysis_Violation__c.Score__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Attachment_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Branch__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.CheckOnly__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Commit_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Commit_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Completed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Count_Completed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Deployed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Git_Repository__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Manual_Task_Notified__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Notify_Task_Owner__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Org_Count__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Run_all_tests__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.SUM_Deployed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Status_Flag__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.View_Attachment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Step__c.dataJson__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -4671,10073 +5136,779 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>User.agf__Certified_Product_Owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.agf__Certified_Scrum_Master__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.agf__GUS_User_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.agf__Notification_Level__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
-        <field>User.agf__Product_Owner_Certified_Date__c</field>
+        <field>Team_Dependency__c.Deliverable__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>User.agf__Scrum_Master_Certified_Date__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.agf__Show_All_Work_Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.agf__Summary__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.agf__Team_Member_Allocation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.agf__User_Preference__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.agf__Wall_Preference__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.agf__Work_User_Interface__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.copado__API_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.copado__Hide_Copado_feedback__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>User.copado__Work_Manager_Panels__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Acceptance_Criterion__c.agf__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Acceptance_Criterion__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Acceptance_Criterion__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Additional_Field__c.agf__Bug_Setting__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Additional_Field__c.agf__Field_API_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Additional_Field__c.agf__Investigation_Setting__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Additional_Field__c.agf__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Additional_Field__c.agf__Product_Tag__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Additional_Field__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Additional_Field__c.agf__User_Story_Setting__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application_Approver__c.agf__Application__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application_Approver__c.agf__Approval_Context__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application_Approver__c.agf__Approval_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application_Approver__c.agf__Approver_Email__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application_Approver__c.agf__Approver_Role__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application_Approver__c.agf__Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application_Approver__c.agf__Cloud__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application_Approver__c.agf__Executive_Role__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application_Approver__c.agf__Functional_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Applicable_Moratoriums__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Application_Planned_Duration__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Application_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Case_Description_Footer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Case_Description_Header__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Case_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Category__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Chatter_Post_Group__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Current_Major_Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Daily_Header_Text_Next_Major__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Daily_Release_Stagger__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Duplicate_Application_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Enable_ERR_Notification_Emails__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Enable_Release_Planning_Case_Creation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Enable_Release_Planning__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Internal_Instances__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Is_Customer_Facing__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Major_Release_Stagger__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Next_Major_Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Other_Release_Stagger__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Patch_Header_Text_Next_Major__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Patch_Stagger__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Planned_Schedule_Email__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Primary_Chatter_Post_Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Primary_Footer_Text_Next_Major__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Primary_Release_Manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Second_Chatter_Post_Email__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Secondary_Chatter_Post_Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Application__c.agf__Secondary_Release_Manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Additional_Emails__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Assignee_Assignment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Exception_Request_POC__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Inactive__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Product_Owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__QA_Assignment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Scrum_Team_Assignment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Senior_Management_POC_Assignment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Sev_1_Assignee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Sev_2_Assignee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Sev_3_Assignee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Sev_4_Assignee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Systest_Assignment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__Tech_Writer_Assignment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Assignment_Rule__c.agf__UE_Engineer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Bookmark__c.agf__Sort_Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Bookmark__c.agf__Title__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Bookmark__c.agf__URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Build__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Build__c.agf__Release_Freeze__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Build__c.agf__Scrumforce_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Build__c.agf__Weeks_prior_to_release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Burndown_Item__c.agf__Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Burndown_Item__c.agf__Days_Remaining__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Burndown_Item__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Burndown_Item__c.agf__Hours_Remaining__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Burndown_Item__c.agf__Points_Remaining__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Burndown_Item__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Burndown_Item__c.agf__Task_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Burndown_Item__c.agf__Task__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Burndown_Item__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Burndown_Item__c.agf__Upsert_Key__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Burndown_Item__c.agf__Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Cache_Metadata__mdt.agf__OrgCacheEnabled__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Cache_Metadata__mdt.agf__SessionCacheEnabled__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Account_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Account_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Account_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Account_Stage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Account_Support_SBR_Category__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Age__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Case_Created_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Case_ID_Set__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Case_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Case_Number__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Case_Owner_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Case_Owner_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Case_Owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Case_Reason__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Case_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Case_Subject_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Case_Subject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Cases_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Date_Time_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Escalated_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__FunctionalArea__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__General_Application_Area__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Geo__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__New_Feature_Release_Related__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Parent_Account_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Parent_Account_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Parent_Account_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Support_Skill_Group__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Support_Tier_3_Owner_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Support_Tier_3_Owner_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Support_Tier_3_Owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Case__c.agf__Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>agf__ADM_Certification__c.agf__Additional_Comments__c</field>
+        <field>Team_Dependency__c.Dependency_Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>agf__ADM_Certification__c.agf__Certified_On__c</field>
+        <field>Team_Dependency__c.Dependent_Team__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>agf__ADM_Certification__c.agf__Certified__c</field>
+        <field>Team_Dependency__c.Dependent_User_Story__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>agf__ADM_Certification__c.agf__User__c</field>
+        <field>Team_Dependency__c.Needed_by_Date__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Change_List__c.agf__Changelist__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Change_List__c.agf__Check_In_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Change_List__c.agf__Check_In_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Change_List__c.agf__Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Change_List__c.agf__Local_Check_in_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Change_List__c.agf__Release_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Change_List__c.agf__Source__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Change_List__c.agf__Task__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Change_List__c.agf__Username__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Change_List__c.agf__Work_Number__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Change_List__c.agf__Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Cloud__c.agf__Cloud_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Color__c.agf__Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Color__c.agf__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Color__c.agf__Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Column_History__c.agf__Duration_By_Work_Days__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Column_History__c.agf__Duration__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Column_History__c.agf__Time_Left__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Column__c.agf__Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Column__c.agf__Max_Number_of_Records__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Column__c.agf__Parent_Column__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__Body__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__Comment_Created_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__Comment_Created_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__Created_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__Is_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__LocaleCreatedDate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__Posted_to_Chatter__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__Preserve_Formatting__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__Priority_Override_Explanation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__Subject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Comment__c.agf__Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Copy_Log__c.agf__Failures__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Copy_Log__c.agf__Text__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Copy_Log__c.agf__Title__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Copy_Log__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Copy_Log__c.agf__Upserts__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__Actual_Coverage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__Code_Coverage_Goal_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__Coverage_Gap__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__Link_to_actual_report__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__Min_Package_Coverage_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__Module_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__NCLOC__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__Package_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__Report_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__Scheduled_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__Target_Coverage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Coverage__c.agf__statement__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic_Burndown_Item__c.agf__Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic_Burndown_Item__c.agf__Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic_Burndown_Item__c.agf__Metric__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic_Burndown_Item__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Category__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Committed_By_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Design_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Design_Lead__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Development_Lead__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__End_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Health__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Performance_Lead__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Priority__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Quality_Lead__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Scheduled_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Start_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__T_Shirt_Size__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Tech_Design_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Epic__c.agf__Test_Design_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Code_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Code_Coverage_Percentage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__DB_Upgrade_Script_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Documentation_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Effort_to_Disable_Feature__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Exception_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Feature_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__List_of_Showstopper_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Localization_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Major_Exception__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Num_P2_Bugs_TF_to_Fix_Verify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Num_of_P1_Bugs_TF_to_be_Fixed_Verified__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Number_of_Blocking_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Number_of_Open_Regressions__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Number_of_P1_P2_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Percent_Test_Cases_Automated__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Plan_if_Exception_Denied__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Plan_to_Complete_by_Release_Freeze__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Product_Metrics_Defined__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__R_D_Exec_Approved__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Remaining_Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Security_Standards_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__SysTest_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Test_Cases_Passing_Percentage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__Usability_Testing_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__User_Experience_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__X508_Compliance_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Exception_Request__c.agf__delete_me__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Accessibility_Bugs_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Accessibility_Dashboard_link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__All_New_Features_DONE__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__All_New_Upgraded_3PP_are_Approved__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__All_Security_Bugs_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__All_Security_Stories_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__All_Sprint_DOD_Criteria_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__All_Supported_one_app_Browsers_Tested__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Assessment_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Automated_Tests_Annotated__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Biz_SOX_Compliance_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Bugs_Fixed_the_Week_of_Feature_Freeze__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Bugs_TF_Fixed_the_Week_of_Feature_Freeze__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Changes_to_Hub_Agent__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Changes_to_Logging__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Changes_to_ping_jsp__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Code_Line_is_Potentially_Releasable__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Confirmed_not_on_BM_Top_10_List__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Core_Release_against_Hybrid_Apps_in_Dev__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Core_Release_against_Prod_Hybrid_Apps__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__DB_Upgrade_Scripts_Complete_and_Verified__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Deferred_Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Dependencies_on_other_teams_closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Dev_Leadership_Confirmation_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Dev_Leadership_Sign_Off_Confirmed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Dev_Signoff_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_2Week_NotReady_Comment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_2Week_NotReady_Label__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_2Week_NotReady_Response__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_2Week_Ready_Label__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_2Week_Ready_Response__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_2Week_Risk_Comment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_2Week_Risk_Label__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_2Week_Risk_Response__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_6Week_NotReady_Comment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_6Week_NotReady_Label__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_6Week_NotReady_Response__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_6Week_Ready_Label__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_6Week_Ready_Response__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_6Week_Risk_Comment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_6Week_Risk_Label__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_6Week_Risk_Response__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_Concerns_Label__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_Concerns_Response__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_Perm_Label__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_Perm_Response__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_Split_Label__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_Split_Response__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_Test_Label__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_Test_Response__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_Trust_Label__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__EA_Trust_Response__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Expalin_if_Team_is_Yellow_Red__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_3rd_Party_Product__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Automated_Tests_Annotated__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Bugs_TF_to_Fix__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Bugs_TF_to_Verify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Bugs_missing_Automation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Bugs_to_Fix__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Bugs_to_Verify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Code_Line_is_Potentially_Releasa__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_DB_Upgrade_Scripts_Incomplete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Extended_ftest_Test_Failures__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_High_TF_Fix_Rate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_High__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_IT_Compliance_Not_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_IT_Conversion_Plan_Incomplete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_IT_Prod_Support_Model_Incomplete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_IT_Rollback_Plan_Incomplete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_IT_Security_Reviews_Incomplete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_IT_Stage_Environment_not_ready__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_IT_VAT_Review_Incomplete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Java_Package_and_PL_SQL_Coverage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Num_P1_Bugs_TF_to_Fix_Verify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Num_P2_Bugs_TF_to_Fix_Verify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_Feature_Requests__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_Non_Deterministic_Test_NDT__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_P012_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_RCA_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_RCA_Stories__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_RCA_To_D__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_Regression__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_Security_bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_TF_1_Week__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_TF__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Open_User_Stories__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_P0_Blocking_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_P0_Bugs_at_FF__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_P1_P2_Bugs_TF_1_wk_old__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Pending_Auto_Integrations__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_Sprint_DOD_Criteria__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_TF_to_Fix__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_TF_to_Fix_or_Verify_1_week_0__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_Biz_Sox_Not_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_Blocking_Bugs_Exist_on_Freeze__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_IT_Infra_not_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_Not_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_PerfEng_Requirements_not_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_Regressions_Exist_on_Freeze__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_Scripts_not_Verified__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_Solution_Swimlanes_not_Built__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_TF_Count_is_High__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_TF_Exist__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_TF_not_Trending_Down__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_Unable_to_Sign_off_for_ZD__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_VAT_review_not_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_bug_count_is_high__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_bugs_not_trending_down__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_count_is_high__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_not_Behind_a_Perm_or_Equiv__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Explain_if_not_trending_downward__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Features_Complete_and_DoD_Achieved__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Features_Enabled_Within_24hrs_of_Relea__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Features_Enabled_by_Retirement_Scripts__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Features_Enabled_within_24hrs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Features_behind_perm_disabled__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Features_with_Perf_Test_Outstanding__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Freeze_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__GUS_Signoff_Confirmed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__GUS_Signoff_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__IT_Compliance_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__IT_Data_Conversion_Plan_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__IT_Infra__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__IT_Prod_Support_Model_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__IT_Rollback_Plan_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__IT_Security_Reviews_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__IT_Stage_Environment_Ready__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__IT_VATQuestionnaire_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__IT_VAT_Review_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__IT_VAT_architecture_reviews_requirement__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Is_the_work_behind_a_perm__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Java_Package_PLSQL_Coverage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__LINK_to_S1_Chatter_Group__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Large_Invasive_changes_are_behind_a_perm__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__List_Monitoring_Requirements__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Minor_Exception__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__New_Services_Requiring_Monitoring__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__No_Blocking_Bugs_on_the_Freeze_Branch__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__No_Open_P0_Bugs_at_FF__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__No_Open_User_Stories__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__No_Regressions_on_the_Freeze_Branch__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Num_P1_Bugs_Test_Failures_to_Fix_Verify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Num_P1_P2_Bugs_Test_Failures_1_week_old__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Num_P1_P2_Bugs_Test_Failures_to_Fix__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Num_P1_P2_Bugs_Test_Failures_to_Verify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_Automated_CBS_5__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_Blocking_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_Bugs_TF_to_Fix_max_2_Dev__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_Bugs_TF_to_Verify_max_2_QE__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_Bugs_missing_Automation_0__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_Bugs_to_Fix_max_1_Dev__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_Bugs_to_Verify_max_1_QE__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_Open_Feature_Requests__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_Open_User_Stories_0__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_P2_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_TF_to_Fix_1week_0__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_TF_to_Fix_max_1_Dev__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_TF_to_Fix_or_Verify_1week_0__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Number_of_Test_Failures__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Open_Accessibility_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Other_Changes_for_RelEng__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Other_Changes_for_Tech_Ops__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__P012_Security_Bugs_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__P0_1_2_Bugs_from_RCA_1_Month_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__P0_P1_P2_Bugs_Found_the_Week_of_FF__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__P0_P1_P2_Bugs_TF_Found_the_Week_of_FF__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Pending_Auto_Integrations_0__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Perf_Impact_Features_Tested_Behind_Perm__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Performance_Engineering_Requirements_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Performance_Self_Assessment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Post_Feature_Freeze_Updates__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_Details_for_Core_Hybrid_in_Dev__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_Details_for_Scale_Impact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_Details_for_one_app_Testing__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_behind_perm_details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_details_for_Core_Prod_Hybrid__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_details_if_SO_not_created__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_details_on_open_P012_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_details_on_open_RCA_Stories__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_details_on_open_RCA_ToDos__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_details_on_open_RCA_bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_details_on_open_Regressions__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_details_on_open_Security_bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_open_Accessibility_bug_details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Provide_other_team_dependencies_details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__QE_Leadership_Confirmation_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__QE_Leadership_Sign_Off_Confirmed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__QE_Signoff_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__RCA_Dashboard_link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__RCA_Stories_1_Month_Closed_Scheduled__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__RCA_To_Do_s_1_Month_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Scale_Impact_CMP__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Scale_Impact_Documented__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Security_Dashboard_link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Signoff_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Solution_Overview_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Solutions_Overview_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Stop_Monitoring_Disabled_Services__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Swimlane_Solutions_Built_Utilized__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__TF_Fixed_the_Week_of_Feature_Freeze__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__TF_Found_the_Week_of_Feature_Freeze__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Team_Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Team_Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Team_Signoff_Confirmed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Team_Signoff_Status_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Team_Signoff_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Team_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Team_Signs_Off__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Teams_Self_Assessment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Upgrade_Scripts_Verified_in_Upgrade_Env__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Upgrade__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__X0_TF_on_basicftest_basicselem_test__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__Zero_Downtime_Sign_Off__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__of_Fixed_Bugs_to_Verify_Zero__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Feature_Freeze_Status__c.agf__of_Open_P0_P1_P2_Bugs_ZERO__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Frequency__c.agf__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_GUS_Exception__c.agf__Data_Capture__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_GUS_Exception__c.agf__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Goal__c.agf__Current_Measurements__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Goal__c.agf__Description_255__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Goal__c.agf__How_will_it_be_measured__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Goal__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Goal__c.agf__Theme__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Impact_Type__c.agf__Impact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Impact_Type__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Impact__c.agf__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Impact__c.agf__Example__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Impact__c.agf__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Investigation_Exception__c.agf__Assigned_To__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Investigation_Exception__c.agf__Decision_Explanation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Investigation_Exception__c.agf__Reason_for_Request__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Investigation_Exception__c.agf__Requestor__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Investigation_Exception__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Investigation_Exception__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Child_Scheduled_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Child_Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Child_Sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Child_Subject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Child_Work_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Child_Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Created_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Duplicate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Parent_Scheduled_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Parent_Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Parent_Sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Parent_Work_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Parent_Work_Subject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Parent_Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Parent_Work__c.agf__Sort_Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Perforce_Connector__c.agf__Changelist__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Perforce_Connector__c.agf__Describe__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Perforce_Connector__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Perforce_Connector__c.agf__Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Perforce_Connector__c.agf__Task__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Perforce_Connector__c.agf__User__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Perforce_Connector__c.agf__Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Perforce_Connector__c.agf__type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Priority_Mapping__c.agf__Frequency__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Priority_Mapping__c.agf__Impact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Priority_Mapping__c.agf__Priority__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Priority_Override__c.agf__Priority_Default__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Priority_Override__c.agf__Priority_Mapping__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Priority_Override__c.agf__Priority_Override_Explanation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Priority_Override__c.agf__Priority__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Product_Tag__c.agf__Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Product_Tag__c.agf__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Product_Tag__c.agf__Migration_MFA__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Product_Tag__c.agf__Migration_PA__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Product_Tag__c.agf__Team_Tag_Key__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Product_Tag__c.agf__Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Product_Tag__c.agf__Use_for_Automated_Tools__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Burndown_Item__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Burndown_Item__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Application__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Base_Event__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Day_Offset__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Day_of_Week__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Hour_Offset__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Instance_Key_Verification__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Instance_Key__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Minute_Offset__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Notify_Customers__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Release_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Start_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event_Template__c.agf__Test_Instance_List__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event__c.agf__Application_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event__c.agf__Application_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event__c.agf__Customer_Facing_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event__c.agf__Deployment_Instances__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event__c.agf__Event_Contact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event__c.agf__Event_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event__c.agf__Origination__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event__c.agf__Release_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event__c.agf__Release_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event__c.agf__Scheduled_End__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Event__c.agf__Scheduled_Start__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Blocking_or_P0_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Bugs_Fixed_Week_of_RF__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Bugs_TF_Found_Week_of_RF__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Bugs_Test_Failures_Fixed_Week_of_RF__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Changes_to_Hub_Agent__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Changes_to_Logging__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Changes_to_ping_jsp__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Code_Coverage_Goals_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Code_Line_is_Releasable__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Confirmed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__DB_Upgrade_Scripts_Complete_and_Verified__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Documentation_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_Auto_Integrations__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_Blocking_P0_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_Bugs_missing_Automation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_Bugs_to_Fix__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_Code_Coverage_goals_not_met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_DB_Upgrade_Scripts_Incomplete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_Extended_ftest_Test_Failures__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_High_Number_of_Bugs_to_Verify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_High_Number_of_bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_High_TF_Count__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_High_TF_Find_Rate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_High_TF_Fix_Rate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_Open_P1_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_Open_Regressions__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_Open_User_Stories__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_Test_Failures_older_than_1_day__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_doc_incomplete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_failure_to_pass_systes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_find_rate_if_high__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_fix_rate_if_high__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_if_Code_Line_is_not_Releasable__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_if_TF_Exist__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_pre_scripts_testing_not_complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Explain_release_sprint_goals_incomplete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Features_Enabled_by_Retirement_Scripts__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__New_Services_Requiring_Monitoring__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__No_Blocking_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Number_of_Bugs_missing_Automation_0__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Number_of_Extended_TF_to_Fix_3_days__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Number_of_Open_User_Stories_0__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Number_of_P1_P2_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Number_of_TF_to_Fix_1_day_old__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Open_Regressions__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Other_Changes_for_RelEng__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Other_Changes_for_Tech_Ops__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__P0_P1_P2_Bugs_Found_Week_of_RF__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__P1_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Passed_SysTest__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Pending_Auto_Integrations_0__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Post_Release_Freeze_Status_Updates__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Pre_Scripts__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Product_Division__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Release_Sprint_Goals_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Signoff_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Stop_Monitoring_Disabled_Services__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__TF_Fixed_Week_of_RF__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__TF_Found_Week_of_RF__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Team_Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Team_Signoff_Confirmed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Team_Signs_Off__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Test_Failures_older_than_1_day__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Test_Failures_older_than_allowable__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Total_Bugs_Test_Failures_to_Verify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Total_Number_of_Bugs_to_Fix__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Total_Number_of_Fixed_Bugs_to_Verify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Total_Number_of_TF_to_Fix__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Total_number_of_bugs_TF_to_fix__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__X100_of_Test_Cases_Passing__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Freeze_Status__c.agf__Zero_TF_basicftest_basicselenium_utest__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__AppStore_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__AppStore__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Approval_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Core_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Core__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Date_Approved__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Dev_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Dev__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Doc_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Doc__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__L10N_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__L10N__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Platform_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Platform__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Product_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Product__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__QA_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__QA__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__QE__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__QPD_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__QPD__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__RM_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__RM__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Release_Approved__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Security_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Security__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Staggered_Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Systest_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Systest__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__TQE_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__TechOps_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__TechOps__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Tech_SVP_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__Tech_SVP__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__UE_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Signoff__c.agf__UE__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Stamp_Batch_ID__c.agf__Action__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Stamp_Batch_ID__c.agf__Release_From__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Stamp_Batch_ID__c.agf__Release_To__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release_Stamp_Cache__c.agf__Stamp_ID_List__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Actual_Release_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Application__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Created_By_import__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Created_On_import__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Customer_Facing_Release_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Deployment_Delayed_minutes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Deployment_Instances__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Duplicate_Validator__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Note__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Number_of_Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Number_of_Stamps__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Planned_Duration__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Planned_GS0_Duration__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Planned_GS0_End_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Planned_GUS_Release_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Planned_Unplanned__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Release_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Release_Delay_Category__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Release_Manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Release_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Scheduled_End_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Short_Note__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Release__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Released_In__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Released_In__c.agf__Release_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Released_In__c.agf__Reverted__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Released_In__c.agf__Scheduled_Release_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Released_In__c.agf__Selected__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Released_In__c.agf__Subject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Released_In__c.agf__Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Cache__c.agf__Completed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Cache__c.agf__Deleted__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Cache__c.agf__Group_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Cache__c.agf__Inserted__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Cache__c.agf__Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Cache__c.agf__ScrumteamOrScrumteamMember__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Cache__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Allocation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Department__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__External_Email__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Functional_Area__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Group_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Internal_Email__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Member_Name_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Member_Name_Text__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Member_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Record_Type_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Req_Code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Role__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__Scrum_Team_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team_Member__c.agf__formula_email__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Business_Hours__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Capex_Enabled__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Capex_Lead__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Chatter_Groups__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Cloud_LU__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Cloud__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Colocation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Copy_Record_Type_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Definition_of_Done_Check__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Definition_of_Done__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Definition_of_Ready_Check__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Definition_of_Ready__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Distribution_Lists__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Division__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Domain__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__End_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__External_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Group_ID_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Kanban__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Lock_Report__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Overall_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__PO_Certified__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__PO_more_than_one_team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Parent_Cloud__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Product_Area__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Product_Line__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Product_Owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Release_Coverage_Needed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Rollup_Reporting_Group__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__SM_Certified__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__SM_more_than_one_team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Scrum_Master__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Scrum_Meeting_Time_Location__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Scrum_Team_Domain__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Scrumforce_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Start_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Status_Change_Notify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Status_Report_Format__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Story_Point_Scale__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Team_Email_Group_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Team_Home_Page__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Team_Queue_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Team_Queue__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Team_Size__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Tenure_on_team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Total_Dev_Allocation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Total_Dev__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Total_Dev_with_Allocation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Total_Member_Allocation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Total_Members__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Total_Members_with_Allocation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Total_QE_Allocation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Total_QE__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Total_QE_with_Allocation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Scrum_Team__c.agf__Vision__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Additional_Info__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Admin_enable__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Availability_this_release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__BlackTab_enable__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Bug_Template_to_Use__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Dev_Contact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Doneness__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Editions_available_in__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Feature_Default_On__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Func_Spec__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Link_to_test_env__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Mgmt_Contact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__P4_code_path__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Primary_Reviewer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__ProdSec_Product_Tag__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__QE_Contact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Reason__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Reviewer_Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Scheduled_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Secondary_Reviewer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Security_User_Story__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Short_description_of_the_feature__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Tech_Spec__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Test_Password__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Security_Questionaire__c.agf__Test_Username__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Severity_Type__c.agf__Severity__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Severity_Type__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Severity__c.agf__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Big_Marketing_Push__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Customer_Communication_Requirement__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Customer_communication_required__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Editions__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Enter_Idea_Exchange_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Exception_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Exec_Approval_Receved_WRoR__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Explain_License_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Explain_if_no_customer_comm_required__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Feature_Enablement_Timeline__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Feature_Enablement__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Feature_Requires_Licence__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__If_Other_Please_Explain__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Include_in_Admin_Preview__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Internal__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Internal_feature_only__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Level__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Major_Minor_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Marketing_Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Marketing_Key_Benefits__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Marketing_Name_2__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Marketing_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Marketing_Tag_Line__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Off_Cycle_Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Planned_Release_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Product_Division__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Product_Leader__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Product_Manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Product__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Release_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Scheduled_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Solution_Overview_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Solution_Overview_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Target_Audience__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Target_Off_Cycle_Release_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__Target_Release_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Solution_Overview__c.agf__WRoR_Approval_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Backlog__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Completed_Story_Points__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Days_Remaining__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Definition_of_Done_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Definition_of_Ready_Met__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Discount_Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Goals__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Hours_in_a_work_day__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__NameValidator__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Projected_Velocity__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Release_Burndown_Calc__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Retrospective__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Risks__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Sprint_Timeframe__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Total_Workdays__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Sprint__c.agf__Transformed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Status_History__c.agf__Assignee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Status_History__c.agf__Processed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Status_History__c.agf__Scheduled_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Status_History__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Status_History__c.agf__Work_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Tag_Assignment__c.agf__Assignment_Rule__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Tag_Assignment__c.agf__Product_Tag__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Tag_Assignment__c.agf__Record_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Tag_Assignment__c.agf__Tag_Record_Type_Key__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__Actual_Hours__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__Assigned_To__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__Capex_Enabled__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__Completed_On__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__Due_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__Hours_Remaining__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__SprintId__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__Starting_Hours__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Task__c.agf__Subject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__Associated_with_Program__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__Deliver_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__Dependency_Size__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__Dependency_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__Dependent_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__Dependent_User_Story__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__Epic__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__Provider_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__Provider_User_Story__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__Target_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__User_Story_Position_on_Backlog__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__User_Story_Scheduled_Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Dependency__c.agf__User_Story_Scheduled_Sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Name_History__c.agf__Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Release__c.agf__Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Release__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Release__c.agf__Release_Goals__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Team_Release__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Theme_Assignment__c.agf__Theme_Work_Key__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Theme_Assignment__c.agf__Theme__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Theme_Assignment__c.agf__Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Theme__c.agf__Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Theme__c.agf__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Theme__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Theme__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Theme__c.agf__Theme_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Approval_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Cloud__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Coupa_Record__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Does_this_contain_JavaScript__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Does_this_contain_client_side_code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Jar_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__License_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__License_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Module__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Purpose__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Request_Sub_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Request_Type_Other__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Request_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Scheduled_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Used_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Vendor__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Version__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Will_this_code_be_distributed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Will_you_actually_modify_the_code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Third_Party_Software__c.agf__Will_you_modify_the_code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Time_Off_Log__c.agf__Allocation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Time_Off_Log__c.agf__Approved__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Time_Off_Log__c.agf__Days__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Time_Off_Log__c.agf__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Time_Off_Log__c.agf__End_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Time_Off_Log__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Time_Off_Log__c.agf__Start_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Time_Off_Log__c.agf__User__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_User_Business_Hours__c.agf__Business_Hours__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_User_Business_Hours__c.agf__User__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Valid_GUS_Value__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Cache__c.agf__Change_List_Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Cache__c.agf__Changes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Cache__c.agf__Field_Names_With_Changes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Cache__c.agf__Has_Been_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Cache__c.agf__Has_Been_Opened__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Cache__c.agf__User__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Cache__c.agf__Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_History__c.agf__Sprint_Old__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_History__c.agf__Sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_History__c.agf__Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_SLA_Response_Time__mdt.agf__Respects_Business_Hours__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Status__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Subscriber__c.agf__Always_Send__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Subscriber__c.agf__Assignment_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Subscriber__c.agf__Distribution_List__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Subscriber__c.agf__Email__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Subscriber__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Subscriber__c.agf__Is_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Subscriber__c.agf__Recipient_Input__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Subscriber__c.agf__UserId__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work_Subscriber__c.agf__WorkId__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Additional_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Age_With_Scrum_Team_When_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Age_With_Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Age__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Apex_Hammer_Compile_Failure__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Assigned_On__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Assignee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Assignees__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Attributes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Auto_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Backburner_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Branch__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Budget_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Bug_Number__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__CS_Contact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Capex_Enabled__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Catchup_Factor__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Child_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Closed_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Closed_On__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Cloud__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Color__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Column_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Column__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Comment_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Complete_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Completed_Hours__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Created_By_import__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Created_On_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Created_On_import__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Critical_CRM_Feature__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Customer_Impact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Customer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Data_Silo_Test_Affected__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Deal_at_Risk__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Dependencies__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Dependents__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Detailed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Details_and_Steps_to_Reproduce__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Due_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Email2GUS_Addresses__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Email_On_Save_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Email_On_Save__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Email_Subscription_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Email_Subscription_Queue__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Encoded_Recipients_Txt_Area__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Environment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Epic_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Epic_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Epic__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Escalation_Point__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Estimated_Financial_Impact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Executive_Involved__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Feature_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Feedback__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Found_In_Build_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Found_In_Build_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Found_in_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Frequency_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Frequency__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Goal__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Has_Story_Points__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Help_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Highlight__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Impact_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Impact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Is_Ignorable__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Is_Template__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Known_Issue_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Known_Issue_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Known_Issue_Num_Reporting_Customers__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Last_Modified_By_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Last_Modified_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Last_Updated_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Log_Bug_From_Template__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Major_Func_Area__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Major_Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Minor_Func_Area__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Mobile_Device_OS__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Mobile_Device__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Mobile_Network__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>agf__ADM_Work__c.agf__Modules__c</field>
+        <field>Team_Dependency__c.Notes__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Num_Of_Prod_Occ__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Number_of_Cases__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Number_of_Change_Lists__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Number_of_Orgs_affected__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Number_of_SLA_Violations__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Number_of_Tests_Classes_affected__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Origin__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Other_Recipients__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Out_of_SLA__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Parent_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Perforce_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Preserve_Formatting_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Preserve_Formatting__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Previous_Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Priority_Default__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Priority_Mapping_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Priority_Mapping__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Priority_Override_Explanation_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Priority_Override_Explanation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Priority_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Priority__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Product_Area__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Product_Child__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Product_Owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Product_Tag_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Product_Tag__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__QA_Engineer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Readme_Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Record_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Red_Account__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Regressed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Related_URL_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Related_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Request_RD_Mgr_Review__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Resolution__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Resolved_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Resolved_On__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Resolved__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Root_Cause_Analysis_2__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__S1_App_Build_Number__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Scheduled_Build_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Scheduled_Build_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Scheduled_Build_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Scheduled_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Scheduled_On__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Schema__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Scrum_Team_Last_Modified__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Scrum_Team_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Scrumforce_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Security__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Senior_Management_POC__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Severity_Copy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Severity_Level__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Solution_Overview__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Sprint_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Sprint_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Sprint_Timeframe__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Story_Points__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Story_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Subject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Subscribe_to_Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__System_Test_Engineer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Target_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Tech_Writer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Template_Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Template_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Test_Failure_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Test_Plan__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Theme_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Theme__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Total_Age_When_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Trust_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Type_Value__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__UE_Engineer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Use_Prioritizer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__User_Profile_of_the_Creator__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__User_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__Was_Ever_Returned_to_Support__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__WorkId_and_Subject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__ftest__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__of_Test_Failures__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__ADM_Work__c.agf__visual_link_num_of_Test_Failures__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Actual_Delivery_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Additional_Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Additional_Database_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Change_Action__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Change_Request_s__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Committed_Delivery_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Custom_PLSQL_Users__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__DB_Schema_Request__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Database_Instance__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Database_Refresh_Requested__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Database_Refresh_Source__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Delivery_Sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Environment_Purpose__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Impact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Internal_Services_Request__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Network_Case__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Network_Request__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Organizational_Priority_Methods__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Organizational_Priority_Value__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__POC__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__RelEng_Work__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Release_Engineer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Requested_Delivery_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Risk_To_The_Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Scheduled_Maintenance_End__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Scheduled_Maintenance_Start__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Schema_Upgrade_Path__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Schema_Upgrade_Required__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Source_Database__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Source_Request__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Special_Instructions__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Standard_PLSQL_Users__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Supporting_Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__System_Case__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__System_Request__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Environments_Order__c.agf__Target_Database__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Backfill_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Backfill_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Business_Unit__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Candidate_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__City__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Cloud_LU__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Cloud_Lock__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Cloud__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Cost_Center__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Country__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Division__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Effective_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Employee_Name_Text__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Employee_Number_Text__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__FY_Starting_Cloud__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Headcount_Department__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Headcount_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Hiring_Manager_Department__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Hiring_Manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Initial_Status_Value__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Location__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Manager_IC__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Manager_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Manager_Update__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__OOM_Transfer_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__OOM_Transfer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__OOM__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Organization__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Original_Effective_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Parent_Cloud__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Recruiter_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Recruiter_Update__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Recruiter__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Region__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Role__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Signal__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Source_Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Source__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__State__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Talentforce_Offer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Target_Start_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Team_Cloud__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Headcount__c.agf__via__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Locking_Record__c.agf__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Locking_Record__c.agf__End_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Locking_Record__c.agf__Locked_Duration__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Locking_Record__c.agf__Reason__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Locking_Record__c.agf__Response_Duration__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Locking_Record__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Locking_Record__c.agf__Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Additional_Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Desired_Skills__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Distributed_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Function__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Highlighted__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Hiring_Manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Intranet_Posting__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Level__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Opportunity_Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Required_Skills__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__OMOpportunity__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Answer__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Answer__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Comment__c.agf__Answer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Comment__c.agf__Comment_Text__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Comment__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_ExecutionBug__c.agf__Execution__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_ExecutionBug__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_FTest__c.agf__Annotation_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_FTest__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_FTest__c.agf__Report_Exception__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_FTest__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_FTest__c.agf__Test_Labels__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_FTest__c.agf__Test_Suite__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Hierarchy__c.agf__Count__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Hierarchy__c.agf__Depth__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Hierarchy__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Hierarchy__c.agf__Full_Path__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Question__c.agf__Category__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Question__c.agf__Editable__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Question__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Question__c.agf__More_Info__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Question__c.agf__Obsolete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Question__c.agf__URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Count_Automated_Executions__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Count_Automation_To_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Execution_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Expected_Results__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Ftest_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Is_Automated__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Is_Obsolete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Manual_Auto_Annotation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Priority__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Steps_to_Reproduce__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Case__c.agf__Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Execution__c.agf__Assignee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Execution__c.agf__Bugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Execution__c.agf__Build_of_Last_Execution__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Execution__c.agf__Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Execution__c.agf__Date_of_Last_Execution__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Execution__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Execution__c.agf__Ftest_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Execution__c.agf__Number_of_Executions__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Execution__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Execution__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Execution__c.agf__User_Story__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Plan__c.agf__BugList__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Plan__c.agf__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Plan__c.agf__Functional_Specification__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Plan__c.agf__Scope__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Plan__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__QA_Test_Plan__c.agf__Test_Strategy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__AAR_Record_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__AAR__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Action_Plan_Completion_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Action_Plan_Summary__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Action_Plan__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Assignee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Bug__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Category_Other__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Completed_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Customer_Impacting__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Duration__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Estimated_Delivery__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Event_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Incident_End_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Incident_Participants__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Incident_Start_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Message_Requestor__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Message_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Messaging_Owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__RCA_Completed_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__RCA_Incident_Summary__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__RCA_Invitees__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__RCA_Participants__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__RCA_Review_Forum__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__RCA_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__RCA_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__RCM_Required__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__RCM_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Ready_for_Manager_Approval__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Reported_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Request_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Request_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Review_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Root_Cause_Category__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Root_Cause_Messaging__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Scrum_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Subject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Timeline_of_Events__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__What_was_the_customer_impact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__What_was_the_resolution__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__RCA__c.agf__Why_did_this_occur_2__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__CCE_and_Operations_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__CCE_and_Operations__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Capacity_Approver_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Capacity_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Chatter_Now_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Chatter_Now_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Dev_Mgr_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Dev_Mgr_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Dev_VP_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Dev_VP_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Development_Engineering_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Development_Engineering__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__FFX_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__FFX_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__HBase_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__HBase_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Insights_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Insights_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__LiveAgent_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__LiveAgent_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__M_M_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__M_M_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__OSC_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__OSC_Exec_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__OSC_Exec_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__OSC_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__PODSquad_PO_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__PODSquad_PO_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__QE_Mgr_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__QE_Mgr_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__QE_VP_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__QE_VP_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Release_Approved__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Release_Management_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Release_Management_Exec_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Release_Management_Exec_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Release_Management_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Sandbox_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Sandbox_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Scheduled_Signoff_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Search_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Search_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Service_Delivery_TechOps_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Service_Delivery_Technical_Operations__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Sites_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Sites_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Staggered_Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__TBR_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__TBR_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__TechOps_Eng_VP_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__TechOps_Eng_VP_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__TechOps_Operations_Approver__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__TechOps_Operations_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Technology_Exec_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Technology_Exec__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Technology_Products_Operations_Signoff__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Release_Signoff_Infrastructure__c.agf__Technology_Products_Operations__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__Is_Current_User_the_manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__Is_Current_User_the_owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__Manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__Overall_Rating_employee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__Overall_Rating_manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__Review_Period__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__User__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__What_Didn_t_Go_Well_employee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__What_Didn_t_Go_Well_manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__What_To_Do_Better_Next_Time_employee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__What_To_Do_Better_Next_Time_manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__What_Went_Well_employee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__Retrospective__c.agf__What_Went_Well_manager__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__SLA_Violation__c.agf__Age__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__SLA_Violation__c.agf__Assigned_To__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__SLA_Violation__c.agf__Closed_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__SLA_Violation__c.agf__Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__SLA_Violation__c.agf__Created_Date_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__SLA_Violation__c.agf__Severity_Level__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__SLA_Violation__c.agf__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__SLA_Violation__c.agf__Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__SLA_Violation__c.agf__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__WorkData__c.agf__Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__WorkData__c.agf__StatusOfWork__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__WorkData__c.agf__UserId__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__WorkData__c.agf__Value__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__All_Associated_Customer_Cases_Linked__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Application__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Assignees_Verified__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Bug_Assignee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Bug_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Bug_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Bug_Product_Owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Bug_QE__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Bug_Subject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Checkin_Location__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Deploy_to_all_Instances__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Deployment_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Do_the_number_of_Cases_meet_criteria__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Does_Bug_Priority_meet_criteria__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Escalate_for_nonstandard_deployment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Executive_Override__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Instance_for_Verification__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Known_Fix__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Other_Deployment_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Other_Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Other_Testing__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Peripheral_Impacts__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__QA_Testing_Impact_Understood__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Release_Team_Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Released_In__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Request_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Scheduled_Build__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Staging_Instructions__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Testing_Required__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Use_Default_Verification_Instance__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Who_is_gack_watching__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Who_is_verifying_fix_in_prod__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__Who_is_working_with_ProductOps__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>agf__eRelease_Request__c.agf__eRelease_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Apex_Test_Result__c.copado__Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Apex_Test_Result__c.copado__Failures__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Apex_Test_Result__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Apex_Test_Result__c.copado__Successes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Apex_Test_Result__c.copado__Tests_run__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Apex_Test_Result__c.copado__Total_time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__AuxiliaryObject__c.copado__Continuous_Integration__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__AuxiliaryObject__c.copado__Deployment_Flow__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__AuxiliaryObject__c.copado__Deployment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__AuxiliaryObject__c.copado__Environment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__AuxiliaryObject__c.copado__Git_Backup__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__AuxiliaryObject__c.copado__Git_Repository__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__AuxiliaryObject__c.copado__Org_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__AuxiliaryObject__c.copado__Org_Difference__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__AuxiliaryObject__c.copado__Selenium_Test_Group__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__AuxiliaryObject__c.copado__Selenium_Test_Run__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__AuxiliaryObject__c.copado__Snapshot_Difference__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Branch_Management_Permission__c.copado__Allow_Deployments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Branch_Management_Permission__c.copado__User__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Build_Task__c.copado__Deployment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Build_Task__c.copado__Duration__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Build_Task__c.copado__Start_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Build_Task__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Build_Task__c.copado__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Finding__c.copado__Severity__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule_Criteria__c.copado__Criteria__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule_Criteria__c.copado__Field_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule_Criteria__c.copado__Field__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule_Criteria__c.copado__Node__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule_Criteria__c.copado__Operator__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule_Criteria__c.copado__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule_Criteria__c.copado__Value__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Action__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Error_Message__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Filter_Criteria__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Is_Valid__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Last_Validation_Date_time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Last_Validation_Status_Message__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Matching_Criteria__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Metadata_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Record_Count_Criteria__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Record_Count__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Risk_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Rule__c.copado__Severity__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Deployment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Environment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Findings__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Git_Snapshot__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Highest_Rule_Action__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Highest_Severity__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Org_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Resolution_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Scan_Duration_in_Minutes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Scan_End__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Scan_Start__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Compliance_Scan_Result__c.copado__User_Story__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration_Permission__c.copado__Access__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration_Permission__c.copado__Email_Notification__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration_Permission__c.copado__Email_Template_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration_Permission__c.copado__User__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Branch__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Check_Only__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Destination_Org_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Files_to_be_deployed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Git_Repository__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Last_Build_Task_Duration__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Post_Failed_Deployment_Jobs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Post_Success_Deployment_Jobs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Pre_Deployment_Jobs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Pre_Deployment_Options__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Run_All_Tests__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Continuous_Integration__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Copado_Notification__c.copado__AttachmentId__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Copado_Notification__c.copado__Matching_Key__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Copado_Notification__c.copado__Message__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Copado_Notification__c.copado__Parent2Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Copado_Notification__c.copado__ParentId__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Copado_Notification__c.copado__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Copado_Notification__c.copado__isFinished__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Copado_Notification__c.copado__isSuccess__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Copado_Notification__c.copado__status__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>copado__Copado_Protected_Settiing__mdt.copado__Text_Field__c</field>
+        <field>Team_Dependency__c.Provider_Team__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Copado_Setting__mdt.copado__Enabled__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Team_Dependency__c.Provider_User_Story__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Copado_Setting__mdt.copado__Text_Field__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Team_Dependency__c.Release__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Automatically_Merge_and_Deploy__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Team_Dependency__c.Skip_Dependency__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Branch__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Team_Member__c.Member__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Commits_Ahead__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Team_Member__c.Role__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Commits_Behind__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Team__c.Active__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Destination_Branch__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Team__c.Department__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Destination_Environment__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Team__c.Vision__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Last_Merge_Base__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run_Step__c.Action_Description__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Last_Merge_CBM_Sync__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run_Step__c.Actual_Result__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Last_Pull_CBM_Sync__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run_Step__c.Expected_Result__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Merge_Auto_Resolved_Files__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run_Step__c.Guidance_notes__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Pull_Auto_Resolved_Files__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run_Step__c.Order__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Source_Environment__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run_Step__c.Script_Step__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Sync_Merge_State__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run_Step__c.Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Sync_Pull_State__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Environment__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow_Step__c.copado__Test_Level__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Overall_Test_Comments__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow__c.copado__Active__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Percent_Passed__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow__c.copado__Block_Commits__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Project__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow__c.copado__Branch_Management_Coordinates__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Sprint__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow__c.copado__Disable_Validations__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow__c.copado__Equal_Branch_Environment_Name__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Steps_Completed__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow__c.copado__Flow_Step_Coordinates__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Steps_Passed__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow__c.copado__Git_Repository__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Test_Completion__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow__c.copado__Main_Branch__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Test_Phase__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow__c.copado__Manage_Branches__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Tester__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Flow__c.copado__Static_Code_Analysis_Settings__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Total_Steps__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_History__c.copado__Date__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.Type__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_History__c.copado__Deployment_Id__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Run__c.User_Story__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_History__c.copado__Deployment__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script_Step__c.Action_Description__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_History__c.copado__Event__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script_Step__c.Expected_Result__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_History__c.copado__Field__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script_Step__c.Guidance_notes__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_History__c.copado__New_Value__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script_Step__c.Order__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_History__c.copado__Object__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script_Step__c.Result__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_History__c.copado__Old_Value__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script_Step__c.Step_Title__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_History__c.copado__User__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Expected_Result__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Job__c.copado__Async_Job_ID__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Introduction__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Job__c.copado__Deployed__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Org__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Job__c.copado__Early_Completion_Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Overall_Outcome__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Job__c.copado__External_Id__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Peer_Reviewer__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Job__c.copado__External_Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Prerequisites__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Job__c.copado__Status_Flag__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Project__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Job__c.copado__Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Risk__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Job__c.copado__To_Org_Name__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Sprint__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Job__c.copado__Validation_ID__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Task__c.copado__Order__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Test_Description__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Task__c.copado__Perform_Manual_Task__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.Test_Title__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Task__c.copado__Perform_in_Destination_Orgs__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Test_Script__c.User_Story__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Task__c.copado__Perform_in_Source_Org__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Theme__c.Active__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Task__c.copado__Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Theme__c.Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Task__c.copado__Task_Description__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>Theme__c.Theme_Details__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Task__c.copado__Type__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User.API_URL__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment_Task__c.copado__dataJSON__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User.Hide_Copado_feedback__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Build_Task__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User.Show_Copado_Tips__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Completed__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User.Work_Manager_Panels__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Compliance_Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Persona_Assignment__c.Apply_Schedule__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Count_Completed__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Persona_Assignment__c.End_Schedule_ID__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Date__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Persona_Assignment__c.End_Time__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Deployed__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Persona_Assignment__c.External_Id__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Deployment_Completed_email_sent__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Persona_Assignment__c.Persona__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Deployment_Jobs_Count__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Persona_Assignment__c.Start_Schedule_ID__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Deployment_command_sent__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Persona_Assignment__c.Start_Time__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Flag_Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Persona_Assignment__c.Status_Message__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__From_Org__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Persona_Assignment__c.Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Last_Compliance_Scan_Date__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Persona_Assignment__c.Type__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Promotion__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Persona_Assignment__c.User__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__SUM_Deployed__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story_Commit__c.External_Id__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Schedule__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story_Commit__c.View_in_Git__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Send_Deployment_Complete_email__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story_Metadata__c.Metadata_API_Name__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Server_URL__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story_Metadata__c.Status_Icon__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.copado__Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story_Metadata__c.Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.test_nullpoint__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story_Metadata__c.Unique_ID__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Deployment__c.training__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story_Selenium_Test__c.External_Id__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Destination_Org__c.copado__Completed__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story_Task__c.Comments__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Destination_Org__c.copado__Count_Completed__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story_Task__c.Hours_Remaining__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Destination_Org__c.copado__Deployed__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story_Task__c.Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Destination_Org__c.copado__SUM_Deployed__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story_Task__c.Subject__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Destination_Org__c.copado__Status_Flag__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Acceptance_Criteria_Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Destination_Org__c.copado__Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Acceptance_Criteria__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Destination_Org__c.copado__Step_Count__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Apex_Code_Coverage__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Destination_Org__c.copado__To_Org_Name__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Apex_Tests_Passed__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Compliance_Rule_Group__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Backburner_Rank__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Compliance_Scan_Events__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Backlog_Rank__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Compliance_Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Base_Branch__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Current_Code_Coverage__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Business_Analyst__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Current_SCA_Score__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Cancellation_Reason__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Last_Compliance_Scan_Date__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Classes_Without_Coverage__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Maximum_SCA_Score__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Close_Date__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Minimum_Apex_Test_Coverage__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Compliance_Criteria__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Namespace__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Compliance_Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Org_ID__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Compliance__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Run_all_tests__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Data_Privacy__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environment__c.copado__Type__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Developer__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Environmental_Variable__c.copado__Value__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Documentation_Complete__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Epic__c.External_ID__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Environment__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Epic__c.JIRA_Key__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Epic__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Epic__c.copado__Epic_Details__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Exclude_From_CBM__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Epic__c.copado__Epic_Title__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Failing_Methods__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Epic__c.copado__Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Functional_Specifications__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job_Result__c.copado__Description__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Git_Merge_Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job_Result__c.copado__Duration__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Has_Apex_Code__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job_Result__c.copado__End_Time__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Last_Compliance_Scan_Date__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job_Result__c.copado__Environment__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Last_Validation_Deployment_Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job_Result__c.copado__External_CI_Job_ID__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Last_Validation_Deployment__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job_Result__c.copado__Job_URL_Link__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Last_Validation_Promotion__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job_Result__c.copado__Job_URL__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Latest_Commit_Date__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job_Result__c.copado__Start_Time__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Legal__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job_Result__c.copado__Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Manual_Tests_Passed__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job_Result__c.copado__User_Story__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Metadata_Types_in_Selection__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job__c.copado__Continue_on_failure__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Minimum_Apex_Code_Coverage__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job__c.copado__Environment__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Order__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job__c.copado__Invoke_on__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Org_Credential__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job__c.copado__Job_Api_Name__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Parent_Epic_Title__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job__c.copado__Order__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Priority__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job__c.copado__Timeout_in_minutes__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Progress_Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job__c.copado__User_Story__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Progress__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Job__c.copado__dataJSON__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Project__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Setting__c.copado__API_Token__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Promote_Change__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Setting__c.copado__Credential_Validated__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Promote_and_Deploy__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Setting__c.copado__Endpoint__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Promote_as_Single_Step__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Setting__c.copado__Password__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Promotion_Test_Level__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__External_CI_Setting__c.copado__Username__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Pull_Requests_Approved__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Backup__c.copado__Branch__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.QR_Code__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Backup__c.copado__Compliance_Status__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Release__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Backup__c.copado__Frequency__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Sprint__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Backup__c.copado__Git_Snapshot_Permissions__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Status__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Backup__c.copado__Last_Backup__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Stop_Indexing_Metadata__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Backup__c.copado__Last_Compliance_Scan_Date__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Story_Points_Other__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Backup__c.copado__Metadata_Types__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Story_Points_SFDC__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Backup__c.copado__View_in_Git__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Team__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Commit__c.copado__Branch__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Technical_Specifications__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Commit__c.copado__Changes__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Test_Script_Owner__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Commit__c.copado__Commit_Date__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Theme__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Commit__c.copado__Commit_Id__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Total_Story_Points__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Commit__c.copado__Commit_Message__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Triggers_Without_Coverage__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Commit__c.copado__Git_Repository__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.User_Story_Title__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Org_Commit__c.copado__Changes__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.Validate_Only__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Org_Commit__c.copado__Commit_Date__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.View_in_Git__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Org_Commit__c.copado__Commit_Id__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.userStory_Role__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Org_Commit__c.copado__Commit_Message__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.userStory_need__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Org_Commit__c.copado__Git_Backup__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Org_Commit__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Org_Commit__c.copado__View_in_Git__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Repository__c.copado__Branch_Base_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Repository__c.copado__Commit_Base_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Repository__c.copado__Git_Provider__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Repository__c.copado__Password__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Repository__c.copado__Pull_Request_Base_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Repository__c.copado__URI__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Git_Repository__c.copado__Username__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Kanban_Board__c.copado__Columns_SOQL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Kanban_Board__c.copado__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Kanban_Board__c.copado__Field_to_read_update__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Kanban_Board__c.copado__JSON_Settings__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Kanban_Board__c.copado__SOQL_Query__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__OrgDiff__c.copado__From_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__OrgDiff__c.copado__From_Org__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__OrgDiff__c.copado__Last_Modified_By_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__OrgDiff__c.copado__Metadata_Types__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__OrgDiff__c.copado__To_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__OrgDiff__c.copado__To_Org__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Compliance_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Custom_Domain__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Default_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Disable_Validation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Environment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Error__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Last_Apex_Tests_Datetime__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Last_Apex_Tests_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Last_Compliance_Scan_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Last_Git_Backup_Datetime__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Last_Git_Backup_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Metadata_Types__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Minimum_Apex_Test_Coverage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Oauth_Signature__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Org_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Password__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Profile_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__SFDC_Org_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Test_Frequency__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Token__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Username__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Validated_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Org__c.copado__Validated_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Persona_Permission__c.copado__Permission_Set_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Persona__c.copado__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Project__c.Change_Management_Integration__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Project__c.External_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Project__c.Workspace_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Project__c.copado__Deployment_Flow__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Project__c.copado__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Project__c.copado__End_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Project__c.copado__Index_Metadata__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Project__c.copado__Start_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Project__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.copado__Back_Promotion__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.copado__Create_Full_Permission_Sets_Step__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.copado__Create_Full_Profiles_Step__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.copado__Destination_Environment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.copado__Destination_Org_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.copado__Project__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.copado__Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.copado__Send_Deployment_Complete_email__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.copado__Source_Environment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.copado__Source_Org_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Promotion__c.test_del__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request_Review__c.copado__Body__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request_Review__c.copado__Review_Action__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request_Review__c.copado__Review_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request_Review__c.copado__URL_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request_Review__c.copado__Url__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request_Review__c.copado__User_Avatar_Url__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request_Review__c.copado__User_Avatar__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request_Review__c.copado__Username__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Assignees__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Changed_Files__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Closed_At__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Commits__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__External_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Mergeable__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Merged_At__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Merged_By__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Merged__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Request_Number__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Requested_Reviewers__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__State__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Target_Branch__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__URL_Link__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Url__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__User_Avatar_Url__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__User_Avatar__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Pull_Request__c.copado__Username__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Release__c.copado__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Release__c.copado__Planned_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Release__c.copado__Project__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Release__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Scheduled_Job_Run__c.copado__Called_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Scheduled_Job_Run__c.copado__Message__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Scheduled_Job_Run__c.copado__Run_as_User__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Scheduled_Job_Run__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Scheduled_Job__c.copado__Apex_Job_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Scheduled_Job__c.copado__Cron_Expression__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Scheduled_Job__c.copado__Delete_Runs_after_days__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Scheduled_Job__c.copado__Message__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Scheduled_Job__c.copado__Run_as_User__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Scheduled_Job__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Scheduled_Job__c.copado__Webhook_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Group_Org_Credential__c.copado__External_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Group_Test_Suite__c.copado__External_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Group_Variable__c.copado__Display_Value__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Group_Variable__c.copado__Hide_Value__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Group_Variable__c.copado__Value__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Locator_Reference__c.copado__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Locator_Reference__c.copado__Selenium_Test_Case_Version__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Locator__c.copado__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Locator__c.copado__Locator_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Locator__c.copado__Locator__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Locator__c.copado__Page__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Settings__c.copado__Default_Org_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Settings__c.copado__Desired_Capabilities__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Settings__c.copado__Device_Screen_Size__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Settings__c.copado__Provider__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Settings__c.copado__Selected_Platforms__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Settings__c.copado__Webdriver_Proxy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Case_Per_Suite__c.copado__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Case_Per_Suite__c.copado__Test_Dataset_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Case__c.copado__Open_with_Copado_Recorder__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Case__c.copado__Previous_Version__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Case__c.copado__Version__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Group__c.copado__Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Group__c.copado__Environment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Group__c.copado__External_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Group__c.copado__Manage_Test_Runs_manually__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Group__c.copado__Status_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Group__c.copado__Status_Icon__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Group__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Group__c.copado__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Result__c.copado__Batch_No__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Result__c.copado__Elapsed_Time_Seconds__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Result__c.copado__Message__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Result__c.copado__Result_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Result__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Run__c.copado__Base_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Run__c.copado__Batch_No__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Run__c.copado__Environment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Run__c.copado__External_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Run__c.copado__Last_Status_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Run__c.copado__Last_Status_Icon__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Run__c.copado__Last_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Run__c.copado__Org_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Run__c.copado__Selenium_Test_Group__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Suite__c.copado__Apex_code_after_test__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Suite__c.copado__Apex_code_before_test__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Suite__c.copado__Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Selenium_Test_Suite__c.copado__Test_Script__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Snapshot_Difference__c.copado__Destination_Git_Commit__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Snapshot_Difference__c.copado__Destination_Option__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Snapshot_Difference__c.copado__Destination_Org_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Snapshot_Difference__c.copado__Last_Run__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Snapshot_Difference__c.copado__Partial_Selection__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Snapshot_Difference__c.copado__Source_Git_Commit__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Snapshot_Difference__c.copado__Source_Option__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Snapshot_Difference__c.copado__Source_Org_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Sprint__c.copado__Days_in_sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Sprint__c.copado__End_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Sprint__c.copado__Full_time_resources_in_sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Sprint__c.copado__Objective__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Sprint__c.copado__Project__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Sprint__c.copado__Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Sprint__c.copado__Start_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Sprint__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Sprint__c.copado__Story_points__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Sprint__c.copado__Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Sprint__c.copado__Working_days_in_sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Static_Code_Analysis_Result__c.copado__Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Static_Code_Analysis_Result__c.copado__Org_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Static_Code_Analysis_Result__c.copado__Rules_Violated__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Static_Code_Analysis_Result__c.copado__Score__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Static_Code_Analysis_Result__c.copado__User_Story__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Static_Code_Analysis_Rule__c.copado__Message__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Attachment_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Branch__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__CheckOnly__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Commit_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Commit_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Completed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Count_Completed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Deployed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Git_Repository__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Org_Count__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Run_all_tests__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__SUM_Deployed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Status_Flag__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__View_Attachment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Step__c.copado__dataJson__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Dependency__c.copado__Deliverable__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Dependency__c.copado__Dependency_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Dependency__c.copado__Dependent_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Dependency__c.copado__Dependent_User_Story__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Dependency__c.copado__Needed_by_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Dependency__c.copado__Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Dependency__c.copado__Provider_Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Dependency__c.copado__Provider_User_Story__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Dependency__c.copado__Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Dependency__c.copado__Skip_Dependency__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Member__c.copado__Member__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team_Member__c.copado__Role__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team__c.copado__Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team__c.copado__Department__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Team__c.copado__Vision__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run_Step__c.copado__Action_Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run_Step__c.copado__Actual_Result__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run_Step__c.copado__Expected_Result__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run_Step__c.copado__Guidance_notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run_Step__c.copado__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run_Step__c.copado__Script_Step__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run_Step__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Environment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Overall_Test_Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Percent_Passed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Project__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Steps_Completed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Steps_Passed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Test_Completion__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Test_Phase__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Tester__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Total_Steps__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Run__c.copado__User_Story__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script_Step__c.copado__Action_Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script_Step__c.copado__Expected_Result__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script_Step__c.copado__Guidance_notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script_Step__c.copado__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script_Step__c.copado__Result__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script_Step__c.copado__Step_Title__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Expected_Result__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Introduction__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Org__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Overall_Outcome__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Peer_Reviewer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Prerequisites__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Project__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Risk__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Test_Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__Test_Title__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Test_Script__c.copado__User_Story__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Persona_Assignment__c.copado__Apply_Schedule__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Persona_Assignment__c.copado__End_Schedule_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Persona_Assignment__c.copado__End_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Persona_Assignment__c.copado__External_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Persona_Assignment__c.copado__Persona__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Persona_Assignment__c.copado__Start_Schedule_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Persona_Assignment__c.copado__Start_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Persona_Assignment__c.copado__Status_Message__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Persona_Assignment__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Persona_Assignment__c.copado__Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Persona_Assignment__c.copado__User__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story_Commit__c.copado__External_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story_Commit__c.copado__View_in_Git__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story_Metadata__c.copado__Metadata_API_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story_Metadata__c.copado__Status_Icon__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story_Metadata__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story_Metadata__c.copado__Unique_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story_Selenium_Test__c.copado__External_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story_Task__c.copado__Comments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story_Task__c.copado__Hours_Remaining__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story_Task__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story_Task__c.copado__Subject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.External_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.Has_apex_code_checked__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.JIRA_Key__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Acceptance_Criteria_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Acceptance_Criteria__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Apex_Code_Coverage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Backburner_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Backlog_Rank__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Business_Analyst__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Cancellation_Reason__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Classes_Without_Coverage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Close_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Compliance_Criteria__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Compliance_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Compliance__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Data_Privacy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Developer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Environment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Epic__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Exclude_From_CBM__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Failing_Methods__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Functional_Specifications__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Has_Apex_Code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Last_Compliance_Scan_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Last_Validation_Deployment_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Last_Validation_Deployment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Last_Validation_Promotion__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Latest_Commit_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Legal__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Metadata_Types_in_Selection__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Minimum_Apex_Code_Coverage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Org_Credential__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Parent_Epic_Title__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Priority__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Project__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Promote_Change__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Promote_and_Deploy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Promote_as_Single_Step__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Promotion_Test_Level__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__QR_Code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Release__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Sprint__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Stop_Indexing_Metadata__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Story_Points_Other__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Story_Points_SFDC__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Team__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Technical_Specifications__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Test_Script_Owner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Total_Story_Points__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Triggers_Without_Coverage__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__User_Story_Title__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__Validate_Only__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__View_in_Git__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__userStory_Role__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__userStory_need__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__User_Story__c.copado__userStory_reason__c</field>
-        <readable>true</readable>
+        <editable>false</editable>
+        <field>User_Story__c.userStory_reason__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Apex_Test_Result__c-Apex Test Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Artifact_Version__c-Artifact Version Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Artifact__c-Artifact Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Artifact__c-Artifact Layout</layout>
+        <recordType>Artifact__c.Git_Artifact</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Artifact__c-Artifact Layout</layout>
+        <recordType>Artifact__c.Package_Artifact</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Asset-Asset Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>AssetRelationship-Asset Relationship Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>AuxiliaryObject__c-AuxiliaryObject Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Branch_Management_Permission__c-Branch Management Permission Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Build_Task__c-Build Task Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Campaign-Campaign Layout</layout>
@@ -14755,7 +5926,46 @@
         <layout>CaseInteraction-Formato de noticias en tiempo real de Caso</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Change_Management_Integration_Credential__c-Change Management Integration Layout</layout>
+        <layout>Compliance_Finding__c-Compliance Finding Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Compliance_Finding__c-Compliance Finding Layout</layout>
+        <recordType>Compliance_Finding__c.Copado</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Compliance_Finding__c-Compliance Finding Layout</layout>
+        <recordType>Compliance_Finding__c.Other</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Compliance_Rule_Criteria__c-Compliance Rule Criteria Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Compliance_Rule_Group_Item__c-Compliance Rule Group Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Compliance_Rule_Group__c-Compliance Rule Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Compliance_Rule__c-Compliance Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Compliance_Rule__c-Compliance Rule Layout</layout>
+        <recordType>Compliance_Rule__c.Copado</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Compliance_Rule__c-Compliance Rule Layout</layout>
+        <recordType>Compliance_Rule__c.Other</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Compliance_Scan_Result__c-Compliance Scan Result Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Compliance_Scan_Result__c-Compliance Scan Result Layout</layout>
+        <recordType>Compliance_Scan_Result__c.Copado</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Compliance_Scan_Result__c-Compliance Scan Result Layout</layout>
+        <recordType>Compliance_Scan_Result__c.Other</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Contact-Contact Layout</layout>
@@ -14764,10 +5974,49 @@
         <layout>ContentVersion-General</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Continuous_Integration_Permission__c-Continuous Integration Permission Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Continuous_Integration__c-Continuous Integration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Contract-Contract Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Copado_Notification__c-Copado Notification Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Copado_Protected_Settiing__mdt-Copado key Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Copado_Setting__mdt-Copado Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Copado_Smart_Help__mdt-Copado Smart Help Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>DandBCompany-D%26B Company Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Deployment_Flow_Step__c-Deployment Flow Step Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Deployment_Flow__c-Deployment Flow Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Deployment_History__c-Copado Deployment History Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Deployment_Job__c-Deployment Job Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Deployment_Task__c-Deployment Task Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Deployment__c-Deployment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Destination_Org__c-Destination Org Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>DuplicateRecordSet-Duplicate Record Set Layout</layout>
@@ -14776,10 +6025,37 @@
         <layout>EmailMessage-Email Message Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Environment__c-Environment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Environmental_Variable__c-Environment Variable Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Epic__c-Epic Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Event-Event Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>FeedItem-Feed Item Layout</layout>
+        <layout>External_CI_Job_Result__c-External CI Job Result Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>External_CI_Job__c-External CI Job Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>External_CI_Setting__c-External CI Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Git_Backup__c-Git Snapshot Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Git_Commit__c-Git Commit Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Git_Org_Commit__c-Git Org Commit Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Git_Repository__c-Git Repository Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Global-Global Layout</layout>
@@ -14788,7 +6064,7 @@
         <layout>Idea-Idea Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Knowledge__kav-Knowledge Layout</layout>
+        <layout>Kanban_Board__c-Kanban Board Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Lead-Lead Layout</layout>
@@ -14809,6 +6085,18 @@
         <layout>OrderItem-Order Product Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>OrgDiff__c-Org Difference Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Org__c-Org Credential Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Persona_Permission__c-Persona Permission Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Persona__c-Persona Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Pricebook2-Price Book Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -14818,25 +6106,147 @@
         <layout>Product2-Product Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Project__c-Project Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Promoted_User_Story__c-Promoted User Story Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Promotion__c-Promotion Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Pull_Request_Review__c-Pull Request Review Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Pull_Request__c-Pull Request Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>QuickText-Quick Text Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Release__c-Release Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SOSSession-SOS Session Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SOSSessionActivity-SOS Session Activity Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Scheduled_Job_Run__c-Scheduled Job Result Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Scheduled_Job__c-Scheduled Job Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Scorecard-Scorecard Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ScorecardAssociation-Scorecard Association Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ScorecardMetric-Scorecard Metric Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>SocialPersona-Social Persona Layout</layout>
+        <layout>Scratch_Org_Definition__c-Scratch Org Definition Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Scratch_Org_Project_Template__c-Scratch Org Artifacts Template Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Group_Org_Credential__c-Selenium Group Org Credential Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Group_Test_Suite__c-Selenium Group Test Suite Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Group_Variable__c-Selenium Group Variable Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Locator_Reference__c-Selenium Locator Reference Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Locator__c-Selenium Locator Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Settings__c-Selenium Settings Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Test_Case_Per_Suite__c-Selenium Test Case per Suite Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Test_Case__c-Selenium Test Case Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Test_Group__c-Selenium Test Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Test_Result__c-Selenium Test Result Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Test_Run__c-Salesforce Selenium Test Run Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Test_Run__c-Salesforce Selenium Test Run Layout</layout>
+        <recordType>Selenium_Test_Run__c.Generic_Web_Application</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Test_Run__c-Salesforce Selenium Test Run Layout</layout>
+        <recordType>Selenium_Test_Run__c.Salesforce</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Selenium_Test_Suite__c-Selenium Test Suite Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Snapshot_Difference__c-Snapshot Difference Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Solution-Solution Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Sprint__c-Sprint Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Static_Code_Analysis_Result__c-Static Code Analysis Result Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Static_Code_Analysis_Rule__c-Static Code Analysis Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Static_Code_Analysis_Settings__c-Static Code Analysis Settings Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Static_Code_Analysis_Violation__c-Static Code Analysis Violation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Step__c-Step Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Task-Task Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Team_Dependency__c-Team Dependency Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Team_Member__c-Team Member Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Team__c-Team Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Test_Run_Step__c-Test Execution Step Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Test_Run__c-Test Execution Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Test_Script_Step__c-Script Step Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Test_Script__c-Test Script Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Theme__c-Theme Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>User-User Layout</layout>
@@ -14854,685 +6264,37 @@
         <layout>UserProvisioningRequest-User Provisioning Request Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>agf__ADM_Acceptance_Criterion__c-agf__Acceptance Criterion Layout</layout>
+        <layout>User_Persona_Assignment__c-User Persona Assignment Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>agf__ADM_Additional_Field__c-agf__Additional Field Layout</layout>
+        <layout>User_Story_Commit__c-User Story Commit Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>agf__ADM_Application_Approver__c-agf__Application Approver Layout</layout>
+        <layout>User_Story_Metadata__c-User Story Metadata Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>agf__ADM_Application__c-agf__Application Layout</layout>
+        <layout>User_Story_Selenium_Test__c-User Story Selenium Test Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>agf__ADM_Assignment_Rule__c-agf__Assignment Rule Layout</layout>
+        <layout>User_Story_Task__c-User Story Task Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>agf__ADM_Bookmark__c-agf__Bookmark Layout</layout>
+        <layout>User_Story__c-User Story Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>agf__ADM_Build__c-agf__Build Layout</layout>
+        <layout>User_Story__c-User Story Layout</layout>
+        <recordType>User_Story__c.Bug</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>agf__ADM_Burndown_Item__c-agf__Burndown Item Layout</layout>
+        <layout>User_Story__c-User Story Layout</layout>
+        <recordType>User_Story__c.Investigation</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>agf__ADM_Cache_Metadata__mdt-agf__ADM Platform Cache Metadata Layout</layout>
+        <layout>User_Story__c-User Story Layout</layout>
+        <recordType>User_Story__c.User_Story</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>agf__ADM_Case__c-agf__62 Org Case Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Certification__c-agf__Certification Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Change_List__c-agf__Change List Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Cloud__c-agf__Cloud Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Color__c-agf__Color Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Column_History__c-agf__Column History Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Column_Status_Assignment__c-agf__Column Status Assignment Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Column__c-agf__Column Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Comment__c-agf__Comment Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Copy_Log__c-agf__Copy Log Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Coverage__c-agf__Coverage Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Coverage__c-agf__Coverage Layout</layout>
-        <recordType>agf__ADM_Coverage__c.agf__Feature</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Coverage__c-agf__Coverage Layout</layout>
-        <recordType>agf__ADM_Coverage__c.agf__PLSQL_Package</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Coverage__c-agf__Coverage Layout</layout>
-        <recordType>agf__ADM_Coverage__c.agf__Package</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Deleted_Task__c-agf__Deleted Task Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Epic_Burndown_Item__c-agf__Epic Burndown Item Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Epic__c-agf__Epic Layout Feed Based</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Feature_Freeze_Exception_Request__c-agf__Feature Freeze Exception Approval Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Feature_Freeze_Status__c-agf__Streamlined FF Team Status Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Feature_Freeze_Status__c-agf__Streamlined FF Team Status Layout</layout>
-        <recordType>agf__ADM_Feature_Freeze_Status__c.agf__Early_Assessment_Record</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Feature_Freeze_Status__c-agf__Streamlined FF Team Status Layout</layout>
-        <recordType>agf__ADM_Feature_Freeze_Status__c.agf__FF_Sign_Off_Record</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Feature_Freeze_Status__c-agf__Streamlined RF Team Status Layout</layout>
-        <recordType>agf__ADM_Feature_Freeze_Status__c.agf__RF_Sign_Off_Record</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Frequency__c-agf__Frequency Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_GUS_Exception__c-agf__GUSException Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Goal__c-agf__Program Goal Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Impact_Type__c-agf__Impact Type Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Impact__c-agf__Impact Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Investigation_Exception__c-agf__Investigation Exception Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Key_Value_Properties__c-agf__Key Value Properties Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Parent_Cloud__c-agf__Parent Cloud Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Parent_Work__c-agf__Parent Work Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Perforce_Connector__c-agf__Perforce Connector Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Priority_Mapping__c-agf__Priority Matrix Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Priority_Override__c-agf__Priority Override Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Priority__c-agf__Priority Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Product_Tag__c-agf__Product Tag Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Burndown_Item__c-agf__Release Burndown Item Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Event_Template__c-agf__Release Event Template Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Event__c-agf__Release Event Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Freeze_Status__c-agf__Release Freeze Status Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Signoff__c-agf__GUS Signoff Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Signoff__c-agf__GUS Signoff Layout</layout>
-        <recordType>agf__ADM_Release_Signoff__c.agf__GUS</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Signoff__c-agf__GUS Signoff Layout</layout>
-        <recordType>agf__ADM_Release_Signoff__c.agf__R0</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Signoff__c-agf__GUS Signoff Layout</layout>
-        <recordType>agf__ADM_Release_Signoff__c.agf__R1</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Signoff__c-agf__GUS Signoff Layout</layout>
-        <recordType>agf__ADM_Release_Signoff__c.agf__R2</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Signoff__c-agf__GUS Signoff Layout</layout>
-        <recordType>agf__ADM_Release_Signoff__c.agf__Release_Freeze</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Signoff__c-agf__GUS Signoff Layout</layout>
-        <recordType>agf__ADM_Release_Signoff__c.agf__Sandbox</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Stamp_Batch_ID__c-agf__Release Stamp Batch ID Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release_Stamp_Cache__c-agf__Release Stamp Cache Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Release__c-agf__Release Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Released_In__c-agf__Released In Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Scrum_Team_Cache__c-agf__Scrum Team Cache Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Scrum_Team_Member__c-agf__Team Member Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Scrum_Team_Member__c-agf__Team Member Layout</layout>
-        <recordType>agf__ADM_Scrum_Team_Member__c.agf__External</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Scrum_Team_Member__c-agf__Team Member Layout</layout>
-        <recordType>agf__ADM_Scrum_Team_Member__c.agf__Internal</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Scrum_Team_Member__c-agf__Team Member Layout</layout>
-        <recordType>agf__ADM_Scrum_Team_Member__c.agf__Planned</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Scrum_Team__c-agf__Scrum Team Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Scrum_Team__c-agf__Scrum Team Layout</layout>
-        <recordType>agf__ADM_Scrum_Team__c.agf__Program</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Scrum_Team__c-agf__Scrum Team Layout</layout>
-        <recordType>agf__ADM_Scrum_Team__c.agf__Scrum_Team</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Security_Questionaire__c-agf__Security Questionaire Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Severity_Type__c-agf__Severity Type Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Severity__c-agf__Work Severity Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Solution_Overview__c-agf__Solution Overview Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Sprint__c-agf__Sprint Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Status_History__c-agf__ADM_Status_History Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Tag_Assignment__c-agf__Tag Assignment Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Task__c-agf__Task Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Team_Dependency__c-agf__%28Admin%29 Team Dependency</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Team_Name_History__c-agf__Team Name History Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Team_Release__c-agf__Team Release Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Theme_Assignment__c-agf__Theme Assignment Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Theme__c-agf__Theme Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Third_Party_Software__c-agf__Third Party Software Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Time_Off_Log__c-agf__Company Holiday Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Time_Off_Log__c-agf__Company Holiday Layout</layout>
-        <recordType>agf__ADM_Time_Off_Log__c.agf__CompanyHoliday</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Time_Off_Log__c-agf__Out Of Office Layout</layout>
-        <recordType>agf__ADM_Time_Off_Log__c.agf__OutofOffice</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Time_Off_Log__c-agf__PTO Layout</layout>
-        <recordType>agf__ADM_Time_Off_Log__c.agf__PTOn</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Type__c-agf__Work Type Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_User_Business_Hours__c-agf__User Business Hours Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Valid_GUS_Value__c-agf__Valid GUS Value Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Work_Cache__c-agf__Work Cache Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Work_History__c-agf__Work History Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Work_SLA_Response_Time__mdt-agf__Work SLA Response Time Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Work_Status__c-agf__Status Layout with Type</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Work_Subscriber__c-agf__Work Subscriber Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Work__c-agf__Bug Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Work__c-agf__Bug Layout</layout>
-        <recordType>agf__ADM_Work__c.agf__Bug</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Work__c-agf__Bug Template</layout>
-        <recordType>agf__ADM_Work__c.agf__Template</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Work__c-agf__Investigation</layout>
-        <recordType>agf__ADM_Work__c.agf__Investigation</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Work__c-agf__ToDo</layout>
-        <recordType>agf__ADM_Work__c.agf__ToDo</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__ADM_Work__c-agf__User Story</layout>
-        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__Environments_Order__c-agf__Environment Order Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__Environments_Order__c-agf__Environment Order Layout</layout>
-        <recordType>agf__Environments_Order__c.agf__Environment_Request</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__Headcount__c-agf__Position Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__Locking_Record__c-agf__Locking Record Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__OMOpportunity__c-agf__Opportunity Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__QA_Answer__c-agf__Answer Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__QA_Comment__c-agf__Answer Comments Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__QA_Default_Test_Case__c-agf__Default Test Case Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__QA_ExecutionBug__c-agf__Execution-Bug %23 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__QA_FTest__c-agf__FTest Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__QA_Hierarchy__c-agf__Hierarchy Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__QA_Question__c-agf__Question Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__QA_Test_Case__c-agf__Test Case Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__QA_Test_Execution__c-agf__Test Execution Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__QA_Test_Plan__c-agf__Test Plan Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__RCA__c-agf__Issue Message</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__RCA__c-agf__Issue Message</layout>
-        <recordType>agf__RCA__c.agf__Issue_Message</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__RCA__c-agf__Issue Message</layout>
-        <recordType>agf__RCA__c.agf__RCA_Only</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__RCA__c-agf__Issue Message</layout>
-        <recordType>agf__RCA__c.agf__RCA_RCM_Request</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__Release_Signoff_Infrastructure__c-agf__New Pod Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__Release_Signoff_Infrastructure__c-agf__New Pod Layout</layout>
-        <recordType>agf__Release_Signoff_Infrastructure__c.agf__New_Pods</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__Release_Signoff_Infrastructure__c-agf__New Pod Layout</layout>
-        <recordType>agf__Release_Signoff_Infrastructure__c.agf__Splits_Migrations</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__Retrospective__c-agf__Retrospective Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__SLA_Violation__c-agf__SLA Violation Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__WorkData__c-agf__WorkData Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>agf__eRelease_Request__c-agf__eRelease Request Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Apex_Test_Result__c-copado__Apex Test Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__AuxiliaryObject__c-copado__AuxiliaryObject Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Branch_Management_Permission__c-copado__Branch Management Permission Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Build_Task__c-copado__Build Task Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Finding__c-copado__Compliance Finding Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Finding__c-copado__Compliance Finding Layout</layout>
-        <recordType>copado__Compliance_Finding__c.copado__Copado</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Finding__c-copado__Compliance Finding Layout</layout>
-        <recordType>copado__Compliance_Finding__c.copado__Other</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Rule_Criteria__c-copado__Compliance Rule Criteria Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Rule_Group_Item__c-copado__Compliance Rule Group Item Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Rule_Group__c-copado__Compliance Rule Group Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Rule__c-copado__Compliance Rule Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Rule__c-copado__Compliance Rule Layout</layout>
-        <recordType>copado__Compliance_Rule__c.copado__Copado</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Rule__c-copado__Compliance Rule Layout</layout>
-        <recordType>copado__Compliance_Rule__c.copado__Other</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Scan_Result__c-copado__Compliance Scan Result Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Scan_Result__c-copado__Compliance Scan Result Layout</layout>
-        <recordType>copado__Compliance_Scan_Result__c.copado__Copado</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Compliance_Scan_Result__c-copado__Compliance Scan Result Layout</layout>
-        <recordType>copado__Compliance_Scan_Result__c.copado__Other</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Continuous_Integration_Permission__c-copado__Continuous Integration Permission Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Continuous_Integration__c-copado__Continuous Integration Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Copado_Notification__c-copado__Copado Notification Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Copado_Protected_Settiing__mdt-copado__Copado key Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Copado_Setting__mdt-copado__Copado Setting Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Deployment_Flow_Step__c-copado__Deployment Flow Step Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Deployment_Flow__c-copado__Deployment Flow Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Deployment_History__c-copado__Copado Deployment History Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Deployment_Job__c-copado__Deployment Job Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Deployment_Task__c-copado__Deployment Task Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Deployment__c-copado__Deployment Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Destination_Org__c-copado__Destination Org Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Environment__c-copado__Environment Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Environmental_Variable__c-copado__Environment Variable Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Epic__c-copado__Epic Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__External_CI_Job_Result__c-copado__External CI Job Result Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__External_CI_Job__c-copado__External CI Job Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__External_CI_Setting__c-copado__External CI Setting Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Git_Backup__c-copado__Git Backup Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Git_Commit__c-copado__Git Commit Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Git_Org_Commit__c-copado__Git Org Commit Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Git_Repository__c-copado__Git Server Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Kanban_Board__c-copado__Kanban Board Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__OrgDiff__c-copado__OrgDiff Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Org__c-copado__Org Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Persona_Permission__c-copado__Persona Permission Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Persona__c-copado__Persona Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Project__c-copado__Project Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Promoted_User_Story__c-copado__Promoted User Story Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Promotion__c-copado__Promotion Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Pull_Request_Review__c-copado__Pull Request Review Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Pull_Request__c-copado__Pull Request Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Release__c-copado__Release Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Scheduled_Job_Run__c-copado__Scheduled Job Result Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Scheduled_Job__c-copado__Scheduled Job Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Group_Org_Credential__c-copado__Selenium Group Org Credential Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Group_Test_Suite__c-copado__Selenium Group Test Suite Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Group_Variable__c-copado__Selenium Group Variable Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Locator_Reference__c-copado__Selenium Locator Reference Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Locator__c-copado__Selenium Locator Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Settings__c-copado__Selenium Settings Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Test_Case_Per_Suite__c-copado__Selenium Test Case per Suite Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Test_Case__c-copado__Selenium Test Case Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Test_Group__c-copado__Selenium Test Group Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Test_Result__c-copado__Selenium Test Result Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Test_Run__c-copado__Salesforce Selenium Test Run Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Test_Run__c-copado__Salesforce Selenium Test Run Layout</layout>
-        <recordType>copado__Selenium_Test_Run__c.copado__Salesforce</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Test_Run__c-copado__Web App Selenium Test Run Layout</layout>
-        <recordType>copado__Selenium_Test_Run__c.copado__Generic_Web_Application</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Selenium_Test_Suite__c-copado__Selenium Test Suite Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Snapshot_Difference__c-copado__Snapshot Difference Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Sprint__c-copado__Sprint Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Static_Code_Analysis_Result__c-copado__Static Code Analysis Result Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Static_Code_Analysis_Rule__c-copado__Static Code Analysis Rule Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Static_Code_Analysis_Settings__c-copado__Static Code Analysis Settings Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Step__c-copado__Step Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Team_Dependency__c-copado__Team Dependency Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Team_Member__c-copado__Team Member Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Team__c-copado__Team Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Test_Run_Step__c-copado__Test Execution Step Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Test_Run__c-copado__Test Execution Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Test_Script_Step__c-copado__Script Step Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__Test_Script__c-copado__Test Script Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__User_Persona_Assignment__c-copado__User Persona Assignment Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__User_Story_Commit__c-copado__User Story Commit Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__User_Story_Metadata__c-copado__User Story Metadata Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__User_Story_Selenium_Test__c-copado__User Story Selenium Test Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__User_Story_Task__c-copado__User Story Task Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__User_Story__c-copado__User Story Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__User_Story__c-copado__User Story Layout</layout>
-        <recordType>copado__User_Story__c.copado__Bug</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__User_Story__c-copado__User Story Layout</layout>
-        <recordType>copado__User_Story__c.copado__Investigation</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>copado__User_Story__c-copado__User Story Layout</layout>
-        <recordType>copado__User_Story__c.copado__User_Story</recordType>
+        <layout>nano__c-nano Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>false</allowCreate>
@@ -15561,983 +6323,494 @@
         <object>Idea</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>SocialPersona</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
     <pageAccesses>
-        <apexPage>CopadoSyncUserStories</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>EditChangeManagementIntegration</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>ViewChangeManagementIntegration</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_AddWorkToPrioritizer</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_AddWorkToSprint</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_AdditionalFields</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_AssignmentRuleDetail</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_AssignmentRuleEdit</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_AssignmentRuleList</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_Backlog</apexPage>
+        <apexPage>AddCCHRuleCriteria</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_BookmarksSidebar</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_BugDetail</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_BugDetailSds</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_BugEdit</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_BugEditSds</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_BugGlobalActionRedirect</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ChatterWork</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_CheckInQuestions</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_Comments</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_CommentsNoForm</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_DeepCloneRedirector</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_DeepCloneVFLightningPage</apexPage>
+        <apexPage>AddTestClasses</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_FeatureFreezeCharts</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_Headcount</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_HeadcountDetail</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_InvestigationDetail</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_InvestigationDetailSds</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_InvestigationEdit</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_InvestigationEditSds</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_InvestigationExceptionExamples</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_InvestigationSds</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_InvestigationSeverityExamples</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_Kanban</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_KanbanBacklogDialog</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_KanbanSettings</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_KanbanSplash</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_KanbanTeamLocator</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_NotificationOutput</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_Overlay_CSS</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_PHelp</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_PHelpTraining</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_Planner</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_PlannerBacklogList</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_Planner_BacklogList</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_Planner_ReleaseVisualizer</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_Planner_WorkList</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_Prior3</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_PriorityMatrix</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_PriorityMatrixHelp</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ProductTagDetail</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ProductTagEdit</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ProfileTeamAllocation</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ReleaseCreate</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ReleaseEdit</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ReleaseEventTemplateCreate</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ReleaseEventTemplateDetail</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ReleaseEventTemplateEdit</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ReleaseFreezeCharts</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ReleaseRelatedList</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ScrumTeamDetail</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ScrumTeamDetailSds</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ScrumTeamEdit</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ScrumTeamMember</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ScrumTeamMemberNew</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ScrumTeamMembersOutOfOffice</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ScrumTeamWork</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_SdsShim</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ShowNoteCards</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_ShowNoteCards_CSS</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_SprintBacklog</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_SprintDetail_Charts</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_SprintDetail_Details</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_SprintDetail_TestExecutions</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_SprintDetail_VirtualWall</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_SprintLocator</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>agf__ADM_Sprint_Wall_LEX</apexPage>
+        <apexPage>ArtifactManageMetadata</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_StoryCost</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ArtifactMetadata</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_StoryCost_CSS</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ArtifactPackage</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_TeamCreation</apexPage>
-        <enabled>true</enabled>
+        <apexPage>BranchManagement</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_TeamLocator</apexPage>
-        <enabled>true</enabled>
+        <apexPage>BranchManagementDialog</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_TeamMemberAllocation</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ClassicSessionId</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_TeamReleaseGraphs</apexPage>
-        <enabled>true</enabled>
+        <apexPage>CloneDeployment</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_TeamReleaseReportLinks</apexPage>
-        <enabled>true</enabled>
+        <apexPage>CloneSeleniumTestCase</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_ThemeAggregatorPage</apexPage>
-        <enabled>true</enabled>
+        <apexPage>CommittedMetadata</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_ThemeDetail</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ComplianceGettingStarted</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_UserSettings</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ContinuousIntegration</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_UserStoryDetail</apexPage>
-        <enabled>true</enabled>
+        <apexPage>CopadoSetup</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_UserStoryDetailSds</apexPage>
-        <enabled>true</enabled>
+        <apexPage>CreateTestScriptSteps</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_UserStoryEdit</apexPage>
-        <enabled>true</enabled>
+        <apexPage>CreateUserStoryScratchOrg</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_UserStoryEditSds</apexPage>
-        <enabled>true</enabled>
+        <apexPage>DXOperation</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_UserStoryGlobalActionRedirect</apexPage>
-        <enabled>true</enabled>
+        <apexPage>DXTestOrgIntermediary</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_Wall</apexPage>
-        <enabled>true</enabled>
+        <apexPage>DeleteOrgCredentialScratchOrg</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WallTeamLocator</apexPage>
-        <enabled>true</enabled>
+        <apexPage>DeleteUserStoryScratchOrg</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_Work</apexPage>
-        <enabled>true</enabled>
+        <apexPage>DeployCommits</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkCreateEdit</apexPage>
-        <enabled>true</enabled>
+        <apexPage>Deployment</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkDeepClone</apexPage>
-        <enabled>true</enabled>
+        <apexPage>DeploymentFlowConnections</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkDetail</apexPage>
-        <enabled>true</enabled>
+        <apexPage>DeploymentJobResults</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkDialogChatter</apexPage>
-        <enabled>true</enabled>
+        <apexPage>DeploymentStatus</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkEdit</apexPage>
-        <enabled>true</enabled>
+        <apexPage>DeploymentWizard</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkEditBug</apexPage>
-        <enabled>true</enabled>
+        <apexPage>EditDeploymentTask</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkEditInvestigation</apexPage>
-        <enabled>true</enabled>
+        <apexPage>EditExternalCIJob</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkEditRedirect</apexPage>
-        <enabled>true</enabled>
+        <apexPage>EditExternalCISetting</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkEditTemplate</apexPage>
-        <enabled>true</enabled>
+        <apexPage>EditGit</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkEditToDo</apexPage>
-        <enabled>true</enabled>
+        <apexPage>EditGitBackup</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkEditUserStory</apexPage>
-        <enabled>true</enabled>
+        <apexPage>EditOrg</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkGlobalActionRedirect</apexPage>
-        <enabled>true</enabled>
+        <apexPage>EditOrgDiff</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkLocator</apexPage>
-        <enabled>true</enabled>
+        <apexPage>Environment_FindAndReplaceEditor</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkManager</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ExecuteTestRun</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkPrioritizer</apexPage>
-        <enabled>true</enabled>
+        <apexPage>FindingsMetadataGrid</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkSds</apexPage>
-        <enabled>true</enabled>
+        <apexPage>Flow_FindAndReplaceEditor</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkTabPanel</apexPage>
-        <enabled>true</enabled>
+        <apexPage>GenerateStaticCodeAnalysisRuleSet</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkTasks</apexPage>
-        <enabled>true</enabled>
+        <apexPage>GettingStarted</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_WorkView</apexPage>
-        <enabled>true</enabled>
+        <apexPage>GitCommitChanges</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_common_css</apexPage>
-        <enabled>true</enabled>
+        <apexPage>GitCommitChangesDX</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_eReleaseCreate</apexPage>
-        <enabled>true</enabled>
+        <apexPage>GitCommitLookup</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_eReleaseDetail</apexPage>
-        <enabled>true</enabled>
+        <apexPage>KanbanBoardEdit</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_eReleaseEdit</apexPage>
-        <enabled>true</enabled>
+        <apexPage>KanbanBoardView</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_emptyPage</apexPage>
-        <enabled>true</enabled>
+        <apexPage>LicenseManager</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__ADM_selectWorkRecordType</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ManageEnvVars</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_AddTCtoUS</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ManageGitBranches</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_AddTEToUS</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ManageSeleniumTesting</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_AddTestCases</apexPage>
-        <enabled>true</enabled>
+        <apexPage>MassAddDestOrgs</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_GenerateAnnotations</apexPage>
-        <enabled>true</enabled>
+        <apexPage>MassAddRunsToGroup</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_MassEditTC</apexPage>
-        <enabled>true</enabled>
+        <apexPage>MassAddSuitesToGroup</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_PendingExecutions</apexPage>
-        <enabled>true</enabled>
+        <apexPage>MassAddToRelease</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_SprintDetail_TEReport</apexPage>
-        <enabled>true</enabled>
+        <apexPage>MergeVersion</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_TCBugsDetail</apexPage>
-        <enabled>true</enabled>
+        <apexPage>MetadataSelector</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_TEBugsDetail</apexPage>
-        <enabled>true</enabled>
+        <apexPage>NewScratchOrgDefinition</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_TEDetailTCSection</apexPage>
-        <enabled>true</enabled>
+        <apexPage>NewScratchOrgProjectTemplate</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_TEDetailUSSection</apexPage>
-        <enabled>true</enabled>
+        <apexPage>OrgApexTestResultsSummary</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_TPDetails</apexPage>
-        <enabled>true</enabled>
+        <apexPage>OrgDiffDeployment</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_TPQuestionDetails</apexPage>
-        <enabled>true</enabled>
+        <apexPage>PageMessagesEnvironment</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_TPTELibrary</apexPage>
-        <enabled>true</enabled>
+        <apexPage>PermissionSetExplorer</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_TPUserStoryList</apexPage>
-        <enabled>true</enabled>
+        <apexPage>PersonaPermissionOverride</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_TestCaseLibrary</apexPage>
-        <enabled>true</enabled>
+        <apexPage>PromoteChanges</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_USDetail_TEReport</apexPage>
-        <enabled>true</enabled>
+        <apexPage>PromotionEdit</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_USTELibrary</apexPage>
-        <enabled>true</enabled>
+        <apexPage>QuickCreateUserStories</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__QA_addUStoTP</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ResolveConflicts</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__RetrospectiveEdit</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ScheduledJobSchedule</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__RetrospectiveNew</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ScheduledJobViewOverride</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__RetrospectiveView</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ScratchOrgLoadMetadataErrors</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__RetrospectiveViewAll</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ScratchOrgOpen</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__UnusedBugGlobalActionPage</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumGettingStartedPage</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__UnusedUserStoryGlobalActionPage</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumRunGroup</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__jquery_ui_redmond_css</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumSettingSelections</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__qa_tpadddefaultstep1</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumSettings</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__qa_tpadddefaultstep2</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumTestCase</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>agf__yuiTest</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumTestCaseEditor</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__AddCCHRuleCriteria</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumTestCasePerSuiteJson</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__BranchManagement</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumTestCasePromote</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__BranchManagementDialog</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumTestCaseRollback</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__ClassicSessionId</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumTestCasesPerSuite</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__CloneDeployment</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumTestGroupDetailOverride</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__CloneSeleniumTestCase</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumTestQuickRun</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__ComplianceGettingStarted</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumTestResult</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__ContinuousIntegration</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumTestRunDetailOverride</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__CopadoSetup</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SeleniumTestSuite</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__CreateTestScriptSteps</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SnapshotDifference</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__DeployCommits</apexPage>
-        <enabled>true</enabled>
+        <apexPage>SprintVirtualWall</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__Deployment</apexPage>
-        <enabled>true</enabled>
+        <apexPage>TestRunScratchOrg</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__DeploymentFlowConnections</apexPage>
-        <enabled>true</enabled>
+        <apexPage>UserStory</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__DeploymentJobResults</apexPage>
-        <enabled>true</enabled>
+        <apexPage>UserStoryApexTestResults</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__DeploymentStatus</apexPage>
-        <enabled>true</enabled>
+        <apexPage>UserStoryAssignment</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__DeploymentWizard</apexPage>
-        <enabled>true</enabled>
+        <apexPage>UserStoryCodeAnalysisRequested</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__EditDeploymentTask</apexPage>
-        <enabled>true</enabled>
+        <apexPage>UserStoryCommitIntermediary</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__EditExternalCIJob</apexPage>
-        <enabled>true</enabled>
+        <apexPage>UserStoryComplianceScan</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__EditExternalCISetting</apexPage>
-        <enabled>true</enabled>
+        <apexPage>UserStoryImportSelection</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__EditGit</apexPage>
-        <enabled>true</enabled>
+        <apexPage>UserStoryMetadata</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__EditGitBackup</apexPage>
-        <enabled>true</enabled>
+        <apexPage>UserStorySelectCommits</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__EditOrg</apexPage>
-        <enabled>true</enabled>
+        <apexPage>UserStorySelectedMetadata</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__EditOrgDiff</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ViewDeployment</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__Environment_FindAndReplaceEditor</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ViewDeploymentTasks</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__ExecuteTestRun</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ViewExternalCIJob</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__FindingsMetadataGrid</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ViewExternalCISetting</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__Flow_FindAndReplaceEditor</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ViewGitBackup</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__GenerateStaticCodeAnalysisRuleSet</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ViewOrgDiff</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__GettingStarted</apexPage>
-        <enabled>true</enabled>
+        <apexPage>ViewRelease</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__GitCommitChanges</apexPage>
-        <enabled>true</enabled>
+        <apexPage>WorkManager</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__GitCommitLookup</apexPage>
-        <enabled>true</enabled>
+        <apexPage>appHome</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__KanbanBoardEdit</apexPage>
-        <enabled>true</enabled>
+        <apexPage>editScheduledJobsOverride</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__KanbanBoardView</apexPage>
-        <enabled>true</enabled>
+        <apexPage>editSeleniumSettingOverride</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__LicenseManager</apexPage>
-        <enabled>true</enabled>
+        <apexPage>newEnvironmentOverride</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__ManageEnvVars</apexPage>
-        <enabled>true</enabled>
+        <apexPage>validateOrg</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__ManageSeleniumTesting</apexPage>
-        <enabled>true</enabled>
+        <apexPage>viewGit</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>copado__MassAddDestOrgs</apexPage>
-        <enabled>true</enabled>
+        <apexPage>viewOrg</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__MassAddRunsToGroup</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__MassAddSuitesToGroup</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__MassAddToRelease</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__MetadataSelector</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__OrgApexTestResultsSummary</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__OrgDiffDeployment</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__PageMessagesEnvironment</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__PermissionSetExplorer</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__PersonaPermissionOverride</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__PromoteChanges</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__PromotionEdit</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__QuickCreateUserStories</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__ScheduledJobSchedule</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__ScheduledJobViewOverride</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumGettingStartedPage</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumRunGroup</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumSettingSelections</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumSettings</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumTestCase</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumTestCaseEditor</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumTestCasePerSuiteJson</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumTestCasePromote</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumTestCaseRollback</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumTestCasesPerSuite</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumTestGroupDetailOverride</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumTestQuickRun</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumTestResult</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumTestRunDetailOverride</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SeleniumTestSuite</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__Selenium_Test_Result</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SnapshotDifference</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__SprintVirtualWall</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__StaticCodeAnalysisSummary</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__UserStory</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__UserStoryApexTestResults</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__UserStoryAssignment</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__UserStoryCodeAnalysisRequested</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__UserStoryCommitIntermediary</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__UserStoryComplianceScan</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__UserStoryImportSelection</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__UserStoryMetadata</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__UserStorySelectCommits</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__UserStorySelectedMetadata</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__ViewDeployment</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__ViewDeploymentTasks</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__ViewExternalCIJob</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__ViewExternalCISetting</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__ViewGitBackup</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__ViewOrgDiff</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__WorkManager</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__appHome</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__editScheduledJobsOverride</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__editSeleniumSettingOverride</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__newEnvironmentOverride</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__validateOrg</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__viewGit</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>copado__viewOrg</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Artifact__c.Git_Artifact</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Artifact__c.Package_Artifact</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Compliance_Finding__c.Copado</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Compliance_Finding__c.Other</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Compliance_Rule__c.Copado</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Compliance_Rule__c.Other</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Compliance_Scan_Result__c.Copado</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Compliance_Scan_Result__c.Other</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
@@ -16554,514 +6827,221 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>agf__ADM_Coverage__c.agf__Feature</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
         <default>false</default>
-        <recordType>agf__ADM_Coverage__c.agf__PLSQL_Package</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Coverage__c.agf__Package</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Feature_Freeze_Status__c.agf__Early_Assessment_Record</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>agf__ADM_Feature_Freeze_Status__c.agf__FF_Sign_Off_Record</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Feature_Freeze_Status__c.agf__RF_Sign_Off_Record</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Release_Signoff__c.agf__GUS</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>agf__ADM_Release_Signoff__c.agf__R0</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Release_Signoff__c.agf__R1</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Release_Signoff__c.agf__R2</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Release_Signoff__c.agf__Release_Freeze</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Release_Signoff__c.agf__Sandbox</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Scrum_Team_Member__c.agf__External</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>agf__ADM_Scrum_Team_Member__c.agf__Internal</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Scrum_Team_Member__c.agf__Planned</recordType>
+        <recordType>Selenium_Test_Run__c.Generic_Web_Application</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>agf__ADM_Scrum_Team__c.agf__Program</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>agf__ADM_Scrum_Team__c.agf__Scrum_Team</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Time_Off_Log__c.agf__CompanyHoliday</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>agf__ADM_Time_Off_Log__c.agf__OutofOffice</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Time_Off_Log__c.agf__PTOn</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Work__c.agf__Bug</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Work__c.agf__Investigation</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__ADM_Work__c.agf__Template</recordType>
+        <recordType>Selenium_Test_Run__c.Salesforce</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>agf__ADM_Work__c.agf__ToDo</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>agf__Environments_Order__c.agf__Environment_Request</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__RCA__c.agf__Issue_Message</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>agf__RCA__c.agf__RCA_Only</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__RCA__c.agf__RCA_RCM_Request</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>agf__Release_Signoff_Infrastructure__c.agf__New_Pods</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>agf__Release_Signoff_Infrastructure__c.agf__Splits_Migrations</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>copado__Compliance_Finding__c.copado__Copado</recordType>
+        <recordType>User_Story__c.Bug</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>copado__Compliance_Finding__c.copado__Other</recordType>
+        <recordType>User_Story__c.Investigation</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>copado__Compliance_Rule__c.copado__Copado</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>copado__Compliance_Rule__c.copado__Other</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>copado__Compliance_Scan_Result__c.copado__Copado</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>copado__Compliance_Scan_Result__c.copado__Other</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>copado__Selenium_Test_Run__c.copado__Generic_Web_Application</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>copado__Selenium_Test_Run__c.copado__Salesforce</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>copado__User_Story__c.copado__Bug</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>copado__User_Story__c.copado__Investigation</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>copado__User_Story__c.copado__User_Story</recordType>
+        <recordType>User_Story__c.User_Story</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
-        <tab>Change_Management_Integration_Credential__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Account_Summary</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Acceptance_Criterion__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Artifact__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Assignment_Rule__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Compliance_Finding__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Build__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Compliance_Getting_Started</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Burndown_Item__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Compliance_Rule_Group__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Change_List__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Compliance_Rule__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Epic__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Compliance_Scan_Result__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Frequency__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Continuous_Integration__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Impact_Type__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Copado_DX_Panel</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Impact__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Copado_License_Manager</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Investigation_Exception__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Copado_Notification__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Kanban_Board</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Deployment_Flow__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Priority_Mapping__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Deployment__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Priority__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Environment__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Product_Tag__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Epic__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Release__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>External_CI_Job__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Scrum_Team_Member__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>External_CI_Setting__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Scrum_Team__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Getting_Started</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Sprint__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Git_Backup__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Team_Dependency__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Git_Repository__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Team_Release__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Kanban_Board__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Theme__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>OrgDiff__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Time_Off_Log__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Org__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Unified_Wall</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Permission_Set_Explorer</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Work_Status__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Persona__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__ADM_Work__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Project__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__Gus_Settings</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Promotion__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__MyTeam</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Release__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__My_Teams</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Scheduled_Job__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__RCA__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Scratch_Org_Definition__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__Work_Manager</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Scratch_Org_Project_Template__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>agf__eRelease_Request__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>SeleniumGettingStarted</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Account_Summary</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Selenium_Locator__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Compliance_Finding__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Selenium_Settings__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Compliance_Getting_Started</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Selenium_Test_Case__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Compliance_Rule_Group__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Selenium_Test_Group__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Compliance_Rule__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Selenium_Test_Run__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Compliance_Scan_Result__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Selenium_Test_Suite__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Continuous_Integration__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Snapshot_Difference__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Copado_License_Manager</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Sprint__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Copado_Notification__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Static_Code_Analysis_Settings__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Deployment_Flow__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Team__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Deployment__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Test_Run__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Environment__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Test_Script__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Epic__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Theme__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__External_CI_Job__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>User_Story_Metadata__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__External_CI_Setting__c</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>User_Story__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>copado__Getting_Started</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Git_Backup__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Git_Repository__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Kanban_Board__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__OrgDiff__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Org__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Permission_Set_Explorer</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Persona__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Project__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Promotion__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Release__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Scheduled_Job__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__SeleniumGettingStarted</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Selenium_Locator__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Selenium_Settings__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Selenium_Test_Case__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Selenium_Test_Group__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Selenium_Test_Run__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Selenium_Test_Suite__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Snapshot_Difference__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Sprint__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Static_Code_Analysis_Settings__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Team__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Test_Run__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Test_Script__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__User_Story_Metadata__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__User_Story__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copado__Work_Manager</tab>
-        <visibility>DefaultOn</visibility>
+        <tab>Work_Manager</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Account</tab>
@@ -17084,23 +7064,7 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-Chatter</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-CollaborationGroup</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-Console</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Contact</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-ContentContribute</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -17152,15 +7116,11 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-Knowledge</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-KnowledgePublishing</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Lead</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ListEmail</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -17176,10 +7136,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-OtherUserProfile</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Pricebook2</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
@@ -17188,11 +7144,7 @@
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-ProfilePlatformFeed</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-ProfilePlatformOverview</tab>
+        <tab>standard-QuickText</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -17201,14 +7153,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Scorecard</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Sites</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-SocialPersona</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -17224,10 +7172,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-UserProfile</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-UserProvisioningRequest</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -17237,7 +7181,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-home</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-report</tab>
@@ -17246,15 +7190,15 @@
     <userLicense>Chatter Only</userLicense>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AddDirectMessageMembers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>AllowUniversalSearch</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>AllowViewKnowledge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ApexRestServices</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -17267,18 +7211,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ChatterFileLink</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ChatterInternalUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ChatterInviteExternalUsers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ChatterOwnGroups</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -17334,10 +7266,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>RemoveDirectMessageMembers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>RunReports</name>
     </userPermissions>
     <userPermissions>
@@ -17359,5 +7287,9 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewHelpLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewRoles</name>
     </userPermissions>
 </Profile>

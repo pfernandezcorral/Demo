@@ -1,3 +1,379 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata"/>
-
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ADD_AN_ENVIRONMENT</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ADD AN ENVIRONMENT</shortDescription>
+        <value>Add an Environment</value>
+    </labels>
+    <labels>
+        <fullName>APEX_TESTS_RESULTS_TRIMMED</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>APEX TESTS RESULTS TRIMMED</shortDescription>
+        <value>Results were trimmed to 1000. Check the Salesforce Org with id {0} for more information.</value>
+    </labels>
+    <labels>
+        <fullName>BRANCH_LICENSES</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>BRANCH LICENSES</shortDescription>
+        <value>Branch Management Licenses Used</value>
+    </labels>
+    <labels>
+        <fullName>BRANCH_NAME_ENTER</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>BRANCH NAME ENTER</shortDescription>
+        <value>Enter branch name</value>
+    </labels>
+    <labels>
+        <fullName>CONFLICT_RESOLUTION</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CONFLICT RESOLUTION</shortDescription>
+        <value>Conflict Resolution</value>
+    </labels>
+    <labels>
+        <fullName>CONTACT_SALES</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CONTACT SALES</shortDescription>
+        <value>Contact sales</value>
+    </labels>
+    <labels>
+        <fullName>COPADO_ORG_SETUP_ORG_FULLNAME</fullName>
+        <categories>copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>COPADO_ORG_SETUP_ORG_FULLNAME</shortDescription>
+        <value>Name:</value>
+    </labels>
+    <labels>
+        <fullName>COPADO_SETUP_WIZARD_SUBTITLE</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>COPADO SETUP WIZARD SUBTITLE</shortDescription>
+        <value>Copado Setup Wizard</value>
+    </labels>
+    <labels>
+        <fullName>COULD_NOT_SCHEDULE_JOB</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>COULD NOT SCHEDULE JOB</shortDescription>
+        <value>Could not schedule job</value>
+    </labels>
+    <labels>
+        <fullName>Connection_Problem</fullName>
+        <categories>ComplianceRuleCriteria</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Connection Problem</shortDescription>
+        <value>An unexpected error occurred. Please try again. If the problem continues, please check you connection.</value>
+    </labels>
+    <labels>
+        <fullName>DELETE_CONFIRM</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DELETE CONFIRM</shortDescription>
+        <value>Confirm Delete</value>
+    </labels>
+    <labels>
+        <fullName>DEPLOYMENT_FLOW_STEPS</fullName>
+        <categories>Copado Getting Started</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DEPLOYMENT FLOW STEPS</shortDescription>
+        <value>Deployment Flow Steps</value>
+    </labels>
+    <labels>
+        <fullName>DEPLOY_ALL</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DEPLOY ALL</shortDescription>
+        <value>Deploy All</value>
+    </labels>
+    <labels>
+        <fullName>DESTINATION_ORG_CREDENTIAL_REQUIRED_FOR_DEPLOYMENT</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DESTINATION ORG CREDENTIAL REQUIRED FOR DEPLOYMENT</shortDescription>
+        <value>A Destination Org Credential must be defined prior to creating a Deployment.</value>
+    </labels>
+    <labels>
+        <fullName>DXOperationType_Planning</fullName>
+        <categories>Copado DX</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DXOperationType_Planning</shortDescription>
+        <value>Planning Operations</value>
+    </labels>
+    <labels>
+        <fullName>DX_Feature_Branch_Definition</fullName>
+        <categories>Copado DX</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DX Feature Branch Definition</shortDescription>
+        <value>Feature Branches: Isolated branch for a specific user story so that changes that committed on the user story will be stored in this branch.</value>
+    </labels>
+    <labels>
+        <fullName>DX_US_ALREADY_HAS_AN_ORG</fullName>
+        <categories>Copado DX</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DX_US_ALREADY_HAS_AN_ORG</shortDescription>
+        <value>This user story you have selected for this operation is already associated with an Org Crendential. If you proceed to create a new scratch org the org credential assignment will be overwritten!</value>
+    </labels>
+    <labels>
+        <fullName>LAST_EXECUTION</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>LAST EXECUTION</shortDescription>
+        <value>Last Execution</value>
+    </labels>
+    <labels>
+        <fullName>LEARN</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>LEARN</shortDescription>
+        <value>Learn</value>
+    </labels>
+    <labels>
+        <fullName>LICENSE_UPSERT_SUCCESSFUL</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>LICENSE UPSERT SUCCESSFUL</shortDescription>
+        <value>The user license has been successfully added/updated.</value>
+    </labels>
+    <labels>
+        <fullName>Load_Metadata_Success</fullName>
+        <categories>Copado DX</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Load_Metadata_Success</shortDescription>
+        <value>Loading metadata to the Scratch Org has been completed successfully.</value>
+    </labels>
+    <labels>
+        <fullName>MERGE_CONFLICT_REVIEW</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MERGE CONFLICT REVIEW</shortDescription>
+        <value>Review Merge Conflict</value>
+    </labels>
+    <labels>
+        <fullName>MUST_LEAVE_A_COMMENT_ERROR</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MUST LEAVE A COMMENT ERROR</shortDescription>
+        <value>You must leave a comment.</value>
+    </labels>
+    <labels>
+        <fullName>OPTIONS</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OPTIONS</shortDescription>
+        <value>Options</value>
+    </labels>
+    <labels>
+        <fullName>ORG_NOT_FOUND</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ORG NOT FOUND</shortDescription>
+        <value>Org Credential not found!</value>
+    </labels>
+    <labels>
+        <fullName>PROMOTION_USER_STORY_METADATA</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PROMOTION USER STORY METADATA</shortDescription>
+        <value>Promotion User Story Metadata</value>
+    </labels>
+    <labels>
+        <fullName>Project_Template_Details</fullName>
+        <categories>Copado DX</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Project Template Details</shortDescription>
+        <value>The project template indicates that Copado DX configuration contains a Salesforce DX project. The template contains project information and facilitates the authentication of scratch orgs. Copado structures project branches in the given repository by checking this template to decide where to put files when syncing between the project and scratch org.</value>
+    </labels>
+    <labels>
+        <fullName>RELEASE_HELP</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RELEASE HELP</shortDescription>
+        <value>A release helps group user stories to promote them together and also to mark the version of the changes being released. The user stories can be linked to different projects as long as the projects are linked to the same Deployment Flow. If working with Git, whenever a promotion branch is merged into the main branch of the deployment flow, Copado will tag the merge commit with the Version of the Release.</value>
+    </labels>
+    <labels>
+        <fullName>RETURN_TO_USER_STORY</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RETURN TO USER STORY</shortDescription>
+        <value>Return to User Story</value>
+    </labels>
+    <labels>
+        <fullName>SELECT_COMMITS</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SELECT COMMITS</shortDescription>
+        <value>Select Commits</value>
+    </labels>
+    <labels>
+        <fullName>SELECT_DEPLOYMENT_FLOW_OR_CREATE_ONE</fullName>
+        <categories>Copado Getting Started</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SELECT DEPLOYMENT FLOW OR CREATE ONE</shortDescription>
+        <value>Select a Deployment Flow or create a new one.</value>
+    </labels>
+    <labels>
+        <fullName>SELENIUM_TEST_RESULTS_SUMMARY</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SELENIUM TEST RESULTS SUMMARY</shortDescription>
+        <value>Selenium Test Results Summary</value>
+    </labels>
+    <labels>
+        <fullName>STEP_TYPE_FULL_PROFILES</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>STEP TYPE FULL PROFILES</shortDescription>
+        <value>Full Profiles</value>
+    </labels>
+    <labels>
+        <fullName>STOP</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>STOP</shortDescription>
+        <value>Stop</value>
+    </labels>
+    <labels>
+        <fullName>Scratch_Org_Details</fullName>
+        <categories>Copado DX</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Scratch Org Details</shortDescription>
+        <value>Scratch Org Details</value>
+    </labels>
+    <labels>
+        <fullName>Scratch_Org_Status_Org_Last_Status</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Scratch_Org_Status_Org_Last_Status</shortDescription>
+        <value>Last Status</value>
+    </labels>
+    <labels>
+        <fullName>Select_Dev_Hub_Org</fullName>
+        <categories>Copado DX</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Dev Hub Org</shortDescription>
+        <value>Select a Dev Hub Org:</value>
+    </labels>
+    <labels>
+        <fullName>SprintWall_Action_Edit_Add_task</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SprintWall Action Edit Add task</shortDescription>
+        <value>Add task</value>
+    </labels>
+    <labels>
+        <fullName>SprintWall_Button_Cancel</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SprintWall Button Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>SprintWall_Button_MassUpdate</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SprintWall_Button_MassUpdate</shortDescription>
+        <value>Mass Update</value>
+    </labels>
+    <labels>
+        <fullName>SprintWall_Edit_Sprint</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SprintWall Edit Sprint</shortDescription>
+        <value>Edit Sprint</value>
+    </labels>
+    <labels>
+        <fullName>TARGET</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TARGET</shortDescription>
+        <value>Target</value>
+    </labels>
+    <labels>
+        <fullName>TOTAL_NUMBER_OF_LINES</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TOTAL NUMBER OF LINES</shortDescription>
+        <value>Total Number of Lines</value>
+    </labels>
+    <labels>
+        <fullName>USDependency_Name</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>USDependency_Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>USER_STORIES_TO_BE_PROMOTED</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>USER STORIES TO BE PROMOTED</shortDescription>
+        <value>Selected User Stories</value>
+    </labels>
+    <labels>
+        <fullName>Upload</fullName>
+        <categories>Copado</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Upload</shortDescription>
+        <value>Upload</value>
+    </labels>
+    <labels>
+        <fullName>Validation_Error</fullName>
+        <categories>User Story Validation</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Validation Error</shortDescription>
+        <value>Unexpected error!!. Please check your permissions and user story setup.</value>
+    </labels>
+</CustomLabels>

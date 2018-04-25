@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>am@copa.do</contactEmail>
+    <label>OAuth PoC</label>
+    <oauthConfig>
+        <callbackUrl>https://dev-copado-pr-149.herokuapp.com/forcedotcomoauth2/callback</callbackUrl>
+        <consumerKey>3MVG9HxRZv05HarT9cKbrKKAJKQXIeuvUglB9fSQPG6Z2Nbuv68TKpQBo1n70tadeME8Zzrjqg4eMvJLWknxI</consumerKey>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>Full</scopes>
+        <scopes>Chatter</scopes>
+        <scopes>CustomApplications</scopes>
+        <scopes>RefreshToken</scopes>
+        <scopes>OpenID</scopes>
+        <scopes>CustomPermissions</scopes>
+        <scopes>Wave</scopes>
+        <scopes>Eclair</scopes>
+    </oauthConfig>
+</ConnectedApp>

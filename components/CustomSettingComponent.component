@@ -1,0 +1,113 @@
+<apex:component controller="StepEditionController" layout="block">
+	<apex:attribute name="isEdit" description="" type="Boolean" required="true" default="false"/>
+	<apex:stylesheet value="{!URLFOR($Resource.jqx,'jqwidgets/styles/jqx.base.css')}" />
+	<apex:outputPanel id="js-stepBlock-CustomSettings" rendered="{!isEdit}">
+		<div class="slds-grid">
+			<div class="slds-col">
+				<apex:outputPanel layout="block" styleClass="slds-form-element">
+			    	<label class="slds-form-element__label" for="fieldsEx">
+						{!$Label.FROM_SUFFIX}
+					</label>
+			    	<div class="slds-form-element__control">
+			    		<apex:inputText value="{!inputAux}" id="csfromSuffix" styleClass="slds-input cs-fromSuffix" />
+			    	</div>
+		    	</apex:outputPanel>
+		    	<apex:outputPanel layout="block" styleClass="slds-form-element">
+			    	<label class="slds-form-element__label" for="fieldsEx">
+						{!$Label.STEP_TYPE_CUSTOM_SETTINGS}
+					</label>
+			    	<div class="slds-form-element__control">
+			    		<div id="objectsCJ"></div> 
+			    	</div>
+		    	</apex:outputPanel>             
+            
+            
+            </div>
+            <div class="slds-col">
+            	<apex:outputPanel layout="block" styleClass="slds-form-element">
+			    	<label class="slds-form-element__label" for="fieldsEx">
+						{!$Label.TO_SUFFIX}
+					</label>
+			    	<div class="slds-form-element__control">
+			    		<apex:inputText value="{!inputAux}" id="cstoSuffix" styleClass="cs-toSuffix slds-input" />
+			    	</div>
+		    	</apex:outputPanel>
+            	<apex:outputPanel layout="block" styleClass="slds-form-element">
+				    	<label class="slds-form-element__label" for="selPicklist">
+							{!$Label.OBJECT}
+						</label>
+				    	<div class="slds-form-element__control">
+				    		<div id="objects"></div>
+                            
+                            <input type="button" id="getCSValues" class="btnDisabled slds-button slds-button--neutral" disabled="disabled" value="Get Custom Setting Values"></input>
+                    		<a id="refresh-cache-cs">(refresh cache)</a>  
+                        </div>
+			    	</apex:outputPanel>
+            </div>
+        </div>        
+        <div class="slds-grid">
+			<div class="slds-col">
+				<apex:outputPanel layout="block" styleClass="slds-form-element slds-float_left">
+                    <label class="slds-form-element__label" for="fields-unselected" >
+                        {!$Label.STEP_TYPE_CUSTOM_SETTINGS}
+                    </label>						    	
+			    	<div class="slds-form-element__control">
+			    		<select id="cs-values" size="20" style="width:400px;" multiple="multiple">
+		                </select>
+		                <br/>
+		                <input type="button" id="cs-toggle-all" data-all="" class="slds-button slds-button--neutral" value="{!$Label.SELECT_ALL}"></input>
+			    	</div>
+		    	</apex:outputPanel>
+			</div>
+		</div>    
+    </apex:outputPanel>
+    <apex:outputPanel id="js-stepBlock-CustomSettingsView" rendered="{!!isEdit}">
+    	<div class="slds-grid">
+			<div class="slds-col">
+				<apex:outputPanel layout="block" styleClass="slds-form-element slds-has-divider--bottom">
+			    	<label class="slds-form-element__label" for="fieldsEx">
+						{!$Label.FROM_SUFFIX}
+					</label>
+			    	<div class="slds-form-element__control">
+			    		<apex:outputText id="csfromSuffixView" styleClass="cs-fromSuffix" />
+			    	</div>
+		    	</apex:outputPanel>
+		    	<apex:outputPanel layout="block" styleClass="slds-form-element slds-has-divider--bottom">
+			    	<label class="slds-form-element__label" for="fieldsEx">
+						{!$Label.STEP_TYPE_CUSTOM_SETTINGS}
+					</label>
+			    	<div class="slds-form-element__control">
+			    		<apex:outputText id="objectsCJView"></apex:outputText> 
+			    	</div>
+		    	</apex:outputPanel>         
+			</div>
+			<div class="slds-col">
+				<apex:outputPanel layout="block" styleClass="slds-form-element slds-has-divider--bottom">
+			    	<label class="slds-form-element__label" for="fieldsEx">
+						{!$Label.TO_SUFFIX}
+					</label>
+			    	<div class="slds-form-element__control">
+			    		<apex:outputText id="cstoSuffixView" styleClass="cs-toSuffix" />
+			    	</div>
+		    	</apex:outputPanel>
+			</div>
+		</div>
+		<div class="slds-grid">
+			<div class="slds-col">
+				<apex:outputPanel layout="block" styleClass="slds-form-element slds-float_left">
+                    <label class="slds-form-element__label" for="fields-unselected" >
+                        {!$Label.STEP_TYPE_CUSTOM_SETTINGS}
+                    </label>						    	
+			    	<div class="slds-form-element__control">
+			    		<select id="cs-valuesView" size="20" style="width:400px;" multiple="multiple" readonly="true">
+		                </select>
+			    	</div>
+		    	</apex:outputPanel>
+			</div>
+		</div>  
+    </apex:outputPanel>
+   
+    <apex:includeScript value="{!URLFOR($Resource.CustomSettingComponent)}" />
+    <apex:includeScript value="{!URLFOR($Resource.jqx,'jqwidgets/jqx-all.js')}" />
+    
+</apex:component>

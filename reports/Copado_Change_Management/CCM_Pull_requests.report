@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User_Story__c$Name</field>
+    </columns>
+    <columns>
+        <field>User_Story__c.Pull_Requests__r$Name</field>
+    </columns>
+    <columns>
+        <field>User_Story__c.Pull_Requests__r.Pull_Request_Reviews__r$Name</field>
+    </columns>
+    <columns>
+        <field>User_Story__c$User_Story_Title__c</field>
+    </columns>
+    <columns>
+        <field>User_Story__c$Status__c</field>
+    </columns>
+    <columns>
+        <field>User_Story__c.Pull_Requests__r$Assignees__c</field>
+    </columns>
+    <columns>
+        <field>User_Story__c.Pull_Requests__r$State__c</field>
+    </columns>
+    <columns>
+        <field>User_Story__c$Sprint__c</field>
+    </columns>
+    <columns>
+        <field>User_Story__c.Pull_Requests__r$Requested_Reviewers__c</field>
+    </columns>
+    <columns>
+        <field>User_Story__c$Last_Validation_Deployment_Status__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>CCM - Pull requests</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>User_Stories_with_Pull_Requests_with_Pull_Request_Reviews__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User_Story__c$Close_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

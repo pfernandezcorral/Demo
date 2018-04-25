@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Artifact Version</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Artifact Versions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Artifact --></label>
+        <name>Artifact__c</name>
+        <relationshipLabel><!-- Artifact Versions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Release Status --></label>
+        <name>Release_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release --></label>
+        <name>Release__c</name>
+        <relationshipLabel><!-- Artifact Versions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- View In Git --></label>
+        <name>View_In_Git__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Merge_Version --></label>
+        <name>Merge_Version</name>
+    </webLinks>
+</CustomObjectTranslation>

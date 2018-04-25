@@ -1,0 +1,338 @@
+<apex:component controller="ScratchOrgController" allowDML="true">
+    <apex:attribute name="parentPageController" type="ScratchOrgWizardPageBase" assignTo="{!pageController}"
+                    required="true" description="The controller for the parent page."/>
+    <apex:attribute name="componentName" type="String" assignTo="{!controllerKey}" description="Component Name"/>
+    <apex:attribute name="mode" type="String" assignTo="{!componentMode}"
+                    description="Component mode that will define the default behaviour." required="true"
+                    default="edit"/>
+    <apex:attribute name="showActionButtons" type="Boolean" assignTo="{!showButtons}" default="true"
+                    description="Hide or show action buttons"/>
+    <apex:attribute name="showAllTemplateButtons" type="Boolean" assignTo="{!showTemplateButtons}" default="true"
+                    description="Hide or show template buttons"/>
+    <apex:attribute name="showMessages" type="Boolean" default="true" description="Show page messages"/>
+    <apex:attribute name="templateIds" type="String" description="It is used at standard Edit button of the Scratch Org Definition" required="false" assignTo="{!templateId}"/>
+    <c:ScreenLocker msg="{!$Label.LOADING} Template"/>
+    <apex:outputPanel layout="none" rendered="{!showMessages}">
+        <apex:pageMessages id="definitionMessages"/>
+    </apex:outputPanel>
+    <c:CopadoHelp sectionText="{!$Label.Definition_Template_Detail}'"
+            sectionTitle="{!$Label.HELP}" sectionOpen="false"/>
+    <apex:pageBlock title="Scratch Org Definition" id="theBlock" mode="edit">
+
+        <apex:pageBlockButtons location="top">
+            <apex:outputPanel layout="block" id="org_btn">
+                <apex:commandButton action="{!createOrg}" onClick="lockScreen()" onComplete="unlockScreen();" immediate="false" accesskey="enter" value="{!$Label.DXOperation_CreateSO}"
+                                    id="cso" reRender="desc" rendered="{!showButtons}"/>
+                <apex:commandButton onClick="lockScreen()"  action="{!newTemplate}" immediate="false" value="{!$Label.Save_As_Template}" id="savecso"
+                                    onComplete="unlockScreen();setSavedTemplateId();" reRender="desc,definitionMessages"
+                                    rendered="{!AND(showTemplateButtons,showTemplateSaveAsButton)}"/>
+                <apex:commandButton onClick="lockScreen();doshit();return false;"  immediate="false" value="{!$Label.Update_Template}" id="updcso"
+                                    reRender="theBlock"
+                                    rendered="{!AND(templateId != null, AND(showTemplateButtons,showTemplateUpdateButton))}"/>
+            </apex:outputPanel>
+        </apex:pageBlockButtons>
+        <apex:actionFunction name="doshit" action="{!updateTemplate}" onComplete="unlockScreen();" reRender="desc,definitionMessages"/>
+        <apex:pageBlockSection showHeader="true" title="{!$Label.Select_Org_Definition_Template}" columns="2" collapsible="false"
+                               id="orgTemplate" rendered="{!showTemplateFields}">
+            <apex:pageBlockSectionItem rendered="{!AND(mode != 'new',mode != 'editStd',mode != 'cloneStd')}">
+                <apex:outputLabel value="{!$Label.Org_Definition_Template}"/>
+                <apex:outputPanel layout="none">
+                    <input type="hidden" name="OT_INPUT_lkid" id="OT_INPUT_lkid" value="{!templateId}"/>
+                    <input type="hidden" name="OT_INPUT_lkold" id="OT_INPUT_lkold" value=""/>
+                    <input type="hidden" name="OT_INPUT_lktp" id="OT_INPUT_lktp"
+                           value="{!$ObjectType.Scratch_Org_Definition__c.keyPrefix}"/>
+                    <input type="hidden" name="OT_INPUT_lspf" id="OT_INPUT_lspf" value="0"/>
+                    <input type="hidden" name="OT_INPUT_lspfsub" id="OT_INPUT_lspfsub" value="0"/>
+                    <input type="hidden" name="OT_INPUT_mod" id="OT_INPUT_mod" value="0"/>
+                    <span class="lookupInput" style="margin-left: 0;">
+                            <input id="OT_INPUT" maxlength="255" name="OT_INPUT"
+                                   onchange="lockScreen();readTemplate(getElementByIdCS('OT_INPUT_lkid').value);getElementByIdCS('OT_INPUT_mod').value='1';getElementByIdCS('OT_INPUT_lkid').value = ''"
+                                   size="20" tabindex="3" type="text" value="{!templateName}"/>
+                            <a href="javascript:%20openLookup%28%27%2F_ui%2Fcommon%2Fdata%2FLookupPage%3Flkfm%3DeditPage%26lknm%3DOT_INPUT%26lktp%3D%27%20%2B%20getElementByIdCS%28%27OT_INPUT_lktp%27%29.value%2C670%2C%271%27%2C%27%26lksrch%3D%27%20%2B%20escapeUTF%28getElementByIdCS%28%27OT_INPUT%27%29.value.substring%280%2C%2080%29%29%29"
+                               id="OT_INPUT_lkwgt" onclick="setLastMousePosition(event)" tabindex="3"
+                               title="Org Credential Lookup (New Window)">
+                            <img src="/img/s.gif" alt="Org Credential Lookup (New Window)" class="lookupIcon"
+                                 onblur="this.className = 'lookupIcon';" onfocus="this.className = 'lookupIconOn';"
+                                 onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';"
+                                 onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';"
+                                 title="Artifacts Lookup (New Window)"/>
+                            </a>
+						</span>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+
+
+            <apex:pageBlockSectionItem rendered="{!mode == 'new'}">
+                <apex:outputLabel value="{!$Label.Org_Definition_Template}"/>
+                <apex:selectList value="{!templateId}" multiselect="false" size="1">
+                    <apex:selectOptions value="{!TemlatesWithHubId}"/>
+                    <apex:actionSupport event="onchange" action="{!readOrgDefinitionFromTemplate}" onSubmit="lockScreen();" onComplete="unlockScreen();" reRender="theBlock,org_desc,opt_desc,org_btn,orgTemplate,definitionMessages"/>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+
+
+
+            <apex:pageBlockSectionItem id="templateNameSection">
+                <apex:outputLabel value="{!$Label.Org_Definition_Template} {!$Label.SprintWall_Name_Header}" for="templateName"/>
+                <apex:inputText tabIndex="1" id="templateName" value="{!templateName}"
+                                title="{!$Label.Org_Definition_Template} {!$Label.SprintWall_Name_Header}" maxLength="80"/>
+            </apex:pageBlockSectionItem>
+            <apex:outputPanel layout="none" rendered="{!OR(mode == 'editStd',mode == 'cloneStd')}">
+                <script>
+                    (function(){
+
+                        var tn = '{!templateName}';
+                        if(!tn){
+                            setTimeout(function(){readTemplate('{!templateId}');},100);
+                        }
+                    })();
+                </script>
+            </apex:outputPanel>
+            <!--<apex:pageBlockSectionItem rendered="{!AND(mode = 'editStd', mode = 'cloneStd', mode != 'editStd', mode != 'cloneStd')}"></apex:pageBlockSectionItem>-->
+
+            <apex:actionFunction name="readTemplate" action="{!readOrgDefinitionFromTemplate}"
+                                 onComplete="unlockScreen();" reRender="org_desc,opt_desc,org_btn,orgTemplate,definitionMessages">
+                <apex:param value="" name="templateId" id="templateIds"/>
+            </apex:actionFunction>
+            <script type="application/javascript">
+                var setSavedTemplateId = function () {
+                    getElementByIdCS('OT_INPUT_lkid').value = "{!templateId}";
+                }
+            </script>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection showHeader="true" title="Details" columns="2" collapsible="false" id="org_desc">
+
+            <apex:pageBlockSectionItem helpText="{!$Label.Dev_Hub_Org}">
+                <apex:outputLabel value="{!$Label.Dev_Hub_Org}" tabindex="3" for="hubid"/>
+                <apex:panelGroup styleClass="col02 requiredInput" layout="block">
+                    <apex:panelGroup styleClass="requiredBlock" layout="block"/>
+                    <apex:selectList disabled="{!AND(mode == 'new', NOT(ISBLANK(devHubOrgId)))}" value="{!devHubOrgId}"
+                                     multiselect="false" size="1" id="devhubId" required="false" tabIndex="2">
+                        <apex:selectOptions value="{!devHubs}"/>
+                    </apex:selectList>
+                </apex:panelGroup>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem rendered="{!componentMode != 'template'}">
+                <apex:outputLabel value="{!$Label.ORG_NAME}" tabindex="3" for="orgName"/>
+                <apex:outputPanel layout="none">
+                    <apex:panelGroup styleClass="col02 requiredInput" layout="block"
+                                     rendered="{!OR(componentMode == 'wizard',componentMode == 'new')}">
+                        <apex:panelGroup styleClass="requiredBlock" layout="block"/>
+                        <apex:inputText required="false" id="orgName_req" value="{!dxUserStoryName}"/>
+                    </apex:panelGroup>
+                    <apex:inputText required="false" id="orgName" value="{!dxUserStoryName}"
+                                    rendered="{!componentMode == 'edit'}"/>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem rendered="{!componentMode == 'template'}"></apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem helpText="Default value: 'None. Valid entries are Developer, Enterprise, Group, or Professional'">
+                <apex:outputLabel value="{!$Label.Edition}" tabindex="4" for="edition"/>
+                <apex:panelGroup styleClass="col02 requiredInput" layout="block">
+                    <apex:panelGroup styleClass="requiredBlock" layout="block"/>
+                    <apex:selectList value="{!orgTemplate.edition}" multiselect="false" size="1" id="edition"
+                                     required="false">
+                        <apex:selectOption itemValue="Developer" itemLabel="Developer"/>
+                        <apex:selectOption itemValue="Enterprise" itemLabel="Enterprise"/>
+                        <apex:selectOption itemValue="Group" itemLabel="Group"/>
+                        <apex:selectOption itemValue="Professional" itemLabel="Professional"/>
+                    </apex:selectList>
+                </apex:panelGroup>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem helpText="Min Value: 1 Max Value: 30 Default value: 7">
+                <apex:outputLabel value="{!$Label.Duration_in_days}" tabindex="5" for="duration"/>
+                <apex:panelGroup styleClass="col02 requiredInput" layout="block">
+                    <apex:panelGroup styleClass="requiredBlock" layout="block"/>
+                    <apex:input html-min="1" html-max="30" required="false" id="duration" value="{!duration}"/>
+                </apex:panelGroup>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem rendered="{!AND(mode != 'wizard',mode != 'template',mode != 'editStd',mode != 'cloneStd')}">
+                <apex:outputLabel value="{!$Label.DEPLOYMENT_FLOW}"/>
+                <apex:selectList value="{!deploymentFlowId}" multiselect="false" size="1" required="false">
+                    <apex:actionSupport event="onchange" action="{!populateDeploymentFlowSteps}" onSubmit="lockScreen();" onComplete="unlockScreen();" reRender="org_desc"/>
+                    <apex:selectOptions value="{!DeploymentFlows}"/>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem rendered="{!AND(mode != 'wizard',dfsSelectOptionList != null,dfsSelectOptionList.size>0)}">
+                <apex:outputLabel value="{!$Label.Deployment_Flow_DX_Target_Step}" for="deploymentFlowTargetStep"/>
+                <apex:selectList value="{!deploymentFlowStepOption}" multiselect="false" size="1" required="false">
+                    <apex:selectOptions value="{!dfsSelectOptionList}"/>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+
+            <!--<apex:actionFunction name="populateDF" action="{!populateDeploymentFlowName}" onComplete="unlockScreen();" reRender="org_desc">
+                <apex:param value="" name="deploymentFlowId" id="deploymentFlowIds"/>
+            </apex:actionFunction>-->
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection showHeader="true" title="Options" columns="2" collapsible="true" id="opt_desc">
+
+            <apex:pageBlockSectionItem helpText="Default value: 'Dev Hub's country. Scratch orgs are located in a data center based on the specified country.'">
+                <apex:outputLabel value="{!$Label.Country}" tabindex="4" for="country"/>
+                <apex:selectList value="{!orgTemplate.country}" size="1" multiselect="false" id="country">
+                    <apex:selectOptions value="{!countryPicklistOptions}"/>
+                </apex:selectList>
+
+                <!--<apex:inputText required="false" id="country" value="{!orgTemplate.country}" tabIndex="6"/>-->
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem helpText="Default value: 'test-unique_identifier@orgName.net'"
+                                       rendered="{!componentMode != 'template'}">
+                <apex:outputLabel value="{!$Label.USERNAME}" tabindex="4" for="username"/>
+                <apex:inputText required="false" id="username" value="{!orgTemplate.username}"/>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem rendered="{!componentMode == 'template'}"></apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem helpText="Default value: 'Default language for the country'">
+                <apex:outputLabel value="{!$Label.Language}" tabindex="7" for="language"/>
+                <apex:selectList value="{!orgTemplate.language}" size="1" multiselect="false" id="language">
+                    <apex:selectOption itemLabel="English" itemValue="en_US"/>
+                    <apex:selectOption itemLabel="Chinese (Simplified)" itemValue="zh_CN"/>
+                    <apex:selectOption itemLabel="Chinese (Traditional)" itemValue="zh_TW"/>
+                    <apex:selectOption itemLabel="Danish" itemValue="da"/>
+                    <apex:selectOption itemLabel="Dutch" itemValue="nl_NL"/>
+                    <apex:selectOption itemLabel="Finnish" itemValue="fi"/>
+                    <apex:selectOption itemLabel="French" itemValue="fr"/>
+                    <apex:selectOption itemLabel="German" itemValue="de"/>
+                    <apex:selectOption itemLabel="Italian" itemValue="it"/>
+                    <apex:selectOption itemLabel="Japanese" itemValue="ja"/>
+                    <apex:selectOption itemLabel="Korean" itemValue="ko"/>
+                    <apex:selectOption itemLabel="Portuguese (Brazil)" itemValue="pt_BR"/>
+                    <apex:selectOption itemLabel="Russian" itemValue="ru"/>
+                    <apex:selectOption itemLabel="Spanish" itemValue="es"/>
+                    <apex:selectOption itemLabel="Swedish" itemValue="sv"/>
+                    <apex:selectOption itemLabel="Thai" itemValue="th"/>
+                    <apex:selectOption itemLabel="Arabic" itemValue="ar"/>
+                    <apex:selectOption itemLabel="Bulgarian" itemValue="bg"/>
+                    <apex:selectOption itemLabel="Czech" itemValue="cs"/>
+                    <apex:selectOption itemLabel="English (UK)" itemValue="en_GB"/>
+                    <apex:selectOption itemLabel="Greek" itemValue="el"/>
+                    <apex:selectOption itemLabel="Spanish (Mexico)" itemValue="es_MX"/>
+                    <apex:selectOption itemLabel="Hebrew" itemValue="iw"/>
+                    <apex:selectOption itemLabel="Hungarian" itemValue="hu"/>
+                    <apex:selectOption itemLabel="Indonesian" itemValue="in"/>
+                    <apex:selectOption itemLabel="Norwegian" itemValue="no"/>
+                    <apex:selectOption itemLabel="Polish" itemValue="pl"/>
+                    <apex:selectOption itemLabel="Romanian" itemValue="ro"/>
+                    <apex:selectOption itemLabel="Turkish" itemValue="tr"/>
+                    <apex:selectOption itemLabel="Ukrainian" itemValue="uk"/>
+                    <apex:selectOption itemLabel="Vietnamese" itemValue="vi"/>
+                    <apex:selectOption itemLabel="Albanian" itemValue="sq"/>
+                    <apex:selectOption itemLabel="Armenian" itemValue="hy"/>
+                    <apex:selectOption itemLabel="Basque" itemValue="eu"/>
+                    <apex:selectOption itemLabel="Bosnian" itemValue="bs"/>
+                    <apex:selectOption itemLabel="Croatian" itemValue="hr"/>
+                    <apex:selectOption itemLabel="English (Australia)" itemValue="en_AU"/>
+                    <apex:selectOption itemLabel="English (Canada)" itemValue="en_CA"/>
+                    <apex:selectOption itemLabel="English (India)" itemValue="en_IN"/>
+                    <apex:selectOption itemLabel="English (Malaysia)" itemValue="en_MY"/>
+                    <apex:selectOption itemLabel="English (Philippines)" itemValue="en_PH"/>
+                    <apex:selectOption itemLabel="Estonian" itemValue="et"/>
+                    <apex:selectOption itemLabel="French (Canada)" itemValue="fr_CA"/>
+                    <apex:selectOption itemLabel="Georgian" itemValue="ka"/>
+                    <apex:selectOption itemLabel="Hindi" itemValue="hi"/>
+                    <apex:selectOption itemLabel="Icelandic" itemValue="is"/>
+                    <apex:selectOption itemLabel="Irish" itemValue="ga"/>
+                    <apex:selectOption itemLabel="Latvian" itemValue="lv"/>
+                    <apex:selectOption itemLabel="Lithuanian" itemValue="lt"/>
+                    <apex:selectOption itemLabel="Luxembourgish" itemValue="lb"/>
+                    <apex:selectOption itemLabel="Macedonian" itemValue="mk"/>
+                    <apex:selectOption itemLabel="Malay" itemValue="ms"/>
+                    <apex:selectOption itemLabel="Maltese" itemValue="mt"/>
+                    <apex:selectOption itemLabel="Moldovan" itemValue="ro_MD"/>
+                    <apex:selectOption itemLabel="Montenegrin" itemValue="sh_ME"/>
+                    <apex:selectOption itemLabel="Portuguese (European)" itemValue="pt_PT"/>
+                    <apex:selectOption itemLabel="Romansh" itemValue="rm"/>
+                    <apex:selectOption itemLabel="Serbian (Cyrillic)" itemValue="sr"/>
+                    <apex:selectOption itemLabel="Serbian (Latin)" itemValue="sh"/>
+                    <apex:selectOption itemLabel="Slovak" itemValue="sk"/>
+                    <apex:selectOption itemLabel="Slovenian" itemValue="sl"/>
+                    <apex:selectOption itemLabel="Tagalog" itemValue="tl"/>
+                    <apex:selectOption itemLabel="Urdu" itemValue="ur"/>
+                    <apex:selectOption itemLabel="Welsh" itemValue="cy"/>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem helpText="Default value: 'Email address of the Dev Hub user making the scratch org creation request'">
+                <apex:outputLabel value="{!$Label.Admin_Email}" tabindex="8" for="adminEmail"/>
+                <apex:outputText id="adminEmail" value="{!$User.Email}"/>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem helpText="Default value: '2000-character free-form text field.You can view or edit the description in the Dev Hub.'">
+                <apex:outputLabel value="{!$Label.Description}" tabindex="7" for="description"/>
+                <apex:inputTextarea cols="60" rows="8" richText="false" required="false" id="description"
+                                    value="{!orgTemplate.description}"/>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Sample_Data}" tabindex="6" for="hassampledata"/>
+                <apex:inputCheckbox value="{!orgTemplate.hasSampleData}" id="hassampledata"/>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem helpText="Default value: 'None'">
+                <apex:outputLabel value="{!$Label.FEATURES}" for="features"/>
+                <apex:selectList value="{!orgTemplate.features}" size="5" multiselect="true" id="features" tabIndex="9">
+                    <apex:selectOption itemValue="API" itemLabel="API"/>
+                    <apex:selectOption itemValue="AuthorApex" itemLabel="AuthorApex"/>
+                    <apex:selectOption itemValue="Communities" itemLabel="Communities"/>
+                    <apex:selectOption itemValue="ContractApprovals" itemLabel="ContractApprovals"/>
+                    <apex:selectOption itemValue="CustomerSelfService" itemLabel="CustomerSelfService"/>
+                    <apex:selectOption itemValue="CustomApps" itemLabel="CustomApps"/>
+                    <apex:selectOption itemValue="CustomTabs" itemLabel="CustomTabs"/>
+                    <apex:selectOption itemValue="DebugApex" itemLabel="DebugApex"/>
+                    <apex:selectOption itemValue="DefaultWorkflowUser" itemLabel="DefaultWorkflowUser"/>
+                    <apex:selectOption itemValue="ForceComPlatform" itemLabel="ForceComPlatform"/>
+                    <apex:selectOption itemValue="MultiCurrency" itemLabel="MultiCurrency"/>
+                    <apex:selectOption itemValue="PersonAccounts" itemLabel="PersonAccounts"/>
+                    <apex:selectOption itemValue="SalesWave" itemLabel="SalesWave"/>
+                    <apex:selectOption itemValue="LightningSalesConsole" itemLabel="LightningSalesConsole"/>
+                    <apex:selectOption itemValue="LightningServiceConsole" itemLabel="LightningServiceConsole"/>
+                    <apex:selectOption itemValue="ServiceCloud" itemLabel="ServiceCloud"/>
+                    <apex:selectOption itemValue="ServiceWave" itemLabel="ServiceWave"/>
+                    <apex:selectOption itemValue="SiteDotCom" itemLabel="SiteDotCom"/>
+                    <apex:selectOption itemValue="Sites" itemLabel="Sites"/>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Org_Preference_Types}" for="orgPreferenceTypes"/>
+                <apex:selectList id="orgPreferenceTypes" value="{!selectedPreferenceType}" size="1" multiSelect="false">
+                    <apex:selectOptions value="{!preferenceTypes}"/>
+                    <apex:actionSupport event="onchange" onSubmit="lockScreen();" onComplete="unlockScreen();"
+                                        reRender="opt_desc" action="{!setLastSelection}"/>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="Default value: 'None'">
+                <apex:outputLabel value="{!$Label.Enable_Org_Preferences}" for="EnabledorgPreferences"/>
+                <apex:outputPanel layout="block" id="enabledPreferences">
+                    <apex:selectList value="{!enabledPreferences}" tabIndex="10" size="7" multiselect="true"
+                                     id="EnabledorgPreferences">
+                        <apex:actionSupport event="onchange" reRender="xx" action="{!setSelectionsforEnabled}"/>
+                        <apex:selectOptions value="{!orgPreferences[selectedPreferenceType]}" id="options"/>
+                    </apex:selectList>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="Default value: 'None'">
+                <apex:outputLabel value="{!$Label.Disable_Org_Preferences}" for="DisabledorgPreferences"/>
+                <apex:outputPanel layout="block" id="disabledPreferences">
+                    <apex:selectList value="{!disabledPreferences}" size="7" multiselect="true"
+                                     id="DisabledorgPreferences" tabIndex="11">
+                        <apex:actionSupport event="onchange" reRender="xx" action="{!setSelectionsforDisabled}"/>
+                        <apex:selectOptions value="{!orgPreferences[selectedPreferenceType]}" id="options"/>
+                    </apex:selectList>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+
+        </apex:pageBlockSection>
+        <apex:actionFunction action="{!setSelectionsforEnabled}" reRender="dummy" name="setSelectionsforEnabled"/>
+        <apex:actionFunction action="{!setSelectionsforEnabled}" reRender="dummy" name="setSelectionsforDisabled"/>
+    </apex:pageBlock>
+</apex:component>

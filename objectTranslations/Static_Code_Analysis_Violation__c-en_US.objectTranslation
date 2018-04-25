@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Static Code Analysis Violation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Static Code Analysis Violations</value>
+    </caseValues>
+    <fields>
+        <label><!-- File --></label>
+        <name>File__c</name>
+    </fields>
+    <fields>
+        <label><!-- Info URL --></label>
+        <name>Info_URL_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Info URL --></label>
+        <name>Info_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line --></label>
+        <name>Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Message --></label>
+        <name>Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rule --></label>
+        <name>Rule__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Static Code Analysis Result --></label>
+        <name>Static_Code_Analysis_Result__c</name>
+        <relationshipLabel><!-- Static Code Analysis Violations --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

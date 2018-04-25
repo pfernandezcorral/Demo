@@ -1,0 +1,20 @@
+<apex:page id="thePage" showHeader="false" sidebar="false" standardController="User_Story__c" extensions="UserStoryApexTestResultsExtension,Settings" lightningStylesheets="true">
+    <head>
+        <c:GAnalytics />
+        <c:WizardUtils />
+        <apex:stylesheet value="{!URLFOR($Resource.CopadoLightningCSS)}" />
+    </head>
+    <body>
+        <apex:form id="theForm" styleClass="copado-lightning-container">
+            <!--apex:pageMessages /-->
+            <c:ApexTestResult id="ApexTestResults" attachmentId="{!attId}" orgId="{!User_Story__c.Org_Credential__c}" userStoryId="{!User_Story__c.Id}" minCodeCoverage="{!User_Story__c.Minimum_Apex_Code_Coverage__c}" userStory="{!User_Story__c}"/>
+        </apex:form>
+        <script>
+            ga('send', 'pageview', {
+              'page': '/UserStoryApexTestResults',
+              'title': 'User Story Apex Test Results'
+            });
+        var Copado_Licenses = {!CurrentUserLicenses};     
+        </script>
+    </body>
+</apex:page>
