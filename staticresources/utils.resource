@@ -154,8 +154,7 @@ dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, requestType) {
                 cb && cb(obj);
 
             } catch (e) {
-
-                console.log('remote error', e);
+                console.log('dw.u.getRemote() remote error', e);
                 if (avoidRetry) {
                     try {
                         $copado('#loading').hide();
@@ -164,21 +163,37 @@ dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, requestType) {
                         $copado('#jqxgrid').html(e);
                     } catch (e) {}
                 }
-                onError && onError(e);
-                !avoidRetry && setTimeout(function() {
-                    dw.u.retry(url, cb, postData, avoidRetry, onError);
-                }, 2000);
-
+                if (onError) {
+                    onError(response);
+                    return;
+                }
+                if(avoidRetry) {
+                    // there was no error handler, and there is no retry. Notify the customer
+                    var errMsg = ''+response;
+                    try{ errMsg = JSON.stringify(e); }catch(e1) {}
+                    alert('There was an exception trying to contact Copado API: '+errMsg);
+                }else{
+                    setTimeout(function() {
+                        dw.u.retry(url, cb, postData, avoidRetry, onError);
+                    }, 2000);
+                }
             }
         },
         onFailure: function(response) {
-            console.log('onFailure', onError, response)
+            console.log('dw.u.getRemote() onFailure', onError, response);
             if (onError) {
                 onError(response);
                 return;
-            }!avoidRetry && setTimeout(function() {
-                dw.u.retry(url, cb, postData, avoidRetry, onError);
-            }, 2000);
+            }
+            if(avoidRetry) {
+                // there was no error handler, and there is no retry. Notify the customer
+                var errMsg = ''+response;
+                alert('There was an error trying to contact Copado API: '+errMsg);
+            }else{
+                setTimeout(function() {
+                    dw.u.retry(url, cb, postData, avoidRetry, onError);
+                }, 2000);
+            }
         },
         timeout: 250000
     });

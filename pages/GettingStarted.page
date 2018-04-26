@@ -296,7 +296,7 @@
                                                                     <div class="slds-truncate">{!orgCredentialMap[ocl].Username__c}</div>
                                                                 </td>
                                                                 <td>
-                                                                    <div class="slds-truncate">{!IF(orgCredentialMap[ocl].Environment__r != null, orgCredentialMap[ocl].Environment__r.Name, '')}</div>
+                                                                    <div class="slds-truncate">{!IF(orgCredentialMap[ocl].Environment__r != null,orgCredentialMap[ocl].Environment__r.Name, '')}</div>
                                                                 </td>
                                                                 <td>
                                                                     <apex:commandLink styleClass="slds-button slds-button--neutral"
@@ -328,8 +328,8 @@
                                                                 </td>
                                                                 <td>
                                                                     <div class="slds-truncate">
-                                                                        <apex:outputLink value="{!URLFOR($Action.Environment__c.View,orgCredentialMap[ocl].Environment__c)}"
-                                                                                         target="_blank" rendered="{!orgCredentialMap[ocl].Environment__r != null}"> {!orgCredentialMap[ocl].Environment__r.Name}
+                                                                        <apex:outputLink rendered="{!orgCredentialMap[ocl].Environment__r != null}" value="{!URLFOR($Action.Environment__c.View,orgCredentialMap[ocl].Environment__c)}"
+                                                                                         target="_blank" > {!orgCredentialMap[ocl].Environment__r.Name}
                                                                         </apex:outputLink>
                                                                     </div>
                                                                 </td>
@@ -340,7 +340,7 @@
                                                                     </apex:outputLink>
                                                                     <apex:outputLink styleClass="slds-button slds-button--neutral" target="_blank"
                                                                                      value="{!URLFOR($Page.DXOperation,null,[id=orgCredentialMap[ocl].Id])}"
-                                                                                     rendered="{!OR(orgCredentialMap[ocl].Org_Type__c == 'Scratch Org',orgCredentialMap[ocl].Org_Type__c == 'Scratch Org - Test only',AND(orgCredentialMap[ocl].Org_Type__c == 'Production/Developer',orgCredentialMap[ocl].is_Developer_Hub_Org__c))}">
+                                                                                     rendered="{!OR(orgCredentialMap[ocl].Org_Type__c == 'Scratch Org',orgCredentialMap[ocl].Org_Type__c == 'Scratch Org - Test Only',AND(orgCredentialMap[ocl].Org_Type__c == 'Production/Developer',orgCredentialMap[ocl].is_Developer_Hub_Org__c))}">
                                                                         {!$Label.Copado_DX}
                                                                     </apex:outputLink>
                                                                 </td>

@@ -95,9 +95,7 @@
                         }
                     },
                     callComplete: function(){
-                        unlockScreen();
-                        reRenderForm();
-                        location.reload();
+                        reloadPromotionPage();
                     }
                 }
 
@@ -168,18 +166,10 @@
                 }
 
                 var showReviewConflictButton = function(){
-                  var reviewConflictButton = $copado('<input id="customReviewConflictButton" type="button" class="btn" value="{!JSENCODE($Label.MERGE_CONFLICT_REVIEW)}" onclick="openReviewConflictPage();"/>');
+                  var reviewConflictButton = $copado('<input id="customReviewConflictButton" type="button" class="btn" value="{!JSENCODE($Label.MERGE_CONFLICT_REVIEW)}" onclick="openResolveConflictsPage();"/>');
                   if("{!Promotion__c.Status__c}" == "{!$Label.MERGE_CONFLICT}"){
                     reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
                   }
-                }
-
-                var openReviewConflictPage = function(pullCompare){
-                    if( (typeof sforce != 'undefined') && sforce && (!!sforce.one) ) {
-                        sforce.one.navigateToURL('/apex/{!namespace}ResolveConflicts?promotionId={!Promotion__c.Id}');
-                    } else {
-                        window.location = '/apex/{!namespace}ResolveConflicts?promotionId={!Promotion__c.Id}';
-                    }
                 }
 
                 document.onreadystatechange = function(){
@@ -423,6 +413,9 @@
             </div>
             <apex:form id="theForm">
                 <apex:actionFunction name="reRenderForm" reRender="theForm"/>
+                <apex:actionFunction name="reloadPromotionPage" action="{!reloadPromotion}" reRender="dummy"/>
+                <apex:actionFunction name="openResolveConflictsPage" action="{!openResolveConflictsPage}" reRender="dummy"/>
+
 
                 <c:JobsManager matchingKeys="{!jobsManagerMatchingKeys}"
                                rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"></c:JobsManager>

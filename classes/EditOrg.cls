@@ -40,7 +40,7 @@ public with sharing class EditOrg {
         showUserPass = (org.password__c != null && org.oauth_signature__c == null) || Apexpages.currentPage().getParameters().get('showUserPass') == 'true';
         setUrls();
 
-        isScratchOrg = org.Org_Type__c == 'Scratch Org' || org.Org_Type__c == 'Scratch Org - Test only' || org.Org_Type__c == 'Scratch Org - Patch';
+        isScratchOrg = String.isNotBlank(org.Org_Type__c) && org.Org_Type__c.startsWithIgnoreCase('Scratch Org');
 
         //****** selected types
         selectedTypes = new List<SelectOption>();
@@ -116,7 +116,7 @@ public with sharing class EditOrg {
     }
     public PageReference doOauth() {
         String urlParameters = '?orgId=' + EncodingUtil.urlEncode(org.Id, 'UTF-8') + '&url=' + EncodingUtil.urlEncode([select API_URL__c from User where id = :userinfo.getUserId()].API_URL__c, 'UTF-8');
-        if (org.Org_Type__c == 'Sandbox' || org.Org_Type__c == 'Scratch Org' || org.Org_Type__c == 'Scratch Org - Test only') urlParameters += '&sandbox=true';
+        if (org.Org_Type__c == 'Sandbox' || (String.isNotBlank(org.Org_Type__c) && org.Org_Type__c.startsWithIgnoreCase('Scratch Org'))) urlParameters += '&sandbox=true';
         if (org.Org_Type__c == 'Custom Domain') urlParameters += '&domain=' + EncodingUtil.urlEncode(org.Custom_Domain__c, 'UTF-8');
         urlParameters += '&copadoOrgId=' + EncodingUtil.urlEncode(userinfo.getOrganizationId(), 'UTF-8');
         urlParameters += '&copadoUserId=' + EncodingUtil.urlEncode(userinfo.getUserId(), 'UTF-8');

@@ -24,7 +24,19 @@ public with sharing class DynamicScratchOrgController extends ScratchOrgWizardPa
         }
     }
     private void testRunOperation(){
-        testRun = [SELECT Id, Name, Test_Script__r.User_Story__r.Org_Credential__r.Org_Type__c , Test_Script__r.User_Story__r.Org_Credential__r.Developer_Hub_Org__c, Test_Script__r.User_Story__r.Org_Credential__c,Test_Script__r.User_Story__r.Name FROM Test_Run__c WHERE Id = :stdObjectId LIMIT 1];
+        testRun = [SELECT Id, Name, Test_Script__r.User_Story__r.Org_Credential__r.Org_Type__c ,
+                Test_Script__r.User_Story__r.Org_Credential__r.Developer_Hub_Org__c,
+                Test_Script__r.User_Story__r.Org_Credential__c,Test_Script__r.User_Story__r.Name,
+                Test_Script__r.User_Story__r.Project__c,
+                Test_Script__r.User_Story__r.Project__r.Deployment_Flow__c,
+                Test_Script__r.User_Story__r.Project__r.Deployment_Flow__r.Git_Repository__c,
+                Test_Script__r.User_Story__r.Release__c,
+                Test_Script__r.User_Story__r.Release__r.Project__c,
+                Test_Script__r.User_Story__r.Release__r.Project__r.Deployment_Flow__c,
+                Test_Script__r.User_Story__r.Release__r.Project__r.Deployment_Flow__r.Git_Repository__c
+                FROM Test_Run__c
+                WHERE Id = :stdObjectId
+                LIMIT 1];
         if (testRun.Test_Script__c != null && testRun.Test_Script__r.User_Story__c != null && testRun.Test_Script__r.User_Story__r.Org_Credential__c != null && testRun.Test_Script__r.User_Story__r.Org_Credential__r.Org_Type__c == 'Scratch Org' && testRun.Test_Script__r.User_Story__r.Org_Credential__r.Developer_Hub_Org__c != null) {
             Id orgId = testRun.Test_Script__r.User_Story__r.Org_Credential__c;
             Org__c usOrg = [SELECT Id,Org_Type__c,Scratch_Org_Expiration_Date__c,Scratch_Org_Status__c,Developer_Hub_Org__c FROM Org__c WHERE Id=:orgId];
@@ -34,10 +46,12 @@ public with sharing class DynamicScratchOrgController extends ScratchOrgWizardPa
             try {
                 Attachment attDefinition = getOrgAttachment(orgId,SfdxAPIHelper.DX_DEFINITION_FILE);
                 Attachment attProject = getOrgAttachment(orgId,SfdxAPIHelper.DX_PROJECT_FILE);
+                System.debug(LoggingLevel.INFO,'***attProject.Body.toString() :'+attProject.Body.toString());
                 orgTemplate = (SfdxAPIHelper.ScratchOrgDefinition) JSON.deserialize(attDefinition.Body.toString(), SfdxAPIHelper.ScratchOrgDefinition.class);
                 orgTemplate.orgName = testRun.Name+' Scratch Org';
                 orgTemplate.username = '';
                 artifactProject = (SfdxAPIHelper.sfdxProject) JSON.deserialize(attProject.Body.toString(), SfdxAPIHelper.sfdxProject.class);
+                System.debug(LoggingLevel.INFO,'***artifactProject :'+artifactProject);
             } catch(Exception ex) {
             	System.debug(loggingLevel.Error,'*** ERROR : '+ex.getMessage()); // TODO: Add page message
             }

@@ -74,6 +74,7 @@ public with sharing class PromoteChangesExtension {
         // Get URL createDeployment parameter
         String createDeployment = ApexPages.currentPage().getParameters().get('createDeployment');
         openCreateDeployment = createDeployment != null && Boolean.valueOf(createDeployment);
+        ApexPages.currentPage().getParameters().remove('createDeployment');
 
         //calculateSCAscores();
     }
@@ -95,6 +96,18 @@ public with sharing class PromoteChangesExtension {
             averageSCAscore = totalScore / stories;
         }
     }*/
+    public PageReference reloadPromotion() {
+        PageReference ref =  Page.PromoteChanges;
+        ref.getParameters().put('id', promotion.Id);
+        ref.setRedirect(true);
+        return ref;
+    }
+    public PageReference openResolveConflictsPage() {
+        PageReference ref =  Page.ResolveConflicts;
+        ref.getParameters().put('promotionId', promotion.Id);
+        ref.setRedirect(true);
+        return ref;
+    }
     public void refreshTables() {
         promotedIdsSet = new Set<Id>();
         if (LicenseHelper.isLicensesExceeded()) {

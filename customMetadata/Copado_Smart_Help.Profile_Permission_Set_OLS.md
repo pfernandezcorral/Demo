@@ -16,6 +16,6 @@
     </values>
     <values>
         <field>Triggering_Value__c</field>
-        <value xsi:type="xsd:string">CusotmObject</value>
+        <value xsi:type="xsd:string">CustomObject</value>
     </values>
 </CustomMetadata>

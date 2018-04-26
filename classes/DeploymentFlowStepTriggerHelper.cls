@@ -17,7 +17,7 @@ public class DeploymentFlowStepTriggerHelper {
         
         existingSteps = [select count() from Deployment_Flow_Step__c where 
                          Deployment_Flow__r.Active__c=true and
-                         Source_Environment__r.Type__c != 'Scratch Org' AND Source_Environment__r.Type__c != 'Scratch Org - Test only' AND Source_Environment__r.Type__c != 'Scratch Org - Patch' AND// MY: Added to exclude scratch orgs from used CBM licenses
+                         (NOT Source_Environment__r.Type__c LIKE 'Scratch Org%') AND// MY: Added to exclude scratch orgs from used CBM licenses
                          Deployment_Flow__r.Main_Branch__c!=null and 
                          Deployment_Flow__r.Git_Repository__c!=null and 
                          Branch__c!=null and (NOT(Id in :idset)) ];
@@ -25,7 +25,7 @@ public class DeploymentFlowStepTriggerHelper {
         newStepCount = 0;
         for(SObject so : Trigger.new){
             Deployment_Flow_Step__c dfs = (Deployment_Flow_Step__c)so;
-            if(dfs.Source_Environment__c != null && dfs.Source_Environment__r.Type__c != 'Scratch Org' && dfs.Source_Environment__r.Type__c != 'Scratch Org - Test only' && dfs.Source_Environment__r.Type__c != 'Scratch Org - Patch') { // MY: Added to exclude scratch orgs from used CBM licenses
+            if(dfs.Source_Environment__c != null && (String.isNotBlank(dfs.Source_Environment__r.Type__c) && !dfs.Source_Environment__r.Type__c.startsWithIgnoreCase('Scratch Org'))) { // MY: Added to exclude scratch orgs from used CBM licenses
                 if (isValidFlowStep(dfs))newStepCount++;
             }
         }

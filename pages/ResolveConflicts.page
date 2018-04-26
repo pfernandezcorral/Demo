@@ -1,4 +1,4 @@
-<apex:page title="Copado Conflict Resolution" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" sidebar="false" standardStylesheets="false" controller="ResolveConflictsController" lightningStylesheets="true" applyBodyTag="false" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" docType="html-5.0">
+<apex:page title="Copado Conflict Resolution" controller="ResolveConflictsController" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="false" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
 	<apex:slds />
     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
 		<head>
@@ -49,11 +49,7 @@
 		            background-color: transparent;
 		            z-index: 9999;
 		        }
-		        a {
-					text-decoration: none;
-					display: inline-block;
-					padding: 8px 16px;
-				}
+
 		        .previous {
 					background-color: #f1f1f1;
 					color: black;
@@ -70,6 +66,7 @@
 				.slds-scope .slds-modal__content{
 					overflow-y : hidden !important;
     			}
+
 			</style>
 	      	<apex:stylesheet value="{!URLFOR($Resource.CopadoLightningCSS)}" />
             <apex:includeScript value="{!URLFOR($Resource.Statics,'js/libs/jquery.min.1.10.2.js')}" />
@@ -290,10 +287,7 @@
 			                	</button>
 			                </header>
 			                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" style="min-height: 84%;">
-			                    <div id="window" style="width:100%">
-			                        <div id="windowHeader">
-			                            <span></span>
-			                        </div>
+
 			                        <apex:outputPanel id="windowContent">
 										<apex:pageMessages id="pageMessages" />
 										<div class="slds-page-header">	                
@@ -343,11 +337,12 @@
 
 											<!-- TEXT EDITOR -->
 											<div>
-											<div style="position:fixed;overflow: hidden;width: 98%;margin-top:0;background-color: #d4d5d6;">
-												<a href="#" class="previous" onclick="prev();">&laquo; Previous</a>
-												<a href="#" class="next" onclick="next();">Next &raquo;</a>
+
+											<div  style="position:fixed;overflow: hidden;width: 98%;margin-top:0;background-color: #f6f6f7;">
+												<a href="#" class="previous" onclick="prev();" style="text-decoration: none;display: inline-block;padding: 8px 16px;">&laquo; Previous</a>
+												<a href="#" class="next" onclick="next();" style="text-decoration: none;display: inline-block;padding: 8px 16px;">Next &raquo;</a>
 											</div>
-											<div id="source_panel" style="width: 100%;background: white;border: 1px solid black; float: left;margin: 2px;margin-top: 10px;">
+											<div id="source_panel" style="width: 100%;background: white;border: 1px solid black; float: left;margin: 2px;margin-top: 32px;">
 												<textarea id="sourceArea" ></textarea>
 											</div>
 											</div>
@@ -357,7 +352,6 @@
 			                            
 									
 									</apex:outputPanel>
-			                    </div>
 			                </div>
 
 			                <footer class="slds-modal__footer">

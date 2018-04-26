@@ -39,7 +39,7 @@ public class DeploymentFlowTriggerHelper {
                          Deployment_Flow__r.Active__c=true and 
                          Deployment_Flow__r.Main_Branch__c!=null and 
                          Deployment_Flow__r.Git_Repository__c!=null and
-                         Source_Environment__r.Type__c != 'Scratch Org' AND Source_Environment__r.Type__c != 'Scratch Org - Test only' AND Source_Environment__r.Type__c != 'Scratch Org - Patch' AND// MY: Added to exclude scratch orgs from used CBM licenses
+                         (NOT Source_Environment__r.Type__c LIKE 'Scratch Org%') AND// MY: Added to exclude scratch orgs from used CBM licenses
                          Branch__c!=null];
         
         newFlowCount = 0;

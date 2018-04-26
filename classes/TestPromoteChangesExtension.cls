@@ -115,6 +115,9 @@ private class TestPromoteChangesExtension {
             ext.userStories[1].selected = true;
             ext.addStoriesToPromotion();
             System.assertEquals(2, ext.promotedIdsSet.size());
+
+            ext.reloadPromotion();
+            ext.openResolveConflictsPage();
         }
         
     }

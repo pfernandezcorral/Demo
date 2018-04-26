@@ -13,7 +13,9 @@
 global class CopadoSmartHelpController  {
 	@TestVisible private Set<String> removedTips {get; set;} // List of removed tips in order to avoid displaying them again
 	global List<SmartHelp> helpList {get; set;} // List of tips to display
-	global String vfPageName {get; set;} // Current VF page name
+	global String vfPageName {get; set{
+		vfPageName = vfPageName!=null ? vfPageName.replace('copado__', '') : value;
+	} } // Current VF page name
 	global String tipType {get; set;} // To display correct tip for grid selections. (MetadataType)
 	global String tipKey {get; set;} // The apiName for the tip to remove from display list
 	global Boolean showTips {get; set;} // Show entire tip panel if there is at least one tip created otherwise hide it

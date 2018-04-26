@@ -386,11 +386,26 @@ public with sharing class DeploymentWizardExtension{
         try{
             if(deployment.Schedule__c == 'Deploy now'){
                 DeployAPI.Deploy(deployment.Id, UserInfo.getSessionId());
+            } else if(deployment.Schedule__c == 'Deploy later'){
+                // Build a CRON Expression corresponding to selected date
+                String cronExpression = GetCRONExpression(deployment.Date__c);
+                System.debug('**f**cronExpression : ' + cronExpression);
+
+                // Instantiate a new Scheduled Apex class
+                DeployLater scheduledJob = new DeployLater(deployment.Id);
+
+                // Schedule our class to run at our given execute time,
+                System.schedule(deployment.Name + ' Deploy Later ' + cronExpression,cronExpression,scheduledJob);
             }
         }catch(Exception e){
             ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, e.getMessage()));
         }
         return null;
+    }
+
+    // Builds a CRON Expression out of a Datetime
+    public static String GetCRONExpression(Datetime dt) {
+        return ('' + dt.second() + ' ' + dt.minute() + ' ' + dt.hour() + ' ' + dt.day() + ' ' + dt.month() + ' ? ' + dt.year());
     }
 
     public PageReference confirm(Boolean allJobs){

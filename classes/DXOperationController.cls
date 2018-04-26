@@ -63,7 +63,7 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
 
             enableDevHubOperation = false;
             enableScratchOrgOperation = false;
-            if (String.valueOf(objectAPIName) == Settings.ns+'Org__c') {
+            if (String.valueOf(objectAPIName) == Settings.ns + 'Org__c') {
                 selectedOperation = '0';
                 orgCredentials();
                 if (enableDevHubOperation) {
@@ -78,7 +78,7 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
                     return;
                 }
                 selectedOperationDataId = recordId;
-            } else if (String.valueOf(objectAPIName) == Settings.ns+'User_Story__c') {
+            } else if (String.valueOf(objectAPIName) == Settings.ns + 'User_Story__c') {
 
                 usId = recordId;
                 if (!SfdxAPIHelper.isDXEnabledForUSDeploymentFlow(usId)) {
@@ -156,7 +156,7 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
                 } else if (selectedActionName != 'csous') {
                     Org__c org = [Select Org_Type__c From Org__c Where Id = :orgCredential];
                     selectedOperationDataId = orgCredential;
-                    if (org.Org_Type__c != 'Scratch Org' && org.Org_Type__c != 'Scratch Org - Test Only') {
+                    if (String.isNotBlank(org.Org_Type__c) && !org.Org_Type__c.startsWithIgnoreCase('Scratch Org')) {
                         ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.WARNING, Label.Scratch_Org_Selection_Validation));
                         disableLoadMetadataPanel = true;
                         return null;
@@ -323,9 +323,12 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
             //whereClause += ' (Scratch_Org_Expiration_Date__c = NULL OR Scratch_Org_Expiration_Date__c > TODAY ) AND Org_Type__c != \'Scratch Org - Test Only\'';
             DateTime dt = System.Now();//initialize datetime with current datetime
             String formatedDt = dt.format('yyyy-MM-dd\'T\'HH:mm:ss\'Z\'');//format the datetime to make it Dynamic Soql ready
-            if (selectedOperation != '0' ){
-                whereClause += ' (Scratch_Org_Expiration_Date__c = NULL OR Scratch_Org_Expiration_Date__c > ' + formatedDt + ') AND Org_Type__c != \'Scratch Org - Test Only\'';
-            }else{
+            if (selectedOperation != '0') {
+                whereClause += ' (Scratch_Org_Expiration_Date__c = NULL OR Scratch_Org_Expiration_Date__c > ' + formatedDt + ')';
+                if (selectedOperation != '2') {
+                    whereClause += 'AND Org_Type__c != \'Scratch Org - Test Only\'';
+                }
+            } else {
                 whereClause += ' (Scratch_Org_Expiration_Date__c = NULL OR Scratch_Org_Expiration_Date__c > ' + formatedDt + ')';
             }
 
@@ -343,7 +346,7 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
         }
 
         for (Org__c org : SfdxAPIHelper.getOrgCredentials(whereClause)) {
-            if ((selectedOperation == '1' && org.Org_Type__c == 'Scratch Org') || (selectedOperation == '0' && (org.Org_Type__c == 'Scratch Org'|| org.Org_Type__c == 'Scratch Org - Test Only'))) {
+            if ((selectedOperation == '1' && org.Org_Type__c == 'Scratch Org') || (selectedOperation == '0' && (org.Org_Type__c == 'Scratch Org' || org.Org_Type__c == 'Scratch Org - Test Only'))) {
                 orgCredentials.add(new SelectOption(org.Id, org.Name));
                 objectNameMap.put(org.Id, org.Name);
                 if (selectedOperation == '0') {
@@ -355,7 +358,7 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
                 if (selectedOperation == '0') {
                     enableDevHubOperation = true;
                 }
-            } else if (selectedOperation == '2' && (org.Org_Type__c == 'Scratch Org' || org.Org_Type__c == 'Scratch Org - Test Only' ) && String.isNotBlank(selectedActionName) && selectedActionName == 'mso') {
+            } else if (selectedOperation == '2' && (org.Org_Type__c == 'Scratch Org' || org.Org_Type__c == 'Scratch Org - Test Only') && String.isNotBlank(selectedActionName) && selectedActionName == 'mso') {
                 if (org.Scratch_Org_Status__c == 'Active') {
                     activeScratchOrgList.add(org);
                 } else if (org.Scratch_Org_Status__c == 'Deleted') {
@@ -368,8 +371,7 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
 
         orgCredentials = Utilities.selectOptionSortByLabel(orgCredentials);
         if (selectedOperation != '0') {
-            if(orgCredentials.size() > 0) orgCredentials.add(0,new SelectOption('-- None --', '-- None --'));
-            else orgCredentials.add(new SelectOption('-- None --', '-- None --'));
+            if (orgCredentials.size() > 0) orgCredentials.add(0, new SelectOption('-- None --', '-- None --')); else orgCredentials.add(new SelectOption('-- None --', '-- None --'));
         }
     }
 
@@ -422,7 +424,7 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
         dxBranchName = ApexPages.currentPage().getParameters().get('branchName');
     }
 
-    public void populateDeployments(){
+    public void populateDeployments() {
         deploymentList = new List<SelectOption>();
         deploymentList.add(new SelectOption('-- None --', '-- None --'));
 
@@ -433,15 +435,15 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
         }
     }
 
-    public void initDeploymentStep(){
-        if(String.isNotBlank(selectedDeploymentId)){
+    public void initDeploymentStep() {
+        if (String.isNotBlank(selectedDeploymentId)) {
             Map<String, String> deploymentFieldsMap = GlobalUtilities.getAllFieldsWithoutSharing('Deployment__c');
             String soqlDeploymentString = 'SELECT ' + deploymentFieldsMap.get(Label.FIELDS) + ' FROM ' + deploymentFieldsMap.get(Label.OBJECT) + ' WHERE Id =\'' + selectedDeploymentId + '\' Limit 1';
             Deployment__c existingDeployment = Database.query(soqlDeploymentString);
 
             String orgName = '';
             if (String.isNotBlank(selectedOperationDataId)) {
-                List<Org__c> orgsList = new List<Org__c>([Select Name From Org__c Where Id =:selectedOperationDataId]);
+                List<Org__c> orgsList = new List<Org__c>([Select Name From Org__c Where Id = :selectedOperationDataId]);
                 orgName = !orgsList.isEmpty() ? orgsList.get(0).Name : '';
             }
 
@@ -458,24 +460,24 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
             String soqlStepString = 'SELECT ' + stepFieldsMap.get(Label.FIELDS) + ' FROM ' + stepFieldsMap.get(Label.OBJECT) + ' WHERE Deployment__c =\'' + existingDeployment.Id + '\'';
             List<Step__c> stepList = Database.query(soqlStepString);
 
-            Map<Id,Step__c> newStepMap = new Map<Id,Step__c>();
+            Map<Id, Step__c> newStepMap = new Map<Id, Step__c>();
             for (Step__c step : stepList) {
                 Step__c st = step.clone(false, false, false, false);
                 st.Deployment__c = newDeployment.Id;
-                newStepMap.put(step.Id,st);
+                newStepMap.put(step.Id, st);
             }
 
-            if(!newStepMap.isEmpty()){
+            if (!newStepMap.isEmpty()) {
                 Utilities.Secure_DML(newStepMap.values(), Utilities.DML_Action.INS, schema.Sobjecttype.Step__c);
 
                 List<Attachment> attList = [SELECT Id, Body, ContentType, Description, Name, ParentId FROM Attachment WHERE ParentId IN :newStepMap.keySet()];
                 List<Attachment> newAttList = new List<Attachment>();
-                for(Attachment att : attList){
+                for (Attachment att : attList) {
                     Attachment newAtt = att.clone(false, false, false, false);
                     newAtt.ParentId = newStepMap.get(att.ParentId).Id;
                     newAttList.add(newAtt);
                 }
-                if(!newAttList.isEmpty()){
+                if (!newAttList.isEmpty()) {
                     Utilities.Secure_DML(newAttList, Utilities.DML_Action.INS, schema.Sobjecttype.Attachment);
                 }
             }
@@ -490,9 +492,9 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
         }
     }
 
-    public PageReference executeSteps(){
+    public PageReference executeSteps() {
         PageReference deploymentPageRef = null;
-        if(String.isNotBlank(selectedDeploymentId)){
+        if (String.isNotBlank(selectedDeploymentId)) {
             deploymentPageRef = Page.DeploymentWizard;
             deploymentPageRef.getParameters().put('id', selectedDeploymentId);
             deploymentPageRef.getParameters().put('gotoStep', 'deploynow');
