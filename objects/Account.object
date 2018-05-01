@@ -260,7 +260,7 @@
     </fields>
     <fields>
         <fullName>SLASerialNumber__c</fullName>
-        <externalId>false</externalId>
+        <externalId>true</externalId>
         <label>SLA Serial Number</label>
         <length>10</length>
         <required>false</required>
@@ -437,8 +437,95 @@
         <required>false</required>
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>controller__c</fullName>
+        <externalId>false</externalId>
+        <label>controller</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>control1</fullName>
+                    <default>false</default>
+                    <label>control1</label>
+                </value>
+                <value>
+                    <fullName>control2</fullName>
+                    <default>false</default>
+                    <label>control2</label>
+                </value>
+                <value>
+                    <fullName>control3</fullName>
+                    <default>false</default>
+                    <label>control3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>dependent__c</fullName>
+        <externalId>false</externalId>
+        <label>dependent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>controller__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>dependent1</fullName>
+                    <default>false</default>
+                    <label>dependent1</label>
+                </value>
+                <value>
+                    <fullName>dependent2</fullName>
+                    <default>false</default>
+                    <label>dependent2</label>
+                </value>
+                <value>
+                    <fullName>dependent3</fullName>
+                    <default>false</default>
+                    <label>dependent3</label>
+                </value>
+                <value>
+                    <fullName>dependent4</fullName>
+                    <default>false</default>
+                    <label>dependent4</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>control1</controllingFieldValue>
+                <valueName>dependent1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>control1</controllingFieldValue>
+                <valueName>dependent2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>control2</controllingFieldValue>
+                <valueName>dependent3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>control3</controllingFieldValue>
+                <valueName>dependent4</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>emailing__c</fullName>
+        <externalId>false</externalId>
+        <label>emailing</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -582,10 +669,6 @@
                 <valueName>thomson4</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>test</controllingFieldValue>
-                <valueName>thomson5</valueName>
-            </valueSettings>
-            <valueSettings>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Purchased List</controllingFieldValue>
                 <valueName>thomson2</valueName>
@@ -642,6 +725,44 @@
         <fullName>Recordtype7324</fullName>
         <active>true</active>
         <label>Recordtype7324</label>
+        <picklistValues>
+            <picklist>controller__c</picklist>
+            <values>
+                <fullName>control1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>thomsonreuters__c</picklist>
+            <values>
+                <fullName>thomson1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>AccountSource</picklist>
             <values>
@@ -1004,6 +1125,44 @@
         <description>Record types used for sales</description>
         <label>Sales Accounts</label>
         <picklistValues>
+            <picklist>controller__c</picklist>
+            <values>
+                <fullName>control1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>control3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>thomsonreuters__c</picklist>
+            <values>
+                <fullName>thomson1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>thomson5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>AccountSource</picklist>
             <values>
                 <fullName>Other</fullName>
@@ -1282,31 +1441,6 @@
                 <default>false</default>
             </values>
         </picklistValues>
-        <picklistValues>
-            <picklist>thomsonreuters__c</picklist>
-            <values>
-                <fullName>thomson1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>thomson2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>thomson3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>thomson4</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-    </recordTypes>
-    <recordTypes>
-        <fullName>Sales_Accounts</fullName>
-        <active>true</active>
-        <description>Record types used for sales</description>
-        <label>Sales Accounts</label>
     </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
