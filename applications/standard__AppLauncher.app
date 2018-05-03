@@ -3,4 +3,6 @@
     <defaultLandingTab>standard-home</defaultLandingTab>
     <formFactors>Large</formFactors>
     <tabs>standard-AppLauncher</tabs>
+    <tabs>charlie__c</tabs>
+    <tabs>snoopy__c</tabs>
 </CustomApplication>

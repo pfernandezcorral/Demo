@@ -61,6 +61,11 @@
         <type>Checkbox</type>
     </fields>
     <label>snoopy</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>snoopy Name</label>
         <type>Text</type>

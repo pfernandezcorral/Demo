@@ -182,21 +182,6 @@
         <active>true</active>
         <label>amigo</label>
         <picklistValues>
-            <picklist>hola__c</picklist>
-            <values>
-                <fullName>hola1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>hola2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>hola4</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Subject</picklist>
             <values>
                 <fullName>Call</fullName>
@@ -235,6 +220,21 @@
             </values>
             <values>
                 <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>hola__c</picklist>
+            <values>
+                <fullName>hola1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>hola2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>hola4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

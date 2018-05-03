@@ -124,6 +124,23 @@
     <name>ConnectedApp</name>
   </types>
   <types>
+    <members>standard__AppLauncher</members>
+    <members>standard__Chatter</members>
+    <members>standard__Community</members>
+    <members>standard__Content</members>
+    <members>standard__LightningSales</members>
+    <members>standard__LightningSalesConsole</members>
+    <members>standard__LightningService</members>
+    <members>standard__Marketing</members>
+    <members>standard__Platform</members>
+    <members>standard__Sales</members>
+    <members>standard__Service</members>
+    <members>standard__ServiceConsole</members>
+    <members>standard__Sites</members>
+    <members>test1</members>
+    <name>CustomApplication</name>
+  </types>
+  <types>
     <members>Account.AccountNumber</members>
     <members>Account.AccountSource</members>
     <members>Account.AnnualRevenue</members>
@@ -273,6 +290,7 @@
     <members>Asset.ProductCode</members>
     <members>Asset.PurchaseDate</members>
     <members>Asset.Quantity</members>
+    <members>Asset.RecordTypeId</members>
     <members>Asset.RootAssetId</members>
     <members>Asset.SerialNumber</members>
     <members>Asset.Status</members>
@@ -2715,17 +2733,20 @@
     <members>charlie__c.IsDeleted</members>
     <members>charlie__c.LastModifiedById</members>
     <members>charlie__c.LastModifiedDate</members>
+    <members>charlie__c.LastReferencedDate</members>
+    <members>charlie__c.LastViewedDate</members>
     <members>charlie__c.Name</members>
     <members>charlie__c.OwnerId</members>
     <members>charlie__c.SystemModstamp</members>
     <members>charlie__c.charliecustom__c</members>
-    <members>charlie__c.hola1__c</members>
     <members>snoopy__c.CreatedById</members>
     <members>snoopy__c.CreatedDate</members>
     <members>snoopy__c.Id</members>
     <members>snoopy__c.IsDeleted</members>
     <members>snoopy__c.LastModifiedById</members>
     <members>snoopy__c.LastModifiedDate</members>
+    <members>snoopy__c.LastReferencedDate</members>
+    <members>snoopy__c.LastViewedDate</members>
     <members>snoopy__c.Name</members>
     <members>snoopy__c.OwnerId</members>
     <members>snoopy__c.SystemModstamp</members>
@@ -2747,6 +2768,7 @@
   <types>
     <members>home</members>
     <members>test2</members>
+    <members>testcustomlabel</members>
     <name>CustomLabel</name>
   </types>
   <types>
@@ -2891,13 +2913,17 @@
     <members>Account-es</members>
     <members>Account-fr</members>
     <members>Account-pt_BR</members>
+    <members>Account-sv</members>
     <members>Case-da</members>
+    <members>Case-th</members>
+    <members>Case-zh_CN</members>
     <members>Cloud_News__e-en_US</members>
     <members>Knowledge__kav-es</members>
     <members>Opportunity-pt_BR</members>
     <members>OrderDetails__x-en_US</members>
     <members>Orders__x-en_US</members>
     <members>Rider_History__b-en_US</members>
+    <members>charlie__c-en_US</members>
     <members>charlie__c-fr</members>
     <members>snoopy__c-da</members>
     <members>test_metadata_type__mdt-en_US</members>
@@ -2907,13 +2933,18 @@
     <name>CustomObjectTranslation</name>
   </types>
   <types>
+    <members>Testcustomperm</members>
+    <name>CustomPermission</name>
+  </types>
+  <types>
     <members>hello</members>
     <members>hola</members>
     <members>test</members>
     <name>CustomSite</name>
   </types>
   <types>
-    <members>case7391</members>
+    <members>charlie__c</members>
+    <members>snoopy__c</members>
     <members>standard-Account</members>
     <members>standard-AppLauncher</members>
     <members>standard-Asset</members>
@@ -3064,16 +3095,18 @@
     <name>FlexiPage</name>
   </types>
   <types>
-    <members>Last_follow_up_email</members>
     <members>Last_follow_up_email-1</members>
+    <members>Last_follow_up_email-2</members>
     <members>Publish_Cloud_News-1</members>
     <members>Publish_Cloud_News-2</members>
     <members>Publish_Cloud_News-3</members>
+    <members>Updatefields</members>
     <name>Flow</name>
   </types>
   <types>
     <members>Last_follow_up_email</members>
     <members>Publish_Cloud_News</members>
+    <members>Updatefields</members>
     <name>FlowDefinition</name>
   </types>
   <types>
@@ -3103,6 +3136,7 @@
     <members>Account-Account %28Sales%29 Layout</members>
     <members>Account-Account %28Support%29 Layout</members>
     <members>Account-Account Layout</members>
+    <members>Account-Lightning actions</members>
     <members>Address-Address Layout</members>
     <members>Asset-Asset Layout</members>
     <members>AssetRelationship-Asset Relationship Layout</members>
@@ -3209,7 +3243,6 @@
     <members>WorkOrderLineItem-Work Order Line Item Layout</members>
     <members>WorkType-Work Type Layout</members>
     <members>charlie__c-charlie Layout</members>
-    <members>charlie__c-charlie2</members>
     <members>snoopy__c-snoopy Layout</members>
     <members>test_metadata_type__mdt-test metadata type Layout</members>
     <members>translation__c-translation Layout</members>
@@ -3237,6 +3270,7 @@
     <members>Case.AllOpenCases</members>
     <members>Case.MyCases</members>
     <members>Case.MyOpenCases</members>
+    <members>Case.Testingqueue_Case</members>
     <members>Case.testqueue_Case</members>
     <members>ChannelProgram.All_Channel_Programs</members>
     <members>ChannelProgram.My_Channel_Programs</members>
@@ -3262,6 +3296,7 @@
     <members>KnowledgeArticleVersion.testqueue_KnowledgeArticleVersion</members>
     <members>Lead.AllOpenLeads</members>
     <members>Lead.MyUnreadLeads</members>
+    <members>Lead.Testqueue2_Lead</members>
     <members>Lead.TodaysLeads</members>
     <members>Lead.ViewCustom1</members>
     <members>Lead.ViewCustom2</members>
@@ -3360,6 +3395,8 @@
     <members>WorkType.All_WorkTypes</members>
     <members>WorkType.My_WorkTypes</members>
     <members>WorkType.testqueue_WorkType</members>
+    <members>charlie__c.All</members>
+    <members>snoopy__c.All</members>
     <name>ListView</name>
   </types>
   <types>
@@ -3431,8 +3468,11 @@
     <members>Custom_Support_Profile_profilePasswordPolicy1515578535527</members>
     <members>FullProfile_profilePasswordPolicy1519753073000</members>
     <members>PT1_profilePasswordPolicy1522231320458</members>
+    <members>PT2_profilePasswordPolicy1523464538593</members>
+    <members>Test_disabling_permissions_profilePasswordPolicy1523900302711</members>
     <members>Test_trimming_profilePasswordPolicy1521630865033</members>
     <members>Test_user_profilePasswordPolicy1515666002239</members>
+    <members>US_not_disabled_profilePasswordPolicy1524567308786</members>
     <name>ProfilePasswordPolicy</name>
   </types>
   <types>
@@ -3440,10 +3480,15 @@
     <members>Custom_Support_Profile_profileSessionSetting1515578535589</members>
     <members>FullProfile_profileSessionSetting1519753073055</members>
     <members>PT1_profileSessionSetting1522231320576</members>
+    <members>PT2_profileSessionSetting1523464538659</members>
+    <members>Test_disabling_permissions_profileSessionSetting1523901061466</members>
     <members>Test_user_profileSessionSetting1515666002322</members>
+    <members>US_not_disabled_profileSessionSetting1524568446657</members>
     <name>ProfileSessionSetting</name>
   </types>
   <types>
+    <members>Testingqueue</members>
+    <members>Testqueue2</members>
     <members>testqueue</members>
     <name>Queue</name>
   </types>
@@ -3483,6 +3528,7 @@
   <types>
     <members>Account.Recordtype7324</members>
     <members>Account.Sales_Accounts</members>
+    <members>Asset.test_asses_rt</members>
     <members>Contact.This_is_a_test_recordtype</members>
     <members>Event.US_0001372</members>
     <members>Event.amigo</members>
@@ -3500,6 +3546,8 @@
   <types>
     <members>unfiled$public</members>
     <members>unfiled$public/Account</members>
+    <members>unfiled$public/Test_report</members>
+    <members>unfiled$public/lala</members>
     <name>Report</name>
   </types>
   <types>
@@ -3559,6 +3607,10 @@
     <members>Security</members>
     <members>SocialCustomerService</members>
     <name>Settings</name>
+  </types>
+  <types>
+    <members>Lead.test</members>
+    <name>SharingOwnerRule</name>
   </types>
   <types>
     <members>Account</members>
@@ -3699,6 +3751,9 @@
     <members>es</members>
     <members>fr</members>
     <members>pt_BR</members>
+    <members>sv</members>
+    <members>th</members>
+    <members>zh_CN</members>
     <name>Translations</name>
   </types>
   <types>

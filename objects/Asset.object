@@ -163,6 +163,36 @@
         <filterScope>Everything</filterScope>
         <label>All Assets</label>
     </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>test_asses_rt</fullName>
+        <active>true</active>
+        <label>test asses rt</label>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Installed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Obsolete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Registered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shipped</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>ASSET.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ASSET.SERIAL_NUMBER</customTabListAdditionalFields>

@@ -12,10 +12,6 @@
         <label>test</label>
         <name>charliecustom__c</name>
     </fields>
-    <fields>
-        <label>hola2</label>
-        <name>hola1__c</name>
-    </fields>
     <gender><!-- Masculine --></gender>
     <nameFieldLabel><!-- charlie Name --></nameFieldLabel>
     <startsWith><!-- Consonant --></startsWith>

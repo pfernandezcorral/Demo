@@ -433,6 +433,15 @@
         <label>My Open Cases</label>
     </listViews>
     <listViews>
+        <fullName>Testingqueue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Testingqueue</label>
+        <queue>Testingqueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>testqueue_Case</fullName>
         <filterScope>Queue</filterScope>
         <label>testqueue</label>

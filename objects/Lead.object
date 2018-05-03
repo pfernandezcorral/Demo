@@ -433,6 +433,15 @@
         <label>My Unread Leads</label>
     </listViews>
     <listViews>
+        <fullName>Testqueue2_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Testqueue2</label>
+        <queue>Testqueue2</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>TodaysLeads</fullName>
         <filterScope>Everything</filterScope>
         <filters>

@@ -14,4 +14,11 @@
         <shortDescription>test2</shortDescription>
         <value>hola</value>
     </labels>
+    <labels>
+        <fullName>testcustomlabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>testcustomlabel</shortDescription>
+        <value>hola this is a test</value>
+    </labels>
 </CustomLabels>

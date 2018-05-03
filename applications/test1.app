@@ -189,7 +189,15 @@
     </preferences>
     <tabs>standard-Case</tabs>
     <tabs>standard-Account</tabs>
+    <tabs>charlie__c</tabs>
+    <tabs>snoopy__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>charlie__c</tab>
+        </mappings>
+        <mappings>
+            <tab>snoopy__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

@@ -189,7 +189,15 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
+    <tabs>charlie__c</tabs>
+    <tabs>snoopy__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>charlie__c</tab>
+        </mappings>
+        <mappings>
+            <tab>snoopy__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>
