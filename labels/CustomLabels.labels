@@ -21,4 +21,18 @@
         <shortDescription>testcustomlabel</shortDescription>
         <value>hola this is a test</value>
     </labels>
+    <labels>
+        <fullName>testcustomlabel2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>testcustomlabel2</shortDescription>
+        <value>testing custom label</value>
+    </labels>
+    <labels>
+        <fullName>traductionthai</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>traductionthai</shortDescription>
+        <value>traductionthai</value>
+    </labels>
 </CustomLabels>

@@ -2769,6 +2769,8 @@
     <members>home</members>
     <members>test2</members>
     <members>testcustomlabel</members>
+    <members>testcustomlabel2</members>
+    <members>traductionthai</members>
     <name>CustomLabel</name>
   </types>
   <types>
