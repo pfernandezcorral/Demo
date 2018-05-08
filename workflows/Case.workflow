@@ -82,6 +82,16 @@
         <protected>false</protected>
     </fieldUpdates>
     <rules>
+        <fullName>Test workflow rule</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.CaseNumber</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
         <fullName>charlie</fullName>
         <actions>
             <name>Update1</name>
