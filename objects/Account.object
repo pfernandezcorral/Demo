@@ -1308,6 +1308,11 @@
         <description>Record types used for sales</description>
         <label>Sales Accounts</label>
     </recordTypes>
+    <recordTypes>
+        <fullName>zip</fullName>
+        <active>true</active>
+        <label>zip</label>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.ADDRESS1_CITY</customTabListAdditionalFields>
