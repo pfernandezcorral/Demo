@@ -222,47 +222,6 @@
         </filters>
         <label>My In Approval Contracts</label>
     </listViews>
-    <recordTypeTrackHistory>true</recordTypeTrackHistory>
-    <recordTypes>
-        <fullName>testrecordtype</fullName>
-        <active>true</active>
-        <label>testrecordtype</label>
-        <picklistValues>
-            <picklist>Status</picklist>
-            <values>
-                <fullName>Activated</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Draft</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>In Approval Process</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-    </recordTypes>
-    <recordTypes>
-        <fullName>testrecordtype2</fullName>
-        <active>true</active>
-        <label>testrecordtype2</label>
-        <picklistValues>
-            <picklist>Status</picklist>
-            <values>
-                <fullName>Activated</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Draft</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>In Approval Process</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>CONTRACT.CONTRACT_NUMBER</customTabListAdditionalFields>
         <customTabListAdditionalFields>CONTRACT.NAME</customTabListAdditionalFields>

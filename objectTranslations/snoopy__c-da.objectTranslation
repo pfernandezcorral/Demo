@@ -31,8 +31,16 @@
         <value><!-- snoopy --></value>
     </caseValues>
     <fields>
+        <label><!-- charliedate --></label>
+        <name>charliedate__c</name>
+    </fields>
+    <fields>
         <label>this is a test</label>
         <name>snoopytester__c</name>
+    </fields>
+    <fields>
+        <label><!-- woodstock --></label>
+        <name>woodstock__c</name>
     </fields>
     <gender><!-- Neuter --></gender>
     <nameFieldLabel><!-- snoopy Name --></nameFieldLabel>

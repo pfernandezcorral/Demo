@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
-        <label></label>
+        <label><!-- Current Generator(s) --></label>
         <name>CurrentGenerators__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Delivery/Installation Status --></label>
         <name>DeliveryInstallationStatus__c</name>
         <picklistValues>
             <masterLabel>Completed</masterLabel>
-            <translation></translation>
+            <translation><!-- Completed --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>In progress</masterLabel>
-            <translation></translation>
+            <translation><!-- In progress --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Yet to begin</masterLabel>
-            <translation></translation>
+            <translation><!-- Yet to begin --></translation>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Main Competitor(s) --></label>
         <name>MainCompetitors__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Operating Unit --></label>
         <name>Operating_Unit__c</name>
         <picklistValues>
             <masterLabel>GS</masterLabel>
-            <translation></translation>
+            <translation><!-- GS --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>HCIT</masterLabel>
-            <translation></translation>
+            <translation><!-- HCIT --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>LS</masterLabel>
-            <translation></translation>
+            <translation><!-- LS --></translation>
         </picklistValues>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Order Number --></label>
         <name>OrderNumber__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Tracking Number --></label>
         <name>TrackingNumber__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- testoppfield --></label>
         <name>testoppfield__c</name>
     </fields>
     <recordTypes>
-        <label></label>
+        <label><!-- Watchman Call Center --></label>
         <name>Watchman_Call_Center</name>
     </recordTypes>
     <webLinks>
-        <label></label>
+        <label><!-- DeliveryStatus --></label>
         <name>DeliveryStatus</name>
     </webLinks>
 </CustomObjectTranslation>

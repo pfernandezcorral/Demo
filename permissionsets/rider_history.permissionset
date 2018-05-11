@@ -3072,7 +3072,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>snoopy__c.charliedate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>snoopy__c.snoopytester__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>snoopy__c.woodstock__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

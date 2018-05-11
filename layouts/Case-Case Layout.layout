@@ -174,10 +174,6 @@
                 <behavior>Edit</behavior>
                 <field>IsEscalated</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>IsEscalated</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
