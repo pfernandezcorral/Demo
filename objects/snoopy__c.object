@@ -53,6 +53,14 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>charliedate__c</fullName>
+        <externalId>false</externalId>
+        <label>charliedate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>snoopytest__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
