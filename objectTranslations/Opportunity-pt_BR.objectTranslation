@@ -52,6 +52,10 @@
         <label><!-- testoppfield --></label>
         <name>testoppfield__c</name>
     </fields>
+    <recordTypes>
+        <label><!-- Watchman Call Center --></label>
+        <name>Watchman_Call_Center</name>
+    </recordTypes>
     <webLinks>
         <label><!-- DeliveryStatus --></label>
         <name>DeliveryStatus</name>
