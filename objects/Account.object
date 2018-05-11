@@ -34,10 +34,7 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
-        <content>actionOverride</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>LightningComponent</type>
+        <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>RequestUpdate</actionName>
