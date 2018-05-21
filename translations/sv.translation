@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
+        <label>test user story translation</label>
+        <name>US_0002559</name>
+    </customLabels>
+    <customLabels>
         <label><!-- home --></label>
         <name>home</name>
     </customLabels>
