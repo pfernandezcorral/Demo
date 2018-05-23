@@ -792,6 +792,11 @@
         <description>Record types used for sales</description>
         <label>Sales Accounts</label>
     </recordTypes>
+    <recordTypes>
+        <fullName>testgit</fullName>
+        <active>true</active>
+        <label>testgit</label>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.ADDRESS1_CITY</customTabListAdditionalFields>
