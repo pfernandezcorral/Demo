@@ -151,14 +151,6 @@
     <name>Index</name>
   </types>
   <types>
-    <members>Account.Billing</members>
-    <members>Campaign.ViewCampaignInfluenceReport</members>
-    <members>Case.UpsellCrosssellOpportunity</members>
-    <members>Opportunity.DeliveryStatus</members>
-    <members>charlie__c.charlieweblink</members>
-    <name>WebLink</name>
-  </types>
-  <types>
     <members>omniteststatus</members>
     <name>ServicePresenceStatus</name>
   </types>
@@ -227,6 +219,7 @@
   <types>
     <members>Account.Recordtype7324</members>
     <members>Account.Sales_Accounts</members>
+    <members>Account.testgit</members>
     <members>Asset.test_asses_rt</members>
     <members>Contact.This_is_a_test_recordtype</members>
     <members>Event.US_0001372</members>
@@ -707,6 +700,14 @@
     <members>Service_Contracts_with_Contract_Line_Items</members>
     <members>Service_Contracts_with_Entitlements</members>
     <name>ReportType</name>
+  </types>
+  <types>
+    <members>Account.Billing</members>
+    <members>Campaign.ViewCampaignInfluenceReport</members>
+    <members>Case.UpsellCrosssellOpportunity</members>
+    <members>Opportunity.DeliveryStatus</members>
+    <members>charlie__c.charlieweblink</members>
+    <name>WebLink</name>
   </types>
   <types>
     <members>test_letterhead</members>
