@@ -226,9 +226,4 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
     </fields>
-    <recordTypes>
-        <fullName>testgit</fullName>
-        <active>true</active>
-        <label>testgit</label>
-    </recordTypes>
 </CustomObject>
