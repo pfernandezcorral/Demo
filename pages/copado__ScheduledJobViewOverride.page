@@ -1,7 +1,6 @@
 <apex:page standardController="copado__Scheduled_Job__c" extensions="copado.ScheduledJobExtension" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
-      <TITLE>Scheduled Job {!copado__Scheduled_Job__c.Name} | Copado</TITLE>
         <c:GAnalytics />
         <script>
             ga('send', 'pageview', {

@@ -51,7 +51,7 @@
             </apex:outputPanel>
 
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
-                <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;" html-novalidate="true">
+                <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;">
                     <apex:pageBlock id="pbRun" mode="edit" title="Test Run Information">
                         <apex:pageBlockButtons >
                             <apex:commandButton id="btnSaveRun" value="{!$Label.site.save}" action="{!save}" />

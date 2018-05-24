@@ -1,7 +1,6 @@
-<apex:page standardController="copado__Org__c" extensions="copado.EditOrg,copado.Settings,copado.JsRemotingController" title="View {!$ObjectType.copado__Org__c.Label}" id="thePage" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true" >
+<apex:page standardController="copado__Org__c" extensions="copado.EditOrg,copado.Settings,copado.JsRemotingController" action="{!validate}" title="View {!$ObjectType.copado__Org__c.Label}" id="thePage" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true" >
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
-        <title>Org Credential {!copado__Org__c.Name} | Copado</title>
         <c:GAnalytics />
         <c:WizardUtils />
         <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
@@ -18,45 +17,9 @@
             .col2style {width:200px; font-color:inherit; font-weight:bold; font-style:inherit; text-align:right; }
             .col3style {width:100px; font-color:inherit; font-weight:normal; font-style:inherit; text-align:right; }
             .lookupHoverDetail{z-index:1000 !important;}
-            .copadoDxButtons{
-                -webkit-appearance: none;
-                position: relative;
-                display: inline-block;
-                border: 1px solid transparent;
-                padding: 0;
-                font-size: .75rem;
-                line-height: 1.875rem;
-                text-decoration: none;
-                white-space: normal;
-                border-radius: .25rem;
-                background: transparent;
-                background-clip: border-box;
-                color: #0070d2;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                -webkit-transition: color .05s linear,background-color .05s linear;
-                transition: color .05s linear,background-color .05s linear;
-                padding-left: 1rem;
-                padding-right: 1rem;
-                text-align: center;
-                vertical-align: middle;
-                border: 1px solid #dddbda;
-                -webkit-transition: border .15s linear;
-                transition: border .15s linear;
-                border-color: #dddbda;
-                background-color: white;
-            }
         </style>
 
         <script>
-            function openOrg(){
-                var url = "{!urlfor('/apex/' + jsencode(namespace) + 'ScratchOrgOpen?id=' + copado__Org__c.Id)}";
-                var win = window.open(url);
-            }
-
-
             function openApexTestResultsSummary() {
                 if( (typeof sforce != 'undefined') && sforce && (!!sforce.one) ) {
                     sforce.one.navigateToURL('/apex/{!namespace}OrgApexTestResultsSummary?id={!copado__Org__c.Id}');
@@ -75,7 +38,6 @@
             var j$ = jQuery.noConflict();
 
             j$(document).ready(function(){
-                validateJS();
                 if( (typeof sforce == 'undefined') && !sforce && (sforce.one) ) {
                     overridePageMessages();
                 }
@@ -167,31 +129,25 @@
                 </div>
             </apex:outputPanel>
 
-          <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
+          <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">     
+        <c:ScreenLocker msg="{!$Label.copado__loading}" />
         <apex:outputField value="{!copado__Org__c.copado__Metadata_Types__c}" rendered="false" />
         <span style="display:none;">{!copado__Org__c.copado__Metadata_Types__c}</span>
             
             <apex:form id="theForm" rendered="{!AND(showOptions,!showError)}" styleClass="copado-lightning-container" style="padding-top:12px;">
-            <c:ScreenLocker msg="{!$Label.copado__loading}" />
             <apex:pageBlock id="pb_createOrg"  mode="view" helpUrl="http://docs.copa.do/copado/creating-a-salesforce-org" helpTitle="{!$Label.copado__help_for_this_page}">
                     <div>
                         <center>
-                            <apex:commandButton value="{!$Label.site.edit}" action="{!edit}" id="btnEdit"/>&nbsp;
-                            <apex:commandButton value="{!$Label.copado__delete}" action="{!delete}" id="btnDelete"/>&nbsp;
-                            <apex:commandButton value="{!$Label.copado__share}" action="{!URLFOR($Action.Org__c.Share,Org__c.Id)}" rendered="{!isShareable}"/>&nbsp;
-                            <apex:commandButton value="{!$Label.copado__add_oauth}" action="{!doOauth}" id="btnOAuth" rendered="{!NOT(isScratchOrg)}"/>&nbsp;
-                            <apex:commandButton value="{!$Label.copado__add_userpass}" action="{!addUserPass}" rendered="false"/>&nbsp;
-                            <apex:commandButton value="{!$Label.copado__run_all_tests}" action="{!runAllTest}" id="btnRunAllTests"/>&nbsp;
-                            <apex:commandButton value="Apex Test Results Summary" onclick="openApexTestResultsSummary();return false;" id="btnApexTestSummary"/>&nbsp;
-                            <apex:commandButton value="Run Static Code Analysis" action="{!orgCodeAnalysis}" id="btnRunCodeAnalysis" rendered="{!scaAccess}"/>&nbsp;
-                            <apex:commandButton value="{!$Label.copado__compliance_scan_run}" action="{!orgComplianceScan}" id="btnRunComplianceAnalysis" rendered="{!complianceScanRequestAccess}"/>
-                            <apex:commandButton value="Copado DX" action="{!gotoDxOperations}" rendered="{!OR(copado__Org__c.copado__Org_Type__c == 'Scratch Org',copado__Org__c.copado__Org_Type__c == 'Scratch Org - Test only',AND(copado__Org__c.copado__Org_Type__c == 'Production/Developer',copado__Org__c.copado__is_Developer_Hub_Org__c))}"/>
-                            <apex:commandButton value="Open Org" id="openBtnId" onClick="openOrg(); return false;"/>
-
-
-
-                            <!--<apex:outputLink rendered="{!OR(Org__c.Org_Type__c == 'Scratch Org',AND(Org__c.Org_Type__c == 'Production/Developer',Org__c.is_Developer_Hub_Org__c))}" value="{!URLFOR('/apex/' + JSENCODE(namespace) + 'DXOperation?id=' + Org__c.Id)}" styleClass="btn copadoDxButtons">Copado DX</apex:outputLink>
-                            <apex:outputLink target="_blank" rendered="{!Org__c.Org_Type__c == 'Scratch Org'}" value="{!URLFOR('/apex/' + JSENCODE(namespace) + 'ScratchOrgLoadMetadataErrors?id=' + Org__c.Id)}" styleClass="btn copadoDxButtons">Latest DX Metadata Load Errors</apex:outputLink>-->
+                        <apex:commandButton value="{!$Label.site.edit}" action="{!edit}" id="btnEdit"/>&nbsp;
+                        <apex:commandButton value="{!$Label.copado__delete}" action="{!delete}" id="btnDelete"/>&nbsp;
+                        <apex:commandButton value="{!$Label.copado__share}" action="{!URLFOR($Action.Org__c.Share,Org__c.Id)}" rendered="{!isShareable}"/>&nbsp;
+                        <apex:commandButton value="{!$Label.copado__add_oauth}" action="{!doOauth}" id="btnOAuth"/>&nbsp;
+                        <apex:commandButton value="{!$Label.copado__add_userpass}" action="{!addUserPass}" rendered="false"/>&nbsp;
+                        <apex:commandButton value="{!$Label.copado__run_all_tests}" action="{!runAllTest}" id="btnRunAllTests"/>&nbsp;
+                        <apex:commandButton value="Apex Test Results Summary" onclick="openApexTestResultsSummary();return false;" id="btnApexTestSummary"/>&nbsp;
+                        <apex:commandButton value="Run Static Code Analysis" action="{!orgCodeAnalysis}" id="btnRunCodeAnalysis" rendered="{!scaAccess}"/>&nbsp;
+                        <apex:commandButton value="{!$Label.copado__static_code_analysis_summary}" onclick="openStaticCodeAnalysisSummary();return false;" id="btnStaticCodeAnalysis"/>&nbsp;
+                        <apex:commandButton value="{!$Label.copado__compliance_scan_run}" action="{!orgComplianceScan}" id="btnRunComplianceAnalysis" rendered="{!complianceScanRequestAccess}"/>
                         </center>
                     </div>
                     <br/>
@@ -199,8 +155,7 @@
                     <apex:outputField value="{!copado__Org__c.Name}" id="ofName"/>
                     <apex:outputField value="{!copado__Org__c.copado__Environment__c}" id="ofEnvironment"/>
                     <apex:outputField value="{!copado__Org__c.copado__Username__c}" id="ofUserName"/>
-                    <apex:outputField value="{!copado__Org__c.copado__Developer_Hub_Org__c}" id="ofDevHub" rendered="{!isScratchOrg}"/>
-                    <apex:outputField value="{!copado__Org__c.copado__Profile_Name__c}" id="ofUserProfileName" rendered="{!NOT(isScratchOrg)}"/>
+                    <apex:outputField value="{!copado__Org__c.copado__Profile_Name__c}" id="ofUserProfileName"/>
                     
                     <apex:pageBlockSectionItem rendered="{!showUserPass}">
                       <apex:outputLabel value="Password" />
@@ -209,16 +164,13 @@
                     
                     <apex:outputText value="{!copado__Org__c.copado__Token__c}" rendered="{!showUserPass}"/>
                     <apex:outputField value="{!copado__Org__c.copado__Org_Type__c}" id="ofOrgType"/>
-                    <apex:outputField value="{!copado__Org__c.copado__Type_Icon__c}" id="ofOrgTypeIcon"/>
                     <apex:outputField value="{!copado__Org__c.copado__Custom_Domain__c}" id="ofCustomDomain" rendered="{!copado__Org__c.copado__Org_Type__c = 'Custom Domain'}"/>
                     <apex:outputField value="{!copado__Org__c.copado__SFDC_Org_ID__c}" id="ofSFDCorgId"/>
-                    <apex:outputField value="{!copado__Org__c.copado__Validated_Date__c}" id="ofValidatedDate" rendered="{!NOT(isScratchOrg)}"/>
-                    <apex:outputField value="{!copado__Org__c.copado__Test_Frequency__c}" id="ofTestFrequency" rendered="{!NOT(isScratchOrg)}"/>
+                    <apex:outputField value="{!copado__Org__c.copado__Validated_Date__c}" id="ofValidatedDate"/>
+                    <apex:outputField value="{!copado__Org__c.copado__Test_Frequency__c}" id="ofTestFrequency"/>
                     <apex:outputField value="{!copado__Org__c.CreatedById}" id="ofCreatedBy"/>
-                    <apex:outputField value="{!copado__Org__c.copado__Default_Credential__c}" id="ofDefaultCredential" rendered="{!NOT(isScratchOrg)}"/>
-                    <apex:outputField value="{!copado__Org__c.copado__is_Developer_Hub_Org__c}" id="isDevHubOrg" rendered="{!copado__Org__c.copado__is_Developer_Hub_Org__c}"/>
-                    <apex:outputField value="{!copado__Org__c.copado__Scratch_Org_Expiration_Date__c}" id="expDataScratchOrg"/>
-                    <apex:outputField value="{!copado__Org__c.copado__Error__c}" rendered="{!if(AND(not(isblank(copado__Org__c.copado__Error__c)),NOT(isScratchOrg)),true,false)}" id="ofError"/>
+                    <apex:outputField value="{!copado__Org__c.copado__Default_Credential__c}" id="ofDefaultCredential"/>
+                    <apex:outputField value="{!copado__Org__c.copado__Error__c}" rendered="{!if(not(isblank(copado__Org__c.copado__Error__c)),true,false)}" id="ofError"/>
                     
                     <apex:outputField value="{!copado__Org__c.copado__Disable_Validation__c}" rendered="{!showUserPass}" id="ofDisableValidation"/>
                 </apex:pageBlockSection>
@@ -285,6 +237,7 @@
                     <apex:commandButton value="{!$Label.copado__run_all_tests}" action="{!runAllTest}" id="btnRunAllTestsBottom"/>&nbsp;
                     <apex:commandButton value="{!$Label.copado__apex_test_result_summary}" onclick="openApexTestResultsSummary();return false;" id="btnApexTestSummaryBottom"/>&nbsp;
                     <apex:commandButton value="{!$Label.copado__run_static_code_analysis}" action="{!orgCodeAnalysis}" id="btnRunCodeAnalysisBottom"/>&nbsp;
+                    <apex:commandButton value="{!$Label.copado__static_code_analysis_summary}" onclick="openStaticCodeAnalysisSummary();return false;" id="btnStaticCodeAnalysisBottom"/>&nbsp;
                     <apex:commandButton value="{!$Label.copado__compliance_scan_run}" action="{!orgComplianceScan}" id="btnRunComplianceAnalysisBottom" rendered="{!complianceScanRequestAccess}"/>
                     </center>
                 </div>
@@ -294,11 +247,10 @@
                               envId="{!copado__Org__c.copado__Environment__c}"
                               minCodeCoverage="{!copado__Org__c.copado__Minimum_Apex_Test_Coverage__c}" />
             <br />
-            <apex:actionFunction name="validateJS" action="{!validate}" reRender="theMessages, msg"/>
          </apex:form>
          
          <apex:outputPanel layout="block" styleClass="copado-lightning-container">
-             <apex:relatedList title="Org Attachments" list="CombinedAttachments" rendered="true"/>
+             <apex:relatedList title="Org Attachments" list="CombinedAttachments" rendered="false"/>
              <apex:relatedList list="Apex_Test_Results__r" id="relatedListApexResults" rendered="{!AND(showOptions,!showError)}"/>
              <apex:relatedList list="Static_Code_Analysis_Results__r" id="relatedCodeAnalysis" rendered="{!AND(scaAccess,!showError)}"/>
              <apex:relatedList list="Compliance_Scan_Results__r" id="complianceScanResults" rendered="{!AND(complianceScanResultAccess,!showError)}"/>

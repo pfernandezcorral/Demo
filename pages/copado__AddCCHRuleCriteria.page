@@ -11,7 +11,6 @@
 	<apex:outputPanel layout="block" >
 		<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height: 100%;">
 		    <head>
-		    	<TITLE>Compliance Manage Criteria {!copado__Compliance_Rule__c.Name} | Copado</TITLE>
 		      <apex:slds />
 		      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

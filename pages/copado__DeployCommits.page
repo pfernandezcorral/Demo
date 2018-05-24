@@ -16,6 +16,7 @@
         <c:WizardUtils />
         <script src="../../soap/ajax/34.0/connection.js" type="text/javascript"></script>
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
+        <c:ScreenLocker msg="{!$Label.copado__loading}" /> 
         <script>
         	_config = {
                 data: {
@@ -108,7 +109,6 @@
 
     
         <apex:form id="theForm" styleClass="copado-lightning-container">
-        <c:ScreenLocker msg="{!$Label.copado__loading}" /> 
             <apex:sectionHeader help="String" title="{!$ObjectType.copado__Deployment__c.Label}" subtitle="{!$Label.copado__create_deployment}" description="{!$Label.copado__deploy_commits_description}"/>
             <apex:actionFunction name="showMessage" action="{!showMessage}" rerender="msg">
                 <apex:param name="errorLevel" assignTo="{!errorLevel}" value="" />

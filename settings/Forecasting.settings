@@ -228,23 +228,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -281,11 +281,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -442,23 +442,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -495,11 +495,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -656,23 +656,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -709,11 +709,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -870,23 +870,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -923,11 +923,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -1084,23 +1084,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -1137,11 +1137,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -1298,23 +1298,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -1351,11 +1351,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -1512,23 +1512,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -1565,11 +1565,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -1726,23 +1726,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -1779,11 +1779,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -1940,23 +1940,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -1993,11 +1993,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -2154,23 +2154,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -2207,11 +2207,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -2368,23 +2368,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -2421,11 +2421,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -2582,23 +2582,23 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIS</field>
+            <field>00N0O00000CJBRt</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIT</field>
+            <field>00N0O00000CJBRu</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIU</field>
+            <field>00N0O00000CJBRv</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIV</field>
+            <field>00N0O00000CJBRw</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRx</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
@@ -2635,11 +2635,11 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00Nf400000LgkIS</field>
-            <field>00Nf400000LgkIT</field>
-            <field>00Nf400000LgkIU</field>
-            <field>00Nf400000LgkIV</field>
-            <field>00Nf400000LgkIW</field>
+            <field>00N0O00000CJBRt</field>
+            <field>00N0O00000CJBRu</field>
+            <field>00N0O00000CJBRv</field>
+            <field>00N0O00000CJBRw</field>
+            <field>00N0O00000CJBRx</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>

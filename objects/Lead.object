@@ -9,10 +9,6 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
-        <fullName>CleanStatus</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>Company</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>

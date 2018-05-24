@@ -1,7 +1,6 @@
 <apex:page standardController="copado__Git_Repository__c" extensions="copado.EditGit" action="{!validate}" title="{!$Label.copado__view} {!$ObjectType.copado__Git_Repository__c.Label}" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds />
     <head>
-      <title>Git Repository {!copado__Git_Repository__c.Name} | Copado</title>
         <c:GAnalytics />
         <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/libs/jquery.min.1.10.2.js')}" />
         <script type="text/javascript">
@@ -28,6 +27,7 @@
             }
 
             j$(document).ready(function(){
+
               //Buttons To middle No PBtitle
               if( (typeof sforce != 'undefined') && sforce && (!!sforce.one) ) {
                   var mTitle = j$('.pbTitle')[0];
@@ -109,8 +109,7 @@
                             <apex:commandButton value="{!$Label.copado__share}" action="{!URLFOR($Action.Git_Repository__c.Share,Git_Repository__c.Id)}" rendered="{!isShareable}"/>
                             <apex:commandButton value="{!$Label.copado__create_ssh_keys}" action="{!createSSHKey}" rendered="{!isSSHauthentication}"/>
                             <apex:commandButton value="{!$Label.copado__create_deployment}" action="{!deployCommits}"/>
-                            <apex:commandButton value="Retrieve Commits" onclick="openBranchNameModal();" rerender="theMessages"/>
-                            <apex:commandButton value="{!$Label.copado__manage_git_branches}" action="{!goToManageGITBranches}" rendered="{!AND(showOptions,!showError)}" />
+                            <apex:commandButton value="Retrieve Commits" onclick="openBranchNameModal();" rerender="theMessages"/>                
                         </apex:pageblockButtons>
                         <apex:pageBlockSection columns="1">
                             <apex:outputField id="of_name" value="{!git.Name}" />

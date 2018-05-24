@@ -10,4 +10,8 @@
     </caseValues>
     <gender><!-- Feminine --></gender>
     <nameFieldLabel><!-- Step Name --></nameFieldLabel>
+    <validationRules>
+        <errorMessage><!-- you cannot uncheck this checkbox --></errorMessage>
+        <name>test</name>
+    </validationRules>
 </CustomObjectTranslation>

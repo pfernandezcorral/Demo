@@ -1,7 +1,6 @@
 <apex:page id="thePage" controller="copado.appHome" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds />
     <head>
-        <title>Selenium Getting Started | Copado</title>
         <c:GAnalytics />
         <script>
             ga('send', 'pageview', {

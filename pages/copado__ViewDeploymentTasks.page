@@ -1,4 +1,4 @@
-<apex:page docType="html-5.0" showHeader="true" sidebar="true" standardController="copado__Deployment_Task__c" extensions="copado.DeploymentTaskExtension,copado.Settings,copado.JsRemotingController" standardStylesheets="true" title="{!$Label.copado__view} {!$ObjectType.copado__Deployment_Task__c.Label}" lightningStylesheets="true">
+<apex:page docType="html-5.0" showHeader="true" sidebar="true" standardController="copado__Deployment_Task__c" extensions="copado.DeploymentTaskExtension,copado.Settings,copado.JsRemotingController" standardStylesheets="true" title="{!$Label.copado__view} {!$ObjectType.copado__Deployment_Task__c.Label}">
 	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height:100%;">
 	    <head>
 			<c:GAnalytics />
@@ -117,239 +117,213 @@
 				}
 			</script>
 	    </head>
-	    <body class="slds-scope" style="{!IF($User.UIThemeDisplayed == 'Theme4d','margin: 0 12px 0 12px; background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2),linear-gradient(to top,rgba(32, 92, 159, 0), rgb(32, 92, 159));','')}">
-			<div class="copado-lightning-container">
-				<apex:form >
-					<c:ScreenLocker msg="{!$Label.copado__loading}" />
-					<div class="slds-page-header" style="{!IF($User.UIThemeDisplayed == 'Theme4d','background: #fdfdfd;margin-bottom: 12px;border-collapse: collapse;border-radius: 4px;','')}">
-						<apex:outputPanel layout="block" id="pageMessages">
-							<apex:pagemessages id="pmessage"/>
-						</apex:outputPanel>
-						<div class="slds-grid">
-							<div class="slds-col slds-has-flexi-truncate">
-								<div class="slds-media">
-									<div class="slds-media__figure">
-										<span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
-											<svg class="slds-icon" aria-hidden="true">
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/standard-sprite/svg/symbols.svg#process')}"></use>
-											</svg>
-										</span>
-									</div>
-									<div class="slds-media__body">
-										<p class="slds-text-heading--label slds-line-height--reset">{!$ObjectType.Deployment_Task__c.Label}</p>
-										<h1 class="slds-page-header__title slds-truncate slds-align-middle" ><apex:outputField value="{!copado__Deployment_Task__c.Name}"/>
-										</h1>
-
-									</div>
-							   </div>
-							</div>
-							<!-- ACTION BUTTONS -->
-							<div class="slds-col slds-no-flex slds-grid slds-align-top ">
-								<div class="slds-button-group" role="group">
-									<apex:commandButton value="{!$Label.copado__edit}" action="{!edit}" styleClass="slds-button slds-button--neutral" />
-									<apex:outputLink rendered="{!copado__Deployment_Task__c.Id != null}" value="{!URLFOR($Action.copado__Deployment_Task__c.Clone,copado__Deployment_Task__c.Id)}" styleClass="slds-button slds-button--neutral">
-										<span class="slds-truncate" title="Menu Item One">{!$Label.copado__clone}</span>
-									</apex:outputLink>
-									<apex:commandButton value="{!$Label.copado__delete}" onclick="deleteActionJS(); return false;" styleClass="slds-button slds-button--neutral" />
-								</div>
-								<apex:actionFunction name="deleteActionAF" action="{!deleteAction}"/>
-								<script type="text/javascript">
-									function deleteActionJS(){
-										if (confirm('{!$Label.DeploymentTask_DeleteConfirm}')) {
-											deleteActionAF();
-										}
+	    <body class="slds-scope" style="{!IF($User.UIThemeDisplayed == 'Theme4d','margin: 12px;background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2),linear-gradient(to top,rgba(32, 92, 159, 0), rgb(32, 92, 159));','')}">
+	    	<c:ScreenLocker msg="{!$Label.copado__loading}" />
+	    	<apex:form >
+	    		<apex:outputPanel layout="block" id="pageMessages">
+                    <apex:pagemessages id="pmessage"/>
+                </apex:outputPanel>
+                <div class="slds-page-header" style="{!IF($User.UIThemeDisplayed == 'Theme4d','background: #fdfdfd;margin-bottom: 12px;border-collapse: collapse;border-radius: 4px;','')}">
+                	<div class="slds-grid">
+	                    <div class="slds-col slds-has-flexi-truncate">
+	                        <div class="slds-media">
+	                            <div class="slds-media__figure">
+	                                <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+	                                    <svg class="slds-icon" aria-hidden="true">
+	                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/standard-sprite/svg/symbols.svg#process')}"></use>
+	                                    </svg>
+	                                </span>
+	                            </div>
+	                            <div class="slds-media__body">
+	                            	<p class="slds-text-heading--label slds-line-height--reset">{!$ObjectType.Deployment_Task__c.Label}</p>
+	                                <h1 class="slds-page-header__title slds-truncate slds-align-middle" ><apex:outputField value="{!copado__Deployment_Task__c.Name}"/>
+	                                </h1>
+	                                
+	                            </div>
+	                       </div>
+	                    </div>
+	                    <!-- ACTION BUTTONS -->
+	                    <div class="slds-col slds-no-flex slds-grid slds-align-top ">
+	                        <div class="slds-button-group" role="group">
+	                            <apex:commandButton value="{!$Label.copado__edit}" action="{!edit}" styleClass="slds-button slds-button--neutral" />
+	                            <apex:outputLink rendered="{!copado__Deployment_Task__c.Id != null}" value="{!URLFOR($Action.copado__Deployment_Task__c.Clone,copado__Deployment_Task__c.Id)}" styleClass="slds-button slds-button--neutral">
+	                                <span class="slds-truncate" title="Menu Item One">{!$Label.copado__clone}</span>
+	                            </apex:outputLink>
+	                            <apex:commandButton value="{!$Label.copado__delete}" onclick="deleteActionJS(); return false;" styleClass="slds-button slds-button--neutral" />	                            	                            
+	                        </div>
+	                        <apex:actionFunction name="deleteActionAF" action="{!deleteAction}"/>
+	                        <script type="text/javascript">
+	                        	function deleteActionJS(){
+                        			if (confirm('{!$Label.DeploymentTask_DeleteConfirm}')) {
+									    deleteActionAF();
 									}
-								</script>
-							</div>
-							<!-- / ACTION BUTTONS -->
-						</div>
-					</div>
-					<div style="padding: 12px;background: #fdfdfd;border-collapse: collapse; background: #fdfdfd;border-radius: 4px;">
-						<div class="slds-section-container">
-							<div class="slds-section slds-is-open">
-								<h3 class="slds-section__title slds-theme_shade">
-									<span class="slds-truncate slds-p-horizontal_small" title="{!$Label.DETAIL}">{!$Label.DETAIL}</span>
-								</h3>
-								<div aria-hidden="false" class="slds-section__content">
-									<div class="slds-grid">
-										<div class="slds-col" >
-											<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="Name" dividerBottom="true" />
-											<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="User_Story__c" dividerBottom="true" />
-											<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="Perform_Manual_Task__c" dividerBottom="true" />
-										</div>
-										<div class="slds-col">
-											<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="Type__c" dividerBottom="true" />
-											<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="Status__c" dividerBottom="true" />
-											<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="Order__c" dividerBottom="true" />
-										</div>
+	                        	}
+	                        </script>
+	                    </div>
+	                    <!-- / ACTION BUTTONS -->
+                	</div>
+                </div>
+                <div style="padding: 12px;background: #fdfdfd;border-collapse: collapse; background: #fdfdfd;border-radius: 4px;">
+	                <div class="slds-section-container">
+						<div class="slds-section slds-is-open">
+							<h3 class="slds-section__title slds-theme_shade">
+								<span class="slds-truncate slds-p-horizontal_small" title="{!$Label.DETAIL}">{!$Label.DETAIL}</span>
+							</h3>
+							<div aria-hidden="false" class="slds-section__content">
+								<div class="slds-grid">
+									<div class="slds-col" >
+										<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="Name" dividerBottom="true" />
+										<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="User_Story__c" dividerBottom="true" />
+										<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="Perform_Manual_Task__c" dividerBottom="true" />
+									</div>
+									<div class="slds-col">
+										<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="Type__c" dividerBottom="true" />
+										<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="Status__c" dividerBottom="true" />									
+										<c:LightningReadyOutputFields sObject="{!copado__Deployment_Task__c}" field="Order__c" dividerBottom="true" />
 									</div>
 								</div>
 							</div>
-							<div class="slds-section slds-is-open">
-								<h3 class="slds-section__title slds-theme_shade">
-									<span class="slds-truncate slds-p-horizontal_small" title="{!$Label.copado__detail}">{!$Label.copado__deploymenttask_task_details}</span>
-								</h3>
-								<apex:outputPanel id="detailPanel" layout="block">
-									<div aria-hidden="false" class="slds-section__content">
-										<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Manual Task'}">
-											<c:ManualTaskComponent isEdit="false"/>
-											<script type="text/javascript">
-
-												datasetup.setPreviousData = function(data){
-
-													if(data){
-														console.info('Setting previosly selected data for Manual Task');
-														data = JSON.parse(data);
-														$copado('[id=jsTaskOwner_lkid_View]').val(data ? data.Task_Owner : null);
-														$copado('[Id$=jsTaskDescView]').text(data.Task_Description);
-														$copado('[Id$=jsPerformInSourceView]').prop('checked',data.Perform_in_Source_Org);
-														$copado('[Id$=jsPerformInDestinationsView]').prop('checked',data.Perform_in_Destination_Orgs);
-														$copado('[Id$=jsNotifyTaskOwner_View]').val(data ? data.Notify_Task_Owner : 'None');
-														sforce.connection.query('SELECT id, FirstName, LastName FROM User WHERE Id = \'' + data.Task_Owner+ '\' LIMIT 1', {
-															onSuccess: function(result) {
-																var records = result.getArray("records");
-
-																if(records.length == 1){
-																	var firstname = records[0].FirstName;
-																	var lastname = records[0].LastName;
-																	$copado('[id=jsTaskOwner_lkold_View]').val(firstname + ' ' + lastname);
-																	$copado('[id=jsTaskOwner_View]').val(firstname + ' ' + lastname);
-																}
-															},
-															onFailure : function(error) {
-																console.error("An error has occurred " + error);
-															}
-														});
-													}else{
-														$copado('[id$=jsTaskOwner_View]').val(null);
-													}
+						</div>
+						<div class="slds-section slds-is-open">
+							<h3 class="slds-section__title slds-theme_shade">
+								<span class="slds-truncate slds-p-horizontal_small" title="{!$Label.copado__detail}">{!$Label.copado__deploymenttask_task_details}</span>
+							</h3>
+							<apex:outputPanel id="detailPanel" layout="block">
+								<div aria-hidden="false" class="slds-section__content">
+									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Manual Task'}">
+										<c:ManualTaskComponent isEdit="false"/>
+										<script type="text/javascript">
+											
+											datasetup.setPreviousData = function(data){
+												if(data){
+													console.info('Setting previosly selected data for Manual Task');
+													data = JSON.parse(data);
+													$copado('[Id$=jsTaskDescView]').text(data.Task_Description);
+													$copado('[Id$=jsPerformInSourceView]').prop('checked',data.Perform_in_Source_Org);
+													$copado('[Id$=jsPerformInDestinationsView]').prop('checked',data.Perform_in_Destination_Orgs);
 												}
-											</script>
-										</apex:outputPanel>
-										<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'URL Callout'}">
-											<c:URLCalloutComponent isEdit="false"/>
-											<script type="text/javascript">
-												datasetup.setPreviousData = function(data){
-													data = data ? JSON.parse(data) : false;
-													//fill or reset if field is empty
-													$copado('[id=jsUrlCalloutTypeView]').val(data ? data.type : '');
-													$copado('[id=jsUrlCalloutMethodView]').val(data ? data.method : '');
-													$copado('[id$=jsUrlCalloutUrlView]').text(data ? data.url : '');
-													$copado('[id$=jsUrlCalloutBodyView]').text(data ? data.body : '');
-													urlCallout.urlParams = (data && data.queryParameters) ? data.queryParameters : [];
-													urlCallout.headers = (data && data.headers) ? data.headers : [];
-													if (data && data.headers) urlCallout.header.decode();
-													urlCallout.createStaticChildRows(urlCallout.urlParams, 'param');
-													urlCallout.createStaticChildRows(urlCallout.headers, 'header');
+											}
+										</script>
+									</apex:outputPanel>
+									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'URL Callout'}">
+										<c:URLCalloutComponent isEdit="false"/>
+										<script type="text/javascript">										
+											datasetup.setPreviousData = function(data){
+												data = data ? JSON.parse(data) : false;
+										        //fill or reset if field is empty
+										        $copado('[id=jsUrlCalloutTypeView]').val(data ? data.type : '');
+										        $copado('[id=jsUrlCalloutMethodView]').val(data ? data.method : '');
+										        $copado('[id$=jsUrlCalloutUrlView]').text(data ? data.url : '');
+										        $copado('[id$=jsUrlCalloutBodyView]').text(data ? data.body : '');									        
+										        urlCallout.urlParams = (data && data.queryParameters) ? data.queryParameters : [];
+										        urlCallout.headers = (data && data.headers) ? data.headers : [];
+										        if (data && data.headers) urlCallout.header.decode();
+										        urlCallout.createStaticChildRows(urlCallout.urlParams, 'param');
+										        urlCallout.createStaticChildRows(urlCallout.headers, 'header');
+											}
+										</script>
+									</apex:outputPanel>
+									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Apex'}">
+										<c:ApexComponent isEdit="false"/>
+										<script type="text/javascript">
+											
+											datasetup.setPreviousData = function(){
+												console.info('Setting previosly selected data for Apex');
+												var apexVal = dw.u.getSavedData('{!JSENCODE(Deployment_Task__c.id)}', 'Apex', true);
+												if(apexVal)
+												$copado('.js-apex').text(apexVal);
+											}
+										</script>
+									</apex:outputPanel>
+									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Data'}">
+										<c:DataComponent isEdit="false" prequery="" orgId="{!ustry.copado__Org_Credential__c}" stepType="Data"/>
+										<script type="text/javascript">										
+											
+											datasetup.setPreviousData = function(data){
+												if(data){
+													console.info('Setting previosly selected data for Data');
+													dw.qb.preQuery = JSON.parse(data);
+													$copado('[id$=objectsView]').text(dw.qb.preQuery.o);
+													$copado('[id$=fieldsExView]').text(dw.qb.preQuery.f);
+													$copado('[id$=queryView]').text(dw.qb.preQuery.q);
 												}
-											</script>
-										</apex:outputPanel>
-										<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Apex'}">
-											<c:ApexComponent isEdit="false"/>
-											<script type="text/javascript">
-
-												datasetup.setPreviousData = function(){
-													console.info('Setting previosly selected data for Apex');
-													var apexVal = dw.u.getSavedData('{!JSENCODE(Deployment_Task__c.id)}', 'Apex', true);
-													if(apexVal)
-													$copado('.js-apex').text(apexVal);
+												init();
+											}
+										</script>
+									</apex:outputPanel>
+									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Bulk Data'}">
+										<c:DataComponent isEdit="false" prequery="" orgId="{!ustry.copado__Org_Credential__c}" stepType="Data"/>
+										<script type="text/javascript">
+											
+											datasetup.setPreviousData = function(data){
+												if(data){
+													console.info('Setting previosly selected data for Bulk Data');
+													dw.qb.preQuery = JSON.parse(data);
+													$copado('[id$=objectsView]').text(dw.qb.preQuery.o);
+													$copado('[id$=fieldsExView]').text(dw.qb.preQuery.f);
+													$copado('[id$=queryView]').text(dw.qb.preQuery.q);
 												}
-											</script>
-										</apex:outputPanel>
-										<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Data'}">
-											<c:DataComponent isEdit="false" prequery="" orgId="{!ustry.copado__Org_Credential__c}" stepType="Data"/>
-											<script type="text/javascript">
+												init();
+											}
+										</script>
+									</apex:outputPanel>
+									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Custom Settings'}">
+										<c:CustomSettingComponent isEdit="false"/>
+										<script type="text/javascript">
+											datasetup.setPreviousData = function(data){
+												console.info('Setting previosly selected data for Custom Settings', customSetting);
 
-												datasetup.setPreviousData = function(data){
-													if(data){
-														console.info('Setting previosly selected data for Data');
-														dw.qb.preQuery = JSON.parse(data);
-														$copado('[id$=objectsView]').text(dw.qb.preQuery.o);
-														$copado('[id$=fieldsExView]').text(dw.qb.preQuery.f);
-														$copado('[id$=queryView]').text(dw.qb.preQuery.q);
-													}
-													init();
-												}
-											</script>
-										</apex:outputPanel>
-										<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Bulk Data'}">
-											<c:DataComponent isEdit="false" prequery="" orgId="{!ustry.copado__Org_Credential__c}" stepType="Data"/>
-											<script type="text/javascript">
+												var data = dw.u.getSavedData('{!JSENCODE(Deployment_Task__c.id)}', 'Custom Settings', true);
+										        console.log('rebuild CS selector', data);
+												data = JSON.parse(data||'{ }');
+										        if(!data) return;
 
-												datasetup.setPreviousData = function(data){
-													if(data){
-														console.info('Setting previosly selected data for Bulk Data');
-														dw.qb.preQuery = JSON.parse(data);
-														$copado('[id$=objectsView]').text(dw.qb.preQuery.o);
-														$copado('[id$=fieldsExView]').text(dw.qb.preQuery.f);
-														$copado('[id$=queryView]').text(dw.qb.preQuery.q);
-													}
-													init();
-												}
-											</script>
-										</apex:outputPanel>
-										<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Custom Settings'}">
-											<c:CustomSettingComponent isEdit="false"/>
-											<script type="text/javascript">
-												datasetup.setPreviousData = function(data){
-													console.info('Setting previosly selected data for Custom Settings', customSetting);
+										        $copado('.cs-fromSuffix').text(data ? data.fromSuffix : '');
+										        $copado('.cs-toSuffix').text(data ? data.toSuffix : '');
 
-													var data = dw.u.getSavedData('{!JSENCODE(Deployment_Task__c.id)}', 'Custom Settings', true);
-													console.log('rebuild CS selector', data);
-													data = JSON.parse(data||'{ }');
-													if(!data) return;
+									            customSetting.data.settings = data.settings;
+									            $copado('[Id$=objectsCJView]').text(data.sco);
+									            customSetting.data.values = data.prevRes;
+									            var res = customSetting.data.values||[];
+									            var len = res.length, options = '';
+										        customSetting.selectedType = len ? res[0].type : false;
 
-													$copado('.cs-fromSuffix').text(data ? data.fromSuffix : '');
-													$copado('.cs-toSuffix').text(data ? data.toSuffix : '');
+										        var typeField = customSetting.selectedType == 'Hierarchy' ? 'SetupOwnerId' : 'Name';
 
-													customSetting.data.settings = data.settings;
-													$copado('[Id$=objectsCJView]').text(data.sco);
-													customSetting.data.values = data.prevRes;
-													var res = customSetting.data.values||[];
-													var len = res.length, options = '';
-													customSetting.selectedType = len ? res[0].type : false;
-
-													var typeField = customSetting.selectedType == 'Hierarchy' ? 'SetupOwnerId' : 'Name';
-
-													for (var i = 0; len > i; i++) {
-														var item = res[i];
-														options += '<option value="' + item[typeField] + '">' + item.Name + '</option>';
-													}
+										        for (var i = 0; len > i; i++) {
+										            var item = res[i];
+										            options += '<option value="' + item[typeField] + '">' + item.Name + '</option>';
+										        }
 
 
-													$copado('#cs-valuesView').html(options);
+										        $copado('#cs-valuesView').html(options);
 
-													var len = data.settings.length,
-														$obj = $copado('#cs-valuesView');
+									            var len = data.settings.length,
+									                $obj = $copado('#cs-valuesView');
 
-													while (len--) {
-														$obj.find('option[value="' + data.settings[len] + '"]').attr('selected', 'selected');
-													}
-												}
-
-
-											</script>
-										</apex:outputPanel>
-										<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Delete MetaData'}">
-											<c:DeleteMetadataComponent orgId="{!ustry.copado__Org_Credential__c}" stepType="Delete Metadata" filtered="false" isEdit="false"/>
-											<script type="text/javascript">
-												metadataTask.init(_config,false,datasetup.isScalable);
-												datasetup.setPreviousData = function(){
-													console.info('Setting previously selected data for Delete Metadata');
-												}
-											</script>
-										</apex:outputPanel>
-									</div>
-								</apex:outputPanel>
-							</div>
+									            while (len--) {
+									                $obj.find('option[value="' + data.settings[len] + '"]').attr('selected', 'selected');
+									            }
+	                                        }
+										        
+											
+										</script>
+									</apex:outputPanel>
+									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Delete MetaData'}">
+										<c:DeleteMetadataComponent orgId="{!ustry.copado__Org_Credential__c}" stepType="Delete Metadata" filtered="false" isEdit="false"/>
+										<script type="text/javascript">
+											metadataTask.init(_config,false,datasetup.isScalable);
+											datasetup.setPreviousData = function(){
+												console.info('Setting previosly selected data for Delete Metadata');
+											}
+										</script>
+									</apex:outputPanel>
+								</div>
+							</apex:outputPanel>
 						</div>
 					</div>
-				</apex:form>
-
-				<apex:outputPanel id="attachmentsPanel" layout="block" styleClass="copado-lightning-container" style="margin:12px 0 12px 0;border-collapse: collapse; background: #fdfdfd;border-radius: 4px;">
-					<apex:relatedList list="CombinedAttachments" />
-				</apex:outputPanel>
-			</div>
+				</div>
+	    	</apex:form>	    	
 	    </body>
 	</html>
 </apex:page>

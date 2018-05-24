@@ -3,6 +3,6 @@
     <description>Copado getting started page.</description>
     <label>Getting Started</label>
     <mobileReady>false</mobileReady>
-    <motif>Custom20: Airplane</motif>
+    <motif>Custom72: Helicopter</motif>
     <page>copado__GettingStarted</page>
 </CustomTab>

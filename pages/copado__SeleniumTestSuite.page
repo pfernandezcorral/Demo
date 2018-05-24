@@ -1,7 +1,6 @@
 <apex:page standardController="copado__Selenium_Test_Suite__c" extensions="copado.LicenseHelper" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
-      <title>Selenium Test Suite {!copado__Selenium_Test_Suite__c.Name} | Copado</title>
         <c:GAnalytics />
         <script>
             ga('send', 'pageview', {

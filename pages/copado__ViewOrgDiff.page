@@ -1,7 +1,6 @@
 <apex:page standardController="copado__OrgDiff__c" extensions="copado.OrgDiffExtension,copado.Settings,copado.EditOrgDiffExtension" title="{!$ObjectType.copado__OrgDiff__c.Label}" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
-        <title>Org Differences {!copado__OrgDiff__c.Name} | Copado</title>
         <c:GAnalytics />
         <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
         <script> var $copado = jQuery.noConflict(); </script>

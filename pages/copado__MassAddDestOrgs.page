@@ -4,7 +4,7 @@
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
     </head>
     <body>
-        <apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">
+        <apex:form id="theForm" styleClass="copado-lightning-container">
             <apex:pageMessages />
             <apex:sectionHeader title="{!$ObjectType.copado__Deployment__c.Label}" subtitle="{!$Label.copado__header_select_dest_orgs2}" description="{!$Label.copado__header_desc_select_dest_orgs}"/>
             <apex:pageBlock mode="edit">

@@ -69,7 +69,7 @@
             </apex:outputPanel>
 
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
-                <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;" html-novalidate="true">
+                <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;">
                     <apex:actionFunction id="afSalesforceSave" action="{!save}" name="doSalesforceSave"  />
                     <apex:pageBlock id="pb" mode="edit" title="">
                         <apex:pageBlockButtons >

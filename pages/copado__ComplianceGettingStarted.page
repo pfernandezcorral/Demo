@@ -2,7 +2,6 @@
     <apex:slds />
     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <head>
-         <TITLE>Compliance Hub | Copado</TITLE>
             <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" /> 
             <style>
                 .noSidebarCell {

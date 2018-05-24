@@ -1,7 +1,6 @@
 <apex:page standardController="copado__Snapshot_Difference__c" extensions="copado.snapshotDifferenceExtension,copado.Settings,copado.JsRemotingController" id="thePage" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
-        <title>Snapshot Differences {!copado__Snapshot_Difference__c.Name} | Copado</title>
         <c:GAnalytics />
         <c:WizardUtils />
         <apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.base.css')}" />
@@ -581,7 +580,7 @@
             </apex:outputPanel>
 
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
-                <apex:form ><c:ScreenLocker msg="{!$Label.copado__loading}" /></apex:form>
+                <c:ScreenLocker msg="{!$Label.copado__loading}" />
         
                 <apex:form id="theForm" rendered="{!AND(showOptions,!showError)}" styleClass="copado-lightning-container" style="padding-top:12px;">          
                     

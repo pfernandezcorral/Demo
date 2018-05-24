@@ -6,7 +6,7 @@
 		<apex:sectionHeader id="sectionHeader" title="Mass Add to Release" subtitle="{!release.Name}" />
 		<apex:pageMessages id="theMessages" />
 		
-		<apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">
+		<apex:form id="theForm" styleClass="copado-lightning-container">
 			<apex:pageBlock id="pb" mode="detail">
 				<apex:pageMessage id="msgSprintsShareProject" severity="INFO" strength="1" summary="All sprints are listed here that share the same project as this release ({!copado__Release__c.Project__r.Name})" />
 				<apex:pageBlockButtons id="pbButtons" location="bottom">

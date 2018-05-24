@@ -4,5 +4,5 @@
     <description>Start Here</description>
     <formFactors>Large</formFactors>
     <label>Force.com</label>
-    <tab>standard-Chatter</tab>
+    <tabs>standard-Chatter</tabs>
 </CustomApplication>

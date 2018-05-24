@@ -2,7 +2,6 @@
 <apex:outputPanel layout="block" rendered="{!AND(showOptions,!showError)}">
 	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height: 100%;">
 	    <head>
-	    	<title>Edit External CI Job {!External_CI_Job__c.Name} | Copado</title>
 	      <c:GAnalytics />
 	      <apex:slds />
 	      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -356,7 +355,7 @@
 							  <!-- ACTION BUTTONS -->
 								<div class="slds-col slds-no-flex slds-grid slds-align-top ">
 								  <div class="slds-button-group" role="group">
-								  	<apex:commandButton value="{!$Label.site.save}" styleClass="slds-button slds-button_success" action="{!saveJob}" reRender="generalMessage"/>
+								  	<apex:commandButton value="{!$Label.site.save}" styleClass="slds-button slds-button_success" action="{!saveJob}" immediate="true" reRender="generalMessage"/>
 								    <apex:commandButton value="{!$Label.site.cancel}" action="{!cancel}" immediate="true" styleClass="slds-button slds-button--neutral" reRender="xxx"/>
 								  </div>
 								</div>
@@ -453,7 +452,7 @@
 								</div>
 								<div class="slds-modal__content slds-p-around--medium">
 									<div class="slds-align_absolute-center"> 
-							        	<apex:commandLink value="{!$Label.copado__cache_refreshed_now}" status="status" onclick="retrieveJob(j$('input[identifier=settingLookup]').val());j$(this).hide();"  rerender="xxx" id="removeCache"/>
+							        	<apex:commandLink value="{!$Label.copado__cache_refreshed_now}" status="status" onclick="retrieveJob(j$('input[identifier=settingLookup]').val());j$(this).hide()"  rerender="xxx" id="removeCache"/>
 							        	
 
 							        	

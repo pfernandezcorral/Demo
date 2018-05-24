@@ -1,8 +1,7 @@
 <apex:page standardController="copado__Git_Repository__c" extensions="copado.EditGit" title="{!$Label.site.edit} {!$ObjectType.copado__Git_Repository__c.Label}" id="thePage" lightningStylesheets="true" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
-        <title>Edit Git Repository {!Git_Repository__c.Name} | Copado</title>
-        <c:GAnalytics />
+	    <c:GAnalytics />
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
         <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/libs/jquery.min.1.10.2.js')}" />
     </head>
@@ -57,8 +56,8 @@
             </apex:outputPanel>
 
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
-                <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;" html-novalidate="true">
-                    <apex:pageBlock id="pb_editGit"  mode="edit" helpUrl="http://docs.copa.do/git-repository" helpTitle="{!$Label.copado__help_for_this_page}" rendered="{!AND(showOptions,!showError)}" title="{!$Label.copado__details}">
+            	<apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;">
+            		<apex:pageBlock id="pb_editGit"  mode="edit" helpUrl="http://docs.copa.do/git-repository" helpTitle="{!$Label.copado__help_for_this_page}" rendered="{!AND(showOptions,!showError)}" title="{!$Label.copado__details}">
                         <apex:pageblockButtons >
                             <apex:commandButton value="{!$Label.site.save}" styleClass="btnImportant" action="{!save}" />
                             <apex:commandButton value="{!$Label.site.cancel}" action="{!cancel}" />
@@ -67,7 +66,7 @@
                         <apex:pageBlockSection id="pbsMain" columns="1">
                             <apex:inputField id="name" value="{!git.Name}" required="true"/>
                             <apex:pageBlockSectionItem id="pbsi_authType">
-                                <apex:outputLabel >Authentication Type</apex:outputLabel>
+                            	<apex:outputLabel >Authentication Type</apex:outputLabel>
                                 <apex:selectList id="authType" size="1" multiselect="false" onchange="showHideHttps()">
                                     <apex:selectOption itemValue="ssh" itemLabel="SSH"/>
                                     <apex:selectOption itemValue="https" itemLabel="Https"/>
@@ -93,23 +92,23 @@
                             <apex:repeat value="{!$ObjectType.copado__Git_Repository__c.FieldSets.copado__CustomFields}" var="f">
                                 <apex:inputField value="{!git[f]}" required="{!OR(f.required, f.dbrequired)}" style="width:100%;"/>
                             </apex:repeat>
-                        </apex:pageBlockSection>
+                    	</apex:pageBlockSection>
                     </apex:pageBlock>
-                </apex:form>
+            	</apex:form>
                 <script language="javascript" type="text/javascript">
-                    var authType = document.getElementById('{!$Component.thePage.theForm.pb_editGit.pbsMain.pbsi_authType.authType}');
+                	var authType = document.getElementById('{!$Component.thePage.theForm.pb_editGit.pbsMain.pbsi_authType.authType}');
                     var uri = document.getElementById('{!$Component.thePage.theForm.pb_editGit.pbsMain.uri}').value;
                     var unField = document.getElementById('{!$Component.thePage.theForm.pb_editGit.pbsMain.pbi_username.username}');
                     var pwField = document.getElementById('{!$Component.thePage.theForm.pb_editGit.pbsMain.pbi_password.password}');
-                    
+                	
                     if (typeof String.prototype.startsWith != 'function') {
                         String.prototype.startsWith = function (str){
                             return this.slice(0, str.length) == str;
                         };
                     }
                 
-                    authType.value = (uri.startsWith('http'))?'https':'ssh';
-                    
+                	authType.value = (uri.startsWith('http'))?'https':'ssh';
+                	
                     function showHideHttps(){
                         unField.style.display = (authType.value=='ssh'||authType.value=='')?'None':'Inline';
                         pwField.style.display = (authType.value=='ssh'||authType.value=='')?'None':'Inline';
@@ -146,7 +145,7 @@
                     </apex:repeat>
                 </apex:outputPanel>
 
-                <c:CheckFeaturesComponent />
+            	<c:CheckFeaturesComponent />
             </apex:outputPanel>
         </div>
     </body>

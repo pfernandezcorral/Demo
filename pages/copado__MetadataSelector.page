@@ -41,7 +41,7 @@
             };
         </script>
     </head>
-    <apex:form ><c:ScreenLocker msg="{!$Label.copado__loading}" /></apex:form>
+    <c:ScreenLocker msg="{!$Label.copado__loading}" />
     <apex:sectionHeader rendered="{!mode=='ApexTests'}" id="sectionHeaderApex" title="{!$Label.copado__copado_change_management}" subtitle="Apex Test Class selector" />
     <apex:sectionHeader rendered="{!mode=='MetaData'}" id="sectionHeaderAll" title="{!$Label.copado__copado_change_management}" subtitle="Metadata selector" />
     

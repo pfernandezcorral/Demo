@@ -28,6 +28,7 @@
         console.assert(backDeploy.uiData.fromBranch, 'backDeploy.uiData.fromBranch' );
 
         prepareOverlay(backDeploy.uiData.fromEnvId, backDeploy.uiData.toEnvId, backDeploy.uiData.envId, backDeploy.uiData.type, backDeploy.uiData.stepId, backDeploy.uiData.flowId, backDeploy.uiData.stepResult);
+
         return false;
     };
 
@@ -203,7 +204,7 @@
                 $copado('input[name$=selectAll]').prop('checked',true);
                 selectAllRebaseUserStoryBoxes(true);                 
                 item.attr('data-isSelected',false);
-                item.text('{!JSENCODE($Label.Unselect_All_User_Stories)}');
+                item.text('Unselect All User Stories');
                 item.removeClass('slds-button_neutral').addClass('slds-button_brand');
             }
             item.prepend(SVG.append(SVGUse));
@@ -214,7 +215,7 @@
                 $copado('input[name$=selectAll]').prop('checked',false);
                 selectAllRebaseUserStoryBoxes(false);  
                 item.attr('data-isSelected',true);
-                item.text('{!JSENCODE($Label.Select_All_User_Stories)}');
+                item.text('Select All User Stories');
                 item.addClass('slds-button_neutral').removeClass('slds-button_brand');
             }
             item.prepend(SVG.append(SVGUse));
@@ -237,7 +238,7 @@
             if(isClicked){
                 selectAllRebaseEnvironmentBoxes(true);
                 item.attr('data-isSelected',false);
-                item.text('{!JSENCODE($Label.Unselect_All_Environments)}');
+                item.text('Unselect All Environments');
                 item.removeClass('slds-button_neutral').addClass('slds-button_brand');
             }
             item.prepend(SVG.append(SVGUse));
@@ -248,7 +249,7 @@
             if(isClicked){
                 selectAllRebaseEnvironmentBoxes(false);
                 item.attr('data-isSelected',true);
-                item.text('{!JSENCODE($Label.Select_All_Environments)}');
+                item.text('Select All Environments');
                 item.addClass('slds-button_neutral').removeClass('slds-button_brand');
             }
             item.prepend(SVG.append(SVGUse));
@@ -276,7 +277,7 @@
                 toggleRebaseAlgorithm(true);
             }
             item.attr('data-isSelected',false);
-            item.text('{!JSENCODE($Label.Disable_Auto_Selection_Overwrite)}');
+            item.text('Disable Auto Selection Overwrite');
             item.removeClass('slds-button_destructive').addClass('slds-button_success');            
             item.prepend(SVG.append(SVGUse));
             item.html(item.html());
@@ -287,7 +288,7 @@
                 toggleRebaseAlgorithm(false);
             }
             item.attr('data-isSelected',true);
-            item.text('{!JSENCODE($Label.Enable_Auto_Selection_Overwrite)}')
+            item.text('Enable Auto Selection Overwrite')
             item.removeClass('slds-button_success').addClass('slds-button_destructive');            
             item.prepend(SVG.append(SVGUse));
             item.html(item.html());
@@ -596,9 +597,11 @@
             paging:false
         });
     }
+
     function clearSearchFilter(){
         $copado('.dataTables_filter').find('input[type="search"]').val('').keyup();
     }
+
 </script>
 
 <apex:form >
@@ -700,22 +703,20 @@
                                     </span>
                                     </apex:commandLink>
                                 </li>
-                                <apex:outputPanel layout="none" rendered="{!hideCommitTab}">
-                                    <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showCommits, 'background-color: rgb(244,246,249)','')}" >
-                                        <apex:commandLink style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showCommits}" oncomplete="renderSVGFlow();bindSelectAll();unlock();" onclick="lock();" reRender="fieldSets,pins,GeneralActionButtons">
-                                            <span class="slds-truncate">
-                                            <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType == 'merge'}">
-                                                {!$Label.copado__commits_ahead} (<span id="commAhead">0</span>)
-                                            </apex:outputPanel>
-                                            <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType != 'merge'}">
-                                                {!$Label.copado__commits_behind} (<span id="commBehind">0</span>)
-                                            </apex:outputPanel>
-                                        </span>
-                                        </apex:commandLink>
-                                        <apex:inputHidden value="{!commAhead}" id="commitAheadNum"/>
-                                        <apex:inputHidden value="{!commBehind}" id="commitBehindNum"/>
-                                    </li>
-                                </apex:outputPanel>
+                                <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showCommits, 'background-color: rgb(244,246,249)','')}">
+                                    <apex:commandLink style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showCommits}" oncomplete="renderSVGFlow();bindSelectAll();unlock();" onclick="lock();" reRender="fieldSets,pins,GeneralActionButtons">
+                                        <span class="slds-truncate">
+                                        <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType == 'merge'}">
+                                            {!$Label.copado__commits_ahead} (<span id="commAhead">0</span>)
+                                        </apex:outputPanel>
+                                        <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType != 'merge'}">
+                                            {!$Label.copado__commits_behind} (<span id="commBehind">0</span>)
+                                        </apex:outputPanel>
+                                    </span>
+                                    </apex:commandLink>
+                                    <apex:inputHidden value="{!commAhead}" id="commitAheadNum"/>
+                                    <apex:inputHidden value="{!commBehind}" id="commitBehindNum"/>
+                                </li>
                                 <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(AND(errorSize != null,errorSize > 0),'font-weight: bolder;','')};{!IF(showErrors, 'background-color: rgb(244,246,249)','')}">
                                     <apex:commandLink style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showErrors}" onclick="lock();" oncomplete="unlock();" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
@@ -726,7 +727,7 @@
                                 <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showFileDifferences, 'background-color: rgb(244,246,249)','')}">
                                     <apex:commandLink onclick="lock();" oncomplete="unlock();" style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showFileDifferences}" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                            {!$Label.copado__file_differences} (<span id="filediff">0</span>)
+                                        {!$Label.copado__file_differences} (<span id="filediff">0</span>)
                                     </span>
                                     </apex:commandLink>
                                 </li>
@@ -739,8 +740,8 @@
                                 </li>
                                 <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showMergeDifferences, 'background-color: rgb(244,246,249)','')}">
                                     <apex:commandLink onclick="lock();" oncomplete="unlock();" style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showMergeDifferences}" reRender="fieldSets,pins,GeneralActionButtons">
-                                        <span  class="slds-truncate">
-                                            {!$Label.MERGED_FILES} (<span id="mergeddiffsize">0</span>)
+                                        <span class="slds-truncate">
+                                            {!$Label.copado__merged_files} (<span id="mergeddiffsize">0</span>)
                                     </span>
                                     </apex:commandLink>
                                 </li>
@@ -829,7 +830,6 @@
                                                     <td role="gridcell" class="">
                                                         <div class="slds-truncate" title="{!us.userStory[f]}">
                                                             <apex:outputField value="{!us.userStory[f.fieldpath]}"/>
-                                                           <!--<c:LightningReadyOutputFields SObject="{!us.userStory}" Field="{!f}" showLabel="false" dividerBottom="false" customClass="usFields" isViewLink="{!f=='Name'}" htmlTarget="_blank"/>-->
                                                         </div>
                                                     </td>
                                                 </apex:repeat>
@@ -841,7 +841,6 @@
                                     var _config = {};
                                     backDeploy.initFileDifferences(_config,renderTable());
                                 </script>
-
                             </fieldset>
                             <!-- END OF USER STORIES FIELDSET -->
                         </apex:outputPanel>
@@ -850,7 +849,7 @@
                             <apex:outputPanel rendered="{!and(!isnull(latestOverlay.commitsAhead), !isnull(latestOverlay.commitsBehind), or(latestOverlay.pathType=='merge'&&latestOverlay.commitsAhead>0, latestOverlay.pathType=='pull'&&latestOverlay.commitsBehind>0))}">
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
-                                <h2 style="text-align: center">{!IF(errorSize>0,'There are deployment errors, so you cannot sync','The commits are ready to sync')}</h2>
+                                <h2 style="text-align: center">{!IF(errorSize > 0,'There are deployment errors, so you cannot sync','The commits are ready to sync')}</h2>
                             </apex:outputPanel>
                             <script>
                                 var _config = {};

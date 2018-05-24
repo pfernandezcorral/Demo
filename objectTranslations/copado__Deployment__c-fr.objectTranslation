@@ -8,6 +8,14 @@
         <plural>true</plural>
         <value><!-- Deployment --></value>
     </caseValues>
+    <fields>
+        <label><!-- test nullpoint --></label>
+        <name>test_nullpoint__c</name>
+    </fields>
+    <fields>
+        <label><!-- training --></label>
+        <name>training__c</name>
+    </fields>
     <gender><!-- Masculine --></gender>
     <nameFieldLabel><!-- Deployment Name --></nameFieldLabel>
     <startsWith><!-- Consonant --></startsWith>
