@@ -4,18 +4,23 @@
     <formFactors>Large</formFactors>
     <label>Copado Change Management</label>
     <logo>copado__Copado/copado__Copado_Logo.png</logo>
-    <tab>copado__Project__c</tab>
-    <tab>copado__User_Story__c</tab>
-    <tab>copado__Sprint__c</tab>
-    <tab>copado__Kanban_Board__c</tab>
-    <tab>copado__Epic__c</tab>
-    <tab>copado__Test_Script__c</tab>
-    <tab>copado__Test_Run__c</tab>
-    <tab>copado__Deployment_Flow__c</tab>
-    <tab>copado__Promotion__c</tab>
-    <tab>copado__Environment__c</tab>
-    <tab>copado__Scheduled_Job__c</tab>
-    <tab>copado__External_CI_Setting__c</tab>
-    <tab>copado__External_CI_Job__c</tab>
-    <tab>copado__Work_Manager</tab>
+    <tabs>copado__Project__c</tabs>
+    <tabs>copado__User_Story__c</tabs>
+    <tabs>copado__Work_Manager</tabs>
+    <tabs>copado__Sprint__c</tabs>
+    <tabs>copado__Epic__c</tabs>
+    <tabs>copado__Theme__c</tabs>
+    <tabs>copado__Test_Script__c</tabs>
+    <tabs>copado__Test_Run__c</tabs>
+    <tabs>copado__Release__c</tabs>
+    <tabs>copado__Deployment_Flow__c</tabs>
+    <tabs>copado__Promotion__c</tabs>
+    <tabs>copado__Environment__c</tabs>
+    <tabs>copado__Scheduled_Job__c</tabs>
+    <tabs>copado__External_CI_Setting__c</tabs>
+    <tabs>copado__External_CI_Job__c</tabs>
+    <tabs>copado__Team__c</tabs>
+    <tabs>copado__User_Story_Metadata__c</tabs>
+    <tabs>copado__Kanban_Board__c</tabs>
+    <tabs>copado__Copado_DX_Panel</tabs>
 </CustomApplication>

@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customButtons>copado__Find_Replace_Rule_Editor</customButtons>
     <excludeButtons>Submit</excludeButtons>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>false</detailHeading>
+        <editHeading>false</editHeading>
+        <label>Page Messages</label>
+        <layoutColumns>
+            <layoutItems>
+                <height>40</height>
+                <page>copado__PageMessagesEnvironment</page>
+                <showLabel>false</showLabel>
+                <showScrollbars>false</showScrollbars>
+                <width>100%</width>
+            </layoutItems>
+        </layoutColumns>
+        <style>OneColumn</style>
+    </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -21,19 +38,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>copado__Minimum_Apex_Test_Coverage__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Current_Code_Coverage__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>copado__Run_all_tests__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__Namespace__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Index_Back_Promotion_metadata__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -42,16 +55,20 @@
                 <field>OwnerId</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Compliance_Rule_Group__c</field>
+                <behavior>Readonly</behavior>
+                <field>copado__Current_SCA_Score__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>copado__Compliance_Status__c</field>
+                <field>copado__Maximum_SCA_Score__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>copado__Compliance_Scan_Events__c</field>
+                <field>copado__Minimum_Apex_Test_Coverage__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Current_Code_Coverage__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -77,6 +94,33 @@
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Compliance</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Compliance_Rule_Group__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Compliance_Scan_Events__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>copado__Compliance_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>copado__Last_Compliance_Scan_Date__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
         <label>Custom Links</label>
@@ -91,6 +135,9 @@
         <fields>copado__Org_ID__c</fields>
     </miniLayout>
     <relatedLists>
+        <relatedList>RelatedNoteList</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <fields>copado__Org_Type__c</fields>
         <fields>copado__Username__c</fields>
@@ -99,12 +146,7 @@
         <relatedList>copado__Org__c.copado__Environment__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <fields>copado__User__c</fields>
-        <fields>copado__Allow_Deployments__c</fields>
-        <relatedList>copado__Branch_Management_Permission__c.copado__Environment__c</relatedList>
-    </relatedLists>
-    <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>copado__Scan_Start__c</fields>
         <fields>copado__Scan_End__c</fields>
@@ -113,6 +155,12 @@
         <fields>copado__Highest_Severity__c</fields>
         <fields>copado__Highest_Rule_Action__c</fields>
         <relatedList>copado__Compliance_Scan_Result__c.copado__Environment__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>copado__User__c</fields>
+        <fields>copado__Allow_Deployments__c</fields>
+        <relatedList>copado__Branch_Management_Permission__c.copado__Environment__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -212,7 +260,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0O00000hvK05</masterLabel>
+        <masterLabel>00h0Y0000012Ie5</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
