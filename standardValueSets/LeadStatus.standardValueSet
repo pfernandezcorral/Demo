@@ -25,4 +25,16 @@
         <label>Closed - Not Converted</label>
         <converted>false</converted>
     </standardValue>
+    <standardValue>
+        <fullName>test1</fullName>
+        <default>false</default>
+        <label>test1</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>test2</fullName>
+        <default>false</default>
+        <label>test2</label>
+        <converted>false</converted>
+    </standardValue>
 </StandardValueSet>

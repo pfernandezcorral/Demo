@@ -664,6 +664,8 @@
     <name>Layout</name>
   </types>
   <types>
+    <members>Davidfolder</members>
+    <members>Davidfolder/Davidreport</members>
     <members>unfiled$public</members>
     <members>unfiled$public/Account</members>
     <members>unfiled$public/Test_report</members>
@@ -1364,6 +1366,7 @@
     <name>UserCriteria</name>
   </types>
   <types>
+    <members>Listsendemail</members>
     <members>Permissions</members>
     <members>Test_permission_set</members>
     <members>rider_history</members>
