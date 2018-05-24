@@ -1030,6 +1030,7 @@
   </types>
   <types>
     <members>AccountOperations</members>
+    <members>AccountOperations2</members>
     <members>AccountOperationsTest</members>
     <members>ChangePasswordController</members>
     <members>ChangePasswordControllerTest</members>
