@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customButtons>copado__Static_Code_Analysis_Summary</customButtons>
+    <customButtons>copado__Copado_DX</customButtons>
+    <customButtons>copado__Create_Scratch_Org</customButtons>
     <customButtons>copado__Run_Static_Code_Analysis</customButtons>
+    <customButtons>copado__Run_Compliance_Scan</customButtons>
     <customButtons>copado__Manage_Selenium_Tests</customButtons>
     <customButtons>copado__Add_Metadata</customButtons>
-    <customButtons>copado__Add_Commits</customButtons>
     <customButtons>copado__Commit_Files</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -27,7 +28,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>copado__Team__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>copado__Epic__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Theme__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -50,12 +59,12 @@
                 <field>copado__Org_Credential__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>copado__View_in_Git__c</field>
+                <behavior>Edit</behavior>
+                <field>copado__Backlog_Rank__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Has_apex_code_checked__c</field>
+                <field>RecordTypeId</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -85,11 +94,31 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>copado__Progress__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>copado__Progress_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>copado__Stop_Indexing_Metadata__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__Exclude_From_CBM__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>copado__View_in_Git__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Base_Branch__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Git_Merge_Status__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -115,6 +144,31 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__userStory_reason__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>OneColumn</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Definition of Done</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Documentation_Complete__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Pull_Requests_Approved__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Manual_Tests_Passed__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Apex_Tests_Passed__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -162,18 +216,14 @@
         <label>Compliance</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Compliance__c</field>
+                <behavior>Readonly</behavior>
+                <field>copado__Compliance_Status__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Legal__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Data_Privacy__c</field>
+                <behavior>Readonly</behavior>
+                <field>copado__Last_Compliance_Scan_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -197,6 +247,29 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__Test_Script_Owner__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Latest Deployment Validation Results</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Last_Validation_Promotion__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Last_Validation_Deployment__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>copado__Last_Validation_Deployment_Status__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -235,26 +308,26 @@
                 <field>copado__Minimum_Apex_Code_Coverage__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>copado__Apex_Code_Coverage__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>copado__Failing_Methods__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Classes_Without_Coverage__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Triggers_Without_Coverage__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__Has_Apex_Code__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>copado__Classes_Without_Coverage__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>copado__Triggers_Without_Coverage__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -263,41 +336,24 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Compliance Status</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Compliance_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Last_Validation_Deployment__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Compliance_Criteria__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>false</editHeading>
         <label>User Story selections</label>
         <layoutColumns>
             <layoutItems>
-                <height>455</height>
-                <page>copado__UserStorySelectedMetadata</page>
+                <behavior>Edit</behavior>
+                <field>copado__Metadata_Types_in_Selection__c</field>
+            </layoutItems>
+            <layoutItems>
+                <page>copado__AddTestClasses</page>
                 <showLabel>false</showLabel>
                 <showScrollbars>false</showScrollbars>
                 <width>100%</width>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Metadata_Types_in_Selection__c</field>
+                <height>500</height>
+                <page>copado__UserStorySelectedMetadata</page>
+                <showLabel>false</showLabel>
+                <showScrollbars>false</showScrollbars>
+                <width>100%</width>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -314,19 +370,6 @@
                 <showLabel>false</showLabel>
                 <showScrollbars>false</showScrollbars>
                 <width>100%</width>
-            </layoutItems>
-        </layoutColumns>
-        <style>OneColumn</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>QR code</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>copado__QR_Code__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -390,14 +433,11 @@
         <fields>copado__Sprint__c</fields>
     </miniLayout>
     <relatedLists>
-        <relatedList>RelatedNoteList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>CREATED_DATE</fields>
-        <fields>copado__Score__c</fields>
-        <fields>copado__Rules_Violated__c</fields>
+        <fields>copado__Score_v11__c</fields>
+        <fields>copado__Number_of_Violations__c</fields>
         <relatedList>copado__Static_Code_Analysis_Result__c.copado__User_Story__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -408,17 +448,6 @@
         <fields>copado__Selenium_Test_Group__c.copado__Status__c</fields>
         <fields>copado__Selenium_Test_Group__c.copado__Status_Icon__c</fields>
         <relatedList>copado__User_Story_Selenium_Test__c.copado__User_Story__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>copado__Scan_Start__c</fields>
-        <fields>copado__Scan_End__c</fields>
-        <fields>copado__Status__c</fields>
-        <fields>copado__Findings__c</fields>
-        <fields>copado__Environment__c</fields>
-        <fields>copado__Highest_Severity__c</fields>
-        <fields>copado__Highest_Rule_Action__c</fields>
-        <relatedList>copado__Compliance_Scan_Result__c.copado__User_Story__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -475,34 +504,16 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>copado__Perform_Manual_Task__c</fields>
         <fields>copado__Order__c</fields>
-        <fields>copado__Status__c</fields>
         <fields>copado__Type__c</fields>
+        <fields>copado__Status__c</fields>
         <relatedList>copado__Deployment_Task__c.copado__User_Story__c</relatedList>
         <sortField>copado__Order__c</sortField>
-        <sortOrder>Desc</sortOrder>
+        <sortOrder>Asc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>copado__Deliverable__c</fields>
-        <fields>copado__Dependency_Status__c</fields>
-        <fields>copado__Dependent_Team__c</fields>
-        <fields>copado__Provider_Team__c</fields>
-        <fields>copado__Provider_User_Story__c</fields>
-        <relatedList>copado__Team_Dependency__c.copado__Dependent_User_Story__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>copado__Deliverable__c</fields>
-        <fields>copado__Dependency_Status__c</fields>
-        <fields>copado__Dependent_Team__c</fields>
-        <fields>copado__Provider_Team__c</fields>
-        <fields>copado__Dependent_User_Story__c</fields>
-        <relatedList>copado__Team_Dependency__c.copado__Provider_User_Story__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
+        <fields>copado__Git_Org_Commit__c.NAME</fields>
         <fields>copado__Git_Org_Commit__c.copado__Commit_Date__c</fields>
         <fields>copado__Git_Org_Commit__c.copado__Commit_Message__c</fields>
         <fields>copado__Git_Org_Commit__c.copado__Status__c</fields>
@@ -515,6 +526,7 @@
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>copado__Status__c</fields>
+        <fields>copado__Status_Icon__c</fields>
         <fields>copado__Metadata_API_Name__c</fields>
         <relatedList>copado__User_Story_Metadata__c.copado__User_Story__c</relatedList>
     </relatedLists>
@@ -554,13 +566,47 @@
         <sortField>CREATED_DATE</sortField>
         <sortOrder>Desc</sortOrder>
     </relatedLists>
+    <relatedLists>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>copado__Environment__c</fields>
+        <fields>CREATED_DATE</fields>
+        <fields>copado__Status__c</fields>
+        <fields>copado__Findings__c</fields>
+        <fields>copado__Highest_Severity__c</fields>
+        <fields>copado__Highest_Rule_Action__c</fields>
+        <relatedList>copado__Compliance_Scan_Result__c.copado__User_Story__c</relatedList>
+        <sortField>CREATED_DATE</sortField>
+        <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>copado__Deliverable__c</fields>
+        <fields>copado__Dependency_Status__c</fields>
+        <fields>copado__Dependent_Team__c</fields>
+        <fields>copado__Provider_Team__c</fields>
+        <fields>copado__Provider_User_Story__c</fields>
+        <relatedList>copado__Team_Dependency__c.copado__Dependent_User_Story__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>copado__Deliverable__c</fields>
+        <fields>copado__Dependency_Status__c</fields>
+        <fields>copado__Dependent_Team__c</fields>
+        <fields>copado__Provider_Team__c</fields>
+        <fields>copado__Dependent_User_Story__c</fields>
+        <relatedList>copado__Team_Dependency__c.copado__Provider_User_Story__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedNoteList</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0O00000hvK0t</masterLabel>
+        <masterLabel>00h0Y000000UiJj</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

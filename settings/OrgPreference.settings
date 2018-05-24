@@ -54,7 +54,7 @@
     </preferences>
     <preferences>
         <settingName>RedirectionWarning</settingName>
-        <settingValue>false</settingValue>
+        <settingValue>true</settingValue>
     </preferences>
     <preferences>
         <settingName>PathAssistantsEnabled</settingName>
