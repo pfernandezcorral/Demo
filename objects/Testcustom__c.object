@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -36,25 +40,36 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>ActualTravelTime</fullName>
+        <fullName>Testcustom__c</fullName>
+        <externalId>false</externalId>
+        <label>Testcustom</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
-    <fields>
-        <fullName>EstimatedTravelTime</fullName>
-    </fields>
-    <fields>
-        <fullName>ServiceAppointmentId</fullName>
-        <type>MasterDetail</type>
-    </fields>
-    <fields>
-        <fullName>ServiceCrewId</fullName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ServiceResourceId</fullName>
-        <type>Lookup</type>
-    </fields>
-    <sharingModel>ControlledByParent</sharingModel>
+    <gender>Feminine</gender>
+    <label>Testcustom</label>
+    <nameField>
+        <label>Testcustom Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Testcustoms</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>
