@@ -1,3 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Translations xmlns="http://soap.sforce.com/2006/04/metadata"/>
-
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label><!-- US-0002559 --></label>
+        <name>US_0002559</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- home --></label>
+        <name>home</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- test2 --></label>
+        <name>test2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- testcustomlabel --></label>
+        <name>testcustomlabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- testcustomlabel2 --></label>
+        <name>testcustomlabel2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- traductionthai --></label>
+        <name>traductionthai</name>
+    </customLabels>
+    <quickActions>
+        <label><!-- LogACall --></label>
+        <name>LogACall</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewAccount --></label>
+        <name>NewAccount</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewCase --></label>
+        <name>NewCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewContact --></label>
+        <name>NewContact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewEvent --></label>
+        <name>NewEvent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewGroup --></label>
+        <name>NewGroup</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewLead --></label>
+        <name>NewLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewNote --></label>
+        <name>NewNote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewOpportunity --></label>
+        <name>NewOpportunity</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewTask --></label>
+        <name>NewTask</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Snapins_Case_QuickAction_08h1I000000PCQu --></label>
+        <name>Snapins_Case_QuickAction_08h1I000000PCQu</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Snapins_Contact_QuickAction_08h1I000000PCQu --></label>
+        <name>Snapins_Contact_QuickAction_08h1I000000PCQu</name>
+    </quickActions>
+</Translations>
