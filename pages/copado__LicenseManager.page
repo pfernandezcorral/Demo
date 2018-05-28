@@ -15,13 +15,10 @@
 			setTimeout(function(){$copado('.fixedMsg').fadeOut('slow');},10000);
 		</script>
 
+		<c:ScreenLocker id="screenLocker" msg="{!$Label.copado__loading}" />
 	</head>
 
 	<body>
-        <apex:form >
-        <c:ScreenLocker id="screenLocker" msg="{!$Label.copado__loading}" />
-        </apex:form>
-
 		<div class="copado-lightning-VF">
             <apex:sectionHeader title="Copado" subtitle="{!$Label.copado__license_manager}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
             <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
@@ -92,9 +89,15 @@
 					<apex:outputPanel layout="block" styleClass="fixedMsg" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}">
 			    		<apex:pageMessages id="theMessages" />
 					</apex:outputPanel>
+					<apex:pageBlock id="pbInit" rendered="{!initRun==false}">
+						<apex:pageBlockButtons location="bottom">
+							<apex:commandButton id="btnGetLicenseInfo" value="{!$Label.copado__get_license_information}" action="{!init}" status="status" reRender="pageMessage,theForm" />
+						</apex:pageBlockButtons>
+						{!$Label.copado__license_manager_introduction}
+					</apex:pageBlock>
 
 					<apex:outputPanel rendered="{!enableMultiLicenses}">
-						<apex:pageBlock id="pbMain" mode="edit">
+						<apex:pageBlock id="pbMain" mode="edit" rendered="{!initRun}">
 							<apex:pageBlockSection columns="1">
 								<apex:pageBlockSectionItem >
 									<apex:outputLabel value="{!$Label.copado__copado_licenses_used}" />
@@ -116,10 +119,6 @@
 								<apex:outputLabel value="{!$Label.copado__cch_licenses_used}" />
 								<apex:outputText id="txtCCHlicenses" value="{!CCHLicensesUsed}/{!CCHLicensesAvailable}" />
 							</apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="{!$Label.copado__branch_licenses}" />
-                                <apex:outputText id="txtCBMlicenses" value="{!CBMLicensesUsed}/{!cbmBranchesAvailable}" />
-                            </apex:pageBlockSectionItem>
 							</apex:pageBlockSection>
 
 							<apex:pageBlockSection columns="1" title="{!$Label.copado__add_update_user}" collapsible="false">
@@ -130,9 +129,7 @@
 			                    		<apex:selectList title="User License Type" label="User" size="1" multiselect="false" onchange="changeLookUpType(this.value);" >
 			            					<apex:selectOptions value="{!licenseTypes}"/> 
 			        					</apex:selectList>
-			        					<apex:inputField value="{!dummyUser.ManagerId}" id="userInput">
-											<apex:actionSupport event="onchange" action="{!retrieveCopadoLicenses}" reRender="pageMessage,theForm" status="status" />
-										</apex:inputField>
+			        					<apex:inputField value="{!dummyUser.ManagerId}" id="userInput"/>
 			        				</apex:outputPanel>
 			        			</apex:pageBlockSectionItem>
 
@@ -152,21 +149,17 @@
 									<apex:outputLabel value="{!$Label.copado__assign_cad_license}" />  <!-- ASSIGNE CAD LICENSE-->
 									<apex:inputCheckbox id="chkAssignCAD" value="{!assignCAD}" />
 								</apex:pageBlockSectionItem>					
-								<apex:pageBlockSectionItem helpText="CCH = Copado Compliance Hub" rendered="{!enableMultiLicenses}">
-									<apex:outputLabel value="{!$Label.copado__assign_cch_license}" />  <!-- ASSIGNE CCH LICENSE-->
-									<apex:inputCheckbox id="chkAssignCCH" value="{!assignCCH}" />
-								</apex:pageBlockSectionItem>
-								<apex:pageBlockSectionItem helpText="{!$Label.copado__cbm_feature_based_license}" rendered="{!enableMultiLicenses}">
-									<apex:outputLabel value="{!$Label.copado__cbm_license}" />
-                                    <apex:inputCheckbox id="chkAssignCBM" rendered="false"/>
-								</apex:pageBlockSectionItem>
+							<apex:pageBlockSectionItem helpText="CCH = Copado Compliance Hub" rendered="{!enableMultiLicenses}">
+								<apex:outputLabel value="{!$Label.copado__assign_cch_license}" />  <!-- ASSIGNE CCH LICENSE-->
+								<apex:inputCheckbox id="chkAssignCCH" value="{!assignCCH}" />
+							</apex:pageBlockSectionItem>					
 								<apex:pageBlockSectionItem >
 									<apex:outputLabel value="" />
 									<apex:commandButton id="btnAddUser" value="{!$Label.copado__add_update_user}" action="{!addUser}" reRender="pageMessage,theForm" status="status" />
 								</apex:pageBlockSectionItem>
 							</apex:pageBlockSection>
 						</apex:pageBlock>
-						<apex:pageBlock id="pbTables" title="{!$Label.copado__assigned_users}" mode="edit">
+						<apex:pageBlock id="pbTables" title="{!$Label.copado__assigned_users}" mode="edit" rendered="{!initRun}">
 							<apex:pageBlockSection title="{!$Label.copado__copado_users}" columns="1" collapsible="false" id="pbsCopado">
 								<apex:pageBlockTable value="{!copadoUsage}" var="row" id="tblCopadoUsage">
 									<apex:column width="100">

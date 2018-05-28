@@ -1,8 +1,5 @@
 <apex:page standardController="copado__Sprint__c" extensions="copado.SprintVirtualWall" showHeader="{!!isLightning}"  sidebar="false" applyHtmlTag="{!!isLightning}" applyBodyTag="false" docType="html-5.0" cache="false">
   <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
-  <head> 
-    <title>Sprint Wall {!Sprint__c.Name} | Copado</title>
-  </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
     <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
@@ -412,7 +409,7 @@
             <!-- Filters for User Stories -->
             <apex:outputPanel layout="block" styleClass="sideContainer opened" id="filterDialog" style="display: none; position: fixed;">
               <div id="filterResults"></div>
-              <apex:outputPanel layout="block" id="filterRepeater" style="overflow-y: auto; height: 300px;">
+              <apex:outputPanel layout="block" id="filterRepeater">
                 <apex:repeat value="{!filterWithValues}" var="f">
                   <div class="filterTopic" id="filterRecordTypes" style="display: block;">
                     <h1>{!f}</h1>
@@ -420,7 +417,7 @@
                       <apex:repeat value="{!filterWithValues[f]}" var="v">
                         <div class="itemRow">
                           <div class="itemCheckbox">
-                            <apex:inputCheckbox value="{!filterNameWithFlag[v]}" style="font-size: 90px;" styleClass="item-checkbox" onchange="calcFilters(); return false;"/>
+                            <apex:inputCheckbox value="{!filterNameWithFlag[v]}" styleClass="item-checkbox" onchange="calcFilters(); return false;"/>
                             <!-- <input type="checkbox" id="item-closed" class="item-checkbox" value="status-closed" onchange="calcFilters(); return false;" /> -->
                           </div>
                         <div class="itemTitle">
@@ -440,7 +437,7 @@
             <table id="mainTable" class="slds-table slds-table_edit slds-table_bordered slds-table_fixed-layout slds-table_resizable-cols slds-no-cell-focus" role="grid">
               <thead>
                 <tr class="slds-line-height_reset" >
-                  <th scope="col"  class="slds-has-focus" style="width: 30px;" onclick="sortGiven(this,true);storeThForActions(this);" >
+                  <th scope="col"  class="slds-has-focus" style="width: 30px;" onclick="sortGiven(this,true);" >
                     <div class="slds-th__action" id="sortImage" title="Sorting Enabled">
                       <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0ODguOCA0ODguOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg4LjggNDg4Ljg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8Zz4KCTxnPgoJCTxyZWN0IGlkPSJYTUxJRF8zOTNfIiB4PSI4MS42NSIgeT0iMzYyIiBzdHlsZT0iZmlsbDojM0M5MkNBOyIgd2lkdGg9IjExNy42IiBoZWlnaHQ9IjExNy42Ii8+CgkJPHBhdGggZD0iTTQwNy4wNSw1Ni44aC0xMjcuM2wyMS44LTIxLjhjMy41LTMuNSwzLjUtOS4zLDAtMTIuOHMtOS4zLTMuNS0xMi44LDBsLTM3LjMsMzcuMmMtMy41LDMuNS0zLjUsOS4zLDAsMTIuOGwzNy4zLDM3LjMgICAgYzEuOCwxLjgsNC4xLDIuNyw2LjQsMi43czQuNi0wLjksNi40LTIuN2MzLjUtMy41LDMuNS05LjMsMC0xMi44bC0yMS44LTIxLjhoMTE4LjJ2MzM2LjloLTE4OS42di00OS43YzAtNS00LjEtOS4xLTkuMS05LjFIODEuNjUgICAgYy01LDAtOS4xLDQuMS05LjEsOS4xdjExNy42YzAsNSw0LjEsOS4xLDkuMSw5LjFoMTE3LjZjNSwwLDkuMS00LjEsOS4xLTkuMVY0MzBoMTk4LjhjNSwwLDkuMS00LjEsOS4xLTkuMXYtMzU1ICAgIEM0MTYuMTUsNjAuOCw0MTIuMDUsNTYuOCw0MDcuMDUsNTYuOHogTTE5MC4xNSw0NzAuNmgtOTkuNXYtOTkuNWg5OS41VjQ3MC42eiIvPgoJCTxwYXRoIGQ9Ik03Mi41NSwxODUuNnYxMTcuNmMwLDUsNC4xLDkuMSw5LjEsOS4xaDExNy42YzUsMCw5LjEtNC4xLDkuMS05LjFWMTg1LjZjMC01LTQuMS05LjEtOS4xLTkuMUg4MS42NSAgICBDNzYuNjUsMTc2LjUsNzIuNTUsMTgwLjYsNzIuNTUsMTg1LjZ6IE05MC42NSwxOTQuN2g5OS41djk5LjVoLTk5LjVDOTAuNjUsMjk0LjIsOTAuNjUsMTk0LjcsOTAuNjUsMTk0Ljd6Ii8+CgkJPGc+CgkJCTxwYXRoIGQ9Ik0xOTkuMjUsMTE3LjdjLTIuNCwwLTQuNywxLTYuNCwyLjdzLTIuNyw0LTIuNyw2LjRzMSw0LjcsMi43LDYuNHM0LDIuNyw2LjQsMi43czQuNy0xLDYuNC0yLjdzMi43LTQsMi43LTYuNCAgICAgcy0xLTQuNy0yLjctNi40QzIwMy45NSwxMTguNywyMDEuNjUsMTE3LjcsMTk5LjI1LDExNy43eiIvPgoJCQk8cGF0aCBkPSJNMTY5Ljg1LDExNy43Yy01LDAtOS4xLDQuMS05LjEsOS4xYzAsNSw0LDkuMSw5LjEsOS4xYzUsMCw5LjEtNC4xLDkuMS05LjFDMTc4Ljk1LDEyMS44LDE3NC44NSwxMTcuNywxNjkuODUsMTE3Ljd6Ii8+CgkJCTxwYXRoIGQ9Ik0xMTEuMDUsMTE3LjdjLTUsMC05LjEsNC4xLTkuMSw5LjFjMCw1LDQuMSw5LjEsOS4xLDkuMXM5LjEtNC4xLDkuMS05LjFDMTIwLjA1LDEyMS44LDExNi4wNSwxMTcuNywxMTEuMDUsMTE3Ljd6Ii8+CgkJCTxwYXRoIGQ9Ik0xNDAuNDUsMTE3LjdjLTUsMC05LjEsNC4xLTkuMSw5LjFjMCw1LDQsOS4xLDkuMSw5LjFjNSwwLDkuMS00LjEsOS4xLTkuMUMxNDkuNDUsMTIxLjgsMTQ1LjQ1LDExNy43LDE0MC40NSwxMTcuN3oiLz4KCQkJPHBhdGggZD0iTTgxLjY1LDExNy43Yy0yLjQsMC00LjcsMS02LjQsMi43Yy0xLjcsMS43LTIuNyw0LTIuNyw2LjRzMSw0LjcsMi43LDYuNHM0LDIuNyw2LjQsMi43czQuNy0xLDYuNC0yLjcgICAgIGMxLjctMS43LDIuNy00LDIuNy02LjRzLTEtNC43LTIuNy02LjRDODYuMzUsMTE4LjcsODQuMDUsMTE3LjcsODEuNjUsMTE3Ljd6Ii8+CgkJCTxwYXRoIGQ9Ik04MS42NSw4OC4zYy01LDAtOS4xLDQtOS4xLDkuMWMwLDUsNC4xLDkuMSw5LjEsOS4xczkuMS00LjEsOS4xLTkuMUM5MC42NSw5Mi40LDg2LjY1LDg4LjMsODEuNjUsODguM3oiLz4KCQkJPHBhdGggZD0iTTgxLjY1LDI5LjVjLTUsMC05LjEsNC4xLTkuMSw5LjFzNC4xLDkuMSw5LjEsOS4xczkuMS00LjEsOS4xLTkuMUM5MC42NSwzMy41LDg2LjY1LDI5LjUsODEuNjUsMjkuNXoiLz4KCQkJPHBhdGggZD0iTTgxLjY1LDU4LjljLTUsMC05LjEsNC05LjEsOXM0LjEsOS4xLDkuMSw5LjFzOS4xLTQuMSw5LjEtOS4xQzkwLjY1LDYzLDg2LjY1LDU4LjksODEuNjUsNTguOXoiLz4KCQkJPHBhdGggZD0iTTgxLjY1LDAuMWMtMi40LDAtNC43LDEtNi40LDIuN2MtMS43LDEuNy0yLjcsNC0yLjcsNi40czEsNC43LDIuNyw2LjRzNCwyLjcsNi40LDIuN3M0LjctMSw2LjQtMi43ICAgICBjMS43LTEuNywyLjYtNCwyLjYtNi40cy0xLTQuNy0yLjctNi40Qzg2LjM1LDEuMSw4My45NSwwLjEsODEuNjUsMC4xeiIvPgoJCQk8cGF0aCBkPSJNMTY5Ljg1LDAuMWMtNSwwLTkuMSw0LTkuMSw5LjFjMCw1LDQsOS4xLDkuMSw5LjFjNSwwLDkuMS00LjEsOS4xLTkuMUMxNzguOTUsNC4xLDE3NC44NSwwLjEsMTY5Ljg1LDAuMXoiLz4KCQkJPHBhdGggZD0iTTExMS4wNSwwLjFjLTUsMC05LjEsNC05LjEsOS4xYzAsNSw0LDkuMSw5LjEsOS4xYzUsMCw5LjEtNC4xLDkuMS05LjFDMTIwLjA1LDQuMSwxMTYuMDUsMC4xLDExMS4wNSwwLjF6Ii8+CgkJCTxwYXRoIGQ9Ik0xNDAuNDUsMC4xYy01LDAtOS4xLDQtOS4xLDkuMWMwLDUsNCw5LjEsOS4xLDkuMWM1LDAsOS4xLTQuMSw5LjEtOS4xQzE0OS40NSw0LjEsMTQ1LjQ1LDAuMSwxNDAuNDUsMC4xeiIvPgoJCQk8cGF0aCBkPSJNMTk5LjI1LDE4LjJjMi40LDAsNC43LTEsNi40LTIuN3MyLjctNCwyLjctNi40cy0xLTQuNy0yLjctNi40cy00LTIuNy02LjQtMi43cy00LjcsMS02LjQsMi43cy0yLjcsNC0yLjcsNi40ICAgICBzMSw0LjcsMi43LDYuNEMxOTQuNTUsMTcuMywxOTYuODUsMTguMiwxOTkuMjUsMTguMnoiLz4KCQkJPHBhdGggZD0iTTE5OS4yNSw4OC4zYy01LDAtOS4xLDQtOS4xLDlzNCw5LjEsOS4xLDkuMWM1LDAsOS4xLTQuMSw5LjEtOS4xQzIwOC4zNSw5Mi40LDIwNC4yNSw4OC4zLDE5OS4yNSw4OC4zeiIvPgoJCQk8cGF0aCBkPSJNMTk5LjI1LDI5LjVjLTUsMC05LjEsNC4xLTkuMSw5LjFzNCw5LjEsOS4xLDkuMWM1LDAsOS4xLTQuMSw5LjEtOS4xQzIwOC4zNSwzMy41LDIwNC4yNSwyOS41LDE5OS4yNSwyOS41eiIvPgoJCQk8cGF0aCBkPSJNMTk5LjI1LDU4LjljLTUsMC05LjEsNC05LjEsOS4xYzAsNSw0LDkuMSw5LjEsOS4xYzUsMCw5LjEtNC4xLDkuMS05LjFTMjA0LjI1LDU4LjksMTk5LjI1LDU4Ljl6Ii8+CgkJPC9nPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
                     </div>
@@ -460,7 +457,7 @@
                       </span>                      
                     </div>
                   </th>
-                  <th id="nameHeader" style="width: 120px;" onclick="sortGiven(this,false);storeThForActions(this);" class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col">
+                  <th id="nameHeader" style="width: 120px;" onclick="sortGiven(this,false);" class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col">
                     <a class="slds-th__action slds-text-link_reset" tabindex="-1">
                       <span class="slds-truncate" >{!$label.SprintWall_Name_Header}</span>
                       <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
@@ -478,7 +475,7 @@
                       </span>
                     </div>
                   </th>
-                  <th  onclick="sortGiven(this,false);storeThForActions(this);" style="width: 100px;" class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col" >
+                  <th  onclick="sortGiven(this,false);" style="width: 100px;" class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col" >
                     <a id="typeHeader"  class="slds-th__action slds-text-link_reset" tabindex="-1">
                       <span class="slds-truncate">{!$label.SprintWall_Header_Type}</span>
                       <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
@@ -495,7 +492,7 @@
                       </span>
                     </div>
                   </th>
-                  <th onclick="sortGiven(this,false);storeThForActions(this);" class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col">
+                  <th onclick="sortGiven(this,false);" class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col">
                     <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="-1">
                       <span class="slds-truncate" >{!$label.SprintWall_Header_Title}</span>
                       <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
@@ -512,7 +509,7 @@
                       </span>
                     </div>
                   </th>
-                  <th onclick="sortGiven(this,false);storeThForActions(this);" style="width: 180px;" class="slds-is-sortable slds-is-resizable slds-text-title_caps headliner_columns_work" scope="col">
+                  <th onclick="sortGiven(this,false);" style="width: 180px;" class="slds-is-sortable slds-is-resizable slds-text-title_caps headliner_columns_work" scope="col">
                     <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="-1">
                       <span class="slds-truncate" >{!$label.SprintWall_Header_Status}</span>
                       <div></div>
@@ -530,7 +527,7 @@
                       </span>
                     </div>
                   </th>
-                  <th onclick="sortGiven(this,false);storeThForActions(this);" style="width: 180px;" class="slds-is-sortable slds-is-resizable slds-text-title_caps headliner_columns_work" scope="col">
+                  <th onclick="sortGiven(this,false);" style="width: 180px;" class="slds-is-sortable slds-is-resizable slds-text-title_caps headliner_columns_work" scope="col">
                     <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="-1">
                       <span class="slds-truncate" >{!$label.SprintWall_Header_Assignee}</span>
                       <div></div>
@@ -548,7 +545,7 @@
                       </span>
                     </div>
                   </th>
-                  <th onclick="sortGiven(this,false);storeThForActions(this);" style="width: 90px;" class="slds-is-sortable slds-is-resizable slds-text-title_caps headliner_columns_work" scope="col">
+                  <th onclick="sortGiven(this,false);" style="width: 90px;" class="slds-is-sortable slds-is-resizable slds-text-title_caps headliner_columns_work" scope="col">
                     <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="-1">
                       <span class="slds-truncate">{!$label.SprintWall_Header_Points}</span>
                       <div></div>
@@ -566,9 +563,9 @@
                       </span>
                     </div>
                   </th>
-                    <!-- Fieldset  Added-->
-                    <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__Sprint_Wall_Columns}" var="f">
-                    <th onclick="sortGiven(this,false);storeThForActions(this);" style="width: 100px;" class="slds-is-sortable slds-is-resizable slds-text-title_caps headliner_columns_work" scope="col">
+<!-- TO INCLUDE FOR NEXT RELEASE SINCE IT CAN NOT BE PATCHED BECAUSE INCLUDES NEW FIELDSET -->
+<!--                     <apex:repeat value="{!$ObjectType.User_Story__c.FieldSets.Sprint_Wall_Columns}" var="f">
+                    <th onclick="sortGiven(this,false);" style="width: 100px;" class="slds-is-sortable slds-is-resizable slds-text-title_caps headliner_columns_work" scope="col">
                       <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="-1">
                         <span class="slds-truncate">{!f.label}</span>
                         <div></div>
@@ -586,7 +583,7 @@
                         </span>
                       </div>
                     </th>
-                    </apex:repeat>
+                    </apex:repeat> -->
                   <th class="slds-is-interactive headliner_columns_tasks" style="display: none; width:600px;">
                     <div class="slds-grid" style="padding-left: 12px; color: #02A9FF">
                       <div class="slds-col">{!$label.SprintWall_Header_Task_Not_Started}</div>
@@ -607,7 +604,7 @@
                     <td role="gridcell" class="slds-cell-edit slds-cell-error" style="text-align: center;">
                       <apex:inputHidden value="{!us.theUS.copado__Order__c}" id="hiddenOrder"/>
                       <apex:inputHidden value="{!us.theUS.Id}" id="usId"/>
-                      <apex:outputText value="{!us.theUS.copado__Order__c+1}" html-customClass="output" id="orderOUT"/>
+                      <apex:outputText value="{!us.theUS.copado__Order__c+1}" html-customClass="output"/>
                     </td>
                     <td role="gridcell" class="slds-cell-edit slds-truncate" style="text-align: center;">
                       <apex:inputCheckbox value="{!us.selected}" styleClass="SelectedCheckBox"/>
@@ -652,18 +649,17 @@
                         <apex:inputField value="{!us.theUS.copado__Story_Points_SFDC__c}"  html-data-id="{!us.theUS.Id}usPoint" onchange="rowChanged('{!us.theUS.Id}usPoint','{!us.index}');" styleclass="slds-input" id="usPointIN"/>
                       </apex:outputPanel>
                     </td>
-                    <!-- FIELDSET ADDED -->
-                    <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__Sprint_Wall_Columns}" var="f">
+<!-- TO INCLUDE FOR NEXT RELEASE SINCE IT CAN NOT BE PATCHED BECAUSE INCLUDES NEW FIELDSET -->
+<!--                     <apex:repeat value="{!$ObjectType.User_Story__c.FieldSets.Sprint_Wall_Columns}" var="f">
                     <td role="gridcell" class="slds-cell-edit slds-truncate extra-column" ondblclick="showInputFS($copado(this));">
-                      <!-- <div data-t="out"> -->
-                      <apex:outputPanel layout="block" html-data-t="out" id="outFieldsetPanel">
-                        <apex:outputField value="{!us.theUS[f.FieldPath]}" id="fieldSetOUT" styleClass="outFieldset" html-customClass="output"/>
-                      </apex:outputPanel>
+                      <div data-t="out">
+                        <apex:outputField value="{!us.theUS[f.FieldPath]}"/>
+                      </div>
                       <div data-t="in" style="display: none;">
                         <apex:inputField value="{!us.theUS[f.FieldPath]}" onchange="dmlRow('{!us.index}');" />
                       </div>
                     </td>
-                    </apex:repeat>
+                    </apex:repeat> -->
 
                     <td class="slds-text-body--small column-tasks" style="min-width:600px; display: none;">
                       <div class="work_columns">
@@ -842,10 +838,8 @@
                   workOptionsDropdown.find("li[data-action=next] a").on('click', function(event) {
                       var i = $copado(workOptionsDropdown).data('index');
                       MoveToNextSprintJS(i);
-                      indexOfRow = i;
-                      //removeRow(i);
-                      //setThAfterActions();
-                      //$copado('#menu_work_options').hide();
+                      removeRow(i);
+                      $copado('#menu_work_options').hide();
                       event.preventDefault();
                   });
                   // WORK : REMOVE FROM CURRENT SPRINT
@@ -853,12 +847,12 @@
                       event.preventDefault();
                       var i = $copado(workOptionsDropdown).data('index');
                       var conf = confirm('{!$Label.copado__sprintwall_confirm_remove_us}');
-                        if (conf == true) {
-                          indexOfRow = i;
+                        if (conf == true) {                            
                           removeFromCurrenSprintJS(i);  
-                          //removeRow(i);
-                          //setThAfterActions();
-                          //$copado('#menu_work_options').hide();
+                          removeRow(i);
+
+                          $copado('#menu_work_options').hide();  
+
                         }                        
                   });
                   workOptionsDropdown.find("li[data-action=add] a").on('click', function(event) {
@@ -869,18 +863,10 @@
                   });
                 })();
 
-                var indexOfRow = null;
-                function adjustFilterAndSorting(){
-                    console.log('indexOfRow 1: ' + indexOfRow);
-                    removeRow(indexOfRow);
-                    setThAfterActions();
-                    $copado('#menu_work_options').hide();
-                }
 
-              </script>
+                    </script>
             </apex:outputPanel>
           </apex:outputPanel>
-
           <apex:actionFunction action="{!massUpdateRecords}" name="massUpdateRecords" reRender="mTable, myButtons, mUpdateRepeater,theMessages,filterRepeater,actualVelocity,plannedVelocity,theWorkOptions" status="actStatus"
           oncomplete="initializeTaskSortableAll(); addHideInputs();"></apex:actionFunction>
           <apex:actionFunction name="createNewUSTaskJS" immediate="true" action="{!createNewUSTask}" reRender="IPTasks, theMessages" status="actStatus,theMessages" oncomplete="initializeTaskSortableAll();">
@@ -900,16 +886,16 @@
             <apex:param name="taskID" value="" />
           </apex:actionFunction>
           <apex:actionFunction name="rerenderType" reRender="usTypeOUT,usTypeIN, usTitleOUT,usTitleIN, usDevOUT,usDevIN, usPointOUT,usPointIN, usStatusOUT,usStatusIN,devNameHidden" ></apex:actionFunction>
-          <apex:actionFunction name="MoveToNextSprintJS" action="{!MoveToNextSprint}" immediate="true" reRender="mTable,myButtons, theWorkOptions,hidenWrapper,actualVelocity,plannedVelocity" status="actStatus" oncomplete="initializeTaskSortableAll();enableSort();adjustFilterAndSorting();">
+          <apex:actionFunction name="MoveToNextSprintJS" action="{!MoveToNextSprint}" immediate="true" reRender="mTable,myButtons, theWorkOptions,hidenWrapper,actualVelocity,plannedVelocity" status="actStatus" oncomplete="initializeTaskSortableAll();enableSort();">
             <apex:param name="mtnsIndex" assignTo="{!actionIndex}" value="" />
           </apex:actionFunction>
-          <apex:actionFunction name="removeFromCurrenSprintJS" immediate="true" action="{!removeFromCurrenSprint}" reRender="mTable,myButtons,theWorkOptions,actualVelocity,plannedVelocity,theMessages" oncomplete="initializeTaskSortableAll();enableSort();adjustFilterAndSorting();">
+          <apex:actionFunction name="removeFromCurrenSprintJS" immediate="true" action="{!removeFromCurrenSprint}" reRender="mTable,myButtons,theWorkOptions,actualVelocity,plannedVelocity,theMessages" oncomplete="initializeTaskSortableAll();enableSort();">
             <apex:param name="removeRowIndex" value="" />
           </apex:actionFunction>
           <apex:actionFunction name="rrPanel" rendered="mtnsButton"/>
           <apex:actionFunction name="dmlALL" action="{!dmlALL}" reRender="theMessages"/>
           <!-- TO CREATE A SINGLE ROW DML -->
-          <apex:actionFunction name="dmlRow" action="{!dmlRow}" reRender="filterRepeater,mTable,theWorkOptions,devNameHidden,theMessages" status="actStatus" oncomplete="enableSort();calculateVelocities();addHideInputs();calcFilters();setThAfterActions();">
+          <apex:actionFunction name="dmlRow" action="{!dmlRow}" reRender="filterRepeater,mTable,theWorkOptions,devNameHidden,theMessages" status="actStatus" oncomplete="enableSort();calculateVelocities();addHideInputs();calcFilters();">
             <apex:param name="actionIndex" assignTo="{!actionIndex}" value="" />
           </apex:actionFunction>
 
@@ -1291,8 +1277,7 @@
             }
             function removeRow(row){
                 $copado("[id$='row"+row+"']").remove();
-                calcFilters();
-                //calcVisibleRows();
+                calcVisibleRows();
             }
             function selectAll(){
               if ($copado('#selectAllCheckbox').prop("checked")) {
@@ -1379,12 +1364,13 @@
               var rows = $copado('#mainTable tbody  tr').get();
 
               rows.sort(function(a, b) {
+                             
                 var A = getVal(f,a);
                 var B = getVal(f,b);
-                if(A.toString() < B.toString()) {
+                if(A < B) {
                   return -1*f;
                 }
-                if(A.toString() > B.toString()) {
+                if(A > B) {
                   return 1*f;
                 }
                 return 0;
@@ -1392,10 +1378,9 @@
               
               function getVal(f,elm){
                 var v;
-                var e = $copado(elm);
-
-                if(e.children('td').eq(n)[0]){
-                  var element = e.children('td').eq(n)[0].querySelectorAll("span[id$='OUT']");
+                if($copado(elm).children('td').eq(n)[0]){
+                  var element = $copado(elm).children('td').eq(n)[0].querySelectorAll("span[customClass='output']");
+                  
                   if(element.length > 0){
                     v = element[0].textContent.toUpperCase();;
                   }else{
@@ -1409,6 +1394,7 @@
                 }else{
                   v = "";
                 }
+                
                 if($copado.isNumeric(v)){
                   v = parseInt(v,10);
                 }
@@ -1490,6 +1476,7 @@
                   $copado(this).hide(); 
                 });           
                 //If there is one or more items selected then rows are added
+                
                 if(nothingSelected == true){
                   $copado('#mainTable tr:not(:first)').each(function() {
                     $copado(this).show(); 
@@ -1555,14 +1542,6 @@
                 $copado("#filterResults").text('Showing '+rowCounter+' User Stories');
               }
 
-              var thElem = null;
-
-              function storeThForActions(elem){
-                  thElem = elem;
-              }
-              function setThAfterActions(){
-                  sortGiven(thElem,false);sortGiven(thElem,false);
-              }
     </script>
  
   </html>

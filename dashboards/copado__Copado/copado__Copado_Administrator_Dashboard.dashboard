@@ -18,7 +18,7 @@
             <indicatorLowColor>#C25454</indicatorLowColor>
             <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
             <report>copado__Copado/copado__All_Orgs_with_Oauth_errors</report>
-            <showPicturesOnTables>true</showPicturesOnTables>
+            <showPicturesOnTables>false</showPicturesOnTables>
             <sortBy>RowLabelAscending</sortBy>
         </components>
         <components>
@@ -32,7 +32,7 @@
             <indicatorLowColor>#C25454</indicatorLowColor>
             <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
             <report>copado__Copado/copado__All_Orgs_with_Oauth_errors_Apex_Tests</report>
-            <showPicturesOnTables>true</showPicturesOnTables>
+            <showPicturesOnTables>false</showPicturesOnTables>
             <sortBy>RowLabelAscending</sortBy>
         </components>
     </leftSection>
@@ -49,7 +49,7 @@
             <indicatorLowColor>#C25454</indicatorLowColor>
             <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
             <report>copado__Copado/copado__Failed_Apex_Tests_Last_7_days</report>
-            <showPicturesOnTables>true</showPicturesOnTables>
+            <showPicturesOnTables>false</showPicturesOnTables>
             <sortBy>RowLabelAscending</sortBy>
         </components>
     </middleSection>
@@ -66,7 +66,7 @@
             <indicatorLowColor>#C25454</indicatorLowColor>
             <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
             <report>copado__Copado/copado__Backups_with_changes_Last_7_Days</report>
-            <showPicturesOnTables>true</showPicturesOnTables>
+            <showPicturesOnTables>false</showPicturesOnTables>
             <sortBy>RowLabelAscending</sortBy>
         </components>
         <components>
@@ -80,7 +80,7 @@
             <indicatorLowColor>#C25454</indicatorLowColor>
             <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
             <report>copado__Copado/copado__All_Orgs_with_Backups_With_errors</report>
-            <showPicturesOnTables>true</showPicturesOnTables>
+            <showPicturesOnTables>false</showPicturesOnTables>
             <sortBy>RowLabelAscending</sortBy>
         </components>
         <components>
@@ -94,11 +94,11 @@
             <indicatorLowColor>#C25454</indicatorLowColor>
             <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
             <report>copado__Copado/copado__All_Orgs_with_Backups</report>
-            <showPicturesOnTables>true</showPicturesOnTables>
+            <showPicturesOnTables>false</showPicturesOnTables>
             <sortBy>RowLabelAscending</sortBy>
         </components>
     </rightSection>
-    <runningUser>pfernandezv11@gmail.com</runningUser>
+    <runningUser>pfernandez@copa.do.demo</runningUser>
     <textColor>#000000</textColor>
     <title>Copado Administrator Dashboard</title>
     <titleColor>#000000</titleColor>

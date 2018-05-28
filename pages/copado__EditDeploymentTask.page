@@ -216,9 +216,8 @@
 					}					
 	    		</script>
 	    	</apex:outputPanel>
+	    	<c:ScreenLocker msg="{!$Label.copado__loading}" />
 	    	<apex:form >
-	    		<c:ScreenLocker msg="{!$Label.copado__loading}" />
-
 	    		<div id="screenLockerLightning" class="slds-screenlocker" ><p><img style="width: 100px;" src="{!URLFOR($Resource.SLDS,'/assets/images/spinners/slds_spinner_brand.gif')}" /></p></div>
 	    		<apex:actionFunction name="renderMainPanel" reRender="pmessage" oncomplete="$copado('html, body').animate({scrollTop: $copado(document).height()}, 500);"/>
 	    		<apex:actionFunction immediate="true" name="setUserStory" reRender="scripts" action="{!populateUserStoryRelation}" oncomplete="usOp();">
@@ -313,46 +312,22 @@
 										<script type="text/javascript">
 											datasetup.save = function(){
 												var manualTask = {};
-												var Perform_in_Source_Org = $copado('[Id$="jsPerformInSource"]').prop('checked');
-												var Perform_in_Destination_Orgs = $copado('[Id$="jsPerformInDestinations"]').prop('checked');
-												var Task_Description = $copado('[Id$="jsTaskDesc"]').val();
-												var Task_Owner = $copado('[Id$="jsTaskOwner_lkid"]').val();
-                                                var Notify_Task_Owner = $copado('[Id$="jsNotifyTaskOwner"]').val();
+												var Perform_in_Source_Org = $copado("[Id$=jsPerformInSource]").prop('checked');
+												var Perform_in_Destination_Orgs = $copado("[Id$=jsPerformInDestinations]").prop('checked');
+												var Task_Description = $copado("[Id$=jsTaskDesc]").val();
 												manualTask.Perform_in_Source_Org = Perform_in_Source_Org;
 												manualTask.Perform_in_Destination_Orgs = Perform_in_Destination_Orgs;
 												manualTask.Task_Description = Task_Description;
-												manualTask.Task_Owner = Task_Owner;
-                                                manualTask.Notify_Task_Owner = Notify_Task_Owner;
-
 												console.info('Saving Manual task...',manualTask);
 												return JSON.stringify(manualTask);
 											}
 											datasetup.setPreviousData = function(data){
-											    if(data){
-												    console.info('Setting previosly selected data for Manual Task');
+												if(data){
+													console.info('Setting previosly selected data for Manual Task');
 													data = JSON.parse(data);
-													$copado('[Id$="jsTaskDesc"]').val(data.Task_Description);
-													$copado('[Id$="jsPerformInSource"]').prop('checked',data.Perform_in_Source_Org);
-													$copado('[Id$="jsPerformInDestinations"]').prop('checked',data.Perform_in_Destination_Orgs);
-													$copado('[Id$="jsNotifyTaskOwner"]').val(data ? data.Notify_Task_Owner : 'None');
-													$copado('[Id$="jsTaskOwner_lkid"]').val(data ? data.Task_Owner : null);
-													sforce.connection.query('SELECT id, FirstName, LastName FROM User WHERE Id = \'' + data.Task_Owner+ '\' LIMIT 1', {
-														onSuccess: function(result) {
-															var records = result.getArray("records");
-
-															if(records.length == 1){
-																var firstname = records[0].FirstName;
-																var lastname = records[0].LastName;
-																$copado('[Id$="jsTaskOwner_lkold"]').val(firstname + ' ' + lastname);
-																$copado('[Id$="jsTaskOwner"]').val(firstname + ' ' + lastname);
-															}
-														},
-														onFailure : function(error) {
-															console.error("An error has occurred " + error);
-														}
-													});
-												}else{
-													$copado('[id$=jsTaskOwner]').val(null);
+													$copado('[Id$=jsTaskDesc]').val(data.Task_Description);
+													$copado('[Id$=jsPerformInSource]').prop('checked',data.Perform_in_Source_Org);
+													$copado('[Id$=jsPerformInDestinations]').prop('checked',data.Perform_in_Destination_Orgs);
 												}
 											}
 										</script>

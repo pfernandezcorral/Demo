@@ -1,4 +1,4 @@
-<apex:page standardController="copado__User_Story__c" extensions="copado.UserStoryCommitIntermediaryExt,copado.Settings" id="thePage" sidebar="false" showHeader="false" readOnly="false"  standardStylesheets="true" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
+<apex:page standardController="copado__User_Story__c" extensions="copado.UserStoryCommitIntermediaryExt,copado.Settings" id="thePage" sidebar="false" showHeader="false" readOnly="true"  standardStylesheets="true" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
@@ -57,37 +57,13 @@
                 <apex:outputPanel rendered="{!showError},{!$User.UIThemeDisplayed != 'Theme4d'}">
                     <a href="/{! URLFOR($Action.copado__User_Story__c.View, userStory.Id)}">{!$Label.copado__return_to_user_story}</a>
                 </apex:outputPanel>
-
-                <apex:form id="theForm" styleClass="copado-lightning-container">
-                    <c:ScreenLocker msg="{!$Label.copado__loading}" useJobsManager="true" possibleRunningJobs=",DxCreateProjectBranch,,true;"/>
-                    <script>
-                window.addEventListener('copadoJobsManagerFinished', function (evt) {
-                    for(var i=0 ; i < evt.detail.length ; i++ ) {
-                        var jobFinished = evt.detail[i].isFinished;
-                        var jobSuccess = evt.detail[i].isSuccess;
-                        var jobMessage = evt.detail[i].message;
-                        var jobType = evt.detail[i].type;
-                        console.debug("Job Success: ", jobSuccess);
-                        console.debug("Job Finished: ", jobFinished);
-                        console.debug("Job Message: ", jobMessage);
-                        console.debug("Job Type: ", jobType);
-                        jobstatus(jobFinished,jobSuccess,jobMessage,jobType);
-                    }
-                }, false);
-            </script>
-                    <apex:actionFunction name="jobstatus" action="{!jobStatusNotification}" reRender="dxOperationErrors,pnlScript,redirectMsg,msg">
-                        <apex:param value="" name="jobFinished"/>
-                        <apex:param value="" name="jobSuccess"/>
-                        <apex:param value="" name="jobMessage"/>
-                        <apex:param value="" name="jobType"/>
-                    </apex:actionFunction>
-
-
-                    <apex:pageBlock id="pb" >
-                        <apex:pageBlockTable id="theTable" value="{!snapshots}" var="s" rendered="{!AND(showOptions,!showError)}" >
+                
+                <apex:form id="theForm" rendered="{!!showError}" styleClass="copado-lightning-container">
+                    <apex:pageBlock id="pb">
+                        <apex:pageBlockTable id="theTable" value="{!snapshots}" var="s" rendered="{!showOptions}" >
                             <apex:column id="col1">
                                 <apex:facet name="header">{!$ObjectType.copado__Git_Backup__c.fields.Name.Label}</apex:facet>
-                                <apex:outputLink value="/apex/{!namespace}{!targetPage}?{!additionalParams}snapshotId={!s.Id}&repoId={!s.copado__Git_Repository__c}&orgId={!s.copado__Org__c}&userStoryId={!userStory.Id}&mainBranch={!mainBranch}">{!s.Name}</apex:outputLink>
+                                <apex:outputLink value="/apex/{!namespace}{!targetPage}?{!additionalParams}snapshotId={!s.Id}&repoId={!s.copado__Git_Repository__c}&orgId={!s.copado__Org__c}&userStoryId={!userStory.Id}">{!s.Name}</apex:outputLink>
                             </apex:column>
                             <apex:column id="col2">
                                 <apex:facet name="header">{!$ObjectType.copado__Git_Backup__c.fields.copado__Git_Repository__c.Label}</apex:facet>
@@ -111,13 +87,11 @@
                             </apex:column>
                         </apex:pageBlockTable>
                     </apex:pageBlock>
-                    <apex:commandButton rendered="{!showCreateDXBranchButton}" value="Create DX Branch" action="{!createDXBranch}" reRender="pmessage"/>
                 </apex:form>
                 <apex:outputPanel id="pnlScript" rendered="{!AND(!showOptions, !showError)}">
                     <apex:pageMessage id="redirectMsg" severity="INFO" summary="{!$Label.copado__loading}" />
                     <script>
-                    console.log('mainBranch: {!mainBranch}');
-                        window.location='/apex/{!JSENCODE(namespace)}{!JSENCODE(targetPage)}?{!JSENCODE(additionalParams)}snapshotId={!JSENCODE(snapshotId)}&repoId={!JSENCODE(repoId)}&orgId={!JSENCODE(orgId)}&userStoryId={!JSENCODE(userStory.Id)}&mainBranch={!JSENCODE(mainBranch)}';
+                        window.location='/apex/{!JSENCODE(namespace)}{!JSENCODE(targetPage)}?{!JSENCODE(additionalParams)}snapshotId={!JSENCODE(snapshotId)}&repoId={!JSENCODE(repoId)}&orgId={!JSENCODE(orgId)}&userStoryId={!JSENCODE(userStory.Id)}';
                     </script>
                 </apex:outputPanel>
             </apex:outputPanel>

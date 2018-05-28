@@ -4,7 +4,7 @@
 		<apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
 	</head>
 	<body>
-		<apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">
+		<apex:form id="theForm" styleClass="copado-lightning-container">
 			<apex:sectionHeader id="sectionHeader" title="{!$Label.copado__copado_change_management}" subtitle="{!$Label.copado__quick_create_user_stories}" description="{!$Label.copado__quick_create_userstory_description}" />
 			<apex:pageMessages id="pageMessages" />
 			

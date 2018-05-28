@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
 <apex:slds />
 <head>
-  <title>Work Manager | Copado</title>
   <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}"/>
   <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery-ui.min.js')}"/>
   <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
@@ -133,7 +132,7 @@
           <apex:actionFunction action="{!savePanelState}" name="updatePanelStateAF" reRender="xxx" oncomplete="addSortable(); hideSpinner();">
               <apex:param name="jsstate" value="" />
           </apex:actionFunction>    
-          <apex:actionFunction action="{!refreshState}" name="switchState" reRender="allPanels" oncomplete="addSortable();updatePanelState();hideSpinner();" status="renderLightningSpinner">
+          <apex:actionFunction action="{!refreshState}" name="switchState" reRender="allPanels" oncomplete="addSortable();hideSpinner();" status="renderLightningSpinner">
           </apex:actionFunction>   
           <apex:actionFunction action="{!addNewConfig}" name="addNewConfigAF" reRender="configList" oncomplete=" closeStateModal(); ">
               <apex:param name="sName" value=""/>
@@ -215,7 +214,7 @@
             </div>
           </div>            
         </div>
-          <apex:outputPanel id="messages" layout="block" ondblclick="$copado(this).hide();">
+          <apex:outputPanel id="messages" layout="block" onclick="$copado(this).hide();">
             <apex:pageMessages id="headerMessage"/>
           </apex:outputPanel>          
         </apex:form> 
@@ -237,7 +236,7 @@
                 <div class="slds-button-group slds-m-top_small slds-float_left" role="group">
                     <ul>
                         <li id="btn-columns">
-                              <div class="slds-dropdown-trigger slds-dropdown-trigger_click" style="display: flex !important;">
+                              <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
                                 <button class="slds-button slds-button_icon " title="Show/Hide Columns" aria-haspopup="true" onclick="$copado(this).parent().toggleClass('slds-is-open');" style="width: 20px; height: 20px;">
                                   <svg class="slds-button__icon" aria-hidden="true">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#down')}"></use>
@@ -246,21 +245,20 @@
                                 </button>
                                 <div class="slds-dropdown slds-dropdown_left slds-dropdown_small" style="">
                                   <ul class="slds-dropdown__list" role="menu">
-                                    <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__Work_Manager_Columns}" var="f">
-                                        <li class="{!if(wp.rColumns[f.FieldPath],'slds-dropdown__item slds-is-selected','slds-dropdown__item')}" role="presentation" data-id="{!f.FieldPath}">
-                                          <a href="javascript:void(0);" role="menuitemcheckbox" aria-checked="true" tabindex="0" onclick="toggleColumnJS($copado(this));">
-                                            <span class="slds-truncate" title="Menu Item One">
-                                            <svg class="slds-icon slds-icon_selected slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#check')}"></use>
-                                            </svg>{!f.label}
-                                            </span>
-                                          </a>
-                                        </li>
-                                    </apex:repeat>
+                      <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__Work_Manager_Columns}" var="f">
+                          <li class="{!if(wp.rColumns[f.FieldPath],'slds-dropdown__item slds-is-selected','slds-dropdown__item')}" role="presentation" data-id="{!f.FieldPath}">
+                            <a href="javascript:void(0);" role="menuitemcheckbox" aria-checked="true" tabindex="0" onclick="toggleColumnJS($copado(this));">
+                              <span class="slds-truncate" title="Menu Item One">
+                              <svg class="slds-icon slds-icon_selected slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#check')}"></use>
+                              </svg>{!f.label}
+                              </span>
+                            </a>
+                          </li>
+                      </apex:repeat>
                                   </ul>
                                 </div>
                               </div>
-
                         </li>
                     </ul>
                 </div>
@@ -270,7 +268,7 @@
                 <h2 class="slds-truncate slds-text-heading_small handle_panel " style="text-align: center; line-height: unset">
                   <a onclick="sforce.one.editRecord('{!wp.recordId}'); return false;">{!$ObjectType.User_Story__c.Fields[wp.pType].Label}: {!wp.title}</a>
                 </h2>
-                <input class="searchInput slds-input" value="Search..." style="width: 100%; height: 24px !important; min-height: 0px;" />
+
               </div>
             </div>
           </div>
@@ -286,9 +284,6 @@
                         <input onchange="selectAll($copado(this));" type="checkbox" class="checkbox-container slds-checkbox slds-checkbox_faux"/>
                     </div>
                   </th>
-                      <th scope="col">
-                    <div class="slds-truncate" title="Move"></div>
-                  </th>  
                   <th scope="col">
                     <div class="slds-truncate" title="{!$label.WorkManager_TableHeader_Name}">{!$label.WorkManager_TableHeader_Name}</div>
                   </th>
@@ -300,40 +295,22 @@
                 </tr>
               </thead>
               <tbody class="connectedSortable" style="overflow-y: scroll;">
-                    <tr class="sort-disabled">
-                      <td style="display: none;"></td>
-                      <!-- <td/><td/><td/> -->
-                      <!-- <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__Work_Manager_Columns}" var="cb"> -->
-                      <!-- <td class="sort-disabled" style="{!if(!wp.rColumns[cb.FieldPath],'display: none;','')} ">
-                          <input class="searchInput" value="Type To Filter" style="width: 100%;" />
-                      </td> -->
-                <!--       <td class="sort-disabled">
-                          <input class="searchInput" value="Type To Filter" style="width: 100%;" />
-                      </td>  -->                     
-                      <!-- </apex:repeat> -->
-                    </tr>
+                    <tr class="sort-disabled"><td class="sort-disabled"></td></tr>
                 <apex:repeat value="{!wp.usList}" var="u">  
                     <tr data-usid="{!u.us.Id}"> 
                       <td data-label="Account Name">
-                        <div class=" slds-truncate row_handle" style="cursor:pointer;" title="" >&#9776;</div>
+                        <div class="slds-truncate row_handle" title="">&#9776;</div>
                       </td>     
                         <td class="slds-text-align_right" role="gridcell">
                             <input type="checkbox" name="options" id="checkbox-{!u.us.Id}-{!wp.recordId}"  value="on" onclick="$copado(this).closest('tr').toggleClass('selectedCheck');"/>
                         </td>
-                        <td scope="row">
-                        <div class="slds-truncate"><a target="_blank" href="/{!u.us.Id}">
-                            <svg class="slds-button__icon" aria-hidden="true">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#new_window')}"></use>
-                            </svg></a>
-                        </div>
-                        </td>
-                        <td scope="row">
-                            <div class="slds-truncate"><a href="/{!u.us.Id}/e?saveURL=apex/{!ns}WorkManager">{!u.us.Name}</a></div>
-                        </td>
+                      <td scope="row">
+                        <div class="slds-truncate"><a href="/{!u.us.Id}/e">{!u.us.Name}</a></div>
+                      </td>
                       <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__Work_Manager_Columns}" var="cb">
                           <td style="{!if(!wp.rColumns[cb.FieldPath],'display: none;','')}" data-col="{!cb.FieldPath}">
-                            <div class="slds-truncate panel-column" title="{!u.us[cb.FieldPath]}">
-                                <apex:outputField value="{!u.us[cb.FieldPath]}" />
+                            <div class="slds-truncate panel-column">
+                                <apex:outputField value="{!u.us[cb.FieldPath]}"/>
                             </div>
                           </td>
                       </apex:repeat>
@@ -389,7 +366,7 @@
       //Remove Spinner
       $copado('.slds-spinner_container').removeClass('slds-show');
       $copado('.slds-spinner_container').addClass('slds-hide');        
-      bindFilterLogic();
+
     });    
 
     function hidePanelJS(a){
@@ -400,12 +377,12 @@
         hidePanel(b,c);
       }
     }
-    
+
     function createNewPanelJS(lkid, lkold){
         //This means nothing has been selected
         console.info('createNewPanelJS:::',lkid,lkold);
         if (lkid === "000000000000000" || lkid === "") {
-            alert('{!$Label.WorkManager_Alert_NoRecord}');
+            alert('{!$Label.copado__workmanager_alert_norecord}');
         } else if (lkold !== undefined){
             showSpinner();
             createNewPanel(lkid,lkold);
@@ -415,35 +392,11 @@
         }
     }
 
-
-    //fixed bug US-0001702 When I roll over a user name, the information window is opened in another location, not beside the user name.
-     $copado('a[id^="lookup"]').hover(
-       function() {
-        var l = $copado(this).offset();
-        var aId = $copado(this).attr('id');
-		var checkExist = setInterval(function() {
-   		if ($copado('div[id="'+aId+'Hover"]').is(":visible")) {
-      			$copado('div[id="'+aId+'Hover"]').offset(l);
-       			clearInterval(checkExist);
-   			}
-		}, 10); // check every 100ms
-                 
-      }, function() {
-       		 var l = $copado(this).offset();
-             var aId = $copado(this).attr('id');
-      }
-		);
-    
-      
-
-     
-    
-
     function removeConfig(){
         if($copado('[id$="configName"]').val() == 'Default'){
-          alert('{!$Label.WorkManager_Alert_NoDelDefault}');
+          alert('{!$Label.copado__workmanager_alert_nodeldefault}');
         }else{
-          if (confirm('{!$Label.WorkManager_Alert_AreYouSure}') == true) {
+          if (confirm('{!$Label.copado__workmanager_alert_areyousure}') == true) {
               removeConfigAF();
           }          
         }
@@ -514,16 +467,16 @@
     }
 
     function selectAll(ch){
-        var allch = ch.closest('table').find('input:visible');
-        var alltr = ch.closest('table').find('tbody tr:not(.sort-disabled):visible');
-            if (ch.prop("checked")) {
-              allch.prop("checked", true);
-              alltr.addClass('selectedCheck');
-            }else{
-              allch.prop("checked", false);
-              alltr.removeClass('selectedCheck');
-            }      
-      }
+        var allch = ch.closest('table').find('input');
+        var alltr = ch.closest('table').find('tbody tr:not(.sort-disabled)');
+          if (ch.prop("checked")) {
+            allch.prop("checked", true);
+            alltr.addClass('selectedCheck');
+          }else{
+            allch.prop("checked", false);
+            alltr.removeClass('selectedCheck');
+          }
+    }
 
     function applyClassic(){
       if({!($User.UIThemeDisplayed!='Theme3')} == false){
@@ -673,7 +626,6 @@
             }}).disableSelection();
         });
         applyClassic();
-        bindFilterLogic();
      }
      /*
      To avoid focus on first input
@@ -703,49 +655,7 @@
       console.log('toggleColumnJS:::'+col,a,b,c);
       updatePanelState();
     }
-
-    function bindFilterLogic(){
-      $copado(".searchInput").keyup(function () {
-          //split the current value of searchInput
-          var data = this.value.split(" ");
-          //create a jquery object of the rows
-          var jo = $copado(this).closest('.panel-div').find('tbody tr:not(.sort-disabled)');
-          if (this.value == "") {
-              jo.show();
-              return;
-          }
-          //hide all the rows
-          jo.hide();
-
-          //Recusively filter the jquery object to get results.
-          jo.filter(function (i, v) {
-              var $t = $copado(this);
-              for (var d = 0; d < data.length; ++d) {
-                  if ($t.is(":contains('" + data[d] + "')")) {
-                      return true;
-                  }
-              }
-              return false;
-          })
-          //show the rows that match.
-          .show();
-      }).focus(function () {
-          this.value = "";
-          $copado(this).css({
-              "color": "black"
-          });
-          $copado(this).unbind('focus');
-      }).css({
-          "color": "#C0C0C0"
-      });
-    }
-
-    //Override to ignore case
-    jQuery.expr[':'].contains = function(a, i, m) {
-      return jQuery(a).text().toUpperCase()
-          .indexOf(m[3].toUpperCase()) >= 0;
-    };
-
+    
 </script>
 </body>
 </html>

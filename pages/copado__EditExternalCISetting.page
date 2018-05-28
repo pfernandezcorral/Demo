@@ -1,12 +1,11 @@
 <apex:page showHeader="true" sidebar="true" standardController="copado__External_CI_Setting__c" extensions="copado.EditExternalCISetting" title="{!$Label.site.edit} {!$ObjectType.copado__External_CI_Setting__c.Label}">
 	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height: 100%;">
 		<head>
-		<title>Edit External CI Settings {!External_CI_Setting__c.Name} | Copado</title>
 		<apex:slds />
 		<c:GAnalytics />
 		</head>
 		<body class="slds-scope"  style="{!IF($User.UIThemeDisplayed == 'Theme4d','margin: 12px;background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2),linear-gradient(to top,rgba(32, 92, 159, 0), rgb(32, 92, 159));','')}">
-			<apex:form id="form" rendered="{!AND(showOptions,!showError)}" html-novalidate="true">
+			<apex:form id="form" rendered="{!AND(showOptions,!showError)}">
 				<!--<apex:sectionHeader title="{!$ObjectType.External_CI_Setting__c.Label} {!$Label.EDIT}" subtitle="{!IF(ISBLANK(externalCISetting.Name),'New '+ $ObjectType.External_CI_Setting__c.Label ,externalCISetting.Name)}" description="{!$Label.EXTERNAL_CI_SETTING_DESC}"/>
 				<apex:pageMessages id="theMessages"/>-->
 
@@ -53,8 +52,8 @@
 									<c:LightningReadyInputFields SObject="{!externalCISetting}" requiredView="true" Field="CI_Tool__c"></c:LightningReadyInputFields>
 									<c:LightningReadyInputFields SObject="{!externalCISetting}" requiredView="true" Field="Endpoint__c"></c:LightningReadyInputFields>
 									<c:LightningReadyInputFields SObject="{!externalCISetting}" requiredView="true" Field="Username__c"></c:LightningReadyInputFields>
-									<c:LightningReadyInputFields SObject="{!externalCISetting}" requiredView="true" Field="Password__c" inputSecret="true"></c:LightningReadyInputFields>
 									<c:LightningReadyInputFields SObject="{!externalCISetting}" requiredView="false" Field="API_Token__c" inputSecret="true"></c:LightningReadyInputFields>
+									<c:LightningReadyInputFields SObject="{!externalCISetting}" requiredView="true" Field="Password__c" inputSecret="true"></c:LightningReadyInputFields>
 								</div>
 							</div>
 						</form>	

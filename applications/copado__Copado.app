@@ -17,5 +17,4 @@
     <tabs>copado__Continuous_Integration__c</tabs>
     <tabs>copado__Copado_License_Manager</tabs>
     <tabs>copado__Scheduled_Job__c</tabs>
-    <tabs>copado__Copado_DX_Panel</tabs>
 </CustomApplication>

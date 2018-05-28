@@ -48,7 +48,7 @@
         </script>
     </head>
     <body class="slds-scope">
-        <apex:form id="form" html-novalidate="true">
+        <apex:form id="form">
             <apex:pageMessages />
             <div id="generalStatus"></div>
             <div class="message errorM3" role="alert" id="generalErrorFrame" style="display: none">
@@ -95,7 +95,7 @@
                     <div class="slds-col slds-no-flex slds-grid slds-align-top ">
                         <div class="slds-button-group" role="group">
                             <apex:commandButton value="{!$Label.copado__save}" action="{!Save}" onclick="return CopadoKanban.UI.doValidateForm();" styleClass="slds-button slds-button--neutral"/>
-                            <apex:commandButton value="{!$Label.copado__cancel}" action="{!Cancel}" styleClass="slds-button slds-button--neutral" immediate="true"/>
+                            <apex:commandButton value="{!$Label.copado__cancel}" action="{!Cancel}" styleClass="slds-button slds-button--neutral"/>
                         </div>
                     </div>
                     <!-- / ACTION BUTTONS -->

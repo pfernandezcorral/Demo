@@ -4,7 +4,7 @@
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
     </head>
     <body>
-        <apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">
+        <apex:form id="theForm" styleClass="copado-lightning-container">
             <apex:pageMessages />
             <apex:sectionHeader title="{!$ObjectType.copado__Selenium_Test_Group__c.Label}" subtitle="{!$Label.copado__add_suites_to_a_group}" description="{!$Label.copado__select_group_to_add_suites}"/>
             <apex:pageBlock mode="edit">

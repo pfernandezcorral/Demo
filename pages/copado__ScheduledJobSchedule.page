@@ -1,6 +1,5 @@
 <apex:page standardController="copado__Scheduled_Job__c" extensions="copado.ScheduledJobExtension" id="thePage" lightningStylesheets="true">    
     <head>
-        <TITLE>Scheduled Job {!copado__Scheduled_Job__c.Name} | Copado</TITLE>
         <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery.min.1.10.2.js')}"></script>
         <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery-ui.min.js')}"></script>
         <script type="text/javascript" src="{!URLFOR($Resource.jqx, 'jqwidgets/jqx-all.js')}"></script>

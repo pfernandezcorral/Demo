@@ -14,8 +14,4 @@ global class JsRemotingController {
     global static List<String> getMetadataTypes(String orgId) {
         return null;
     }
-    @RemoteAction
-    global static void getVlocityDependencies(Id userStoryId, String jsonSelectedMetadata) {
-
-    }
 }

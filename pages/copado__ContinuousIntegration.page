@@ -3,7 +3,6 @@
 
 	<c:WizardUtils id="cmpWizardUtilities" />
 	<head>
-		<title>Continuous Integration {!copado__Continuous_Integration__c.Name} | Copado</title>
 		<script type="text/javascript">
             var $copado = jQuery.noConflict(), 
             __sfdcSessionId = '{!GETSESSIONID()}';

@@ -5,7 +5,7 @@
     </head>
     <body>
         <apex:pageMessages id="theMessages" />
-        <apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">
+        <apex:form id="theForm" styleClass="copado-lightning-container">
             <apex:outputPanel id="pnlWarning" rendered="{!!showList}">
                 <apex:commandButton id="btnReturn" value="Return to previous page" action="{!cancel}" />
             </apex:outputPanel>

@@ -1,7 +1,6 @@
 <apex:page standardController="copado__Promotion__c" extensions="copado.PromotionEditExtension" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds />
     <head>
-         <title>Edit Promotion {!Promotion__c.Name} | Copado</title>
         <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/libs/jquery.min.1.10.2.js')}" />
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
     </head>
@@ -58,7 +57,7 @@
         </apex:outputPanel>
 
         <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
-            <apex:form id="TheForm" styleClass="copado-lightning-container" style="padding-top:12px;" html-novalidate="true">
+            <apex:form id="TheForm" styleClass="copado-lightning-container" style="padding-top:12px;">
                 <apex:pageBlock title="" mode="edit">
                     <apex:pageBlockSection columns="2" showHeader="false" title="">
                         <apex:inputField value="{!copado__Promotion__c.copado__Release__c}" id="releasefield"/>
@@ -84,8 +83,6 @@
                         <apex:inputField value="{!copado__Promotion__c.copado__Create_Full_Profiles_Step__c}"/>
                         <apex:pageBlockSectionItem />
                         <apex:inputField value="{!copado__Promotion__c.copado__Create_Full_Permission_Sets_Step__c}"/>
-                        <apex:pageBlockSectionItem />
-                        <apex:inputField value="{!copado__Promotion__c.copado__Exclude_From_Auto_Resolve__c}"/>
                     </apex:pageBlockSection>
                     <apex:pageBlockSection columns="1" title="{!$Label.copado__other_information}" rendered="{!showOtherInformation}">
                         <apex:repeat value="{!$ObjectType.copado__Promotion__c.FieldSets.copado__CustomFields}" var="f">

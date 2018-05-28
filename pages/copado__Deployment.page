@@ -1,10 +1,9 @@
-<apex:page standardController="copado__Deployment__c" extensions="copado.DeploymentExt,copado.Settings,copado.JsRemotingController" id="thePage" lightningStylesheets="true" showHeader="{!AND($User.UIThemeDisplayed=='Theme3',!showStepsOnly)}" standardStylesheets="true" sidebar="{!AND($User.UIThemeDisplayed=='Theme3',!showStepsOnly)}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0">
+<apex:page standardController="copado__Deployment__c" extensions="copado.DeploymentExt,copado.Settings,copado.JsRemotingController" id="thePage" lightningStylesheets="true" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0">
 <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
 <apex:outputPanel layout="block" >
 </apex:outputPanel>    
 <apex:outputPanel layout="block" rendered="{!AND(showOptions,!showError)}">
     <head>
-        <title>Deployment {!Deployment__c.Name} | Copado</title>
         <style type="text/css">
             @keyframes flash {
                 from {background-color: #03a9ff;}
@@ -197,16 +196,16 @@ window,"sortable");</script>
         <apex:outputPanel id="body" layout="block" styleClass="copado-lightning-container copado-lightning-radius">
             <c:IframeLocker url="/apex/deploymentStatus?id={!dep.Id}" />
 
-            <apex:sectionHeader id="sectionHeader" title="{!$ObjectType.copado__Deployment__c.Label} {!$Label.copado__edit}" subtitle="{!IF(ISBLANK(dep.Name),$Label.copado__new+' '+ $ObjectType.copado__Deployment__c.Label ,dep.Name)}" rendered="{!AND($User.UIThemeDisplayed != 'Theme4d',!showStepsOnly)}" />
+            <apex:sectionHeader id="sectionHeader" title="{!$ObjectType.copado__Deployment__c.Label} {!$Label.copado__edit}" subtitle="{!IF(ISBLANK(dep.Name),$Label.copado__new+' '+ $ObjectType.copado__Deployment__c.Label ,dep.Name)}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
                 <!--a href="#" onClick="copadoApp.toggleChatter();" style="float:right;margin-top:-35px;    " >Chatter</a-->
 
 
             <apex:outputPanel id="chatter" layout="block" styleClass="copado-lightning-chatter">
-                <chatter:feedWithFollowers entityId="{!dep.id}" showHeader="true" rendered="{!AND(isChatterEnabled,!showStepsOnly)}" />
+                <chatter:feedWithFollowers entityId="{!dep.id}" showHeader="true" rendered="{!isChatterEnabled}" />
             </apex:outputPanel>
 
             <div id="form" class="copado-lightning-container" style="padding-top:12px;">
-                <apex:form id="theForm" rendered="{!!showStepsOnly}">
+                <apex:form id="theForm">
 
                 <c:JobsManager matchingKeys="{!jobsManagerMatchingKey}" rendered="{! !ISBLANK(jobsManagerMatchingKey)}, {!$User.UIThemeDisplayed != 'Theme4d'}"></c:JobsManager>
 
@@ -452,8 +451,8 @@ window,"sortable");</script>
                 </div>
 
                 <div class="row">
-                    <apex:relatedList list="Copado_Deployment_History__r" id="rlDeploymentHistory" rendered="{!AND(historyVisible,!showStepsOnly)}" />
-                    <apex:relatedList list="CombinedAttachments" rendered="{!!showStepsOnly}"/>
+                    <apex:relatedList list="Copado_Deployment_History__r" id="rlDeploymentHistory" rendered="{!historyVisible}" />
+                    <apex:relatedList list="CombinedAttachments" />
                 </div>
             </div>
 

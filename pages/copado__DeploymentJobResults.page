@@ -18,6 +18,7 @@
     </head>
     
     <body>
+        <c:ScreenLocker id="screenLocker" msg="{!$Label.copado__loading}"></c:ScreenLocker>
         
         <div class="fixedMsg" tyle="display:none;" id="msg"> </div>
         
@@ -28,8 +29,6 @@
             <apex:pageMessage title="{!$Label.copado__info}" summary="__MSG__" severity="info" strength="3" id="js-msg-INFO" />
         </div>
         <apex:form styleClass="copado-lightning-container">
-            <c:ScreenLocker id="screenLocker" msg="{!$Label.copado__loading}"></c:ScreenLocker>
-
             <apex:sectionHeader id="theHeader" title="Copado" subtitle="{!$Label.copado__deployment_job_errors}" />
         
             <apex:pageBlock id="bp">

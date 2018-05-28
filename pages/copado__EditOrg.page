@@ -1,7 +1,6 @@
 <apex:page standardController="copado__Org__c" extensions="copado.EditOrg,copado.Settings" title="{!$Label.site.edit} {!$ObjectType.copado__Org__c.Label}" id="thePage" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
-      <title>Edit Org Credential {!copado__Org__c.Name} | Copado</title>
         <c:GAnalytics />
         
         <style type="text/css">
@@ -81,7 +80,7 @@
                 <apex:outputPanel layout="block" rendered="{!AND(showOptions,!showError)}">
                     <span style="display:none;">{!copado__Org__c.copado__Metadata_Types__c}</span>
                 
-                    <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;" html-novalidate="true">
+                    <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;">
                         <apex:pageBlock id="pb_createOrg"  mode="edit" helpUrl="http://docs.copa.do/copado/creating-a-salesforce-org" helpTitle="{!$Label.copado__help_for_this_page}">
                 
                             <apex:pageblockButtons id="co_pbb" >
@@ -107,9 +106,6 @@
                                     <apex:selectOption itemValue="Production/Developer" itemLabel="Production/Developer"/>
                                     <apex:selectOption itemValue="Sandbox" itemLabel="Sandbox"/>
                                     <apex:selectOption itemValue="Custom Domain" itemLabel="Custom Domain"/>
-                                    <apex:selectOption itemValue="Scratch Org" itemLabel="Scratch Org" itemDisabled="true"/>
-                                    <apex:selectOption itemValue="Scratch Org - Test only" itemLabel="Scratch Org - Test only" itemDisabled="true"/>
-                                    <apex:selectOption itemValue="Scratch Org - Patch" itemLabel="Scratch Org - Patch" itemDisabled="true"/>
                                 </apex:selectList>
                                 
                                 <apex:inputField id="if_custom" value="{!org.copado__Custom_Domain__c}"/>
@@ -117,8 +113,6 @@
                                 <apex:inputField id="if_disableValidation" value="{!org.copado__Disable_Validation__c}" />
                                 <apex:inputField id="if_frequency" value="{!org.copado__Test_Frequency__c}" />
                                 <apex:inputField id="if_defaultCredential" value="{!org.copado__Default_Credential__c}" />
-                                <apex:inputField id="if_DevHubOrg" value="{!org.copado__is_Developer_Hub_Org__c}" rendered="{!!isScratchOrg}"/>
-                                <apex:inputField id="DxHub" value="{!org.copado__Developer_Hub_Org__c}" />
                             </apex:pageBlockSection>
                                 
                             <apex:actionStatus id="as_custom_domain">
@@ -134,7 +128,7 @@
                                     showHeader="true"
                                     id="typesSection"
                                     columns="1"
-                                    rendered="{!AND(!isBlank(copado__Org__c.copado__Oauth_Signature__c),!isScratchOrg)}">
+                                    rendered="{!!isBlank(copado__Org__c.copado__Oauth_Signature__c)}">
                                 <apex:pageBlockSectionItem dataStyle="width: 100%;" rendered="{!!scalableGrid}">
                                     <c:MultiselectPicklist leftLabel="{!$ObjectType.copado__Org__c.fields.copado__Metadata_Types__c.Label}"
                                         pleftOptions="{!types}"

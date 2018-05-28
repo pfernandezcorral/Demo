@@ -7,7 +7,7 @@
 		<apex:sectionHeader id="sectionHeader" title="{!$Label.copado__copado_change_management}" subtitle="{!$Label.copado__user_story_assign_release}" />
 		<apex:pageMessages id="theMessages" />
 		
-		<apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">
+		<apex:form id="theForm" styleClass="copado-lightning-container">
 			<apex:pageBlock id="pb" mode="edit">
 				<apex:pageBlockButtons id="pbButtons" location="bottom">
 					<apex:commandButton id="btnCancel" value="Cancel" action="{!cancel}" />

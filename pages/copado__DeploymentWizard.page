@@ -1,7 +1,6 @@
 <apex:page standardController="copado__Deployment__c" title="{!$ObjectType.copado__Deployment__c.Label} wizard" extensions="copado.DeploymentWizardExtension,copado.Settings" id="thePage" sidebar="{!NOT(ui2)}" lightningStylesheets="true">
 
     <head>
-      <title>Deployment Wizard {!copado__Deployment__c.Name} | Copado</title>
         <c:GAnalytics />
         <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
         <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/Cometd.js')}"/>

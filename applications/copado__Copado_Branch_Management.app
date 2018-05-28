@@ -12,5 +12,4 @@
     <tabs>standard-report</tabs>
     <tabs>copado__Account_Summary</tabs>
     <tabs>copado__Scheduled_Job__c</tabs>
-    <tabs>copado__Copado_DX_Panel</tabs>
 </CustomApplication>

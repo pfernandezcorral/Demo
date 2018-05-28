@@ -10,7 +10,7 @@
     
     <body>
         <apex:sectionHeader title="Copado" subtitle="{!$ObjectType.copado__Persona_Permission__c.Label}"/>
-        <apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">
+        <apex:form id="theForm" styleClass="copado-lightning-container">
             <div style="display:none;">
                 <apex:inputField id="if_PermissionSet" value="{!copado__Persona_Permission__c.copado__Permission_Set_Name__c}" required="true"/>
             </div>

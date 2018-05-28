@@ -1,7 +1,6 @@
 <apex:page standardController="copado__OrgDiff__c" extensions="copado.EditOrgDiffExtension" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
-      <title>Edit Org Differences {!copado__OrgDiff__c.Name} | Copado</title>
         <c:GAnalytics />
         <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
@@ -88,7 +87,7 @@
             </apex:outputPanel>
 
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
-                <apex:form styleClass="copado-lightning-container" style="padding-top:12px;" html-novalidate="true">
+                <apex:form styleClass="copado-lightning-container" style="padding-top:12px;">
                 
                 <apex:pageBlock id="pb_viewGitBackup"  mode="edit" helpUrl="http://docs.copa.do/copado/org-differences" helpTitle="{!$Label.copado__help_for_this_page}" title="{!$Label.copado__details}">
 

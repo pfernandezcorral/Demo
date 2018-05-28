@@ -2,7 +2,6 @@
     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
         <c:GAnalytics />
         <c:WizardUtils />
-
         <apex:slds />
         <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
         <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/libs/jquery.min.1.10.2.js')}"/>
@@ -11,9 +10,7 @@
         <apex:includeScript value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.js')}"/>
         <link rel="stylesheet" typea="text/css" href="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"/>
 
-
         <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery-ui.min.js')}"></script>
-
         <script type="text/javascript" src="{!URLFOR($Resource.jqx, 'jqwidgets/jqx-all.js')}"></script>
         <script type="text/javascript" src="{!URLFOR($Resource.jqx, 'jqwidgets/jqxwindow.js')}"></script>
         <script type="text/javascript"> var Copado_Licenses = {!CurrentUserLicenses};</script>
@@ -31,7 +28,7 @@
         <script type="text/javascript" src="{!URLFOR($Resource.copadoStreamingService) }"></script>
         <apex:includeScript value="{!URLFOR($Resource.statusManager) }" />
         <head>
-           <title>Branch Management {!Deployment_Flow__c.Name} | Copado</title>
+           <title>Copado Branch Management | Copado</title>
             <style type="text/css">
                 .icon-blinker {
                   animation: blink 1s linear 5;
@@ -195,6 +192,7 @@
                     z-index: 999;
                     display: block;
                 }
+                
                 #boxCanvas{
                     background-color: transparent;
                 }
@@ -221,40 +219,22 @@
                     z-index: 2;
                     cursor: pointer;
                 }
-                #errormessagediv {
-                    box-sizing: border-box;
-                    position: fixed;
-                    display: inline-block;
-                    top: 0;
-                    left: 5%;
-                    width: 50%;
-                    background-color: rgb(255, 255, 255);
-                    border-radius: 4px 0px 4px 4px;
-                    border-width: 1px;
-                    border-style: solid;
-                    border-color: rgb(216, 221, 230);
-                    border-image: initial;
-                    background: transparent;
-                }
+
             </style>
             <script type="text/javascript">
-                var $copado = jQuery.noConflict(), 
+                var $copado = jQuery.noConflict(),
+                j$ = jQuery.noConflict(),
                 __sfdcSessionId = '{!GETSESSIONID()}';
-                $copado(document).ready(function(){
-                    overridePageMessages();
-                })
             </script>
             <script src="/soap/ajax/35.0/connection.js"></script>
             <c:ShowWebhook url="webhook/branchStatuses" recordId="{!copado__Deployment_Flow__c.Id}" />
         </head>
-
         <c:IframeLocker url="" />
         <apex:outputField value="{!copado__Deployment_Flow__c.copado__Flow_Step_Coordinates__c}" rendered="false" />
         <apex:outputField value="{!copado__Deployment_Flow__c.copado__Main_Branch__c}" rendered="false" />
         <apex:outputField value="{!copado__Deployment_Flow__c.copado__Git_Repository__c}" rendered="false"/>
         <body class="slds-scope">
             <apex:form id="Lightningform">
-
             <apex:outputPanel id="mainPanel">
                 <div style="width:150px; left: 5px; position:fixed;"> 
                     <button id="toggleBG" class="slds-button slds-button_neutral" onclick="toggleBackground();return false;" name="Toggle Background">
@@ -281,28 +261,23 @@
                 
                 <apex:outputPanel id="globalWrapper">
                     <script type="text/javascript">
-                        var copadoApp = {
-                            ns: '{!JSENCODE(namespace)}',
-                            data: {
-                                flowId: '{!JSENCODE(Deployment_Flow__c.Id)}',
-                                __coordinates__: '{!JSENCODE(Deployment_Flow__c.Flow_Step_Coordinates__c)}',
-                                mainBranch: '{!JSENCODE(Deployment_Flow__c.Main_Branch__c)}',
-                                repositoryId: '{!JSENCODE(Deployment_Flow__c.Git_Repository__c)}',
-                                allNotificationMatchingKeys: '{!JobsManagerMatchingKeys}'
-                            },
-                            envConnections: [],
-                            environments: [],
-                            urlParameters: '{!JSENCODE(urlParameters)}',
-                            lightningSpinner: '{!URLFOR($Resource.SLDS,"/assets/images/spinners/slds_spinner_brand.gif")}',
-
-                        };
-                    </script>
+                    var copadoApp = {
+                        ns: '{!JSENCODE(namespace)}',
+                        data: {
+                            flowId: '{!JSENCODE(Deployment_Flow__c.Id)}',
+                            __coordinates__: '{!JSENCODE(Deployment_Flow__c.Flow_Step_Coordinates__c)}',
+                            mainBranch: '{!JSENCODE(Deployment_Flow__c.Main_Branch__c)}',
+                            repositoryId: '{!JSENCODE(Deployment_Flow__c.Git_Repository__c)}',
+                            allNotificationMatchingKeys: '{!JobsManagerMatchingKeys}'
+                        },
+                        envConnections: [],
+                        environments: [],
+                        urlParameters: '{!JSENCODE(urlParameters)}',
+                        lightningSpinner: '{!URLFOR($Resource.SLDS,"/assets/images/spinners/slds_spinner_brand.gif")}',
+                        
+                    };
+                </script>
                     <!-- -->
-
-                    <div id="errormessagediv">
-                        <apex:pageMessages id="canvasMessage"/>
-                    </div>
-
                     <div id="myInsext" class="">
                         <div class="myinsext-btn" style="outline:0;" onclick="toogle();" tabindex="0" accesskey="i" title="Show additional operations...">
                             <center>
@@ -311,11 +286,10 @@
                         </div>
                         <div id="overlay" class="insext-popup">
                             <div style="padding-top:30px; padding-left: 10px">
+
                                 <div class="slds-form">
                                     <div class="slds-form-element" style="margin-top: 10px">
-                                        <apex:outputPanel rendered="{!AND(!hideCalcBackPromotionButtons,stepMapJSON != 'false')}">
-                                            <input type="button" class="btn slds-button slds-button_neutral" onclick="backDeploy.recalculate(this);toogle();" value="Recalculate" />
-                                        </apex:outputPanel>
+                                        <input type="button" class="btn slds-button slds-button_neutral" onclick="backDeploy.recalculate(this);toogle();" value="Recalculate" />
                                         <button type="button" id="btnShowHookUrl" class="btn slds-button slds-button_neutral" onclick="showWebhook(); return false;">Show Hook URL</button>
                                     </div>
                                     <div class="slds-form-element" style="margin-top: 10px">
@@ -332,11 +306,9 @@
                                     <div class="slds-form-element" style="margin-top: 10px">
                                         <button type="button" id="showLogs" class="btn slds-button slds-button_neutral" onclick="showLogsModal(); return false;">Latest sync results</button>                                     
                                     </div>
-                                    <apex:outputPanel rendered="{!AND(!hideCalcBackPromotionButtons,stepMapJSON != 'false')}">
-                                        <div class="slds-form-element" style="margin-top: 10px">
-                                            <button type="button" id="massBackPromote" class="btn slds-button slds-button_neutral" onclick="lock();openRebaseModal();toogle(); return false;">Mass Back-Promote</button>
-                                        </div>
-                                    </apex:outputPanel>
+                                    <div class="slds-form-element" style="margin-top: 10px">
+                                        <button type="button" id="massBackPromote" class="btn slds-button slds-button_neutral" onclick="lock();openRebaseModal();toogle(); return false;">Mass Back-Promote</button>
+                                    </div>
                                 </div>
                                 <div class="slds-grid">
                                     <div class="slds-col">
@@ -350,7 +322,6 @@
                             </div>
                         </div>
                     </div>
-
                     <a name="canvasLocation" style="display:none;">toplink</a>
                     <!-- Canvas Div -->
                     <div id="boxCanvas" class="bgActive"></div>
@@ -396,11 +367,10 @@
 
                     console.info('Assigning step details...');
                     backDeploy.config.map = {!(stepMapJSON)};
-
-                    // comment out to remove javascript alert for no step error
-                    //if(backDeploy.config.map === false){
-                        //alert(backDeploy.labels.noStep);
-                    //}
+                    
+                    if(backDeploy.config.map === false){
+                        alert(backDeploy.labels.noStep);
+                    }
         
                     $copado( document ).ready(function() {
                         copadoStreamingService.ns = copadoApp.ns;
@@ -549,22 +519,20 @@
 
                     textureEffect = 'slds-theme--alert-texture';
 
-                    $copado('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);
-                    $copado('.confirmM3').addClass('slds-notify slds-notify--alert slds-theme--success  customMessage '+textureEffect);
-                    $copado('.errorM3').addClass('slds-notify slds-notify--alert slds-theme--error customMessage '+textureEffect);
-                    $copado('.infoM3').addClass('slds-notify slds-notify--toast slds-theme--info customMessage '+textureEffect);
+                    $copado('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);          
+                    $copado('.confirmM3').addClass('slds-notify slds-notify--alert slds-theme--success  customMessage '+textureEffect);    
+                    $copado('.errorM3').addClass('slds-notify slds-notify--alert slds-theme--error customMessage '+textureEffect);                  
+                    $copado('.infoM3').addClass('slds-notify slds-notify--toast customMessage '+textureEffect);    
 
-                    $copado('.errorM3').removeClass('errorM3');
-                    $copado('.confirmM3').removeClass('confirmM3');
-                    $copado('.infoM3').removeClass('infoM3');
+                    $copado('.errorM3').removeClass('errorM3'); 
+                    $copado('.confirmM3').removeClass('confirmM3'); 
+                    $copado('.infoM3').removeClass('infoM3');   
                     $copado('.warningM3').removeClass('warningM3');
 
                     $copado('.message').css('margin',0);
+                    $copado('.message').on('click',function(){$copado('.message').hide()});
                     $copado('.message').css('margin-top',10);
                     $copado('.message').css('font-size','11pt');
-                    $copado('.messageText').css('color','white');
-                    $copado('.messageText h4').css('color','white');
-                    $copado('.messageTable ul').css('color','white');
 
                     if(cb) cb();
                 }
