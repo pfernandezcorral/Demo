@@ -666,6 +666,7 @@
   </types>
   <types>
     <members>Listsendemail</members>
+    <members>Modify_all_data</members>
     <members>Permissions</members>
     <members>Test_permission_set</members>
     <members>rider_history</members>
