@@ -36,6 +36,13 @@
         <value>testing custom label</value>
     </labels>
     <labels>
+        <fullName>traduccionalex</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>traduccionalex</shortDescription>
+        <value>test</value>
+    </labels>
+    <labels>
         <fullName>traductionthai</fullName>
         <language>en_US</language>
         <protected>true</protected>
