@@ -4,17 +4,17 @@
     <description>An agile project management app by Salesforce.</description>
     <label>Agile Accelerator</label>
     <logo>agf__GUS/agf__Agile_Accelerator_270_x_72.png</logo>
-    <tab>standard-Chatter</tab>
-    <tab>standard-report</tab>
-    <tab>standard-Dashboard</tab>
-    <tab>agf__ADM_Work__c</tab>
-    <tab>agf__ADM_Scrum_Team__c</tab>
-    <tab>agf__ADM_Sprint__c</tab>
-    <tab>agf__ADM_Unified_Wall</tab>
-    <tab>agf__ADM_Kanban_Board</tab>
-    <tab>agf__ADM_Build__c</tab>
-    <tab>agf__ADM_Product_Tag__c</tab>
-    <tab>agf__ADM_Epic__c</tab>
-    <tab>agf__ADM_Theme__c</tab>
-    <tab>agf__ADM_Work_Status__c</tab>
+    <tabs>standard-Chatter</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>agf__ADM_Work__c</tabs>
+    <tabs>agf__ADM_Scrum_Team__c</tabs>
+    <tabs>agf__ADM_Sprint__c</tabs>
+    <tabs>agf__ADM_Unified_Wall</tabs>
+    <tabs>agf__ADM_Kanban_Board</tabs>
+    <tabs>agf__ADM_Build__c</tabs>
+    <tabs>agf__ADM_Product_Tag__c</tabs>
+    <tabs>agf__ADM_Epic__c</tabs>
+    <tabs>agf__ADM_Theme__c</tabs>
+    <tabs>agf__ADM_Work_Status__c</tabs>
 </CustomApplication>
