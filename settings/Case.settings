@@ -4,40 +4,44 @@
     <caseCreateNotificationTemplate>unfiled$public/SupportCaseCreatedPhoneInquiries</caseCreateNotificationTemplate>
     <caseFeedItemSettings>
         <characterLimit>400</characterLimit>
-        <collapseThread>true</collapseThread>
+        <collapseThread>false</collapseThread>
         <displayFormat>Default</displayFormat>
         <feedItemType>EmailMessageEvent</feedItemType>
     </caseFeedItemSettings>
     <closeCaseThroughStatusChange>false</closeCaseThroughStatusChange>
-    <defaultCaseOwner>pfernandezcorral@testorg4.com</defaultCaseOwner>
+    <defaultCaseOwner>pfernandez@copa.do.demo</defaultCaseOwner>
     <defaultCaseOwnerType>User</defaultCaseOwnerType>
-    <defaultCaseUser>pfernandezcorral@testorg4.com</defaultCaseUser>
+    <defaultCaseUser>pfernandez@copa.do.demo</defaultCaseUser>
     <emailToCase>
+        <enableE2CSourceTracking>true</enableE2CSourceTracking>
         <enableEmailToCase>true</enableEmailToCase>
         <enableHtmlEmail>false</enableHtmlEmail>
         <enableOnDemandEmailToCase>true</enableOnDemandEmailToCase>
         <enableThreadIDInBody>true</enableThreadIDInBody>
         <enableThreadIDInSubject>true</enableThreadIDInSubject>
         <notifyOwnerOnNewCaseEmail>false</notifyOwnerOnNewCaseEmail>
-        <overEmailLimitAction>Bounce</overEmailLimitAction>
+        <overEmailLimitAction>Discard</overEmailLimitAction>
         <preQuoteSignature>false</preQuoteSignature>
         <routingAddresses>
             <addressType>EmailToCase</addressType>
             <caseOrigin>Email</caseOrigin>
+            <caseOwner>pfernandez@copa.do.demo</caseOwner>
+            <caseOwnerType>User</caseOwnerType>
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
-            <emailAddress>pfernandez@copa.do</emailAddress>
-            <emailServicesAddress>pfernandez@gheivn6fw5if8hl1ksjyq7rjc1pnuejz1k450jgep70mcfbme.1i-2lb7wuag.na73.case.salesforce.com</emailServicesAddress>
+            <emailAddress>pfernandezcorral@gmail.com</emailAddress>
+            <emailServicesAddress>pfernandezcorral@u-rtdwj9ntn5z2yyag55jqoa5vmsrj2jfr26s1omu325ikomenq.0o-rg7kuau.eu9.case.salesforce.com</emailServicesAddress>
             <isVerified>false</isVerified>
-            <routingName>this is a test address</routingName>
+            <routingName>Email2Case Address</routingName>
             <saveEmailHeaders>false</saveEmailHeaders>
         </routingAddresses>
         <unauthorizedSenderAction>Discard</unauthorizedSenderAction>
     </emailToCase>
-    <enableCaseFeed>true</enableCaseFeed>
-    <enableDraftEmails>false</enableDraftEmails>
+    <enableCaseFeed>false</enableCaseFeed>
     <enableEarlyEscalationRuleTriggers>false</enableEarlyEscalationRuleTriggers>
-    <enableEmailActionDefaultsHandler>false</enableEmailActionDefaultsHandler>
+    <enableSuggestedArticlesApplication>false</enableSuggestedArticlesApplication>
+    <enableSuggestedArticlesCustomerPortal>false</enableSuggestedArticlesCustomerPortal>
+    <enableSuggestedArticlesPartnerPortal>false</enableSuggestedArticlesPartnerPortal>
     <enableSuggestedSolutions>true</enableSuggestedSolutions>
     <notifyContactOnCaseComment>false</notifyContactOnCaseComment>
     <notifyDefaultCaseOwner>false</notifyDefaultCaseOwner>

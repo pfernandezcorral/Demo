@@ -122,10 +122,6 @@
         <picklistValues>
             <picklist>Subject</picklist>
             <values>
-                <fullName>Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Email</fullName>
                 <default>false</default>
             </values>
@@ -135,6 +131,10 @@
             </values>
             <values>
                 <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -149,11 +149,11 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Email</fullName>
+                <fullName>Meeting</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Meeting</fullName>
+                <fullName>Email</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -169,11 +169,11 @@
         <picklistValues>
             <picklist>hola__c</picklist>
             <values>
-                <fullName>hola1</fullName>
+                <fullName>hola2</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>hola2</fullName>
+                <fullName>hola1</fullName>
                 <default>false</default>
             </values>
             <values>

@@ -99,6 +99,9 @@
         <relatedList>copado__Org__c.copado__Environment__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <relatedList>RelatedNoteList</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <fields>copado__User__c</fields>
         <fields>copado__Allow_Deployments__c</fields>

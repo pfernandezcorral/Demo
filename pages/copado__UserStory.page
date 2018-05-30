@@ -236,8 +236,9 @@
                               <!-- Validate Deployment Button -->
                               
                               <apex:outputPanel rendered="{!AND(NOT(ISBLANK(userStory.copado__Metadata_Types_in_Selection__c)),visualFlowSteps.size > 1)}" layout="none">
-                                <apex:actionFunction name="renderValidate" rerender="apexDetail,screenLockerLightning,thePoller,msg" oncomplete="checkScreenLockerStatus({!IsPollerEnabled},{!showHideMsg},{!validationHasError})"/>                     
-                                <apex:actionFunction name="validate" action="{!validateUserStory}" rerender="flowStepRender" oncomplete="renderValidate();"/>
+                                <apex:actionFunction name="renderValidate" rerender="apexDetail,screenLockerLightning,thePoller,msg" oncomplete="checkScreenLockerStatus({!IsPollerEnabled},{!showHideMsg},{!validationHasError})"/>
+                                <apex:actionFunction name="validate" action="{!validateUserStory}" oncomplete="dValidate();"/>
+                                <apex:actionFunction name="dValidate" action="{!deployValidatedUserStory}" rerender="flowStepRender" oncomplete="renderValidate();"/>
                                 <apex:outputLink id="btn_validate" value="#" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-no-flex slds-m-horizontal_small">
                                   {!JSENCODE($Label.US_VALIDATE)}&nbsp;
                                   <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">

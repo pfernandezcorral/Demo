@@ -4,15 +4,15 @@
     <formFactors>Large</formFactors>
     <label>Copado Compliance Hub</label>
     <logo>copado__Copado/copado__Copado_Logo.png</logo>
-    <tab>copado__Compliance_Getting_Started</tab>
-    <tab>copado__Compliance_Rule__c</tab>
-    <tab>copado__Compliance_Finding__c</tab>
-    <tab>copado__Compliance_Scan_Result__c</tab>
-    <tab>copado__Compliance_Rule_Group__c</tab>
-    <tab>copado__Org__c</tab>
-    <tab>copado__Environment__c</tab>
-    <tab>copado__Git_Repository__c</tab>
-    <tab>copado__Git_Backup__c</tab>
-    <tab>standard-report</tab>
-    <tab>standard-Dashboard</tab>
+    <tabs>copado__Compliance_Getting_Started</tabs>
+    <tabs>copado__Compliance_Rule__c</tabs>
+    <tabs>copado__Compliance_Finding__c</tabs>
+    <tabs>copado__Compliance_Scan_Result__c</tabs>
+    <tabs>copado__Compliance_Rule_Group__c</tabs>
+    <tabs>copado__Org__c</tabs>
+    <tabs>copado__Environment__c</tabs>
+    <tabs>copado__Git_Repository__c</tabs>
+    <tabs>copado__Git_Backup__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
 </CustomApplication>

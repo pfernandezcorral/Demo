@@ -4,14 +4,14 @@
     <formFactors>Large</formFactors>
     <label>Copado Selenium Testing</label>
     <logo>copado__Copado/copado__Copado_Logo.png</logo>
-    <tab>copado__SeleniumGettingStarted</tab>
-    <tab>copado__Selenium_Test_Case__c</tab>
-    <tab>copado__Selenium_Test_Suite__c</tab>
-    <tab>copado__Selenium_Test_Run__c</tab>
-    <tab>copado__Selenium_Test_Group__c</tab>
-    <tab>copado__Selenium_Settings__c</tab>
-    <tab>copado__Org__c</tab>
-    <tab>copado__Account_Summary</tab>
-    <tab>copado__Scheduled_Job__c</tab>
-    <tab>copado__Selenium_Locator__c</tab>
+    <tabs>copado__SeleniumGettingStarted</tabs>
+    <tabs>copado__Selenium_Test_Case__c</tabs>
+    <tabs>copado__Selenium_Test_Suite__c</tabs>
+    <tabs>copado__Selenium_Test_Run__c</tabs>
+    <tabs>copado__Selenium_Test_Group__c</tabs>
+    <tabs>copado__Selenium_Settings__c</tabs>
+    <tabs>copado__Org__c</tabs>
+    <tabs>copado__Account_Summary</tabs>
+    <tabs>copado__Scheduled_Job__c</tabs>
+    <tabs>copado__Selenium_Locator__c</tabs>
 </CustomApplication>

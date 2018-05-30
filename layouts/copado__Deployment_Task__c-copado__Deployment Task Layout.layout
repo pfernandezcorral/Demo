@@ -88,6 +88,9 @@
         <fields>copado__Status__c</fields>
         <fields>copado__Order__c</fields>
     </miniLayout>
+    <relatedLists>
+        <relatedList>RelatedNoteList</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

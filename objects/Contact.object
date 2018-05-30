@@ -334,32 +334,9 @@
         <active>true</active>
         <label>This is a test recordtype</label>
         <picklistValues>
-            <picklist>LeadSource</picklist>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Phone Inquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchased List</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Web</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Level__c</picklist>
             <values>
-                <fullName>Primary</fullName>
+                <fullName>Tertiary</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -367,14 +344,52 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Tertiary</fullName>
+                <fullName>Primary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premier-Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premier</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
             <picklist>Name</picklist>
             <values>
-                <fullName>Dr%2E</fullName>
+                <fullName>Ms%2E</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -386,26 +401,11 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ms%2E</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Prof%2E</fullName>
                 <default>false</default>
             </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Status__c</picklist>
             <values>
-                <fullName>Premier</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Premier-Standard</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Standard</fullName>
+                <fullName>Dr%2E</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
