@@ -30,6 +30,14 @@
         <name>External_Id__c</name>
     </fields>
     <fields>
+        <label><!-- FLS2 --></label>
+        <name>FLS2__c</name>
+    </fields>
+    <fields>
+        <label><!-- FLS --></label>
+        <name>FLS__c</name>
+    </fields>
+    <fields>
         <label><!-- Number of Locations --></label>
         <name>NumberofLocations__c</name>
     </fields>
@@ -244,6 +252,10 @@
             <masterLabel>thomson5</masterLabel>
             <translation><!-- thomson5 --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- validationfield --></label>
+        <name>validationfield__c</name>
     </fields>
     <validationRules>
         <errorMessage><!-- cannot be null1 --></errorMessage>

@@ -21,6 +21,10 @@
         <name>testcustomlabel2</name>
     </customLabels>
     <customLabels>
+        <label><!-- traduccionalex --></label>
+        <name>traduccionalex</name>
+    </customLabels>
+    <customLabels>
         <label><!-- traductionthai --></label>
         <name>traductionthai</name>
     </customLabels>
