@@ -45,10 +45,6 @@
         <description>For Watchman Call Center with Spur</description>
         <isActive>true</isActive>
         <values>
-            <fullName>Closed Lost</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Closed Won</fullName>
             <default>false</default>
         </values>
@@ -65,7 +61,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>New</fullName>
+            <fullName>Nuevo</fullName>
             <default>false</default>
         </values>
         <values>

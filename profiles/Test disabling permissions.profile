@@ -2610,6 +2610,9 @@
         <layout>MetricDataLink-Metric Data Link Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Objectcommits__c-Objectcommits Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Objectqueue__c-Objectqueue Layout</layout>
     </layoutAssignments>
     <layoutAssignments>

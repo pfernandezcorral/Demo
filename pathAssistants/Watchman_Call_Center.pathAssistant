@@ -4,9 +4,5 @@
     <entityName>Opportunity</entityName>
     <fieldName>StageName</fieldName>
     <masterLabel>Watchman Call Center</masterLabel>
-    <pathAssistantSteps>
-        <fieldNames>TrackingNumber__c</fieldNames>
-        <picklistValueName>New</picklistValueName>
-    </pathAssistantSteps>
     <recordTypeName>Watchman_Call_Center</recordTypeName>
 </PathAssistant>
