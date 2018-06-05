@@ -191,8 +191,8 @@ public with sharing class Utilities {
         Deployment__c deployment = [SELECT Count_Completed__c, Completed__c, Deployed__c, CreatedById, CreatedDate, Date__c, IsDeleted, Deployment_Jobs_Count__c, Name, Deployment_command_sent__c, From_Org__c, LastActivityDate, LastModifiedById, LastModifiedDate, OwnerId, Id, SUM_Deployed__c, Schedule__c, Server_URL__c, Status__c, SystemModstamp FROM Deployment__c where Id = :EncodingUtil.urlEncode(recordId, 'UTF-8')];
         return deployment;
     }
-    public static Step__c[] getStepsByDeploymentId(string recordId) {
-        Step__c[] steps = [select Id, Name, Order__c, Deployment__c, Type__c, dataJson__c, Status__c, CheckOnly__c, Status_Flag__c, Deployment__r.From_Org__c, Branch__c, Commit_Id__c, Commit_Name__c , Git_Repository__c, Git_Repository__r.Name, Run_all_tests__c from Step__c where Deployment__c = :recordId order by Order__c ASC limit 10000];
+    public static Step__c[] getStepsByDeploymentId(string recordId) {//added Branch_Base_URL__c to query to create a direct link to related branch on step detail - UCU 24.05.18
+        Step__c[] steps = [select Id, Name, Order__c, Deployment__c, Type__c, dataJson__c, Status__c, CheckOnly__c, Status_Flag__c, Deployment__r.From_Org__c, Branch__c, Commit_Id__c, Commit_Name__c , Git_Repository__c, Git_Repository__r.Name, Git_Repository__r.Branch_Base_URL__c, Run_all_tests__c from Step__c where Deployment__c = :recordId order by Order__c ASC limit 10000];
         return steps;
     }
     public static Step__c getStepById(string recordId) {
@@ -317,6 +317,7 @@ public with sharing class Utilities {
         boolean isAccessible = stype.isAccessible();
         boolean isCustomSetting = stype.isCustomSetting();
         boolean forceDML = isCustomSetting || Trigger.isExecuting;
+        system.debug('upd => '+isUpdateable+' cre => '+isCreateable+' acc => '+isAccessible+' forceDML => '+forceDML);
         //US-0001123: FL: allow triggers to do DML since they run in system mode.
         if (action == DML_Action.INS) {
             if (isAccessible && isCreateable || forceDML) {
@@ -404,6 +405,10 @@ public with sharing class Utilities {
         if (r != null)return r[0];
         return null;
     }
+    //checks if the user has edit access on current record and query it only when needed - UCU
+    public static boolean HasEditAccess(id currentId){
+        return [SELECT RecordId, HasEditAccess FROM UserRecordAccess WHERE UserId = :UserInfo.getUserId() AND RecordId =:currentId limit 1].HasEditAccess;
+    }
     public static Integer randomInteger(Integer min, Integer max) {
         Integer i = Math.mod(Integer.valueof(math.random() * 10 * (max + ''.length())), max);
         WHILE(i < min) {
@@ -439,10 +444,9 @@ public with sharing class Utilities {
         Set<String> accessiblefields = new Set<String>();
 
         for (Schema.SObjectField field : fields.values()) {
-            if (field.getDescribe().isAccessible()) {
+            if (!field.getDescribe().isAccessible() && !Test.isRunningTest()) continue;
                 accessiblefields.add(field.getDescribe().getName());
             }
-        }
 
         //Now we do the same for fields in the FieldSets
         Map<String, Schema.FieldSet> fsMap = Schema.getGlobalDescribe().get(sObjectName).getDescribe().SObjectType.getDescribe().fieldSets.getMap();

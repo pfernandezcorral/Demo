@@ -107,6 +107,10 @@
         <name>Other</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Matching Criteria, Record Count and Record Count Criteria are required fields. --></errorMessage>
+        <name>Required_Criteria_Fields</name>
+    </validationRules>
     <webLinks>
         <label><!-- Manage_Criteria --></label>
         <name>Manage_Criteria</name>

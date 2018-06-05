@@ -58,21 +58,19 @@ var Base64 = {
     error: function() {}
 });
 
-Date.fromISOString = (function() {
-    var tzoffset = (new Date).getTimezoneOffset();
+// parses an ISO date only (ignores ms and tz) "2018-04-25T13:24:39.000Z" and returns a LOCAL date.
+Date.fromISOString = function(input) {
+  return new Date(Date.UTC(
+    parseInt(input.slice(0, 4), 10),
+    parseInt(input.slice(5, 7), 10) - 1,
+    parseInt(input.slice(8, 10), 10),
+    parseInt(input.slice(11, 13), 10),
+    parseInt(input.slice(14, 16), 10),
+    parseInt(input.slice(17,19), 10)
+  ));
+};
 
-    function fastDateParse(y, m, d, h, i, s, ms) { // this -> tz
-        return new Date(y, m - 1, d, h || 0, +(i || 0) - this, s || 0, ms || 0);
-    }
 
-    // result function
-    return function(isoDateString) {
-        var tz = isoDateString.substr(10).match(/([\-\+])(\d{1,2}):?(\d{1,2})?/) || 0;
-        if (tz)
-            tz = tzoffset + (tz[1] == '-' ? -1 : 1) * (tz[3] != null ? +tz[2] * 60 + (+tz[3]) : +tz[2]);
-        return fastDateParse.apply(tz || 0, isoDateString.split(/\D/));
-    }
-})();
 
 //namespace
 var dw = dw || {};
@@ -120,14 +118,16 @@ dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, requestType) {
 
 
                 var obj = $copado.parseJSON(res.replace(/(\r\n|\n|\r)/gm, ' '));
-
+                console.log('object:::',obj);
 
                 //FIXME: understand why parse is giving an string
                 if (typeof obj === 'string') {
 
                     obj = $copado.parseJSON(obj.replace(/(\r\n|\n|\r)/gm, ' '));
                 }
-
+                if(obj.ok && obj.copadoJobId && requestType === 'autoTestSelection'){
+                    cb && cb(obj);
+                }
 
                 if (obj.ok) {
 
@@ -197,6 +197,7 @@ dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, requestType) {
         },
         timeout: 250000
     });
+
 };
 dw.u.getRemote.attempts = 0;
 

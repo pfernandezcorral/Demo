@@ -15,6 +15,20 @@
         <apex:includeScript value="{!URLFOR($Resource.JsRemoting) }" />
         <apex:includeScript value="{!URLFOR($Resource.deploymentJobResults) }" />
         <script> var $copado = jQuery.noConflict(); </script>
+        <style>
+            /*for Grid, go to page sections height issue on lightning design - UCU*/
+            .jqx-grid-pager-input-base{
+                height:18px !important;
+            }
+            /*show error messages on multiple rows fix - UCU*/
+            .jqx-grid-cell-wrap,.jqx-grid-cell-wrap>pre {
+                white-space: normal !important;
+            }
+            /*prevents unneeded empty space on the top of message box*/
+            .jqx-grid-cell-wrap>pre{
+                margin-top : 0px;
+            }
+        </style>
     </head>
     
     <body>

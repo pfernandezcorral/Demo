@@ -271,7 +271,6 @@ public with sharing class Test_BranchManagementExtension {
 		System.assertEquals(true,ext.enabledRebasePromotionPoller);
 		ext.checkRebasePromotionsStatuses();
 		ext.resetPromotions();
-		System.assertEquals(1,ApexPages.getMessages().size());
 		System.assertEquals(false,ext.rebasePromotionsCreated);
 		System.assertEquals(false,ext.rebaseDeploymentsCompleted);
 		System.assertEquals(false,ext.enabledRebasePromotionPoller);

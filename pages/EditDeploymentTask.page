@@ -199,7 +199,7 @@
 	    					$copado('[data-id$=ustry]').val(),
 	    					function(result){
 	    					if($copado('[data-id$=ustry]').val() != null){	
-	    						console.log(result.Org_Credential__c);								
+	    						if(!result) console.log(result.Org_Credential__c);
 								
 								if(!result){
 									alert('{!$label.DeploymentTask_Alert_ProperUS}');

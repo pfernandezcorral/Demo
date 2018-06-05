@@ -2,18 +2,18 @@
  * Created by ferhatozsavran on 2/2/18.
  */
 @isTest
-private class  TestDxOperationController {
+private class TestDxOperationController {
 
-    @testSetup static void setup(){
+    @testSetup static void setup() {
         // Create common test records
         insert TestUtilities.getTestSettings();
-
+        TestUtilities.insertUser('user1-dxOperations@test-copado.org', 'System Administrator');
         TestUtilities.assignLicense(UserInfo.getUserName(), true, true, true, true, true);
         TestUtilities.createAllDXTestData();
     }
 
     //Load metadata, load data and commit history is tested at scratchorgoperationone for artifacts
-    @isTest static void scratchOrgOperationsOne(){
+    @isTest static void scratchOrgOperationsOne() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -28,10 +28,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 1'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 1'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -40,7 +40,7 @@ private class  TestDxOperationController {
         controller.enableSelectedPanels();
 
         //Check the snapshot commit list size
-        system.assertEquals(0,controller.snapshotCommitList.size());
+        system.assertEquals(0, controller.snapshotCommitList.size());
 
         //Return main menu to process another operation
         ApexPages.currentPage().getParameters().put('actionName', 'main');
@@ -63,13 +63,13 @@ private class  TestDxOperationController {
         somcController.selectType();
 
         //Select Project template and fill org credential and artifacts
-        Scratch_Org_Project_Template__c sopt = [Select Id From Scratch_Org_Project_Template__c Where Name =: 'Test'];
+        Scratch_Org_Project_Template__c sopt = [Select Id From Scratch_Org_Project_Template__c Where Name = :'Test'];
         ApexPages.currentPage().getParameters().put('templateId', sopt.Id);
         somcController.readProjectTemplate();
 
         //Click to the load metadata button. Set mock callout class
         Test.startTest();
-        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(200,'Complete','{"example":"test"}',null);
+        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(200, 'Complete', '{"example":"test"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponse);
         somcController.loadMetadata();
 
@@ -83,7 +83,7 @@ private class  TestDxOperationController {
     }
 
     //org status is tested at scratchorgoperationtwo (copado notification is not created before call out)
-    @isTest static void scratchOrgOperationsTwo(){
+    @isTest static void scratchOrgOperationsTwo() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -98,10 +98,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 1'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 1'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -129,11 +129,11 @@ private class  TestDxOperationController {
 
         //Set mock callout class and click to the check status button
         Test.startTest();
-        MockHttpResponseGenerator fakeResponseError = new MockHttpResponseGenerator(200,'Complete','{"copadoJobId":"","ok":"","status":"","error":"There is test error"}',null);
+        MockHttpResponseGenerator fakeResponseError = new MockHttpResponseGenerator(200, 'Complete', '{"copadoJobId":"","ok":"","status":"","error":"There is test error"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseError);
         soscController.requestStatus();
 
-        MockHttpResponseGenerator fakeResponseCopadoId = new MockHttpResponseGenerator(200,'Complete','{"copadoJobId":"123456789012345678","ok":"","status":"","error":""}',null);
+        MockHttpResponseGenerator fakeResponseCopadoId = new MockHttpResponseGenerator(200, 'Complete', '{"copadoJobId":"123456789012345678","ok":"","status":"","error":""}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseCopadoId);
         soscController.requestStatus();
 
@@ -147,7 +147,7 @@ private class  TestDxOperationController {
     }
 
     //org status is tested at scratchorgoperationthree (copado notification is created before call out)
-    @isTest static void scratchOrgOperationsThree(){
+    @isTest static void scratchOrgOperationsThree() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -162,10 +162,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 1'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 1'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -198,7 +198,7 @@ private class  TestDxOperationController {
         cn.Matching_Key__c = 'testmatching';
         insert cn;
 
-        MockHttpResponseGenerator fakeResponseCopadoId = new MockHttpResponseGenerator(200,'Complete','{"test":"123456789012345678"}',null);
+        MockHttpResponseGenerator fakeResponseCopadoId = new MockHttpResponseGenerator(200, 'Complete', '{"test":"123456789012345678"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseCopadoId);
         soscController.requestStatus();
 
@@ -206,14 +206,14 @@ private class  TestDxOperationController {
         cn.isSuccess__c = true;
         update cn;
 
-        MockHttpResponseGenerator fakeResponseCopadoIds = new MockHttpResponseGenerator(200,'Complete','{"test":"123456789012345678"}',null);
+        MockHttpResponseGenerator fakeResponseCopadoIds = new MockHttpResponseGenerator(200, 'Complete', '{"test":"123456789012345678"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseCopadoIds);
         soscController.retrieveStatus();
 
         cn.isSuccess__c = false;
         update cn;
 
-        MockHttpResponseGenerator fakeResponseCopadoIds1 = new MockHttpResponseGenerator(200,'Complete','{"test":"123456789012345678"}',null);
+        MockHttpResponseGenerator fakeResponseCopadoIds1 = new MockHttpResponseGenerator(200, 'Complete', '{"test":"123456789012345678"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseCopadoIds1);
         soscController.retrieveStatus();
 
@@ -224,7 +224,7 @@ private class  TestDxOperationController {
     }
 
     //display org component is tested at scratchorgoperationfour
-    @isTest static void scratchOrgOperationsFour(){
+    @isTest static void scratchOrgOperationsFour() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -239,10 +239,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 1'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 1'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -253,7 +253,7 @@ private class  TestDxOperationController {
         sodcController.scratchOrgId = orgScratch.Id;
 
         //Select the Scratch Org 2 from picklist and populate actions
-        Org__c orgScratch1 = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 2'];
+        Org__c orgScratch1 = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 2'];
         controller.selectedOperationDataId = orgScratch1.Id;
         controller.populatePossibleActions();
 
@@ -265,7 +265,7 @@ private class  TestDxOperationController {
 
         //Set mock callout class and click to the click delete scratch org button
         Test.startTest();
-        MockHttpResponseGenerator fakeResponseDeleteScratchOrg = new MockHttpResponseGenerator(200,'Complete','{"test":"123456789012345678"}',null);
+        MockHttpResponseGenerator fakeResponseDeleteScratchOrg = new MockHttpResponseGenerator(200, 'Complete', '{"test":"123456789012345678"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseDeleteScratchOrg);
         sodcController1.deleteScratchOrg();
 
@@ -279,7 +279,7 @@ private class  TestDxOperationController {
     }
 
     //Load metadata, load data and commit history is tested at scratchorgoperationone for branch
-    @isTest static void scratchOrgOperationsFive(){
+    @isTest static void scratchOrgOperationsFive() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -294,10 +294,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 2 For Branch'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 2 For Branch'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -318,13 +318,13 @@ private class  TestDxOperationController {
         somcController.selectType();
 
         //Select git repository and populate grid panel
-        Git_Repository__c gr = [Select Id, Name From Git_Repository__c Where Name =: 'git 1'];
+        Git_Repository__c gr = [Select Id, Name From Git_Repository__c Where Name = :'git 1'];
         somcController.repoId = gr.Id;
         somcController.repoName = gr.Name;
         somcController.getSfdxFormat();
 
         //Select git snapshot from grid panel and populate branch name parameter at dxoperation controller
-        Git_Backup__c gb = [Select Id, Branch__c From Git_Backup__c Where Git_Repository__c =: gr.Id];
+        Git_Backup__c gb = [Select Id, Branch__c From Git_Backup__c Where Git_Repository__c = :gr.Id];
 
         //Select branch and render artifact panels
         ApexPages.currentPage().getParameters().put('brancName', gb.Branch__c);
@@ -333,14 +333,14 @@ private class  TestDxOperationController {
 
         //Click to the load metadata button. Set mock callout class
         Test.startTest();
-        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(200,'Complete','{"example":"test"}',null);
+        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(200, 'Complete', '{"example":"test"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponse);
         somcController.loadMetadata();
         Test.stopTest();
     }
 
     //Load metadata, load data and commit history is tested at scratchorgoperationone for org
-    @isTest static void scratchOrgOperationsSix(){
+    @isTest static void scratchOrgOperationsSix() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -355,10 +355,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 2 For Org'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 2 For Org'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -384,19 +384,19 @@ private class  TestDxOperationController {
 
         //Populate org credential picklist and select one of the org credential
         somcController.getOrgCredentialsList();
-        Org__c orgScratchForOrg = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 1'];
+        Org__c orgScratchForOrg = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 1'];
         somcController.sourceSelections = orgScratchForOrg.Id;
 
         //Click to the load metadata button. Set mock callout class
         Test.startTest();
-        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(200,'Complete','{"example":"test"}',null);
+        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(200, 'Complete', '{"example":"test"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponse);
         somcController.loadMetadata();
         Test.stopTest();
     }
 
     //optional operation for org scratch org
-    @isTest static void scratchOrgOperationsSeven(){
+    @isTest static void scratchOrgOperationsSeven() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -411,10 +411,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Name, Environment__c From Org__c Where Name =: 'Scratch Org 2 For Org'];
+        Org__c orgScratch = [Select Id, Name, Environment__c From Org__c Where Name = :'Scratch Org 2 For Org'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -428,7 +428,7 @@ private class  TestDxOperationController {
         controller.populateDeployments();
 
         //Select deployment and init the cloning
-        Deployment__c deployment = [Select Id From Deployment__c Where Name =: 'Deployment'];
+        Deployment__c deployment = [Select Id From Deployment__c Where Name = :'Deployment'];
         controller.selectedDeploymentId = deployment.Id;
         controller.initDeploymentStep();
 
@@ -436,7 +436,7 @@ private class  TestDxOperationController {
         controller.executeSteps();
     }
 
-    @isTest static void scratchOrgOperationsEight(){
+    @isTest static void scratchOrgOperationsEight() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -451,10 +451,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 2 For Branch'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 2 For Branch'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -476,16 +476,16 @@ private class  TestDxOperationController {
 
         //Refresh the repo cache and Select git repository and populate grid panel
         Test.startTest();
-        MockHttpResponseGenerator fakeResponseCache = new MockHttpResponseGenerator(200,'Complete','{"example":"test"}',null);
+        MockHttpResponseGenerator fakeResponseCache = new MockHttpResponseGenerator(200, 'Complete', '{"example":"test"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseCache);
-        Git_Repository__c gr = [Select Id, Name From Git_Repository__c Where Name =: 'git 1'];
+        Git_Repository__c gr = [Select Id, Name From Git_Repository__c Where Name = :'git 1'];
         somcController.repoId = gr.Id;
         somcController.repoName = gr.Name;
         somcController.refreshBranchCache();
         Test.stopTest();
     }
 
-    @isTest static void scratchOrgOperationsNine(){
+    @isTest static void scratchOrgOperationsNine() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -500,10 +500,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 2 For Branch'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 2 For Branch'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -525,22 +525,22 @@ private class  TestDxOperationController {
 
         //Select the release
         somcController.setRepo(); // this will give an error. No release is selected
-        Release__c release = [Select Id From Release__c Where Name =: 'Release 1'];
+        Release__c release = [Select Id From Release__c Where Name = :'Release 1'];
         somcController.releaseId = release.Id;
         somcController.setRepo(); //Version, base branch and project of selected release is empty
-        Release__c release1 = [Select Id From Release__c Where Name =: 'Release 2'];
+        Release__c release1 = [Select Id From Release__c Where Name = :'Release 2'];
         somcController.releaseId = release1.Id;
         somcController.setRepo();
 
         //Refresh the repo cache and Select git repository and populate grid panel
         Test.startTest();
-        MockHttpResponseGenerator fakeResponseCache = new MockHttpResponseGenerator(200,'Complete','{"example":"test"}',null);
+        MockHttpResponseGenerator fakeResponseCache = new MockHttpResponseGenerator(200, 'Complete', '{"example":"test"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseCache);
         somcController.loadMetadata();
         Test.stopTest();
     }
 
-    @isTest static void scratchOrgOperationsTen(){
+    @isTest static void scratchOrgOperationsTen() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -555,10 +555,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 2 For Branch'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 2 For Branch'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -579,18 +579,18 @@ private class  TestDxOperationController {
         somcController.selectType();
 
         //Select the Scratch Org 2 For Branch from picklist and populate actions
-        Org__c orgScratch1 = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 2 For Branch'];
+        Org__c orgScratch1 = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 2 For Branch'];
         somcController.orgId = orgScratch1.Id;
 
         //Refresh the package cache
         Test.startTest();
-        MockHttpResponseGenerator fakeResponseCache = new MockHttpResponseGenerator(200,'Complete','{"example":"test"}',null);
+        MockHttpResponseGenerator fakeResponseCache = new MockHttpResponseGenerator(200, 'Complete', '{"example":"test"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseCache);
         somcController.refreshPackagesCache();
         Test.stopTest();
     }
 
-    @isTest static void scratchOrgOperationsEleven(){
+    @isTest static void scratchOrgOperationsEleven() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -605,10 +605,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 2 For Branch'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 2 For Branch'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -629,18 +629,18 @@ private class  TestDxOperationController {
         somcController.selectType();
 
         //Select the Scratch Org 2 For Branch from picklist and populate actions
-        Org__c orgScratch1 = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org 2 For Branch'];
+        Org__c orgScratch1 = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org 2 For Branch'];
         somcController.orgId = orgScratch1.Id;
 
         //Refresh the package cache
         Test.startTest();
-        MockHttpResponseGenerator fakeResponseCache = new MockHttpResponseGenerator(200,'Complete','{"example":"test"}',null);
+        MockHttpResponseGenerator fakeResponseCache = new MockHttpResponseGenerator(200, 'Complete', '{"example":"test"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseCache);
         somcController.loadMetadata();
         Test.stopTest();
     }
 
-    @isTest static void scratchOrgOperationsTwelve(){
+    @isTest static void scratchOrgOperationsTwelve() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -655,10 +655,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org Branch 1'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org Branch 1'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -670,7 +670,7 @@ private class  TestDxOperationController {
 
         //Set mock callout class and click to the click delete scratch org button
         Test.startTest();
-        MockHttpResponseGenerator fakeResponseDeleteScratchOrg = new MockHttpResponseGenerator(200,'Complete','{"test":"123456789012345678"}',null);
+        MockHttpResponseGenerator fakeResponseDeleteScratchOrg = new MockHttpResponseGenerator(200, 'Complete', '{"test":"123456789012345678"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseDeleteScratchOrg);
         sodcController.generatePassword();
 
@@ -683,7 +683,7 @@ private class  TestDxOperationController {
         Test.stopTest();
     }
 
-    @isTest static void scratchOrgOperationsThirteen(){
+    @isTest static void scratchOrgOperationsThirteen() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -698,10 +698,10 @@ private class  TestDxOperationController {
         controller.resetDom();
 
         //Check the map size
-        system.assertEquals(6,controller.objectNameMap.size());
+        system.assertEquals(6, controller.objectNameMap.size());
 
         //Select the Scratch Org 1 from picklist and populate actions
-        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name =: 'Scratch Org Branch 1'];
+        Org__c orgScratch = [Select Id, Environment__c From Org__c Where Name = :'Scratch Org Branch 1'];
         controller.selectedOperationDataId = orgScratch.Id;
         controller.populatePossibleActions();
 
@@ -713,116 +713,120 @@ private class  TestDxOperationController {
 
         //Set mock callout class and click to the click delete scratch org button
         Test.startTest();
-        MockHttpResponseGenerator fakeResponseDeleteScratchOrg = new MockHttpResponseGenerator(200,'Complete','{"test":"123456789012345678"}',null);
+        MockHttpResponseGenerator fakeResponseDeleteScratchOrg = new MockHttpResponseGenerator(200, 'Complete', '{"test":"123456789012345678"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponseDeleteScratchOrg);
         sodcController.orgDetails();
         Test.stopTest();
     }
 
-    @isTest static void devHubOperations(){
-        //Use the PageReference Apex class to instantiate a page
-        PageReference pageRef = Page.DXOperation;
+    @isTest static void devHubOperations() {
+        List<User> users = [SELECT Id FROM User WHERE Username ='user1-dxOperations@test-copado.org'];
+        System.runAs(users[0]) {
 
-        //In this case, the Visualforce page named 'DXOperation' is the starting point of this test method.
-        Test.setCurrentPage(pageRef);
+            //Use the PageReference Apex class to instantiate a page
+            PageReference pageRef = Page.DXOperation;
 
-        //Instantiate and construct the controller class of DX Operation page.
-        DXOperationController controller = new DXOperationController();
+            //In this case, the Visualforce page named 'DXOperation' is the starting point of this test method.
+            Test.setCurrentPage(pageRef);
 
-        //Select Dev Hub Operations and execute the change function
-        controller.selectedOperation = '2';
-        controller.resetDom();
+            //Instantiate and construct the controller class of DX Operation page.
+            DXOperationController controller = new DXOperationController();
 
-        //Check the map size
-        system.assertEquals(1,controller.objectNameMap.size());
+            //Select Dev Hub Operations and execute the change function
+            controller.selectedOperation = '2';
+            controller.resetDom();
 
-        //Select the Dev Hub 1 from picklist and populate actions
-        Org__c orgDevHub = [Select Id From Org__c Where Name =: 'Dev Hub 1'];
-        controller.selectedOperationDataId = orgDevHub.Id;
-        controller.populatePossibleActions();
+            //Check the map size
+            system.assertEquals(1, controller.objectNameMap.size());
 
-        //Select manage scratch org from action and fill scratch org lists
-        ApexPages.currentPage().getParameters().put('actionName', 'mso');
-        controller.enableSelectedPanels();
+            //Select the Dev Hub 1 from picklist and populate actions
+            Org__c orgDevHub = [Select Id From Org__c Where Name = :'Dev Hub 1'];
+            controller.selectedOperationDataId = orgDevHub.Id;
+            controller.populatePossibleActions();
 
-        //Check the list sizes
-        system.assertEquals(1,controller.activeScratchOrgList.size());
-        system.assertEquals(1,controller.deletedScratchOrgList.size());
+            //Select manage scratch org from action and fill scratch org lists
+            ApexPages.currentPage().getParameters().put('actionName', 'mso');
+            controller.enableSelectedPanels();
 
-        //Select create scratch org from action and it will load the Scratch Org Template component
-        ApexPages.currentPage().getParameters().put('actionName', 'cso');
-        controller.enableSelectedPanels();
+            //Check the list sizes
+            system.assertEquals(1, controller.activeScratchOrgList.size());
+            system.assertEquals(1, controller.deletedScratchOrgList.size());
 
-        //Instantiate and construct the controller class of component.
-        ScratchOrgController socController = new ScratchOrgController();
-        socController.componentMode = 'new';
-        socController.showTemplateButtons = true;
-        socController.showButtons = true;
-        socController.controllerKey = 'ScratchOrgTemplate';
-        socController.pageController = controller;
+            //Select create scratch org from action and it will load the Scratch Org Template component
+            ApexPages.currentPage().getParameters().put('actionName', 'cso');
+            controller.enableSelectedPanels();
 
-        controller.getMyComponentController();
-        controller.setComponentController(socController);
+            //Instantiate and construct the controller class of component.
+            ScratchOrgController socController = new ScratchOrgController();
+            socController.componentMode = 'new';
+            socController.showTemplateButtons = true;
+            socController.showButtons = true;
+            socController.controllerKey = 'ScratchOrgTemplate';
+            socController.pageController = controller;
 
-        //Load template with selected hub id
-        socController.getTemlatesWithHubId();
+            controller.getMyComponentController();
+            controller.setComponentController(socController);
 
-        //Check the list sizes and it holds (-- None --) and (sod id)
-        system.assertEquals(2,socController.getTemlatesWithHubId().size());
+            //Load template with selected hub id
+            socController.getTemlatesWithHubId();
 
-        //Select definition template and load details.
-        Scratch_Org_Definition__c sod = [Select Id, Scratch_Org_Definition_JSON__c From Scratch_Org_Definition__c Where Name =: 'Scratch Org Definition'];
-        socController.templateId = sod.Id;
-        socController.readOrgDefinitionFromTemplate();
+            //Check the list sizes and it holds (-- None --) and (sod id)
+            system.assertEquals(2, socController.getTemlatesWithHubId().size());
 
-        //Enable and Disable org preferences
-        socController.selectedPreferenceType = 'General Setting';
-        socController.setLastSelection();
+            //Select definition template and load details.
+            Scratch_Org_Definition__c sod = [Select Id, Scratch_Org_Definition_JSON__c From Scratch_Org_Definition__c Where Name = :'Scratch Org Definition'];
+            socController.templateId = sod.Id;
+            socController.readOrgDefinitionFromTemplate();
 
-        //Click to Save as Template button and try to create new template
-        socController.newTemplate();
+            //Enable and Disable org preferences
+            socController.selectedPreferenceType = 'General Setting';
+            socController.setLastSelection();
 
-        //Click to Save as Template button and try to update template
-        socController.updateTemplate();
+            //Click to Save as Template button and try to create new template
+            socController.newTemplate();
 
-        //Click to Create Scratch Org button
-        socController.createOrg(); // returned error because org name is empty
-        socController.orgTemplate.orgName = 'FO test';
-        socController.duration = 40;
-        socController.createOrg(); // returned error because duration is out of range
-        socController.duration = 20;
-        socController.orgTemplate.edition = null;
-        socController.createOrg(); // returned error because edition is null
-        socController.orgTemplate.edition = 'Developer';
+            //Click to Save as Template button and try to update template
+            socController.updateTemplate();
 
-        //Select deployment flow, populate deployment flow steps and select deployment flow steps
-        socController.getDeploymentFlows();
+            //Click to Create Scratch Org button
+            socController.createOrg(); // returned error because org name is empty
+            socController.orgTemplate.orgName = 'FO test';
+            socController.duration = 40;
+            socController.createOrg(); // returned error because duration is out of range
+            socController.duration = 20;
+            socController.orgTemplate.edition = null;
+            socController.createOrg(); // returned error because edition is null
+            socController.orgTemplate.edition = 'Developer';
 
-        //Select deployment flow and populate deployment flow steps
-        Deployment_Flow__c df = [Select Id From Deployment_Flow__c Where Name =: 'Deployment Flow 1'];
-        socController.deploymentFlowId = df.Id;
-        socController.populateDeploymentFlowSteps();
+            //Select deployment flow, populate deployment flow steps and select deployment flow steps
+            socController.getDeploymentFlows();
 
-        //Select the deployment flow step to create org
-        Deployment_Flow_Step__c dfs = [Select Id From Deployment_Flow_Step__c Where Deployment_Flow__r.Name =: 'Deployment Flow 1' AND Enable_as_Scratch_Org_Destination__c =: 'Default DX Target'];
-        socController.deploymentFlowStepOption = dfs.Id;
+            //Select deployment flow and populate deployment flow steps
+            Deployment_Flow__c df = [Select Id From Deployment_Flow__c Where Name = :'Deployment Flow 1'];
+            socController.deploymentFlowId = df.Id;
+            socController.populateDeploymentFlowSteps();
 
-        //Set mock callout class
-        Test.startTest();
-        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(200,'Complete','{"example":"test"}',null);
-        Test.setMock(HttpCalloutMock.class, fakeResponse);
-        socController.createOrg();
+            //Select the deployment flow step to create org
+            Deployment_Flow_Step__c dfs = [Select Id From Deployment_Flow_Step__c Where Deployment_Flow__r.Name = :'Deployment Flow 1' AND Enable_as_Scratch_Org_Destination__c = :'Default DX Target'];
+            socController.deploymentFlowStepOption = dfs.Id;
 
-        //run the event listener job for create org job
-        ApexPages.currentPage().getParameters().put('jobFinished', 'true');
-        ApexPages.currentPage().getParameters().put('jobSuccess', 'true');
-        ApexPages.currentPage().getParameters().put('jobMessage', '');
-        ApexPages.currentPage().getParameters().put('jobType', CopadoNotificationHelper.DX_CREATE_ORG);
-        controller.jobStatusNotification();
-        Test.stopTest();
+            //Set mock callout class
+            Test.startTest();
+            MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(200, 'Complete', '{"example":"test"}', null);
+            Test.setMock(HttpCalloutMock.class, fakeResponse);
+            socController.createOrg();
+
+            //run the event listener job for create org job
+            ApexPages.currentPage().getParameters().put('jobFinished', 'true');
+            ApexPages.currentPage().getParameters().put('jobSuccess', 'true');
+            ApexPages.currentPage().getParameters().put('jobMessage', '');
+            ApexPages.currentPage().getParameters().put('jobType', CopadoNotificationHelper.DX_CREATE_ORG);
+            controller.jobStatusNotification();
+            Test.stopTest();
+        }
     }
 
-    @isTest static void userStoryOperationsOne(){
+    @isTest static void userStoryOperationsOne() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -836,19 +840,19 @@ private class  TestDxOperationController {
         controller.selectedOperation = '3';
 
         //Select the user story from lookup and populate actions. It will return because us do not belong to project and deployment flow is null
-        User_Story__c uStory = [Select Id, User_Story_Title__c From User_Story__c Where User_Story_Title__c =: 'Error on dx operation'];
+        User_Story__c uStory = [Select Id, User_Story_Title__c From User_Story__c Where User_Story_Title__c = :'Error on dx operation'];
         controller.usId = uStory.Id;
         controller.usName = uStory.User_Story_Title__c;
         controller.populatePossibleActions();
 
         //Select the user story from lookup and populate actions. It will return becuase deployment flow step size is 0
-        User_Story__c uStory1 = [Select Id, User_Story_Title__c From User_Story__c Where User_Story_Title__c =: 'Error on dx operation 1'];
+        User_Story__c uStory1 = [Select Id, User_Story_Title__c From User_Story__c Where User_Story_Title__c = :'Error on dx operation 1'];
         controller.usId = uStory1.Id;
         controller.usName = uStory1.User_Story_Title__c;
         controller.populatePossibleActions();
 
         //Select the user story from lookup and populate actions
-        User_Story__c uStory2 = [Select Id, User_Story_Title__c, Org_Credential__c From User_Story__c Where User_Story_Title__c =: 'Error on dx operation 2'];
+        User_Story__c uStory2 = [Select Id, User_Story_Title__c, Org_Credential__c From User_Story__c Where User_Story_Title__c = :'Error on dx operation 2'];
         controller.usId = uStory2.Id;
         controller.usName = uStory2.User_Story_Title__c;
         controller.populatePossibleActions();
@@ -858,7 +862,7 @@ private class  TestDxOperationController {
         controller.enableSelectedPanels();
 
         //Check the user story commit list size
-        system.assertEquals(0,controller.userStoryCommitList.size());
+        system.assertEquals(0, controller.userStoryCommitList.size());
 
         //Select load data from action and load data
         ApexPages.currentPage().getParameters().put('actionName', 'ld');
@@ -870,7 +874,7 @@ private class  TestDxOperationController {
     }
 
     //Load metadata is covered for user story operation
-    @isTest static void userStoryOperationsTwo(){
+    @isTest static void userStoryOperationsTwo() {
         //Use the PageReference Apex class to instantiate a page
         PageReference pageRef = Page.DXOperation;
 
@@ -884,7 +888,7 @@ private class  TestDxOperationController {
         controller.selectedOperation = '3';
 
         //Select the user story from lookup and populate actions
-        User_Story__c uStory3 = [Select Id, User_Story_Title__c, Org_Credential__c From User_Story__c Where User_Story_Title__c =: 'Error on dx operation 3'];
+        User_Story__c uStory3 = [Select Id, User_Story_Title__c, Org_Credential__c From User_Story__c Where User_Story_Title__c = :'Error on dx operation 3'];
         controller.usId = uStory3.Id;
         controller.usName = uStory3.User_Story_Title__c;
         controller.populatePossibleActions();
@@ -894,14 +898,14 @@ private class  TestDxOperationController {
         controller.enableSelectedPanels();
 
         //check the value
-        system.assertEquals('lm',controller.selectedActionName);
+        system.assertEquals('lm', controller.selectedActionName);
 
         //Select create scratch org action to get warning
         ApexPages.currentPage().getParameters().put('actionName', 'csous');
         controller.enableSelectedPanels();
 
         //check the value
-        system.assertEquals('csous',controller.selectedActionName);
+        system.assertEquals('csous', controller.selectedActionName);
     }
 
     @isTest static void planningOperationsOne() {
@@ -923,22 +927,22 @@ private class  TestDxOperationController {
         controller.enableSelectedPanels();
 
         //Select the Dev Hub 1 from picklist and populate artifact lists
-        Org__c orgDevHub = [Select Id From Org__c Where Name =: 'Dev Hub 1'];
+        Org__c orgDevHub = [Select Id From Org__c Where Name = :'Dev Hub 1'];
         controller.selectedOperationDataId = orgDevHub.Id;
         controller.retrieveArtifacts();
 
         //check the list size
-        system.assertEquals(1,controller.artifactList.size());
+        system.assertEquals(1, controller.artifactList.size());
 
         //Instantiate and construct the controller class of ArtifactManageMetadata page.
-        Artifact__c art = [Select Id, Artifact_Repository__c, Org_Credential__c From Artifact__c Where Name =: 'StaticResources2'];
+        Artifact__c art = [Select Id, Artifact_Repository__c, Org_Credential__c From Artifact__c Where Name = :'StaticResources2'];
         PageReference pageAmm = Page.ArtifactManageMetadata;
         Test.setCurrentPage(pageAmm);
         pageAmm.getParameters().put('Id', art.Id);
         ApexPages.StandardController sc = new ApexPages.StandardController(art);
 
         Test.startTest();
-        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(200,'Complete','{"example":"test"}',null);
+        MockHttpResponseGenerator fakeResponse = new MockHttpResponseGenerator(200, 'Complete', '{"example":"test"}', null);
         Test.setMock(HttpCalloutMock.class, fakeResponse);
         ArtifactManageMetadataController ammController = new ArtifactManageMetadataController(sc);
 
@@ -967,7 +971,7 @@ private class  TestDxOperationController {
         controller.enableSelectedPanels();
 
         //Check the action name
-        system.assertEquals('mpt',controller.selectedActionName);
+        system.assertEquals('mpt', controller.selectedActionName);
 
         //Instantiate and construct the controller class of component.
         ScratchOrgMetadataController somController = new ScratchOrgMetadataController();
@@ -994,7 +998,7 @@ private class  TestDxOperationController {
         Test.setCurrentPage(pageRef);
 
         //Select the Dev Hub 1
-        Org__c orgDevHub = [Select Id From Org__c Where Name =: 'Dev Hub 1'];
+        Org__c orgDevHub = [Select Id From Org__c Where Name = :'Dev Hub 1'];
 
         //Assign the dev hub id to the page as a parameter
         pageRef.getParameters().put('id', orgDevHub.Id);
@@ -1009,7 +1013,7 @@ private class  TestDxOperationController {
         Test.setCurrentPage(pageRef1);
 
         //Select the wrong scratch org
-        Org__c scratchOrg = [Select Id From Org__c Where Name =: 'Scratch Org Branch'];
+        Org__c scratchOrg = [Select Id From Org__c Where Name = :'Scratch Org Branch'];
 
         //Assign the dev hub id to the page as a parameter
         pageRef1.getParameters().put('id', scratchOrg.Id);
@@ -1024,7 +1028,7 @@ private class  TestDxOperationController {
         Test.setCurrentPage(pageRef2);
 
         //Select the correct scratch org
-        Org__c scratchOrg1 = [Select Id From Org__c Where Name =: 'Scratch Org 1'];
+        Org__c scratchOrg1 = [Select Id From Org__c Where Name = :'Scratch Org 1'];
 
         //Assign the dev hub id to the page as a parameter
         pageRef2.getParameters().put('id', scratchOrg1.Id);
@@ -1036,7 +1040,7 @@ private class  TestDxOperationController {
         DXOperationController controller2 = new DXOperationController();
 
         //Check the org id
-        system.assertEquals(scratchOrg1.Id,controller2.selectedOperationDataId);
+        system.assertEquals(scratchOrg1.Id, controller2.selectedOperationDataId);
 
         //Select manage manage definition template and execute function
         ApexPages.currentPage().getParameters().put('actionName', 'main');
@@ -1051,7 +1055,7 @@ private class  TestDxOperationController {
         Test.setCurrentPage(pageRef);
 
         //Select the user story from lookup and populate actions. It will return because us do not belong to project and deployment flow is null
-        User_Story__c uStory = [Select Id, User_Story_Title__c From User_Story__c Where User_Story_Title__c =: 'Error on dx operation'];
+        User_Story__c uStory = [Select Id, User_Story_Title__c From User_Story__c Where User_Story_Title__c = :'Error on dx operation'];
 
         //Assign the user story id to the page as a parameter
         pageRef.getParameters().put('id', uStory.Id);
@@ -1066,7 +1070,7 @@ private class  TestDxOperationController {
         Test.setCurrentPage(pageRef1);
 
         //Select the user story from lookup and populate actions.
-        User_Story__c uStory1 = [Select Id, User_Story_Title__c From User_Story__c Where User_Story_Title__c =: 'Error on dx operation 2'];
+        User_Story__c uStory1 = [Select Id, User_Story_Title__c From User_Story__c Where User_Story_Title__c = :'Error on dx operation 2'];
 
         //Assign the user story id to the page as a parameter
         pageRef1.getParameters().put('id', uStory1.Id);
@@ -1075,6 +1079,6 @@ private class  TestDxOperationController {
         DXOperationController controller1 = new DXOperationController();
 
         //Check the us id
-        system.assertEquals(uStory1.Id,controller1.usId);
+        system.assertEquals(uStory1.Id, controller1.usId);
     }
 }

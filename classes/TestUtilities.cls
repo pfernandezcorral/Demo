@@ -160,8 +160,15 @@ public class TestUtilities {
         system.assert(isValid);
 
         Org__c org = Utilities.getOrgById(testFromOrg.Id);
+        utilities.doOauth(org);
         system.assert(org != null);
-
+		
+        List<SelectOption> options = new List<SelectOption>();
+ 	 	options.add(new SelectOption('1','test1'));
+ 	 	options.add(new SelectOption('2','test2'));
+ 	 	options.add(new SelectOption('3','test3'));
+        options = utilities.selectOptionSortByLabel(options);
+        
         Deployment__c dep = Utilities.getDeploymentById(testDeployment.Id);
         system.assert(dep != null);
 
@@ -188,7 +195,10 @@ public class TestUtilities {
             System.assert(Utilities.randomInteger(0, 59) <= 59);
             System.assert(Utilities.randomInteger(0, 59) >= 0);
         }
-
+		
+        utilities.getCopadoLicenses('testUsername');
+        utilities.getPermissionSetById(dest.id);
+        
         Git_Repository__c gitRepo = new Git_Repository__c(name = 'test');
         insert gitRepo;
         System.assertNotEquals(null, gitRepo.Id);
@@ -211,8 +221,10 @@ public class TestUtilities {
         insert testOrg2;
         Deployment_Flow__c flow = CMTestMethodUtilities.createCCMFlow('Standard flow', true);
         insert flow;
+        utilities.getEnvsAndBranchesOfDeploymentFlow(flow.id);
         Deployment_Flow_Step__c dfs = CMTestMethodUtilities.createFlowStep(env1.Id, env2.Id, flow.Id);
         insert dfs;
+        utilities.getStepDetailsOfDeploymentFlow(dfs.id);
         Project__c testProject = CMTestMethodUtilities.createProject('test project');
         testProject.Deployment_Flow__c = flow.Id;
         insert testProject;
@@ -235,8 +247,9 @@ public class TestUtilities {
         //Test Secure DMLs missing
         Org__c testOrgDMLs = new Org__c(Name = 'Test Secure DMLs Org',SFDC_Org_ID__c = 'FAKEORGIDTESTDML');
         insert testOrgDMLs;
-        Utilities.Secure_DML(testOrgDMLs, Utilities.DML_Action.DEL, schema.Sobjecttype.Org__c);
-
+        Utilities.Secure_DML(testOrgDMLs, Utilities.DML_Action.UPD, schema.Sobjecttype.Org__c);
+		Utilities.Secure_DML(testOrgDMLs, Utilities.DML_Action.DEL, schema.Sobjecttype.Org__c,null);
+        
         External_CI_Setting__c externalCISetting = new External_CI_Setting__c(Name='Jenkins Test', CI_Tool__c='Jenkins');
         insert externalCISetting;
         System.assertEquals(externalCISetting.Id, Utilities.getCISettingById(externalCISetting.Id).Id);
@@ -428,7 +441,7 @@ public class TestUtilities {
         dfs2.Enable_as_Scratch_Org_Destination__c = 'DX Target';
         dfsList.add(dfs2);
         insert dfsList;
-
+		
         List<Project__c> prList = new List<Project__c>();
         Project__c project = new Project__c();
         project.Name = 'Test Project';
@@ -483,4 +496,81 @@ public class TestUtilities {
         releaseList.add(release1);
         insert releaseList;
     }
+
+
+    //  THIS PART WILL BE REMOVED AFTER COPADO DATA FACTORY RELEASED  TODO remove the code below after CopadoDataFactory class has been relesed.
+    private String ERR_NOT_FOUND_SOBJECT = 'Unable to find the sObject {0}';
+    private String ERR_FIELD_NOT_EXIST = 'The field "{0}" does not exist on "{1}" or the value type provided is incorrect.';
+    private Map<String, List<SObject>> objectCache = new Map<String, List<SObject>>();
+    private String namespace;
+
+    private String getNameSpace(String stype){
+        Schema.SObjectType convertType = Schema.getGlobalDescribe().get(stype);
+        Schema.DescribeSObjectResult dsr = convertType.getDescribe();
+        return dsr.isCustom() ? [SELECT count() FROM apexclass WHERE Name = 'CopadoSetupController' AND namespaceprefix = 'copado'] == 1 ? 'copado__' : '' : '';
+    }
+
+    public SObject item(String stype, Integer index) {
+        namespace = getNameSpace(stype);
+        return objectCache.get(namespace+stype).get(index);
+    }
+
+    // create but not insert the a number of sobjects.
+    public List<SObject> createSObjects(String stype, Integer numRecords, Map<String,Object> fieldsMap) {
+        namespace = getNameSpace(stype);
+        List<SObject> records = new List<SObject>();
+        for(Integer i=0; i<numRecords; i++){
+            records.add(fetchFileds(namespace+stype,fieldsMap));
+        }
+        if(!objectCache.containsKey(namespace+stype)){
+            objectCache.put(namespace+stype,records);
+        } else{
+            objectCache.get(namespace+stype).addAll(records);
+        }
+        return records;
+    }
+
+    // create and upsert the a number of sobjects.
+    public List<SObject> insertSObjects(String stype, Integer numRecords, Map<String,Object> fieldsMap) {
+        List<SObject> records = this.createSObjects(stype, numRecords, fieldsMap);
+        Utilities.Secure_DML(records, Utilities.DML_Action.INS, ((SObject)Type.forName(namespace+stype).newInstance()).getSObjectType().getDescribe());
+        return records;
+    }
+
+    public SObject createSObject(String stype, Map<String,Object> fieldsMap) {
+        return this.createSObjects(stype, 1, fieldsMap).get(0);
+    }
+
+    public SObject insertSObject(String stype, Map<String,Object> fieldsMap) {
+        return this.insertSObjects(stype, 1, fieldsMap).get(0);
+    }
+
+    private SObject fetchFileds(String stype, Map<String,Object> fieldsMap){
+        Schema.SObjectType sobjectType = Schema.getGlobalDescribe().get(stype);
+        if(sobjectType == null){
+            throw new TestDataFactoryException(formatErrorMessage(ERR_NOT_FOUND_SOBJECT,new List<String>{stype},''));
+        }
+
+        Map<String, Schema.SObjectField> objectFields = Schema.getGlobalDescribe().get(stype).getDescribe().fields.getMap();
+        SObject obj = sobjectType.newSObject();
+
+        for (String s : fieldsMap.keySet()) {
+            try{
+                obj.put(objectFields.get(s.contains('__') ? namespace+s : s), fieldsMap.get(s.contains('__') ? namespace+s : s));
+            } catch(Exception e){
+                throw new TestDataFactoryException(formatErrorMessage(ERR_FIELD_NOT_EXIST,new List<String>{s,stype},e.getMessage()));
+            }
+        }
+
+        return obj;
+    }
+
+    public String formatErrorMessage(String message, List<String> mergeValues, String originalMessage){
+        String errorMessage = String.format(message,mergeValues);
+        // if originalMessage is passed as param it will be include in the errorMessage
+        if(!String.isBlank(originalMessage)) errorMessage += '\n' + ' Original error message : ' + originalMessage;
+        return errorMessage;
+    }
+
+    public class TestDataFactoryException extends Exception {}
 }

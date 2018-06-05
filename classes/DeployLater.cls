@@ -2,7 +2,7 @@
  * Created by ferhatozsavran on 4/25/18.
  */
 
-global class DeployLater implements Schedulable {
+global with sharing class DeployLater implements Schedulable {
     global Id deploymentId {get;set;}
     global DeployLater(Id deploymentId){
         this.deploymentId = deploymentId;

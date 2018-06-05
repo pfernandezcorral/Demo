@@ -120,6 +120,10 @@ private class TestEditGit {
         result = new List<Attachment>();
         result = [select Id, Name, Body from Attachment where ParentId=:ext.git.Id and Name=:ext.KEYNAME];
         system.assertEquals(0, result.size());
+        ext.getCommits();
+        ext.deployCommits();
+        ext.retrieveCommits();
+        ext.goToManageGITBranches();
         Test.stopTest();
     }
 }

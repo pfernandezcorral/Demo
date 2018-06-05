@@ -10,7 +10,7 @@
  * @author Mert YALTI
  *
  */
-global class CopadoSmartHelpController  {
+global with sharing class CopadoSmartHelpController  {
 	@TestVisible private Set<String> removedTips {get; set;} // List of removed tips in order to avoid displaying them again
 	global List<SmartHelp> helpList {get; set;} // List of tips to display
 	global String vfPageName {get; set{

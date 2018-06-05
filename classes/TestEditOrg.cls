@@ -144,11 +144,12 @@ private class TestEditOrg {
         Test.setCurrentPage(pref);		
 
         EditOrg ext = new EditOrg(new ApexPages.StandardController(org));
-		ext.validate();
+		//ext.getTypes();
+        ext.validate();
 	    System.debug('@@@@@@ '+ApexPages.getMessages());
 	    ext.orgComplianceScan();
         System.assertEquals(true, testMethodUtilities.hasMessage(Label.CCH_LICENSE_NOT_ENABLED));
-
+	
         List<User> users = [SELECT Id FROM User WHERE Username ='user1-TestEditOrg@test-copado.org'];
         System.runAs(users[0]){
 	        EditOrg ext2 = new EditOrg(new ApexPages.StandardController(org));
@@ -157,6 +158,8 @@ private class TestEditOrg {
 	        ext2.orgComplianceScan();
 	        System.assertEquals(true, testMethodUtilities.hasMessage(Label.COMPLIANCE_SCAN_REQUESTED));
 	    }
+        ext.runAllTest();
+        ext.gotoDxOperations();
         Test.stopTest();
 	}
 

@@ -8,7 +8,7 @@
  * @author David VENEGAS
  * 
  */
-public without sharing class ResolveConflictsController {
+public with sharing class ResolveConflictsController {
 
 	public Promotion__c promotion {get; set;}
     public List<Attachment> attachments = new List<Attachment>();

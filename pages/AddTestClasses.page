@@ -30,9 +30,10 @@
     <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.CopadoLightningCSS),'')}"/>
     <apex:form >
         <apex:sectionHeader title="{!User_Story__c.Name}" subtitle="Test Class selector" />
-        <c:ScreenLocker msg="{!$Label.LOADING}" />
+        <c:ScreenLocker msg="{!$Label.LOADING}" useJobsManager="true" possibleRunningJobs=",UserStoryTestClassesRetriever,{!Id},true;"/>
         <apex:pageBlock >
             <apex:pageblockButtons location="top">
+                <apex:commandButton id="btnAutoSelect" value="{!$Label.Auto_Identify_Test_References}"  onclick="return usTestClasses.autoIdentify('{!Id}');" rerender="pb" />
                 <apex:commandButton id="btnSave" value="{!$Label.site.save}"  onclick="return usTestClasses.save();" rerender="pb" />
                 <apex:commandButton id="btnCancel" value="{!$Label.site.cancel}"  onclick="return usTestClasses.cancel();" rerender="pb" />
             </apex:pageblockButtons>
@@ -57,45 +58,51 @@
             </apex:outputPanel>
         </apex:pageBlock>
 
-
         <script type="text/javascript">
-        copadoStreamingService.ns = '{!namespace}';
-        copadoStreamingService.init();
-        statusManager.ns = '{!namespace}';
-        statusManager.herokuServer = '{!herokuServer}';
-        statusManager.urlParameters = '{!urlParameters}';
-        statusManager.sessionId = __sfdcSessionId;
-        statusManager.parentId = '{!JSENCODE(User_Story__c.Org_Credential__c)}';
-        statusManager.waitTimeout = 10000;
+            copadoStreamingService.ns = '{!namespace}';
+            copadoStreamingService.init();
+            statusManager.ns = '{!namespace}';
+            statusManager.herokuServer = '{!herokuServer}';
+            statusManager.urlParameters = '{!urlParameters}';
+            statusManager.sessionId = __sfdcSessionId;
+            statusManager.parentId = '{!JSENCODE(User_Story__c.Org_Credential__c)}';
+            statusManager.waitTimeout = 10000;
 
-        var copadoApp = {};
-        var _config = {
-            gridMode: 'testClasses',
-            data:{
-                id: '{!JSENCODE(User_Story__c.Id)}',
-                orgId: '{!JSENCODE(User_Story__c.Org_Credential__c)}',
-                envId: '{!JSENCODE(User_Story__c.Org_Credential__c)}'
-            },
-            server: {
-              metadataUrl: '{!JSENCODE(urlBase)}testClasses/__ORGID__{!JSENCODE(urlParameters)}',
-              typesUrl: '{!JSENCODE(urlBase)}gitTypes{!JSENCODE(urlParameters)}'
-            },
-            ns: '{!JSENCODE(namespace)}',
-            attachmentName: 'Test Classes',
-            isScalable: false
-        }
-        statusManager.initFunction = function(){
-            usTestClasses.init(_config,false,{!scalableGrid});
-        };
+            var copadoApp = {};
+            var _config = {
+                gridMode: 'testClasses',
+                data:{
+                    id: '{!JSENCODE(User_Story__c.Id)}',
+                    orgId: '{!JSENCODE(User_Story__c.Org_Credential__c)}',
+                    envId: '{!JSENCODE(User_Story__c.Org_Credential__c)}'
+                },
+                server: {
+                  metadataUrl: '{!JSENCODE(urlBase)}testClasses/__ORGID__{!JSENCODE(urlParameters)}',
+                  typesUrl: '{!JSENCODE(urlBase)}gitTypes{!JSENCODE(urlParameters)}',
+                  autoSelectURL: '{!JSENCODE(urlBase)}userStories/{!JSENCODE(User_Story__c.Id)}/testClasses/{!JSENCODE(User_Story__c.Org_Credential__c)}',
+                },
+                ns: '{!JSENCODE(namespace)}',
+                attachmentName: 'Test Classes',
+                isScalable: false
+            }
+            statusManager.initFunction = function(){
+                usTestClasses.init(_config,false,{!scalableGrid});
+            };
 
-          setTimeout(function(){
-              statusManager.initialise();
-          },2000);
-          var body = document.getElementsByTagName('body')[0];
-          body.addEventListener("beforeunload", function(){
-              copadoStreamingService.unload();
-          });
+            setTimeout(function(){
+                statusManager.initialise();
+            },2000);
+            var body = document.getElementsByTagName('body')[0];
+            body.addEventListener("beforeunload", function(){
+                copadoStreamingService.unload();
+            });
 
+            window.addEventListener('copadoJobsManagerFinished', function (evt) {
+                for(var i=0 ; i < evt.detail.length ; i++ ) {
+                    var jobFinished = evt.detail[i];
+                    console.debug("Job Finished: ", jobFinished);
+                }
+            }, false);
         </script>
     </apex:form>
 </apex:page>

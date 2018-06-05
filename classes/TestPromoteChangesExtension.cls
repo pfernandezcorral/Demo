@@ -710,7 +710,7 @@ private class TestPromoteChangesExtension {
         insert testOrg2;
 
         Deployment_Flow__c flow = CMTestMethodUtilities.createCCMFlow('Standard flow', true);
-        flow.Auto_Resolve_Options__c = 'All except code';
+        flow.Exclude_From_Auto_Resolve__c = 'ApexClass';
         insert flow;
         Deployment_Flow_Step__c dfs = CMTestMethodUtilities.createFlowStep(env1.Id, env2.Id, flow.Id);
         insert dfs;
@@ -737,9 +737,9 @@ private class TestPromoteChangesExtension {
         testPromotion.Release__c = release.Id;
         insert testPromotion;
         List<Promotion__c> promotions = new List<Promotion__c>();
-        promotions = [SELECT Id, Project__c, Source_Environment__c, Auto_Resolve_Options__c FROM Promotion__c WHERE Id = :testPromotion.Id];
+        promotions = [SELECT Id, Project__c, Source_Environment__c, Exclude_From_Auto_Resolve__c FROM Promotion__c WHERE Id = :testPromotion.Id];
         System.assert(promotions.size() > 0);
-        System.assertEquals('All except code', promotions[0].Auto_Resolve_Options__c);
+        System.assertEquals('ApexClass', promotions[0].Exclude_From_Auto_Resolve__c);
 
         Promoted_User_Story__c pus1 = new Promoted_User_Story__c(User_Story__c = userStory1.Id, Promotion__c = testPromotion.Id);
         insert pus1;

@@ -27,10 +27,6 @@
                 <behavior>Edit</behavior>
                 <field>Main_Branch__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Auto_Resolve_Options__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -48,6 +44,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Block_Commits__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Exclude_From_Auto_Resolve__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -139,6 +139,7 @@
         <fields>Source_Environment__c</fields>
         <fields>Destination_Environment__c</fields>
         <fields>Branch__c</fields>
+        <fields>Destination_Branch__c</fields>
         <fields>CREATEDBY_USER</fields>
         <fields>UPDATEDBY_USER</fields>
         <relatedList>Deployment_Flow_Step__c.Deployment_Flow__c</relatedList>
@@ -160,7 +161,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Y000000UiJ2</masterLabel>
+        <masterLabel>00h0Y000000zxJB</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

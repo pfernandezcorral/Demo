@@ -722,7 +722,7 @@ public with sharing class WorkManager {
         }
         return null;
     }
-
+    public class WorkManagerException extends Exception{}
     /*
         Given Id, generate the wrapper Panel for all user stories related to this
      */
@@ -736,11 +736,17 @@ public with sharing class WorkManager {
         }
         WrapperPanel wP = new WrapperPanel();
         String relatedAPI = objName;
+        if(!Schema.getGlobalDescribe().get(relatedAPI).getDescribe().isAccessible()){
+            throw new WorkManagerException(relatedAPI+' object is not accessible..');
+        }
         String relationAPI = relatedAPI.replace('__c', '__r');
         String q = 'SELECT ' + availableColumns + ' Id, Name ';
         q = !q.contains(relationAPI + '.Name') ? q + ', ' + relationAPI + '.Name ' : q;
+        if(!Schema.getGlobalDescribe().get(Settings.ns+'User_Story__c').getDescribe().isAccessible()){
+            throw new WorkManagerException('User story object is not accessible..');
+        }
         q = q + 'FROM User_Story__c ' +
-            'WHERE ' + relatedAPI + ' =: objId ' +
+            'WHERE ' + String.escapeSingleQuotes(relatedAPI) + ' =: objId ' +
             qOrder;
         q += ' LIMIT 200';
         System.debug(loggingLevel.Error, '*** getPanelWrapper:::queryStr: ' + q);
@@ -764,7 +770,7 @@ public with sharing class WorkManager {
             }
         } else {
             //Looking for US in the top query, if they don't exist must query name from record
-            List<SObject> pRecord = Database.query('SELECT Id, Name From ' + apiRelWithApiName.get(relatedAPI) + ' where Id =: objId');
+            List<SObject> pRecord = Database.query('SELECT Id, Name From ' + String.escapeSingleQuotes(apiRelWithApiName.get(relatedAPI)) + ' where Id =: objId');
             if (pRecord.size() > 0) {
                 wP.title =     String.ValueOf(pRecord[0].get('Name'));
             }

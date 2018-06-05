@@ -282,19 +282,19 @@
                                 function reloadMetadataGrid() {
                                     if('{!selectedOperation.showGrid}' === 'true') {
                                         // Set Grid Source Data
-                                        if(gitCommitOrgId != '{!gitCommit.Org__c}') {
+                                        if(gitCommitOrgId != '{!JSENCODE(gitCommit.Org__c)}') {
                                             if('{!selectedOperation.reloadGridData}' === 'true') {
-                                                _config.data.orgId = '{!gitCommit.Org__c}';
-                                                _config.server.metadataUrl = '{!JSENCODE(urlBase)}metadata/{!gitCommit.Org__c}?{!JSENCODE(urlParameters)}&parentId={!gitCommit.Org__c}&dates=format';
+                                                _config.data.orgId = '{!JSENCODE(gitCommit.Org__c)}';
+                                                _config.server.metadataUrl = '{!JSENCODE(urlBase)}metadata/{!gitCommit.Org__c}?{!JSENCODE(urlParameters)}&parentId={!JSENCODE(gitCommit.Org__c)}&dates=format';
                                             } else {
-                                                _config.data.orgId = '{!orgId}';
-                                                _config.server.metadataUrl = '{!JSENCODE(urlBase)}metadata/{!orgId}?{!JSENCODE(urlParameters)}&parentId={!orgId}&dates=format';
+                                                _config.data.orgId = '{!JSENCODE(orgId)}';
+                                                _config.server.metadataUrl = '{!JSENCODE(urlBase)}metadata/{!orgId}?{!JSENCODE(urlParameters)}&parentId={!JSENCODE(orgId)}&dates=format';
                                             }
                                         }
                                         // Set Grid to load User Story selections
                                         var originalUserStoryPreselectionId = _config.data.userStoryPreselectionId;
                                         if('{!selectedOperation.showUserStorySelections}' === 'true') {
-                                            _config.data.userStoryPreselectionId = '{!gitMetadataAttachmentId}';
+                                            _config.data.userStoryPreselectionId = '{!JSENCODE(gitMetadataAttachmentId)}';
                                         } else {
                                             _config.data.userStoryPreselectionId = '';
                                         }
@@ -307,7 +307,7 @@
                                         } else {
                                            _config.gridMode = 'gitCommitEditable';
                                         }
-                                        if(gitCommitOrgId != '{!gitCommit.Org__c}' || originalGridMode != _config.gridMode || originalUserStoryPreselectionId != _config.data.userStoryPreselectionId) {
+                                        if(gitCommitOrgId != '{!JSENCODE(gitCommit.Org__c)}' || originalGridMode != _config.gridMode || originalUserStoryPreselectionId != _config.data.userStoryPreselectionId) {
                                             if(!gitCommit){
                                                 gitCommit.init(_config);
                                             } else {

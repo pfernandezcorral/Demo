@@ -64,6 +64,20 @@
         <label>Criteria</label>
         <layoutColumns>
             <layoutItems>
+                <behavior>Required</behavior>
+                <field>Record_Count_Criteria__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Matching_Criteria__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Record_Count__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Metadata_Type__c</field>
             </layoutItems>
@@ -71,20 +85,8 @@
                 <behavior>Readonly</behavior>
                 <field>Filter_Criteria__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Record_Count_Criteria__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Matching_Criteria__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Record_Count__c</field>
-            </layoutItems>
         </layoutColumns>
-        <style>OneColumn</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -160,7 +162,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Y0000012IwZ</masterLabel>
+        <masterLabel>00h0Y000005FKLO</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

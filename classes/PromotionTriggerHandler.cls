@@ -22,7 +22,9 @@ public without sharing class PromotionTriggerHandler implements ITrigger{
             beforeCommon(so);
             PromotionTriggerHelper.setSourceOrgFromEnvironment((Promotion__c)so);
             PromotionTriggerHelper.validateOrgEnvironmentRelationship((Promotion__c)so);
+            PromotionTriggerHelper.setAutoResolveConflictOption((Promotion__c)so);
         }
+
     }
  
     public void beforeUpdate(SObject oldSo, SObject so){

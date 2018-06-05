@@ -64,7 +64,7 @@
                         }
 
                         if(!commitComment || 0 === commitComment.length) return;
-                        globalJobsManagerStart('{!Git_Backup__c.Id}', 'GitOrgBackup', "GIT-{!Git_Backup__c.Git_Repository__c}-{!Git_Backup__c.Branch__c}");
+                        globalJobsManagerStart('{!JSENCODE(Git_Backup__c.Id)}', 'GitOrgBackup', "GIT-{!JSENCODE(Git_Backup__c.Git_Repository__c)}-{!JSENCODE(Git_Backup__c.Branch__c)}");
                         lockScreen();
                         setTimeout(function(){
                             doBackup(commitComment, applyEnvVars, applyYAML);

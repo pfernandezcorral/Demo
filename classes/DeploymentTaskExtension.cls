@@ -10,6 +10,7 @@ public with sharing class DeploymentTaskExtension {
     public Settings settings {get; set;}
     public User_Story__c  ustry {get; set;}
     public Id orgId {get; set;}
+    public id currentId;
     
     public String DEFAULT_SERVER_URL = 'https://copado.herokuapp.com';
 
@@ -63,6 +64,12 @@ public with sharing class DeploymentTaskExtension {
 
     public PageReference saveAction() {
         Deployment_Task__c taskToSave = (Deployment_Task__c)std.getRecord();
+        currentId = taskToSave.id;
+
+        if(null != currentId && !Utilities.HasEditAccess(currentId)){
+            ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.FATAL, Label.InSuffPriv));
+            return null;
+        }
         String data = ApexPages.currentPage().getParameters().get('detail');
         System.debug(loggingLevel.Error, '*** data: ' + data);
         System.debug(loggingLevel.Error, '*** taskToSave: ' + taskToSave);

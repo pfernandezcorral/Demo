@@ -8,7 +8,7 @@
 
     <apex:detail subject="{!Selenium_Test_Result__c.Id}" title="true" showChatter="true" rendered="{!and($Setup.Settings__c.Enabled_Multi_Licenses__c, $Setup.Copado_License__c.Enable_CST__c)}" />
 
-    <apex:outputText value="{!fileBody}" escape="false" rendered="{!and($Setup.Settings__c.Enabled_Multi_Licenses__c, $Setup.Copado_License__c.Enable_CST__c)}"/>
+    <apex:outputText value="{!HTMLENCODE(fileBody)}" escape="false" rendered="{!and($Setup.Settings__c.Enabled_Multi_Licenses__c, $Setup.Copado_License__c.Enable_CST__c)}"/>
 
     <script>
         ga('send', 'pageview', {

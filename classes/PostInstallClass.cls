@@ -1,7 +1,8 @@
 global class PostInstallClass implements InstallHandler {
 	public class CopadoInstallationException extends Exception {}
 	global void onInstall(InstallContext context) {
-		database.delete([SELECT Id, Name FROM PushTopic WHERE Name = 'CopadoNotifications'], false);
+		if(Schema.getGlobalDescribe().get('PushTopic').getDescribe().isDeletable())
+			database.delete([SELECT Id, Name FROM PushTopic WHERE Name = 'CopadoNotifications'], false);
 
 		if (context != NULL && (context.previousVersion() == NULL || context.previousVersion() != NULL && context.previousVersion().compareTo(new Version(10, 0)) < 0 )) {
 			String userId = context.installerId() != null ? context.installerId() : UserInfo.getUserId() != null ? UserInfo.getUserId() : 'UnknownUser';
@@ -33,22 +34,22 @@ global class PostInstallClass implements InstallHandler {
 			ScheduleDxJob();
 		}
 	}
-    private static void ScheduleDxJob(){
-        //First Check if Job is already Scheduled:
-        List<Crontrigger> cT = [SELECT Id, CronJobDetail.Name, CronJobDetail.JobType FROM Crontrigger WHERE CronJobDetail.Name =: SfdxSchedulable.JOB_NAME];
-        if(!(cT.size()>0)){
-            System.Schedule(SfdxSchedulable.JOB_NAME, SfdxSchedulable.CRON_EXP, new SfdxSchedulable());
-        }
-    }
+	private static void ScheduleDxJob(){
+		//First Check if Job is already Scheduled:
+		List<Crontrigger> cT = [SELECT Id, CronJobDetail.Name, CronJobDetail.JobType FROM Crontrigger WHERE CronJobDetail.Name =: SfdxSchedulable.JOB_NAME];
+		if(!(cT.size()>0)){
+			System.Schedule(SfdxSchedulable.JOB_NAME, SfdxSchedulable.CRON_EXP, new SfdxSchedulable());
+		}
+	}
 
 	private static Blob cryptoKey {get{
-			if (!String.isEmpty(Settings__c.getOrgDefaults().CryptoKey__c)) {
-				return EncodingUtil.base64Decode(Settings__c.getOrgDefaults().CryptoKey__c);
-			} else{
-				String metaKey =  [SELECT Id, DeveloperName, Text_Field__c  FROM Copado_Protected_Settiing__mdt WHERE DeveloperName = 'Deprecated_Key' LIMIT 1].Text_Field__c;
-				return EncodingUtil.base64Decode(metaKey);
-			}
-		} set;
+		if (!String.isEmpty(Settings__c.getOrgDefaults().CryptoKey__c)) {
+			return EncodingUtil.base64Decode(Settings__c.getOrgDefaults().CryptoKey__c);
+		} else{
+			String metaKey =  [SELECT Id, DeveloperName, Text_Field__c  FROM Copado_Protected_Settiing__mdt WHERE DeveloperName = 'Deprecated_Key' LIMIT 1].Text_Field__c;
+			return EncodingUtil.base64Decode(metaKey);
+		}
+	} set;
 	}
 	private static String encryptAPIKey(String clearAPIKey) {
 		if (String.isBlank(clearAPIKey))return null;
@@ -60,14 +61,22 @@ global class PostInstallClass implements InstallHandler {
 	}
 	@future(callout = true)
 	private static void registerCryptoKey(String orgId, String uId) {
+		DescribeSObjectResult settingObject= Schema.getGlobalDescribe().get(Settings.ns+'Settings__c').getDescribe();
+		if(!settingObject.isAccessible()){
+			return;
+		}
+
 		Settings__c s = Settings__c.getOrgDefaults();
 		Boolean cryptoKeyRegistered = FALSE;
 		Boolean encrptLegacy = FALSE;
-		if (String.isEmpty(s.Namespace__c)) {
+		Map<String, SObjectField> settingFields = settingObject.fields.getMap();
+		DescribeFieldResult namespaceDescription = settingFields.get(Settings.ns+'Namespace__c').getDescribe();
+		if (namespaceDescription.isUpdateable() && namespaceDescription.isCreateable() && String.isEmpty(s.Namespace__c)) {
 			s.Namespace__c = 'copado__';
 			cryptoKeyRegistered = TRUE;
 		}
-		if (String.isBlank(s.CryptoKEY__c) || Test.isRunningTest()) {
+		DescribeFieldResult cryptoDescription = settingFields.get(Settings.ns+'CryptoKEY__c').getDescribe();
+		if (cryptoDescription.isUpdateable() && cryptoDescription.isCreateable() && String.isBlank(s.CryptoKEY__c) || Test.isRunningTest()) {
 
 			String url = Settings.Server_URL + '/json/v1/registerKey';
 			String key = EncodingUtil.base64Encode(Crypto.generateAesKey(256));
@@ -129,7 +138,8 @@ global class PostInstallClass implements InstallHandler {
 			try {
 				Blob encryptedPw = EncodingUtil.base64Decode(git.Password__c);
 				String tempPw = Crypto.decryptWithManagedIV('AES256', deprecatedCryptoKey, encryptedPw).toString();
-				git.Password__c = tempPw;
+				if(Schema.getGlobalDescribe().get(Settings.ns+'Git_Repository__c').getDescribe().fields.getMap().get(Settings.ns+'Password__c').getDescribe().isUpdateable())
+					git.Password__c = tempPw;
 			} catch (Exception e) {
 				System.debug('Git_Repository__c decrypt - encrypt exception: ' + e.getMessage());
 			}
@@ -142,7 +152,8 @@ global class PostInstallClass implements InstallHandler {
 				try {
 					Blob encryptedKey = EncodingUtil.base64Decode(ps.API_Key__c);
 					String tempAPI = Crypto.decryptWithManagedIV('AES256', deprecatedCryptoKey, encryptedKey).toString();
-					ps.API_Key__c = PostInstallClass.encryptAPIKey(tempAPI);
+					if(Schema.getGlobalDescribe().get(Settings.ns+'Personal_Settings__c').getDescribe().fields.getMap().get(Settings.ns+'API_Key__c').getDescribe().isUpdateable())
+						ps.API_Key__c = PostInstallClass.encryptAPIKey(tempAPI);
 				} catch (Exception e) {
 					System.debug('Personal_Settings__c decrypt - encrypt exception: ' + e.getMessage());
 				}
@@ -156,7 +167,8 @@ global class PostInstallClass implements InstallHandler {
 				try {
 					Blob encryptedPw = EncodingUtil.base64Decode(xcis.Password__c);
 					String tempPw = Crypto.decryptWithManagedIV('AES256', deprecatedCryptoKey, encryptedPw).toString();
-					xcis.Password__c = tempPw;
+					if(Schema.getGlobalDescribe().get(Settings.ns+'External_CI_Setting__c').getDescribe().fields.getMap().get(Settings.ns+'Password__c').getDescribe().isUpdateable())
+						xcis.Password__c = tempPw;
 				} catch (Exception e) {
 					System.debug('External_CI_Setting__c pw decrypt - encrypt exception: ' + e.getMessage());
 				}

@@ -62,7 +62,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Auto_Resolve_Options__c</field>
+                <field>Exclude_From_Auto_Resolve__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

@@ -192,9 +192,11 @@ private class TestComplianceScanResultTriggerHandler {
 		for (Schema.PicklistEntry ple : Schema.getGlobalDescribe().get(ns+'Compliance_Rule__c').getDescribe().fields.getMap().get(ns+'Action__c').getDescribe().getPicklistValues()) {
 			actionPle.put(ple.getValue(), ple.getValue());
 		}
-		Compliance_Rule__c rule1 = new Compliance_Rule__c(Name = 'Rule A', Severity__c = severityPle.get('Medium'), Action__c = actionPle.get('Continue with alert'));
+		Compliance_Rule__c rule1 = new Compliance_Rule__c(Name = 'Rule A', Severity__c = severityPle.get('Medium'), Action__c = actionPle.get('Continue with alert'),
+				Record_Count__c = 1, Record_Count_Criteria__c = 'Number of groups', Matching_Criteria__c = 'Greater or equal');
 		insert rule1;
-		Compliance_Rule__c rule2 = new Compliance_Rule__c(Name = 'Rule A', Severity__c = severityPle.get('Critical'), Action__c = actionPle.get('Document Only'));
+		Compliance_Rule__c rule2 = new Compliance_Rule__c(Name = 'Rule A', Severity__c = severityPle.get('Critical'), Action__c = actionPle.get('Document Only'),
+				Record_Count__c = 1, Record_Count_Criteria__c = 'Number of groups', Matching_Criteria__c = 'Greater or equal');
 		insert rule2;
 
 		Compliance_Finding__c findingRule1 = new Compliance_Finding__c(Compliance_Rule__c = rule1.Id, Compliance_Scan_Result__c = scanResultOrg.Id);

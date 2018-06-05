@@ -85,7 +85,7 @@
                         <apex:pageBlockSectionItem />
                         <apex:inputField value="{!Promotion__c.Create_Full_Permission_Sets_Step__c}"/>
                         <apex:pageBlockSectionItem />
-                        <apex:inputField value="{!Promotion__c.Auto_Resolve_Options__c}"/>
+                        <apex:inputField value="{!Promotion__c.Exclude_From_Auto_Resolve__c}"/>
                     </apex:pageBlockSection>
                     <apex:pageBlockSection columns="1" title="{!$Label.OTHER_INFORMATION}" rendered="{!showOtherInformation}">
                         <apex:repeat value="{!$ObjectType.Promotion__c.FieldSets.CustomFields}" var="f">

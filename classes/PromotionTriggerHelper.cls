@@ -129,26 +129,19 @@ public without sharing class PromotionTriggerHelper {
     }
     public static void canPromoteThis(Promotion__c p) {
         Boolean isValidCBMFlow = false;
-        Deployment_Flow__c flow;
 
         if(p.Project__c != null) {
             if(promotionFlows.containsKey(p.Project__c)){
-                flow  = promotionFlows.get(p.Project__c).flow;
                 isValidCBMFlow = promotionFlows.get(p.Project__c).isCBMFlow;
             } else {
                 p.addError(Label.PROMOTION_PROJECT_DEPLOYMENT_FLOW_MISSING);
             }
         } else if(p.Release__c != null) {
             if (releaseProjectsMap.containsKey(p.Release__c) && promotionFlows.containsKey(releaseProjectsMap.get(p.Release__c))) {
-                flow  = promotionFlows.get(releaseProjectsMap.get(p.Release__c)).flow;
                 isValidCBMFlow = promotionFlows.get(releaseProjectsMap.get(p.Release__c)).isCBMFlow;
             } else {
                 p.addError(Label.PROMOTION_RELEASE_DEPLOYMENT_FLOW_MISSING);
             }
-        }
-
-        if(flow != null) {
-            p.Auto_Resolve_Options__c = flow.Auto_Resolve_Options__c != null ? flow.Auto_Resolve_Options__c : Label.AUTO_RESOLVE_ALL_FILES;
         }
 
         if(p.Back_Promotion__c && !isValidCBMFlow)p.addError(Label.BACK_PROMOTION_NOT_ENABLED);
@@ -231,6 +224,18 @@ public without sharing class PromotionTriggerHelper {
             }
         }
         return true;
+    }
+    public static void setAutoResolveConflictOption(Promotion__c p) {
+        Deployment_Flow__c flow;
+        if(p.Project__c != null && promotionFlows.containsKey(p.Project__c)) {
+            flow  = promotionFlows.get(p.Project__c).flow;
+        } else if(p.Release__c != null && releaseProjectsMap.containsKey(p.Release__c) && promotionFlows.containsKey(releaseProjectsMap.get(p.Release__c))) {
+            flow  = promotionFlows.get(releaseProjectsMap.get(p.Release__c)).flow;
+        }
+        // If the promotion AutoResolve options are null, apply the Deployment Flow AutoResolve options
+        if(flow != null && p.Exclude_From_Auto_Resolve__c == null) {
+            p.Exclude_From_Auto_Resolve__c = flow.Exclude_From_Auto_Resolve__c;
+        }
     }
     public static void setDestinationOrgFromFlow(Promotion__c promotion){
         Environment__c stepSourceEnvironment = null;

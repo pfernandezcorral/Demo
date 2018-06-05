@@ -14,6 +14,26 @@
                 from {background-color: #f44274;}
                 to {background-color: #f2f3f3;}
             }
+            /*view result does not fit its own line issue fix - UCU*/
+            .jobIconText {
+                width: max-content;
+            }
+            /*View result fix for only failed case - UCU*/
+            .job-failed>.jobIconText{
+                display: block !important;
+            }
+            /*for Grid, go to page sections height issue on lightning design - UCU*/
+            .jqx-grid-pager-input-base{
+                height:18px !important;
+            }
+            /*show error messages on multiple rows fix - UCU*/
+            .jqx-grid-cell-wrap,.jqx-grid-cell-wrap>pre {
+                white-space: normal !important;
+            }
+            /*prevents unneeded empty space on the top of message box*/
+            .jqx-grid-cell-wrap>pre {
+                margin-top : 0px;
+            }
         </style>
         <c:GAnalytics />
         <c:ShowWebhook url="webhook/deploy" recordId="{!Deployment__c.Id}" />
@@ -110,7 +130,7 @@ window,"sortable");</script>
     copadoApp.data.destinations = JSON.parse("{!JSENCODE(destinationsJson)}");
     copadoApp.orgFiltered = ('{!JSENCODE(IF(orgFiltered,'true','false'))}' == 'true');
     copadoApp.fromValid = ('{!JSENCODE(IF(fromValid,'true','false'))}' == 'true');
-    copadoApp.jobsManagerMatchingKey = "{!jobsManagerMatchingKey}";
+    copadoApp.jobsManagerMatchingKey = "{!JSENCODE(jobsManagerMatchingKey)}";
     console.log('jsconfig , redirectToDeploy', copadoApp.redirectToDeploy)
     copadoApp.redirectToDeploy && copadoApp.deploy() ;
     copadoApp.starded && copadoApp.checkDeploymentStage();

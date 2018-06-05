@@ -463,7 +463,7 @@
                   }
                   var t = confirm('The User Story has successfully updated by Copado. Would you like to refresh the page to see ?'); // Replace this with a custom label for v10.
                   if(t) {
-                    window.location.href = window.location.href+'?nr=1';
+                    window.location.href = window.location.href;
                   }
             }
 

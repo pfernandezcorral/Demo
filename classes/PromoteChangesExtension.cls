@@ -30,6 +30,12 @@ public with sharing class PromoteChangesExtension {
     public Boolean openCreateDeployment {get;set;}
     //User Story Dependencies
     public list<User_Story__c> dependenciesList {get; set;}
+    public string ns {get{
+        if(string.isBlank(ns)){
+            ns = settings.ns.toLowerCase();
+        }
+        return ns;
+    }set;}
 
     public String deploymentPrefix {
         get {
@@ -75,7 +81,6 @@ public with sharing class PromoteChangesExtension {
         String createDeployment = ApexPages.currentPage().getParameters().get('createDeployment');
         openCreateDeployment = createDeployment != null && Boolean.valueOf(createDeployment);
         ApexPages.currentPage().getParameters().remove('createDeployment');
-
         //calculateSCAscores();
     }
     /*public void calculateSCAscores () {
@@ -217,11 +222,16 @@ public with sharing class PromoteChangesExtension {
                     usIdSet.add(userStory.Id);
                 }
             }
-
-            List<User_Story__c> newUserStoryList = Database.query(' SELECT Id ' + queryFields + ' FROM User_Story__c WHERE Id IN : usIdSet');
+            queryFields = queryFields.toLowerCase();
+            set<string> queryFieldsSet = new set<string>(queryFields.split(','));
+            queryFieldsSet.add(ns+'project__c');
+            queryFieldsSet.add(ns+'release__c');
+            queryFields = string.join(new List<string>(queryFieldsSet),',');
+            List<User_Story__c> newUserStoryList = Database.query(' SELECT Id ' + queryFields + '  FROM User_Story__c WHERE Id IN : usIdSet');
 
             for (User_Story__c userStory : newUserStoryList){
-                if (!promotedIdsSet.contains(userStory.Id) && userStories.size() < 999) {
+                // 03.05.2018 changed by Ferhat (US-0002536). At back promotion record, it was showing all user stories in the selectable user stories section. Improved the condition to show proper values in the selectable user stories list based on project or release.
+                if (!promotedIdsSet.contains(userStory.Id) && userStories.size() < 999 && (promotion.Project__c != null && promotion.Project__c == userStory.Project__c || promotion.Release__c != null && promotion.Release__c == userStory.Release__c)) {
                     userStories.add(new userStoryWrapper(false, userStory));
                 }
             }

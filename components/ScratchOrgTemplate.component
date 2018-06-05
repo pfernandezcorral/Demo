@@ -298,6 +298,9 @@
                     <apex:selectOption itemValue="ServiceWave" itemLabel="ServiceWave"/>
                     <apex:selectOption itemValue="SiteDotCom" itemLabel="SiteDotCom"/>
                     <apex:selectOption itemValue="Sites" itemLabel="Sites"/>
+                    <apex:selectOption itemValue="CascadeDelete" itemLabel="CascadeDelete"/> <!-- Deletes the child records of lookup relationships when you delete the parent. -->
+                    <apex:selectOption itemValue="ContactsToMultipleAccounts" itemLabel="ContactsToMultipleAccounts"/> <!-- Tracks the relationships between a customer and the businesses that they work with by relating a single contact record to multiple accounts. -->
+                    <apex:selectOption itemValue="StateandCountryPicklist" itemLabel="StateandCountryPicklist"/> <!-- State and country picklists let users select states and countries from predefined, standardized lists instead of entering state and country data into text fields. State and country picklists offer faster and easier data entry. -->
                 </apex:selectList>
             </apex:pageBlockSectionItem>
             <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>

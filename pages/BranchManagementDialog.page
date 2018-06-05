@@ -55,6 +55,19 @@
             unlock();
         }, 500);
     };
+
+    function showVarModal() {
+        setTimeout(function() {
+            $copado('#eVarBackdrop').addClass('slds-backdrop--open');
+            $copado('#eVarModal').addClass('slds-fade-in-open');
+            unlock();
+        }, 500);
+    };
+    function closeVarModal() {
+        $copado('#eVarModal').removeClass('slds-fade-in-open');
+        $copado('#eVarBackdrop').removeClass('slds-backdrop--open');
+        return false;
+    }
     //Modal Close
     function closeModal() {
         $copado('#modal').removeClass('slds-fade-in-open');

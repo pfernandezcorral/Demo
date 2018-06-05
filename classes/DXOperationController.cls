@@ -438,7 +438,8 @@ public with sharing class DXOperationController extends ScratchOrgWizardPageBase
     public void initDeploymentStep() {
         if (String.isNotBlank(selectedDeploymentId)) {
             Map<String, String> deploymentFieldsMap = GlobalUtilities.getAllFieldsWithoutSharing('Deployment__c');
-            String soqlDeploymentString = 'SELECT ' + deploymentFieldsMap.get(Label.FIELDS) + ' FROM ' + deploymentFieldsMap.get(Label.OBJECT) + ' WHERE Id =\'' + selectedDeploymentId + '\' Limit 1';
+            String injectionSecureDepId = String.valueOf(selectedDeploymentId);
+            String soqlDeploymentString = 'SELECT ' + deploymentFieldsMap.get(Label.FIELDS) + ' FROM ' + deploymentFieldsMap.get(Label.OBJECT) + ' WHERE Id =:injectionSecureDepId Limit 1';
             Deployment__c existingDeployment = Database.query(soqlDeploymentString);
 
             String orgName = '';

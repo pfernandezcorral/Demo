@@ -57,7 +57,7 @@
                                                 <img src="/img/loading.gif" />
                                             </apex:facet>
                                             <apex:facet name="stop">
-                                                <apex:commandButton id="update" value="{!$Label.UPDATE_SAVE}" action="{!row.saveStep}" rerender="pb" status="saveStatus"/>
+                                                <apex:commandButton id="update" value="{!$Label.UPDATE_SAVE}" action="{!row.saveStep}" rerender="pb" status="saveStatus" onComplete="init();"/>
                                             </apex:facet>
                                         </apex:actionStatus>
                                     </td>

@@ -15,6 +15,7 @@ public with sharing class EditGit {
     public List<Git_Backup__c> snapshots {get; set;}
     public Boolean showError {get;set;} 
     public Boolean showOptions {get;set;}
+    public id currentId;
 
     public EditGit(ApexPages.StandardController std) {
         // Add ALL the fields of the sobject to the list of queried fields, to avoid " SObject row was retrieved via SOQL without querying..."
@@ -31,6 +32,7 @@ public with sharing class EditGit {
         dumypass = '********';
         if (std.getId() != null) {
             git = utilities.getGitById(std.getId());
+            currentId = git.id;
             if (!git.URI__c.startsWith('https')) {
                 dumypass = '';
                 isSSHauthentication = true;
@@ -48,6 +50,10 @@ public with sharing class EditGit {
         snapshots = ExternalCIAPIFactory.queryAllValues('Git_Backup__c', 'Git_Repository__c', git.Id, '', '');
     }
     public PageReference save() {
+        if(null != currentId && !Utilities.HasEditAccess(currentId)){
+            git.addError(Label.InSuffPriv);
+            return null;
+        }
         Utilities.Secure_DML(git, Utilities.DML_Action.UPS, schema.Sobjecttype.Git_Repository__c);
         return new apexpages.standardController(git).view();
     }

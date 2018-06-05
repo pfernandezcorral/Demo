@@ -47,7 +47,44 @@ public with sharing class BranchManagementExtension {
     public Boolean rebasePromotionsCreated { get; set; }
     private List<Promotion__c> rebasePromotions { get; set; }
     private Map<Id, List<Deployment_Flow_Step__c>> destinationToSources { get; set; }
-
+    public Map<id,List<Environmental_Variable__c>> envId_envVarsMap {get{
+        if(null == envId_envVarsMap){
+            envId_envVarsMap = new Map<id,List<Environmental_Variable__c>>();
+        }
+        return envId_envVarsMap;
+    }set;}
+    public set<id> envIdsset {get{
+        if(null == envIdsset) {
+            envIdsset = new set<id>();
+            for(Deployment_Flow_Step__c df:dfSteps){
+                envIdsset.add(df.source_environment__c);
+                envIdsset.add(df.destination_environment__c);
+            }
+        }
+        return envIdsset;
+    }private set;}
+    private List<Deployment_Flow_Step__c> dfSteps {get{
+        if(null == dfSteps){
+            dfSteps = utilities.getStepDetailsOfDeploymentFlow(deploymentflow.id);
+        }
+        return dfSteps;
+    }private set;}
+    public List<Environmental_Variable__c> envVarList {get{
+        if(null == envVarList){
+            envVarList = new List<Environmental_Variable__c>([select id,name,value__c, environment__c, environment__r.name from Environmental_Variable__c where environment__c in:envIdsset order by name]);
+            system.debug('envvarList in getter==> '+envVarList);
+            List<Environmental_Variable__c> tempList;
+            for(Environmental_Variable__c evItem:envVarList){
+                tempList = new List<Environmental_Variable__c>();
+                if(envId_envVarsMap.containsKey(evItem.environment__c)){
+                    tempList = envId_envVarsMap.get(evItem.environment__c);
+                }
+                tempList.add(evItem);
+                envId_envVarsMap.put(evItem.environment__c,tempList);
+            }
+        }
+        return envVarList;
+    }private set;}
     private String pathType { get; set; }
     private String stepResult { get; set; }
 
@@ -84,6 +121,7 @@ public with sharing class BranchManagementExtension {
         }
         // Add ALL the fields of the sobject to the list of queried fields, to avoid " SObject row was retrieved via SOQL without querying..."
         if (!Test.isRunningTest()) stdController.addFields(new List<String>(Schema.SObjectType.Deployment_Flow__c.fields.getMap().keySet()));
+
         rebaselistView = false; //has to be true change this before promote.
         showHiddenCheckboxes = false;
         rebasePromotionsCreated = false;
@@ -99,10 +137,29 @@ public with sharing class BranchManagementExtension {
         rebaseSources = new List<RebaseEnvironmentWrapper>();
         rebaseUserStoriesWrapper = new List<UserStoryWrapper>();
         this.deploymentflow = (Deployment_Flow__c) stdController.getRecord();
+        system.debug('dfSteps==> '+dfSteps);
+        system.debug('envIdsset==> '+envIdsset);
+        system.debug('envVarList==> '+envVarList);
+        system.debug('envId_envVarsMap==> '+envId_envVarsMap);
+
+        Integer existingSteps = [select count() from Deployment_Flow_Step__c where
+        Deployment_Flow__r.Active__c=true and
+        (NOT Source_Environment__r.Type__c LIKE 'Scratch Org%') AND// MY: Added to exclude scratch orgs from used CBM licenses
+        Deployment_Flow__r.Main_Branch__c!=null and
+        Deployment_Flow__r.Git_Repository__c!=null and
+        Branch__c!=null and Id !=:deploymentflow.Id ];
+
+        LicenseManagerController lmc = new LicenseManagerController();
+        System.debug(LoggingLevel.INFO,'***lmc.cbmBranchesAvailable :'+lmc.cbmBranchesAvailable);
+        System.debug(LoggingLevel.INFO,'***existingSteps :'+existingSteps);
+        if(lmc.cbmBranchesAvailable != null && existingSteps != null && lmc.cbmBranchesAvailable - existingSteps < 0){
+            ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.WARNING, Label.BRANCH_MGMT_LICENSE_EXCEEDED));
+        }
+
         // Checking if the deployment flow is active or not
         if (!deploymentflow.Active__c) {
             hideCalcBackPromotionButtons = true;
-            ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.ERROR, system.label.DF_Inactive));
+            ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.ERROR, System.LABEL.DF_Inactive));
         }
         addWarnings(deploymentflow);
         promotion = new Promotion__c();
@@ -116,13 +173,16 @@ public with sharing class BranchManagementExtension {
      * @return Void, Should only add ApexPagesmessage
      */
     private void addWarnings(Deployment_Flow__c df) {
+        if(Schema.getGlobalDescribe().get(Settings.ns+'Deployment_Flow__c').getDescribe().isAccessible()) {
+            ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.ERROR,'Deployment Flow object is not accessible'));
+            return;
+        }
         //Warning: There is another Active Deployment Flow linked to the Same Git Repository + Name
         List<Deployment_Flow__c> dFlows = [SELECT Name FROM Deployment_Flow__c WHERE Git_Repository__c =: df.Git_Repository__c AND Active__c = TRUE AND Id !=: df.Id LIMIT 1];
         if(dFlows.size()>0){
             ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.WARNING, dFlows[0].Name+system.label.DF_Linked_To_Same_Repo));
         }
     }
-
     /**
      * Queries all deployment flow steps with their details
      * Marked as remote action since this particular function is in use at backDeploy JS resource
@@ -630,6 +690,7 @@ public with sharing class BranchManagementExtension {
         }
         return null;
     }
+
     /**
      * Prepares the modal with the deployment flow results.json
      * @see getStepDetails
@@ -646,7 +707,11 @@ public with sharing class BranchManagementExtension {
 
         // following variables are passed from the VF page
         String fromEnvId = getPageParameter('fromEnvId');
-        List<Environment__c> environmentList = [Select Type__c From Environment__c Where Id =: fromEnvId Limit 1];
+        if(!Schema.getGlobalDescribe().get(Settings.ns+'Environment__c').getDescribe().isAccessible()) {
+            ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.ERROR,'Environment object is not accessible'));
+            return null;
+        }
+        List<Environment__c> environmentList = [Select Type__c From Environment__c Where Id =: String.escapeSingleQuotes(fromEnvId) Limit 1];
         if(!environmentList.isEmpty()){
             hideCommitTab = environmentList.get(0).Type__c != null && environmentList.get(0).Type__c.contains('Scratch org') ? false : true;
             environmentList.clear();
@@ -832,7 +897,9 @@ public with sharing class BranchManagementExtension {
     private Deployment_Flow_Step__c getStepDetails(String stepId) {
         try {
             Map<String, String> d = GlobalUtilities.getAllFieldsWithoutSharing('Deployment_Flow_Step__c');
-            String soqlString = 'SELECT ' + d.get(Label.FIELDS) + ',Source_Environment__r.Name, Destination_Environment__r.Name FROM ' + d.get(Label.OBJECT) + ' WHERE Id = \'' + stepId + '\'';
+            //Typecasting and escaping single quotes needs to resolve SOQL Injection issue since both of them are actual sanity check methods for dynamic queries.
+            String injectionSecureId = String.escapeSingleQuotes(String.valueOf(stepId));
+            String soqlString = 'SELECT ' + String.escapeSingleQuotes(d.get(Label.FIELDS)) + ',Source_Environment__r.Name, Destination_Environment__r.Name FROM ' + String.escapeSingleQuotes(d.get(Label.OBJECT)) + ' WHERE Id =:injectionSecureId';
             return Database.query(soqlString);
         } catch (Exception e) {
 
@@ -846,7 +913,7 @@ public with sharing class BranchManagementExtension {
         try {
             Map<String, String> d = GlobalUtilities.getAllFieldsWithoutSharing('Deployment_Flow_Step__c');
             System.debug(loggingLevel.Error, '*** stepIds: ' + stepIds);
-            String soqlString = 'SELECT ' + d.get(Label.FIELDS) + ',Source_Environment__r.Name, Destination_Environment__r.Name, Source_Environment__r.Type__c FROM ' + d.get(Label.OBJECT) + ' WHERE Id IN: stepIds';
+            String soqlString = 'SELECT ' + String.escapeSingleQuotes(d.get(Label.FIELDS)) + ',Source_Environment__r.Name, Destination_Environment__r.Name, Source_Environment__r.Type__c FROM ' + String.escapeSingleQuotes(d.get(Label.OBJECT)) + ' WHERE Id IN: stepIds';
             System.debug(loggingLevel.Error, '*** Database.query(soqlString): ' + Database.query(soqlString));
             for (Deployment_Flow_Step__c dfs : Database.query(soqlString)) {
                 dfsMap.put(dfs.Id, dfs);

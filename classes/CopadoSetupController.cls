@@ -49,7 +49,7 @@ public with sharing class CopadoSetupController {
 	// inserting org credentials
     public void createOrgCredentials(){
 		try{
-			insert orgCredentials;
+			Utilities.Secure_DML(orgCredentials, Utilities.DML_Action.INS,Schema.sObjectType.Org__c);//OLS,FLS security issue insert orgCredentials;
 
             // to create new org credential getting new instance to clear existing values
             orgCredentials = new Org__c();
@@ -131,7 +131,7 @@ public with sharing class CopadoSetupController {
                 return;
             }
 
-            insert gitSnapshot;
+            Utilities.Secure_DML(gitSnapshot, Utilities.DML_Action.INS, Schema.sObjectType.Git_Backup__c);// OLS, FLS security issue insert gitSnapshot;
 
             enableGitSnapshotForm = false; // it is used at rendered attribute to show git snapshot input form
 
@@ -194,7 +194,7 @@ public with sharing class CopadoSetupController {
                 return;
             }
 
-            insert deploymentFlow;
+            Utilities.Secure_DML(deploymentFlow, Utilities.DML_Action.INS, Schema.sObjectType.Deployment_Flow__c);// OLS, FLS security issue insert deploymentFlow;
 
             // assigning new git repo id to the selectedGitRepositories variable to render page correctly
             selectedDeploymentFlow = deploymentFlow.Id;
@@ -226,7 +226,7 @@ public with sharing class CopadoSetupController {
     // inserting deployment flow steps
     public void createDeploymentFlowSteps(){
         try{
-            insert deploymentFlowStep;
+            Utilities.Secure_DML(deploymentFlowStep, Utilities.DML_Action.INS, Schema.sObjectType.Deployment_Flow_Step__c);// OLS, FLS security issue insert deploymentFlowStep;
 
             enableDeploymentFlowStepForm = false; // it is used at rendered attribute to show deployment flow step input form
 

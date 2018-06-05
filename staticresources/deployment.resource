@@ -1,4 +1,4 @@
-//todo move this to external: 
+//todo move this to external:
 var copadoApp = {
     //attr
     //
@@ -71,7 +71,7 @@ var copadoApp = {
     /**
      * logic copy from standard button
      * The idea is update all pending jobs to cancelled and reload
-     * 
+     *
      */
     cancelDeploy: function() {
 
@@ -125,14 +125,13 @@ var copadoApp = {
                     .addClass('btnDisabled');
             }
 
-            //set label 
+            //set label
             $btn.prop('tagName') === 'INPUT' ? $btn.val(label) : $btn.html(label);
         }, 1);
 
     },
 
     showJobResult: function() {
-
         var me = copadoApp,
             $el = $copado(this),
             jobId = $el.attr('data-jobId'),
@@ -151,10 +150,9 @@ var copadoApp = {
 
         me.selectedStepId = stepId;
         me.selectedJob = jobId;
-        //get attach and render 
+        //get attach and render
         ga('send', 'event', 'Deployment', 'result', 'view');
         me.getJobResult(jobId, $el.attr('data-destination'), stepName);
-
     },
     setStepDetail: function(stepName, cleanDetail) {
         //$copado('div[id$="pbStepDetail"]').find('.mainTitle').html('Step Detail: '+stepName);
@@ -319,6 +317,7 @@ var copadoApp = {
             filterable: true,
             theme: 'base',
             editable: false,
+            scrollmode: 'logical',
             selectionmode: 'none',
             enablebrowserselection: true,
             pageable: true,
@@ -392,9 +391,9 @@ var copadoApp = {
 
     getJobResult: function(jobId, destination, stepName) {
         console.log('getJobResult', jobId);
+        copadoApp.lock();
         var result = sforce.connection.query("SELECT Id, Body, BodyLength, ContentType, Name, ParentId FROM Attachment where Name = '" + jobId + ".json' order by createdDate DESC limit 1", {
             onSuccess: function(r) {
-                copadoApp.lock();
                 copadoApp.renderJobsResult(r, destination, stepName, jobId);
             },
             onFailure: function(res) {
@@ -413,7 +412,7 @@ var copadoApp = {
     },
 
     /**
-     * check the deployment stage to enabled or disabled modules. 
+     * check the deployment stage to enabled or disabled modules.
      * @return {[type]} [description]
      */
     checkDeploymentStage: function() {
@@ -446,7 +445,7 @@ var copadoApp = {
 
     /**
      * Create a overlay over the given element
-     * This method use cache 
+     * This method use cache
      * @param  {[type]} s [description]
      * @return {[type]}   [description]
      */
@@ -496,9 +495,9 @@ var copadoApp = {
     },
     toggleChatter: function() {
         loadChatter();
-        //todo: 
+        //todo:
         // hightlight link
-        // 
+        //
     },
 
     resetStepResultContainer: function(m) {
@@ -526,7 +525,7 @@ var copadoApp = {
     onChangeName: function(el) {
         var $input = $copado(this);
 
-        //mirror value 
+        //mirror value
         $input.next('span.js-step-name').html($input.val());
 
         $input.closest('.dataRow').find('.js-action-selectStep')
@@ -615,7 +614,7 @@ var copadoApp = {
                 me.isNewStepActive = false;
             }
 
-            //remove local 
+            //remove local
             me.data.steps = $copado.grep(me.data.steps, function(e) {
                 return e.Id != stepId;
             });
@@ -663,7 +662,7 @@ var copadoApp = {
         var hasChanged = step.Name != newStep.name || step[copadoApp.ns + 'Type__c'] != newStep.type || step[copadoApp.ns + 'CheckOnly__c'] != newStep.check;
 
         if (hasChanged) {
-            //updating local data by reference 
+            //updating local data by reference
             step.Name = newStep.name;
             step[copadoApp.ns + 'Type__c'] = newStep.type;
             step[copadoApp.ns + 'CheckOnly__c'] = newStep.check;
@@ -686,11 +685,12 @@ var copadoApp = {
 
 
         console.log('saveStepCallback ', step)
-            //was new 
+            //was new
         if (!copadoApp.selectedStepId) {
             console.log('was new');
             copadoApp.selectedStepId = step.Id;
             $copado('[data-stepId=]').attr('data-stepId', copadoApp.selectedStepId);
+            console.log('c step ',step);
             copadoApp.data.steps.push(step);
             if (copadoApp.data.steps.length > 1) {
                 copadoApp.reorderStepsController();
@@ -715,7 +715,7 @@ var copadoApp = {
 
         copadoApp.unlock();
         /*
-        var dirty = stepId ? me.updateLocalStep(stepId,selectedStep):true;                  
+        var dirty = stepId ? me.updateLocalStep(stepId,selectedStep):true;
         if(!stepId || dirty){
             console.log('no id detected or dirty:',dirty);
             copadoApp.showMessage('CONFIRM','Step Saved');
@@ -723,7 +723,7 @@ var copadoApp = {
 
             copadoStep.upsertSObjectStep(selectedStep,function(res){
                 console.log('cb upsertSObjectStep', res)
-                
+
                 copadoApp.selectedStepId = res.Id;
                 stepId = res.Id;
                 copadoStep.init(rock.org__c,selectedStep.type,stepId, function(){
@@ -732,7 +732,7 @@ var copadoApp = {
                 })
             });
         }else{
-            
+
         }*/
     },
 
@@ -754,6 +754,7 @@ var copadoApp = {
 
     getStepSObjectById: function(id) {
         var len = copadoApp.data.steps.length;
+        console.log('copadoApp.data.steps  ',copadoApp.data.steps);
         while (len--) {
             if (copadoApp.data.steps[len].Id === id) {
                 return copadoApp.data.steps[len];
@@ -766,10 +767,11 @@ var copadoApp = {
     selectStepController: function($el) {
         var me = copadoApp;
 
-
         var stepId = me.getStepIdFromActionAttr($el);
         console.log('select step  ', stepId);
+        //debugger;
         selectedStep = me.getStepDataFromEl($el);
+        console.log('selectedStep ',selectedStep);
 
         //avoid select same step and ID
         if (stepId && stepId == me.selectedStepId && copadoStep.stepType == selectedStep.type) {
@@ -847,8 +849,8 @@ var copadoApp = {
         }
         /*else{
                     if($target.is('.js-step-check')){
-                        
-                        
+
+
                         $target.closest('tr.js-row').find('.js-action-selectStep').click();
 
                         setTimeout(function(){copadoStep.dirty = true;},876);
@@ -1060,7 +1062,7 @@ var copadoApp = {
     },
 
     createStepRow: function() {
-        console.log('createStepRow');
+        console.log('createStepRow ');
         var me = copadoApp;
 
         //init step table
@@ -1132,7 +1134,7 @@ var copadoApp = {
         console.log('add clone');
 
         me.ui.$cleanStep.find('.js-step-name').val('Step '+(me.getStepsCount()+1));
-        
+
         var $new = me.ui.$cleanStep.clone();
         //append
         me.ui.$stepTable.append($new);
@@ -1406,8 +1408,8 @@ var copadoApp = {
         //me.showMessage('CONFIRM','App loaded');
         me.sortable();
 
-        // if deployment has a from org valid defined, preload the metadata for grid 
-        // TODO: add logic of readonly to avoid 
+        // if deployment has a from org valid defined, preload the metadata for grid
+        // TODO: add logic of readonly to avoid
         if(!rock.scalable) {
             me.data.dep[copadoApp.ns + 'From_Org__c'] &&
                 copadoGrid.preloadMetadata(me.data.dep[copadoApp.ns + 'From_Org__c']);
@@ -1437,10 +1439,10 @@ var copadoStep = {
     validate: function() {
         var res = true;
 
-        //if steptype == user 
-        //else 
+        //if steptype == user
+        //else
         //  query ?
-        //  else 
+        //  else
         //      at least one
 
         return res;
@@ -1536,8 +1538,8 @@ var copadoStep = {
         }
 
         //External CI step
-        
-        if (me.uiBlockByType[stepType].xci) {            
+
+        if (me.uiBlockByType[stepType].xci) {
             copadoExternalCIJobStep.init(stepObj);
         }
 
@@ -1549,7 +1551,7 @@ var copadoStep = {
         if (stepId) {
             me.loadSavedData(stepType);
         } else {
-            //reset inputs on new 
+            //reset inputs on new
             me.setSavedData(stepType, false);
         }
 
@@ -1564,7 +1566,7 @@ var copadoStep = {
         }
 
         if (type == 'Users') {
-            dataStep = usersStep.savedData; //dw.u.getSavedStepData(type,true); 
+            dataStep = usersStep.savedData; //dw.u.getSavedStepData(type,true);
         }
 
         if (type == 'Custom Settings') {
@@ -1601,7 +1603,7 @@ var copadoStep = {
 
     /**
      * Parse the json saved and fill the inputs
-     * 
+     *
      * @param {string} data [description]
      */
     setPrevData: function(data) {
@@ -1662,12 +1664,12 @@ var copadoStep = {
             copadoCalloutStep.setPrevData(dataStep);
         }
 
-        if (type == 'External CI') {                       
+        if (type == 'External CI') {
             copadoExternalCIJobStep.setPrevData(dataStep);
         }
     },
     /**
-     * recover from DOM inputs the field values 
+     * recover from DOM inputs the field values
      * and return the json representation containing those values
      * @return {[type]} [description]
      */
@@ -1694,7 +1696,7 @@ var copadoStep = {
         'Git Promotion': false,
         'Quick Actions': 'MetaData',
         'URL Callout': 'Callout',
-        
+
     },
 
     uiBlockByType: {
@@ -1789,12 +1791,12 @@ var copadoStep = {
     },
 
     showBlockByType: function(type) {
-    
+
         var conf = copadoStep.uiBlockByType[type];
         if(conf.grid) $copado('[id$=js-stepBlock-Grid]').fadeIn();
         if(conf.qb) $copado('[id$=js-stepBlock-QB]').fadeIn();
         if(conf.custom) $copado('[id$=js-stepBlock-' + conf.custom + ']').fadeIn();
-        //show container 
+        //show container
         $copado('[id$=pbStepDetailComponent]').show();
 
         if (type == 'MetaData' || type == 'Git MetaData' || type == 'Git Promotion') {
@@ -1934,7 +1936,7 @@ var copadoStep = {
             cb && cb();
         };
 
-        //Users Handler 
+        //Users Handler
         me.handlers['Users'].getStepListData = function() {
             return usersStep.isValid();
         };
@@ -1946,7 +1948,7 @@ var copadoStep = {
             cb && cb();
         };
 
-        //Users Data 
+        //Users Data
         me.handlers['Data'].getStepListData = function() {
             return dw.qb.getDataJson();
         };
@@ -1992,7 +1994,7 @@ var copadoStep = {
             return copadoMTStep.isValid() ? false : copadoLabels.SPECIFY_AT_LEAST_ONE_ITEM_TO_DEPLOY;
         };
         me.handlers['Manual Task'].saveList = function(step, obj, cb) {
-            //this should not be called 
+            //this should not be called
         };
         me.handlers['Manual Task'].hasToSaveList = false;
         me.handlers['Manual Task'].updateStepFields = function(step, obj) {
@@ -2039,9 +2041,9 @@ var copadoStep = {
         };
         me.handlers['URL Callout'].hasToSaveList = false;
         me.handlers['URL Callout'].saveList = function(step, obj, cb) {
-            //this should not be called 
+            //this should not be called
         };
-        //XCI Data 
+        //XCI Data
         me.handlers['External CI'].getStepListData = function() {
             return copadoExternalCIJobStep.getObjToSave()
         };
@@ -2063,7 +2065,7 @@ var copadoStep = {
         copadoApp.disabledBtn('.js-saveStep', 'Saving...');
         copadoApp.lock();
 
-        //timeout inorder to rerender part of the interface 
+        //timeout inorder to rerender part of the interface
         setTimeout(function() {
             var me = copadoStep;
             if (!me.handlers) {
@@ -2092,7 +2094,7 @@ var copadoStep = {
                 var dirty = me.stepId ? copadoApp.updateLocalStep(me.stepId, step) : true;
                 console.log('step dirty ', dirty);
 
-                //if step has changed/new or has not savelist method. 
+                //if step has changed/new or has not savelist method.
                 //that means that save values in same record step
                 if (dirty || !stepHandler.hasToSaveList || stepHandler.forceSaveBoth) {
                     //we have to update the step obj using stepType info like DATA
@@ -2121,7 +2123,7 @@ var copadoStep = {
                 } else {
                     console.log('saving step not dirty (only list)', step);
                     // step has not changed
-                    // so save just the list  
+                    // so save just the list
                     stepHandler.saveList(step, stepListData, function() {
                         copadoStep.saveCallback(step);
                     });
@@ -2133,7 +2135,7 @@ var copadoStep = {
         }, 10);
 
         return false;
-        
+
     },
     upsertSObjectStep: function(s, cb) {
 
@@ -2185,7 +2187,7 @@ var copadoStep = {
     },
 
     /**
-     * returns the heroku url to get remote data by step type. 
+     * returns the heroku url to get remote data by step type.
      * @param  {[type]} type [description]
      * @return {[type]}      [description]
      */
@@ -2397,7 +2399,7 @@ var copadoGrid = {
         }
 
 
-        //console.log(' preselected ok ');  
+        //console.log(' preselected ok ');
         copadoGrid.addSelectAll($grid);
 
 
@@ -2588,12 +2590,12 @@ var copadoGrid = {
             data[len].s = data[len].s || false;
             data[len].b = data[len].b || '';
             data[len].d = data[len].d || '';
-            //if filtered by type remove other types. 
+            //if filtered by type remove other types.
             if (hasFilter && data[len].t == hasFilter) {
                 newData.unshift(data[len]);
             }
 
-            //for user type 
+            //for user type
             if (type == 'Users') {
                 data[len].c = data[len].c || '--';
                 if (data[len].t) {
@@ -2750,7 +2752,7 @@ var copadoGrid = {
     init: function(force) {
 
         console.time('get meta data');
-        //reset 
+        //reset
         copadoGrid.hasPreviousSelected = false;
 
         console.log('copado grid init ', copadoStep.stepType, copadoStep.stepId, 'force:', force);
@@ -3097,7 +3099,7 @@ var copadoGitMetadataStep = {
     },
 
     /**
-     * bind ui actions 
+     * bind ui actions
      * @return {[type]} [description]
      */
     bindAction: function() {
@@ -3106,11 +3108,11 @@ var copadoGitMetadataStep = {
         if (me._bound) return;
         me._bound = true;
 
-        me.ui.$gitCommitLookup.on('click', me.openLookupPopup);        
+        me.ui.$gitCommitLookup.on('click', me.openLookupPopup);
     },
 
     /**
-     * Sel local data 
+     * Sel local data
      * @param {[type]} repository   [description]
      * @param {[type]} branch       [description]
      * @param {[type]} commitId     [description]
@@ -3131,7 +3133,7 @@ var copadoGitMetadataStep = {
 
     /**
      * Parse the json saved and fill the inputs
-     * 
+     *
      * @param {string} data [description]
      */
     setPrevData: function(data) {
@@ -3146,7 +3148,7 @@ var copadoGitMetadataStep = {
     },
 
     /**
-     * recover from DOM inputs the field values 
+     * recover from DOM inputs the field values
      * and return the json representation containing those values
      * @return {[type]} [description]
      */
@@ -3321,7 +3323,7 @@ var usersStep = {
 
 
 // *********************************
-// 
+//
 //namespace
 var rock = rock || {};
 
@@ -3447,7 +3449,7 @@ rock.mergeSavedMeta = function(metaOrgData, dataStep) {
 //save data
 
 
-//TODO: move to external file and improve this code 
+//TODO: move to external file and improve this code
 //helper
 rock.el = function(id) {
     return document.getElementById(id);
@@ -3529,7 +3531,7 @@ var copadoMTStep = {
     },
     /**
      * Parse the json saved and fill the inputs
-     * 
+     *
      * @param {string} data [description]
      */
     setPrevData: function(data) {
@@ -3567,7 +3569,7 @@ var copadoMTStep = {
     },
 
     /**
-     * validation of Manual task Field 
+     * validation of Manual task Field
      * Check if at least one org was checked
      *
      * @return {Boolean} [description]
@@ -3578,7 +3580,7 @@ var copadoMTStep = {
     },
 
     /**
-     * recover from DOM inputs the field values 
+     * recover from DOM inputs the field values
      * and return the json representation containing those values
      * @return {[type]} [description]
      */
@@ -3745,31 +3747,31 @@ var copadoMTStep = {
 //      EXTERNAL CI STEP
 /**************************************************************************************/
 var copadoExternalCIJobStep = {
-    data: {        
+    data: {
         xciJobId:''
     },
 
-    init: function(step) {        
-        var me = copadoExternalCIJobStep;        
+    init: function(step) {
+        var me = copadoExternalCIJobStep;
         if (me.started) {
             me.reset();
         } else {
             me.started = true;
         }
-    },    
-    
+    },
+
     setPrevData: function(data) {
-    
+
         data = data ? JSON.parse(data) : false;
-        
+
         $copado('[id=XCI_INPUT_lkid]').val(data ? data.xciJobId : '000000000000000');
-        
+
         if(data){
             sforce.connection.query('select id,name from '+copadoApp.ns+'External_CI_Job__c where Id = \'' + data.xciJobId+ '\' LIMIT 1', {
                 onSuccess: function(result) {
                     var records = result.getArray("records");
-                    
-                    if(records.length == 1){                    
+
+                    if(records.length == 1){
                         var name = records[0].Name;
                         $copado('[id=XCI_INPUT_lkold]').val(name);
                         $copado('[id=XCI_INPUT]').val(name);
@@ -3785,7 +3787,7 @@ var copadoExternalCIJobStep = {
         }
     },
     /**
-     * recover from DOM inputs the field values 
+     * recover from DOM inputs the field values
      * and return the json representation containing those values
      * @return {[type]} [description]
      */
@@ -3821,7 +3823,7 @@ var copadoCalloutStep = {
     },
     /**
      * Parse the json saved and fill the inputs
-     * 
+     *
      * @param {string} data [description]
      */
     setPrevData: function(data) {
@@ -3841,7 +3843,7 @@ var copadoCalloutStep = {
         urlCallout.hookUrl.toggleVisibility();
     },
     /**
-     * recover from DOM inputs the field values 
+     * recover from DOM inputs the field values
      * and return the json representation containing those values
      * @return {[type]} [description]
      */
@@ -4403,7 +4405,8 @@ var copadoGitPromotionStep = {
         repository: '',
         branch: '',
         repositoryId: '',
-        name: ''
+        name: '',
+        fullurl: ''
     },
     stepObj: false,
     init: function(stepObj) {
@@ -4420,9 +4423,9 @@ var copadoGitPromotionStep = {
         me.ui.$gitName = $copado('.js-gitName').html('');
         me.ui.$gitCommit = $copado('.js-gitCommit').val('');
         me.ui.$gitCommitLookup = $copado('.js-gitCommit-lookup');
-        
+
         me.ui.$testLevel = $copado('[id=js-TestLevel]');
-        
+
         me.setPrevData(stepObj[copadoApp.ns + 'dataJson__c']);
 
         //bind
@@ -4435,19 +4438,21 @@ var copadoGitPromotionStep = {
             me.data.commitId = '';
             me.data.repositoryId = '';
             me.data.name = '';
+            me.data.fullurl = '';
             me.data.testLevel = '';
             $copado('#jqxgrid-git-metadata').html('');
             me.data.metadata = [];
             return;
         }
 
-        //set data
-        me.setData(
+        //set data  -- updated second line to be able to show whole url near branch label - UCU 24.05.18
+        me.setData2(
             me.stepObj[ns + 'Git_Repository__r'] ? me.stepObj[ns + 'Git_Repository__r'].Name : '',
             me.stepObj[ns + 'Branch__c'],
             me.stepObj[ns + 'Commit_Id__c'],
             me.stepObj[ns + 'Git_Repository__c'],
-            me.stepObj[ns + 'Commit_Name__c']
+            me.stepObj[ns + 'Commit_Name__c'],
+            me.stepObj[ns + 'Git_Repository__r'] ? (me.stepObj[ns + 'Git_Repository__r'][ns + 'Branch_Base_URL__c'] ? (me.stepObj[ns + 'Git_Repository__r'][ns + 'Branch_Base_URL__c'].slice(me.stepObj[ns + 'Git_Repository__r'][ns + 'Branch_Base_URL__c'].length-1, me.stepObj[ns + 'Git_Repository__r'][ns + 'Branch_Base_URL__c'].length) == '/' ? me.stepObj[ns + 'Git_Repository__r'][ns + 'Branch_Base_URL__c'] + me.stepObj[ns + 'Branch__c'] : me.stepObj[ns + 'Git_Repository__r'][ns + 'Branch_Base_URL__c'] + '/' + me.stepObj[ns + 'Branch__c']) : me.stepObj[ns + 'Branch__c']) : ''
         );
 
         //check or ask for metadata
@@ -4595,7 +4600,7 @@ var copadoGitPromotionStep = {
                 console.log('Applying selection chages to the grid...',t);
                 if (event.args.datafield=='s' && t.s === true) {
                     t.s = true;
-                    
+
                 }else if(event.args.datafield=='s' && t.s === false){
                     t.s = false;
                 }
@@ -4677,7 +4682,7 @@ var copadoGitPromotionStep = {
     },
 
     /**
-     * bind ui actions 
+     * bind ui actions
      * @return {[type]} [description]
      */
     bindAction: function() {
@@ -4690,7 +4695,7 @@ var copadoGitPromotionStep = {
     },
 
     /**
-     * Sel local data 
+     * Sel local data
      * @param {[type]} repository   [description]
      * @param {[type]} branch       [description]
      * @param {[type]} commitId     [description]
@@ -4708,10 +4713,26 @@ var copadoGitPromotionStep = {
         me.data.repositoryId = repositoryId;
         me.data.name = name;
     },
+    /*
+        created setData2 to be able to store fullurl and to not make it mandatory at the same time UCU 4.6.18
+    */
+    setData2: function(repository, branch, commitId, repositoryId, name, fullurl) {
+
+        console.log('set data', repository, branch, commitId, repositoryId, name, fullurl);
+
+        var me = copadoGitPromotionStep;
+
+        me.data.repository = repository;
+        me.data.branch = branch;
+        me.data.commitId = commitId;
+        me.data.repositoryId = repositoryId;
+        me.data.name = name;
+        me.data.fullurl = fullurl;
+    },
 
     /**
      * Parse the json saved and fill the inputs
-     * 
+     *
      * @param {string} data [description]
      */
     setPrevData: function(data) {
@@ -4726,7 +4747,7 @@ var copadoGitPromotionStep = {
     },
 
     /**
-     * recover from DOM inputs the field values 
+     * recover from DOM inputs the field values
      * and return the json representation containing those values
      * @return {[type]} [description]
      */
@@ -4794,7 +4815,7 @@ var copadoGitPromotionStep = {
         var me = copadoGitPromotionStep,
             ns = copadoApp.ns;
         var _namespace = (copadoApp.ns!='')?copadoApp.ns+'__':'';
-        
+
         //prepare url parameters
         var url = '/apex/'+_namespace+'GitCommitLookup?from=Deployment&callback=copadoGitPromotionStep.lookupCB';
         url += '&repository=' + me.data.repository;
@@ -4815,9 +4836,20 @@ var copadoGitPromotionStep = {
 
         var me = copadoGitPromotionStep,
             ns = copadoApp.ns;
-
         me.ui.$gitRepository.html(me.data.repository);
-        me.ui.$gitBranch.html(me.data.branch);
+        //me.ui.$gitBranch.html(me.data.branch);
+        //shows direct link to users branch - UCU
+        var branchRelatedInfos = {
+                bkw  : '/branch/',
+                bkwl : '/branch/'.length,
+                bInd : me.data.fullurl.indexOf('/branch/'),
+                bLen : me.data.fullurl.length
+        }
+        console.log('branchRelatedInfos==> ',branchRelatedInfos);
+
+        if(branchRelatedInfos.bInd > -1){
+            me.ui.$gitBranch.html('<a href="'+me.data.fullurl+'" target="_blank" title="'+me.data.fullurl+'">'+me.data.branch+'</a>');
+        }else me.ui.$gitBranch.html(me.data.branch);
         me.ui.$gitCommit.val(me.data.commitId);
         me.ui.$gitName.html(me.data.name);
     }
@@ -5130,7 +5162,7 @@ dw.qb.getFields = function() {
 
             $copado('.query-step-2').fadeIn();
 
-            //preselect first external 
+            //preselect first external
             !dw.qb.rebuilding && dw.qb.selectFieldEx();
 
             //if rebuilding
@@ -5161,7 +5193,7 @@ dw.qb.getFields = function() {
                     console.log('rebuilding query', dw.qb.ui.query.val(), dw.qb.preData.q)
                     dw.qb.ui.query.val(dw.qb.preData.q);
 
-                    // clean dirty flag 
+                    // clean dirty flag
                     copadoStep.dirty = false;
                 }, 321);
 
@@ -5190,8 +5222,8 @@ dw.qb.getObjectToRebuild = function() {
 
 dw.qb.init = function(force, orgId) {
 
-    //reset 
-    //TODO: move this to function   
+    //reset
+    //TODO: move this to function
     $copado('#selected-obj, #fields-unselected, #fields-selected, #query-label,#fieldsEx').empty().val('');
     $copado(".duelingListBox select[id$=':leftList']").empty();
     $copado(".duelingListBox select[id$=':rightList']").empty();
@@ -5242,7 +5274,7 @@ dw.qb.testQuery = function(e) {
 
     var queryFields = dw.qb.query.match(/select (.*) from/i);
     queryFields = queryFields && queryFields.length > 1 ? queryFields[1] : false;
-    //check query malformed 
+    //check query malformed
     if (!queryFields) {
         copadoApp.showMessage('ERROR', copadoLabels.SOQL_MALFORMED_ERROR);
         return false;

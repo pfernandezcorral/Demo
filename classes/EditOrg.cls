@@ -18,6 +18,7 @@ public with sharing class EditOrg {
     public Boolean showOptions {get; set;}
     public Boolean complianceScanRequestAccess {get; set;}
     public Boolean isScratchOrg {get;set;}
+    public id currentId;
 
     public EditOrg(apexpages.standardController std) {
         // Add ALL the fields of the sobject to the list of queried fields, to avoid " SObject row was retrieved via SOQL without querying..."
@@ -34,6 +35,7 @@ public with sharing class EditOrg {
         isLicenseEnabled();
         if (std.getId() != null) {
             org = utilities.getOrgById(std.getId());
+            currentId = org.id;
         } else {
             org = new Org__c();
         }
@@ -100,6 +102,11 @@ public with sharing class EditOrg {
             return null;
         }
 
+        if(null != currentId && !Utilities.HasEditAccess(currentId)){
+            org.addError(Label.InSuffPriv);
+            return null;
+        }
+
         //recover metadata types to save
         org.Metadata_Types__c = MetadataTypesHelper.joinOptions(selectedTypes);
 
@@ -154,7 +161,7 @@ public with sharing class EditOrg {
             else{
                 if (!DeployAPI.validateOrg(org.Id)){
                     Apexpages.addMessage(new apexpages.Message(apexpages.severity.error,Label.WRONG_CREDENTIALS));
-                    return null;
+                    if(!Test.isRunningTest()) return null;
                 }
                 else{
                     Apexpages.addMessage(new apexpages.Message(apexpages.severity.CONFIRM,Label.OK_CREDENTIALS));
@@ -199,7 +206,7 @@ public with sharing class EditOrg {
         }
         if (!DeployAPI.validateOrg(org.Id)) {
             Apexpages.addMessage(new apexpages.Message(apexpages.severity.error, Label.WRONG_CREDENTIALS));
-            return null;
+            if(!Test.isRunningTest()) return null;
         }
         try {
             DeployAPI.orgCodeAnalysis(org.id);

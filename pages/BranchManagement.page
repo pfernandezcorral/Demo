@@ -211,14 +211,14 @@
                     left: 0;
                     top: 25%;
                     bottom: 0;
-                    height: 288px;
+                    height: 347px;
                     background-color: rgb(255, 255, 255);
                     border-radius: 4px 0px 4px 4px;
                     border-width: 1px;
                     border-style: solid;
                     border-color: rgb(216, 221, 230);
                     border-image: initial;
-                    z-index: 2;
+                    z-index: 999;
                     cursor: pointer;
                 }
                 #errormessagediv {
@@ -235,6 +235,34 @@
                     border-color: rgb(216, 221, 230);
                     border-image: initial;
                     background: transparent;
+                }
+
+                .legendID {
+                  display: inline-block;
+                  vertical-align: top;
+                  text-align: left;
+                }
+
+                .legend {
+                  list-style-type: none;
+                  padding: 0;
+                  margin: 0;
+                  padding: 15px;
+                  font-size: 11px;
+                }
+                #legendPanel {
+                    margin: 10px 10px 10px 0px;
+                    padding: 10px;
+                    background:  white;
+                }
+                .legend li {
+                  height: 1.25em;
+                  margin-bottom: 0.7em;
+                  padding-left: 0.5em;
+                  border-left: 1.25em solid black;
+                }
+                .legend em {
+                  font-style: normal;
                 }
             </style>
             <script type="text/javascript">
@@ -288,7 +316,7 @@
                                 __coordinates__: '{!JSENCODE(Deployment_Flow__c.Flow_Step_Coordinates__c)}',
                                 mainBranch: '{!JSENCODE(Deployment_Flow__c.Main_Branch__c)}',
                                 repositoryId: '{!JSENCODE(Deployment_Flow__c.Git_Repository__c)}',
-                                allNotificationMatchingKeys: '{!JobsManagerMatchingKeys}'
+                                allNotificationMatchingKeys: '{!JSENCODE(JobsManagerMatchingKeys)}'
                             },
                             envConnections: [],
                             environments: [],
@@ -304,7 +332,7 @@
                     </div>
 
                     <div id="myInsext" class="">
-                        <div class="myinsext-btn" style="outline:0;" onclick="toogle();" tabindex="0" accesskey="i" title="Show additional operations...">
+                        <div class="myinsext-btn" style="outline:0;cursor:pointer;" onclick="toogle();" tabindex="0" accesskey="i" title="Show additional operations...">
                             <center>
                                 <img height="20" width="20" src="{!URLFOR($Resource.Statics,'img/icons/logo-icon.png')}"/>
                             </center>
@@ -330,13 +358,38 @@
                                         </div>
                                     </div>
                                     <div class="slds-form-element" style="margin-top: 10px">
-                                        <button type="button" id="showLogs" class="btn slds-button slds-button_neutral" onclick="showLogsModal(); return false;">Latest sync results</button>                                     
+                                        <button type="button" id="showLogs" class="btn slds-button slds-button_neutral" onclick="showLogsModal(); return false;">Latest sync results</button>
                                     </div>
                                     <apex:outputPanel rendered="{!AND(!hideCalcBackPromotionButtons,stepMapJSON != 'false')}">
                                         <div class="slds-form-element" style="margin-top: 10px">
                                             <button type="button" id="massBackPromote" class="btn slds-button slds-button_neutral" onclick="lock();openRebaseModal();toogle(); return false;">Mass Back-Promote</button>
                                         </div>
                                     </apex:outputPanel>
+                                    <div class="slds-form-element" style="margin-top: 10px">
+                                        <button type="button" id="showEvars" class="btn slds-button slds-button_neutral" onclick="showVarModal(); return false;">{!$Label.SEnvVar}</button>
+                                    </div>
+                                </div>
+                                <div id="legendPanel">
+                                    <ul class="legendID legend">
+                                        <li style="border-left: 1.25em solid green">
+                                            <em>
+                                                {!$Label.Valid_for_Deployment}
+                                            </em>
+                                        </li>
+                                        <li style="border-left: 1.25em solid red">
+                                            <em>
+                                                {!$Label.Has_Deployment_Errors}
+                                            </em>
+                                        </li>
+                                        <li style="border-left: 1.25em solid yellow">
+                                            <em>
+                                                {!$Label.Needs_Recalculation}
+                                            </em>
+                                        </li>
+                                        <li style="border-left: 1.25em solid gray">
+                                            <em>{!$Label.In_Sync}</em>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div class="slds-grid">
                                     <div class="slds-col">
@@ -656,6 +709,92 @@
                 
                 </div>
                 <!-- END OF Continuous Integration Notes -->
+
+                <!-- Environment Variables for all environments -->
+                <div id="eVarPanel">
+                    <section role="dialog" tabindex="-1" id="eVarModal" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-modal_medium">
+                        <div class="slds-modal__container" style="width: 60% !important;max-width:50rem;">
+                            <header class="slds-modal__header" style="border-bottom: 0px;">
+                                <div style="max-height:750px !important;overflow-x:scroll;">
+                                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="{!$Label.CLOSE}" onclick="closeVarModal();return false;">
+                                    <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                                        <use
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#close')}">
+                                        </use>
+                                    </svg>
+                                    <span class="slds-assistive-text">{!$Label.CLOSE}</span>
+                                </button>
+                                <apex:outputPanel id="EnvVarH" layout="block">
+                                    <table id="dt4dt">
+                                        <thead>
+                                            <tr>
+                                                <td class="slds-modal__header">
+                                                    <center><h2 id="VarHeaderText" class="slds-text-heading_medium slds-hyphenate">
+                                                            <apex:outputText value="{!$Label.VarEnv}" />
+                                                        </h2></center>
+                                                </td>
+                                                <td class="slds-modal__header">
+                                                    <center><h2 id="VarHeaderText" class="slds-text-heading_medium slds-hyphenate">
+                                                            <apex:outputText value="{!$Label.VarName}" />
+                                                        </h2></center>
+                                                </td>
+                                                <td class="slds-modal__header">
+                                                    <center><h2 id="VarHeaderText" class="slds-text-heading_medium slds-hyphenate">
+                                                            <apex:outputText value="{!$Label.VarVal}" />
+                                                        </h2></center>
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <apex:outputPanel rendered="{!envVarList.size>0}">
+                                            <tbody>
+                                            <apex:variable value="{!1}" var="count"/>
+                                            <apex:repeat value="{!envId_envVarsMap}" var="envList">
+                                                <apex:repeat value="{!envId_envVarsMap[envList]}" var="env">
+                                                    <tr>
+                                                        <td style="{!if(count==1,'padding-top:20px;','padding-top:3px;')}">
+                                                            <center><apex:outputText value="{!env.environment__r.name}"/></center>
+                                                        </td>
+                                                        <td style="{!if(count==1,'padding-top:20px;','padding-top:3px;')}">
+                                                            <center><apex:outputText value="{!env.name}"/></center>
+                                                        </td>
+                                                        <td style="{!if(count==1,'padding-top:20px;','padding-top:3px;')}">
+                                                            <center><apex:outputText value="{!env.value__c}"/></center>
+                                                        </td>
+                                                    </tr>
+                                                    <apex:variable value="{!count+1}" var="count"/>
+                                                </apex:repeat>
+                                                <apex:variable value="{!1}" var="count"/>
+                                            </apex:repeat>
+                                            </tbody>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!envVarList.size<1}">
+                                            <tr>
+                                                <td colspan="3" style="padding-top:20px;">
+                                                    <center>
+                                                        {!$Label.NoEnvVar}
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                        </apex:outputPanel>
+                                    </table>
+                                    <script>
+                                        $copado('#dt4dt').DataTable();
+                                        $copado('input[aria-controls$=dt4dt]').attr('placeholder','use "" for exact search');
+                                    </script>
+                                </apex:outputPanel>
+                                </div>
+                            </header>
+
+                            <footer class="slds-modal__footer">
+                                <button class="slds-button slds-button_neutral" onclick="closeVarModal(); return false;">{!$Label.Cancel}</button>
+                            </footer>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop" id="eVarBackdrop"></div>
+
+                </div>
+                <!-- END OF Environment Variables for all environments -->
+
                 <!-- Rebase Panel -->
                 <apex:outputPanel layout="block">
                     <section role="dialog" tabindex="-1" id="rebaseModal" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-modal_large">

@@ -183,11 +183,14 @@ private class TestGlobalUtilities {
         User_Story_Commit__c userStoryCommit2 = new User_Story_Commit__c(User_Story__c = userStory1.id, Snapshot_Commit__c = snapshotCommit2.id);
         insert userStoryCommit2;
         Test.setCreatedDate(userStoryCommit2.Id, Datetime.now().addDays(-1));
+
+
         List<User_Story__c> listUserStoriesAhead = GlobalUtilities.getUserStoriesAhead(stepIntToProd);
         System.assertEquals(1, listUserStoriesAhead.size());
         // ensure VF required fields are not null
-        for(User_Story__c userStoryAhead : listUserStoriesAhead)
+        for(User_Story__c userStoryAhead : listUserStoriesAhead) {
             system.assertEquals(userStoryAhead.Org_Credential__r.Org_Type__c, 'Sandbox');
+        }
 
         // Case 5 and 6 are no longer covered with the Ahead/Behind calculation. Support them in the future
         /*
@@ -582,8 +585,9 @@ private class TestGlobalUtilities {
         List<User_Story__c> listUserStoriesBehind = GlobalUtilities.getUserStoriesBehind(stepDev2ToInt);
         System.assertEquals(2, listUserStoriesBehind.size()); // UserStory2 and UserStory3 are 'Behind' to Dev2
         // ensure VF required fields are not null
-        for(User_Story__c userStoryBehind : listUserStoriesBehind)
+        for(User_Story__c userStoryBehind : listUserStoriesBehind) {
             system.assertEquals(userStoryBehind.Org_Credential__r.Org_Type__c, 'Sandbox');
+        }
 
         UserStoryExt ext1 = new UserStoryExt(new ApexPages.StandardController(userStory1));
         System.assertEquals(2, ext1.userStoriesBehind.size());

@@ -14,11 +14,6 @@
         <name>Active__c</name>
     </fields>
     <fields>
-        <help><!-- If a git merge conflict occurs and some files are excepted from the Auto Resolve conflict feature, the promotion will be stopped and you will be able to resolve conflicts manually using the Copado interface. --></help>
-        <label><!-- Auto Resolve Options --></label>
-        <name>Auto_Resolve_Options__c</name>
-    </fields>
-    <fields>
         <help><!-- If checked, committing changes on user stories linked to this deployment flow will not be allowed. --></help>
         <label><!-- Block Commits --></label>
         <name>Block_Commits__c</name>
@@ -61,6 +56,11 @@
         <help><!-- If checked, Environment names must equal their corresponding Branches in the Deployment Flow Steps. --></help>
         <label><!-- Enforce branch/env naming convention --></label>
         <name>Equal_Branch_Environment_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Conflicts found in the selected metadata types are not auto-resolved by Copado when merging feature branches into the promotion branch. The conflicts can be manually resolved using Copado. --></help>
+        <label><!-- Exclude From Auto Resolve --></label>
+        <name>Exclude_From_Auto_Resolve__c</name>
     </fields>
     <fields>
         <label><!-- Flow Step Coordinates --></label>

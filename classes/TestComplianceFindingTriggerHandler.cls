@@ -19,9 +19,11 @@ private class TestComplianceFindingTriggerHandler {
 		insert scanResultOrg;
 		List<Schema.PicklistEntry> severityPle = Schema.getGlobalDescribe().get(ns+'Compliance_Rule__c').getDescribe().fields.getMap().get(ns+'Severity__c').getDescribe().getPicklistValues();
 		List<Schema.PicklistEntry> actionPle = Schema.getGlobalDescribe().get(ns+'Compliance_Rule__c').getDescribe().fields.getMap().get(ns+'Action__c').getDescribe().getPicklistValues();
-		Compliance_Rule__c rule1 = new Compliance_Rule__c(Name = 'Rule A', Severity__c = severityPle[0].getValue(), Action__c = actionPle[0].getValue());
+		Compliance_Rule__c rule1 = new Compliance_Rule__c(Name = 'Rule A', Severity__c = severityPle[0].getValue(), Action__c = actionPle[0].getValue(),
+				Record_Count__c = 1, Record_Count_Criteria__c = 'Number of groups', Matching_Criteria__c = 'Greater or equal');
 		insert rule1;
-		Compliance_Rule__c rule2 = new Compliance_Rule__c(Name = 'Rule A', Severity__c = severityPle[1].getValue(), Action__c = actionPle[1].getValue());
+		Compliance_Rule__c rule2 = new Compliance_Rule__c(Name = 'Rule A', Severity__c = severityPle[1].getValue(), Action__c = actionPle[1].getValue(),
+				Record_Count__c = 1, Record_Count_Criteria__c = 'Number of groups', Matching_Criteria__c = 'Greater or equal');
 		insert rule2;
 
 		Compliance_Finding__c findingRule1 = new Compliance_Finding__c(Compliance_Rule__c = rule1.Id, Compliance_Scan_Result__c = scanResultOrg.Id);
