@@ -9,6 +9,16 @@
         <protected>false</protected>
     </fieldUpdates>
     <rules>
+        <fullName>Testrule</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.IsPartner</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
         <fullName>snoopy</fullName>
         <actions>
             <name>snoopy1</name>
