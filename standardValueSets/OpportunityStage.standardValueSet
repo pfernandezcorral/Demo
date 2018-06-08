@@ -91,4 +91,13 @@
         <probability>10</probability>
         <won>false</won>
     </standardValue>
+    <standardValue>
+        <fullName>Almbrand</fullName>
+        <default>false</default>
+        <label>Almbrand</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>50</probability>
+        <won>false</won>
+    </standardValue>
 </StandardValueSet>
