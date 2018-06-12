@@ -60,6 +60,32 @@
         <trackTrending>false</trackTrending>
         <type>AutoNumber</type>
     </fields>
+    <fields>
+        <fullName>test__c</fullName>
+        <externalId>false</externalId>
+        <label>charliepicklist</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>charliepicklist1</fullName>
+                    <default>false</default>
+                    <label>charliepicklist1</label>
+                </value>
+                <value>
+                    <fullName>charliepicklist2</fullName>
+                    <default>false</default>
+                    <label>charliepicklist2</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
     <label>charlie</label>
     <listViews>
         <fullName>All</fullName>
@@ -73,6 +99,22 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>charlie</pluralLabel>
+    <recordTypes>
+        <fullName>Charlierecordtype</fullName>
+        <active>true</active>
+        <label>Charlierecordtype</label>
+        <picklistValues>
+            <picklist>test__c</picklist>
+            <values>
+                <fullName>charliepicklist1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>charliepicklist2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <lookupDialogsAdditionalFields>OWNER.FIRST_NAME</lookupDialogsAdditionalFields>
         <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
