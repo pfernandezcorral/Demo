@@ -23,6 +23,11 @@
                     <default>false</default>
                     <label>charliepicklist2</label>
                 </value>
+                <value>
+                    <fullName>charliepicklist3</fullName>
+                    <default>false</default>
+                    <label>charliepicklist3</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -38,6 +43,10 @@
             </values>
             <values>
                 <fullName>charliepicklist2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>charliepicklist3</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
