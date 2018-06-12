@@ -18,6 +18,7 @@ installedPackages/*
 # classes/copado__*
 # triggers/copado__*
 # pages/copado__*
+email/copado__Copado_Deployer*
 #profiles and permission sets are complex Files. If your Org's 
 #metadata and Git are in sync, you can track incremental changes on 
 #Profiles and Permission sets using Copado "commit files" functionality.
