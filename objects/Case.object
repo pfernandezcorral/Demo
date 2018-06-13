@@ -124,4 +124,13 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
+    <listViews>
+        <fullName>Manulife_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Manulife</label>
+        <queue>Manulife</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
 </CustomObject>
