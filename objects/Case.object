@@ -394,6 +394,15 @@
         <label>All Open Cases</label>
     </listViews>
     <listViews>
+        <fullName>Manulife_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Manulife</label>
+        <queue>Manulife</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>MyCases</fullName>
         <filterScope>Mine</filterScope>
         <label>My Cases</label>
