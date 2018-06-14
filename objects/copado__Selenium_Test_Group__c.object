@@ -8,4 +8,34 @@
         <errorDisplayField>copado__Environment__c</errorDisplayField>
         <errorMessage>The Environment field is required if the Type is &quot;User Story Test&quot; or &quot;Regression Test&quot;.</errorMessage>
     </validationRules>
+    <webLinks>
+        <fullName>copado__Refresh_Results</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Refresh Results</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>document.location.reload(true);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Run_Group</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Run Group</masterLabel>
+        <openType>replace</openType>
+        <page>copado__SeleniumRunGroup</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Show_Hook_URL</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Show Hook URL</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>showWebhook();</url>
+    </webLinks>
 </CustomObject>
