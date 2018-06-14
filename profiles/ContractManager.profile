@@ -1942,6 +1942,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>FieldServiceAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ImportPersonal</name>
     </userPermissions>
     <userPermissions>
@@ -1955,6 +1959,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ListEmailSend</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageCssUsers</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

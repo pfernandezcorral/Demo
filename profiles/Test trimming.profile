@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>true</custom>
-    <customPermissions>
-        <enabled>true</enabled>
-        <name>Testcustomperm</name>
-    </customPermissions>
+    <loginHours>
+        <fridayEnd>1440</fridayEnd>
+        <fridayStart>60</fridayStart>
+        <mondayEnd>1440</mondayEnd>
+        <mondayStart>60</mondayStart>
+        <saturdayEnd>1440</saturdayEnd>
+        <saturdayStart>60</saturdayStart>
+        <sundayEnd>1440</sundayEnd>
+        <sundayStart>60</sundayStart>
+        <thursdayEnd>1440</thursdayEnd>
+        <thursdayStart>60</thursdayStart>
+        <tuesdayEnd>1440</tuesdayEnd>
+        <tuesdayStart>60</tuesdayStart>
+        <wednesdayEnd>1440</wednesdayEnd>
+        <wednesdayStart>60</wednesdayStart>
+    </loginHours>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
@@ -36,6 +48,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ConvertLeads</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>CreateCustomizeFilters</name>
     </userPermissions>
     <userPermissions>
@@ -45,14 +61,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>CreateTopics</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>CreateWorkspaces</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>DataExport</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -88,6 +96,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ExportReport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ImportPersonal</name>
     </userPermissions>
     <userPermissions>
@@ -96,11 +108,15 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ManageEncryptionKeys</name>
+        <name>ListEmailSend</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ManageSolutions</name>
+        <name>ManageCssUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageEncryptionKeys</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -120,11 +136,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>SubscribeToLightningReports</name>
+        <name>SubmitMacrosAllowed</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>TransferAnyCase</name>
+        <name>SubscribeToLightningReports</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -136,10 +152,18 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ViewGlobalHeader</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ViewHelpLink</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ViewMyTeamsDashboards</name>
+        <name>ViewRoles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewSetup</name>
     </userPermissions>
 </Profile>
