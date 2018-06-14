@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>leadsharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>leadsharing</label>
+        <sharedTo>
+            <allCustomerPortalUsers></allCustomerPortalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>City</field>
+            <operation>equals</operation>
+            <value>test</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
     <sharingOwnerRules>
         <fullName>test</fullName>
         <accessLevel>Read</accessLevel>
