@@ -80,6 +80,60 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>SLAExpirationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>SLA Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SLASerialNumber__c</fullName>
+        <externalId>true</externalId>
+        <label>SLA Serial Number</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLA__c</fullName>
+        <externalId>false</externalId>
+        <label>SLA</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Gold</fullName>
+                    <default>false</default>
+                    <label>Gold</label>
+                </value>
+                <value>
+                    <fullName>Silver</fullName>
+                    <default>false</default>
+                    <label>Silver</label>
+                </value>
+                <value>
+                    <fullName>Platinum</fullName>
+                    <default>false</default>
+                    <label>Platinum</label>
+                </value>
+                <value>
+                    <fullName>Bronze</fullName>
+                    <default>false</default>
+                    <label>Bronze</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>ShippingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -96,6 +150,50 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Thomson__c</fullName>
+        <externalId>false</externalId>
+        <label>Thomson</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>test1</fullName>
+                    <default>false</default>
+                    <label>Test1</label>
+                </value>
+                <value>
+                    <fullName>Test2</fullName>
+                    <default>false</default>
+                    <label>Test2</label>
+                </value>
+                <value>
+                    <fullName>Test3</fullName>
+                    <default>false</default>
+                    <label>Test3</label>
+                </value>
+                <value>
+                    <fullName>Test4</fullName>
+                    <default>false</default>
+                    <label>Test4</label>
+                </value>
+                <value>
+                    <fullName>Test5</fullName>
+                    <default>false</default>
+                    <label>Test5</label>
+                </value>
+                <value>
+                    <fullName>Test6</fullName>
+                    <default>false</default>
+                    <label>Test6</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>TickerSymbol</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -109,11 +207,118 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>US_0002086__c</fullName>
+        <externalId>false</externalId>
+        <label>US-0002086</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UpsellOpportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Upsell Opportunity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Maybe</fullName>
+                    <default>false</default>
+                    <label>Maybe</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>thomsonreuters__c</fullName>
+        <externalId>false</externalId>
+        <label>thomsonreuters</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>AccountSource</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>thomson1</fullName>
+                    <default>false</default>
+                    <label>thomson1</label>
+                </value>
+                <value>
+                    <fullName>thomson2</fullName>
+                    <default>false</default>
+                    <label>thomson2</label>
+                </value>
+                <value>
+                    <fullName>thomson3</fullName>
+                    <default>false</default>
+                    <label>thomson3</label>
+                </value>
+                <value>
+                    <fullName>thomson4</fullName>
+                    <default>false</default>
+                    <label>thomson4</label>
+                </value>
+                <value>
+                    <fullName>thomson5</fullName>
+                    <default>false</default>
+                    <label>thomson5</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>test</controllingFieldValue>
+                <valueName>thomson3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>test</controllingFieldValue>
+                <valueName>thomson4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Purchased List</controllingFieldValue>
+                <valueName>thomson2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phone Inquiry</controllingFieldValue>
+                <controllingFieldValue>Web</controllingFieldValue>
+                <valueName>thomson1</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>validationfield__c</fullName>
+        <externalId>false</externalId>
+        <label>validationfield</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
     </fields>
 </CustomObject>

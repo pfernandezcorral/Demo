@@ -30,6 +30,16 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>External_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -42,6 +52,16 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Languages__c</fullName>
+        <externalId>false</externalId>
+        <label>Languages</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>LastCURequestDate</fullName>
     </fields>
     <fields>
@@ -51,6 +71,34 @@
         <fullName>LeadSource</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Level</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Secondary</fullName>
+                    <default>false</default>
+                    <label>Secondary</label>
+                </value>
+                <value>
+                    <fullName>Tertiary</fullName>
+                    <default>false</default>
+                    <label>Tertiary</label>
+                </value>
+                <value>
+                    <fullName>Primary</fullName>
+                    <default>false</default>
+                    <label>Primary</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>MailingAddress</fullName>
@@ -83,7 +131,33 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Testfield__c</fullName>
+        <externalId>false</externalId>
+        <label>Testfield</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Title</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>label1__c</fullName>
+        <externalId>false</externalId>
+        <label>label1</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>language1__c</fullName>
+        <externalId>false</externalId>
+        <label>language1</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
 </CustomObject>

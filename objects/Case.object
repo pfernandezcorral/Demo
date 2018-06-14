@@ -48,10 +48,32 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>EngineeringReqNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Engineering Req Number</label>
+        <length>12</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>IsEscalated</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Last_Follow_up_email__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Follow up email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Origin</fullName>
@@ -75,6 +97,41 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>PotentialLiability__c</fullName>
+        <externalId>false</externalId>
+        <label>Potential Liability</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>Perhaps</fullName>
+                    <default>false</default>
+                    <label>Perhaps</label>
+                </value>
+                <value>
+                    <fullName>Maybe</fullName>
+                    <default>false</default>
+                    <label>Maybe</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Priority</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -82,11 +139,96 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>GC1040</fullName>
+                    <default>false</default>
+                    <label>GC1040</label>
+                </value>
+                <value>
+                    <fullName>GC1060</fullName>
+                    <default>false</default>
+                    <label>GC1060</label>
+                </value>
+                <value>
+                    <fullName>GC3020</fullName>
+                    <default>false</default>
+                    <label>GC3020</label>
+                </value>
+                <value>
+                    <fullName>GC3040</fullName>
+                    <default>false</default>
+                    <label>GC3040</label>
+                </value>
+                <value>
+                    <fullName>GC3060</fullName>
+                    <default>false</default>
+                    <label>GC3060</label>
+                </value>
+                <value>
+                    <fullName>GC5020</fullName>
+                    <default>false</default>
+                    <label>GC5020</label>
+                </value>
+                <value>
+                    <fullName>GC5040</fullName>
+                    <default>false</default>
+                    <label>GC5040</label>
+                </value>
+                <value>
+                    <fullName>GC5060</fullName>
+                    <default>false</default>
+                    <label>GC5060</label>
+                </value>
+                <value>
+                    <fullName>GC1020</fullName>
+                    <default>false</default>
+                    <label>GC1020</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Reason</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SLAViolacion__c</fullName>
+        <externalId>false</externalId>
+        <label>SLA Violation</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Status</fullName>
