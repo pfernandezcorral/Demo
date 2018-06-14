@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>hello1</fullName>
+        <description>hello1</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CommunityChangePasswordEmailTemplate</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Update1</fullName>
         <field>AssistantName</field>
         <name>Update1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update10</fullName>
+        <field>Title</field>
+        <name>Update10</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Null</operation>
         <protected>false</protected>
@@ -83,6 +102,22 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>test10</fullName>
+        <field>OtherStreet</field>
+        <name>test10</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>test101</fullName>
+        <field>Salutation</field>
+        <name>test10</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>PreviousValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>test2</fullName>
         <field>Birthdate</field>
         <name>test2</name>
@@ -155,6 +190,10 @@
             <type>FieldUpdate</type>
         </actions>
         <actions>
+            <name>test101</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
             <name>test2</name>
             <type>FieldUpdate</type>
         </actions>
@@ -186,7 +225,7 @@
             <name>test9</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <criteriaItems>
             <field>Contact.AccountName</field>
             <operation>contains</operation>
@@ -237,6 +276,20 @@
             <field>Contact.AccountName</field>
             <operation>contains</operation>
             <value>test</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>test</fullName>
+        <actions>
+            <name>hello1</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.DoNotCall</field>
+            <operation>equals</operation>
+            <value>True</value>
         </criteriaItems>
         <triggerType>onCreateOnly</triggerType>
     </rules>

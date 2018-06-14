@@ -7,4 +7,47 @@
         <errorConditionFormula>NOT(ISBLANK(copado__Org_Credential__c)) &amp;&amp; NOT(ISBLANK(copado__Base_URL__c))</errorConditionFormula>
         <errorMessage>Base URL cannot be populated if Org Credentials were selected.</errorMessage>
     </validationRules>
+    <webLinks>
+        <fullName>copado__Add_Selection_to_a_Test_Group</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Add Selection to a Test Group</masterLabel>
+        <openType>replace</openType>
+        <page>copado__MassAddRunsToGroup</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Quick_Run</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Run Test</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/{!IF($Setup.copado__Settings__c.copado__Namespace__c=&apos;none&apos;,&apos;&apos;,if(isblank($Setup.copado__Settings__c.copado__Namespace__c),&apos;copado__&apos;,$Setup.copado__Settings__c.copado__Namespace__c))}SeleniumTestQuickRun?runId={!copado__Selenium_Test_Run__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Refresh_Results</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Refresh Results</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>document.location.reload(true);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Show_Hook_URL</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Show Hook URL</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>showWebhook();</url>
+    </webLinks>
 </CustomObject>
