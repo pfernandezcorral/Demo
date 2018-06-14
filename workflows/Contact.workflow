@@ -317,4 +317,18 @@
         </criteriaItems>
         <triggerType>onCreateOnly</triggerType>
     </rules>
+    <rules>
+        <fullName>test</fullName>
+        <actions>
+            <name>hello1</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.DoNotCall</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
 </Workflow>
