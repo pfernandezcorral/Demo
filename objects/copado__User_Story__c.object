@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <webLinks>
+        <fullName>copado__Add_Apex_Tests</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Add Apex Tests</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/{!$Setup.copado__Settings__c.copado__Namespace__c}metadataselector?id={!copado__User_Story__c.Id}&amp;mode=ApexTests</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Add_Commits</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add Commits</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/{!IF($Setup.copado__Settings__c.copado__Namespace__c=&apos;none&apos;,&apos;&apos;,if(isblank($Setup.copado__Settings__c.copado__Namespace__c),&apos;copado__&apos;,$Setup.copado__Settings__c.copado__Namespace__c))}UserStoryCommitIntermediary?Id={!copado__User_Story__c.Id}&amp;targetPage=UserStorySelectCommits</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Add_Metadata</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Add Metadata</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/{!if($Setup.copado__Settings__c.copado__Namespace__c =&apos;none&apos;,&apos;&apos;,&apos;copado__&apos;)}metadataselector?id={!copado__User_Story__c.Id}&amp;mode=MetaData</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Assign_to_Release</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Assign to Release</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/{!if($Setup.copado__Settings__c.copado__Namespace__c =&apos;none&apos;,&apos;&apos;,&apos;copado__&apos;)}UserStoryAssignment</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Commit_Files</fullName>
+        <availability>online</availability>
+        <description>Execute Git actions linked to the user story.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Commit Changes</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/{!IF($Setup.copado__Settings__c.copado__Namespace__c=&apos;none&apos;,&apos;&apos;,if(isblank($Setup.copado__Settings__c.copado__Namespace__c),&apos;copado__&apos;,$Setup.copado__Settings__c.copado__Namespace__c))}UserStoryCommitIntermediary?Id={!copado__User_Story__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Copado_DX</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Copado DX</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/{!IF( $Setup.copado__Settings__c.copado__Namespace__c != &apos;none&apos;, $Setup.copado__Settings__c.copado__Namespace__c, &apos;&apos;)}dxoperation?id={!copado__User_Story__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Create_Scratch_Org</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Scratch Org Wizard</masterLabel>
+        <openType>newWindow</openType>
+        <page>copado__CreateUserStoryScratchOrg</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Import_to_User_Story</fullName>
+        <availability>online</availability>
+        <description>Recommit User Story selections to a new User Story</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Recommit User Story</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/{!if($Setup.copado__Settings__c.copado__Namespace__c =&apos;none&apos;,&apos;&apos;,&apos;copado__&apos;)}UserStoryImportSelection</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Manage_Selenium_Tests</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Manage Selenium Tests</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/{!if($Setup.copado__Settings__c.copado__Namespace__c =&apos;none&apos;,&apos;&apos;,&apos;copado__&apos;)}ManageSeleniumTesting?usId={!copado__User_Story__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Mass_Add_User_Stories</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Mass Add User Stories</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/{!if($Setup.copado__Settings__c.copado__Namespace__c =&apos;none&apos;,&apos;&apos;,&apos;copado__&apos;)}QuickCreateUserStories?pid={!copado__Project__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Mass_Add_User_Stories_Sprint</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Mass Add User Stories</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/{!if($Setup.copado__Settings__c.copado__Namespace__c =&apos;none&apos;,&apos;&apos;,&apos;copado__&apos;)}QuickCreateUserStories?sid={!copado__Sprint__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Run_Compliance_Scan</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Run Compliance Scan</masterLabel>
+        <openType>replace</openType>
+        <page>copado__UserStoryComplianceScan</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Run_Static_Code_Analysis</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Run Static Code Analysis</masterLabel>
+        <openType>replace</openType>
+        <page>copado__UserStoryCodeAnalysisRequested</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>
