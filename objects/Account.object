@@ -163,6 +163,28 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>FLS2__c</fullName>
+        <externalId>false</externalId>
+        <label>FLS2</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FLS__c</fullName>
+        <externalId>false</externalId>
+        <label>FLS</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -380,6 +402,7 @@
         <length>10</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -390,6 +413,7 @@
         <length>10</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -399,6 +423,7 @@
         <label>Upsell Opportunity</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <valueSetDefinition>
@@ -440,6 +465,35 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>controller__c</fullName>
+        <externalId>false</externalId>
+        <label>controller</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>control1</fullName>
+                    <default>false</default>
+                    <label>control1</label>
+                </value>
+                <value>
+                    <fullName>control2</fullName>
+                    <default>false</default>
+                    <label>control2</label>
+                </value>
+                <value>
+                    <fullName>control3</fullName>
+                    <default>false</default>
+                    <label>control3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>enernoc2__c</fullName>
@@ -523,6 +577,7 @@
         <length>10</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -540,6 +595,7 @@
         <label>thomsonreuters</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <controllingField>AccountSource</controllingField>
@@ -582,10 +638,6 @@
                 <valueName>thomson4</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>test</controllingFieldValue>
-                <valueName>thomson5</valueName>
-            </valueSettings>
-            <valueSettings>
                 <controllingFieldValue>Partner Referral</controllingFieldValue>
                 <controllingFieldValue>Purchased List</controllingFieldValue>
                 <valueName>thomson2</valueName>
@@ -596,6 +648,13 @@
                 <valueName>thomson1</valueName>
             </valueSettings>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>validationfield__c</fullName>
+        <externalId>false</externalId>
+        <label>validationfield</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
     </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
@@ -1301,6 +1360,11 @@
                 <default>false</default>
             </values>
         </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>testgit</fullName>
+        <active>true</active>
+        <label>testgit</label>
     </recordTypes>
     <recordTypes>
         <fullName>zip</fullName>

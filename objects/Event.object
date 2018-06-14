@@ -182,5 +182,10 @@
             </values>
         </picklistValues>
     </recordTypes>
+    <recordTypes>
+        <fullName>hola</fullName>
+        <active>false</active>
+        <label>hola</label>
+    </recordTypes>
     <sharingModel>Private</sharingModel>
 </CustomObject>
