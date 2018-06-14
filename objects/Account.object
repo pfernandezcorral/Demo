@@ -31,6 +31,28 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>FLS2__c</fullName>
+        <externalId>false</externalId>
+        <label>FLS2</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FLS__c</fullName>
+        <externalId>false</externalId>
+        <label>FLS</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -109,11 +131,181 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>US_00020862__c</fullName>
+        <externalId>false</externalId>
+        <label>US-00020862</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>US_0002086__c</fullName>
+        <externalId>false</externalId>
+        <label>US-0002086</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UpsellOpportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Upsell Opportunity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Maybe</fullName>
+                    <default>false</default>
+                    <label>Maybe</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>campo2__c</fullName>
+        <externalId>false</externalId>
+        <label>campo2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>controller__c</fullName>
+        <externalId>false</externalId>
+        <label>controller</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>control1</fullName>
+                    <default>false</default>
+                    <label>control1</label>
+                </value>
+                <value>
+                    <fullName>control2</fullName>
+                    <default>false</default>
+                    <label>control2</label>
+                </value>
+                <value>
+                    <fullName>control3</fullName>
+                    <default>false</default>
+                    <label>control3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>hola__c</fullName>
+        <externalId>false</externalId>
+        <label>hola</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>thomsonreuters__c</fullName>
+        <externalId>false</externalId>
+        <label>thomsonreuters</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>AccountSource</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>thomson1</fullName>
+                    <default>false</default>
+                    <label>thomson1</label>
+                </value>
+                <value>
+                    <fullName>thomson2</fullName>
+                    <default>false</default>
+                    <label>thomson2</label>
+                </value>
+                <value>
+                    <fullName>thomson3</fullName>
+                    <default>false</default>
+                    <label>thomson3</label>
+                </value>
+                <value>
+                    <fullName>thomson4</fullName>
+                    <default>false</default>
+                    <label>thomson4</label>
+                </value>
+                <value>
+                    <fullName>thomson5</fullName>
+                    <default>false</default>
+                    <label>thomson5</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>test</controllingFieldValue>
+                <valueName>thomson3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>test</controllingFieldValue>
+                <valueName>thomson4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Referral</controllingFieldValue>
+                <controllingFieldValue>Purchased List</controllingFieldValue>
+                <valueName>thomson2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phone Inquiry</controllingFieldValue>
+                <controllingFieldValue>Web</controllingFieldValue>
+                <valueName>thomson1</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>validationfield__c</fullName>
+        <externalId>false</externalId>
+        <label>validationfield</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
     </fields>
 </CustomObject>
