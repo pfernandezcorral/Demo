@@ -86,4 +86,9 @@
         <fullName>UsageEndDate</fullName>
         <trackHistory>false</trackHistory>
     </fields>
+    <recordTypes>
+        <fullName>test_asses_rt</fullName>
+        <active>true</active>
+        <label>test asses rt</label>
+    </recordTypes>
 </CustomObject>

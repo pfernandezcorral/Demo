@@ -87,4 +87,10 @@
         <trackTrending>false</trackTrending>
         <type>AutoNumber</type>
     </fields>
+    <recordTypes>
+        <fullName>Watchman_Call_Center</fullName>
+        <active>true</active>
+        <businessProcess>Watchman Call Center</businessProcess>
+        <label>Watchman Call Center</label>
+    </recordTypes>
 </CustomObject>

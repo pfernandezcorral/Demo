@@ -52,4 +52,19 @@
         <fullName>WhoId</fullName>
         <type>Lookup</type>
     </fields>
+    <recordTypes>
+        <fullName>US_0001372</fullName>
+        <active>true</active>
+        <label>US-0001372</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>amigo</fullName>
+        <active>true</active>
+        <label>amigo</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>hola</fullName>
+        <active>false</active>
+        <label>hola</label>
+    </recordTypes>
 </CustomObject>
