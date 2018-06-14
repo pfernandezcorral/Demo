@@ -94,6 +94,14 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>test101</fullName>
+        <field>Salutation</field>
+        <name>test10</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>PreviousValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>test2</fullName>
         <field>Birthdate</field>
         <name>test2</name>
