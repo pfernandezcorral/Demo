@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
+        <fullName>copado__userStory_Role__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>As a...</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>copado__userStory_need__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Want to...</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>copado__userStory_reason__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>So that...</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>testUS__c</fullName>
         <displayFormat>A-{0000}</displayFormat>
         <externalId>false</externalId>
