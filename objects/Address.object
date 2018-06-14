@@ -39,37 +39,39 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <fields>
-        <fullName>AssetId</fullName>
-        <trackHistory>false</trackHistory>
-        <type>MasterDetail</type>
-    </fields>
-    <fields>
-        <fullName>FromDate</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>RelatedAssetId</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>RelationshipType</fullName>
-        <trackHistory>false</trackHistory>
+        <fullName>AddressType</fullName>
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>ToDate</fullName>
-        <trackHistory>false</trackHistory>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>DrivingDirections</fullName>
+    </fields>
+    <fields>
+        <fullName>LocationType</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>TimeZone</fullName>
     </fields>
     <searchLayouts>
-        <customTabListAdditionalFields>LastModifiedDate</customTabListAdditionalFields>
-        <customTabListAdditionalFields>LastModifiedBy</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Asset</customTabListAdditionalFields>
-        <customTabListAdditionalFields>RelatedAsset</customTabListAdditionalFields>
-        <searchResultsAdditionalFields>LastModifiedDate</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>LastModifiedBy</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Asset</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>RelatedAsset</searchResultsAdditionalFields>
+        <customTabListAdditionalFields>AddressType</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Parent</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LocationType</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>AddressType</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Parent</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LocationType</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AddressType</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Parent</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LocationType</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>AddressType</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Parent</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LocationType</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>
