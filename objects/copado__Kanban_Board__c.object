@@ -43,16 +43,6 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>LastReferencedDate</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>LastViewedDate</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
             <field>OwnerId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
