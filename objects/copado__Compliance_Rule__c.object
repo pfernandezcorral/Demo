@@ -120,4 +120,15 @@
         </displayedFields>
         <label>Criteria Page Fields</label>
     </fieldSets>
+    <webLinks>
+        <fullName>copado__Manage_Criteria</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Manage Criteria</masterLabel>
+        <openType>sidebar</openType>
+        <page>copado__AddCCHRuleCriteria</page>
+        <protected>false</protected>
+    </webLinks>
 </CustomObject>
