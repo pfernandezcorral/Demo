@@ -1,5 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>copado__Deployment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Deployment</label>
+        <referenceTo>copado__Deployment__c</referenceTo>
+        <relationshipLabel>Compliance Scan Results</relationshipLabel>
+        <relationshipName>Compliance_Scan_Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Environment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Environment</label>
+        <referenceTo>copado__Environment__c</referenceTo>
+        <relationshipLabel>Compliance Scan Results</relationshipLabel>
+        <relationshipName>Compliance_Scan_Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Findings__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label># Findings</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Git_Snapshot__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Git Snapshot</label>
+        <referenceTo>copado__Git_Backup__c</referenceTo>
+        <relationshipLabel>Compliance Scan Results</relationshipLabel>
+        <relationshipName>Compliance_Scan_Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Highest_Rule_Action__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The most severe action in the Compliance Findings.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The most severe action in the Compliance Findings.</inlineHelpText>
+        <label>Highest Rule Action</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>copado__Compliance_Action</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>copado__Highest_Severity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Highest Severity of the Compliance Findings.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Highest Severity of the Compliance Findings.</inlineHelpText>
+        <label>Highest Severity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>copado__Compliance_Severity</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>copado__Org_Credential__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Org Credential</label>
+        <referenceTo>copado__Org__c</referenceTo>
+        <relationshipLabel>Compliance Scan Results</relationshipLabel>
+        <relationshipName>Compliance_Scan_Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Resolution_Details__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Resolution Details</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>copado__Scan_Duration_in_Minutes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>(copado__Scan_End__c - copado__Scan_Start__c) * 1440</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scan Duration in Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Scan_End__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Scan End</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>copado__Scan_Start__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Scan Start</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>copado__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>true</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Completed - No Findings</fullName>
+                    <default>false</default>
+                    <label>Completed - No Findings</label>
+                </value>
+                <value>
+                    <fullName>Completed - Findings detected</fullName>
+                    <default>false</default>
+                    <label>Completed - Findings detected</label>
+                </value>
+                <value>
+                    <fullName>Completed - Resolved</fullName>
+                    <default>false</default>
+                    <label>Completed - Resolved</label>
+                </value>
+                <value>
+                    <fullName>Under Investigation</fullName>
+                    <default>false</default>
+                    <label>Under Investigation</label>
+                </value>
+                <value>
+                    <fullName>Error</fullName>
+                    <default>false</default>
+                    <label>Error</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>copado__User_Story__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>User Story</label>
+        <referenceTo>copado__User_Story__c</referenceTo>
+        <relationshipLabel>Compliance Scan Results</relationshipLabel>
+        <relationshipName>Compliance_Scan_Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
     <recordTypes>
         <fullName>copado__Copado</fullName>
         <active>true</active>

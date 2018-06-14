@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
+        <fullName>charliecustom__c</fullName>
+        <externalId>false</externalId>
+        <label>charliecustom</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>test__c</fullName>
         <externalId>false</externalId>
         <label>charliepicklist</label>
@@ -22,6 +30,11 @@
                     <fullName>charliepicklist2</fullName>
                     <default>false</default>
                     <label>charliepicklist2</label>
+                </value>
+                <value>
+                    <fullName>charliepicklist3</fullName>
+                    <default>false</default>
+                    <label>charliepicklist3</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
