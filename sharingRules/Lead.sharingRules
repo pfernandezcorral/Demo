@@ -24,4 +24,15 @@
             <allCustomerPortalUsers></allCustomerPortalUsers>
         </sharedFrom>
     </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>testsharing3</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>testsharing3</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
 </SharingRules>
