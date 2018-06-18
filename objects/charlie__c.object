@@ -69,6 +69,14 @@
         <type>AutoNumber</type>
     </fields>
     <fields>
+        <fullName>charliecustom__c</fullName>
+        <externalId>false</externalId>
+        <label>charliecustom</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>test__c</fullName>
         <externalId>false</externalId>
         <label>charliepicklist</label>
