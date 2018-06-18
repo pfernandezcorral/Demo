@@ -102,6 +102,14 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>test101</fullName>
+        <field>Salutation</field>
+        <name>test10</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>PreviousValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>test2</fullName>
         <field>Birthdate</field>
         <name>test2</name>
@@ -171,6 +179,10 @@
         <fullName>brown</fullName>
         <actions>
             <name>test1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>test101</name>
             <type>FieldUpdate</type>
         </actions>
         <actions>
@@ -260,6 +272,20 @@
             <field>Contact.AccountName</field>
             <operation>contains</operation>
             <value>test</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>test</fullName>
+        <actions>
+            <name>hello1</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.DoNotCall</field>
+            <operation>equals</operation>
+            <value>True</value>
         </criteriaItems>
         <triggerType>onCreateOnly</triggerType>
     </rules>
