@@ -142,6 +142,11 @@
         <filterScope>Everything</filterScope>
         <label>All Assets</label>
     </listViews>
+    <recordTypes>
+        <fullName>test_asses_rt</fullName>
+        <active>true</active>
+        <label>test asses rt</label>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>ASSET.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ASSET.SERIAL_NUMBER</customTabListAdditionalFields>
