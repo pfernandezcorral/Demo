@@ -79,6 +79,10 @@
                 <fullName>Test4</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Test6</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
     </recordTypes>
 </CustomObject>
