@@ -34,6 +34,39 @@
     </actionOverrides>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>Test_Picklist__c</fullName>
+        <externalId>false</externalId>
+        <label>Test Picklist</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Test1</fullName>
+                    <default>false</default>
+                    <label>Test1</label>
+                </value>
+                <value>
+                    <fullName>Test2</fullName>
+                    <default>false</default>
+                    <label>Test2</label>
+                </value>
+                <value>
+                    <fullName>Test3</fullName>
+                    <default>false</default>
+                    <label>Test3</label>
+                </value>
+                <value>
+                    <fullName>Test4</fullName>
+                    <default>false</default>
+                    <label>Test4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>US_0001372__c</fullName>
         <externalId>false</externalId>
         <label>US0001372</label>
