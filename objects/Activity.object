@@ -63,6 +63,11 @@
                     <default>false</default>
                     <label>Test4</label>
                 </value>
+                <value>
+                    <fullName>Test5</fullName>
+                    <default>false</default>
+                    <label>Test5</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
