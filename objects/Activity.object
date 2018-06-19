@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Test_Picklist__c</fullName>
+        <externalId>false</externalId>
+        <label>Test Picklist</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Test1</fullName>
+                    <default>false</default>
+                    <label>Test1</label>
+                </value>
+                <value>
+                    <fullName>Test2</fullName>
+                    <default>false</default>
+                    <label>Test2</label>
+                </value>
+                <value>
+                    <fullName>Test3</fullName>
+                    <default>false</default>
+                    <label>Test3</label>
+                </value>
+                <value>
+                    <fullName>Test4</fullName>
+                    <default>false</default>
+                    <label>Test4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
     <listViews>
         <fullName>AllActivities</fullName>
         <filterScope>Team</filterScope>
