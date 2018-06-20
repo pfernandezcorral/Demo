@@ -33,6 +33,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>copado__Exclude_From_Auto_Resolve__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>Id</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -108,6 +113,11 @@
     <fieldSets>
         <fullName>copado__CustomFields</fullName>
         <availableFields>
+            <field>copado__Back_Promotion__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>copado__Create_Full_Permission_Sets_Step__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -134,6 +144,11 @@
         </availableFields>
         <availableFields>
             <field>copado__Destination_Org_Credential__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>copado__Exclude_From_Auto_Resolve__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -203,11 +218,6 @@
             <isRequired>false</isRequired>
         </availableFields>
         <description>FieldSet to include fields not included by default in the Promotion layout.</description>
-        <displayedFields>
-            <field>test_del__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
         <label>Custom Fields</label>
     </fieldSets>
 </CustomObject>

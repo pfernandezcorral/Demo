@@ -63,16 +63,6 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>LastReferencedDate</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>LastViewedDate</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
             <field>copado__Last_Build_Task_Duration__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
