@@ -85,15 +85,6 @@
             <default>false</default>
         </values>
     </businessProcesses>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <enableFeeds>true</enableFeeds>
-    <enableHistory>false</enableHistory>
-    <historyRetentionPolicy>
-    <archiveAfterMonths>18</archiveAfterMonths>
-    <archiveRetentionYears>10</archiveRetentionYears>
-    <description>Warranty Return Object history retention</description>
-    <gracePeriodDays>0</gracePeriodDays>
-    </historyRetentionPolicy>    
     <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
