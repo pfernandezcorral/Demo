@@ -102,6 +102,14 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>test10</fullName>
+        <field>OtherStreet</field>
+        <name>test10</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>test101</fullName>
         <field>Salutation</field>
         <name>test10</name>
