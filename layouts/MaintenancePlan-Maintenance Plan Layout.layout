@@ -18,6 +18,10 @@
                 <behavior>Edit</behavior>
                 <field>AccountId</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ServiceContractId</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -133,6 +137,7 @@
     </relatedLists>
     <relatedLists>
         <fields>Asset</fields>
+        <fields>ContractLineItem</fields>
         <relatedList>MaintenanceAssets</relatedList>
     </relatedLists>
     <relatedLists>
