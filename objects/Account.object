@@ -277,17 +277,19 @@
         <fullName>SLAExpirationDate__c</fullName>
         <externalId>false</externalId>
         <label>SLA Expiration Date</label>
-        <required>true</required>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Date</type>
     </fields>
     <fields>
         <fullName>SLASerialNumber__c</fullName>
-        <externalId>false</externalId>
+        <externalId>true</externalId>
         <label>SLA Serial Number</label>
         <length>10</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -297,6 +299,7 @@
         <label>SLA</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <valueSetDefinition>
@@ -346,12 +349,13 @@
         <label>Thomson</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Test1</fullName>
+                    <fullName>test1</fullName>
                     <default>false</default>
                     <label>Test1</label>
                 </value>
