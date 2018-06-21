@@ -4,7 +4,7 @@
  * email.
  */
 global class CreateContactFrmEmail implements Messaging.InboundEmailHandler {
-
+//testclass
     global Messaging.InboundEmailResult handleInboundEmail(Messaging.InboundEmail email,
     Messaging.InboundEnvelope envelope) {
 
