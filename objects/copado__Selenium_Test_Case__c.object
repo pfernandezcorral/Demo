@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>copado__Open_with_Copado_Recorder__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Open with Copado Recorder</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;copado:selenese/&quot;&amp;Id, &quot;Open&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Open with Copado Recorder</inlineHelpText>
+        <label>Open with Copado Recorder</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Previous_Version__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Previous Version</label>
+        <referenceTo>copado__Selenium_Test_Case__c</referenceTo>
+        <relationshipLabel>Next Version</relationshipLabel>
+        <relationshipName>Selenium_Test_Cases</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Version__c</fullName>
+        <defaultValue>&quot;1&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Version</label>
+        <length>6</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <webLinks>
         <fullName>copado__New_Version</fullName>
         <availability>online</availability>
