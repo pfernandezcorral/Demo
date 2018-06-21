@@ -3834,6 +3834,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>FieldServiceAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>IPRestrictRequests</name>
     </userPermissions>
     <userPermissions>
