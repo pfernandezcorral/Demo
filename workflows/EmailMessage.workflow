@@ -2,8 +2,8 @@
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldUpdates>
         <fullName>Update_last_follow_up_email</fullName>
-        <field>Last_Message_Date__c</field>
-        <formula>LastModifiedDate</formula>
+        <field>Last_Follow_up_email__c</field>
+        <formula>MessageDate</formula>
         <name>Update last follow up email</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>

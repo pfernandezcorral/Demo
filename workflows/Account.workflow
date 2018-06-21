@@ -217,62 +217,6 @@
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
-        <fullName>Account test</fullName>
-        <actions>
-            <name>Field_update1</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>test2</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>test3</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>test4</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>test5</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>test6</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>test7</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>test8</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>test9</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Account.Name</field>
-            <operation>equals</operation>
-            <value>test</value>
-        </criteriaItems>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-    </rules>
-    <rules>
-        <fullName>Testrule</fullName>
-        <active>false</active>
-        <criteriaItems>
-            <field>Account.IsPartner</field>
-            <operation>equals</operation>
-            <value>True</value>
-        </criteriaItems>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-    </rules>
-    <rules>
         <fullName>snoopy</fullName>
         <actions>
             <name>snoopy1</name>
