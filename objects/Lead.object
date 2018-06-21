@@ -107,7 +107,6 @@
         <length>100</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -203,7 +202,6 @@
         <label>Primary</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <valueSetDefinition>
@@ -227,7 +225,6 @@
         <label>Product Interest</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <valueSetDefinition>
@@ -363,7 +360,6 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed - Not Converted</controllingFieldValue>
-                <controllingFieldValue>test1</controllingFieldValue>
                 <controllingFieldValue>test2</controllingFieldValue>
                 <valueName>Dependent4</valueName>
             </valueSettings>
