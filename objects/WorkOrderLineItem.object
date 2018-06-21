@@ -263,6 +263,11 @@
             </values>
         </picklistValues>
     </recordTypes>
+    <recordTypes>
+        <fullName>testrecordtype1</fullName>
+        <active>true</active>
+        <label>testrecordtype1</label>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>WorkOrder</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>WorkOrder</lookupDialogsAdditionalFields>
