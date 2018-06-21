@@ -23,6 +23,14 @@
                 <behavior>Edit</behavior>
                 <field>copado__Git_Snapshot_Permissions__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Compliance_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Last_Compliance_Scan_Date__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -76,13 +84,21 @@
         <sortField>copado__Commit_Date__c</sortField>
         <sortOrder>Desc</sortOrder>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>copado__Status__c</fields>
+        <fields>copado__Findings__c</fields>
+        <fields>copado__Highest_Rule_Action__c</fields>
+        <fields>copado__Highest_Severity__c</fields>
+        <relatedList>copado__Compliance_Scan_Result__c.copado__Git_Snapshot__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Y000000l6VN</masterLabel>
+        <masterLabel>00h0Y0000012IeB</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
