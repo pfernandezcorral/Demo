@@ -109,6 +109,11 @@
             <operation>equals</operation>
             <value>12345</value>
         </criteriaItems>
+        <criteriaItems>
+            <field>Account.OwnerId</field>
+            <operation>notContain</operation>
+            <value>Patricia</value>
+        </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
             <actions>
