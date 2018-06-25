@@ -9,6 +9,14 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>UpdateTBWF</fullName>
+        <field>AccountNumber</field>
+        <name>UpdateTBWF</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>snoopy1</fullName>
         <field>AccountNumber</field>
         <name>snoopy1</name>
@@ -88,6 +96,24 @@
         <operation>PreviousValue</operation>
         <protected>false</protected>
     </fieldUpdates>
+    <rules>
+        <fullName>TimebasedWF</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Name</field>
+            <operation>equals</operation>
+            <value>TestTimeBased</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>UpdateTBWF</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
     <rules>
         <fullName>snoopy</fullName>
         <actions>
