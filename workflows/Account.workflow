@@ -215,13 +215,17 @@
         </criteriaItems>
         <criteriaItems>
             <field>Account.OwnerId</field>
-            <operation>notContain</operation>
+            <operation>contains</operation>
             <value>Patricia</value>
         </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
             <actions>
                 <name>UpdateTBWF</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>wfrulebased</name>
                 <type>FieldUpdate</type>
             </actions>
             <timeLength>30</timeLength>
