@@ -208,6 +208,11 @@
             <operation>equals</operation>
             <value>TestTimeBased</value>
         </criteriaItems>
+        <criteriaItems>
+            <field>Account.AccountNumber</field>
+            <operation>equals</operation>
+            <value>12345</value>
+        </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
             <actions>
