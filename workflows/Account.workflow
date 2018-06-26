@@ -202,7 +202,7 @@
     </rules>
     <rules>
         <fullName>TimebasedWF</fullName>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Account.Name</field>
             <operation>equals</operation>
@@ -220,6 +220,10 @@
         </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
+            <actions>
+                <name>TimebasedWF3</name>
+                <type>FieldUpdate</type>
+            </actions>
             <actions>
                 <name>UpdateTBWF</name>
                 <type>FieldUpdate</type>
