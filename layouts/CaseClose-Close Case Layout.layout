@@ -20,11 +20,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Country__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>DL__c</field>
+                <field>Last_Follow_up_email__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>

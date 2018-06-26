@@ -31,7 +31,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Last_Time_contacted__c</field>
+                <field>Test_Picklist__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
