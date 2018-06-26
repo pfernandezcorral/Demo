@@ -37,20 +37,8 @@
                 <field>LeadSource</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>label1__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
-                <field>language1__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>External_Id__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Testfield__c</field>
+                <field>Status__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -116,10 +104,19 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Languages__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Birthdate</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Level__c</field>
+            </layoutItems>
+        </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
@@ -389,13 +386,6 @@
         <fields>EMAIL_STATUS.TIMES_OPENED</fields>
         <fields>EMAIL_STATUS.LAST_OPEN_DATE</fields>
         <relatedList>RelatedEmailStatusList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>ORDERS.ORDER_NUMBER</fields>
-        <fields>SALES.ACCOUNT.NAME</fields>
-        <fields>ORDERS.STATUS</fields>
-        <fields>ORDERS.TOTAL_AMOUNT</fields>
-        <relatedList>Order.Contact__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
