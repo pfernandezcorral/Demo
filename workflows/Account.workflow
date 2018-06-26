@@ -202,7 +202,7 @@
     </rules>
     <rules>
         <fullName>TimebasedWF</fullName>
-        <active>false</active>
+        <active>true</active>
         <criteriaItems>
             <field>Account.Name</field>
             <operation>equals</operation>
