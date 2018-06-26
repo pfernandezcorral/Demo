@@ -221,10 +221,6 @@
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
             <actions>
-                <name>TimebasedWF3</name>
-                <type>FieldUpdate</type>
-            </actions>
-            <actions>
                 <name>UpdateTBWF</name>
                 <type>FieldUpdate</type>
             </actions>
