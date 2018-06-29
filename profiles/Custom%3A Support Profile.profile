@@ -10652,6 +10652,11 @@
     </pageAccesses>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>Account.DupRecordType</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>Account.Recordtype7324</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
