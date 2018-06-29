@@ -79,4 +79,14 @@
         <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
+    <recordTypes>
+        <fullName>Testdup1</fullName>
+        <active>true</active>
+        <label>Testdup1</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Testdup2</fullName>
+        <active>true</active>
+        <label>Testdup2</label>
+    </recordTypes>
 </CustomObject>
