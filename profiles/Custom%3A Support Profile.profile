@@ -3398,7 +3398,7 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>false</default>
+        <default>true</default>
         <recordType>Account.Recordtype7324</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
