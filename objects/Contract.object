@@ -206,6 +206,16 @@
     </listViews>
     <recordTypeTrackHistory>true</recordTypeTrackHistory>
     <recordTypes>
+        <fullName>Testdup1</fullName>
+        <active>true</active>
+        <label>Testdup1</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Testdup2</fullName>
+        <active>true</active>
+        <label>Testdup2</label>
+    </recordTypes>
+    <recordTypes>
         <fullName>testrecordtype</fullName>
         <active>true</active>
         <label>testrecordtype</label>
