@@ -34,10 +34,7 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
-        <content>actionOverride</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>LightningComponent</type>
+        <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>RequestUpdate</actionName>
@@ -660,6 +657,11 @@
         <label>Platinum and Gold SLA Customers</label>
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>DupRecordType</fullName>
+        <active>true</active>
+        <label>DupRecordType</label>
+    </recordTypes>
     <recordTypes>
         <fullName>Recordtype7324</fullName>
         <active>true</active>
