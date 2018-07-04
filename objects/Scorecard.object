@@ -44,5 +44,5 @@
     <fields>
         <fullName>Name</fullName>
     </fields>
-    <sharingModel>Private</sharingModel>
+    
 </CustomObject>

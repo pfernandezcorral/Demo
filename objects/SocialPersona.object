@@ -57,5 +57,5 @@
         <customTabListAdditionalFields>Provider</customTabListAdditionalFields>
         <searchResultsAdditionalFields>Provider</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    
 </CustomObject>
