@@ -71,5 +71,5 @@
         <searchResultsAdditionalFields>Asset</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>RelatedAsset</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    
 </CustomObject>

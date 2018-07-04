@@ -488,7 +488,7 @@
         <lookupPhoneDialogsAdditionalFields>CASES.STATUS</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>CASES.CASE_NUMBER</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWriteTransfer</sharingModel>
+    
     <webLinks>
         <fullName>UpsellCrosssellOpportunity</fullName>
         <availability>online</availability>

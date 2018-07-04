@@ -324,5 +324,5 @@
         <searchResultsAdditionalFields>Phone</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>URL</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    
 </CustomObject>

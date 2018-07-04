@@ -45,5 +45,5 @@
     <fields>
         <fullName>RecordCount</fullName>
     </fields>
-    <sharingModel>ReadWrite</sharingModel>
+    
 </CustomObject>

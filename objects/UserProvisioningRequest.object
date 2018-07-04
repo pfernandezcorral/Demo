@@ -66,5 +66,5 @@
         <searchResultsAdditionalFields>UserProvAccount</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LastModifiedBy</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>Private</sharingModel>
+    
 </CustomObject>
