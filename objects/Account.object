@@ -209,4 +209,9 @@
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <recordTypes>
+        <fullName>DupRecordType</fullName>
+        <active>true</active>
+        <label>DupRecordType</label>
+    </recordTypes>
 </CustomObject>
