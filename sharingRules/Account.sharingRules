@@ -19,6 +19,22 @@
         </criteriaItems>
     </sharingCriteriaRules>
     <sharingOwnerRules>
+        <fullName>testsharing1</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>testsharing1</label>
+        <sharedTo>
+            <allCustomerPortalUsers></allCustomerPortalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <allCustomerPortalUsers></allCustomerPortalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
         <fullName>testsharing2</fullName>
         <accessLevel>Read</accessLevel>
         <accountSettings>
