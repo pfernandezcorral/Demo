@@ -101,6 +101,6 @@
     </nameField>
     <pluralLabel>Theme Assignments</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    
     <visibility>Public</visibility>
 </CustomObject>

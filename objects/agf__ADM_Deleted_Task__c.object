@@ -85,6 +85,6 @@
     </nameField>
     <pluralLabel>Deleted Tasks</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    
     <visibility>Public</visibility>
 </CustomObject>

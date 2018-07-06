@@ -144,6 +144,6 @@ https://help.salesforce.com/help/pdfs/en/formula_date_time_tipsheet.pdf</descrip
     </nameField>
     <pluralLabel>Column History</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    
     <visibility>Public</visibility>
 </CustomObject>

@@ -253,7 +253,7 @@
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
     </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    
     <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>
 </CustomObject>
