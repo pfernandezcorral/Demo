@@ -118,6 +118,6 @@
     </nameField>
     <pluralLabel>ADM_Status_Histories</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    
     <visibility>Public</visibility>
 </CustomObject>

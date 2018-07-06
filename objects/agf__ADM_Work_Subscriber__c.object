@@ -183,6 +183,6 @@
     </nameField>
     <pluralLabel>Work Subscribers</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    
     <visibility>Public</visibility>
 </CustomObject>
