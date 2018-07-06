@@ -304,6 +304,6 @@ HYPERLINK(&quot;https://git.soma.salesforce.com/&quot; &amp; agf__Perforce_Chang
         <searchResultsAdditionalFields>agf__Changelist__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>agf__Work__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    
     <visibility>Public</visibility>
 </CustomObject>

@@ -95,6 +95,6 @@
     </nameField>
     <pluralLabel>Bookmarks</pluralLabel>
     <searchLayouts/>
-    <sharingModel>Private</sharingModel>
+    
     <visibility>Public</visibility>
 </CustomObject>

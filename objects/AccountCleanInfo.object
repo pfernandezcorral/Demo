@@ -9,5 +9,5 @@
         <fullName>Ownership</fullName>
         <type>Picklist</type>
     </fields>
-    <sharingModel>ControlledByParent</sharingModel>
+    
 </CustomObject>
