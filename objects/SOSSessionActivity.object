@@ -29,5 +29,5 @@
         <type>Default</type>
     </actionOverrides>
     <enableFeeds>false</enableFeeds>
-    <sharingModel>ControlledByParent</sharingModel>
+    
 </CustomObject>

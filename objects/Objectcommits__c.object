@@ -43,36 +43,34 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
-    <description>An object to store the Scrum Team names used in the past.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
-    <enableReports>true</enableReports>
+    <enableReports>false</enableReports>
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>agf__Team__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
+        <fullName>test__c</fullName>
         <externalId>false</externalId>
-        <label>Team</label>
-        <referenceTo>agf__ADM_Scrum_Team__c</referenceTo>
-        <relationshipLabel>Team Names History</relationshipLabel>
-        <relationshipName>Team_Names_History</relationshipName>
-        <required>false</required>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Objetocommits</relationshipLabel>
+        <relationshipName>Objetocommits</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
-    <label>Team Name History</label>
+    <label>Objetocommit</label>
     <nameField>
-        <label>Team Name History Name</label>
+        <label>Objectcommits Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Team Names History</pluralLabel>
+    <pluralLabel>Objetocommits</pluralLabel>
     <searchLayouts/>
     
     <visibility>Public</visibility>

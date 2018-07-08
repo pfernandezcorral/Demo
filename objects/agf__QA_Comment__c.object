@@ -97,6 +97,6 @@
     </nameField>
     <pluralLabel>Test Plan Comments</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    
     <visibility>Public</visibility>
 </CustomObject>

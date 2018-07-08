@@ -146,6 +146,6 @@
     </nameField>
     <pluralLabel>Release Stamp Batch IDs</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ControlledByParent</sharingModel>
+    
     <visibility>Public</visibility>
 </CustomObject>
