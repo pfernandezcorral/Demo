@@ -90,6 +90,6 @@
     </nameField>
     <pluralLabel>Default Test  Cases</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ControlledByParent</sharingModel>
+    
     <visibility>Public</visibility>
 </CustomObject>

@@ -140,6 +140,6 @@
     </nameField>
     <pluralLabel>Columns</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    
     <visibility>Public</visibility>
 </CustomObject>
