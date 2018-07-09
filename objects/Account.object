@@ -386,8 +386,8 @@
     </fields>
     <fields>
         <fullName>Testbrokenfield__c</fullName>
-        <externalId>false</externalId>
         <label>Testbrokenfield</label>
+        <externalId>false</externalId>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </fields>
