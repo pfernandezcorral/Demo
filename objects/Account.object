@@ -385,6 +385,13 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Testbrokenfield__c</fullName>
+        <externalId>false</externalId>
+        <label>Testbrokenfield</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>TickerSymbol</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
