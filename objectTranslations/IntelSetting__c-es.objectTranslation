@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>IntelSetting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>IntelSetting</value>
+    </caseValues>
+    <fields>
+        <label><!-- Creation --></label>
+        <name>Creation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inbound --></label>
+        <name>Inbound__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interaction --></label>
+        <name>Interaction__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outbound --></label>
+        <name>Outbound__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process --></label>
+        <name>Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Restriction --></label>
+        <name>Restriction__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Update --></label>
+        <name>Update__c</name>
+    </fields>
+    <gender>Neuter</gender>
+</CustomObjectTranslation>

@@ -5,10 +5,10 @@
     <authenticationFailureAction>Bounce</authenticationFailureAction>
     <authorizationFailureAction>Discard</authorizationFailureAction>
     <emailServicesAddresses>
-        <developerName>0O000000PwHd</developerName>
+        <developerName>1I000000YzI6</developerName>
         <isActive>true</isActive>
-        <localPart>pfernandezcorral</localPart>
-        <runAsUser>pfernandez@copa.do.demo</runAsUser>
+        <localPart>pfernandez</localPart>
+        <runAsUser>pfernandezcorral@testorg4.com</runAsUser>
     </emailServicesAddresses>
     <functionInactiveAction>Bounce</functionInactiveAction>
     <functionName>EmailToCase</functionName>
@@ -17,5 +17,5 @@
     <isErrorRoutingEnabled>false</isErrorRoutingEnabled>
     <isTextAttachmentsAsBinary>true</isTextAttachmentsAsBinary>
     <isTlsRequired>false</isTlsRequired>
-    <overLimitAction>Discard</overLimitAction>
+    <overLimitAction>Bounce</overLimitAction>
 </EmailServicesFunction>

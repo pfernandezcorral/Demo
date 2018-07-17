@@ -45,7 +45,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>snoopy__c</field>
+                <field>Testvisibility__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

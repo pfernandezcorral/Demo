@@ -24,6 +24,8 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>CompanyCurrencyIsoCode</fullName>
     </fields>
@@ -130,10 +132,16 @@
         <fullName>IncludedInSnP500</fullName>
     </fields>
     <fields>
+        <fullName>Latitude</fullName>
+    </fields>
+    <fields>
         <fullName>LegalStatus</fullName>
     </fields>
     <fields>
         <fullName>LocationStatus</fullName>
+    </fields>
+    <fields>
+        <fullName>Longitude</fullName>
     </fields>
     <fields>
         <fullName>MarketingPreScreen</fullName>
@@ -143,6 +151,9 @@
     </fields>
     <fields>
         <fullName>MinorityOwned</fullName>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
     </fields>
     <fields>
         <fullName>NationalId</fullName>
@@ -303,4 +314,15 @@
     <fields>
         <fullName>YearStarted</fullName>
     </fields>
+    <searchLayouts>
+        <customTabListAdditionalFields>LocationStatus</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DunsNumber</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Phone</customTabListAdditionalFields>
+        <customTabListAdditionalFields>URL</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>LocationStatus</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DunsNumber</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Phone</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>URL</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

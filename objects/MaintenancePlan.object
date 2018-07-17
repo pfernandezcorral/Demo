@@ -57,6 +57,14 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>DoesAutoGenerateWorkOrders</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>DoesGenerateUponCompletion</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>EndDate</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -66,6 +74,10 @@
     </fields>
     <fields>
         <fullName>FrequencyType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>GenerationHorizon</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
@@ -99,6 +111,11 @@
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ServiceContractId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>

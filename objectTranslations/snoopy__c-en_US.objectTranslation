@@ -9,6 +9,10 @@
         <value>snoopies</value>
     </caseValues>
     <fields>
+        <label><!-- charliedate --></label>
+        <name>charliedate__c</name>
+    </fields>
+    <fields>
         <label><!-- snoopytest --></label>
         <name>snoopytest__c</name>
     </fields>

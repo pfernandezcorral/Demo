@@ -5,5 +5,5 @@
         <fullName>Industry</fullName>
         <type>Picklist</type>
     </fields>
-    
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

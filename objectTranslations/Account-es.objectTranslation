@@ -33,6 +33,10 @@
         <name>External_Id__c</name>
     </fields>
     <fields>
+        <label><!-- FLS --></label>
+        <name>FLS__c</name>
+    </fields>
+    <fields>
         <label><!-- Number of Locations --></label>
         <name>NumberofLocations__c</name>
     </fields>
@@ -69,6 +73,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Testvisibility --></label>
+        <name>Testvisibility__c</name>
+    </fields>
+    <fields>
         <label><!-- Thomson --></label>
         <name>Thomson__c</name>
         <picklistValues>
@@ -95,6 +103,14 @@
             <masterLabel>Test6</masterLabel>
             <translation><!-- Test6 --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- US-00020862 --></label>
+        <name>US_00020862__c</name>
+    </fields>
+    <fields>
+        <label><!-- US-0002086 --></label>
+        <name>US_0002086__c</name>
     </fields>
     <fields>
         <label><!-- Upsell Opportunity --></label>
@@ -149,16 +165,61 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- hola --></label>
+        <name>hola__c</name>
+    </fields>
+    <fields>
+        <label><!-- newfield --></label>
+        <name>newfield__c</name>
+    </fields>
+    <fields>
         <label><!-- snoopy --></label>
         <name>snoopy__c</name>
     </fields>
+    <fields>
+        <label><!-- thomsonreuters --></label>
+        <name>thomsonreuters__c</name>
+        <picklistValues>
+            <masterLabel>thomson1</masterLabel>
+            <translation><!-- thomson1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson2</masterLabel>
+            <translation><!-- thomson2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson3</masterLabel>
+            <translation><!-- thomson3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson4</masterLabel>
+            <translation><!-- thomson4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thomson5</masterLabel>
+            <translation><!-- thomson5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- validationfield --></label>
+        <name>validationfield__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- DupRecordType --></label>
+        <name>DupRecordType</name>
+    </recordTypes>
     <recordTypes>
         <label><!-- Recordtype7324 --></label>
         <name>Recordtype7324</name>
     </recordTypes>
     <recordTypes>
+        <description><!-- Record types used for sales --></description>
         <label><!-- Sales Accounts --></label>
         <name>Sales_Accounts</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- zip --></label>
+        <name>zip</name>
     </recordTypes>
     <webLinks>
         <label><!-- Billing --></label>

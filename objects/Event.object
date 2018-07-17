@@ -37,10 +37,6 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
         <actionName>Today</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -122,6 +118,10 @@
         <picklistValues>
             <picklist>Subject</picklist>
             <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Email</fullName>
                 <default>false</default>
             </values>
@@ -134,11 +134,26 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Call</fullName>
+                <fullName>Send Letter%2FQuote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Test_Picklist__c</picklist>
+            <values>
+                <fullName>Test1</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Send Letter%2FQuote</fullName>
+                <fullName>Test2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -149,11 +164,11 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Meeting</fullName>
+                <fullName>Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Email</fullName>
+                <fullName>Meeting</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -167,13 +182,74 @@
         <active>true</active>
         <label>amigo</label>
         <picklistValues>
-            <picklist>hola__c</picklist>
+            <picklist>Subject</picklist>
             <values>
-                <fullName>hola2</fullName>
+                <fullName>Call</fullName>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter%2FQuote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Test_Picklist__c</picklist>
+            <values>
+                <fullName>Test1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>hola__c</picklist>
+            <values>
                 <fullName>hola1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>hola2</fullName>
                 <default>false</default>
             </values>
             <values>

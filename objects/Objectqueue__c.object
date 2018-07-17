@@ -53,15 +53,6 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <label>Objectqueue</label>
-    <listViews>
-        <fullName>Queueview_Objectqueue</fullName>
-        <filterScope>Queue</filterScope>
-        <label>Queueview</label>
-        <queue>Queueview</queue>
-        <sharedTo>
-            <allInternalUsers></allInternalUsers>
-        </sharedTo>
-    </listViews>
     <nameField>
         <label>Objectqueue Name</label>
         <type>Text</type>

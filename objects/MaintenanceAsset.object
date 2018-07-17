@@ -44,6 +44,11 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ContractLineItemId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>MaintenanceAssetNumber</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -51,6 +56,10 @@
         <fullName>MaintenancePlanId</fullName>
         <trackHistory>false</trackHistory>
         <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>NextSuggestedMaintenanceDate</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>WorkTypeId</fullName>

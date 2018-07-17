@@ -91,11 +91,20 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <label>charlie</label>
+    <label>carlito</label>
     <listViews>
         <fullName>All</fullName>
         <filterScope>Everything</filterScope>
         <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Charliequeue_charlie</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Charliequeue</label>
+        <queue>Charliequeue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <nameField>
         <label>charlie Name</label>
@@ -103,7 +112,9 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
-    <pluralLabel>charlie</pluralLabel>
+    <pluralLabel>carlitos</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>Charlierecordtype</fullName>
         <active>true</active>

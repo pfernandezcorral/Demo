@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <consoleConfig>
-        <detailPageRefreshMethod>none</detailPageRefreshMethod>
+        <detailPageRefreshMethod>flag</detailPageRefreshMethod>
         <keyboardShortcuts>
             <defaultShortcuts>
                 <action>FOCUS_CONSOLE</action>
@@ -157,7 +157,19 @@
         <listPlacement>
             <location>full</location>
         </listPlacement>
-        <listRefreshMethod>none</listRefreshMethod>
+        <listRefreshMethod>refreshListRows</listRefreshMethod>
+        <pushNotifications>
+            <fieldNames>Fax</fieldNames>
+            <objectName>Account</objectName>
+        </pushNotifications>
+        <pushNotifications>
+            <fieldNames>Reason</fieldNames>
+            <objectName>Case</objectName>
+        </pushNotifications>
+        <pushNotifications>
+            <fieldNames>Owner</fieldNames>
+            <objectName>Lead</objectName>
+        </pushNotifications>
     </consoleConfig>
     <defaultLandingTab>standard-home</defaultLandingTab>
     <isServiceCloudConsole>true</isServiceCloudConsole>
@@ -177,8 +189,11 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
-    <tabs>standard-Knowledge</tabs>
+    <tabs>charlie__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>charlie__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>
@@ -189,9 +204,6 @@
         <mappings>
             <fieldName>AccountId</fieldName>
             <tab>standard-Contact</tab>
-        </mappings>
-        <mappings>
-            <tab>standard-Knowledge</tab>
         </mappings>
         <mappings>
             <tab>standard-Lead</tab>

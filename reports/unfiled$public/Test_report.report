@@ -29,7 +29,7 @@
             <column>RECORDTYPE</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Account.Recordtype7324</value>
+            <value>0121I000000eOqs</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>

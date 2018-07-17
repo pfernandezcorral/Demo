@@ -6,4 +6,5 @@
     <tabs>standard-Contact</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
+    <tabs>charlie__c</tabs>
 </CustomApplication>

@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
-        <plural>true</plural>
-        <value>carlitos</value>
-    </caseValues>
-    <caseValues>
         <plural>false</plural>
         <value>carlito</value>
     </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>carlitos</value>
+    </caseValues>
     <fields>
-        <label></label>
+        <label><!-- charliecustom --></label>
         <name>charliecustom__c</name>
     </fields>
+    <fields>
+        <label><!-- charliepicklist --></label>
+        <name>test__c</name>
+        <picklistValues>
+            <masterLabel>charliepicklist1</masterLabel>
+            <translation><!-- charliepicklist1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>charliepicklist2</masterLabel>
+            <translation><!-- charliepicklist2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>charliepicklist3</masterLabel>
+            <translation><!-- charliepicklist3 --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Charlierecordtype --></label>
+        <name>Charlierecordtype</name>
+    </recordTypes>
     <startsWith>Consonant</startsWith>
     <webLinks>
-        <label></label>
+        <label><!-- charlieweblink --></label>
         <name>charlieweblink</name>
     </webLinks>
 </CustomObjectTranslation>

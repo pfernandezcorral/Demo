@@ -3,5 +3,5 @@
     <description>test tr2</description>
     <disableProtocolSecurity>false</disableProtocolSecurity>
     <isActive>true</isActive>
-    <url>{!Environment.TRVar}</url>
+    <url>http://api.apigarden-qa22.thomsonreuters.com</url>
 </RemoteSiteSetting>

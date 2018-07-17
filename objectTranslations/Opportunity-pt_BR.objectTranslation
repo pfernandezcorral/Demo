@@ -25,6 +25,22 @@
         <name>MainCompetitors__c</name>
     </fields>
     <fields>
+        <label><!-- Operating Unit --></label>
+        <name>Operating_Unit__c</name>
+        <picklistValues>
+            <masterLabel>GS</masterLabel>
+            <translation><!-- GS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCIT</masterLabel>
+            <translation><!-- HCIT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LS</masterLabel>
+            <translation><!-- LS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Order Number --></label>
         <name>OrderNumber__c</name>
     </fields>
@@ -32,6 +48,14 @@
         <label><!-- Tracking Number --></label>
         <name>TrackingNumber__c</name>
     </fields>
+    <fields>
+        <label><!-- testoppfield --></label>
+        <name>testoppfield__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Watchman Call Center --></label>
+        <name>Watchman_Call_Center</name>
+    </recordTypes>
     <webLinks>
         <label><!-- DeliveryStatus --></label>
         <name>DeliveryStatus</name>
