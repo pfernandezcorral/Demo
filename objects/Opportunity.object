@@ -512,7 +512,6 @@
         <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
-    
     <webLinks>
         <fullName>DeliveryStatus</fullName>
         <availability>online</availability>
