@@ -209,15 +209,4 @@
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
-    <fields>
-        <fullName>campo2__c</fullName>
-        <externalId>false</externalId>
-        <label>campo2</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
 </CustomObject>
