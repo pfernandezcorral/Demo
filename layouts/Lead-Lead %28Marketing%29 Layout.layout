@@ -107,10 +107,6 @@
                 <behavior>Edit</behavior>
                 <field>NumberofLocations__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>CurrentGenerators__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
