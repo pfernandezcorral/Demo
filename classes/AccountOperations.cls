@@ -5,8 +5,8 @@ public class AccountOperations {
         a.Description = 'Default Description';
 
         return a;
-        //this is a conflict
-//uuuuuhhhh conflict
+        //new conclict
+//conflicting
     }
 
 }
