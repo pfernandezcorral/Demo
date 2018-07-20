@@ -346,4 +346,12 @@
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWriteTransfer</sharingModel>
+    <validationRules>
+        <fullName>testvalidationrule</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISNULL(Address),
+OR(NOT ISNULL(City),
+			NOT ISNULL(Country)))</errorConditionFormula>
+        <errorMessage>address cannot be null</errorMessage>
+    </validationRules>
 </CustomObject>
