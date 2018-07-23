@@ -486,4 +486,24 @@ OR(NOT ISNULL(City),
 			NOT ISNULL(Country)))</errorConditionFormula>
         <errorMessage>address cannot be null</errorMessage>
     </validationRules>
+    <webLinks>
+        <fullName>Change_Discard_Reason</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Change Discard Reason</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>{!Lead.CurrentGenerators__c}</url>
+    </webLinks>
 </CustomObject>
