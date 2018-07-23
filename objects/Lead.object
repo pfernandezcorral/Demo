@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"
+      xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
     <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
@@ -73,6 +74,7 @@
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <description n1:nil="true" />
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
     <fields>
@@ -542,6 +544,7 @@
         <filterScope>Everything</filterScope>
         <label>View - Custom 2</label>
     </listViews>
+    <nameField n1:nil="true" />
     <searchLayouts>
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>LEAD.COMPANY</customTabListAdditionalFields>
@@ -560,6 +563,7 @@
         <searchResultsAdditionalFields>LEAD.EMAIL</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LEAD.STATUS</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+        <searchResultsCustomButtons>Change_Discard_Reason</searchResultsCustomButtons>
     </searchLayouts>
     <sharingModel>ReadWriteTransfer</sharingModel>
     <validationRules>
