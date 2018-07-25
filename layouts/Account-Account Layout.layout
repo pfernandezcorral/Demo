@@ -40,7 +40,7 @@
                 <field>AnnualRevenue</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>External_Id__c</field>
             </layoutItems>
             <layoutItems>
@@ -89,10 +89,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>campo2__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>US_0002086__c</field>
             </layoutItems>
             <layoutItems>
@@ -114,6 +110,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>newfield__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Testbrokenfield__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -181,10 +181,6 @@
         <editHeading>true</editHeading>
         <label>Additional Information</label>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>CustomerPriority__c</field>
-            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>SLAExpirationDate__c</field>
@@ -498,6 +494,10 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedAccountSalesTeam</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Objectcommits__c.test__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
