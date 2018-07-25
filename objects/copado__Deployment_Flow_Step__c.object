@@ -1,58 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
-    <enableChangeDataCapture>false</enableChangeDataCapture>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>copado__Automatically_Merge_and_Deploy__c</fullName>
         <defaultValue>false</defaultValue>
@@ -67,6 +14,7 @@
         <fullName>copado__Branch__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
+        <inlineHelpText>Git branch linked to the source environment.</inlineHelpText>
         <label>Branch</label>
         <length>255</length>
         <required>false</required>
@@ -121,9 +69,9 @@
     <fields>
         <fullName>copado__Destination_Branch__c</fullName>
         <deprecated>false</deprecated>
-        <description>This is the Git branch linked to the destination environment. This Git branch is defined in another deployment flow step record where the current destination environment is the source environment.</description>
+        <description>Value updated automatically by Copado. This is defined in the Deployment Flow Step of the Destination Environment.</description>
         <externalId>false</externalId>
-        <inlineHelpText>This is the Git branch linked to the destination environment. This Git branch is defined in another deployment flow step record where the current destination environment is the source environment.</inlineHelpText>
+        <inlineHelpText>Value updated automatically by Copado. This is defined in the Deployment Flow Step of the Destination Environment.</inlineHelpText>
         <label>Destination Branch</label>
         <length>255</length>
         <required>false</required>
@@ -145,6 +93,37 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Enable_as_Scratch_Org_Destination__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable as Scratch Org Target</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Default DX Target</fullName>
+                    <default>false</default>
+                    <label>Default DX Target</label>
+                </value>
+                <value>
+                    <fullName>DX Target</fullName>
+                    <default>false</default>
+                    <label>DX Target</label>
+                </value>
+                <value>
+                    <fullName>DX Patch Target</fullName>
+                    <default>false</default>
+                    <label>DX Patch Target</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>copado__Last_Merge_Base__c</fullName>
@@ -348,15 +327,4 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <label>Deployment Flow Step</label>
-    <nameField>
-        <displayFormat>DFS-{000000}</displayFormat>
-        <label>Deployment Flow Step Reference</label>
-        <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Deployment Flow Steps</pluralLabel>
-    <searchLayouts/>
-    <sharingModel>ControlledByParent</sharingModel>
-    <visibility>Public</visibility>
 </CustomObject>

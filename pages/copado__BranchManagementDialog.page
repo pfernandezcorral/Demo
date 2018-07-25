@@ -27,7 +27,7 @@
         console.assert(backDeploy.uiData.toBranch, 'backDeploy.uiData.toBranch' );
         console.assert(backDeploy.uiData.fromBranch, 'backDeploy.uiData.fromBranch' );
 
-        prepareOverlay(backDeploy.uiData.fromEnvId, backDeploy.uiData.toEnvId, backDeploy.uiData.envId, backDeploy.uiData.type, backDeploy.uiData.stepId, backDeploy.uiData.flowId, backDeploy.uiData.flowResult, backDeploy.uiData.stepResult);
+        prepareOverlay(backDeploy.uiData.fromEnvId, backDeploy.uiData.toEnvId, backDeploy.uiData.envId, backDeploy.uiData.type, backDeploy.uiData.stepId, backDeploy.uiData.flowId, backDeploy.uiData.stepResult);
 
         return false;
     };
@@ -592,6 +592,16 @@
         setLockScreenMessage('');
     };
 
+    function renderTable(){
+        $copado('[Id$=userStoriesTable]').dataTable({
+            paging:false
+        });
+    }
+
+    function clearSearchFilter(){
+        $copado('.dataTables_filter').find('input[type="search"]').val('').keyup();
+    }
+
 </script>
 
 <apex:form >
@@ -604,11 +614,10 @@
         <apex:param name="type" value="" />
         <apex:param name="stepId" value="" />
         <apex:param name="flowId" value="" />
-        <apex:param name="flowResult" value="" />
         <apex:param name="stepResult" value="" />
     </apex:actionFunction>
-    <apex:actionFunction name="errorsOverlay" action="{!errorsOverlay}" oncomplete="userStoriesOverlay();" />
-    <apex:actionFunction name="userStoriesOverlay" action="{!userStoriesOverlay}" reRender="pins,maodalHeader,path,fieldSets,GeneralActionButtons" oncomplete="showModal();" />
+    <apex:actionFunction name="errorsOverlay" action="{!errorsOverlay}" oncomplete="userStoriesOverlay();"/>
+    <apex:actionFunction name="userStoriesOverlay" action="{!userStoriesOverlay}" reRender="pins,maodalHeader,path,fieldSets,GeneralActionButtons" oncomplete="showModal();backDeploy.calculateFileDifferences(JSON.parse(backDeploy.uiData.flowResult), {gridMode:'all'});"/>
     <apex:actionFunction name="prepareRebase" action="{!prepareRebase}" reRender="rebaseModalContent,rebaseMainRender" oncomplete="showRebaseModal();">
     </apex:actionFunction>
     <apex:actionFunction name="getUserStories" action="{!getPromotableUserStories}" oncomplete="bindSelectAll();bindLookupChanges();renderSVGArrow();unlock();" reRender="fieldSets,GeneralActionButtons">
@@ -639,22 +648,22 @@
                                                 <li class="slds-tabs--path__item slds-is-current" role="presentation">
                                                     <a class="slds-tabs--path__link" id="tabs-path-93" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
                                                     <span class="slds-tabs--path__title " style="{!IF(latestOverlay.pathType != 'merge','transform: rotate(180deg)','')}">
-                                                        <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType == 'merge',true,false)}">
+                                                        <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType == 'merge'}">
                                                             {!latestOverlay.fromEnvName}
                                                            </apex:outputPanel>
-                                                                                <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType != 'merge',true,false)}">
+                                                        <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType != 'merge'}">
                                                             {!latestOverlay.toEnvName}
-                                                          </apex:outputPanel>
+                                                        </apex:outputPanel>
                                                     </span>
                                                 </a>
                                                 </li>
                                                 <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
                                                     <a class="slds-tabs--path__link" id="tabs-path-93" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
                                                     <span class="slds-tabs--path__title " style="{!IF(latestOverlay.pathType != 'merge','transform: rotate(180deg)','')}">
-                                                        <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType == 'merge',true,false)}">
+                                                        <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType == 'merge'}">
                                                             {!latestOverlay.toEnvName}
                                                         </apex:outputPanel>
-                                                                            <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType != 'merge',true,false)}">
+                                                        <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType != 'merge'}">
                                                             {!latestOverlay.fromEnvName}
                                                         </apex:outputPanel>
                                                     </span>
@@ -685,10 +694,10 @@
                                 <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showUserStories, 'background-color: rgb(244,246,249)','')}">
                                     <apex:commandLink style="text-decoration:none;" styleClass="slds-context-bar__label-action" reRender="fieldSets,pins,GeneralActionButtons" action="{!showUserStories}" onclick="lock();" oncomplete="bindSelectAll();bindLookupChanges();renderSVGArrow();unlock();">
                                         <span class="slds-truncate">
-                                        <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType == 'merge',true,false)}">
+                                        <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType == 'merge'}">
                                             {!$Label.copado__user_stories_ahead} ({!allStorySize})
                                         </apex:outputPanel>
-                                         <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType != 'merge',true,false)}">
+                                         <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType != 'merge'}">
                                             {!$Label.copado__user_stories_behind} ({!allStorySize})
                                         </apex:outputPanel>
                                     </span>
@@ -697,50 +706,42 @@
                                 <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showCommits, 'background-color: rgb(244,246,249)','')}">
                                     <apex:commandLink style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showCommits}" oncomplete="renderSVGFlow();bindSelectAll();unlock();" onclick="lock();" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                        <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType == 'merge',true,false)}">
-                                            {!$Label.copado__commits_ahead} ({!latestOverlay.commitsAhead})
+                                        <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType == 'merge'}">
+                                            {!$Label.copado__commits_ahead} (<span id="commAhead">0</span>)
                                         </apex:outputPanel>
-                                                            <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType != 'merge',true,false)}">
-                                            {!$Label.copado__commits_behind} ({!latestOverlay.commitsBehind})
+                                        <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType != 'merge'}">
+                                            {!$Label.copado__commits_behind} (<span id="commBehind">0</span>)
                                         </apex:outputPanel>
                                     </span>
                                     </apex:commandLink>
+                                    <apex:inputHidden value="{!commAhead}" id="commitAheadNum"/>
+                                    <apex:inputHidden value="{!commBehind}" id="commitBehindNum"/>
                                 </li>
-                                <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(AND(latestOverlay.errors.size != null,latestOverlay.errors.size > 0),'font-weight: bolder;','')};{!IF(showErrors, 'background-color: rgb(244,246,249)','')}">
+                                <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(AND(errorSize != null,errorSize > 0),'font-weight: bolder;','')};{!IF(showErrors, 'background-color: rgb(244,246,249)','')}">
                                     <apex:commandLink style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showErrors}" onclick="lock();" oncomplete="unlock();" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                         {!$Label.DEPLOYMENT_ERRORS} ({!errorSize})
-                                            <!--({!latestOverlay.errors.size})-->
+                                        {!$Label.copado__deployment_errors} ({!errorSize})
                                     </span>
                                     </apex:commandLink>
                                 </li>
                                 <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showFileDifferences, 'background-color: rgb(244,246,249)','')}">
                                     <apex:commandLink onclick="lock();" oncomplete="unlock();" style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showFileDifferences}" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                        {!$Label.FILE_DIFFERENCES} ({!fileDiffSize})
-                                            <!--({!latestOverlay.fileDifferences.size})-->
+                                        {!$Label.copado__file_differences} (<span id="filediff">0</span>)
                                     </span>
                                     </apex:commandLink>
                                 </li>
                                 <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showAutoResolves, 'background-color: rgb(244,246,249)','')}">
                                     <apex:commandLink onclick="lock();" oncomplete="unlock();" style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showAutoResolves}" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                        {!$Label.AUTO_RESOLVED_CONFLICTS}({!autoResolvedSize})
-                                            <!--({!latestOverlay.autoResolveds.size})-->
+                                        {!$Label.copado__auto_resolved_conflicts} (<span id="autoresolved">0</span>)
                                     </span>
                                     </apex:commandLink>
                                 </li>
                                 <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showMergeDifferences, 'background-color: rgb(244,246,249)','')}">
                                     <apex:commandLink onclick="lock();" oncomplete="unlock();" style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showMergeDifferences}" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                        <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType == 'merge',true,false)}">
-                                            {!$Label.copado__merged_files} ({!fileDiffSize})
-                                            <!--({!latestOverlay.fileDifferences.size})-->
-                                        </apex:outputPanel>
-                                        <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType != 'merge',true,false)}">
-                                            {!$Label.copado__merged_files}({!fileDiffSize})
-                                            <!--({!latestOverlay.fileDifferences.size})-->
-                                        </apex:outputPanel>
+                                            {!$Label.copado__merged_files} (<span id="mergeddiffsize">0</span>)
                                     </span>
                                     </apex:commandLink>
                                 </li>
@@ -773,14 +774,14 @@
 
                             <fieldset class="slds-box slds-theme--default slds-container--fluid">
                                 <legend class="slds-text-heading--medium " style="padding-top: 10px;">
-                                    <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType == 'merge',true,false)}">
+                                    <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType == 'merge'}">
                                         {!$Label.copado__user_stories_ahead}
                                     </apex:outputPanel>
-                                    <apex:outputPanel layout="none" rendered="{!IF(latestOverlay.pathType != 'merge',true,false)}">
+                                    <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType != 'merge'}">
                                         {!$Label.copado__user_stories_behind}
                                     </apex:outputPanel>
                                 </legend>
-                                <table class="slds-table slds-table_resizable-cols slds-table_fixed-layout slds-table_bordered slds-table_striped" role="grid" id="userStoriesTable">
+                                <table class="slds-table slds-table_resizable-cols slds-table_fixed-layout slds-table_bordered slds-table_striped sortableTable" role="grid" id="userStoriesTable">
                                     <thead>
                                         <tr class="slds-line-height_reset">
                                             <th scope="col" class="slds-text-align_right" style="width: 3.25rem;">
@@ -819,7 +820,7 @@
                                             </apex:repeat>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="mainTableBody">
                                         <apex:repeat value="{!latestOverlay.userStories}" var="us" id="userStoryRepeat">
                                             <tr class="slds-hint-parent">
                                                 <td role="gridcell" class="slds-text-align_right" style="width: 3.25rem;">
@@ -828,7 +829,7 @@
                                                 <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__CBM_Fields}" var="f">
                                                     <td role="gridcell" class="">
                                                         <div class="slds-truncate" title="{!us.userStory[f]}">
-                                                           <c:LightningReadyOutputFields SObject="{!us.userStory}" Field="{!f}" showLabel="false" dividerBottom="false" customClass="usFields" isViewLink="{!if(f=='Name',true,false)}" htmlTarget="_blank" />
+                                                            <apex:outputField value="{!us.userStory[f.fieldpath]}"/>
                                                         </div>
                                                     </td>
                                                 </apex:repeat>
@@ -836,7 +837,10 @@
                                         </apex:repeat>
                                     </tbody>
                                 </table>
-                                
+                                <script>
+                                    var _config = {};
+                                    backDeploy.initFileDifferences(_config,renderTable());
+                                </script>
                             </fieldset>
                             <!-- END OF USER STORIES FIELDSET -->
                         </apex:outputPanel>
@@ -845,8 +849,12 @@
                             <apex:outputPanel rendered="{!and(!isnull(latestOverlay.commitsAhead), !isnull(latestOverlay.commitsBehind), or(latestOverlay.pathType=='merge'&&latestOverlay.commitsAhead>0, latestOverlay.pathType=='pull'&&latestOverlay.commitsBehind>0))}">
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
-                                <h2 style="text-align: center">{!IF(latestOverlay.errors.size>0,'There are deployment errors, so you cannot sync','The commits are ready to sync')}</h2>
+                                <h2 style="text-align: center">{!IF(errorSize > 0,'There are deployment errors, so you cannot sync','The commits are ready to sync')}</h2>
                             </apex:outputPanel>
+                            <script>
+                                var _config = {};
+                                backDeploy.initFileDifferences(_config);
+                            </script>
                         </apex:outputPanel>
                         <!-- ERRORS FIELDSET -->
                         <apex:outputPanel id="deploymentErrors" layout="block" rendered="{!showErrors}">
@@ -855,7 +863,7 @@
                                 <legend class="slds-text-heading--medium " style="padding-top: 10px;">
                                     {!$Label.DEPLOYMENT_ERRORS}
                                 </legend>
-                                <table class="slds-table slds-table_resizable-cols slds-table_fixed-layout slds-table_bordered slds-table_striped" role="grid" id="commitsTable">
+                                <table class="slds-table slds-table_resizable-cols slds-table_fixed-layout slds-table_bordered slds-table_striped sortableTable" role="grid" id="commitsTable">
                                     <thead>
                                         <tr class="slds-line-height_reset">
                                             <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col" style="width: 7%">
@@ -915,6 +923,10 @@
                                         </apex:repeat>
                                     </tbody>
                                 </table>
+                                <script>
+                                    var _config = {};
+                                    backDeploy.initFileDifferences(_config);
+                                </script>
                             </fieldset>
                             <!-- END OF ERRORS FIELDSET -->
                         </apex:outputPanel>
@@ -923,54 +935,13 @@
                             
                             <fieldset class="slds-box slds-theme--default slds-container--fluid">
                                 <legend class="slds-text-heading--medium " style="padding-top: 10px;">{!$Label.FILE_DIFFERENCES}</legend>
-                                <table class="slds-table slds-table_resizable-cols slds-table_fixed-layout slds-table_bordered slds-table_striped" role="grid" id="commitsTable">
-                                    <thead>
-                                        <tr class="slds-line-height_reset">
-                                            <th class="slds-is-sortable slds-text-title_caps" scope="col" style="width: 10%">
-                                                <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="0">
-                                                <span class="slds-assistive-text">Sort </span>
-                                                <span class="slds-truncate" title="Name">Type</span>
-                                            </a>
-
-                                            </th>
-                                            <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col" style="width: 80%">
-                                                <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="0">
-                                                <span class="slds-assistive-text">Sort </span>
-                                                <span class="slds-truncate" title="Name">File Name</span>
-                                            </a>
-                                                <div class="slds-resizable">
-                                                    <label for="cell-resize-handle-1" class="slds-assistive-text">Message column width</label>
-                                                    <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-1" tabindex="0" />
-                                                    <span class="slds-resizable__handle" draggable="true" onmousedown="CalculateWidth(this, event)" ondrag="SetNewWidth(this, event)" ondragend="return false;">
-                                                    <span class="slds-resizable__divider"></span>
-                                                    </span>
-                                                </div>
-                                            </th>
-                                            <th class="slds-text-title_caps" scope="col" style="width: 10%"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <apex:repeat value="{!latestOverlay.fileDifferences}" var="fd">
-                                            <tr class="slds-hint-parent">
-                                                <td role="gridcell" class="">
-                                                    <div class="slds-truncate slds-text-title_caps" title="{!fd.dmlType}">
-                                                        <span style="font-weight: bolder;{!IF(fd.dmlType == 'update', 'color:#e6c611;',IF(fd.dmlType == 'delete','color:#e40a0a;',IF(fd.dmlType == 'create','color:#4bb94b;','')))}">{!fd.dmlType}</span>
-                                                    </div>
-                                                </td>
-                                                <td role="gridcell" class="slds-cell-wrap">
-                                                    <div class="slds-cell-wrap" title="{!fd.metadataName}">
-                                                        {!fd.metadataName}
-                                                    </div>
-                                                </td>
-                                                <td role="gridcell" class="slds-cell-wrap">
-                                                    <apex:outputPanel styleClass="slds-cell-wrap" rendered="{!fd.dmlType == 'update'}">
-                                                        <a href="javascript:void(0);" onclick="showFileModal(this);" data-stepId="{!latestOverlay.stepId}" file-name="{!fd.metadataName}" data-type="{!latestOverlay.pathType}">Show Differences</a>
-                                                    </apex:outputPanel>
-                                                </td>
-                                            </tr>
-                                        </apex:repeat>
-                                    </tbody>
-                                </table>
+                                <script>
+                                    var _config = {
+                                        gridMode: 'fileDiff'
+                                    };
+                                    backDeploy.initFileDifferences(_config);
+                                </script>
+                                <div id="fileDiffGrid"></div>
                             </fieldset>
                             <!-- END OF FILE DIFFERENCES FIELDSET -->
                         </apex:outputPanel>
@@ -979,54 +950,13 @@
                             
                             <fieldset class="slds-box slds-theme--default slds-container--fluid">
                                 <legend class="slds-text-heading--medium " style="padding-top: 10px;">{!$label.AUTO_RESOLVED_CONFLICTS}</legend>
-                                <table class="slds-table slds-table_resizable-cols slds-table_fixed-layout slds-table_bordered slds-table_striped" role="grid" id="commitsTable">
-                                    <thead>
-                                        <tr class="slds-line-height_reset">
-                                            <th class="slds-is-sortable slds-text-title_caps" scope="col" style="width: 10%">
-                                                <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="0">
-                                                <span class="slds-assistive-text">Sort </span>
-                                                <span class="slds-truncate" title="Name">Type</span>
-                                            </a>
-
-                                            </th>
-                                            <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col" style="width: 80%">
-                                                <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="0">
-                                                <span class="slds-assistive-text">Sort </span>
-                                                <span class="slds-truncate" title="Name">File Name</span>
-                                            </a>
-                                                <div class="slds-resizable">
-                                                    <label for="cell-resize-handle-1" class="slds-assistive-text">Message column width</label>
-                                                    <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-1" tabindex="0" />
-                                                    <span class="slds-resizable__handle" draggable="true" onmousedown="CalculateWidth(this, event)" ondrag="SetNewWidth(this, event)" ondragend="return false;">
-                                                    <span class="slds-resizable__divider"></span>
-                                                    </span>
-                                                </div>
-                                            </th>
-                                            <th class="slds-text-title_caps" scope="col" style="width: 10%"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <apex:repeat value="{!latestOverlay.autoResolveds}" var="fd">
-                                            <tr class="slds-hint-parent">
-                                                <td role="gridcell" class="">
-                                                    <div class="slds-truncate slds-text-title_caps" title="{!fd.dmlType}">
-                                                        <span style="font-weight: bolder;{!IF(fd.dmlType == 'update', 'color:#e6c611;',IF(fd.dmlType == 'delete','color:#e40a0a;',IF(fd.dmlType == 'create','color:#4bb94b;','')))}">{!fd.dmlType}</span>
-                                                    </div>
-                                                </td>
-                                                <td role="gridcell" class="slds-cell-wrap">
-                                                    <div class="slds-cell-wrap" title="{!fd.metadataName}">
-                                                        {!fd.metadataName}
-                                                    </div>
-                                                </td>
-                                                <td role="gridcell" class="slds-cell-wrap">
-                                                    <div class="slds-cell-wrap" title="Show Differences" style="display: none;">
-                                                        <a href="javascript:void(0);" onclick="showFileModal(this);" data-stepId="{!latestOverlay.stepId}" file-name="{!fd.metadataName}" data-type="{!latestOverlay.pathType}">Show Differences</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </apex:repeat>
-                                    </tbody>
-                                </table>
+                                <script>
+                                    var _config = {
+                                        gridMode: 'fileConflicts'
+                                    };
+                                    backDeploy.initFileDifferences(_config);
+                                </script>
+                                <div id="fileDiffGrid"></div>
                             </fieldset>
                             <!-- END OF AUTO RESOLVED FIELDSET -->
                         </apex:outputPanel>
@@ -1035,56 +965,14 @@
                             
                             <fieldset class="slds-box slds-theme--default slds-container--fluid">
                                 <legend class="slds-text-heading--medium " style="padding-top: 10px;">{!$label.MERGED_FILES}</legend>
-                                <table class="slds-table slds-table_resizable-cols slds-table_fixed-layout slds-table_bordered slds-table_striped" role="grid" id="commitsTable">
-                                    <thead>
-                                        <tr class="slds-line-height_reset">
-                                            <th class="slds-is-sortable slds-text-title_caps" scope="col" style="width: 10%">
-                                                <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="0">
-                                                <span class="slds-assistive-text">Sort </span>
-                                                <span class="slds-truncate" title="Name">Type</span>
-                                            </a>
-
-                                            </th>
-                                            <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col" style="width: 80%">
-                                                <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="0">
-                                                <span class="slds-assistive-text">Sort </span>
-                                                <span class="slds-truncate" title="Name">File Name</span>
-                                            </a>
-                                                <div class="slds-resizable">
-                                                    <label for="cell-resize-handle-1" class="slds-assistive-text">Message column width</label>
-                                                    <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-1" tabindex="0" />
-                                                    <span class="slds-resizable__handle" draggable="true" onmousedown="CalculateWidth(this, event)" ondrag="SetNewWidth(this, event)" ondragend="return false;">
-                                                    <span class="slds-resizable__divider"></span>
-                                                    </span>
-                                                </div>
-                                            </th>
-                                            <th class="slds-text-title_caps" scope="col" style="width: 10%"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <apex:repeat value="{!latestOverlay.fileDifferences}" var="fd">
-                                            <apex:outputPanel layout="none" rendered="{!fd.dmlType == 'update'}">
-                                                <tr class="slds-hint-parent">
-                                                    <td role="gridcell" class="">
-                                                        <div class="slds-truncate slds-text-title_caps" title="{!fd.dmlType}">
-                                                            <span style="font-weight: bolder;color:#e6c611;">{!fd.dmlType}</span>
-                                                        </div>
-                                                    </td>
-                                                    <td role="gridcell" class="slds-cell-wrap">
-                                                        <div class="slds-cell-wrap" title="{!fd.metadataName}">
-                                                            {!fd.metadataName}
-                                                        </div>
-                                                    </td>
-                                                    <td role="gridcell" class="slds-cell-wrap">
-                                                        <div class="slds-cell-wrap" title="Show Differences">
-                                                            <a href="javascript:void(0);" onclick="showFileModal(this);" data-stepId="{!latestOverlay.stepId}" file-name="{!fd.metadataName}" data-type="{!IF(latestOverlay.pathType == 'merge','div-m-m','div-p-m')}">Show Differences</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </apex:outputPanel>
-                                        </apex:repeat>
-                                    </tbody>
-                                </table>
+                                <script>
+                                    var _config = {
+                                        gridMode: 'fileDiff',
+                                        dataMode: 'mergeDiff'
+                                    };
+                                    backDeploy.initFileDifferences(_config);
+                                </script>
+                                <div id="fileDiffGrid"></div>
                             </fieldset>
                             <!-- END OF MERGED FILES FIELDSET -->
                         </apex:outputPanel>
@@ -1097,14 +985,14 @@
                     <apex:outputPanel id="GeneralActionButtons" layout="block">
                         <apex:outputPanel id="promotionButton" layout="none" rendered="{!showUserStories}">
                             <button class="slds-button slds-button_neutral slds-path__mark-complete slds-m-horizontal_small" onclick="closeModal(); return false;">Cancel</button>
-                            <apex:commandLink rendered="{!IF(AND(NOT(ISNULL(allStorySize)),allStorySize > 0),true,false)}" target="_blank" value="Create {!promotionBtnLabel}" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="maodalHeader" oncomplete="overridePageMessages();">
+                            <apex:commandLink rendered="{!IF(AND(NOT(ISNULL(allStorySize)),allStorySize > 0),true,false)}" target="_blank" value="Create {!promotionBtnLabel}" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="maodalHeader" onClick="lockScreen();clearSearchFilter();" oncomplete="overridePageMessages();">
                                 <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
                                 <use
                                     xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#forward')}">
                                 </use>
                             </svg>
                             </apex:commandLink>
-                            <apex:commandLink rendered="{!IF(AND(NOT(ISNULL(allStorySize)),allStorySize > 0),true,false)}" target="_blank" value="Create {!promotionBtnLabel} & Deploy" styleClass="slds-button slds-button_success slds-path__mark-complete slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionAndDeploy}" reRender="maodalHeader" oncomplete="overridePageMessages();">
+                            <apex:commandLink rendered="{!IF(AND(NOT(ISNULL(allStorySize)),allStorySize > 0),true,false)}" target="_blank" value="Create {!promotionBtnLabel} & Deploy" styleClass="slds-button slds-button_success slds-path__mark-complete slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionAndDeploy}" reRender="maodalHeader" onClick="lockScreen();clearSearchFilter();" oncomplete="overridePageMessages();">
                                 <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
                                 <use
                                     xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#upload')}">
@@ -1121,7 +1009,7 @@
                             <button class="slds-button slds-button_neutral slds-path__mark-complete slds-m-horizontal_small" onclick="closeModal(); return false;">Cancel</button>
                             <apex:outputPanel layout="none" rendered="{!and(!isnull(latestOverlay.commitsAhead), !isnull(latestOverlay.commitsBehind), or(latestOverlay.commitsAhead>0, latestOverlay.commitsBehind>0))}">
 
-                                <apex:outputPanel rendered="{!latestOverlay.errors.size<=0}">
+                                <apex:outputPanel rendered="{!errorSize<=0}">
                                     <button style="float: right !important;" class="slds-button slds-button_success slds-path__mark-complete slds-m-horizontal_small" id="btn_sync" onclick="syncCommits(); return false;">
                                         <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/action-sprite/svg/symbols.svg#flow')}">               
@@ -1130,7 +1018,7 @@
                                         Sync
                                     </button>
                                 </apex:outputPanel>
-                                <apex:outputPanel rendered="{!latestOverlay.errors.size>0}">
+                                <apex:outputPanel rendered="{!errorSize>0}">
                                     <button style="float: right !important;" class="slds-button slds-button_success slds-path__mark-complete slds-m-horizontal_small" id="btn_sync" disabled="disabled">
                                 <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
                                     <use

@@ -113,6 +113,7 @@
         <fields>copado__Source_Environment__c</fields>
         <fields>copado__Destination_Environment__c</fields>
         <fields>copado__Branch__c</fields>
+        <fields>copado__Destination_Branch__c</fields>
         <fields>CREATEDBY_USER</fields>
         <fields>UPDATEDBY_USER</fields>
         <relatedList>copado__Deployment_Flow_Step__c.copado__Deployment_Flow__c</relatedList>

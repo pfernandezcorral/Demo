@@ -2,6 +2,7 @@
     <apex:slds />
     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <head>
+            <title>Promotion {!copado__Promotion__c.Name} | Copado</title>
             <c:GAnalytics />
             <c:WizardUtils />
 
@@ -270,15 +271,43 @@
 
             <script type="text/javascript">
                 j$(document).ready(function(){
-                  
-                 var accountsTable = j$('[cid$="userStoryMetadatasTable"]').parent('table').eq(0).DataTable({
+                 j$('#pbTableUserStories').dataTable(
+                     {
+                         "paging": false,
+                         "scrollY":        400,
+                         "scrollCollapse": true
+                     }
+                 );
+                 j$('#pbTablePromotedStories').dataTable(
+                     {
+                         "paging": false,
+                         "scrollY":        400,
+                         "scrollCollapse": true
+                     }
+                 );
+                 levelPageBlockHeight();
+                 j$('#userStoryMetadatasTable').dataTable(
+                     {
+                         "paging": false,
+                         "scrollY":        400,
+                         "scrollCollapse": true
+                     }
+                 );
+                 j$('#seleniumTestGroupTable').dataTable(
+                     {
+                         "paging": false,
+                         "scrollY":        400,
+                         "scrollCollapse": true
+                     }
+                 );
+                 /*var accountsTable = j$('[cid$="userStoryMetadatasTable"]').parent('table').eq(0).DataTable({
                    //sets record lengths to show in picklist
                    aLengthMenu: [
                      [10, 25, 50, 100, 200, -1],
                      [10, 25, 50, 100, 200, "All"]
                    ],
                    "iDisplayLength": 10
-                 });
+                 });*/
                  
                 });
             </script>
@@ -386,10 +415,10 @@
                                 </div>
                             </div>
                         </apex:outputPanel>
-                        <apex:outputPanel rendered="false">
+                        <!--<apex:outputPanel rendered="false">
                             <apex:outputField value="promotion.Source_Environment__c"/>
                             <apex:outputField value="promotion.Destination_Environment__c"/>
-                        </apex:outputPanel>
+                        </apex:outputPanel>-->
 
                         <apex:outputPanel id="pnlDetail" layout="block" styleClass="copado-lightning-container">
                             <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" layout="none">
@@ -656,51 +685,58 @@
                             <apex:form id="USform">
                                 <div id="wrapper" class="slds-scope" >
                                     <div id="left" style="width:50%; margin-left:0px; float:left;">
+                                        <apex:actionFunction action="{!addStoriesToPromotion}" name="addStories" reRender="dummy" />
                                         <apex:pageBlock id="pbLeft" title="{!$Label.copado__user_stories_not_included_in_promotion}" >
                                             <apex:pageBlockButtons id="pbButtons2" location="top">
-                                                <apex:commandButton status="tblStatus" reRender="USform" id="btnGetUserStories" value="{!$Label.copado__add_selected_user_stories}" action="{!addStoriesToPromotion}" onclick="disableAddSelectedButton();" oncomplete="reRenderSeleniumTestGroups(); enableAddSelectedButton();" styleClass="slds-button slds-button--neutral"/>
+                                                <apex:commandButton status="tblStatus" reRender="USform" id="btnGetUserStories"
+                                                                    value="{!$Label.copado__add_selected_user_stories}"
+                                                                    rerender="pbRight,pbLeft"
+                                                                    onclick="setLockScreenMessage('Selecting...');lockScreen();clearSearch();disableAddSelectedButton();addStories();"
+                                                                    oncomplete="reRenderSeleniumTestGroups(); enableAddSelectedButton();"
+                                                                    styleClass="slds-button slds-button--neutral"/>
                                             </apex:pageBlockButtons>
 
-                                            <apex:actionStatus id="tblStatus" onstop="levelPageBlockHeight()" onstart="levelPageBlockHeight()">
-                                                <apex:facet name="start">
-                                                    <table class="list" border="0" cellspacing="0" cellpadding="0">
-                                                        <tbody>
-                                                            <tr class="headerRow">
-                                                                <th class="noRowsHeader" scope="col"><img src="/img/loading.gif" /></th>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </apex:facet>
-
-                                                <apex:facet name="stop">
-                                                    <apex:pageBlockTable id="pbTableUserStories" value="{!userStories}" var="u" styleClass="slds-table slds-table_bordered">
-                                                        <apex:column id="col1" width="22">
-                                                            <apex:facet name="header">
-                                                                <input type="checkbox" id="chkAll" onclick="checkAll(this,'{!$Component.pbTableUserStories}','chkUserStory')" />
-                                                            </apex:facet>
+                                            <table id="pbTableUserStories">
+                                                <thead>
+                                                <tr>
+                                                    <th style="width:20px;"><input type="checkbox" id="chkAll" onclick="checkAll(this,'pbTableUserStories','chkUserStory')" /></th>
+                                                    <th style="width25px;">View</th>
+                                                    <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__PromotionRelatedList}" var="prl">
+                                                        <th>
+                                                            <span style="cursor:pointer;">{!prl.label}</span> <!--onClick="sortGiven(this,'L');"-->
+                                                        </th>
+                                                    </apex:repeat>
+                                                </tr>
+                                                </thead>
+                                                <tbody style="overflow:scroll">
+                                                <apex:repeat value="{!userStories}" var="u">
+                                                    <tr>
+                                                        <td>
                                                             <apex:inputCheckbox id="chkUserStory" value="{!u.selected}" />
-                                                        </apex:column>
-                                                        <apex:column width="30">
-                                                            <apex:facet name="header">View</apex:facet>
-                                                            <center><a href="/{!u.userStory.Id}"><img src="/img/icon/custom51_100/books24.png"/></a></center>
-                                                        </apex:column>
-                                                        <apex:repeat value="{!promotionRelatedList}" var="prl">
-                                                            <apex:column >
-                                                                <apex:facet name="header">{!prl.label}</apex:facet>
-                                                                <apex:outputField value="{!u.userStory[prl]}" />
-                                                            </apex:column>
+                                                        </td>
+                                                        <td><center><a href="/{!u.userStory.Id}"><img src="/img/icon/custom51_100/books24.png"/></a></center></td>
+                                                        <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__PromotionRelatedList}" var="prl">
+                                                            <td>
+                                                                <apex:outputText value="{!u.userStory[prl]}"/>
+                                                            </td>
                                                         </apex:repeat>
-                                                    </apex:pageBlockTable>
-                                                </apex:facet>
-                                            </apex:actionStatus>
+                                                    </tr>
+                                                </apex:repeat>
+                                                </tbody>
+                                            </table>
                                         </apex:pageBlock>
                                     </div>
                                     <div id="right" style="width:50%; float:right; position:relative;">
                                         <apex:pageBlock id="pbRight" title="{!$Label.copado__user_stories_to_be_promoted}" >
                                             <apex:pageBlockButtons id="pbButtons1" location="top">
-                                                <button id="btnRemoveSelected" class="slds-button slds-button--neutral" value="{!$Label.REMOVE_SELECTED_USER_STORIES}" onclick="deleteSelections(); return false;">{!$Label.REMOVE_SELECTED_USER_STORIES}</button>
-
-                                                <apex:commandButton reRender="USform" id="btnCreateDeployment" value="{!$Label.copado__create_deployment}" onclick="openModal(); return false;" styleClass="slds-button slds-button--brand" disabled="{!!enableCreateDeploymentButton}"/>
+                                                <button id="btnRemoveSelected" class="slds-button slds-button--neutral"
+                                                        value="{!$Label.REMOVE_SELECTED_USER_STORIES}"
+                                                        onclick="setLockScreenMessage('Removing Selections...');lockScreen();clearSearch();deleteSelections(); return false;">{!$Label.REMOVE_SELECTED_USER_STORIES}</button>
+                                                <apex:commandButton reRender="USform" id="btnCreateDeployment"
+                                                                    value="{!$Label.copado__create_deployment}"
+                                                                    onclick="openModal();clearSearch(); return false;"
+                                                                    styleClass="slds-button slds-button--brand"
+                                                                    disabled="{!!enableCreateDeploymentButton}"/>
 
 
                                                 <apex:commandlink id="warningLink" style="float: right;padding-top: 4px;" rendered="{!AND(dependenciesList != null,dependenciesList.size>0)}" title="{!$Label.copado__usdependency_icontitle}" onclick="openUSDep(); return false;" styleClass="icon-blinker">
@@ -709,45 +745,52 @@
                                                   </svg>
                                                 </apex:commandlink> 
 
-                                                <span class="slds-icon_container slds-icon-utility-announcement" title="Description of icon when needed">
+                                                <span class="slds-icon_container slds-icon-utility-announcement" title="">
 
-                                                  <span class="slds-assistive-text">Description of icon</span>
+                                                  <span class="slds-assistive-text"></span>
                                                 </span>
 
 
                                             </apex:pageBlockButtons>
-                                            <apex:actionFunction name="doRemove" reRender="USform" action="{!removeSelectedUserStories}" status="tblStatus1" oncomplete="reRenderSeleniumTestGroups();"/>
-                                            <apex:actionStatus id="tblStatus1" onstop="levelPageBlockHeight()" onstart="levelPageBlockHeight()">
-                                                <apex:facet name="start">
-                                                    <table class="list" border="0" cellspacing="0" cellpadding="0">
-                                                        <tbody>
-                                                            <tr class="headerRow">
-                                                                <th class="noRowsHeader" scope="col"><img src="/img/loading.gif" /></th>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </apex:facet>
-                                                <apex:facet name="stop">
-                                                    <apex:pageBlockTable id="pbTablePromotedStories" value="{!promotedWrappedStories}" var="u" styleClass="slds-table slds-table_bordered">
-                                                        <apex:column id="col1" width="22">
-                                                            <apex:facet name="header">
-                                                                <input type="checkbox" id="chkAll" onclick="checkAll(this,'{!$Component.pbTablePromotedStories}','chkUserStory')" />
-                                                            </apex:facet>
-                                                            <apex:inputCheckbox id="chkUserStory" value="{!u.selected}" />
-                                                        </apex:column>
-                                                        <apex:column width="30">
-                                                            <apex:facet name="header">View</apex:facet>
-                                                            <center><a href="/{!u.promotedUS.User_Story__r}"><img src="/img/icon/custom51_100/books24.png"/></a></center>
-                                                        </apex:column>
-                                                        <apex:repeat value="{!promotionRelatedList}" var="prl">
-                                                            <apex:column >
-                                                                <apex:facet name="header">{!prl.label}</apex:facet>
-                                                                <apex:outputField value="{!u.promotedUS.User_Story__r[prl]}" />
-                                                            </apex:column>
-                                                        </apex:repeat>                                        
-                                                    </apex:pageBlockTable>
-                                                </apex:facet>
-                                            </apex:actionStatus>
+                                            <apex:actionFunction name="doRemove" reRender="USform"
+                                                                 action="{!removeSelectedUserStories}" status="tblStatus1"
+                                                                 oncomplete="reRenderSeleniumTestGroups();" rerender="pbRight,pbLeft"/>
+                                            <table id="pbTablePromotedStories" style="overflow:scroll">
+                                                <thead>
+                                                <tr>
+                                                    <th><input type="checkbox" id="chkAll" onclick="checkAll(this,'pbTablePromotedStories','chkUserStory')" /></th>
+                                                    <th>View</th>
+                                                    <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__PromotionRelatedList}" var="prl">
+                                                        <th>
+                                                            <span style="cursor:pointer;">{!prl.label}</span> <!--onClick="sortGiven(this,'L');"-->
+                                                        </th>
+                                                    </apex:repeat>
+                                                </tr>
+                                                </thead>
+                                                <tbody style="overflow:scroll">
+                                                <apex:repeat value="{!promotedWrappedStories}" var="u">
+                                                    <tr>
+
+
+
+
+
+                                                        <td><apex:inputCheckbox id="chkUserStory" value="{!u.selected}" /></td>
+
+
+
+                                                        <td><center><a href="/{!u.promotedUS.User_Story__r}"><img src="/img/icon/custom51_100/books24.png"/></a></center></td>
+
+                                                        <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__PromotionRelatedList}" var="prl">
+                                                            <td>
+
+                                                                <apex:outputText value="{!u.promotedUS.User_Story__r[prl]}"/>
+                                                            </td>
+                                                        </apex:repeat>
+                                                    </tr>
+                                                </apex:repeat>
+                                                </tbody>
+                                            </table>
                                         </apex:pageBlock>
                                     </div>
                                 </div>
@@ -764,38 +807,86 @@
                             <apex:actionFunction name="reRenderSeleniumTestGroups" action="{!recalcSeleniumTestGroups}"/>
 
                             <apex:pageBlock id="stg" title="{!$Label.copado__promotion_selenium_tests}">
-                            <apex:pageBlockButtons location="top">
-                               <apex:commandButton value="{!$Label.copado__promotion_run_source_tests_regression}" action="{!runTestsSourceRegression}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"/>
-                                <apex:commandButton value="{!$Label.copado__promotion_run_source_tests_user_story}" action="{!runTestsSourceUserStory}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"/>
-                                <apex:commandButton value="{!$Label.copado__promotion_run_destination_tests_regression}" action="{!runTestsDestinationRegression}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"/>
-                                <apex:commandButton value="{!$Label.copado__promotion_run_destination_tests_user_story}" action="{!runTestsDestinationUserStory}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"/>
-                            </apex:pageBlockButtons>
-                                <apex:pageBlockTable value="{!seleniumTestGroups}" var="st" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-table slds-table_bordered')}">
-                                    <apex:column id="col1" width="50" headerValue="{!$Label.copado__selenium_test_group}">
-                                        <apex:outputLink value="{!URLFOR($Action.copado__Selenium_Test_Group__c.View, st.testGroup.Id)}">{!st.testGroup.Name}</apex:outputLink>
-                                    </apex:column>
-                                    <apex:column id="col3" value="{!st.testGroup.copado__Type__c}" width="30"/>
-                                    <apex:column id="col2" value="{!st.location}" width="30" headerValue="Location"/>
-                                    <apex:column id="col4" value="{!st.testGroup.copado__Environment__c}" width="30"/>
-                                    <apex:column id="col5" value="{!st.testGroup.copado__Status_Date__c}" width="30"/>
-                                    <apex:column id="col6" value="{!st.testGroup.copado__Status__c}" width="40"/>
-                                    <apex:column id="col7" value="{!st.testGroup.copado__Status_Icon__c}" width="10"/>
-                                </apex:pageBlockTable>
+                                <apex:pageBlockButtons location="top">
+                                   <apex:commandButton value="{!$Label.copado__promotion_run_source_tests_regression}" action="{!runTestsSourceRegression}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"/>
+                                    <apex:commandButton value="{!$Label.copado__promotion_run_source_tests_user_story}" action="{!runTestsSourceUserStory}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"/>
+                                    <apex:commandButton value="{!$Label.copado__promotion_run_destination_tests_regression}" action="{!runTestsDestinationRegression}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"/>
+                                    <apex:commandButton value="{!$Label.copado__promotion_run_destination_tests_user_story}" action="{!runTestsDestinationUserStory}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"/>
+                                </apex:pageBlockButtons>
+                                    <!--<apex:pageBlockTable value="{!seleniumTestGroups}" var="st" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-table slds-table_bordered')}">
+                                        <apex:column id="col1" width="50" headerValue="{!$Label.copado__selenium_test_group}">
+                                            <apex:outputLink value="{!URLFOR($Action.copado__Selenium_Test_Group__c.View, st.testGroup.Id)}">{!st.testGroup.Name}</apex:outputLink>
+                                        </apex:column>
+                                        <apex:column id="col3" value="{!st.testGroup.copado__Type__c}" width="30"/>
+                                        <apex:column id="col2" value="{!st.location}" width="30" headerValue="Location"/>
+                                        <apex:column id="col4" value="{!st.testGroup.Environment__c}" width="30"/>
+                                        <apex:column id="col5" value="{!st.testGroup.copado__Status_Date__c}" width="30"/>
+                                        <apex:column id="col6" value="{!st.testGroup.copado__Status__c}" width="40"/>
+                                        <apex:column id="col7" value="{!st.testGroup.copado__Status_Icon__c}" width="10"/>
+                                    </apex:pageBlockTable>-->
+                                <table id="seleniumTestGroupTable" style="overflow:scroll">
+                                    <thead>
+                                    <tr>
+                                        <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.Name.Label}</th>
+                                        <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Type__c.Label}</th>
+                                        <th>Location</th>
+                                        <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Environment__c.Label}</th>
+                                        <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Status_Date__c.Label}</th>
+                                        <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Status__c.Label}</th>
+                                        <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Status_Icon__c.Label}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody style="overflow:scroll">
+                                    <apex:repeat value="{!seleniumTestGroups}" var="st">
+                                        <tr>
+                                            <td><apex:outputLink value="{!URLFOR($Action.copado__Selenium_Test_Group__c.View, st.testGroup.Id)}">{!st.testGroup.Name}</apex:outputLink></td>
+                                            <td><apex:outputText value="{!st.testGroup.copado__Type__c}" /></td>
+                                            <td><apex:outputText value="{!st.location}" /></td>
+                                            <td><apex:outputLink value="{!URLFOR($Action.copado__Environment__c.View, st.testGroup.copado__Environment__c)}">{!st.testGroup.Environment__r.Name}</apex:outputLink></td>
+                                            <td><apex:outputText value="{!st.testGroup.copado__Status_Date__c}" /></td>
+                                            <td><apex:outputText value="{!st.testGroup.copado__Status__c}" /></td>
+                                            <td><apex:outputText escape="false" value="{!st.testGroup.copado__Status_Icon__c}" /></td>
+                                        </tr>
+                                    </apex:repeat>
+                                    </tbody>
+                                </table>
                             </apex:pageBlock>
                         </apex:form>
                     </apex:outputPanel>
                     
                     <apex:outputPanel id="usMetadataPanel" layout="block" styleClass="copado-lightning-container">
                         <apex:pageBlock id="userStoryMetadata" title="{!$Label.copado__promotion_user_story_metadata}">
-                            <apex:pageBlockTable value="{!userStoryMetadatas}" var="metadata" styleClass="slds-table slds-table_bordered" html-cid="userStoryMetadatasTable" rendered="{!userStoryMetadatas.size>0}">
+                            <!--<apex:pageBlockTable value="{!userStoryMetadatas}" var="metadata" styleClass="slds-table slds-table_bordered" html-cid="userStoryMetadatasTable" rendered="{!userStoryMetadatas.size>0}">
                                 <apex:column id="col1" width="60" headerValue="Metadata" style="border-bottom: 1px solid #dddbda !important;">
                                     <apex:outputLink value="/{!metadata.Id}">{!metadata.copado__Metadata_API_Name__c}</apex:outputLink>
                                 </apex:column>  
-                                <apex:column id="col2" value="{!metadata.copado__User_Story__c}" width="30"/>  
+                                <apex:column id="col2" value="{!metadata.User_Story__c}" width="30"/>  
                                 <apex:column id="col3" value="{!metadata.copado__Status__c}" width="30"/>  
                                 <apex:column id="col4" value="{!metadata.copado__Status_Icon__c}" width="10"/> 
                                 <apex:column id="col5" value="{!metadata.LastModifiedDate}" width="30"/>  
-                            </apex:pageBlockTable>
+                            </apex:pageBlockTable>-->
+                            <table id="userStoryMetadatasTable" style="overflow:scroll">
+                                <thead>
+                                <tr>
+                                    <th>{!$ObjectType.User_Story_Metadata__c.fields.Metadata_API_Name__c.Label}</th>
+                                    <th>{!$ObjectType.User_Story_Metadata__c.fields.User_Story__c.Label}</th>
+                                    <th>{!$ObjectType.User_Story_Metadata__c.fields.Status__c.Label}</th>
+                                    <th>{!$ObjectType.User_Story_Metadata__c.fields.Status_Icon__c.Label}</th>
+                                    <!--<th>{!$ObjectType.User_Story_Metadata__c.fields.LastModifiedDate.Label}</th>-->
+                                </tr>
+                                </thead>
+                                <tbody style="overflow:scroll">
+                                    <apex:repeat value="{!userStoryMetadatas}" var="metadata">
+                                        <tr>
+                                            <td><apex:outputLink value="/{!metadata.Id}">{!metadata.copado__Metadata_API_Name__c}</apex:outputLink></td>
+                                            <td><apex:outputLink value="/{!metadata.copado__User_Story__c}">{!metadata.User_Story__r.Name}</apex:outputLink></td>
+                                            <td><apex:outputText value="{!metadata.copado__Status__c}" /></td>
+                                            <td><apex:outputText escape="false" value="{!metadata.copado__Status_Icon__c}" /></td>
+                                            <!--<td><apex:outputField value="{!metadata.LastModifiedDate}" /></td>-->
+                                        </tr>
+                                    </apex:repeat>
+                                </tbody>
+                            </table>
                         </apex:pageBlock> 
                     </apex:outputPanel>
 
@@ -806,8 +897,14 @@
                     function levelPageBlockHeight(){
                         var $l = $copado('div[id$="pbLeft"]');
                         var $r = $copado('div[id$="pbRight"]');
-                        if($l.height() > $r.height())$r.height($l.height());
+                        if($l.height() > 550 || $r.height() > 550){
+                            $l.height(550);
+                            $r.height(550);
+                        }
+                        else if($l.height() > $r.height())$r.height($l.height());
                         else $l.height($r.height());
+
+                        j$('.pbTitle').parent().closest('tr').css('height','56px');
                     }
                     $copado( document ).ready(function() {
                         levelPageBlockHeight();
@@ -823,6 +920,10 @@
                         else{
                             return false;
                         }
+                    }
+
+                    function clearSearch() {
+                        $copado('.dataTables_filter').find('input[type="search"]').val('').keyup();
                     }
 
                     function disableAddSelectedButton(){

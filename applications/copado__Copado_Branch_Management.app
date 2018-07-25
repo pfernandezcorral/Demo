@@ -5,11 +5,11 @@
     <formFactors>Large</formFactors>
     <label>Copado Branch Management</label>
     <logo>copado__Copado/copado__Copado_Logo.png</logo>
-    <tab>copado__Deployment_Flow__c</tab>
-    <tab>copado__Git_Repository__c</tab>
-    <tab>copado__Git_Backup__c</tab>
-    <tab>copado__Environment__c</tab>
-    <tab>standard-report</tab>
-    <tab>copado__Account_Summary</tab>
-    <tab>copado__Scheduled_Job__c</tab>
+    <tabs>copado__Deployment_Flow__c</tabs>
+    <tabs>copado__Git_Repository__c</tabs>
+    <tabs>copado__Git_Backup__c</tabs>
+    <tabs>copado__Environment__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>copado__Account_Summary</tabs>
+    <tabs>copado__Scheduled_Job__c</tabs>
 </CustomApplication>
