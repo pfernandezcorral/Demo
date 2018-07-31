@@ -5,9 +5,7 @@ public class AccountOperations2 {
         a.Description = 'Default Description';
 
         return a;
-        //test comment
-//testcomment2
-//testcomment33
+//this is a test comment for promotions
     }
 
 }
