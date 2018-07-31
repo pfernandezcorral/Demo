@@ -42,5 +42,4 @@
         <fullName>RecordId</fullName>
         <type>Lookup</type>
     </fields>
-    
 </CustomObject>

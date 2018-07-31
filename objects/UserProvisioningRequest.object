@@ -66,5 +66,4 @@
         <searchResultsAdditionalFields>UserProvAccount</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LastModifiedBy</searchResultsAdditionalFields>
     </searchLayouts>
-    
 </CustomObject>
