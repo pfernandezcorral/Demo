@@ -1,8 +1,11 @@
 public class AccountOperations2 {
+
     public static Account setDefaultDescription(Account a) {
-        a.Description = 'Default Description12';
+
+        a.Description = 'Default Description';
+
         return a;
-        
- // test 1233455
+//this is a test comment for promotions
     }
+
 }
