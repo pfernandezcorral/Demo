@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <consumerKey>123456789</consumerKey>
+    <consumerSecret>FrV7+TEGmZDzoYdWXFQkQQ==</consumerSecret>
+    <defaultScopes>refresh_token full</defaultScopes>
+    <executionUser>pfernandezcorral@testorg.2.com</executionUser>
+    <friendlyName>TestFB</friendlyName>
+    <includeOrgIdInIdentifier>false</includeOrgIdInIdentifier>
+    <logoutUrl>https://www.salesforce.com</logoutUrl>
+    <providerType>Facebook</providerType>
+    <registrationHandler>AutocreatedRegHandler1533023716173</registrationHandler>
+    <sendAccessTokenInHeader>false</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+</AuthProvider>
