@@ -117,6 +117,12 @@
         <fullName>Street</fullName>
     </fields>
     <fields>
+        <fullName>Test__c</fullName>
+        <externalId>false</externalId>
+        <label>Test</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>Title</fullName>
     </fields>
     <sharingModel>ControlledByCampaign</sharingModel>
