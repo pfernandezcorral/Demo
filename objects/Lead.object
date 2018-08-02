@@ -93,5 +93,4 @@
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
-    <isCaseInsensitiveDeterministicEncryptionEnabled>false</isCaseInsensitiveDeterministicEncryptionEnabled> 
 </CustomObject>
