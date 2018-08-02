@@ -1,12 +1,8 @@
 public class AccountOperations {
-
     public static Account setDefaultDescription(Account a) {
-
-        a.Description = 'Default Description';
-
+        a.Description = 'Default Description12';
         return a;
-        //new conclict
-//conflicting
+        
+ // test 1233
     }
-
 }
