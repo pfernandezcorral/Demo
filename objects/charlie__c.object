@@ -70,7 +70,6 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
-            <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
@@ -87,6 +86,11 @@
                     <fullName>charliepicklist3</fullName>
                     <default>false</default>
                     <label>charliepicklist3</label>
+                </value>
+                <value>
+                    <fullName>charliepicklist4</fullName>
+                    <default>false</default>
+                    <label>charliepicklist4</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -131,6 +135,10 @@
             </values>
             <values>
                 <fullName>charliepicklist3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>charliepicklist4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
