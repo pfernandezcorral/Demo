@@ -92,6 +92,11 @@
                     <default>false</default>
                     <label>charliepicklist4</label>
                 </value>
+                <value>
+                    <fullName>charliepicklist5</fullName>
+                    <default>false</default>
+                    <label>charliepicklist5</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -139,6 +144,10 @@
             </values>
             <values>
                 <fullName>charliepicklist4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>charliepicklist5</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
