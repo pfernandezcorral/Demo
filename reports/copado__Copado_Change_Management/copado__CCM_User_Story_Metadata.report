@@ -70,6 +70,8 @@
     <reportType>CustomEntityCustomEntity$copado__User_Story__c$copado__User_Story_Metadata__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <sortColumn>copado__User_Story__c.copado__Environment__c</sortColumn>
     <sortOrder>Asc</sortOrder>
     <timeFrameFilter>

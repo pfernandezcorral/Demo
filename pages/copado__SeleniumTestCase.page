@@ -1,6 +1,7 @@
 <apex:page standardController="copado__Selenium_Test_Case__c" extensions="copado.LicenseHelper,copado.SeleniumTestCaseViewEdit" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
+      <TITLE>Selenium Test Case {!copado__Selenium_Test_Case__c.Name} | Copado</TITLE>
         <c:GAnalytics />
         <script>
             ga('send', 'pageview', {
@@ -14,13 +15,13 @@
     <body>
         <div class="copado-lightning-VF">
             <!-- check that the feature is enabled, and the user has a license assigned -->
-            <apex:pageMessage severity="WARNING" strength="2" summary="{!possibleCSTErrorMsg}" rendered="{!!ISNULL(possibleCSTErrorMsg)},{!$User.UIThemeDisplayed != 'Theme4d'}"></apex:pageMessage>
+            <apex:pageMessage severity="WARNING" strength="2" summary="{!HTMLENCODE(possibleCSTErrorMsg)}" rendered="{!AND(!ISNULL(possibleCSTErrorMsg),$User.UIThemeDisplayed != 'Theme4d')}"></apex:pageMessage>
             <apex:pageMessages id="pmessage" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
 
             <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
                 <div class="slds-page-header">
                   <apex:outputPanel layout="block" id="pageMessages">
-                    <apex:pageMessage severity="WARNING" strength="2" summary="{!possibleCSTErrorMsg}" rendered="{!!ISNULL(possibleCSTErrorMsg)},"></apex:pageMessage>
+                    <apex:pageMessage severity="WARNING" strength="2" summary="{!HTMLENCODE(possibleCSTErrorMsg)}" rendered="{!!ISNULL(possibleCSTErrorMsg)}"></apex:pageMessage>
                     <apex:pagemessages id="msg"/>
                   </apex:outputPanel>
                   <div class="slds-grid">
@@ -70,7 +71,7 @@
                     };
                 </script>
                 <apex:outputPanel layout="block" styleClass="copado-lightning-container" style="padding-top:12px;">
-                    <apex:detail subject="{!copado__Selenium_Test_Case__c.Id}" relatedList="true" title="true" showChatter="{!IF($User.UIThemeDisplayed == 'Theme4d','false','true')}" rendered="{!and($Setup.copado__Settings__c.copado__Enabled_Multi_Licenses__c, $Setup.copado__Copado_License__c.copado__Enable_CST__c)}"/>
+                    <apex:detail subject="{!copado__Selenium_Test_Case__c.Id}" relatedList="true" title="true" showChatter="{!IF($User.UIThemeDisplayed == 'Theme4d','false','true')}" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_CST__c}"/>
                 </apex:outputPanel>
             </apex:outputPanel>
         </div>

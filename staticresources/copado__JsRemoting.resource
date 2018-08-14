@@ -4,6 +4,7 @@ JsRemoting.common = JsRemoting.common || {};
 JsRemoting.attachments = JsRemoting.attachments || {};
 JsRemoting.apiKey = JsRemoting.apiKey || {};
 JsRemoting.metaData = JsRemoting.metaData || {};
+JsRemoting.vlocity = JsRemoting.vlocity || {};
 JsRemoting.backDeploy = JsRemoting.backDeploy || {};
 JsRemoting.deploymentJobs = JsRemoting.deploymentJobs || {};
 JsRemoting.deploymentFlows = JsRemoting.deploymentFlows || {};
@@ -130,7 +131,7 @@ JsRemoting.deploymentFlows.getFlowStepCoordinates = function(ns, flowId){
     return records;
 };
 JsRemoting.deploymentFlows.queryFlowSteps = function(ns, flowId){
-    var q = 'SELECT Id, Name, __NAMESPACE__Branch__c, __NAMESPACE__Test_Level__c, __NAMESPACE__Automatically_Merge_and_Deploy__c, __NAMESPACE__Deployment_Flow__c, __NAMESPACE__Destination_Environment__c, __NAMESPACE__Destination_Environment__r.Name, __NAMESPACE__Source_Environment__c, __NAMESPACE__Source_Environment__r.Name FROM __NAMESPACE__Deployment_Flow_Step__c WHERE __NAMESPACE__Deployment_Flow__c = \''+flowId+'\' order by __NAMESPACE__Source_Environment__c ASC';
+    var q = 'SELECT Id, Name, __NAMESPACE__Branch__c, __NAMESPACE__Test_Level__c, __NAMESPACE__Automatically_Merge_and_Deploy__c, __NAMESPACE__Deployment_Flow__c, __NAMESPACE__Destination_Environment__c, __NAMESPACE__Destination_Environment__r.Name, __NAMESPACE__Source_Environment__c, __NAMESPACE__Source_Environment__r.Name,  __NAMESPACE__Source_Environment__r.__NAMESPACE__Type__c FROM __NAMESPACE__Deployment_Flow_Step__c WHERE __NAMESPACE__Deployment_Flow__c = \''+flowId+'\' order by __NAMESPACE__Source_Environment__c ASC';
     q = q.replace(new RegExp('__NAMESPACE__','g'), ns);
     var result = sforce.connection.query(q);
     var records = result.getArray('records');
@@ -169,3 +170,20 @@ JsRemoting.common.deleteIds = function(ids){
     var result = sforce.connection.deleteIds(ids);
     return result;
 };
+JsRemoting.vlocity.getDependencies = function(usId,keys,ns,successCB,exceptionCB,errorCB){
+     var core = ns ? window[ns.split('__')[0]] : window;
+     console.debug("JsRemoting.vlocity.getDependencies starting", usId,core);
+
+     var jobId = (core).JsRemotingController.getVlocityDependencies(usId,keys,function(result, event){
+         console.debug("(core).JsRemotingController.getVlocityDependencies event=", event);
+         if (event.status) {
+             successCB();
+         }else if (event.type === 'exception') {
+             console.error(event);
+             exceptionCB(event);
+         }else {
+             console.error(event);
+             errorCB(event);
+         }
+     },{escape : false});
+}

@@ -191,6 +191,8 @@
     <reportType>CustomEntityCustomEntity$copado__Compliance_Rule__c$copado__Compliance_Finding__c@copado__Compliance_Finding__c.copado__Compliance_Scan_Result__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>FK_CREATED_DATE</dateColumn>
         <interval>INTERVAL_TODAY</interval>

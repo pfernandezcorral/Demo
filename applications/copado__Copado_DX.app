@@ -2,6 +2,8 @@
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <defaultLandingTab>copado__Copado_DX_Panel</defaultLandingTab>
     <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Copado DX</label>
     <logo>copado__Copado/copado__Copado_Logo.png</logo>
     <tabs>copado__Copado_DX_Panel</tabs>

@@ -2,6 +2,8 @@
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <defaultLandingTab>copado__Compliance_Rule__c</defaultLandingTab>
     <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Copado Compliance Hub</label>
     <logo>copado__Copado/copado__Copado_Logo.png</logo>
     <tabs>copado__Compliance_Getting_Started</tabs>

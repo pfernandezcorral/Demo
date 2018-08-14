@@ -63,6 +63,8 @@
     <reportType>copado__Selenium_Test_Results__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <sortColumn>copado__Selenium_Test_Result__c$copado__Message__c</sortColumn>
     <sortOrder>Asc</sortOrder>
     <timeFrameFilter>

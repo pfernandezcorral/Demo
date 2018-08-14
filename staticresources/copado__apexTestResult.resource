@@ -238,6 +238,17 @@ var apexTestResult = {
                     if(obj[z].t=='ApexTrigger')me.userStoryTriggersArray.push(cl);
                 }
             }
+            var testOnly = me.getUserStoryAttachment('Test Classes', copadoApp.userStoryId);
+            var len = 0;
+            if(testOnly.length > 0){
+                var obj = $copado.parseJSON(Base64.decode(testOnly[0].Body));
+                len = Object.keys(obj).length;
+                for(var z=0; z<len; z++){
+                    var ns = obj[z].n.split('__').length>1?obj[z].n.split('__')[0]:'';
+                    var cl = {n:obj[z].n, ns:ns};
+                    me.userStoryClassesArray.push(cl);
+                }
+            }
             return;
         }
         catch(error){

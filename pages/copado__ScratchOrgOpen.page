@@ -2,27 +2,23 @@
     <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery.min.1.10.2.js')}"></script>
     <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery-ui.min.js')}"></script>
     <apex:form >
-
         <c:ScreenLocker msg="{!$Label.copado__loading}" id="slock"/>
         <apex:pageMessages id="theMessages" />
-        <apex:actionFunction name="reviewScratchOrgJob" action="{!rScratchOrgJob}" onComplete="checkJobStatus();" reRender="cJFlag,theMessages"/>
-
+        <apex:actionFunction action="{!rScratchOrgJob}" name="reviewScratchOrgJob" onComplete="checkJobStatus();" reRender="cJFlag,theMessages">
+            <apex:param name="sorgId" value="" assignTo="{!soId}"/>
+        </apex:actionFunction>
         <apex:outputPanel layout="block" id="cJFlag">
-            <script>
-               var $copado = jQuery.noConflict()
-               var stat = {!copadoJobFinished};
-               var msg = '{!JSENCODE(slockerMessage)}';
+        <script>
+            var $copado = jQuery.noConflict();
+            var stat = {!copadoJobFinished};
+            var msg = '{!JSENCODE(slockerMessage)}';
             </script>
-
-        </apex:outputPanel>
-
-        <script type="application/javascript">
-
+                    </apex:outputPanel>
+                    <script type="application/javascript">
             window.onload = function(e){
-                lockScreen();
-                reviewScratchOrgJob();
+            lockScreen();
+            reviewScratchOrgJob('{!JSENCODE($CurrentPage.parameters.Id)}');
             }
-
             function checkJobStatus(){
                 if(stat == true){
                     unlockScreen();
@@ -30,7 +26,7 @@
                 }else{
                     setLockScreenMessage(msg);
                     setTimeout(function(){
-                        reviewScratchOrgJob();
+                        reviewScratchOrgJob('{!JSENCODE($CurrentPage.parameters.Id)}');
                     }, 3000);
                 }
             }
