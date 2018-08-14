@@ -1894,11 +1894,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.newfield__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Account.thomsonreuters__c</field>
         <readable>true</readable>
     </fieldPermissions>
