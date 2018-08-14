@@ -54,16 +54,15 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>test__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Objetocommits</relationshipLabel>
         <relationshipName>Objetocommits</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>MasterDetail</type>
-        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+        <type>Lookup</type>
     </fields>
     <label>Objetocommit</label>
     <nameField>
@@ -72,6 +71,6 @@
     </nameField>
     <pluralLabel>Objetocommits</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
