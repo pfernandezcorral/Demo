@@ -29,6 +29,8 @@
     <reportType>CustomEntity$copado__Static_Code_Analysis_Result__c@copado__Static_Code_Analysis_Result__c.copado__Org_Credential__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_LAST120</interval>

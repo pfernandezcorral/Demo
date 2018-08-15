@@ -2,6 +2,7 @@
     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
         <c:GAnalytics />
         <c:WizardUtils />
+
         <apex:slds />
         <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
         <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/libs/jquery.min.1.10.2.js')}"/>
@@ -10,7 +11,9 @@
         <apex:includeScript value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.js')}"/>
         <link rel="stylesheet" typea="text/css" href="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"/>
 
+
         <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery-ui.min.js')}"></script>
+
         <script type="text/javascript" src="{!URLFOR($Resource.jqx, 'jqwidgets/jqx-all.js')}"></script>
         <script type="text/javascript" src="{!URLFOR($Resource.jqx, 'jqwidgets/jqxwindow.js')}"></script>
         <script type="text/javascript"> var Copado_Licenses = {!CurrentUserLicenses};</script>
@@ -28,7 +31,7 @@
         <script type="text/javascript" src="{!URLFOR($Resource.copadoStreamingService) }"></script>
         <apex:includeScript value="{!URLFOR($Resource.statusManager) }" />
         <head>
-           <title>Copado Branch Management | Copado</title>
+           <title>Branch Management {!Deployment_Flow__c.Name} | Copado</title>
             <style type="text/css">
                 .icon-blinker {
                   animation: blink 1s linear 5;
@@ -192,7 +195,6 @@
                     z-index: 999;
                     display: block;
                 }
-                
                 #boxCanvas{
                     background-color: transparent;
                 }
@@ -216,25 +218,43 @@
                     border-style: solid;
                     border-color: rgb(216, 221, 230);
                     border-image: initial;
-                    z-index: 2;
+                    z-index: 999;
                     cursor: pointer;
                 }
-
+                #errormessagediv {
+                    box-sizing: border-box;
+                    position: fixed;
+                    display: inline-block;
+                    top: 0;
+                    left: 5%;
+                    width: 50%;
+                    background-color: rgb(255, 255, 255);
+                    border-radius: 4px 0px 4px 4px;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: rgb(216, 221, 230);
+                    border-image: initial;
+                    background: transparent;
+                }
             </style>
             <script type="text/javascript">
-                var $copado = jQuery.noConflict(),
-                j$ = jQuery.noConflict(),
+                var $copado = jQuery.noConflict(), 
                 __sfdcSessionId = '{!GETSESSIONID()}';
+                $copado(document).ready(function(){
+                    overridePageMessages();
+                })
             </script>
             <script src="/soap/ajax/35.0/connection.js"></script>
             <c:ShowWebhook url="webhook/branchStatuses" recordId="{!copado__Deployment_Flow__c.Id}" />
         </head>
+
         <c:IframeLocker url="" />
         <apex:outputField value="{!copado__Deployment_Flow__c.copado__Flow_Step_Coordinates__c}" rendered="false" />
         <apex:outputField value="{!copado__Deployment_Flow__c.copado__Main_Branch__c}" rendered="false" />
         <apex:outputField value="{!copado__Deployment_Flow__c.copado__Git_Repository__c}" rendered="false"/>
         <body class="slds-scope">
             <apex:form id="Lightningform">
+
             <apex:outputPanel id="mainPanel">
                 <div style="width:150px; left: 5px; position:fixed;"> 
                     <button id="toggleBG" class="slds-button slds-button_neutral" onclick="toggleBackground();return false;" name="Toggle Background">
@@ -261,35 +281,41 @@
                 
                 <apex:outputPanel id="globalWrapper">
                     <script type="text/javascript">
-                    var copadoApp = {
-                        ns: '{!JSENCODE(namespace)}',
-                        data: {
-                            flowId: '{!JSENCODE(Deployment_Flow__c.Id)}',
-                            __coordinates__: '{!JSENCODE(Deployment_Flow__c.Flow_Step_Coordinates__c)}',
-                            mainBranch: '{!JSENCODE(Deployment_Flow__c.Main_Branch__c)}',
-                            repositoryId: '{!JSENCODE(Deployment_Flow__c.Git_Repository__c)}',
-                            allNotificationMatchingKeys: '{!JobsManagerMatchingKeys}'
-                        },
-                        envConnections: [],
-                        environments: [],
-                        urlParameters: '{!JSENCODE(urlParameters)}',
-                        lightningSpinner: '{!URLFOR($Resource.SLDS,"/assets/images/spinners/slds_spinner_brand.gif")}',
-                        
-                    };
-                </script>
+                        var copadoApp = {
+                            ns: '{!JSENCODE(namespace)}',
+                            data: {
+                                flowId: '{!JSENCODE(Deployment_Flow__c.Id)}',
+                                __coordinates__: '{!JSENCODE(Deployment_Flow__c.Flow_Step_Coordinates__c)}',
+                                mainBranch: '{!JSENCODE(Deployment_Flow__c.Main_Branch__c)}',
+                                repositoryId: '{!JSENCODE(Deployment_Flow__c.Git_Repository__c)}',
+                                allNotificationMatchingKeys: '{!JSENCODE(JobsManagerMatchingKeys)}'
+                            },
+                            envConnections: [],
+                            environments: [],
+                            urlParameters: '{!JSENCODE(urlParameters)}',
+                            lightningSpinner: '{!URLFOR($Resource.SLDS,"/assets/images/spinners/slds_spinner_brand.gif")}',
+
+                        };
+                    </script>
                     <!-- -->
+
+                    <div id="errormessagediv">
+                        <apex:pageMessages id="canvasMessage"/>
+                    </div>
+
                     <div id="myInsext" class="">
-                        <div class="myinsext-btn" style="outline:0;" onclick="toogle();" tabindex="0" accesskey="i" title="Show additional operations...">
+                        <div class="myinsext-btn" style="outline:0;cursor:pointer;" onclick="toogle();" tabindex="0" accesskey="i" title="Show additional operations...">
                             <center>
                                 <img height="20" width="20" src="{!URLFOR($Resource.Statics,'img/icons/logo-icon.png')}"/>
                             </center>
                         </div>
                         <div id="overlay" class="insext-popup">
                             <div style="padding-top:30px; padding-left: 10px">
-
                                 <div class="slds-form">
                                     <div class="slds-form-element" style="margin-top: 10px">
-                                        <input type="button" class="btn slds-button slds-button_neutral" onclick="backDeploy.recalculate(this);toogle();" value="Recalculate" />
+                                        <apex:outputPanel rendered="{!AND(!hideCalcBackPromotionButtons,stepMapJSON != 'false')}">
+                                            <input type="button" class="btn slds-button slds-button_neutral" onclick="backDeploy.recalculate(this);toogle();" value="Recalculate" />
+                                        </apex:outputPanel>
                                         <button type="button" id="btnShowHookUrl" class="btn slds-button slds-button_neutral" onclick="showWebhook(); return false;">Show Hook URL</button>
                                     </div>
                                     <div class="slds-form-element" style="margin-top: 10px">
@@ -306,9 +332,11 @@
                                     <div class="slds-form-element" style="margin-top: 10px">
                                         <button type="button" id="showLogs" class="btn slds-button slds-button_neutral" onclick="showLogsModal(); return false;">Latest sync results</button>                                     
                                     </div>
-                                    <div class="slds-form-element" style="margin-top: 10px">
-                                        <button type="button" id="massBackPromote" class="btn slds-button slds-button_neutral" onclick="lock();openRebaseModal();toogle(); return false;">Mass Back-Promote</button>
-                                    </div>
+                                    <apex:outputPanel rendered="{!AND(!hideCalcBackPromotionButtons,stepMapJSON != 'false')}">
+                                        <div class="slds-form-element" style="margin-top: 10px">
+                                            <button type="button" id="massBackPromote" class="btn slds-button slds-button_neutral" onclick="lock();openRebaseModal();toogle(); return false;">Mass Back-Promote</button>
+                                        </div>
+                                    </apex:outputPanel>
                                 </div>
                                 <div class="slds-grid">
                                     <div class="slds-col">
@@ -322,6 +350,7 @@
                             </div>
                         </div>
                     </div>
+
                     <a name="canvasLocation" style="display:none;">toplink</a>
                     <!-- Canvas Div -->
                     <div id="boxCanvas" class="bgActive"></div>
@@ -367,10 +396,11 @@
 
                     console.info('Assigning step details...');
                     backDeploy.config.map = {!(stepMapJSON)};
-                    
-                    if(backDeploy.config.map === false){
-                        alert(backDeploy.labels.noStep);
-                    }
+
+                    // comment out to remove javascript alert for no step error
+                    //if(backDeploy.config.map === false){
+                        //alert(backDeploy.labels.noStep);
+                    //}
         
                     $copado( document ).ready(function() {
                         copadoStreamingService.ns = copadoApp.ns;
@@ -519,20 +549,22 @@
 
                     textureEffect = 'slds-theme--alert-texture';
 
-                    $copado('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);          
-                    $copado('.confirmM3').addClass('slds-notify slds-notify--alert slds-theme--success  customMessage '+textureEffect);    
-                    $copado('.errorM3').addClass('slds-notify slds-notify--alert slds-theme--error customMessage '+textureEffect);                  
-                    $copado('.infoM3').addClass('slds-notify slds-notify--toast customMessage '+textureEffect);    
+                    $copado('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);
+                    $copado('.confirmM3').addClass('slds-notify slds-notify--alert slds-theme--success  customMessage '+textureEffect);
+                    $copado('.errorM3').addClass('slds-notify slds-notify--alert slds-theme--error customMessage '+textureEffect);
+                    $copado('.infoM3').addClass('slds-notify slds-notify--toast slds-theme--info customMessage '+textureEffect);
 
-                    $copado('.errorM3').removeClass('errorM3'); 
-                    $copado('.confirmM3').removeClass('confirmM3'); 
-                    $copado('.infoM3').removeClass('infoM3');   
+                    $copado('.errorM3').removeClass('errorM3');
+                    $copado('.confirmM3').removeClass('confirmM3');
+                    $copado('.infoM3').removeClass('infoM3');
                     $copado('.warningM3').removeClass('warningM3');
 
                     $copado('.message').css('margin',0);
-                    $copado('.message').on('click',function(){$copado('.message').hide()});
                     $copado('.message').css('margin-top',10);
                     $copado('.message').css('font-size','11pt');
+                    $copado('.messageText').css('color','white');
+                    $copado('.messageText h4').css('color','white');
+                    $copado('.messageTable ul').css('color','white');
 
                     if(cb) cb();
                 }
@@ -664,7 +696,7 @@
                                     </button>
                                     <apex:outputPanel id="rebaseHeader" layout="block">
                                         <h2 id="logsHeaderText" class="slds-text-heading_medium slds-hyphenate">
-                                            <apex:outputText value="MASS BACK PROMOTE USER STORIES" /> <!-- TODO: replace hardcoded value with MASS_BACK_PROMOTE_USER_STORIES} -->
+                                            <span>MASS BACK PROMOTE USER STORIES</span> <!-- TODO: replace hardcoded value with MASS_BACK_PROMOTE_USER_STORIES} -->
                                         </h2>
                                         <apex:pageMessages id="rebaseMessage" />
                                     </apex:outputPanel>
@@ -674,7 +706,7 @@
                                        <div class="slds-grid" style="padding-bottom: 10px;">
                                             <div class="slds-col" style="width: 0%;">
                                                 <label class="slds-form-element__label" for="rebaseSourceList">
-                                                <apex:outputText value="Source Environment" /><!-- TODO: Replace hard coded value with SOURCE_ENVIRONMENT -->
+                                                    <span>Source Environment</span><!-- TODO: Replace hard coded value with SOURCE_ENVIRONMENT -->
                                                 </label>
                                                 <apex:selectList id="rebaseSourceList" html-data-id="rebaseSourceList" value="{!rebaseSource}" multiselect="false" size="1" styleClass="slds-select" >
                                                     <apex:selectOptions value="{!rebaseSourceEnvironments}" />
@@ -706,7 +738,7 @@
                                         
                                         <div>
                                             <apex:outputPanel id="tableButtons" layout="block">
-                                                <apex:outputPanel layout="block" rendered="{!rebaseUserStoriesWrapper.size > 0}">
+                                                <apex:outputPanel layout="block" rendered="{!AND(rebaseUserStoriesWrapper.size > 0, OR(AND(NOT(ISNULL(rebaseProject)), rebaseProject != '--None--'),AND(NOT(ISNULL(rebaseRelease)), rebaseRelease != '--None--')))}">
                                                     <div class="slds-grid" style="padding-bottom: 15px;">
                                                         <div class="slds-col">
                                                             <!-- TODO: replace hardcoded value with this custom label Unselect_All_User_Stories} -->
@@ -771,16 +803,6 @@
                                                                         <th class="headcol">
                                                                             <apex:inputCheckbox id="usCheckbox" value="{!us.isSelected}" html-name="{!us.userStory.Id}"  html-data-chb-type="userStory" onchange="selectAllRebaseUserStories($copado(this))"/>
                                                                         </th>
-                                                                        <!--TODO: In the next release use below repeat
-                                                                        Mass_Back_Promote_FieldSet field set is not in BP so in order to
-                                                                        patch mass promotion feature following lines are commented out -->
-                                                                        <!--<apex:repeat value="{!$ObjectType.User_Story__c.FieldSets.Mass_Back_Promote_FieldSet}" var="f">
-                                                                            <th class="headcol" style="text-align: left;width: 20%;overflow-wrap: break-word;">
-                                                                                <div class="slds-truncate" title="{!us.userStory[f]}">
-                                                                                   <c:LightningReadyOutputFields SObject="{!us.userStory}" Field="{!f}" showLabel="false" dividerBottom="false" customClass="usFields" isViewLink="{!if(f=='Name',true,false)}" htmlTarget="_blank" />
-                                                                                </div>
-                                                                            </th>
-                                                                        </apex:repeat>-->
                                                                         <th class="headcol" style="text-align: left;width: 20%;overflow-wrap: break-word;">
                                                                             <div class="slds-truncate" title="User Story Reference">
                                                                                <c:LightningReadyOutputFields SObject="{!us.userStory}" Field="Name" showLabel="false" dividerBottom="false" customClass="usFields" isViewLink="true" htmlTarget="_blank" />
@@ -793,16 +815,16 @@
                                                                         </th>
                                                                         <apex:repeat value="{!rebaseSources}" var="rebaseOrg">
                                                                             <td style="text-align: center;">
-                                                                                <apex:inputCheckbox disabled="{!NOT(OR(usEnvironmentAvailabilityMap[rebaseOrg.step.copado__Source_Environment__c][us.userStory.Id].isAvailable,showHiddenCheckboxes))}" style="{!IF(NOT(OR(usEnvironmentAvailabilityMap[rebaseOrg.step.copado__Source_Environment__c][us.userStory.Id].isAvailable,showHiddenCheckboxes)),'filter: invert(75%);','')}" html-data-envId="{!rebaseOrg.step.copado__Source_Environment__c}" html-data-usId="{!us.userStory.Id}" value="{!usEnvironmentAvailabilityMap[rebaseOrg.step.copado__Source_Environment__c][us.userStory.Id].isSelected}"
-                                                                                html-data-defualt-disabled="{!NOT(usEnvironmentAvailabilityMap[rebaseOrg.step.copado__Source_Environment__c][us.userStory.Id].isAvailable)}" />
+                                                                                <apex:inputCheckbox disabled="{!NOT(OR(usEnvironmentAvailabilityMap[us.userStory.Id][rebaseOrg.step.copado__Source_Environment__c].isAvailable,showHiddenCheckboxes))}" style="{!IF(NOT(OR(usEnvironmentAvailabilityMap[us.userStory.Id][rebaseOrg.step.copado__Source_Environment__c].isAvailable,showHiddenCheckboxes)),'filter: invert(75%);','')}" html-data-envId="{!rebaseOrg.step.copado__Source_Environment__c}" html-data-usId="{!us.userStory.Id}" value="{!usEnvironmentAvailabilityMap[us.userStory.Id][rebaseOrg.step.copado__Source_Environment__c].isSelected}"
+                                                                                                    html-data-defualt-disabled="{!NOT(usEnvironmentAvailabilityMap[us.userStory.Id][rebaseOrg.step.copado__Source_Environment__c].isAvailable)}" />
                                                                             </td>
                                                                         </apex:repeat>
                                                                     </tr>
                                                                 </apex:repeat>
                                                             </tbody>
                                                         </table>
-                                                    </div>    
-                                                        
+                                                    </div>
+
                                                     <apex:outputPanel rendered="{!rebaseUserStoriesWrapper.size == 0}">
                                                         <center>
                                                             <p><apex:outputText value="No user story to be selected" /></p> <!-- TODO: Relace hardcoded value with NO_US_TO_SELECT}" -->
@@ -820,8 +842,8 @@
                                     <apex:actionFunction action="{!createRebasePromotionsAndDeploy}" name="createRebasePromotionsAndDeploy" reRender="rebaseMessage,rebaseMainRender,rebaseEnvironments,rebasePromotionsPanel,createdPromotionButtons" oncomplete="unlock();overridePageMessages();"/>
                                     <apex:outputPanel id="rebasePromotionButtons" layout="block" >
                                         <apex:outputText value="WARNING: Auto selection is disabled. Any action you take on this dialog is strictly at your own risk." style="text-align: left;color:orange;" rendered="{!showHiddenCheckboxes}"/> <!-- TODO: replace hardcoded value with MASS_BP_DISABLE_AUTOSELECT_WARNING} -->
-                                        
-                                        <apex:outputPanel rendered="{!rebaseUserStoriesWrapper.size > 0}" layout="none" id="rebaseButtons">
+
+                                        <apex:outputPanel rendered="{!AND(rebaseUserStoriesWrapper.size > 0, OR(AND(NOT(ISNULL(rebaseProject)), rebaseProject != '--None--'),AND(NOT(ISNULL(rebaseRelease)), rebaseRelease != '--None--')))}" layout="none" id="rebaseButtons">
                                             <apex:commandLink action="{!goToPromotions}" rendered="{!rebasePromotionKeySize > 0}" target="_blank" value="Go to promotions" onclick="lock();" styleClass="slds-button slds-button_neutral slds-path__mark-complete slds-m-horizontal_small" oncomplete="unlock();" reRender="rebaseMainRender"/> 
 
                                             <apex:commandLink target="_blank" value="{!$Label.copado__create} {!promotionBtnLabel}" onclick="lock();" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-m-horizontal_small" id="createRebasePromotions" oncomplete="createRebasePromotions();" reRender="xx"/>                                            

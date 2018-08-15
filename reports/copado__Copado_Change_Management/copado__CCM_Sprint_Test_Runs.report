@@ -31,6 +31,8 @@
     <reportType>CustomEntityCustomEntity$copado__Test_Script__c$copado__Test_Run__c@copado__Test_Run__c.copado__Sprint__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

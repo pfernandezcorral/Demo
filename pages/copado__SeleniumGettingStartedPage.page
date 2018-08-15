@@ -1,6 +1,7 @@
 <apex:page id="thePage" controller="copado.appHome" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds />
     <head>
+        <title>Selenium Getting Started | Copado</title>
         <c:GAnalytics />
         <script>
             ga('send', 'pageview', {
@@ -14,14 +15,14 @@
     <body>
         <div class="copado-lightning-VF">
             <apex:pageMessages id="theMessages" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
-            <apex:pageMessage id="theWarning" severity="WARNING" strength="2" summary="{!$Label.copado__selenium_not_enabled}" rendered="{!!and($Setup.copado__Settings__c.copado__Enabled_Multi_Licenses__c, $Setup.copado__Copado_License__c.copado__Enable_CST__c)},{!$User.UIThemeDisplayed != 'Theme4d'}"></apex:pageMessage>
+            <apex:pageMessage id="theWarning" severity="WARNING" strength="2" summary="{!HTMLENCODE($Label.copado__selenium_not_enabled)}" rendered="{!AND(!$Setup.copado__Copado_License__c.copado__Enable_CST__c,$User.UIThemeDisplayed != 'Theme4d')}"></apex:pageMessage>
             <apex:sectionHeader id="theHeader" title="{!$Label.copado__selenium_getting_started_header_title}" subtitle="{!$Label.copado__selenium_getting_started_header_subtitle}" description="{!$Label.copado__selenium_getting_started_header_description}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
 
             <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
                 <div class="slds-page-header">
                   <apex:outputPanel layout="block" id="pageMessages">
                     <apex:pagemessages id="msg"/>
-                    <apex:pageMessage id="theWarning2" severity="WARNING" strength="2" summary="{!$Label.copado__selenium_not_enabled}" rendered="{!!and($Setup.copado__Settings__c.copado__Enabled_Multi_Licenses__c, $Setup.copado__Copado_License__c.copado__Enable_CST__c)}"></apex:pageMessage>
+                    <apex:pageMessage id="theWarning2" severity="WARNING" strength="2" summary="{!HTMLENCODE($Label.copado__selenium_not_enabled)}" rendered="{!!$Setup.copado__Copado_License__c.copado__Enable_CST__c}"></apex:pageMessage>
                   </apex:outputPanel>
                   <div class="slds-grid">
                     <div class="slds-col slds-has-flexi-truncate">
@@ -66,7 +67,7 @@
                     </script>
                 </div>
                 
-                <apex:outputPanel rendered="{!and($Setup.copado__Settings__c.copado__Enabled_Multi_Licenses__c, $Setup.copado__Copado_License__c.copado__Enable_CST__c)}">
+                <apex:outputPanel rendered="{!$Setup.copado__Copado_License__c.copado__Enable_CST__c}">
                     <div id="copadoRecorderExtensionInstalled" style="display:none">
                         <br />
                         <script type="text/javascript">

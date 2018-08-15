@@ -19,7 +19,6 @@
             <operator>equals</operator>
             <value>Approved,Permissions Assigned</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>
@@ -40,6 +39,8 @@
     <reportType>CustomEntity$copado__User_Persona_Assignment__c@copado__User_Persona_Assignment__c.copado__Persona__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>copado__User_Persona_Assignment__c.copado__End_Time__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

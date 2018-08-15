@@ -11,7 +11,7 @@
 
         <c:GAnalytics />
         
-        <apex:form id="theForm" rendered="{!and($Setup.copado__Settings__c.copado__Enabled_Multi_Licenses__c, $Setup.copado__Copado_License__c.copado__Enable_CST__c)}" styleClass="copado-lightning-container">
+        <apex:form id="theForm" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_CST__c}" styleClass="copado-lightning-container">
             <apex:pageBlock id="pb" mode="edit">
                 <apex:pageBlockButtons id="pbs">
                     <apex:commandButton id="btnContinue" action="{!quickRunConfirmed}" value="Continue" rendered="{!mode=='confirm'}" />
