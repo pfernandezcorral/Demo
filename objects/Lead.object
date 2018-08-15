@@ -381,7 +381,6 @@
             </valueSettings>
         </valueSet>
     </fields>
-    <isCaseInsensitiveDeterministicEncryptionEnabled>true</isCaseInsensitiveDeterministicEncryptionEnabled> 
     <listViews>
         <fullName>AllOpenLeads</fullName>
         <filterScope>Everything</filterScope>
