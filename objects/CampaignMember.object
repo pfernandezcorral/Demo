@@ -111,7 +111,6 @@
     </fields>
     <fields>
         <fullName>Status</fullName>
-        <inlineHelpText>testeandoconflict</inlineHelpText> 
         <type>Picklist</type>
     </fields>
     <fields>

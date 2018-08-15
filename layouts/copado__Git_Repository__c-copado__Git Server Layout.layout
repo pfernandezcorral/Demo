@@ -13,6 +13,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
+                <field>copado__Git_Provider__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
                 <field>copado__URI__c</field>
             </layoutItems>
             <layoutItems>
@@ -79,14 +83,14 @@
         <relatedList>copado__Continuous_Integration__c.copado__Git_Repository__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <relatedList>RelatedNoteList</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <fields>copado__Active__c</fields>
         <fields>CREATED_DATE</fields>
         <fields>LAST_UPDATE</fields>
         <relatedList>copado__Deployment_Flow__c.copado__Git_Repository__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
@@ -94,7 +98,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0O00000hvK0x</masterLabel>
+        <masterLabel>00hf40000033fII</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

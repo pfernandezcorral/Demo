@@ -2,7 +2,7 @@
  - Created by ferhatozsavran on 1/22/18.
  -->
 
-<apex:page id="DXOperation" controller="copado.DXOperationController" extensions="copado.Settings" lightningStylesheets="true" docType="html-5.0" sidebar="false" applyBodyTag="false" >
+<apex:page id="DXOperation" controller="copado.DXOperationController" extensions="copado.Settings" lightningStylesheets="true" docType="html-5.0" sidebar="false" applyBodyTag="false">
     <apex:slds />
     <head>
         <title>Copado DX</title>
@@ -89,6 +89,7 @@
                             </apex:repeat>
                         </ul>
                     </nav>
+                    <apex:commandLink action="{!ScheduleDxJob}" rendered="{!showSchedule}" styleClass="slds-button slds-button--neutral slds-col--bump-left" style="margin-bottom: 5px;line-height: 1.9em;margin-right: 5px;" reRender="dxOperationErrors,opNavBar">Schedule Copado DX</apex:commandLink>
                     <apex:outputLink rendered="{!AND(OR(selectedOperationDataId == null,selectedOperationDataId == '-- None --'),usId == null)}" value="{!URLFOR('/')}" styleClass="slds-button slds-button--neutral slds-col--bump-left" style="margin-bottom: 5px;line-height: 1.9em;margin-right: 5px;">{!$Label.copado__go_back}</apex:outputLink>
                     <apex:outputLink rendered="{!OR(AND(selectedOperationDataId != null,selectedOperationDataId != '-- None --'),usId != null)}" value="{!IF(selectedOperationDataId != null,URLFOR('/' + selectedOperationDataId),IF(usId != null,URLFOR('/' + usId),URLFOR('/')))}" styleClass="slds-button slds-button--neutral slds-col--bump-left" style="margin-bottom: 5px;line-height: 1.9em;margin-right: 5px;">{!$Label.copado__go_record}</apex:outputLink>
                 </div>
