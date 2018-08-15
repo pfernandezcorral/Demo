@@ -20,15 +20,17 @@
     	        
     	    <apex:pageBlock id="pb_selectGitCommits"  mode="edit" helpUrl="http://docs.copa.do" helpTitle="{!$Label.copado__help_for_this_page}" title="{!$Label.copado__select_commits}">
 
-    		    <apex:pageblockButtons >
+    		    <apex:pageblockButtons id="pbButtons">
+                    <apex:commandButton value="Previous"  action="{!previous}" disabled="{!!showPrevious}" rendered="{!showPagination}"  reRender="pb_selectGitCommits"/>
+                    <apex:commandButton value="Next"  action="{!Next}" disabled="{!!showNext}"  rendered="{!showPagination}" reRender="pb_selectGitCommits"/>
     	            <apex:commandButton value="{!$Label.site.save}" action="{!saveSelections}"/>
     	            <apex:commandButton value="{!$Label.site.cancel}"  action="{!cancel}" immediate="true"/>
     	        </apex:pageblockButtons>
-                <apex:pageBlockTable value="{!commits}" var="c">
+                <apex:pageBlockTable value="{!commits}" var="c" id="pbTable">
                     <apex:column >
                        <apex:facet name="header">
                                 <apex:inputCheckbox >
-                                    <apex:actionSupport event="onclick" onsubmit="checkAll(this)" immediate="true" rerender="nothing"/>
+                                    <apex:actionSupport event="onclick" onsubmit="checkAll(this)" immediate="true" rerender="pbButtons"/>
                                     </apex:inputCheckbox>
                                 </apex:facet>
                             <apex:inputCheckbox value="{!c.sel}" id="checkedone" disabled="{!c.sel}">
@@ -39,6 +41,9 @@
                     <apex:column value="{!c.c.copado__Commit_Message__c}"/>
     	        </apex:pageBlockTable>
     	    </apex:pageBlock>
+
+
+
 
     	</apex:form>
     </body>

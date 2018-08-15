@@ -3536,10 +3536,34 @@ var copadoMTStep = {
 
         data = data ? JSON.parse(data) : false;
 
+
+        $copado('[id=jsTaskOwner_lkid]').val(data ? data.Task_Owner : null);
+
+        if(data){
+            sforce.connection.query('SELECT id, FirstName, LastName FROM User WHERE Id = \'' + data.Task_Owner+ '\' LIMIT 1', {
+                onSuccess: function(result) {
+                    var records = result.getArray("records");
+
+                    if(records.length == 1){
+                        var firstname = records[0].FirstName;
+                        var lastname = records[0].LastName;
+                        $copado('[id=jsTaskOwner_lkold]').val(firstname + ' ' + lastname);
+                        $copado('[id=jsTaskOwner]').val(firstname + ' ' + lastname);
+                    }
+                },
+                onFailure : function(error) {
+                    console.error("An error has occurred " + error);
+                }
+            });
+        }else{
+            $copado('[id$=jsTaskOwner]').val(null);
+        }
+
         //fill or reset if field is empty
         $copado('[id$=jsTaskDesc]').val(data ? data.Task_Description : '');
         $copado('[id$=jsPerformInSource]').prop('checked', data ? data.Perform_in_Source_Org : false);
         $copado('[id$=jsPerformInDestinations]').prop('checked', data ? data.Perform_in_Destination_Orgs : true);
+        $copado('[id$=jsNotifyTaskOwner]').val(data ? data.Notify_Task_Owner : 'None');
     },
 
     /**
@@ -3562,7 +3586,9 @@ var copadoMTStep = {
         return JSON.stringify({
             Perform_in_Destination_Orgs: $copado('[id$=jsPerformInDestinations]').is(':checked'),
             Perform_in_Source_Org: $copado('[id$=jsPerformInSource]').is(':checked'),
-            Task_Description: $copado('[id$=jsTaskDesc]').val()
+            Task_Description: $copado('[id$=jsTaskDesc]').val(),
+            Task_Owner: $copado('[id$=jsTaskOwner_lkid]').val(),
+            Notify_Task_Owner: $copado('[id$=jsNotifyTaskOwner]').val()
         });
     },
 
@@ -3576,7 +3602,7 @@ var copadoMTStep = {
                 job[copadoApp.ns + 'Status__c'] = $statusPicklist.val();
             }
             if ($tmpStatusPicklist.length) {
-                job[copadoApp.ns + 'Early_Completion_Status__c'] = $tmpStatusPicklist.val();
+                job[copadoApp.ns + 'Status__c'] = $tmpStatusPicklist.val();
             }
 
             job.Id = jobId;
@@ -4575,7 +4601,6 @@ var copadoGitPromotionStep = {
                 }
                 local[event.args.rowindex] = t;
                 $grid2.jqxGrid('refresh');
-                $grid2.jqxGrid('applyfilters');
             });
         }
     },

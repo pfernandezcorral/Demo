@@ -39,6 +39,8 @@
     <reportType>copado__User_Stories_with_Pull_Requests_with_Pull_Request_Reviews__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>copado__User_Story__c$copado__Close_Date__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

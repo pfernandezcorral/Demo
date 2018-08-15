@@ -16,16 +16,17 @@ MetadataGrid2.prototype._initGrid = function(conf) {
 
     this.conf.gridMode = this.conf.gridMode || "orgMetadata"; // grid mode affects the behavior of the loading, rendering columns, and saving.
     this.isMetadataGrid = this.conf.gridMode === 'orgMetadata';
+    this.conf.dxGridType = this.conf.dxGridType || ''; // dx grid type affects columns for dx pages.
 
     console.debug('_initGrid()', this.conf.gridMode, this.isMetadataGrid);
-    console.assert(this.conf.data.orgId, "MetadataGrid2.init: config had no orgId");
+    //console.assert(this.conf.data.orgId, "MetadataGrid2.init: config had no orgId"); MY: With DX orgId is not required.
 
     this.allMetaData = [];
     this.selectedMetadata = []; // selected items, referencing this.allMetaData
     this.allMetaData_cachedDate = "";
 
-    //this.conf.isScalable = false; // true for having the filter INSIDE the grid, not as a combobox 
-    this.isTypeFilterable = (this.conf.isScalable); // true for having the filter INSIDE the grid, not as a combobox 
+    //this.conf.isScalable = false; // true for having the filter INSIDE the grid, not as a combobox
+    this.isTypeFilterable = (this.conf.isScalable); // true for having the filter INSIDE the grid, not as a combobox
     console.debug("MetadataGrid2() conf.isScalable", this.conf.isScalable);
 
     this.TypeFilterType = 'checkedlist';
@@ -78,7 +79,7 @@ MetadataGrid2.prototype._setSelectionState = function(selected, elts, calledFrom
         }
     }
 
-    // locate each elt in the 
+    // locate each elt in the
     for(i=0 ; i < elts.length ; i++) {
         e = elts[i];
         if(idx_allItems) {
@@ -87,6 +88,10 @@ MetadataGrid2.prototype._setSelectionState = function(selected, elts, calledFrom
                 continue; // the element selected might not be in allMetaData, just ignore it.
         }
         e.s = selected;
+        if (typeof showTip !== 'undefined' && showTip && selected) {
+            showTip(e.t);
+         }
+
         var existsInSelected = this.selectedMetadata.indexOf(e);
         if(selected && existsInSelected===-1) {
             this.selectedMetadata.push(e);
@@ -101,14 +106,12 @@ MetadataGrid2.prototype._setSelectionState = function(selected, elts, calledFrom
                 e.r = false;
         }
     }
-
     // visual feedback, flashing the tab
     var elt = this.eltMain.find('.mg2_tabs li').get(1);
     elt.style.animation = '';
     setTimeout(function() {
         elt.style.animation = 'flash 2s 1';
     }, 5);
-
     // fire a custom event telling the selection changed.
     var event = new CustomEvent("copadoMetadataGrid2Changed", { detail: { metadataGrid2: this } });
     document.dispatchEvent(event);
@@ -127,6 +130,7 @@ MetadataGrid2.prototype._setGridFiltersByType = function() {
         var group = new $copado.jqx.filter();
         var filter = group.createfilter('stringfilter', that.filterByType, 'contains');
         group.addfilter(0, filter);
+
         that.eltGrid.jqxGrid('addfilter', 't', group);
         that.eltGrid.jqxGrid('applyfilters');
     }
@@ -160,6 +164,7 @@ MetadataGrid2.prototype._reapplyFilters = function(tabIndex) {
 
 MetadataGrid2.prototype._getColumnsByGridMode = function() {
     var type = this.conf.gridMode;
+    var dxType = this.conf.dxGridType;
     var columns;
 
     if (type == 'metadataselector') {
@@ -215,16 +220,116 @@ MetadataGrid2.prototype._getColumnsByGridMode = function() {
                 width: 120
             }
         ];
-
-    } else if(type === 'orgMetadata') {
+    } else if(type == 'testClasses'){
         columns = [
-            {text: copadoLabels.name, filtertype: 'textbox', filtercondition: 'contains', editable:false, datafield: 'n'},
-            {text: copadoLabels.type, datafield: 't', filterable: !this.isTypeFilterable, filtertype:this.TypeFilterType, editable:false ,  columntype: 'textbox',width: 160},
-            {text: copadoLabels.LastModifiedById, filtertype: 'textbox', editable:false, datafield: 'b', width: 120},
-            {text: copadoLabels.LastModifiedDate, filtertype: 'textbox', editable:false, datafield: 'd', width: 120},
-            {text: copadoLabels.CREATEDBY, filtertype: 'textbox', editable:false, datafield: 'cb', width: 220},
-            {text: copadoLabels.CREATEDDATE, filtertype: 'textbox', editable:false, datafield: 'cd', width: 120}
+            {
+                text: copadoLabels.selected,
+                columntype: 'checkbox',
+                filtertype: 'bool',
+                datafield: 's',
+                width: '10%'
+            },
+            {
+                text: copadoLabels.name,
+                filtertype: 'textbox',
+                filtercondition: 'contains',
+                editable: false,
+                datafield: 'n',
+                width: '70%'
+            },
+            {
+                text: copadoLabels.type,
+                editable: false,
+                width: '20%',
+                cellsrenderer: function(){
+                    return 'ApexClass';
+                }
+            }
         ];
+    } else if(type === 'orgMetadata') {
+        if(dxType === 'branches') {
+            columns = [
+                {
+                    text: copadoLabels.selected,
+                    filtertype: 'bool',
+                    filterable: false,
+                    datafield: 'select',
+                    editable: false,
+                    width: 60
+                },
+                {
+                    text: copadoLabels.name,
+                    filtertype: 'textbox',
+                    filtercondition: 'contains',
+                    editable: false,
+                    datafield: 'name',
+                    width: '40%'
+                },
+                {
+                    text: copadoLabels.type,
+                    datafield: 'type',
+                    filterable: !this.isTypeFilterable,
+                    filtertype: this.TypeFilterType,
+                    editable: false,
+                    columntype: 'textbox',
+                    width: '30%'
+                },
+                {
+                    text: copadoLabels.LastModifiedDate,
+                    filtertype: 'textbox',
+                    editable: false,
+                    datafield: 'lastUpdate',
+                    cellsformat: 'M/d/yyyy',
+                    width: '25%'
+                }
+            ];
+        } else {
+            columns = [
+                {
+                    text: copadoLabels.name,
+                    filtertype: 'textbox',
+                    filtercondition: 'contains',
+                    editable: false,
+                    datafield: 'n'
+                },
+                {
+                    text: copadoLabels.type,
+                    datafield: 't',
+                    filterable: !this.isTypeFilterable,
+                    filtertype: this.TypeFilterType,
+                    editable: false,
+                    columntype: 'textbox',
+                    width: 160
+                },
+                {
+                    text: copadoLabels.LastModifiedById,
+                    filtertype: 'textbox',
+                    editable: false,
+                    datafield: 'b',
+                    width: 120
+                },
+                {
+                    text: copadoLabels.LastModifiedDate,
+                    filtertype: 'textbox',
+                    editable: false,
+                    datafield: 'd',
+                    width: 120
+                },
+                {
+                    text: copadoLabels.CREATEDBY,
+                    filtertype: 'textbox',
+                    editable: false,
+                    datafield: 'cb',
+                    width: 220
+                },
+                {
+                    text: copadoLabels.CREATEDDATE,
+                    filtertype: 'textbox',
+                    editable: false,
+                    datafield: 'cd',
+                    width: 120}
+            ];
+        }
     } else if(type === 'gitCommit') {
         columns = [{
             text: copadoLabels.selected,
@@ -247,6 +352,91 @@ MetadataGrid2.prototype._getColumnsByGridMode = function() {
             editable: false,
             columntype: 'textbox',
             width: '10%'
+        }, {
+            text: copadoLabels.LastModifiedById,
+            filtertype: 'textbox',
+            filtercondition: 'contains',
+            editable: false,
+            datafield: 'b',
+            width: 220
+        }, {
+            text: copadoLabels.LastModifiedDate,
+            filtertype: 'textbox',
+            filtercondition: 'contains',
+            editable: false,
+            datafield: 'd',
+            width: 120
+        },
+            {text: copadoLabels.CREATEDBY, filtertype: 'textbox', editable:false, datafield:'cb', width:220},
+            {text: copadoLabels.CREATEDDATE, filtertype: 'textbox', editable:false, datafield:'cd', width:120}
+        ];
+
+          }else if(type === 'DXpermissionSet') {
+              columns = [
+                  {
+                      text: copadoLabels.selected,
+                      columntype: 'checkbox',
+                      filtertype: 'bool',
+                      datafield: 's',
+                      width: '10%'
+                  },
+                  {
+                      text: copadoLabels.name,
+                      filtertype: 'textbox',
+                      filtercondition: 'contains',
+                      editable: false,
+                      datafield: 'n',
+                      width: '45%'
+                  },
+                  {
+                      text: copadoLabels.type,
+                      datafield: 't',
+                      editable: false,
+                      columntype: 'textbox',
+                      width: '45%'
+                  }
+              ];
+
+    } else if(type === 'gitCommitEditable') {
+        columns = [{
+            text: copadoLabels.selected,
+            columntype: 'checkbox',
+            filtertype: 'bool',
+            datafield: 's',
+            width: 60
+        }, {
+            text: copadoLabels.name,
+            filtertype: 'textbox',
+            filtercondition: 'contains',
+            editable: true,
+            datafield: 'n',
+            width: '30%',
+            validation: function (cell, value) {
+                if (!value || value == " ") {
+                    return { result: false, message: "You must specify a value" };
+                }
+                if (value.indexOf(' ') >= 0) {
+                    return { result: false, message: "Remove all blank spaces" };
+                }
+                return true;
+            }
+        }, {
+            text: copadoLabels.type,
+            datafield: 't',
+            filtertype: this.TypeFilterType,
+            filterable: !this.isTypeFilterable,
+            editable: true,
+            columntype: 'textbox',
+            width: '10%',
+            validation: function (cell, value) {
+                if (!value || value == " ") {
+                    return { result: false, message: "You must specify a value" };
+                }
+                if (value.indexOf(' ') >= 0) {
+                    return { result: false, message: "Remove all blank spaces" };
+                }
+                return true;
+            }
         }, {
             text: copadoLabels.LastModifiedById,
             filtertype: 'textbox',
@@ -316,7 +506,7 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
     if(this.isRendered) {
         // Just refresh and return, never re-render
         console.debug('MetadataGrid2.render() re-rendering', this.filterByType);
-        this._reapplyFilters();
+        this._reapplyFilters(0);
         this.eltGrid.jqxGrid('updatebounddata', 'filter');
         if(cbAfterRender)
             cbAfterRender();
@@ -367,8 +557,8 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
                 return;
 
             document.body.focus();
-            that.eltMetaDataTypeFilter.jqxComboBox({ disabled: true }); 
-            
+            that.eltMetaDataTypeFilter.jqxComboBox({ disabled: true });
+
             // detach the slow process.
             window.setTimeout(function() {
                 lockScreen();
@@ -390,18 +580,33 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
 
     // now, finally, render the grid (must be done last!)
     var theme = 'base';
+    var gridHeight = '300px';
+    if(that.conf.style && that.conf.style.height){
+        gridHeight = that.conf.style.height;
+    }
+    var dataFieldsMap = [];
+    if(this.conf.dxGridType !== 'branches') {
+        dataFieldsMap = [
+            {name: 's', type: 'bool'},
+            {name: 'r', type: 'bool'},
+            {name: 't', type: 'string'},
+            {name: 'n', type: 'string'},
+            {name: 'b', type: 'string'},
+            {name: 'd', type: 'string'},
+            {name: 'cb', type: 'string'},
+            {name: 'cd', type: 'string'}
+        ];
+    } else {
+        dataFieldsMap = [
+            {name: 's', type: 'bool'},
+            {name: 'name', type: 'string'},
+            {name: 'type', type: 'string'},
+            {name: 'lastUpdate', type: 'string'}
+        ];
+    }
     var source = {
         localdata: this.allMetaData,
-        datafields: [
-            { name: 's', type: 'bool' },
-            { name: 'r', type: 'bool' },
-            { name: 't', type: 'string' },
-            { name: 'n', type: 'string' },
-            { name: 'b', type: 'string' },
-            { name: 'd', type: 'string' },
-            { name: 'cb', type: 'string' },
-            { name: 'cd', type: 'string' }
-        ],
+        datafields: dataFieldsMap,
         datatype: 'array',
         updaterow: function (rowid, rowdata, commit) {
             try{
@@ -409,7 +614,8 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
                     commit(true);
                 else
                     console.warn("no commit fn defined");
-                that._setSelectionState(rowdata.s, [that.allMetaData[rowid]], false, rowdata);
+                if(rowdata != null)
+                    that._setSelectionState(rowdata.s, [that.allMetaData[rowid]], false, rowdata);
             }catch(e) {
                 console.error(e);
             }
@@ -418,22 +624,22 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
 
     //adapter wrapper
     var dataAdapter = new $copado.jqx.dataAdapter(source);
-    
+
     //keep jquery pointer for performance query
     this.eltGrid = this.eltMain.find('.mg2_jqxgrid');
     console.assert(this.eltGrid.length);
-    
+
     //save local source
     this.datasource = source;
-    
+
     this.eltGrid.jqxGrid({
         width: '100%',
-        height: '300px',
+        height: gridHeight,
         source: dataAdapter,
         showfilterrow: true,
         filterable: true,
         theme: theme,
-        editable: true, 
+        editable: true,
         selectionmode: 'none',
         enablebrowserselection: true,
         pageable: true,
@@ -448,18 +654,20 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
             try{
                 if(that.hasPreviousSelected)
                     that.addSelectedFilter(that.eltGrid);
-                cbAfterRender(that);
+                if(cbAfterRender){
+                    cbAfterRender(that);
+                }
                 //that.eltGrid.jqxGrid('sortby','d', false, null, false);
             }catch(e) { console.error(e); }
         }
     });
 
     if(this.conf.gridMode === 'gitCommit') {
-        
-        this.eltGrid.on('cellvaluechanged', function (event) {            
+
+        this.eltGrid.on('cellvaluechanged', function (event) {
             // hack: if the col clicked is r, check the selection as well
             var t = that.eltGrid.jqxGrid('getrowdata', event.args.rowindex);
-            
+
             if (event.args.datafield=='r' && t.r === true && t.s === false) {
                 that.eltGrid.jqxGrid('setcellvalue', event.args.rowindex, "s", true);
                 that.eltGrid.jqxGrid('setcellvalue', event.args.rowindex, "r", true);
@@ -475,6 +683,49 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
             //that.eltGrid.jqxGrid('applyfilters');
             that._setSelectionState(t.s, [t], true, t);
         });
+    }
+
+    if(this.conf.gridMode === 'gitCommitEditable') {
+        var that = this;
+        this.eltGrid.on('cellbeginedit', function (event) {
+            var eltTabs = that.eltMain.find('.mg2_tabs');
+            var tabSelected = eltTabs.jqxTabs('selectedItem');
+            if(tabSelected === 1){
+                console.log('Entered tab selected Must return');
+                return false;
+            }
+            if(event.args.value) {
+                var rowindex = event.args.rowindex;
+                var column = event.args.datafield;
+
+                if (column == "n" && event.args.value == "[Metadata API Name]") {
+                    that.eltGrid.jqxGrid('setcellvalue', rowindex, column, "");
+                }else if(column == "t" && event.args.value == "[Metadata Type]"){
+                    that.eltGrid.jqxGrid('setcellvalue', rowindex, column, " ");
+                }
+            }
+        });
+        // Initialize the add row button
+        var addRow = function() {
+                var datarow = {
+                    "n":"[Metadata API Name]",
+                    "s":true,
+                    "b":"",
+                    "cb":"",
+                    "t":"[Metadata Type]"
+                };
+                that.eltGrid.jqxGrid('addrow', source.localdata.length, datarow);
+                source.localdata.push(datarow);
+                var rowscounts = that.eltGrid.jqxGrid('getdatainformation').rowscount;
+                that.eltGrid.jqxGrid('ensurerowvisible',rowscounts-1);
+        };
+
+        var $addRowButton = $copado('<button>Add Row</button>').on('click', function(e) {
+                e.preventDefault();
+                addRow();
+            });
+        this.eltMain.find('.jqx-grid-pager > div')
+            .prepend($addRowButton)
     }
 
     if(this.conf.gridMode !== 'orgMetadata') {
@@ -578,6 +829,21 @@ MetadataGrid2.prototype.loadSelectedMetaData = function(callbackFinished) {
         callbackFinished();
 };
 
+MetadataGrid2.prototype.loadSelectedMetaDataJSON = function(jsonData, callbackFinished) {
+    var selectedMetadata = jsonData;
+    if( selectedMetadata.length === false ) {
+        setWithoutRebinding(this.selectedMetadata, []);
+        if(callbackFinished)
+            callbackFinished();
+        return;
+    }
+    setWithoutRebinding(this.allMetaData, selectedMetadata);
+    setWithoutRebinding(this.selectedMetadata, selectedMetadata);
+    this.render();
+    if(callbackFinished)
+        callbackFinished();
+};
+
 // (re) loads only the metadata, possibly filtered
 MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) {
     var that = this;
@@ -590,7 +856,7 @@ MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) 
             callbackFinished();
         return;
     }
-
+    if(!this.conf.data.orgId) return;
     var url = conf.server.metadataUrl.replace(new RegExp('__ORGID__', 'g'), conf.data.orgId);
     url = this.filterByType ? url + '&type=' + (this.filterByType||'') + '&scalable=true' : url;
     if(this.conf.gridMode==='Users') {
@@ -616,7 +882,7 @@ MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) 
             // refresh the grid/filter, so the column type has filter values
             if(!this.isTypeFilterable)
                 that.eltGrid.jqxGrid('updatebounddata');
-            
+
             if(callbackFinished)
                 callbackFinished();
        },
@@ -720,15 +986,50 @@ MetadataGrid2.prototype._setGridData = function(allMetaData) {
     console.debug("MetadataGrid2._setGridData() all=", this.allMetaData.length, 'sel=',this.selectedMetadata.length);
 };
 
+// append the items to .allMetaData and selectedMetadata (if the items are selected)
+MetadataGrid2.prototype.addItemsIfMissing = function(items) {
+    //console.debug("MetadataGrid2.prototype.addItemsIfMissing items", items);
+    // create a map of the existing metadata items
+    var e, idx_allItems = {};
+    for(i=0 ; i < this.allMetaData.length ; i++ ) {
+        e = this.allMetaData[i];
+        idx_allItems[e.t+' '+e.n] = e;
+    }
+    //console.debug("MetadataGrid2.prototype.addItemsIfMissing e", e);
+    //console.debug("MetadataGrid2.prototype.addItemsIfMissing idx_allItems", idx_allItems);
+    // now see if each item in items exists or needs to be added and/or selected.
+    for(var i=0 ; i < items.length ; i++) {
+        e = items[i];
+        var key = e.t+' '+e.n;
+        if( idx_allItems[key] ) {
+            idx_allItems[key].s = e.s;
+            // if the element is selected, ensure it is in the .selectedMetadata array
+            if(e.s && this.selectedMetadata.indexOf(e)===-1) {
+                //console.debug('pushing e', e);
+                e.s = true;
+                //this.selectedMetadata.push(e);
+            }
+        }else{
+            this.allMetaData.push(e);
+            idx_allItems[key] = e;
+            // if the element is selected, ensure it is in the .selectedMetadata array
+            if(e.s) {
+                //console.debug('pushing e if there is no key', e);
+                e.s = true;//this.selectedMetadata.push(e);
+            }
+        }
+    }
+};
+
 // fetches the selected data again. Useful for the "cancel" action
-MetadataGrid2.prototype.reloadSelections = function() {
+MetadataGrid2.prototype.reloadSelections = function(tabNumber) {
     var that = this;
     lockScreen();
     that.loadSelectedMetaData(function() {
         that._matchSelectedItemsWithAllMetaData(that.allMetaData);
         // NR: workaround because the selection show all the data, for some reason.
         if(that.eltTabs)
-            that.eltTabs.jqxTabs('select', 0);
+            that.eltTabs.jqxTabs('select', tabNumber || 0);
         that.render();
         unlockScreen();
     });

@@ -230,13 +230,13 @@
             <apex:sectionHeader id="theHeader" title="{!$ObjectType.copado__Selenium_Test_Suite__c.Label}" subtitle="{!copado__Selenium_Test_Suite__c.Name}" description="{!$Label.copado__test_cases_per_suite_description}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
 
             <!-- check that the feature is enabled, and the user has a license assigned -->
-            <apex:pageMessage severity="WARNING" strength="2" summary="{!possibleCSTErrorMsg}" rendered="{!!ISNULL(possibleCSTErrorMsg)},{!$User.UIThemeDisplayed != 'Theme4d'}"></apex:pageMessage>
+            <apex:pageMessage severity="WARNING" strength="2" summary="{!HTMLENCODE(possibleCSTErrorMsg)}" rendered="{!AND(!ISNULL(possibleCSTErrorMsg),$User.UIThemeDisplayed != 'Theme4d')}"></apex:pageMessage>
             <apex:pageMessages id="pmessage" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
 
             <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
                 <div class="slds-page-header">
                   <apex:outputPanel layout="block" id="pageMessages">
-                    <apex:pageMessage severity="WARNING" strength="2" summary="{!possibleCSTErrorMsg}" rendered="{!!ISNULL(possibleCSTErrorMsg)},"></apex:pageMessage>
+                    <apex:pageMessage severity="WARNING" strength="2" summary="{!HTMLENCODE(possibleCSTErrorMsg)}" rendered="{!!ISNULL(possibleCSTErrorMsg)},"></apex:pageMessage>
                     <apex:pagemessages id="msg"/>
                   </apex:outputPanel>
                   <div class="slds-grid">
@@ -275,7 +275,7 @@
             </apex:outputPanel>
 
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">     
-                <apex:form id="theForm" rendered="{!and($Setup.copado__Settings__c.copado__Enabled_Multi_Licenses__c, $Setup.copado__Copado_License__c.copado__Enable_CST__c)}" styleClass="copado-lightning-container" style="padding-top:12px;">
+                <apex:form id="theForm" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_CST__c}" styleClass="copado-lightning-container" style="padding-top:12px;">
                     <apex:pageBlock id="pb" title="{!$Label.copado__add_remove_test_case_description}">
                         <apex:pageBlockButtons >
                             <apex:commandButton action="{!saveTestCasesPerSuite}" value="{!$Label.site.save}" onclick="cps.pre_save()" />

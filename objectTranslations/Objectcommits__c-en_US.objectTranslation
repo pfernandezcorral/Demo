@@ -2,11 +2,16 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value>Objectcommits</value>
+        <value>Objetocommit</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value>Objectcommits</value>
+        <value>Objetocommits</value>
     </caseValues>
+    <fields>
+        <label></label>
+        <name>test__c</name>
+        <relationshipLabel></relationshipLabel>
+    </fields>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

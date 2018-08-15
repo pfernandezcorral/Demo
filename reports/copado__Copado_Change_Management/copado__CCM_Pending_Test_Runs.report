@@ -40,6 +40,8 @@
     <reportType>CustomEntityCustomEntity$copado__Test_Script__c$copado__Test_Run__c@copado__Test_Run__c.copado__User_Story__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <sortColumn>CHILD_NAME</sortColumn>
     <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
