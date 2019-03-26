@@ -58,21 +58,19 @@ var Base64 = {
     error: function() {}
 });
 
-Date.fromISOString = (function() {
-    var tzoffset = (new Date).getTimezoneOffset();
+// parses an ISO date only (ignores ms and tz) "2018-04-25T13:24:39.000Z" and returns a LOCAL date.
+Date.fromISOString = function(input) {
+  return new Date(Date.UTC(
+    parseInt(input.slice(0, 4), 10),
+    parseInt(input.slice(5, 7), 10) - 1,
+    parseInt(input.slice(8, 10), 10),
+    parseInt(input.slice(11, 13), 10),
+    parseInt(input.slice(14, 16), 10),
+    parseInt(input.slice(17,19), 10)
+  ));
+};
 
-    function fastDateParse(y, m, d, h, i, s, ms) { // this -> tz
-        return new Date(y, m - 1, d, h || 0, +(i || 0) - this, s || 0, ms || 0);
-    }
 
-    // result function
-    return function(isoDateString) {
-        var tz = isoDateString.substr(10).match(/([\-\+])(\d{1,2}):?(\d{1,2})?/) || 0;
-        if (tz)
-            tz = tzoffset + (tz[1] == '-' ? -1 : 1) * (tz[3] != null ? +tz[2] * 60 + (+tz[3]) : +tz[2]);
-        return fastDateParse.apply(tz || 0, isoDateString.split(/\D/));
-    }
-})();
 
 //namespace
 var dw = dw || {};
@@ -94,7 +92,7 @@ dw.u.retry = function(url, cb, postData, avoidRetry, onError) {
     }
 };
 
-dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, requestType) {
+dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, cbOnOk) {
     if(Copado_Licenses.hasMultiLicense && !(Copado_Licenses.hasCopado ||Copado_Licenses.hasCCM ||Copado_Licenses.hasCST || Copado_Licenses.hasCCH) ) {
         var errorMsgs = 'Your current license does not allow performing this action.';
         alert(errorMsgs);
@@ -130,10 +128,12 @@ dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, requestType) {
 
 
                 if (obj.ok) {
-
                     setTimeout(function() {
                         dw.u.retry(url, cb, postData, avoidRetry, onError);
                     }, 2000);
+                    if(cbOnOk){
+                        cb && cb(obj);
+                    }
                     return;
                 }
 
@@ -154,31 +154,56 @@ dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, requestType) {
                 cb && cb(obj);
 
             } catch (e) {
-
-                console.log('remote error', e);
+                console.log('dw.u.getRemote() remote error', e);
                 if (avoidRetry) {
                     try {
                         $copado('#loading').hide();
-                    } catch (e) {}
+                    } catch (er) {
+                        console.error('couldnt hide loading panel');
+                    }
                     try {
                         $copado('#jqxgrid').html(e);
-                    } catch (e) {}
+                    } catch (er) {
+                        console.error('couldnt load html to grid');
+                    }
                 }
-                onError && onError(e);
-                !avoidRetry && setTimeout(function() {
-                    dw.u.retry(url, cb, postData, avoidRetry, onError);
-                }, 2000);
 
+                if (onError) {
+                    onError(response);
+                    return;
+                }
+
+                if(avoidRetry) {
+                    // there was no error handler, and there is no retry. Notify the customer
+                    var errMsg = ''+response;
+                    try {
+                        errMsg = JSON.stringify(e);
+                    } catch(e1) {
+                        console.error('Couldnt parse error json');
+                    }
+                    alert('There was an exception trying to contact Copado API: '+errMsg);
+                }else{
+                    setTimeout(function() {
+                        dw.u.retry(url, cb, postData, avoidRetry, onError);
+                    }, 2000);
+                }
             }
         },
         onFailure: function(response) {
-            console.log('onFailure', onError, response)
+            console.log('dw.u.getRemote() onFailure', onError, response);
             if (onError) {
                 onError(response);
                 return;
-            }!avoidRetry && setTimeout(function() {
-                dw.u.retry(url, cb, postData, avoidRetry, onError);
-            }, 2000);
+            }
+            if(avoidRetry) {
+                // there was no error handler, and there is no retry. Notify the customer
+                var errMsg = ''+response;
+                alert('There was an error trying to contact Copado API: '+errMsg);
+            }else{
+                setTimeout(function() {
+                    dw.u.retry(url, cb, postData, avoidRetry, onError);
+                }, 2000);
+            }
         },
         timeout: 250000
     });
@@ -225,6 +250,10 @@ dw.u.deleteAttach = function(parentId, name) {
     
 }
 
+function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 dw.u.getAttach = function(parentId, name) {
 
     var q = "Select Id, Body, LastModifiedDate, Name, ParentId From Attachment where Name='" + name + "' and parentId = '" + parentId + "' order by LastModifiedDate DESC limit 1",
@@ -249,12 +278,11 @@ dw.u.getDecodedAttach = function(parentId, name) {
 
 
 //upsert
-dw.u.upsertAttach = function(parentId, name, body, alreadyCheck) {
+dw.u.upsertAttach = function(parentId, name, body, alreadyCheck, newName) {
 
 
     var Id = false;
     if (!alreadyCheck) {
-
         var attach = dw.u.getAttach(parentId, name);
         if (attach.length) {
             Id = attach[0].Id;
@@ -263,7 +291,12 @@ dw.u.upsertAttach = function(parentId, name, body, alreadyCheck) {
     }
     var att = new sforce.SObject("Attachment");
     att.parentId = parentId;
-    att.name = name;
+    if(newName) {
+        att.name = newName;
+    } else {
+        att.name = name;
+    }
+    
     att.body = Base64.encode(body);
 
     if (Id) {
@@ -307,7 +340,7 @@ dw.u.getCachedRemote = function(opt) {
         );
 
     } else {
-        // try{
+         try{
         //decode the attach body
         var res = Base64.decode(attach[0].Body);
 
@@ -318,12 +351,12 @@ dw.u.getCachedRemote = function(opt) {
         //parse json
         opt.success($copado.parseJSON(res), date.toLocaleString());
 
-        /*}catch(e){
+        }catch(e){
             //console.log(Base64.decode(attach[0].Body));
             console.error('Exception on saved data:',e);
             opt.error();
             throw e;
-        }*/
+        }
     }
 
 };
@@ -338,6 +371,8 @@ dw.u.getSavedData = function(id, type, isNotJSON) {
     var attach = dw.u.getAttach(id, type);
     if (attach.length > 0) {
         try {
+            // Save the last modified date of this attachment in case the caller needs it ( scratch org.resource needs it )
+            dw.u.getSavedData_AttachmentLastModifiedDate = attach[0].LastModifiedDate;
             //decode the attach body
             var res = Base64.decode(attach[0].Body);
             //parse json
@@ -349,6 +384,104 @@ dw.u.getSavedData = function(id, type, isNotJSON) {
     }
     return false;
 };
+// JS Upload files
+var coUploadAttachment = {
+     maxStringSize: 6000000,    //Maximum String size is 6,000,000 characters
+     maxFileSize : 4350000,    //After Base64 Encoding, this is the max file size
+     chunkSize : 950000,       //Maximum Javascript Remoting message size is 1,000,000 characters
+     attachment : {},
+     attachmentName : '',
+     attachmentBody : '',
+     fileSize : 0,
+     positionIndex : 0,
+     doneUploading : false,
+     parentId : '', // If doDML is enabled this should not be empty
+     doDML : false,
+    //Method to prepare a file to be attached to the Account bound to the page by the standardController
+    uploadFile : function(inputName, callback){
+
+        var that = this;
+        console.log(that);
+        if(!document.getElementById(inputName)) {
+            alert("You must choose a file before trying to upload it");
+            return; // TODO: add error message
+        }
+        var file = document.getElementById(inputName).files[0];
+              if(file) {
+                 console.log('coUploadAttachment:::uploadFile',file);
+                 if(file.size <= that.maxFileSize) {
+                    if(that.attachmentName.length <= 0)that.attachmentName = file.name;
+                    var fileReader = new FileReader();
+                    fileReader.onloadend = function(e) {
+                        that.attachment = window.btoa(this.result);  //Base 64 encode the file before sending it
+                        that.positionIndex=0;
+                        that.fileSize = that.attachment.length;
+                        console.log("coUploadAttachment:::uploadFile Total Attachment Length: " + that.fileSize);
+                        that.doneUploading = false;
+                        if(that.fileSize < that.maxStringSize) {
+                          that.uploadAttachment(null,that.doDML,callback); // null param is for fileId this may change
+                        } else {
+                          alert("Base 64 Encoded file is too large.  Maximum size is " + that.maxStringSize + " your file is " + that.fileSize + ".");
+                        }
+                    }
+                    fileReader.onerror = function(e) {
+                        alert("There was an error reading the file.  Please try again.");
+                    }
+                    fileReader.onabort = function(e) {
+                        alert("There was an error reading the file.  Please try again.");
+                    }
+                    fileReader.readAsBinaryString(file);  //Read the body of the file
+
+              }else {
+                alert("File must be under 4.3 MB in size.  Your file is too large.  Please try again.");
+              }
+        }else {
+          alert("You must choose a file before trying to upload it");
+        }
+    },
+    //Method to send a file to be attached to the Account bound to the page by the standardController
+    //Sends parameters: Account Id, Attachment (body), Attachment Name, and the Id of the Attachment if it exists to the controller
+    uploadAttachment : function(fileId, doDML,callback) {
+        var that = this;
+        if(that.fileSize <= that.positionIndex + that.chunkSize) {
+          that.attachmentBody = that.attachment.substring(that.positionIndex);
+          console.log('attachmentBody = that.attachment.substring(that.positionIndex) ===>',Base64.decode(that.attachment.substring(that.positionIndex)));
+          that.doneUploading = true;
+        } else {
+          that.attachmentBody = that.attachment.substring(that.positionIndex, that.positionIndex + that.chunkSize);
+        }
+        console.log("coUploadAttachment:::uploadAttachment Uploading " + that.attachmentBody.length + " chars of " + that.fileSize);
+        //TODO : Replace with dynamic one without standard controller
+
+        if(doDML && doDML === true) {
+        if(!JsRemotingController) return; // TODO: add error message
+            JsRemotingController.doUploadAttachment(
+                that.parentId, that.attachmentBody, that.attachmentName, fileId,
+                function(result, event) {
+                    console.log(result);
+                    if(event.type === 'exception') {
+                        console.log("exception");
+                        console.log(event);
+                    } else if(event.status) {
+                        if(result.substring(0,3) == '00P') {
+                            if(that.doneUploading == true) {
+                                console.log('coUploadAttachment:::uploadAttachment UPLOAD COMPLETED');
+                            } else {
+                                that.positionIndex += that.chunkSize;
+                                uploadAttachment(result);
+                            }
+                        }
+                    } else {
+                        console.log(event.message);
+                    }
+                },
+                {buffer: true, escape: true, timeout: 120000}
+            );
+        }
+        if(callback) callback();
+    }
+};
+
 
 function reformatMilliseconds(milliseconds) {
 
@@ -367,7 +500,7 @@ function reformatMilliseconds(milliseconds) {
     output += (Math.floor(seconds) > 0) ? Math.floor(seconds) + ' ' + copadoLabels.SECONDS + ' ' : '';
     output += (milliseconds > 0 && milliseconds < 1000) ? milliseconds + ' ' + copadoLabels.MILLISECONDS : '';
     return output;
-}
+};
 
 /*************************************************
 Generic Grid Helper
@@ -429,7 +562,9 @@ var coGridHelper = {
                 d: data[len].d,
                 b: data[len].b,
                 cd: data[len].cd,
-                cb: data[len].cb
+                cb: data[len].cb,
+                ai: data[len].ai,
+                vk: data[len].vk,
             };
 
             if (typeof data[len].r != 'undefined') {
@@ -485,8 +620,8 @@ var coGridHelper = {
      * @param  {[type]} callcack             
      * @return {[type]}                      false
      */
-    saveSelected: function(id, type, additionalValidation, allowEmpty, callback) {
-
+    saveSelected: function(id, type, additionalValidation, allowEmpty, callback, sel) {
+        console.debug('... Saving Attachment');
         var me = coGridHelper;
         //validations
         //check global selected items
@@ -502,8 +637,7 @@ var coGridHelper = {
         }
 
         var valid = !additionalValidation ? true : additionalValidation(me._selectedNames);
-
-        valid && me.remoteSaveMeta(id, me._selectedNames, type, callback);
+        valid && me.remoteSaveMeta(id, sel || me._selectedNames, type, callback);
 
         return false;
     },
@@ -517,6 +651,7 @@ var coGridHelper = {
      * @return {[type]}          void
      */
     remoteSaveMeta: function(id, items, type, callback) {
+        console.log(items);
         dw.u.upsertAttach(id, type, JSON.stringify(items));
         callback && callback();
     }

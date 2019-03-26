@@ -10,6 +10,8 @@
         <pageOrSobjectType>Account</pageOrSobjectType>
     </actionOverrides>
     <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Sales Console</label>
     <navType>Console</navType>
     <tabs>standard-home</tabs>
